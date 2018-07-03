@@ -1,0 +1,12 @@
+# Ignore all output files
+output
+
+# Ignore all tex files ...
+*.tex
+# ... except for thesis.tex
+!thesis.tex
+
+# Ignore all pdf files
+*.pdf
+# ... except those in the figures directories
+!**/figures/*.pdf
