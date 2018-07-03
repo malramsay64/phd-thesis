@@ -11,7 +11,7 @@ subfiles = $(shell find . -name "*.md" -path "./[0-9][0-9]*")
 all: thesis.pdf
 
 thesis.pdf: thesis.tex
-	latexmk -outdir=output -pdf thesis.tex && mv output/thesis.pdf .
+	latexmk -outdir=output -pdf -interaction=nonstopmode thesis.tex && mv output/thesis.pdf .
 
 thesis.tex: $(subfiles:.md=.tex)
 	python src/include_tex.py
