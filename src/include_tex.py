@@ -40,7 +40,7 @@ def main(filename):
                 logger.debug("Found insert location")
                 insert_index = index + 1
             # End of inserted files
-            elif insert_index > 0 and line == "\n":
+            elif insert_index > 0 and "%% and here" in line:
                 logger.debug("Found finished location")
                 finished_index = index
                 break
