@@ -1,6 +1,8 @@
 name: thesis
 dependencies:
+  - python>=3.5
   - pandoc
+  - conda-forge::tectonic
   - pip
   - pip:
     - pandoc-eqnos

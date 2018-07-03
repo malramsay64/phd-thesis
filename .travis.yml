@@ -1,7 +1,11 @@
-sudo: required
+language: generic
+
+cache:
+  directories:
+    - $HOME/.cache/Tectonic
+    - $HOME/miniconda
 
 before_install:
-  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
   - bash miniconda.sh -b -u -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
@@ -11,7 +15,7 @@ before_install:
   - conda install conda-env
   - conda info -a
   - conda env update
-  - source activate sdrun-dev
+  - source activate thesis
 
 script:
   - make
