@@ -1,0 +1,36 @@
+\documentclass[12pt, a4paper]{report}
+
+% Add paths to look through
+\makeatletter
+\def\input@path{
+  {Classes/}
+  {00_Frontmatter/}
+  {01_Introduction/}
+  {02_Methods/}
+}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\setstretch{1.5}
+
+
+% Paths of figures
+\graphicspath{
+  {01_Introduction/figures/}
+  {02_Methods/figures/}
+}
+
+\begin{document}
+
+%% Insert files here
+\include{test}
+\include{Crystal_Detection}
+
+\end{document}
