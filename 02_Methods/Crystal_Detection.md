@@ -12,21 +12,15 @@ Table: A Comparison on the energies of the potential crystal structures for the 
 
 The lack of a single definitive crystal structure requires that further investigation of the crystallisation behaviour needs to handle all the different structures. The standard tool for crystal detection is to use an order parameter; a single value which captures the closeness of a configuration to the liquid state. These values are typically scaled to be of the range $[0-1]$ where 0 is completely liquid character and 1 is perfect crystal character. A measure of this type that has been previously used in molecular crystals is an orientational order parameter $O_n$. The value of $O_n$ is the relative orientation of nearby molecules, which is typically the nearest shell. The measure of orientational alignment for $O_n$ is given by the equation;
 
-\[
-O_n = \langle \cos(\theta_{ref} - \theta_i) \rangle_i
-\]
+$$ O_n = \langle \cos(\theta_{ref} - \theta_i) \rangle_i $$
 
 where $\theta_{ref}$ is the orientation of the reference particle and $\theta_i$ is the orientation of the particle to be compared. This value is averaged over all $i$, which in this case is the particles in the shell of first nearest neighbours. This form of the equation only works in 2D. While it is possible to modify the above equation to take three orientations, this is a poor implementation due to the occurrence of gimbal lock. Additionally most simulation software uses quaternions for orientation to alleviate the issue of gimbal lock. The more natural quaternion based representation has the form
 
-\[
-O_n = \langle \text{quaternion maths} \rangle_i
-\]
+$$ O_n = \langle \text{quaternion maths} \rangle_i $$
 
 The quaternion form of the orientation is still unsuitable for even the p2 structure which is the most orientationally ordered of all three crystals. In the p2 structure the molecules are arranged parallel and antiparallel, so both these orientations need to contribute positively to the order parameter giving an equation of the form
 
-\[
-O_n = \langle \text{maths} \rangle+i
-\]
+$$ O_n = \langle \text{maths} \rangle+i $$
 
 
 This form of the equation works reasonably well at distinguishing the liquid from the p2 crystal phase, using $O_n > 0.85$ as the measure of the p2 crystal. There are still two issues with using this parameter. Firstly, the value of 0.85 was chosen because I thought it worked well, with no data to validate it is the best value for distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure. Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
