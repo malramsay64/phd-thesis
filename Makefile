@@ -14,7 +14,7 @@ thesis.pdf: thesis.tex
 	latexmk -outdir=output -pdf thesis.tex && mv output/thesis.pdf .
 
 thesis.tex: $(subfiles:.md=.tex)
-	python include_tex.py
+	python src/include_tex.py
 
 subfiles: $(subfiles:.md=.tex)
 
