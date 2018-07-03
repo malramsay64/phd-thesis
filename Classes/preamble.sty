@@ -1,0 +1,169 @@
+% This package imports my standard packages and defines
+% macros that I use.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}
+
+% Packages required for thesis
+\RequirePackage[australian]{babel}
+\RequirePackage{amsmath}
+\RequirePackage{amsymb}
+\RequirePackage{graphicx}
+\RequirePackage{siunitx}
+\RequirePackage{hyperref}
+\RequirePackage[version=3]{mhchem}
+\RequirePackage{ccicons}
+\RequirePackage{xspace}
+\RequirePackage{subcaption}
+\RequirePackage{todonotes}
+\RequirePackage{parskip}
+\RequirePackage{doi}
+\RequirePackage[version=3]{mhchem}
+\RequirePackage{mysyntax}
+\RequirePackage{caption}
+\RequirePackage[export]{adjustbox}
+\RequirePackage{calc}
+\RequirePackage{fp}
+\RequirePackage{placeins}
+\RequirePackage[%
+    backend=biber,
+    style=nature,
+    autocite=superscript,
+    url=true,
+    doi=false,
+    isbn=false,
+    eprint=false]{biblatex}
+
+% Required for markdown templated files
+\RequirePackage{lmodern}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+
+\setcounter{tocdepth}{3}
+
+% Defining Molecules
+\newcommand*{\tri}{{\bf Tr}\xspace}
+\newcommand*{\done}{{\bf D1}\xspace}
+\newcommand*{\dcon}{{\bf Dc}\xspace}
+
+% Defining order parameters
+\newcommand*{\oorient}{\ensuremath{O_\text{orient}}\xspace}
+\newcommand*{\ocon}{\ensuremath{O_\text{\dcon}}\xspace}
+
+% Defining Mathematical Terms
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
+
+% Shortcuts for partial differential equations
+\renewcommand*{\d}[1]{\ensuremath{d #1}}
+\newcommand*{\pd}[1]{\ensuremath{\partial #1}}
+\newcommand*{\dd}[1]{\ensuremath{d^2 #1}}
+\newcommand*{\pdd}[1]{\ensuremath{\partial^2 #1}}
+
+\newcommand*{\ddiff}[2]{\ensuremath{\frac{\d #1}{\d #2}}}
+\newcommand*{\pddiff}[2]{\ensuremath{\frac{\pd #1}{\pd #2}}}
+\newcommand*{\dddiff}[2]{\ensuremath{\frac{\dd #1}{\d #2^2}}}
+\newcommand*{\pdddiff}[2]{\ensuremath{\frac{\pdd #1}{\pd #2^2}}}
+
+ % Defining Poise as a unit
+\sisetup{qualifier-mode = subscript}
+\DeclareSIUnit[number-unit-product = \,]{\poise}{P}
+
+% Shortcuts for units
+\DeclareSIQualifier{\melting}{m}
+\DeclareSIQualifier{\glass}{g}
+\DeclareSIQualifier{\kauzmann}{k}
+\DeclareSIUnit[number-unit-product = \,]{\T}{T}
+\DeclareSIUnit[number-unit-product = \,]{\Tg}{\T\glass}
+\DeclareSIUnit[number-unit-product = \,]{\Tm}{\T\melting}
+\DeclareSIUnit[number-unit-product = \,]{\Tk}{\T\kauzmann}
+
+\newcommand*{\e}{\ensuremath{\text{e}}\xspace}
+\newcommand*{\boltzman}{\ensuremath{k_\text{B}}}
+
+\PassOptionsToPackage{colorlinks=true, linkcolor=blue, citecolor=blue}{hyperref}
+
+% Default missing figure
+\newcommand*{\todofigure}[1]{\missingfigure[figcolor=white]{#1}}
+
+% References
+\newcommand*{\figref}[1]{(Figure~\ref{fig:#1})}
+\newcommand*{\tabref}[1]{(Table~\ref{tab:#1})}
+\newcommand*{\secref}[1]{(Section~\ref{sec:#1})}
+\newcommand*{\chapref}[1]{(Chapter~\ref{sec:#1})}
+\newcommand*{\appref}[1]{(See Appendix~\ref{sec:#1})}
+\newcommand*{\textfigref}[1]{Figure~\ref{fig:#1}}
+\newcommand*{\texttabref}[1]{Table~\ref{tab:#1}}
+\newcommand*{\textsecref}[1]{Section~\ref{sec:#1}}
+\newcommand*{\textchapref}[1]{Chapter~\ref{sec:#1}}
+\newcommand*{\subfigref}[1]{(\protect\subref{fig:#1})}
+
+% Citations
+\let\cite\supercite
+\newcommand*{\linecite}[1]{Ref.~\onlinecite{#1}}
+
+% Figures appear in section referencing them
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+%
+% Figure atttributions
+%
+
+\def\source{\@ifnextchar[{\@commons}{\@copyright}}
+
+\def\@commons[#1]#2{%
+    \vskip-0.5em
+    \captionsetup{font=footnotesize,singlelinecheck=false}
+    \caption*{{\bf Source:} Adapted from \linecite{#2}. Licensed under Creative Commons #1}
+}
+
+\def\@copyright#1#2{%
+    \vskip-0.5em
+    \captionsetup{font=footnotesize,singlelinecheck=false}
+    \caption*{{\bf Source:} Adapted with permission from \linecite{#1}~%
+    \copyright~\citeyear{#1} {#2}}
+}
+
+% Zoom on graphics
+\newcommand{\zoom}[2]{%
+    \FPeval{\crop}{0.5/#1}
+    \adjincludegraphics[width=\textwidth, trim={\crop\width} {\crop\height} {\crop\width} {\crop\height}, clip]{{{#2}}}
+}
+
+% Todo commands
+\reversemarginpar
+\setlength{\marginparwidth}{3cm}
+\newcommand*{\towrite}[1]{\todo[color=green!50,inline]{Write: #1}}
+\newcommand*{\toedit}[1]{\todo[color=orange]{Edit: #1}}
+\newcommand*{\tofix}[1]{\todo[color=red!50]{Fix: #1}}
+\newcommand*{\tocite}{\todo[color=yellow]{Cite}\xspace}
+\newcommand*{\tocheck}{\todo[color=blue!50]{Check}\xspace}
+\newcommand*{\toref}{\todo[color=orange]{Ref}\xspace}
+
+% Bibliography Settings
+%\DeclareFieldFormat{labelnumberwidth}{#1.~}
+%\DeclareFieldFormat[article]{title}{#1.}
+%\DeclareFieldFormat[article]{journaltitle}{{\em #1}}
+\DeclareFieldFormat{url}{\url{#1}}
+%\DeclareFieldFormat{titlecase}{\MakeSentenceCase{#1}}
+\AtEveryBibitem{\clearlist{language}} % clears language
+\AtEveryBibitem{\clearlist{series}\clearfield{month}\clearfield{note}\clearfield{issue}} % clear series
+\addbibresource{bibliography/crystal.bib}
+\addbibresource{bibliography/images.bib}
+%\let\cite\autocite
+
+\DeclareCiteCommand{\onlinecite}%[\mkbibbrackets]
+    {\usebibmacro{cite:init}%
+    \usebibmacro{prenote}}
+    {\usebibmacro{citeindex}%
+    \usebibmacro{cite:comp}}
+    {}
+    {\usebibmacro{cite:dump}%
+    \usebibmacro{postnote}}
+
+\renewcommand*{\textcite}[1]{%
+    \citeauthor{#1}~\autocite{#1}
+}
+
+% Changing style of footnote
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}

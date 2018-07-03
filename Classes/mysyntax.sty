@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mysyntax}
+
+\RequirePackage{listings}
+\RequirePackage{color}
+
+% Defining colours based on HUSL scheme
+% all colours have same saturation (100) and luminance (30)
+\definecolor{myred}{rgb}{0.37938,0.25242,0.00000}
+\definecolor{myyellow}{rgb}{0.34018,0.26948,0.00000}
+\definecolor{mygreen}{rgb}{0.00000,0.32236,0.16680}
+\definecolor{myblue}{rgb}{0.00000,0.28379,0.50129}
+\definecolor{mypurple}{rgb}{0.47903,0.00000,0.57397}
+\definecolor{mygrey}{rgb}{0.27699,0.27699,0.27699}
+
+\lstset{%
+    backgroundcolor=\color{white},  % Background colour
+    basicstyle=\ttfamily\setstretch{1},            % Standard font settings
+    breaklines=true,                % Automatic line breaking, only at whitespace
+    captionpos=b,                   % Sets caption position to bottom
+    commentstyle=\color{mygrey},    % Set comment colour
+    keywordstyle=[1]\color{mypurple},  % Keyword style
+    keywordstyle=[2]\color{mygreen},  % Keyword style
+    keywordstyle=[3]\color{myblue},  % Keyword style
+    stringstyle=\color{myred}      % String colour
+}
+
+
+\lstdefinelanguage{myc}[]{c++}{
+    keywords=[2]{molecule, vect, particle, frame, dyn_queue},
+    keywords=[3]{atan2, sin, cos, acos, pow, sqrt, }
+}
