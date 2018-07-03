@@ -1,0 +1,8 @@
+name: thesis
+dependencies:
+  - pandoc
+  - pip
+  - pip:
+    - pandoc-eqnos
+    - pandoc-fignos
+    - pandoc-tablenos
