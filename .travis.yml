@@ -27,4 +27,4 @@ deploy:
   file: thesis.pdf
   skip_cleanup: true
   on:
-    tag: True
+    tags: True
