@@ -27,5 +27,4 @@ deploy:
   file: thesis.pdf
   skip_cleanup: true
   on:
-    repo: malramsay64/phd-thesis
     tag: True
