@@ -14,7 +14,7 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-logging.basicConfig(level="DEBUG")
+logging.basicConfig(level="INFO")
 
 
 def get_include_list():
