@@ -39,6 +39,15 @@
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
 
+% Add date (or version) on right of page
+\RequirePackage{fancyhdr}
+\fancypagestyle{headings}{
+  \fancyhead[LE,RO]{\textsl{\rightmark}}
+  \fancyhead[LO,RE]{\textsl{\leftmark}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[LE,RO]{\@date}
+}
+
 \setcounter{tocdepth}{3}
 
 % Defining Molecules
