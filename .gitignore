@@ -6,6 +6,9 @@ output
 # ... except for thesis.tex
 !thesis.tex
 
+# Ignore all html files
+*.html
+
 # Ignore all pdf files
 *.pdf
 # ... except those in the figures directories
