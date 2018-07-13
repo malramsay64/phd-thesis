@@ -7,13 +7,14 @@
 subfiles := $(shell find . -name "*.md" -path "./[0-9][0-9]*")
 subfiles := $(subfiles:.md=.tex)
 
+# The directory which will contain all the temporary output files
 makedir = output
 
 .PHONY: clean clean_subfiles
 
 all: thesis.pdf
 
-thesis.pdf: thesis.tex $(subfiles)
+thesis.pdf: thesis.tex $(subfiles) | $(makedir)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f ${makedir}/$(notdir $(<:.tex=.bcf)) ]; then biber2.5 --input-directory ${makedir} $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
@@ -21,6 +22,9 @@ thesis.pdf: thesis.tex $(subfiles)
 
 %.tex: %.md  # Convert markdown files to latex using pandoc
 	pandoc -t latex $< -o $@ --filter pandoc-eqnos --filter pandoc-fignos --filter pandoc-tablenos
+
+$(makedir):
+	mkdir -p $@
 
 clean: clean_subfiles
 	rm -rf output/*
