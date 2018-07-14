@@ -10,7 +10,7 @@ subfiles := $(subfiles:.md=.tex)
 # The directory which will contain all the temporary output files
 makedir = output
 
-.PHONY: clean clean_subfiles
+.PHONY: all clean clean_subfiles test
 
 all: thesis.pdf
 
@@ -26,12 +26,17 @@ thesis.pdf: thesis.tex $(subfiles) | $(makedir)
 $(makedir):
 	mkdir -p $@
 
+test:
+	mdl .
+
 clean: clean_subfiles
 	rm -rf output/*
-	rm thesis.pdf
+	rm -f thesis.{pdf,bcf,blg}
+	rm -f texput.log
 
-clean_subfiles: $(subfiles)
-	rm -f $<
+clean_subfiles:
+	rm -f $(subfiles)
+	rm -f pandoc.out
 
 # vim:ft=make
 #
