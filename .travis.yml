@@ -4,17 +4,10 @@ cache:
   directories:
     - $HOME/.cache/Tectonic
     - $HOME/miniconda
-    - $HOME/downloads
 
 before_install:
-  - mkdir -p $HOME/downloads
-  - mkdir -p $HOME/bin
-
-  - |
-    if [ ! -f $HOME/downloads/miniconda.sh ]; then
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/downloads/miniconda.sh
-    fi
-  - bash $HOME/downloads/miniconda.sh -b -u -p $HOME/miniconda
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
+  - bash $HOME/miniconda.sh -b -u -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - hash -r
 
@@ -25,7 +18,11 @@ before_install:
   - conda env update
   - source activate thesis
 
+  # Install markdownlint
+  - gem install mdl
+
 script:
+  - mdl .
   - make
 
 deploy:
