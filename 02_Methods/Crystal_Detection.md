@@ -8,11 +8,11 @@ find the energy of each structure. The calculated energies (+@tbl:crystal_energi
 2% of each other, indicating there is no significant driving force for a particular crystal
 structure.
 
- Crystal   Energy   Penalty
---------  -------  --------
-      p2
-      pg
-    p2gg
+Crystal   Energy   Penalty
+-------  -------  --------
+     p2
+     pg
+   p2gg
 
 Table: A Comparison on the energies of the potential crystal structures for the Trimer molecule.
 {#tbl:crystal_energies}
@@ -44,7 +44,6 @@ parallel and antiparallel, so both these orientations need to contribute positiv
 parameter giving an equation of the form
 
 $$ O_n = \langle \text{maths} \rangle+i $$
-
 
 This form of the equation works reasonably well at distinguishing the liquid from the p2 crystal
 phase, using $O_n > 0.85$ as the measure of the p2 crystal. There are still two issues with using
@@ -106,7 +105,7 @@ For any Machine Learning algorithm there are two elements which have the biggest
 overall accuracy of the model; the selection of features, and the dataset to train the model. To
 choose the features for classification I looked for distinguishing features between the crystal
 structures with the most obvious being the orientational arrangement of the nearest neighbours.
-The relative orientation of the nearest neighbours is the feature I used for training. 
+The relative orientation of the nearest neighbours is the feature I used for training.
 
 The labelled dataset for training was constructed from the initial configurations for a
 liquid--crystal interface melting simulation, where the inner 2/3 of each axis is crystalline with
@@ -133,13 +132,6 @@ percentage of correctly clasified environments while the off diagonal elements a
 misclassifications. It is interesting to note that most of the misclassifications are predicting a
 crystalline environment as a liquid.](figures/knn_confusion_matrix.png){#fig:knn_confusion}
 
-
-
 ## Clustering
 
-
-
 ## Melting Rates
-
-
-
