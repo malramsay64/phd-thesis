@@ -21,7 +21,7 @@ thesis.pdf: thesis.tex $(subfiles) | $(makedir)
 	cp $(makedir)/$(notdir $@) .
 
 %.tex: %.md  # Convert markdown files to latex using pandoc
-	pandoc -t latex $< -o $@ --filter pandoc-eqnos --filter pandoc-fignos --filter pandoc-tablenos
+	pandoc -t latex $< -o $@ --biblatex --filter pandoc-eqnos --filter pandoc-fignos --filter pandoc-tablenos
 
 $(makedir):
 	mkdir -p $@

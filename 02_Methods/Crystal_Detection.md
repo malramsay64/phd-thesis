@@ -3,7 +3,7 @@
 During the course of my honours work, I established that the most likely candidates for the crystal
 structure were the p2, p2gg, and pg structures as shown below. The search for structures was first
 performed using hard shapes in an isoconfigurational search algorithm developed by Toby Hudson
-[@THudson]. The resulting crystal structures were then relaxed using the Lennard-Jones potential
+[@Jennings2015]. The resulting crystal structures were then relaxed using the Lennard-Jones potential
 find the energy of each structure. The calculated energies (+@tbl:crystal_energies) are all within
 2% of each other, indicating there is no significant driving force for a particular crystal
 structure.
@@ -97,7 +97,7 @@ growth which has been observed in these crystal structures.
 ## Classification Algorithm
 
 The algorithm I have chosen for the classification is the K-Nearest Neighbours (KNN) as
-implemented in scikit-learn [@scikit-learn] with with `sklearn.neighbors.KNeighborsClassifier`
+implemented in scikit-learn [@Pedregosa2012] with with `sklearn.neighbors.KNeighborsClassifier`
 function. I am using all default values, which means K=5. To perform classification, the KNN
 algorithm finds the K points in the training dataset which are closest to the new value, returning
 the most common class for the new value.
