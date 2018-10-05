@@ -133,7 +133,6 @@ Abstract:
 
     - Approach to clustering
 
-
 ### Results
 
 - Supervised learning trimer
