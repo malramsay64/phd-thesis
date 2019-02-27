@@ -13,3 +13,7 @@ output
 *.pdf
 # ... except those in the figures directories
 !**/figures/*.pdf
+
+# Ignore biblatex files
+*.bbl
+*.blg
