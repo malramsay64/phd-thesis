@@ -1,0 +1,6 @@
+[submodule "Projects/Dynamics"]
+	path = Projects/Dynamics
+	url = https://github.com/malramsay64/Dynamics.git
+[submodule "Projects/Crystal_Melting"]
+	path = Projects/Crystal_Melting
+	url = https://github.com/malramsay64/Crystal_Melting.git
