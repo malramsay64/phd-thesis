@@ -22,7 +22,7 @@ Abstract:
     - Simulation of Rigid molecules
 
         - Force calculation
-        - Integration using COM
+        - Integration using CAM
 
 - Quaternions for Rotations
 
@@ -94,7 +94,39 @@ Abstract:
 
 ### Results
 
-- Characterisation of trimer dynamics using methods
+- Estimation of melting point -> see Crystal Melting chapter
+- MSD vs time figure
+    - describing the ballistic, plateau, and diffusive regimes
+    - the plateau region is characteristic of dynamic heterogeneities, regions where
+      there are some particles that can move and others that can't
+        - The quantity used as a measure of dynamic heterogeneities is $\alpha$.
+    - $\alpha$ describes dynamic heterogeneities of translations, dynamic
+      heterogeneities of rotations.
+    - There are a number ways that this could be presenting
+        1. Dynamic heterogeneities of rotations and translations are completely separate
+        2. Regions of dynamic heterogeneities for both rotations and translations are
+           co-located, i.e. regions of 'fast' dynamics
+        3. The rotations and translations are coupled, with motion of one degree of
+           freedom being a 'requirement' for movement in the other.
+    - Plot of dynamic heterogeneities with rotations
+    - A method of measuring this co-location -> $\gamma$
+        - relationship to $\alpha$
+        - Figure
+        - note that coupling is a stronger requirement of co-location
+    
+    - The approach so far has been to investigate average quantities of the
+      configuration. This is very useful for understanding systems where there is a
+      single timescale, where there are dynamic heterogeneities there are inherently
+      multiple timescales so another approach may be more suitable.
+    - results for single particle relaxation times.
+
+    - do these results match up with results from experiment and the more traditional
+      analysis.
+
+    - having single particle relaxation times allows for the comparison for each
+      particle
+
+- An appropriate timescale for crystallisation
 
 ### Discussion
 
@@ -246,7 +278,7 @@ Abstract:
 - Software packages I have used
 
     - Specific version numbers
-    - links to documentation, package, zenodo/github release, and repository
+    - links to documentation, package, zenodo/GitHub release, and repository
 
 ## Additional Ideas
 
