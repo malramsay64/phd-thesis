@@ -113,7 +113,7 @@ Abstract:
         - relationship to $\alpha$
         - Figure
         - note that coupling is a stronger requirement of co-location
-    
+
     - The approach so far has been to investigate average quantities of the
       configuration. This is very useful for understanding systems where there is a
       single timescale, where there are dynamic heterogeneities there are inherently
