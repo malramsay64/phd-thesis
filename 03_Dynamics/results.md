@@ -67,10 +67,30 @@ deviates from the expected gaussian distribution.
 
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
-Note that time axis is plotted using a logarithmic scale.](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf)
+Note that time axis is plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf)
 
 
 ### Rotational Relaxation
+
+While it is typical to consider translational diffusion constants,
+instead of a rotational diffusion constant $D_r$,
+the quantity typically calculated for rotations
+is a rotational relaxation time $\tau_r$
+where $\tau_r \prop 1/D_r$.
+This is a way of dealing with the periodicity of rotational motion,
+instead of keeping track of every rotation of a molecule,
+the rotational relaxation function $C(t)$ is a measure of
+how orientationally aligned a configuration is to another
+and is given as
+
+<!-- TODO rewrite as quaternions -->
+
+$$ C(t) = \langle \hat\vec e(0) \cdot \hat \vec e(t) \rangle $$
+
+where $\hat \vec e(0)$ and $\hat \vec e(t)$ are the orientations
+The rotational relaxation time is
+
 
 
 
