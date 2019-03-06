@@ -31,6 +31,9 @@ The Stokes-Einstein relation was derived for particles undergoing Brownian motio
 which over long enough timescales because of the collisions with other particles
 will move away from it's initial position at a linear rate with the slope $m$ having the
 relation
+
+<!-- TODO properly write out equation -->
+
 $$ m = 4D. $$
 
 Plotting the Mean Squared displacement (MSD) of the trimer molecule
@@ -70,7 +73,6 @@ over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf)
 
-
 ### Rotational Relaxation
 
 While it is typical to consider translational diffusion constants,
@@ -90,8 +92,9 @@ $$ C(t) = \langle \hat\vec e(0) \cdot \hat \vec e(t) \rangle $$
 
 where $\hat \vec e(0)$ and $\hat \vec e(t)$ are the orientations
 The rotational relaxation time is
-
-
-
+the time taken for the relaxation function to decay to $1/e$.
+When the rotational relaxation function
+is approximated as a exponential decay,
+the relaxation time is the rate of the decay.
 
 ### Shear Viscosity
