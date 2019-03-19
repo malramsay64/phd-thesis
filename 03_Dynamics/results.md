@@ -79,7 +79,7 @@ While it is typical to consider translational diffusion constants,
 instead of a rotational diffusion constant $D_r$,
 the quantity typically calculated for rotations
 is a rotational relaxation time $\tau_r$
-where $\tau_r \prop 1/D_r$.
+where $\tau_r \propto 1/D_r$.
 This is a way of dealing with the periodicity of rotational motion,
 instead of keeping track of every rotation of a molecule,
 the rotational relaxation function $C(t)$ is a measure of
