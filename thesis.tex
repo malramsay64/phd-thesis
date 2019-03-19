@@ -43,14 +43,18 @@
 \afterpreface
 
 \chapter{Methods}
+\begingroup
 \let\clearpage\relax
 \include{Crystal_Detection}
 \include{Molecule_Definition}
+\endgroup
 
 \chapter{Dynamics}
+\begingroup
 \let\clearpage\relax
-\include{methods}
-\include{results}
+\include{03_Dynamics/methods}
+\include{03_Dynamics/results}
+\endgroup
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
