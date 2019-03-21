@@ -97,4 +97,67 @@ When the rotational relaxation function
 is approximated as a exponential decay,
 the relaxation time is the rate of the decay.
 
-### Shear Viscosity
+## Glass formation temperatures
+
+- Kauzmann temperature
+    - Have potential energy of the equilibrium liquid and crystal states
+    - What is the difference?
+    - Can this be used to find an estimate, or bounds on
+        - the glass transition temperature
+        - the Kauzmann temperature
+        - any other properties
+
+## Possible Investigations
+
+- Calculation of alternative structural relaxations
+    - van Hove relaxation -> Histogram over radius and time, for $i \ne j$
+    - How close is $G(r)$ at time $t$ to $G(r)$ at time $0$.
+
+- Fit non-exponential relaxations
+    - Kohlrausch function $\theta(t) = \exp(- (\frac{t}{\tau})^\beta$ where $0 < \beta \le 1$
+    - typically the change in function is a result of multiple processes
+
+- What is the glass transition temperature?
+    - A $T_g$ of 1.2 would indicate glassy dynamics at $T=1.45$.
+    - Is 'supercooled liquid' more about dynamics above a glass transition temperature
+      than below a melting point?
+
+- Length scales
+    - Bimodal distribution -> fast particles vs slow particles
+    - Clustering of fast particles
+    - Clustering with velocity as a defining variable
+    - Using DBSCAN with connectedness
+    - Is it just a time scale???
+    - Estimate number of particles from rate constant -> does this correspond to size?
+
+- Onset of activated process?
+
+- Temperature dependence of properties
+    - Structural relaxation
+    - Rotational Relaxation
+    - Diffusion constant
+
+- Spatial heterogeneities
+    - How long to remove these
+    - Measure of heterogeneous dynamics $\alpha$ follows a single curve
+        - the difference is where the relaxation tips over
+        - What causes the 'master curve'?
+        - What is the cause of the tipping point?
+        - What prevents it from occurring earlier?
+
+- Pressure dependence
+    - [@Ediger1996]
+    - Does the fragility change with compression?
+
+- Measure heat capacity
+    - How to do this?
+
+- Step dynamics / hops
+    - can this be ignored
+    - over what timescales can it be ignored
+    - how many hops for the distribution to be as expected
+
+- Scaling of Viscosity (structural relaxation)
+    - are there any alternative theories / theoretical results that fit
+        - Uniform local volume expansion [@Dyre1996]
+        - $\eta = \eta_0 \left ( \frac{C}{G_\inf(T)} \right )$
