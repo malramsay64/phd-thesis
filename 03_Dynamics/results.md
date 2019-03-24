@@ -25,6 +25,17 @@ $D_r$ is the diffusion constant of the rotational degrees of freedom,
 $\eta$ is the shear viscosity, and
 $T$ is the temperature.
 
+## Structural Relaxation
+
+The structural relaxation is often referred to
+as the timescale of importance within a liquid,
+the intention of the measurement is
+the timescale on which the liquid
+loses any memory of it's previous state.
+This is typically measured using the
+density autocorrelation function.
+The density autocorrelation is a
+
 ### Diffusion
 
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
@@ -160,4 +171,9 @@ the relaxation time is the rate of the decay.
 - Scaling of Viscosity (structural relaxation)
     - are there any alternative theories / theoretical results that fit
         - Uniform local volume expansion [@Dyre1996]
-        - $\eta = \eta_0 \left ( \frac{C}{G_\inf(T)} \right )$
+        - $$\eta = \eta_{0} \left( \frac{C}{G_{\inf} (T)} \right) $$
+
+
+The dynamics studied here are primarily above the melting point,
+however the liquid displays behaviour normally attributed
+to a supercooled liquid while above the melting point.
