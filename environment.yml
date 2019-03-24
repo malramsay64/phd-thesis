@@ -5,8 +5,8 @@ dependencies:
   - wheel
   - setuptools
   - pandoc
-  - conda-forge::tectonic==0.1.10
-  - malramsay::biber==2.11
+  - conda-forge::tectonic==0.1.11
+  - malramsay::biber==2.5
   - pip:
     - pandoc-eqnos
     - pandoc-fignos
