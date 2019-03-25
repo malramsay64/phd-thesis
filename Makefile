@@ -33,7 +33,7 @@ test:
 
 clean: clean_subfiles
 	rm -rf output/*
-	rm -f thesis.{pdf,bcf,blg}
+	rm -f thesis.{pdf,bcf,blg,bbl}
 	rm -f texput.log
 
 clean_subfiles:
