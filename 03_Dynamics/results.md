@@ -77,7 +77,7 @@ This phenomenon has been observed in a wide range of materials
 both simulated and experimental.
 The quantity used to measure this is the non-gaussian parameter $\alpha$,
 which is a measure of how far the distribution of motions
-deviates from the expected gaussian distribution.
+deviates from the expected gaussian distribution [@Donati1999].
 
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
@@ -123,6 +123,11 @@ the relaxation time is the rate of the decay.
 - Calculation of alternative structural relaxations
     - van Hove relaxation -> Histogram over radius and time, for $i \ne j$
     - How close is $G(r)$ at time $t$ to $G(r)$ at time $0$.
+    - Two point time dependent correlation $G(r, t)$
+    - Four point time dependent density correlation $G(r_1, r_2, t)$ [@Daspugata1991]
+    - Assignment matching -> Hungarian Algorithm
+    - The idea of memory and caging?
+        - A distance of 0.4 is greater than would be expected for caging
 
 - Fit non-exponential relaxations
     - Kohlrausch function $\theta(t) = \exp(- (\frac{t}{\tau})^\beta$ where $0 < \beta \le 1$
@@ -140,6 +145,12 @@ the relaxation time is the rate of the decay.
     - Using DBSCAN with connectedness
     - Is it just a time scale???
     - Estimate number of particles from rate constant -> does this correspond to size?
+
+- Spatial correlation
+    - How are the fastest and slowest particles correlated with each other spatially
+    - Does this change as a function of temperature?
+    - Does this change as we increase/decrease the timescale?
+    - Ref [@Kob1997, @Donati1999]
 
 - Onset of activated process?
 
@@ -172,7 +183,6 @@ the relaxation time is the rate of the decay.
     - are there any alternative theories / theoretical results that fit
         - Uniform local volume expansion [@Dyre1996]
         - $$\eta = \eta_{0} \left( \frac{C}{G_{\inf} (T)} \right) $$
-
 
 The dynamics studied here are primarily above the melting point,
 however the liquid displays behaviour normally attributed
