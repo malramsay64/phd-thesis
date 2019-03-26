@@ -172,6 +172,61 @@ then is suddenly a vector $\mathbf{q}$,
 what's up with this?
 Also I now need to work out finding the value at the first Bragg peak.
 
+- [@Rapaport2004]
+Gives code and equations for van Hove and Shear Viscosity.
+There is no mention of structural relaxation
+
+#### Rotational Relaxation
+
+- [@Dote1981]
+    - in a typical NMR experiment a single particle correlation time $\tau_2$ is
+      determined, $\tau_2$ being given as
+      $$\tau_2 = \int_0^\inf \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}
+      {\langle | P_2(\cos \theta_0) |^2 \rangle}$$
+      where $P_2$ is a second-rank Legendre polynomial, $\theta$ is the time-dependent
+      angle of orientation of a given molecular and the angula brackets indicate an
+      equilibrium ensemble average.
+There is nothing here that really specifies a method for computing the rotational
+relaxation for a simulation.
+
+- [@Chen2017]
+    - In the isotropic approximation, rotational diffusion is a function of the total
+      rotational angle $\theta_q$ alone, without regard to coordinate fame or notation
+      direction. According to rigid-body Brownian dynamics, the probability distribution
+      of finding rotation of magnitude $\theta_q$ after time $\Delta t$ is
+      $$ P_{rand}(\theta_q) = \frac{2}{\pi} \sin^2(\frac{\theta_q}{2}) $$
+    - $D_{iso}$ is the isotropic diffusion constant
+
+- [@Shinoda2003]
+    - The rotational relaxation time of the water dipole axis, $\tau$, was investigated
+      to check the quality of MD calculations. The relaxation time was estimated by
+      using the rotational correlation function, defined as
+      $$ C(t) = P_1(t) = \langle \cos \theta(t) \rangle = \langle \vect{d_i} (t) \cdot
+      \vect{d_i}(0) \rangle $$
+      where $\vect{d}_i(t)$ is the dipole axis of the $i$th water molecule at time $t$
+This defines a dipole relaxation,
+which only includes one set of rotational reorientations,
+the other axes are ignored in this analysis.
+
+- [@Brodka1992]
+    - We calculated the rotational relaxation function $G_{20}(t)$, defined as
+      $$ G_{20}(t) = \langle P_2(\vect u_i(t) \cdot \vect u_i(0)) \rangle $$
+      where $\vect u_i$ is the unit vector parallel to the $C_3$ axis and $P_2$ is the
+      Legendre polynomial
+    - The angular velocity correlation functions were studied separately for the
+      spinning and tumbling motions
+      $$ G_\omega^x(t) = \frac{\langle \omega^x_i(t) \cdot \omega^x_i(o) \rangle}
+      {\langle \omega^x_i(0) \cdot \omega^x_i(0) \rangle} $$
+In this paper Brodka has uses the 2nd Legendre polynomial
+for the rotational relaxation.
+It is also interesting to note that they acknowledge that
+the rotational relaxation function they are calculating
+only takes into account one of the possible rotations,
+and they have a different rotational relaxation function
+for the other relaxations.
+These other correlations are the same as the velocity autocorrelation functions.
+
+
 Viscosity???
 
 - Brownian Dynamics
