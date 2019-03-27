@@ -7,6 +7,7 @@ dependencies:
   - pandoc
   - conda-forge::tectonic==0.1.11
   - malramsay::biber==2.5
+  - pre_commit
   - pip:
     - pandoc-eqnos
     - pandoc-fignos

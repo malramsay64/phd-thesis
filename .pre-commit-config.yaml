@@ -1,0 +1,4 @@
+-   repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: master
+    hooks:
+    -   id: markdownlint
