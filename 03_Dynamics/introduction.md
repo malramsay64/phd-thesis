@@ -2,6 +2,14 @@
 
 ## Glasses and Supercooled liquids
 
+- Brownian Dynamics
+    - Foundation of most of theory on glass formers
+    - Assumes a type of motion
+
+- Langevin Dynamics
+    - Takes into account momentum
+    - generates same results for statistical properties
+
 - Creating a glass
     - avoidance of critical point
         - Cooling fast enough to prevent nucleation
@@ -15,6 +23,15 @@
     - How do we define equilibrium of a metastable state?
     - Liquid below melting point with no crystals
     - Nucleation of crystals is a slow process, can ignore
+
+- Fragility of glass formers
+    - Faster than expected change upon cooling
+
+- Vogel--Tammann--Fulcher
+    - temperature dependence of relaxation times
+    - provides a measure of how far from Arrhenius
+    - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
+    - $\eta = A \exp(\frac{B}{T-T_0})$
 
 ### Characteristic Temperatures
 
@@ -46,6 +63,12 @@
 #### Structural Relaxation
 
 Structural relaxation is a complete mess in the literature
+
+- What is structural relaxation
+    - The process by which a liquid forgets it's previous structure
+    - Density autocorrelation function
+    - Intermediate scattering function
+        - measured by neutron spin echo
 
 - [@Ediger1996]
     - By "structural relaxation" we mean the process by which a liquid forgets its
@@ -173,6 +196,7 @@ what's up with this?
 Also I now need to work out finding the value at the first Bragg peak.
 
 - [@Rapaport2004]
+
 Gives code and equations for van Hove and Shear Viscosity.
 There is no mention of structural relaxation
 
@@ -271,6 +295,7 @@ These other correlations are the same as the velocity autocorrelation functions.
 Comparison of the second order Legendre polynomial with experimental results
 
 - [@Zasetskty2010]
+
 Uses the first, second and third order Legendre autocorrelation functions in a simulation study.
 
 - [@Jas2000]
@@ -282,34 +307,24 @@ rotational diffusion constant.
 Rotational diffusion is calculated using the first order Legendre polynomial
 Demonstrates how to combine the multiple relaxation functions for each axis
 
-
-Viscosity???
-
-- Brownian Dynamics
-    - Foundation of most of theory on glass formers
-    - Assumes a type of motion
-
-- Langevin Dynamics
-    - Takes into account momentum
-    - generates same results for statistical properties
+- [@Kim2015]
+    - There are two formalisms in order to estimate $D_R$: Einstein and Debye
+      formalisms. In the Einstein formalism, we calculate the mean square angular
+      displacement
+      $\langle [\Delta\phi(t)]^2\rangle = \langle|\phi(t) - \phi(0)|^2\rangle$
+      where $\phi(t) is the unbounded angle of the vector $\vect u (t)$ of a tracer at
+      time $t$. ... And $D_R$ is obtained by using the relation
+      $D_R = \lim_{t->\inf}\langle [\Delta \phi(t)]^2 \rangle / 2t$.
+      On the other hand, in the Debye formalism, the rotational correlation function
+      $U_l(t)$ if tracers is considered, i.e.,
+      $U_l(t) = \langle \exp [il\Delta\phi(t)]\rangle$,
+      where $l$ is the order of the rotational correlation function.
+In this paper there is a fair amount of space dedicated to
+the comparison between the Debye formalism and the Einstein formalism,
+with both giving the same results.
 
 - What is viscosity?
     - How can we measure it in simulations?
-
-- What is structural relaxation
-    - The process by which a liquid forgets it's previous structure
-    - Density autocorrelation function
-    - Intermediate scattering function
-        - measured by neutron spin echo
-
-- Fragility of glass formers
-    - Faster than expected change upon cooling
-
-- Vogel--Tammann--Fulcher
-    - temperature dependence of relaxation times
-    - provides a measure of how far from Arrhenius
-    - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
-    - $\eta = A \exp(\frac{B}{T-T_0})$
 
 - Understanding Dynamics
     - $\alpha$ and $\beta$ relaxations
