@@ -178,6 +178,36 @@ There is no mention of structural relaxation
 
 #### Rotational Relaxation
 
+In experimental systems,
+the rotational relaxation is typically measured
+as the relaxation of a dipole moment[@???].
+The relaxation of a dipole $C_l$,
+where the orientation of the dipole is represented by the vector $\vect u$
+can be represented as
+$$ C_{l} = \langle P_l($\vect u_i(t) \cdot \vect u_i(o)) \rangle_i $$
+Here $P_l$ is the Legendre polynomial of degree $l$,
+and the angle brackets denote an average over
+all molecules and starting configurations[@????].
+To match simulation results with NMR and fluorescence experiments
+the 2nd degree Legendre polynomial is calculated,
+giving the equation
+$$ C_2(t) = \frac{1}{2} \langle 3(\vect n(0) \cdot \vect n(t))^2 -1 \rangle. $$
+It should be noted that this dipole relaxation
+only captures at most two dimensions of the rotational relaxation,
+a rotation about the axis of the dipole is not captured by this relation at all.
+There are a number of different approaches which have been used,
+Brodka et. al. [@Brodka1992] define the rotational relaxation
+of the spectroscopically available rotation with the $C_2$ method
+whilst other rotational degrees of freedom
+were studied using an angular velocity autocorrelation function.
+Alternatively Jas et. al. [@Jas2000] combine the rotational relaxations
+for vectors along the $x, y,$ and $z$ axes into a single
+complete rotational relaxation.
+An approach which is only concerned with isotropic rotational motion
+could also take the approach of Chen et. al [@Chen2017]
+and represent molecular rotation using quaternions[@Furry1957,???],
+which capture all rotational information.
+
 - [@Dote1981]
     - in a typical NMR experiment a single particle correlation time $\tau_2$ is
       determined, $\tau_2$ being given as
@@ -196,6 +226,15 @@ relaxation for a simulation.
       of finding rotation of magnitude $\theta_q$ after time $\Delta t$ is
       $$ P_{rand}(\theta_q) = \frac{2}{\pi} \sin^2(\frac{\theta_q}{2}) $$
     - $D_{iso}$ is the isotropic diffusion constant
+    - It is worth noting that the $l=2$ solution is used when applying the {\em unit-vector}
+      method above to NMR and fluorescence, so as to describe the underlying physical
+      process (i.e., $\tau_{iso,NMR} = (6D_{iso})^{-1}$). Since this work directly
+      retrieves dynamics information from simulation trajectories, we adopt the simpler
+      $l=1$ solution where $\tau_{iso} = (2D_{iso})^{-1}$, and anisotropic diffusion is
+      described by only three time-constants instead of five.
+The isotropic rotations are those that are independent of direction,
+unlike the dipole interaction which is only taking into account a single type of
+rotation.
 
 - [@Shinoda2003]
     - The rotational relaxation time of the water dipole axis, $\tau$, was investigated
@@ -217,6 +256,10 @@ the other axes are ignored in this analysis.
       spinning and tumbling motions
       $$ G_\omega^x(t) = \frac{\langle \omega^x_i(t) \cdot \omega^x_i(o) \rangle}
       {\langle \omega^x_i(0) \cdot \omega^x_i(0) \rangle} $$
+    - The anisotropy of rotational motion is clearly visible in Fig. 7. Rotational
+      freedom of the spinning motion in the bulk liquid decreases with diminishing
+      temperature and the density jump at the transition point induces additional
+      restrictions to this motion in the plastic phase.
 In this paper Brodka has uses the 2nd Legendre polynomial
 for the rotational relaxation.
 It is also interesting to note that they acknowledge that
@@ -225,6 +268,19 @@ only takes into account one of the possible rotations,
 and they have a different rotational relaxation function
 for the other relaxations.
 These other correlations are the same as the velocity autocorrelation functions.
+Comparison of the second order Legendre polynomial with experimental results
+
+- [@Zasetskty2010]
+Uses the first, second and third order Legendre autocorrelation functions in a simulation study.
+
+- [@Jas2000]
+    - Experimental methods for studying rotational diffusion measure quantities
+      relaxed to the correlation function
+      $$ C_2(t) = \langle 3(\vect n(0) \cdot \vect n(t))^2 -1 \rangle/2 $$
+Calculates the diffusion constant for each molecular axis, combining them for a total
+rotational diffusion constant.
+Rotational diffusion is calculated using the first order Legendre polynomial
+Demonstrates how to combine the multiple relaxation functions for each axis
 
 
 Viscosity???
