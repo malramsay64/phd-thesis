@@ -138,6 +138,10 @@ the relaxation time is the rate of the decay.
     - Is 'supercooled liquid' more about dynamics above a glass transition temperature
       than below a melting point?
 
+- Rotational diffusion constant
+    - This is the MSR of the rotations
+    - Plotting this value could be rather interesting
+
 - Length scales
     - Bimodal distribution -> fast particles vs slow particles
     - Clustering of fast particles
@@ -153,6 +157,12 @@ the relaxation time is the rate of the decay.
     - Ref [@Kob1997, @Donati1999]
 
 - Onset of activated process?
+
+- Velocity autocorrelation
+    - $$ G_v(t) = \frac{\langle \vect v_i(t) \cdot \vect v_i(o) \rangle}
+      {\langle \vect v_i(0) \cdot \vect v_i(0) \rangle} $$
+        [@Brodka1992]
+    - This relates to the choice of the imaginary mass for the thermodynamic properties.
 
 - Temperature dependence of properties
     - Structural relaxation
