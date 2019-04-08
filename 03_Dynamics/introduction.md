@@ -5,6 +5,7 @@
 - Brownian Dynamics
     - Foundation of most of theory on glass formers
     - Assumes a type of motion
+    - Stokes-Einstein-Debye
 
 - Langevin Dynamics
     - Takes into account momentum
@@ -60,7 +61,22 @@
 
 ### Dynamics of Supercooled Liquids and Glasses
 
+The theory of the behaviour of liquids
+is primarily based on
+the Stokes-Einstein-Debye relations,
+which are derived from the equations for brownian motion.
+
+- What is viscosity?
+    - How can we measure it in simulations?
+
 #### Structural Relaxation
+
+- [@Angell1985]
+    - It is still a phenomenon which occurs within subsystem sizes of only tens of
+      $\angstrom$ in diameter.
+    - structural relaxation is represented by the shear viscosity
+
+A key concept of structural relaxation
 
 Structural relaxation is a complete mess in the literature
 
@@ -200,6 +216,11 @@ Also I now need to work out finding the value at the first Bragg peak.
 Gives code and equations for van Hove and Shear Viscosity.
 There is no mention of structural relaxation
 
+- [@Tong2018]
+    - To monitor the structure relaxation, we use $w_i(t)=1$ if $|r_i(t) - r_i(0)|<b$,
+      and zero otherwise, and set $b=0.15$.
+Here there is no mention of why this value of $b$ was chosen.
+
 #### Rotational Relaxation
 
 In experimental systems,
@@ -231,83 +252,18 @@ An approach which is only concerned with isotropic rotational motion
 could also take the approach of Chen et. al [@Chen2017]
 and represent molecular rotation using quaternions[@Furry1957,???],
 which capture all rotational information.
+It should be noted that
+the quaternion representation can also be decomposed
+into the component rotational relaxations,
+just as the vectors for each axis
+can be combined into an isotropic relaxation.
+The advantage with using the quaternion approach
+is that quaternions are the most sensible approach
+for computationally representing rotations in three dimensions[@Huynh2009]
+and is commonly used in molecular dynamics simulations
+[@Ciccotti1986,@Omelyan1998,@Rog2003,@Anderson1983,@Refson2000,@Nose1983,@Evans1977,@Rapaport1985].
 
-- [@Dote1981]
-    - in a typical NMR experiment a single particle correlation time $\tau_2$ is
-      determined, $\tau_2$ being given as
-      $$\tau_2 = \int_0^\inf \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}
-      {\langle | P_2(\cos \theta_0) |^2 \rangle}$$
-      where $P_2$ is a second-rank Legendre polynomial, $\theta$ is the time-dependent
-      angle of orientation of a given molecular and the angula brackets indicate an
-      equilibrium ensemble average.
-There is nothing here that really specifies a method for computing the rotational
-relaxation for a simulation.
-
-- [@Chen2017]
-    - In the isotropic approximation, rotational diffusion is a function of the total
-      rotational angle $\theta_q$ alone, without regard to coordinate fame or notation
-      direction. According to rigid-body Brownian dynamics, the probability distribution
-      of finding rotation of magnitude $\theta_q$ after time $\Delta t$ is
-      $$ P_{rand}(\theta_q) = \frac{2}{\pi} \sin^2(\frac{\theta_q}{2}) $$
-    - $D_{iso}$ is the isotropic diffusion constant
-    - It is worth noting that the $l=2$ solution is used when applying the {\em unit-vector}
-      method above to NMR and fluorescence, so as to describe the underlying physical
-      process (i.e., $\tau_{iso,NMR} = (6D_{iso})^{-1}$). Since this work directly
-      retrieves dynamics information from simulation trajectories, we adopt the simpler
-      $l=1$ solution where $\tau_{iso} = (2D_{iso})^{-1}$, and anisotropic diffusion is
-      described by only three time-constants instead of five.
-The isotropic rotations are those that are independent of direction,
-unlike the dipole interaction which is only taking into account a single type of
-rotation.
-
-- [@Shinoda2003]
-    - The rotational relaxation time of the water dipole axis, $\tau$, was investigated
-      to check the quality of MD calculations. The relaxation time was estimated by
-      using the rotational correlation function, defined as
-      $$ C(t) = P_1(t) = \langle \cos \theta(t) \rangle = \langle \vect{d_i} (t) \cdot
-      \vect{d_i}(0) \rangle $$
-      where $\vect{d}_i(t)$ is the dipole axis of the $i$th water molecule at time $t$
-This defines a dipole relaxation,
-which only includes one set of rotational reorientations,
-the other axes are ignored in this analysis.
-
-- [@Brodka1992]
-    - We calculated the rotational relaxation function $G_{20}(t)$, defined as
-      $$ G_{20}(t) = \langle P_2(\vect u_i(t) \cdot \vect u_i(0)) \rangle $$
-      where $\vect u_i$ is the unit vector parallel to the $C_3$ axis and $P_2$ is the
-      Legendre polynomial
-    - The angular velocity correlation functions were studied separately for the
-      spinning and tumbling motions
-      $$ G_\omega^x(t) = \frac{\langle \omega^x_i(t) \cdot \omega^x_i(o) \rangle}
-      {\langle \omega^x_i(0) \cdot \omega^x_i(0) \rangle} $$
-    - The anisotropy of rotational motion is clearly visible in Fig. 7. Rotational
-      freedom of the spinning motion in the bulk liquid decreases with diminishing
-      temperature and the density jump at the transition point induces additional
-      restrictions to this motion in the plastic phase.
-In this paper Brodka has uses the 2nd Legendre polynomial
-for the rotational relaxation.
-It is also interesting to note that they acknowledge that
-the rotational relaxation function they are calculating
-only takes into account one of the possible rotations,
-and they have a different rotational relaxation function
-for the other relaxations.
-These other correlations are the same as the velocity autocorrelation functions.
-Comparison of the second order Legendre polynomial with experimental results
-
-- [@Zasetskty2010]
-
-Uses the first, second and third order Legendre autocorrelation functions in a simulation study.
-
-- [@Jas2000]
-    - Experimental methods for studying rotational diffusion measure quantities
-      relaxed to the correlation function
-      $$ C_2(t) = \langle 3(\vect n(0) \cdot \vect n(t))^2 -1 \rangle/2 $$
-Calculates the diffusion constant for each molecular axis, combining them for a total
-rotational diffusion constant.
-Rotational diffusion is calculated using the first order Legendre polynomial
-Demonstrates how to combine the multiple relaxation functions for each axis
-
-- [@Kim2015]
+- Debye vs Einstein Dynamics
     - There are two formalisms in order to estimate $D_R$: Einstein and Debye
       formalisms. In the Einstein formalism, we calculate the mean square angular
       displacement
@@ -319,12 +275,44 @@ Demonstrates how to combine the multiple relaxation functions for each axis
       $U_l(t)$ if tracers is considered, i.e.,
       $U_l(t) = \langle \exp [il\Delta\phi(t)]\rangle$,
       where $l$ is the order of the rotational correlation function.
-In this paper there is a fair amount of space dedicated to
-the comparison between the Debye formalism and the Einstein formalism,
-with both giving the same results.
 
-- What is viscosity?
-    - How can we measure it in simulations?
+#### Methods of rotational relaxations
+
+The Debye model predicts an exponential decay of the $l$th rank
+single-particle orientation time correlation function $C_l^s$,
+$$ C_l^s = \exp \frac{-t}{\tau_l} $$
+which gives the corresponding relaxation time
+$$ \tau_l = \frac{1}{l(l+1)D_r}, $$
+where $D_r$ is the rotational diffusion coefficient.
+Comparing this relationship for
+the first and second-order relaxation functions
+$$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
+Where molecules rotate inertially, that is,
+they carry out rotations over reasonably large angular displacements
+before being interrupted by a collision,
+resulting in non-exponential decay, where
+$$ 1 < \tau_1/\tau_2 < 3.$$
+
+The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
+that is, assuming the rotations take place through a process of small random steps.
+Where there are a
+
+- [@Kivelson1988]
+    - In many cases, the nature of the relaxation process, together with the coarseness
+      of the observations, have allowed
+      $$\langle Y_{lm}(t)Y_{lm}(0)*\rangle$$
+      to be represented as a single exponential, in which case $\tau_l$ is its decay
+      time. Under the assumption that a rotating molecule can ber represented as a
+      brownian particle of volume $v$ in a homogenous, continuous hydrodynamic flud,
+      the correlation time $\tau_l$ can be expressed as
+      $$ \tau_l = \frac{v\rho}{k_BTl(l+1)}8\pi C$$
+      where $k_B$ is the Boltzmann constant and $C$ is a paramter...
+For diffusional motion we expect that $\tau_1/\tau_2 = 3$
+For internally rotating molecules,
+we expect $1 < \tau_1/\tau_2 < 3$
+For supercooled liquids, we get behaviour which is non-diffusive,
+that is $\tau_1/\tau_2 < 3$,
+which suggests that the relaxation takes place by means of large angular jumps.
 
 - Understanding Dynamics
     - $\alpha$ and $\beta$ relaxations

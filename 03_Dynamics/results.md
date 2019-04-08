@@ -177,6 +177,15 @@ the relaxation time is the rate of the decay.
         - What is the cause of the tipping point?
         - What prevents it from occurring earlier?
 
+- Over the timescale of heterogeneities there is a direction to the motion
+    - See the papers on following tubes, 1D dynamics
+    - Can rotations do the same thing
+        - no longer getting motion which is random because of collective dynamics
+
+- Brownian dynamics breaks down because there is collective motion
+    - length scale of collective motion?
+    - why haven't we observed it?
+
 - Pressure dependence
     - [@Ediger1996]
     - Does the fragility change with compression?
