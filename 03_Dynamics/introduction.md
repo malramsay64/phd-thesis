@@ -64,162 +64,117 @@
 The theory of the behaviour of liquids
 is primarily based on
 the Stokes-Einstein-Debye relations,
-which are derived from the equations for brownian motion.
+which are derived from the equations for Brownian motion.
 
 - What is viscosity?
     - How can we measure it in simulations?
 
 #### Structural Relaxation
 
-- [@Angell1985]
-    - It is still a phenomenon which occurs within subsystem sizes of only tens of
-      $\angstrom$ in diameter.
-    - structural relaxation is represented by the shear viscosity
+Structural relaxation is the most fundamental relaxation process [@Angell2000]
+being the process by which a liquid forgets it's structure
+from some earlier time [@Ediger1996].
+The process of structural relaxation occurs over distances
+comparable to the size of the particles which
+comprise the liquid [@Angell1985].
+These small distances over which the structural relaxation take place
+are comparable to the relaxations that take place
+when the liquid is under a shear stress.
+The motion of the liquid under a shear stress,
+otherwise known as shear viscosity and denoted by $\eta$,
+has been shown to have the same temperature scaling
+as the structural relaxation time
+in both experimental [@Ediger2012] and computational [@Perera1999] systems.
 
-A key concept of structural relaxation
+This relationship between the shear viscosity and the structural relaxation
+allows us to rewrite the Stokes-Einstein-Debye relations as
 
-Structural relaxation is a complete mess in the literature
+$$ D \propto \frac{1}{\tau_s} \text{and} \tau_r \propto \tau_s $$
 
-- What is structural relaxation
-    - The process by which a liquid forgets it's previous structure
-    - Density autocorrelation function
-    - Intermediate scattering function
-        - measured by neutron spin echo
+where we are using the structural relaxation time
+as the fundamental relaxation time,
+providing a link between
+the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
 
-- [@Ediger1996]
-    - By "structural relaxation" we mean the process by which a liquid forgets its
-      structure from some earlier time, e.g., the decay of the density autocorrelation
-      function.
-    - Some relaxation times associated with structure may be considerably longer than
-      the timescale for molecular rotation near $T_g$. This implies that structural
-      relaxation has a stronger temperature dependence than molecular rotation or
-      viscosity.
-In the review by Ediger the concepts of
-structural relaxation and viscosity
-are definitely separate.
+#### Measuring structural relaxation
 
-- [@Glotzer2000]
-    - the self van Hove correlation function, $G_s(r,t)$, becomes non-Gaussian for times
-      in the caging (or plateau) regime,
-    - Experimentally, the breakdown of the SED relation, or decoupling of diffusion and
-      structural relaxation
-    - domains of fast particles should dominate diffusion, while domains of slow
-      particles should dominate structural relaxation or viscosity.
-This review article by Glotzer is a little confusing,
-in one place the breakdown of Stokes-Einstein-Debye relations
-means the decoupling of diffusion and structural relaxation,
-although the SED relations describe viscosity.
-So is viscosity and structural relaxation equivalent?
-Then later in the article,
-structural relaxation and viscosity are described separately,
-although both having similar behaviour.
-Additionally it is somewhat implied,
-although not strictly stated that the van Hove correlation function
-is a measure of structural relaxation.
+In practical experiments on liquid dynamics,
+the structural relaxation is measured using
+x-ray or neutron scattering,
+finding the intermediate scattering function $F(k, t)$
+a measure of how close a configuration is
+to a reference configuration at an earlier point in time.
+The intermediate scattering function is measuring
+the local density fluctuations[@Angell2000] through a density-density autocorrelation.
+Although the density-density autocorrelation is one method of calculating
+structural relaxation for computational experiments,
+a more common approach is to use
+the intermediate scattering function $F(k, t)$ represented as;
 
-- [@Debnedetti2001]
-    - In supercooled liquids below approximately $1.2 T_g$ there occurs a decoupling
-      between translations diffusion and viscosity, and between rotational and
-      translational diffusion.
-    - The self-intermediate scattering function is the space Fourier transform of the
-      van Hove function $G_s(r, t)$ which is proportional to the probability of
-      observing a particle at $r \pm \Delta r$ at time $t$ given that the same particle
-      was at the origin at $t=0$
-Here Debnedetti doesn't really mention structural relaxation at all,
-everything is about the relationships between viscosity and other properties.
-As for the calculation of the structural relaxation function, there is a good
-explanation of the van Hove function,
-however the only mention of how to actually calculate
-what is shown to be something like a structural relaxation function
-has no useful information.
+$$ F(\mathbf{k}, t) = \frac{1}{N}\langle \sum_j^N \exp{
+    i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
+} \rangle $$
 
-- [@Kob1995]
-    - Most of the results in this paper deal with the van Hove correlation functions
-      (self and distinct part)
-    - Equation 7 is wrong, probably $N_\alpha + N_\alpha$, however it is hard to check
-      since "we define $G_d^{\alpha\alpha}(r, t)$ in a slightly different way than it is
-      usually done in the literature
-    - the value of the MSD in the vicinity of the plateau region is about 0.04, thus
-      corresponding to a distance of 0.2. ... distance that is significantly shorter
-      than the next nearest neighbour distance ... Thus it is still trapped in the cage
-      of particles that surrounded it.
-Here it appears as though Kob is using the van Hove correlation functions,
-although is modifying the functions to get nicer behaviour on long times.
-An issue with this is that there appears to be a typo in the equation,
-or else there is some really inconsistent notation which is even more confusing.
-Additionally here the relaxations which are referred to
-are those of the intermediate scattering function.
+where the angle brackets denote averaging over multiple initial configurations
+$N$ is the total number of particles,
+$i = \sqrt{-1}$, and $\mathbf{k}$ is the wave vector.
 
-- [@Angell2000]
-    - breakdowns in the Stokes--Einstein relations between diffusion and viscosity, and
-      the Debye--Einstein relation between reorientation time and viscosity
-    - $R_\tau(=\tau_s/\tau_\sigma)$ ratios the average relaxation time for structural
-      relaxation, bulk viscous relaxation time $\tau_s$, and the average relaxation time
-      for conductivity relaxation $\tau_\sigma$
-    - of the most fundamental relaxation process, the structural relaxation. This is
-      represented by the intermediate scattering function $F (k,t)$ which monitors the
-      decay of density fluctuations.
-So this is really confusing, structural relaxation is really important but I'm not going
-to provide an equation.
+Since the intermediate scattering function
+is a measure of the scattering from a radiation source,
+and we have an isotropic liquid,
+where all orientations are equivalent,
+by rotating the incident radiation,
+that is choosing a range of values for the wave-vector
+around the unit circle,
+we can get a much better representation
+of the relaxation of the liquid.
+This transformation gives $\mathbf{k}$ the form;
 
-- [@Donati1999]
-    - For example, many liquids cooled below their melting temperature exhibit rapid
-      non-Arrhenius increases of viscosity and relaxation times with decreasing
-      temperature, and two-step, stretched exponential decay of the intermediate
-      scattering function $F(\mathbf(q), t)$.
-    - We have studies deviations from the Gaussian form of the self-part of the van Hove
-      correlation function $G_s(r, t)$.
-Here both the self intermediate scattering function
-and the van Hove correlations are used.
-Also no equation for the scattering function,
-although there is one for the non-Gaussian parameter.
+$$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M [
+    \cos\left(a\frac{2\pi}{M}\right), \sin\left(a\frac{2\pi}{M}\right)
+] $$
 
-- [@Ediger2012]
-    - Fig. 1: Viscosity as a function of inverse temperature for SiO2 and o-terphenyl
-      because the structural relaxation time $\tau_\alpha$ has nearly the same
-      temperature dependence as viscosity, a single curve reasonably represents both
-      functions.
-This combines the two ideas of structural relaxation and velocity
-in two experimental systems by noticing that the curves overlap.
-This doesn't really demonstrate a good reason for
-both ideas being the same,
-replacing structural relaxation with viscosity for the breakdown SED.
-Additionally there is absolutely no mention of
-a measure of structural relaxation.
+Where the sum is over $N$ values of
+the angle $\theta_i$ which ranges in value from $0$ to $2\pi$ [@Widmer-Cooper2019]
 
-- [@Levesque1970]
-    - The self correlation function is given by
-        $$G_s (r, t) = \frac{1}{4\pi r^2 \Delta r} \langle N(r_i(t) - r_i(0) - r) \rangle$$
-      where $N(X - r)$ is equal to 1 where the distance $X$ lies between $r$ and $\Delta r$
-      and zero otherwise.
-This provides us with a formula for the van Hove self correlation function,
-which nicely doesn't try and pretend we can deal with
-infinitesimally small numbers in a computer simulation.
-However it doesn't actually use this function for any computations.
+<!--
+Yes I am definitely citing an email since it is the only resource I have found which
+describes this to any extent, and I definitely want to highlight the absurdity of
+that.
+-->
 
-- [@Widmer-Cooper2008]
-    - The structural or 'alpha' relaxation time $\tau_\alpha$ is defined as the time
-      required for the self intermediate scattering function $F_s(q, t)$,
-      $$ F_s(q, t) = \frac{1}{N}\langle \exp{i\mathbf{q} \cdot [\mathbf{r}_j(0) -
-      \mathbf{r}_j(t)} \rangle $$
-      to decay to a value $1/e$. The magnitude of the wavevector $q$ is set equal to the
-      value at the first Bragg peak.
-Here structural relaxation is the decay of the self-intermediate scattering function,
-however what is going on with $q$?
-$q$ is passed to the function as a scalar quantity,
-then is suddenly a vector $\mathbf{q}$,
-what's up with this?
-Also I now need to work out finding the value at the first Bragg peak.
+The intermediate scattering function
+is the spatial transform of the van-Hove relaxation function $G(r, t)$,
+given by
 
-- [@Rapaport2004]
+$$G(r, t) = \frac{1}{4\pi r^2 \Delta r} \langle \delta[r_i(t) - r_i(0) - r] \rangle$$
 
-Gives code and equations for van Hove and Shear Viscosity.
-There is no mention of structural relaxation
+which has also been used for computing structural relaxation
+[@Glotzer2000,@Debnedetti2001,@Levesque1970,@Kob1995].
 
-- [@Tong2018]
-    - To monitor the structure relaxation, we use $w_i(t)=1$ if $|r_i(t) - r_i(0)|<b$,
-      and zero otherwise, and set $b=0.15$.
-Here there is no mention of why this value of $b$ was chosen.
+More recently, there has been an effort
+to link structure with dynamics on a local level,
+which has required a measure of structural relaxation
+which makes the contribution of each particle explicit
+rather than just the entire system as a whole.
+Widmer-Cooper and Harrowell [@Widmer-Cooper2009] defined
+a structural relaxation $F_d(t)$ where
+
+$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$
+
+where $w_i(d, t) = 1$ if the particle is within distance $d$
+of it's initial position at time $t$,
+and zero otherwise.
+The angle brackets denote an average over initial times.
+The value of $d$ was chosen to be
+
+$$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
+
+where $k_{\text{bragg}}$ is the wave-vector of
+the maximum peak of the static structure factor $S(k)$.
+This matches with the calculation of the intermediate scattering function
+which will follow the same wave-vector $\k_{\text{bragg}}$
+as it will display the largest change over time.
 
 #### Rotational Relaxation
 
