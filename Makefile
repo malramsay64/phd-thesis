@@ -16,10 +16,10 @@ makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
 all: thesis.pdf
 
-thesis.pdf: thesis.tex $(subfiles) | $(makedir) $(makesubdirs)
-	tectonic -o $(makedir) -w "https://tectonic.newton.cx/bundles/tlextras-2016.0r4/bundle.tar" --keep-intermediates -r0 $<
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib | $(makedir) $(makesubdirs)
+	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
-	tectonic -o $(makedir) -w "https://tectonic.newton.cx/bundles/tlextras-2016.0r4/bundle.tar" --keep-intermediates $<
+	tectonic -o $(makedir) --keep-intermediates $<
 	cp $(makedir)/$(notdir $@) .
 
 %.tex: %.md  # Convert markdown files to latex using pandoc
