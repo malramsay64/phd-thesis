@@ -1,5 +1,5 @@
 % The thesis document style for Chemistry at the University of Sydney.
-% Borrowed heavily from suthesis-2e.sty written by Joseph Pallas, 
+% Borrowed heavily from suthesis-2e.sty written by Joseph Pallas,
 % maintained by Emma Pease:
 % https://web.stanford.edu/dept/sul2/etdhelpupload/0/06/Suthesis-2e.sty
 % and usydthesis.cls by Andrew Mathas
@@ -27,8 +27,6 @@ with the `report' document style}{}}{}
 \usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\RequirePackage{todonotes}
-%\RequirePackage{appendix}
 
 %%%%%
 %%%%%   SETUP DOUBLESPACING
@@ -40,7 +38,7 @@ with the `report' document style}{}}{}
 
 
 % Use 1.7 times the normal baseline-to-baseline skip
-\setstretch{1.7}
+% \setstretch{1.7}
 
 
 %%%%%
@@ -61,7 +59,7 @@ with the `report' document style}{}}{}
 
 \marginparsep 10pt
 %\oddsidemargin 0.5in \evensidemargin 0in
-%\marginparwidth 40pt 
+%\marginparwidth 40pt
 
 
 \topmargin 0pt \headsep .5in
@@ -203,18 +201,18 @@ for examination for the degree of \@degree.
         \if*\@coprincipaladviser \else
         \signature{(\@coprincipaladviser)\quad Principal \advis@r}
         \vfill\fi
-        \if*\@firstreader \else 
+        \if*\@firstreader \else
         \signature{(\@firstreader)}
         \vfill\fi
-        \if*\@secondreader \else 
+        \if*\@secondreader \else
         \signature{(\@secondreader)}
         \vfill\fi
 % if thirdreader then do \signature\@thirdreader \vfill
-        \if*\@thirdreader \else 
+        \if*\@thirdreader \else
         \signature{(\@thirdreader)}
         \vfill\fi
 % if fourthreader then do \signature\@fourthreader \vfill
-        \if*\@fourthreader \else 
+        \if*\@fourthreader \else
         \signature{(\@fourthreader)}
         \vfill\fi
         \begin{flushright}

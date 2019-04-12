@@ -15,7 +15,6 @@
 \RequirePackage{ccicons}
 \RequirePackage{xspace}
 \RequirePackage{subcaption}
-\RequirePackage{todonotes}
 \RequirePackage{parskip}
 \RequirePackage{doi}
 \RequirePackage[version=3]{mhchem}
@@ -39,28 +38,31 @@
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
 
+% Ensure aspect ratio is kept when converting from markdown
+\makeatletter
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
 % Add date (or version) on right of page
 \RequirePackage{fancyhdr}
-\fancypagestyle{headings}{
+\makeatletter
+\fancypagestyle{headings}{%
   \fancyhead[LE,RO]{\textsl{\rightmark}}
   \fancyhead[LO,RE]{\textsl{\leftmark}}
   \fancyfoot[C]{\thepage}
-  \fancyfoot[LE,RO]{\@date}
+  \fancyfoot[LE,RO]{\@date}%
 }
+\makeatother
 
 \setcounter{tocdepth}{3}
 
 % Defining an empty command to support lists in pandoc
 \newcommand*{\tightlist}{}
-
-% Defining Molecules
-\newcommand*{\tri}{{\bf Tr}\xspace}
-\newcommand*{\done}{{\bf D1}\xspace}
-\newcommand*{\dcon}{{\bf Dc}\xspace}
-
-% Defining order parameters
-\newcommand*{\oorient}{\ensuremath{O_\text{orient}}\xspace}
-\newcommand*{\ocon}{\ensuremath{O_\text{\dcon}}\xspace}
 
 % Defining Mathematical Terms
 \newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
@@ -94,21 +96,6 @@
 
 \PassOptionsToPackage{colorlinks=true, linkcolor=blue, citecolor=blue}{hyperref}
 
-% Default missing figure
-\newcommand*{\todofigure}[1]{\missingfigure[figcolor=white]{#1}}
-
-% References
-\newcommand*{\figref}[1]{(Figure~\ref{fig:#1})}
-\newcommand*{\tabref}[1]{(Table~\ref{tab:#1})}
-\newcommand*{\secref}[1]{(Section~\ref{sec:#1})}
-\newcommand*{\chapref}[1]{(Chapter~\ref{sec:#1})}
-\newcommand*{\appref}[1]{(See Appendix~\ref{sec:#1})}
-\newcommand*{\textfigref}[1]{Figure~\ref{fig:#1}}
-\newcommand*{\texttabref}[1]{Table~\ref{tab:#1}}
-\newcommand*{\textsecref}[1]{Section~\ref{sec:#1}}
-\newcommand*{\textchapref}[1]{Chapter~\ref{sec:#1}}
-\newcommand*{\subfigref}[1]{(\protect\subref{fig:#1})}
-
 % Citations
 \let\cite\supercite
 \newcommand*{\linecite}[1]{Ref.~\onlinecite{#1}}
@@ -117,50 +104,10 @@
 \let\Oldsection\section
 \renewcommand{\section}{\FloatBarrier\Oldsection}
 
-%
-% Figure atttributions
-%
-
-\def\source{\@ifnextchar[{\@commons}{\@copyright}}
-
-\def\@commons[#1]#2{%
-    \vskip-0.5em
-    \captionsetup{font=footnotesize,singlelinecheck=false}
-    \caption*{{\bf Source:} Adapted from \linecite{#2}. Licensed under Creative Commons #1}
-}
-
-\def\@copyright#1#2{%
-    \vskip-0.5em
-    \captionsetup{font=footnotesize,singlelinecheck=false}
-    \caption*{{\bf Source:} Adapted with permission from \linecite{#1}~%
-    \copyright~\citeyear{#1} {#2}}
-}
-
-% Zoom on graphics
-\newcommand{\zoom}[2]{%
-    \FPeval{\crop}{0.5/#1}
-    \adjincludegraphics[width=\textwidth, trim={\crop\width} {\crop\height} {\crop\width} {\crop\height}, clip]{{{#2}}}
-}
-
-% Todo commands
-\reversemarginpar
-\setlength{\marginparwidth}{3cm}
-\newcommand*{\towrite}[1]{\todo[color=green!50,inline]{Write: #1}}
-\newcommand*{\toedit}[1]{\todo[color=orange]{Edit: #1}}
-\newcommand*{\tofix}[1]{\todo[color=red!50]{Fix: #1}}
-\newcommand*{\tocite}{\todo[color=yellow]{Cite}\xspace}
-\newcommand*{\tocheck}{\todo[color=blue!50]{Check}\xspace}
-\newcommand*{\toref}{\todo[color=orange]{Ref}\xspace}
-
 % Bibliography Settings
-%\DeclareFieldFormat{labelnumberwidth}{#1.~}
-%\DeclareFieldFormat[article]{title}{#1.}
-%\DeclareFieldFormat[article]{journaltitle}{{\em #1}}
 \DeclareFieldFormat{url}{\url{#1}}
-%\DeclareFieldFormat{titlecase}{\MakeSentenceCase{#1}}
 \AtEveryBibitem{\clearlist{language}} % clears language
 \AtEveryBibitem{\clearlist{series}\clearfield{month}\clearfield{note}\clearfield{issue}} % clear series
-%\let\cite\autocite
 
 \DeclareCiteCommand{\onlinecite}%[\mkbibbrackets]
     {\usebibmacro{cite:init}%
