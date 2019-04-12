@@ -1,12 +1,12 @@
 name: thesis
 dependencies:
-  - python==3.6
+  - python==3.7
   - pip
   - wheel
   - setuptools
   - pandoc
   - conda-forge::tectonic==0.1.11
-  - malramsay::biber==2.5
+  - malramsay::biber==2.11
   - pre_commit
   - pip:
     - pandoc-eqnos
