@@ -27,16 +27,30 @@ $T$ is the temperature.
 
 ## Structural Relaxation
 
-The structural relaxation is often referred to
-as the timescale of importance within a liquid,
-the intention of the measurement is
-the timescale on which the liquid
-loses any memory of it's previous state.
-This is typically measured using the
-density autocorrelation function.
-The density autocorrelation is a
+The stru
 
-### Diffusion
+### Radial Distribution Function
+
+### Static Structure Factor
+
+### Intermediate Scattering Function
+
+$$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
+k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
+\cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
+\right ) \right \rangle $$
+
+### Relaxation Times
+
+### Contribution of Individual Particles
+
+![The Mean Squared Displacment of the trimer molecule
+over a range of temperatures
+at a pressure of 13.50.
+Note that both axes are plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80%}
+
+## Diffusion
 
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
 which over long enough timescales because of the collisions with other particles
@@ -53,7 +67,8 @@ gives the image below.
 ![The Mean Squared Displacment of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
-Note that both axes are plotted using a logarithmic scale.](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf)
+Note that both axes are plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80%}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -67,7 +82,36 @@ This plateau region is indicative of dynamics
 which are not described by Brownian motion,
 and more notably regions of dynamic heterogeneities.
 
-#### Dynamic heterogeneities
+## Rotational Relaxations
+
+While it is typical to consider translational diffusion constants,
+instead of a rotational diffusion constant $D_r$,
+the quantity typically calculated for rotations
+is a rotational relaxation time $\tau_r$
+where $\tau_r \propto 1/D_r$.
+This is a way of dealing with the periodicity of rotational motion,
+instead of keeping track of every rotation of a molecule,
+the rotational relaxation function $C(t)$ is a measure of
+how orientationally aligned a configuration is to another
+and is given as
+
+$$ C(t) = \langle \hat\vec e(0) \cdot \hat \vec e(t) \rangle $$
+
+where $\hat \vec e(0)$ and $\hat \vec e(t)$ are the orientations
+The rotational relaxation time is
+the time taken for the relaxation function to decay to $1/e$.
+When the rotational relaxation function
+is approximated as a exponential decay,
+the relaxation time is the rate of the decay.
+
+<!-- ![The non-gaussian of the trimer molecule -->
+<!-- over a range of temperatures at a pressure of 13.50. -->
+<!-- Note that time axis is plotted using a logarithmic -->
+<!-- scale.](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80%} -->
+
+## Dynamic heterogeneities
+
+### Translational heterogeneities
 
 Dynamic heterogeneities are a phenomenon
 where there are multiple timescales within a single material,
@@ -82,33 +126,88 @@ deviates from the expected gaussian distribution [@Donati1999].
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf)
+scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf){width=80%}
 
-### Rotational Relaxation
+### Rotational Heterogeneity
 
-While it is typical to consider translational diffusion constants,
-instead of a rotational diffusion constant $D_r$,
-the quantity typically calculated for rotations
-is a rotational relaxation time $\tau_r$
-where $\tau_r \propto 1/D_r$.
-This is a way of dealing with the periodicity of rotational motion,
-instead of keeping track of every rotation of a molecule,
-the rotational relaxation function $C(t)$ is a measure of
-how orientationally aligned a configuration is to another
-and is given as
+- calculation of rotational Heterogeneity
+- there are rotational heterogeneities,
 
-<!-- TODO rewrite as quaternions -->
+### Rotational and Translational Heterogeneity
 
-$$ C(t) = \langle \hat\vec e(0) \cdot \hat \vec e(t) \rangle $$
+There are rotational heterogeneities and translational heterogeneities
 
-where $\hat \vec e(0)$ and $\hat \vec e(t)$ are the orientations
-The rotational relaxation time is
-the time taken for the relaxation function to decay to $1/e$.
-When the rotational relaxation function
-is approximated as a exponential decay,
-the relaxation time is the rate of the decay.
+- just a coincidence
+- are they co-located, mobile regions just mobile for everything
+- correlated, high rotational/translational mobility allows the other
 
-## Glass formation temperatures
+- maps overlaying rotational heterogeneities with translational heterogeneities
+
+- calculation of Gamma
+- figures
+
+These are methods of looking at the entire system as a whole
+
+- it makes sense to be able to define these quantities for single molecules
+
+## Molecular Relaxations
+
+The relaxations we have been calculating
+are characteristic times for
+the entire simulation configuration.
+From the presence of the dynamic heterogeneities,
+there are different timescales
+on which relaxation takes place.
+So rather than having a single characteristic time
+for the entire simulation,
+having characteristic timescales for every particle
+allows different types of comparisons.
+
+### Single particle structural relaxation
+
+Similarly to the work by Widmer-Cooper and Harrowell [@Widmer-Cooper2009]
+where the structural relaxation function is characterised
+by individual particle contributions
+to an overall relaxation.
+Having a structural relaxation time defined as the time taken
+to move the distance of structural relaxation.
+
+- Defined as the length scale of the first peak of the static structure factor
+
+### Single particle diffusion
+
+- What is a length scale which is appropriate?
+
+### Reversible relaxations
+
+- In the structural relaxation there are bumps
+    - this indicates there are large reversible fluctuations
+    - the single particle structural relaxation doesn't account for this
+
+- Once a particle leaves it's local neighbourhood it should have no memory of where it
+  was
+- There is some reversibility with brownian motion
+- Relaxation time is the last time it undergoes structural relaxation before diffusion
+
+### Single particle rotational relaxations
+
+- defined based on the distances for the rotational relaxations
+- Additionally an angle corresponding to half the angle between the smaller particles
+
+## Comparison of relaxation times
+
+- mean vs harmonic mean
+    - weighting motions differently
+    - which values are small
+- randomly sampling the states
+
+- Diffusion compared to molecular diffusion
+    - distance of 2 is still small compared to diffusive motion
+    - at the onset of diffusion
+    - This observes only a few relaxations
+    - when over a longer time-scale, there are many motions
+
+## Possible Investigations
 
 - Kauzmann temperature
     - Have potential energy of the equilibrium liquid and crystal states
@@ -117,8 +216,6 @@ the relaxation time is the rate of the decay.
         - the glass transition temperature
         - the Kauzmann temperature
         - any other properties
-
-## Possible Investigations
 
 - Calculation of alternative structural relaxations
     - van Hove relaxation -> Histogram over radius and time, for $i \ne j$

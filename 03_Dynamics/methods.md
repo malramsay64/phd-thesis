@@ -52,11 +52,14 @@ The collection of data for the equilibrium property of the dynamics
 is only valid should the configurations being sampled
 be representative of the equilibrium state.
 
+- Simulation conditions
+    - NPT
+    - Imaginary mass
 - data on many timescales
 - constraints of data collection
     - storage size
     - network speeds
 - Step sequence -> log scale for dynamics
-- Simulation conditions
-    - NPT
-    - Imaginary mass
+- starting configurations
+    - need to average over the equilibrium state
+    - not just a correlated set of trajectories
