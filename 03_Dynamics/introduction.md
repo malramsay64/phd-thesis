@@ -135,13 +135,7 @@ $$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M [
 ] $$
 
 Where the sum is over $N$ values of
-the angle $\theta_i$ which ranges in value from $0$ to $2\pi$ [@Widmer-Cooper2019]
-
-<!--
-Yes I am definitely citing an email since it is the only resource I have found which
-describes this to any extent, and I definitely want to highlight the absurdity of
-that.
--->
+the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
 
 The intermediate scattering function
 is the spatial transform of the van-Hove relaxation function $G(r, t)$,
@@ -157,7 +151,7 @@ to link structure with dynamics on a local level,
 which has required a measure of structural relaxation
 which makes the contribution of each particle explicit
 rather than just the entire system as a whole.
-Widmer-Cooper and Harrowell [@Widmer-Cooper2009] defined
+Widmer-Cooper and Harrowell [@Widmer-Cooper2009a] defined
 a structural relaxation $F_d(t)$ where
 
 $$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$
@@ -173,25 +167,29 @@ $$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
 where $k_{\text{bragg}}$ is the wave-vector of
 the maximum peak of the static structure factor $S(k)$.
 This matches with the calculation of the intermediate scattering function
-which will follow the same wave-vector $\k_{\text{bragg}}$
+which will follow the same wave-vector $k_{\text{bragg}}$
 as it will display the largest change over time.
 
 #### Rotational Relaxation
 
 In experimental systems,
 the rotational relaxation is typically measured
-as the relaxation of a dipole moment[@???].
+as the relaxation of a dipole moment [@citation].
 The relaxation of a dipole $C_l$,
 where the orientation of the dipole is represented by the vector $\vect u$
 can be represented as
-$$ C_{l} = \langle P_l($\vect u_i(t) \cdot \vect u_i(o)) \rangle_i $$
+
+$$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(o)) \rangle_i $$
+
 Here $P_l$ is the Legendre polynomial of degree $l$,
 and the angle brackets denote an average over
-all molecules and starting configurations[@????].
+all molecules and starting configurations.
 To match simulation results with NMR and fluorescence experiments
 the 2nd degree Legendre polynomial is calculated,
 giving the equation
+
 $$ C_2(t) = \frac{1}{2} \langle 3(\vect n(0) \cdot \vect n(t))^2 -1 \rangle. $$
+
 It should be noted that this dipole relaxation
 only captures at most two dimensions of the rotational relaxation,
 a rotation about the axis of the dipole is not captured by this relation at all.
@@ -218,19 +216,6 @@ for computationally representing rotations in three dimensions[@Huynh2009]
 and is commonly used in molecular dynamics simulations
 [@Ciccotti1986,@Omelyan1998,@Rog2003,@Anderson1983,@Refson2000,@Nose1983,@Evans1977,@Rapaport1985].
 
-- Debye vs Einstein Dynamics
-    - There are two formalisms in order to estimate $D_R$: Einstein and Debye
-      formalisms. In the Einstein formalism, we calculate the mean square angular
-      displacement
-      $\langle [\Delta\phi(t)]^2\rangle = \langle|\phi(t) - \phi(0)|^2\rangle$
-      where $\phi(t) is the unbounded angle of the vector $\vect u (t)$ of a tracer at
-      time $t$. ... And $D_R$ is obtained by using the relation
-      $D_R = \lim_{t->\inf}\langle [\Delta \phi(t)]^2 \rangle / 2t$.
-      On the other hand, in the Debye formalism, the rotational correlation function
-      $U_l(t)$ if tracers is considered, i.e.,
-      $U_l(t) = \langle \exp [il\Delta\phi(t)]\rangle$,
-      where $l$ is the order of the rotational correlation function.
-
 #### Methods of rotational relaxations
 
 The Debye model predicts an exponential decay of the $l$th rank
@@ -249,25 +234,22 @@ resulting in non-exponential decay, where
 $$ 1 < \tau_1/\tau_2 < 3.$$
 
 The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
-that is, assuming the rotations take place through a process of small random steps.
-Where there are a
+that is, assuming rotations take place through a process of small random steps.
+Where there are large changes in orientation,
+the two relaxation times become correlated,
+since there are much fewer steps required for rotational relaxation to occur,
+with the limit of this being
+single jumps account for both relaxations simultaneously.
 
-- [@Kivelson1988]
-    - In many cases, the nature of the relaxation process, together with the coarseness
-      of the observations, have allowed
-      $$\langle Y_{lm}(t)Y_{lm}(0)*\rangle$$
-      to be represented as a single exponential, in which case $\tau_l$ is its decay
-      time. Under the assumption that a rotating molecule can ber represented as a
-      brownian particle of volume $v$ in a homogenous, continuous hydrodynamic flud,
-      the correlation time $\tau_l$ can be expressed as
-      $$ \tau_l = \frac{v\rho}{k_BTl(l+1)}8\pi C$$
-      where $k_B$ is the Boltzmann constant and $C$ is a paramter...
-For diffusional motion we expect that $\tau_1/\tau_2 = 3$
-For internally rotating molecules,
-we expect $1 < \tau_1/\tau_2 < 3$
-For supercooled liquids, we get behaviour which is non-diffusive,
-that is $\tau_1/\tau_2 < 3$,
-which suggests that the relaxation takes place by means of large angular jumps.
+In many experimental and simulation studies
+at high temperatures [???]
+the relationship $\tau_1/\tau_2 = 3$ has held true.
+In supercooled liquids however,
+there have been many studies
+which have found $\tau_1/\tau_2 < 3$,
+which has given credence to the
+idea of rotational relaxations
+taking place through the process of large angular jumps.
 
 - Understanding Dynamics
     - $\alpha$ and $\beta$ relaxations
@@ -303,6 +285,9 @@ which suggests that the relaxation takes place by means of large angular jumps.
     - Is packing frustration a factor in glass formation
     - Many different crystals formed, just unable to tile space
     - or in this case forming different incompatible crystal structures
+
+- Correlations of rotation and translation
+    - reptation
 
 - How properties are calculated / expressed
     - Averaging techniques
