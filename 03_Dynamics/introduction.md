@@ -34,7 +34,7 @@
     - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
     - $\eta = A \exp(\frac{B}{T-T_0})$
 
-### Characteristic Temperatures
+## Characteristic Temperatures
 
 - Slowdown near 2/3 of the melting point [@Angell2000]
 
@@ -59,7 +59,7 @@
     - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov1996] (Rossler)
     - Express fragility in terms of $T_c$, $\frac{T_g}{T_c - T_g}$
 
-### Dynamics of Supercooled Liquids and Glasses
+## Dynamics of Supercooled Liquids and Glasses
 
 The theory of the behaviour of liquids
 is primarily based on
@@ -69,7 +69,7 @@ which are derived from the equations for Brownian motion.
 - What is viscosity?
     - How can we measure it in simulations?
 
-#### Structural Relaxation
+### Structural Relaxation
 
 Structural relaxation is the most fundamental relaxation process [@Angell2000]
 being the process by which a liquid forgets it's structure
@@ -96,7 +96,7 @@ as the fundamental relaxation time,
 providing a link between
 the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
 
-#### Measuring structural relaxation
+### Measuring structural relaxation
 
 In practical experiments on liquid dynamics,
 the structural relaxation is measured using
@@ -113,7 +113,7 @@ the intermediate scattering function $F(k, t)$ represented as;
 
 $$ F(\mathbf{k}, t) = \frac{1}{N}\langle \sum_j^N \exp{
     i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
-} \rangle $$
+} \rangle $$ {#eq:intermediate_scattering_function}
 
 where the angle brackets denote averaging over multiple initial configurations
 $N$ is the total number of particles,
@@ -170,7 +170,7 @@ This matches with the calculation of the intermediate scattering function
 which will follow the same wave-vector $k_{\text{bragg}}$
 as it will display the largest change over time.
 
-#### Rotational Relaxation
+### Rotational Relaxation
 
 In experimental systems,
 the rotational relaxation is typically measured
@@ -216,7 +216,7 @@ for computationally representing rotations in three dimensions[@Huynh2009]
 and is commonly used in molecular dynamics simulations
 [@Ciccotti1986,@Omelyan1998,@Rog2003,@Anderson1983,@Refson2000,@Nose1983,@Evans1977,@Rapaport1985].
 
-#### Methods of rotational relaxations
+### Methods of rotational relaxations
 
 The Debye model predicts an exponential decay of the $l$th rank
 single-particle orientation time correlation function $C_l^s$,
