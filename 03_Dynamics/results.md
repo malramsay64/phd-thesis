@@ -27,18 +27,100 @@ $T$ is the temperature.
 
 ## Structural Relaxation
 
-The stru
-
-### Radial Distribution Function
+The measurement of structural relaxation in two dimensions
+is the same as for three dimensional systems,
+using the intermediate scattering function (@eq:intermediate_scattering_function).
+To compute the values monitoring
+the structural relaxation,
+we first have to compute the value of the wave-number
+which will give the greatest change
+In computing the values for this function,
+it is first required to
+find the wave-number which corresponds to
+to first maximum of the static structure factor.
 
 ### Static Structure Factor
 
+The static structure factor
+is a function describing how a crystal
+scatters incident radiation,
+being used extensively to understand and interpret
+scattering patterns in diffraction experiments
+of both ordered and disordered materials.
+In computational systems,
+the static structure factor is computed from
+the radial distribution function $G(\vect r)$
+which is given by
+
+$$ G(\vect r) = \frac{1}{\rho} \left \langle
+  \sum_{i \ne 0} \delta(\vect r-\vect{r}_i )
+\right \rangle $$
+
+where $\vect r$ is the position vector,
+$\rho$ is the density of the system,
+the reference particle is given the index 0,
+with all other particles $r_i, i \ne 0$
+some distance away.
+The angle brackets $\langle \rangle$ denote
+an ensemble average
+over many particles.
+
+The radial distribution function
+for the trimer molecule
+is shown in @fig:radial_distribution.
+This shows that the distribution
+is more complicated than
+a single component liquid,
+being more comparable to a binary mixture.
+
+From the radial distribution function $G(r)$,
+we can obtain the static structure factor $S(k)$
+for an isotropic liquid
+using the following transformation
+
+$$ S(k) = 1 + 4 \pi \rho \frac{1}{q} \int \d r r \sin(qr)[g(r) - 1] $$
+
+Which is plotted for the trimer molecule
+in @fig:static_structure_factor.
+The position of the first peaks
+for the two pressures studies are
+given in @tbl:wave_numbers.
+The values of the wave-number
+over the range of temperatures
+was considered to be close enough
+that a single value was to be used
+for each pressure
+which are given below.
+
+Pressure | $k$
+----------------
+1.00     | 2.80
+13.5     | 2.90
+
+
 ### Intermediate Scattering Function
+
+Having found the value of the wave number
+to calculate the decay of the intermediate scattering function,
+we can move out attention to the calculation of the value.
+When dealing with an isotropic liquid in two dimensions,
+we can evaluate the intermediate scattering function
+using the below equation
 
 $$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
 \right ) \right \rangle $$
+
+![The intermediate scattering function of the trimer molecule
+over a range of temperatures
+at a pressure of 13.50.
+Note that the time axis is plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80%}
+
+The intermediate scattering function at low temperatures (T=0.4-0.7)
+displays a plateau of relaxation over medium timescales (t=1e5-1e7)
+in addition to reversal of the relaxation shown by the waves.
 
 ### Relaxation Times
 
@@ -236,7 +318,7 @@ to move the distance of structural relaxation.
       than below a melting point?
 
 - Rotational diffusion constant
-    - This is the MSR of the rotations
+    - This is the MSD of the rotations
     - Plotting this value could be rather interesting
 
 - Length scales
