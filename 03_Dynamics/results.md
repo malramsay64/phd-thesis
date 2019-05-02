@@ -100,14 +100,12 @@ which are given below.
 temperature $T=1.50$.
 ](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){#fig:static_structure_factor}
 
-
  Pressure  $k$
  --------  -----
      1.00   2.80
      13.5   2.90
 
 Table: The wave-numbers $k$ used for each of the pressures studied. {#tbl:wave_numbers}
-
 
 ### Intermediate Scattering Function
 
