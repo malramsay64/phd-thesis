@@ -73,6 +73,10 @@ is more complicated than
 a single component liquid,
 being more comparable to a binary mixture.
 
+![The radial distribution function of the Trimer liquid at a pressure $P=13.50$ and a
+temperature $T=1.50$.
+](../Projects/Dynamics/figures/thesis/radial_distribution.pdf){#fig:radial_distribution}
+
 From the radial distribution function $G(r)$,
 we can obtain the static structure factor $S(k)$
 for an isotropic liquid
@@ -92,10 +96,17 @@ that a single value was to be used
 for each pressure
 which are given below.
 
-Pressure | $k$
-----------------
-1.00     | 2.80
-13.5     | 2.90
+![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
+temperature $T=1.50$.
+](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){#fig:static_structure_factor}
+
+
+ Pressure  $k$
+ --------  -----
+     1.00   2.80
+     13.5   2.90
+
+Table: The wave-numbers $k$ used for each of the pressures studied. {#tbl:wave_numbers}
 
 
 ### Intermediate Scattering Function
@@ -110,7 +121,7 @@ using the below equation
 $$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$
+\right ) \right \rangle $$ {#eq:intermediate_scattering_function}
 
 ![The intermediate scattering function of the trimer molecule
 over a range of temperatures
