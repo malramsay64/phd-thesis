@@ -1,40 +1,141 @@
 # Introduction
 
+Current models of motion in the liquid state
+are based on the Stokes-Einstein-Debye relationships[@Debye,@Stokes],
+which are theoretical models of collective motion
+derived from particles undergoing Brownian motion[@Einstein].
+The most common relationships of the Stokes-Einstein-Debye models are
+
+$$ D_t \eta / T = \text{constant} $$ {#eq:stokes_einstein}
+
+and
+
+$$ D_r \eta / T = \text{constant} $$ {#eq:einstein_debye}
+
+where $D_t$ is the diffusion constant of the translational motion
+$D_r$ is the diffusion constant of the rotational degrees of freedom,
+$\eta$ is the shear viscosity, and
+$T$ is the temperature.
+
+One of the detractors of Brownian dynamics
+is that it describes the dynamics of independent events,
+making no account for momentum.
+An alternative method of describing the dynamics of particles
+is through Langevin Dynamics,
+which does include the momentum of particles.
+This ends up giving the same result
+for the Stokes-Einstein-Debye relations.
+This is because it is possible to consider
+Brownian Dynamics as a more granular form
+of Langevin Dynamics.
+
+The  models are suitable for describing
+the dynamic properties of most liquids, however,
+there are instances,
+particularly in supercooled liquids,
+where the Stokes-Einstein-Debye relations
+are insufficient for describing the dynamics which are observed.
+The breakdown in dynamics is primarily
+a case of the underlying particle motions
+no longer adhering to Brownian motion.
+
 ## Glasses and Supercooled liquids
 
-- Brownian Dynamics
-    - Foundation of most of theory on glass formers
-    - Assumes a type of motion
-    - Stokes-Einstein-Debye
+Typically when describing states of matter
+we describe an equilibrium state,
+being the lowest energy state 
+at a set of conditions.
+However, inherent in any experiment performed 
+is a timescale over which observations take place.
+The pitch drop experiment [@Cite???]
+is an excellent example of how timescale
+can affect our observations.
+Over the course of minutes,
+the pitch appears to be a solid, 
+with no perceived motion,
+while on the timescale of tens of years
+we see motion that is liquid in character.
 
-- Langevin Dynamics
-    - Takes into account momentum
-    - generates same results for statistical properties
+### Introduction to Supercooled Liquids
+
+A Supercooled liquid is a liquid
+that has been cooled to a temperature below the melting point
+prior to the rare event of nucleation taking place.
+Supercooled liquids are a metastable state,
+although particularly in simulation studies
+can be referred to as at equilibrium,
+which is a reference to the rarity of the nucleation;
+the supercooled liquid is able to sample
+most of the available phase space
+without encountering a nucleation configuration.
+A typical method of determining when a supercooled liquid
+has reached equilibrium is defining a relaxation timescale,
+being a timescale over which a configuration
+has no 'memory' of a previous configuration.
+
+For each temperature we will have a relaxation time
+---being the typical time for relaxation to occur---
+and a nucleation time
+---being the typical time for nucleation to occur.
+Forming a supercooled liquid,
+can then be expressed as a line between those of
+the relaxation time and the nucleation time
+as shown in @fig:supercooled_liquid_formation.
+The example shown in @fig:supercooled_liquid_formation
+demonstrates a well behaved example,
+with the nucleation time always
+being longer than the relaxation time, however
+there are also supercooled liquids
+where for some range of temperature,
+the relaxation time becomes longer than the nucleation time
+resulting in what is known as a *kinetic spinodal*,
+a temperature where the supercooled liquid does not exist
+since nucleation starts before equilibrium can be established.
+
+### Introduction to Glasses
+
+A glass is a disordered state of matter,
+just like a liquid,
+which has a viscosity of \si{10eye}{\poise}.
+The temperature at which the viscosity reaches this value
+is known as the glass transition temperature, denoted $T_g$.
+When running computer simulations,
+a viscosity this high is beyond our current capability,
+so instead a less stringent criteria is applied;
+a disordered material which behaves as a solid 
+on the timescale of the experiment.
+
+This also means that as computational power
+and algorithms improve,
+simulated materials which have been considered glasses
+can form crystals on longer time scales.
+
+The formation of a glass
+is considered a kinetic phase transition,
+there are no thermodynamic changes
+which would indicate a first order phase transition
+typically associated with freezing.
+However, despite the glassy transition
+being arbitrarily defined,
+many materials exhibit similar changes
+in behaviour as they approach the glass transition temperature.
 
 - Creating a glass
     - avoidance of critical point
         - Cooling fast enough to prevent nucleation
     - depiction on phase diagram
 
-- Timescale of experiment
-    - kinetic effect
-    - unstable/metastable states
-
-- Supercooled liquids in equilibrium
-    - How do we define equilibrium of a metastable state?
-    - Liquid below melting point with no crystals
-    - Nucleation of crystals is a slow process, can ignore
-
 - Fragility of glass formers
     - Faster than expected change upon cooling
+
+
+## Characteristic Temperatures
 
 - Vogel--Tammann--Fulcher
     - temperature dependence of relaxation times
     - provides a measure of how far from Arrhenius
     - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
     - $\eta = A \exp(\frac{B}{T-T_0})$
-
-## Characteristic Temperatures
 
 - Slowdown near 2/3 of the melting point [@Angell2000]
 
