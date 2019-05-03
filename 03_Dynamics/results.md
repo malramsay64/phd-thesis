@@ -97,7 +97,8 @@ for each pressure
 which are given below.
 
 ![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
-temperature $T=1.50$.
+temperature $T=1.50$. This is calculated from an average over 100 configurations.
+within the trajectory. The first peak corresponds to a value of 2.90.
 ](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){#fig:static_structure_factor}
 
  Pressure  $k$
@@ -124,22 +125,31 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 ![The intermediate scattering function of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
-Note that the time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80%}
+Note the logarithmic scale on the time axis.
+](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80%}
 
-The intermediate scattering function at low temperatures (T=0.4-0.7)
-displays a plateau of relaxation over medium timescales (t=1e5-1e7)
-in addition to reversal of the relaxation shown by the waves.
+At low temperatures ($T=1.25$ to $T=1.4$)
+the relaxation of the intermediate scattering function
+takes place through a two step process,
+the initial relaxation to a plateau at \si{1e4} timesteps,
+with the bumps indicating a reversal of relaxation.
+Both these features,
+the two step relaxation,
+and the reversal of relaxation
+are features characteristic of a supercooled liquid,
+an interesting phenomenon,
+particularly since there is an onset above
+the melting point.
 
 ### Relaxation Times
 
 ### Contribution of Individual Particles
 
-![The Mean Squared Displacment of the trimer molecule
+![The structural relaxation of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
-Note that both axes are plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80%}
+Note the logarithmic scale on the time axis.
+](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80%}
 
 ## Diffusion
 
@@ -158,8 +168,8 @@ gives the image below.
 ![The Mean Squared Displacment of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
-Note that both axes are plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80%}
+Note the logarithmic scale of both axes.
+](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80%}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -195,10 +205,10 @@ When the rotational relaxation function
 is approximated as a exponential decay,
 the relaxation time is the rate of the decay.
 
-<!-- ![The non-gaussian of the trimer molecule -->
-<!-- over a range of temperatures at a pressure of 13.50. -->
-<!-- Note that time axis is plotted using a logarithmic -->
-<!-- scale.](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80%} -->
+![The rotational relaxation of the trimer molecule
+over a range of temperatures at a pressure of 13.50.
+Note the logarithmic scale of the time axis.
+](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80%}
 
 ## Dynamic heterogeneities
 

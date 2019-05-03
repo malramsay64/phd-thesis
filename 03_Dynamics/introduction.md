@@ -43,15 +43,15 @@ no longer adhering to Brownian motion.
 
 Typically when describing states of matter
 we describe an equilibrium state,
-being the lowest energy state 
+being the lowest energy state
 at a set of conditions.
-However, inherent in any experiment performed 
+However, inherent in any experiment performed
 is a timescale over which observations take place.
 The pitch drop experiment [@Cite???]
 is an excellent example of how timescale
 can affect our observations.
 Over the course of minutes,
-the pitch appears to be a solid, 
+the pitch appears to be a solid,
 with no perceived motion,
 while on the timescale of tens of years
 we see motion that is liquid in character.
@@ -96,13 +96,13 @@ since nucleation starts before equilibrium can be established.
 
 A glass is a disordered state of matter,
 just like a liquid,
-which has a viscosity of \SI{10e13}{\poise}.
+which has a viscosity of \SI{e13}{\poise}.
 The temperature at which the viscosity reaches this value
 is known as the glass transition temperature, denoted $T_g$.
 When running computer simulations,
 a viscosity this high is beyond our current capability,
 so instead a less stringent criteria is applied;
-a disordered material which behaves as a solid 
+a disordered material which behaves as a solid
 on the timescale of the experiment.
 
 This also means that as computational power
@@ -190,7 +190,7 @@ in both experimental [@Ediger2012] and computational [@Perera1999] systems.
 This relationship between the shear viscosity and the structural relaxation
 allows us to rewrite the Stokes-Einstein-Debye relations as
 
-$$ D \propto \frac{1}{\tau_s} \text{and} \tau_r \propto \tau_s $$
+$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
 
 where we are using the structural relaxation time
 as the fundamental relaxation time,
