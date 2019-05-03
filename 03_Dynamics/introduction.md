@@ -96,7 +96,7 @@ since nucleation starts before equilibrium can be established.
 
 A glass is a disordered state of matter,
 just like a liquid,
-which has a viscosity of \si{10eye}{\poise}.
+which has a viscosity of \SI{10e13}{\poise}.
 The temperature at which the viscosity reaches this value
 is known as the glass transition temperature, denoted $T_g$.
 When running computer simulations,
