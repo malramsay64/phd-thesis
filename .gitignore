@@ -17,3 +17,6 @@ output
 # Ignore biblatex files
 *.bbl
 *.blg
+
+# Ignore node directory
+node_modules
