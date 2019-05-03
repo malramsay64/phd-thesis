@@ -18,11 +18,7 @@ before_install:
   - conda env update
   - source activate thesis
 
-  # Install markdownlint
-  - gem install mdl
-
 script:
-  - mdl .
   - make
 
 deploy:
