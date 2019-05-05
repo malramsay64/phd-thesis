@@ -11,6 +11,16 @@ For the results presented here,
 we don't have an accurate determination of the melting point,
 instead using our best approximation,
 the details of which are discussed in \ref{sec:crystal_melting}
+and presented in @tab:melting_points.
+
+ Pressure   Melting Point
+---------  --------------
+     1.00            0.36
+    13.50            1.35
+
+Table: The melting points of the trimer molecule for different pressures.
+{#tab:melting_points}
+
 
 ## Comparison with other systems
 
@@ -74,7 +84,10 @@ a single component liquid,
 being more comparable to a binary mixture.
 
 ![The radial distribution function of the Trimer liquid at a pressure $P=13.50$ and a
-temperature $T=1.50$.
+temperature $T=1.50$. The radial distribution is taken as an average over 100 configurations of
+the input trajectory. There shape of the molecule means there are three distinct first
+shell peaks, which are also visible in the second shell. In further shells the only
+impact on shape is the longer than usual tails of the peaks.
 ](../Projects/Dynamics/figures/thesis/radial_distribution.pdf){#fig:radial_distribution}
 
 From the radial distribution function $G(r)$,
@@ -155,8 +168,8 @@ Note the logarithmic scale on the time axis.
 
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
 which over long enough timescales because of the collisions with other particles
-will move away from it's initial position at a linear rate with the slope $m$ having the
-relation
+will move away from it's initial position at a linear rate
+with the gradient $m$ having the relation
 
 <!-- TODO properly write out equation -->
 
@@ -212,6 +225,12 @@ Note the logarithmic scale of the time axis.
 
 ## Dynamic heterogeneities
 
+Dynamic heterogeneities have been described qualitatively,
+with features of the previous dynamic quantities
+noted as being a telltale sign of heterogeneous dynamics.
+However to truly discuss them,
+they need to be adequately measured.
+
 ### Translational heterogeneities
 
 Dynamic heterogeneities are a phenomenon
@@ -228,6 +247,18 @@ deviates from the expected gaussian distribution [@Donati1999].
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf){width=80%}
+
+As the temperature decreases from 2.5 to 1.30,
+the maximum value of non-gaussian parameter increases,
+demonstrating an increase in the dynamic heterogeneities,
+that is, there is a big difference between
+the fastest and the slowest particles.
+In addition to the increase in
+the value of the maximum,
+the time at which the maximum occurs
+becomes later moving from high temperature to low.
+
+<!-- - TODO Is this anything more than the dynamics slowing down:  <03-05-19, Malcolm Ramsay> - -->
 
 ### Rotational Heterogeneity
 
@@ -262,22 +293,43 @@ on which relaxation takes place.
 So rather than having a single characteristic time
 for the entire simulation,
 having characteristic timescales for every particle
-allows different types of comparisons.
+gives us more information on how
+the different relaxations are linked
+for each individual particle.
+
+This builds upon the ideas of Widmer-Cooper and Harrowell [@Widmer-Cooper2009]
+in tying the motion of a particle
+at a particular length scale to relaxation.
+In this case, though,
+rather than defining a relaxation function
+with a characteristic time,
+The relaxation time of each individual particle,
+being the time taken to move the characteristic distance,
+is the quantity that is averaged over.
 
 ### Single particle structural relaxation
 
-Similarly to the work by Widmer-Cooper and Harrowell [@Widmer-Cooper2009]
-where the structural relaxation function is characterised
-by individual particle contributions
-to an overall relaxation.
-Having a structural relaxation time defined as the time taken
-to move the distance of structural relaxation.
+When calculating structural relaxation though
+the intermediate scattering function
+we use a characteristic wave number.
+This wave number $k$ inherently has a
+length scale $d$ associated with it
+
+$$ d = \frac{\pi}{2k} $$
+
+This distance can then be used to define relaxation
+with particles having moved further than this distance
+being considered relaxed.
+Here we are looking for the time taken
+for a particle to first move beyond this characteristic distance.
+
 
 - Defined as the length scale of the first peak of the static structure factor
 
 ### Single particle diffusion
 
-- What is a length scale which is appropriate?
+- Use the length scale associated with the wave-number
+    - multiplied by 3
 
 ### Reversible relaxations
 
@@ -307,6 +359,17 @@ to move the distance of structural relaxation.
     - at the onset of diffusion
     - This observes only a few relaxations
     - when over a longer time-scale, there are many motions
+
+## Timescale of Motions
+
+- Diffusion is a long timescale behaviour
+    - doesn't capture the heterogeneities
+
+- Develop jump model
+    - making assumption that a particle has no memory once moved distance $d$
+    - we can then randomly take the motions from
+        the distribution of short time scale motions
+    - Over long enough time scales, the heterogeneities disappear
 
 ## Possible Investigations
 

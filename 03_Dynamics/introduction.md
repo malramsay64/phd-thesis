@@ -29,7 +29,7 @@ This is because it is possible to consider
 Brownian Dynamics as a more granular form
 of Langevin Dynamics.
 
-The  models are suitable for describing
+The Stokes-Einstein-Debye models are suitable for describing
 the dynamic properties of most liquids, however,
 there are instances,
 particularly in supercooled liquids,
@@ -38,6 +38,11 @@ are insufficient for describing the dynamics which are observed.
 The breakdown in dynamics is primarily
 a case of the underlying particle motions
 no longer adhering to Brownian motion.
+
+With the motions of individual particles
+no longer strictly undergoing Brownian Motion,
+does this affect how we can describe the
+collective dynamics of the liquid.
 
 ## Glasses and Supercooled liquids
 

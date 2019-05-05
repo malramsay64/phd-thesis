@@ -22,12 +22,20 @@ manually create a representative initial configuration.
 The initialisation takes an initial configuration
 consisting of particles on a square grid
 having a unit cell length of the largest axis of the molecule.
+The use of this length
+ensures that there is no overlapping of molecules.
+It is important that no molecules overlap
+as this could result in numerical instability of the simulation.
+The low density lattice is then minimised using
+a FIRE energy minimisation scheme,
+chosen for handling rigid molecules.
 
-- Initial square lattice configuration
-- FIRE minimisation
-- equilibration at high temperature
-    - NVT simulation
-    - momentum zeroing
+Following minimisation,
+the resulting configuration is equilibrated at a temperature
+above those studied and the desired pressure,
+using a NPT simulation.
+
+<!-- TODO Check simulation condtions -->
 
 ### Equilibration
 
@@ -44,7 +52,7 @@ which is the positions, momenta, orientations, and angular momentum.
 - Purpose
 - limitations -> 4 billion timesteps
 - Methodology -> decrease temperature for half steps or 1e7 whichever is smaller then run at desired
-    temperature for remainder
+  temperature for remainder
 
 ### Production
 
@@ -53,13 +61,15 @@ is only valid should the configurations being sampled
 be representative of the equilibrium state.
 
 - Simulation conditions
-    - NPT
-    - Imaginary mass
+  - NPT
+  - Imaginary mass
 - data on many timescales
 - constraints of data collection
-    - storage size
-    - network speeds
+  - storage size
+  - network speeds
 - Step sequence -> log scale for dynamics
 - starting configurations
-    - need to average over the equilibrium state
-    - not just a correlated set of trajectories
+  - need to average over the equilibrium state
+  - not just a correlated set of trajectories
+
+## Calculation of Relaxation Times
