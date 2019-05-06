@@ -234,6 +234,10 @@ This plateau region is indicative of dynamics
 which are not described by Brownian motion,
 and more notably regions of dynamic heterogeneities.
 
+![The diffusion constant as a function of temperature
+normalised by the melting point for a range of pressures.
+](../Projects/Dynamics/figures/thesis/diffusion_constant.pdf){width=80% #fig:diffusion_constant}
+
 ## Rotational Relaxations
 
 While it is typical to consider translational diffusion constants,
@@ -360,9 +364,6 @@ with particles having moved further than this distance
 being considered relaxed.
 Here we are looking for the time taken
 for a particle to first move beyond this characteristic distance.
-
-
-- Defined as the length scale of the first peak of the static structure factor
 
 ### Single particle diffusion
 
