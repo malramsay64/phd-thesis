@@ -260,7 +260,7 @@ rather than just the entire system as a whole.
 Widmer-Cooper and Harrowell [@Widmer-Cooper2009a] defined
 a structural relaxation $F_d(t)$ where
 
-$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$
+$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
 
 where $w_i(d, t) = 1$ if the particle is within distance $d$
 of it's initial position at time $t$,

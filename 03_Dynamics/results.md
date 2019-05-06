@@ -11,16 +11,14 @@ For the results presented here,
 we don't have an accurate determination of the melting point,
 instead using our best approximation,
 the details of which are discussed in \ref{sec:crystal_melting}
-and presented in @tab:melting_points.
+and presented in @tbl:melting_points.
 
  Pressure   Melting Point
 ---------  --------------
      1.00            0.36
     13.50            1.35
 
-Table: The melting points of the trimer molecule for different pressures.
-{#tab:melting_points}
-
+Table: The melting points of the trimer molecule for different pressures. {#tbl:melting_points}
 
 ## Comparison with other systems
 
@@ -88,7 +86,7 @@ temperature $T=1.50$. The radial distribution is taken as an average over 100 co
 the input trajectory. There shape of the molecule means there are three distinct first
 shell peaks, which are also visible in the second shell. In further shells the only
 impact on shape is the longer than usual tails of the peaks.
-](../Projects/Dynamics/figures/thesis/radial_distribution.pdf){#fig:radial_distribution}
+](../Projects/Dynamics/figures/thesis/radial_distribution.pdf){width=80% #fig:radial_distribution}
 
 From the radial distribution function $G(r)$,
 we can obtain the static structure factor $S(k)$
@@ -112,7 +110,7 @@ which are given below.
 ![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
 temperature $T=1.50$. This is calculated from an average over 100 configurations.
 within the trajectory. The first peak corresponds to a value of 2.90.
-](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){#fig:static_structure_factor}
+](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){width=80% #fig:static_structure_factor}
 
  Pressure  $k$
  --------  -----
@@ -139,7 +137,7 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80%}
+](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80% #fig:intermediate_scattering_function}
 
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
@@ -154,15 +152,55 @@ an interesting phenomenon,
 particularly since there is an onset above
 the melting point.
 
-### Relaxation Times
+![The characteristic timescales for the intermediate scattering function
+over a range of temperatures and pressures.
+To put multiple preesures on a single scale,
+all the temperatures have been scaled
+relative to the melting point.
+](../Projects/Dynamics/figures/thesis/isf_relaxtion.pdf){width=80% #fig:isf_relaxation}
+
+Taking the characteristic timescale of the
+relaxation of the intermediate scattering function,
+which is the rate coefficient of the exponential decay,
+we get @fig:isf_relaxation.
+This includes results from both
+a high pressure simulation ($P=13.50$),
+and a low pressure simulation ($P=1.00$).
+Plotting the results from both simulations
+normalising the temperature by
+the melting point of each pressure,
+the results collapse onto a single curve.
+
+@fig:isf_relaxation is also an excellent example
+of non-Arrhenius behaviour commonly found in supercooled-liquids,
+with there being a distinct shift in the temperature dependence
+above and below $T_m/T$ of 0.8.
+What is particularly interesting about this behaviour
+is that it occurs above the melting point,
+that is, in a liquid not supercooled.
 
 ### Contribution of Individual Particles
+
+The intermediate scattering function
+describes the relaxation of the entire configuration
+with no way of ascribing relaxation to individual particles.
+Here we use the structural relaxation defined in @eq:structural_relaxation
+where particles contributing to relaxation
+can be identified at each timestep.
 
 ![The structural relaxation of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80%}
+](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80% #fig:structural_relaxation}
+
+The shape of @fig:structural_relaxation has
+many of the same features as @fig:isf_relaxation,
+the reversal of relaxations at \si{10e4} timesteps,
+the exponential relaxation.
+The large difference between the two types of relaxation
+is that the two step relaxation process
+is much more noticeable @fig:isf_relaxation.
 
 ## Diffusion
 
@@ -182,7 +220,7 @@ gives the image below.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale of both axes.
-](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80%}
+](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80% #fig:msd}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -221,7 +259,7 @@ the relaxation time is the rate of the decay.
 ![The rotational relaxation of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
-](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80%}
+](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80% #fig:rotational_relaxation}
 
 ## Dynamic heterogeneities
 
@@ -246,7 +284,7 @@ deviates from the expected gaussian distribution [@Donati1999].
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf){width=80%}
+scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf){width=80% #fig:non-gaussian}
 
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-gaussian parameter increases,
