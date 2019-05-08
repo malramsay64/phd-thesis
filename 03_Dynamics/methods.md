@@ -72,4 +72,43 @@ be representative of the equilibrium state.
   - need to average over the equilibrium state
   - not just a correlated set of trajectories
 
+## Error Calculations
+
+The calculation of confidence intervals
+has been performed using the bootstrapping procedure[@Efron1979].
+The probability distributions that I am working with
+are typically not normal distributions,
+meaning the typical statistical approach
+which assumes a normal distribution is not appropriate.
+Using a bootstrap method means
+there is no assumption made on the shape of the distribution.
+The bootstrapping approach is a Monte-Carlo method,
+using a random sampling with replacement
+of the measured values.
+
+<!-- TODO expand on this with equations, code and improved description -->
+
 ## Calculation of Relaxation Times
+
+### Diffusion constant
+
+- fit points from 2 to 50
+    - fit is to linear function $y = mx + b$
+- Error from bootstrapping different frames
+    - calculate for each frame
+    - randomly choose results
+
+### Exponential Relaxations
+
+- Structural relaxation
+- Rotational relaxtion
+
+- Find first value below 1/e
+- bootstrap many starting configurations
+
+### Maximum Time relaxation
+
+- gamma
+- alpha
+
+- Time at which the maximum occurs
