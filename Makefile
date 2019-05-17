@@ -13,11 +13,13 @@ makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
 pandoc_options = -M fignos-cleverref=True -M eqnos-cleverref=True -M tabnos-cleverref=True
 
+figures = $(shell find Projects/ -name "*.svg")
+
 .PHONY: all clean clean_subfiles test
 
 all: thesis.pdf
 
-thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib | $(makedir) $(makesubdirs)
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.csv=.pdf) | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
@@ -28,6 +30,9 @@ thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib | $(makedir) $(
 
 $(makedir) $(makesubdirs): %:
 	mkdir -p $@
+
+%.pdf: %.svg
+	cairosvg $< -o $@
 
 test:
 	mdl .

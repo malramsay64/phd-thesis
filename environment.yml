@@ -9,6 +9,7 @@ dependencies:
   - malramsay::biber==2.11
   - pre_commit
   - conda-forge::nodejs
+  - conda-forge::cairosvg
   - pip:
     - pandoc-eqnos
     - pandoc-fignos
