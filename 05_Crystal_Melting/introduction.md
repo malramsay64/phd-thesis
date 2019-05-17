@@ -1,8 +1,105 @@
 # Introduction
 
-Crystallisation is important
+The crystallisation of a solid from the liquid melt
+is a process underpinning the production
+of a wide range of materials.
+The process of crystallisation
+can be broken into two separate processes,
+the nucleation rate---the formation of small crystals from the liquid, and
+the crystal growth rate---the speed at which the bulk crystal grows.
+The reason these two processes are considered separately,
+is that the nucleation rate is orders of magnitude
+slower than the crystal growth rate.
+It is the slow nucleation rate
+that allows liquids to be supercooled.
+Instead of waiting for a statistically unlikely event to occur,
+crystal growth of experiments uses a seed particle
+from which the crystal growth can propagate.
+The use of seed crystals,
+in addition to initiating the crystal growth,
+can also be used to influence the resulting crystal structure,
+providing another level of control over the growth process.
+In other cases, particle impurities in the liquid
+or tiny scratches in glassware can also act
+as a seed site,
+from which the crystal grows at the crystal growth rate.
 
-## Detection of Crystals
+## Temperature Dependence of Growth Rates
+
+Looking at the nucleation rate and the crystal growth rate separately.
+
+Nucleation occurs when a fluctuation in the liquid state,
+forms a crystalline configuration which is stable long enough to grow.
+The size of this is influenced by the chemical energy difference
+between the liquid and the crystal phases,
+as well as the energy penalty of the interface between them.
+As the size of an nucleation site increases,
+the energy gained from the crystal phase increases
+as the cube of the radius,
+while the penalty for the surface area increases
+as the square of the radius.
+The two different power laws mean that at some finite size,
+a crystalline configuration is stabilised
+and can continue to grow.
+The initial creation of this unstable state
+arises from the random fluctuations of the liquid;
+the average energy has spatial and temporal fluctuations
+which with some rare occurrence,
+create structures which are possible for nucleation.
+As the temperature decreases the fluctuations creating
+the higher energy crystal nucleus become rarer and rarer,
+however also in favour is the larger energy gap
+between the liquid and the crystal phases.
+
+- supercooled liquids for pedestrians [@Cavagna2009a]
+
+The classical theory of crystal growth
+is developed by Wilson[@Wilson1900] and Frenkel[@Frenkel1926],
+where the growth rate is determined by the liquid diffusion
+near the interface, and the chemical potential between the two phases.
+At temperatures just below the melting point
+the chemical potential is the rate limiting parameter,
+while typically lower temperatures become limited
+by the diffusion of particles near the interface.
+
+## Anomalously Slow Growth Rates
+
+In the study of many different crystals,
+the growth rates between the different crystal faces
+can vary by as much as three orders of magnitude [@Reinhart2018,@Burke1988].
+This huge difference between growth rates
+indicates that the growth of the crystal
+is significantly more complicated than posited
+in the discussion of the temperature dependence.
+
+Tang and Harrowell [@Tang2013] found
+for two similar alloys,
+that the difference in crystal growth rates
+could be attributed to
+the ordering of atoms in the interface,
+with the faster glass former displaying ordering
+much further from the boundary of the crystal.
+This observation is supported by the work of Reinhart et. al. [@Reinhart2018]
+where in studying Janis particles,
+the stricter the geometric constraints of the crystal phase,
+the slower the growth rate.
+While in work on Lennard Jones Particles Burke et. al. [@Burke1988]
+attribute the slow growth rate of the (111) crystal face
+to the degeneracy of fcc and hcp stacking,
+with many stacking faults arising during the freezing process as a result.
+
+While the Wilson-Frenkel theory has a characteristic timescale of diffusion
+it may be that for more complicated crystal structures,
+such as Janus Particles [@Reinhart2018], clathrates [@Yagasaki2016] and molecular crystals
+the diffusion may no longer be the relevant characteristic timescale.
+This is particularly important for molecular crystals,
+where one of the major results has been the decoupling
+of the rotational relaxation time and the diffusion constant,
+with the rotational relaxation getting slower much faster than the dynamics.
+
+
+
+
 
 - Methods of crystal detection
     - Simple methods
