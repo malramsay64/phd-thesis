@@ -1,9 +1,61 @@
 # Methods
 
+## Reduced Units
+
 ## Simulations
 
-## Crystal Melting Rates
+- tau = 1
+- tauP = 1
+- step size = 0.005
 
+### Creation of Initial Crystal
+
+- NPT simulation
+- All degrees of freedom are decoupled
+    - box is allowed to tilt
+    - x,y,z increase independently
+- Momentum is zeroed every 307 steps
+
+- Creation of Initial Crystal from Parameters
+    - p2 Crystal paramters
+    - p2gg crystal parameters
+    - pg crystal parameters
+
+- Choice of unit cell parameters
+    - closest to square
+    - conversion of p2 crystal to orthogonal
+    - get the p2 crystal to align when orthogonal
+
+- initialised at a lower temperature
+
+### Creation of Liquid--Crystal Interface
+
+- NPT simulation
+    - x, y axes expand individually
+- Box of particles in the center third of the simulation cell are not integrated
+    - temperature for these not included in calculation
+- start at the higher temperature
+    - randomly initialise velocities and angular velocities
+- run until the crystal melts
+- Positions of all particles are increased
+    - distance between particles in the static region increases with the rest of the
+      simulation cell
+
+### Equilibration of Liquid--Crystal Interface
+
+- NPT Simulation
+- Temperature gradually decreased
+    - more steps for lower temperatures
+    - simulation at the lower temperature
+- Non-integrated region remains stationary
+
+- Run for a number of steps at the higher temperature
+
+### Melting of Liquid--Crystal Interface
+
+- NPT Simulation
+
+## Crystal Melting Rates
 
 ### Measuring Melting Rates
 
