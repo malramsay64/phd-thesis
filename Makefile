@@ -11,7 +11,10 @@ subfiles := $(subfiles:.md=.tex)
 makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
+pandoc_filters = --filter pandoc-crossref
 pandoc_options = -M fignos-cleverref=True -M eqnos-cleverref=True -M tabnos-cleverref=True
+pandoc_options =
+
 
 figures = $(shell find Projects/ -name "*.svg")
 
@@ -26,7 +29,7 @@ thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.csv=
 	cp $(makedir)/$(notdir $@) .
 
 %.tex: %.md  # Convert markdown files to latex using pandoc
-	pandoc -t latex $< -o $@ --biblatex --filter pandoc-eqnos --filter pandoc-fignos --filter pandoc-tablenos $(pandoc_options)
+	pandoc -t latex $< -o $@ --biblatex $(pandoc_filters) $(pandoc_options)
 
 $(makedir) $(makesubdirs): %:
 	mkdir -p $@
