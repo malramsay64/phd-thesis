@@ -15,6 +15,53 @@ suited to the aims of the particular simulation.
 This process takes an arbitrary molecular shape
 and generate a representative dataset.
 
+### Choice of Simulation Program
+
+- GPU Acceleration
+    - Benchmarking
+    - Designed for GPU decomposition
+    - Long timescales, small simulations -> performance of each frame is important
+    - Supercomputer performance in consumer hardware
+- Handling of Rigid Bodies
+- Version Management / Additional Packages / Installation
+
+### Simulation Details
+
+Simulations of type liquid or interface will be forced into an orthorhombic shape by
+setting the new orthorhombic box shape and moving particles through the new periodic
+boundary conditions. In the image below, the initial configuration is the tilted
+box, with the vertical bars being the simulation box. Particles outside the new box
+are wrapped into the missing regions on the opposite side.
+
+```text
+   ____________________
+  | /               | /
+  |/                |/
+  /                 /
+ /|                /|
+/_|_______________/_|
+```
+
+The only difference between simulations of type `"liquid"` and `"interface"`, is
+that the interface simulations will only be integrating the motion of a subset of
+molecules, with the central 2/3 of particles remaining stationary.
+
+For the simulation type `"crystal"`, the momentum is zeroed more often, every 307
+steps instead of 33533 for the liquid and interface simulations. Additionally, to
+allow proper and complete relaxation of the crystal structure, each side of the
+simulation cell is able to move independently and the simulation cell is also
+permitted to tilt.
+
+- Hoomd Reference
+- GPU Hoomd Reference
+
+- step size 0.005
+- reduced units
+- molecule
+- tau = 1.0
+- tauP = 1.0
+- number of molecules
+
 ### Initialisation
 
 The complex shapes of the molecules makes it difficult to
@@ -35,6 +82,10 @@ the resulting configuration is equilibrated at a temperature
 above those studied and the desired pressure,
 using a NPT simulation.
 
+#### Simulation Details
+
+- FIRE reference
+
 <!-- TODO Check simulation condtions -->
 
 ### Equilibration
@@ -54,6 +105,12 @@ which is the positions, momenta, orientations, and angular momentum.
 - Methodology -> decrease temperature for half steps or 1e7 whichever is smaller then run at desired
   temperature for remainder
 
+#### Simulation Details
+
+- Zero momentum every 33533 steps
+    - chosen for being a prime number
+    - less likely to cause issues (citation??)
+
 ### Production
 
 The collection of data for the equilibrium property of the dynamics
@@ -64,6 +121,7 @@ be representative of the equilibrium state.
   - NPT
   - Imaginary mass
 - data on many timescales
+    - step sequence
 - constraints of data collection
   - storage size
   - network speeds
@@ -71,6 +129,10 @@ be representative of the equilibrium state.
 - starting configurations
   - need to average over the equilibrium state
   - not just a correlated set of trajectories
+- Zero momentum every 33533 steps
+    - chosen for being a prime number
+    - less likely to cause issues (citation??)
+    - no diffusion from particle flow
 
 ## Error Calculations
 
