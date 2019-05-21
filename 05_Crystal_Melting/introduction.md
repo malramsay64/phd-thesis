@@ -166,8 +166,8 @@ with the rotational relaxation getting slower much faster than the dynamics.
     - "The crystallisation rate is determined by the nucleation rate and the crystal
       growth rate."
     - "but failed to find any sign of crystallisation in the CuZr mixture, despite runs
-      of \SI{50}{\nano\seconds} duration"
-        - Timestep is \SI{1}{\femto\second}
+      of \SI{50}{ns} duration"
+        - Timestep is \SI{1}{fs}
         - 50 million timesteps
     - The growth rate $v$ has been determined as follows:
         $$ v = \frac{V d_1}{2N_1(V_c - V1)} $$
@@ -206,6 +206,7 @@ with the rotational relaxation getting slower much faster than the dynamics.
       of thermodynamic interface penaly, $\beta\gamma\sigma^2$, which is a macroscopic
       measure of the liquid--crystal structural differences."
 
+
 - [@Yagasaki2016]
     - "A simulation is continued for 700 ns or until complete disappearance of either
       solid or liquid part"
@@ -227,5 +228,3 @@ with the rotational relaxation getting slower much faster than the dynamics.
       fluid and crystal, which acts to suppress nucleation."
     - "a slight trend to faster growth for reduced five-fold symmetry. This suggests
       that the growth rate and nucleation are decoupled"
-
-- [@Harrowell and Ox Toby]

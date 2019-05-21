@@ -133,7 +133,6 @@ in behaviour as they approach the glass transition temperature.
 - Fragility of glass formers
     - Faster than expected change upon cooling
 
-
 ## Characteristic Temperatures
 
 - Vogel--Tammann--Fulcher
@@ -337,7 +336,7 @@ Where molecules rotate inertially, that is,
 they carry out rotations over reasonably large angular displacements
 before being interrupted by a collision,
 resulting in non-exponential decay, where
-$$ 1 < \tau_1/\tau_2 < 3.$$
+$$ 1 < \tau_1/\tau_2 < 3 $$
 
 The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
 that is, assuming rotations take place through a process of small random steps.
