@@ -103,3 +103,10 @@ finding an Isotropic melting rate.
 -
 - Machine Learning Methodology
     - Reference to results in previous section
+
+### Calculation of Errors
+
+- Dynamics
+    - See @sec:dynamics
+- Melting Rate
+    -
