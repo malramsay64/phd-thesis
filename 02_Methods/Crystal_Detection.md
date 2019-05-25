@@ -130,7 +130,7 @@ dataset, with a confusion matrix showing the classification errors shown in @fig
 ![The confusion matrix of the trained KNN algorithm for the test dataset. The diagonal shows the
 percentage of correctly clasified environments while the off diagonal elements are the
 misclassifications. It is interesting to note that most of the misclassifications are predicting a
-crystalline environment as a liquid.](figures/knn_confusion_matrix.png){#fig:knn_confusion}
+crystalline environment as a liquid.](02_Methods/figures/knn_confusion_matrix.png){#fig:knn_confusion}
 
 ## Clustering
 
