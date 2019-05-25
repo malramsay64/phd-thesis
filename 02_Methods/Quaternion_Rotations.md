@@ -48,7 +48,8 @@
     - This anomalous results is explained by the fact that at $\theta = 0$ the angles
       $\phi  and \varphi$ are not independent and are therefore not suiteable as
       generalised coordinates.
-    - This equation is also a problem, for at $\theta = 0$ the matrix $\Eta$ is singular
+    - This equation is also a problem, for at $\theta = 0$ the matrix $\Xi$ is
+      singular
       and its inverse does not exist.
 
 ## Mathematical Operations of Quaternions
