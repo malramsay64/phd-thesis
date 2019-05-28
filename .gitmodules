@@ -4,3 +4,6 @@
 [submodule "Projects/Crystal_Melting"]
 	path = Projects/Crystal_Melting
 	url = https://github.com/malramsay64/Crystal_Melting.git
+[submodule "Projects/MLCrystals"]
+	path = Projects/MLCrystals
+	url = git@github.com:malramsay64/MLCrystals.git
