@@ -1,5 +1,19 @@
 # Quaternion Rotations
 
+## Rotations in 3D
+
+- There are many methods for representing rotations in 3D space.
+    - Euler angles
+        - Common in robotics applications
+            - Typically a restriction of the robot
+            - Rotations have to take place in a certain order
+        - Value of the rotation is dependent on the order of the rotations
+
+    - $3 \times 3$ rotation matrix
+        - requires 9 floating point numbers
+        - after many multiplications round off errors accumulate
+        - difficult to re-orthogonalise
+
 ## Quaternions
 
 - Quaternions are a method of representing rotations in 3D space.
@@ -90,6 +104,9 @@
       molecular dynamics simulations
         - Using the `rowan.geometry.intrisic_distance` function, which implements the
           optimised distance in [@Huynh2009], we get optimised distance calculations
+
+        - Use the approach  $\Phi_6 = ∥ log(R1R2 )∥$
+        -  $\Phi_3 = \arccos(|q1 · q2|)$
 
 ## Quaternions in 2D
 
