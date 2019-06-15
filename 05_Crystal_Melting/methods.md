@@ -10,7 +10,11 @@
 
 ### Creation of Initial Crystal
 
-- NPT simulation
+- Use crystal structure from isopointal search
+- FIRE minimisation to find local minima with LJ potential
+    - Allow tilt and box shinkage/growth
+
+- NPT simulation to relax structure -> equilibrate
 - All degrees of freedom are decoupled
     - box is allowed to tilt
     - x,y,z increase independently
@@ -74,8 +78,6 @@ These approaches use a slab geometry [@Kerrache2008]
 to measure the growth or melting rates
 of a single face of the crystal.
 
-The melting rates of each crystal face can
-
 There is no precedence in the literature
 for the creation of a slab geometry
 for a unit cell that doesn't fit in an orthorhombic unit cell.
@@ -97,10 +99,8 @@ finding an Isotropic melting rate.
         with regards to timesteps [@Widmer-Cooper2009a,@Kerrache2008,@Tang2013]
     - Still only looking at less than a layer melting near the melting point
 
-
-
 - Detection of Crystalline molecules
--
+
 - Machine Learning Methodology
     - Reference to results in previous section
 
@@ -109,4 +109,6 @@ finding an Isotropic melting rate.
 - Dynamics
     - See @sec:dynamics
 - Melting Rate
-    -
+- Normalised Melting Rate
+    - Dynamics don't have a normal distribution
+    - Combining the asymmetric error with a normal error requires special handling
