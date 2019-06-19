@@ -137,7 +137,7 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=80% #fig:intermediate_scattering_function}
+](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=81% #fig:intermediate_scattering_function}
 
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
@@ -157,7 +157,7 @@ over a range of temperatures and pressures.
 To put multiple preesures on a single scale,
 all the temperatures have been scaled
 relative to the melting point.
-](../Projects/Dynamics/figures/thesis/isf_relaxtion.pdf){width=80% #fig:isf_relaxation}
+](../Projects/Dynamics/figures/thesis/isf_relaxation.pdf){width=80% #fig:isf_relaxation}
 
 Taking the characteristic timescale of the
 relaxation of the intermediate scattering function,
@@ -220,7 +220,7 @@ gives the image below.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale of both axes.
-](../Projects/Dynamics/figures/thesis/mean-squared-displacement.pdf){width=80% #fig:msd}
+](../Projects/Dynamics/figures/thesis/mean_squared_displacement.pdf){width=80% #fig:msd}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -288,7 +288,7 @@ deviates from the expected gaussian distribution [@Donati1999].
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/non-gaussian.pdf){width=80% #fig:non-gaussian}
+scale.](../Projects/Dynamics/figures/thesis/non_gaussian.pdf){width=80% #fig:non-gaussian}
 
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-gaussian parameter increases,
