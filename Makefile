@@ -22,7 +22,9 @@ figures = $(shell find Projects/ -name "*.svg")
 
 all: thesis.pdf
 
-thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.csv=.pdf) | $(makedir) $(makesubdirs)
+figures: $(figures:.svg=.pdf)
+
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.svg=.pdf) | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
