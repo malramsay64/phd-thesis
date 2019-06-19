@@ -45,16 +45,24 @@ The p2 crystal appears to be the lowest energy crystal structure.
 
 - The p2 crystal is demonstrated to be the most stable in the above simulations
 
-- Figure: Change in volume over time for range of temperatures
-    - Track the melting of the crystal structure
+![This figure shows the change in volume of an inital crystal surrounded by liquid as a
+function of time. Each set of conditions was repeated five times from independent
+configurations, with the results from each configuration shown as a dot.The change in
+volume proceeds fairly linearly over the changes in volume presented
+here.](../Projects/Crystal_Melting/figures/melting_volume.pdf){#fig:melting_volume}
 
-- Figure: Melting rates including errors
-    - Normalise temperature by the melting temperature
+![The crystal growth rates normalised by the melting point. For clarity a light grey
+line has been marked at a melting rate of 0. These results are for both high and low
+pressure melting, which when normalised by the melting point collapse onto the same
+curve. Multiple independent result for every set of conditions are marked
+individually.](../Projects/Crystal_Melting/figures/growth_rates.pdf){#fig:growth_rates}
 
 - Figure: Rotational relaxation times
     - Note pressures collapse onto a single curve
 
-- Figure: Melting rates normalised by the rotational relaxation time
-    - This includes the data for both pressures
-    - Do the melting rates track the same for both pressures
-    - More than just bulk dynamics
+![This normalises both the temeprature by the melting point, and the growth rate by the
+rotational relaxation. In this figure we can see that the growth rate is increases
+faster than would just be explained by the dynamics. The shape of the curve seems to
+indicate a slowing down of this effect, which is opposite of what is expected. This
+effect is currently
+unexplained.](../Projects/Crystal_Melting/figures/normalised_melting.pdf){#fig:growth_rates}
