@@ -1,0 +1,18 @@
+{
+  "filters": {
+    "comments": true
+  },
+  "rules": {
+    "apostrophe": true,
+    "common-misspellings": true,
+    "diacritics": true,
+    "no-dead-link": true,
+    "stop-words": true,
+    "terminology": true,
+    "alex": {
+        "profanitySureness": 1
+    },
+    "write-good": true,
+    "unexpanded-acronym": true
+  }
+}
