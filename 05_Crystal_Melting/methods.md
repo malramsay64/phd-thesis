@@ -177,9 +177,48 @@ to find the overall crystal growth rate.
 
 ### Calculation of Errors
 
-- Dynamics
-    - See @sec:dynamics
-- Melting Rate
-- Normalised Melting Rate
-    - Dynamics don't have a normal distribution
-    - Combining the asymmetric error with a normal error requires special handling
+There are a number of different types of errors
+in the calculation of the melting rates.
+There is the errors in the classification of the crystalline particles
+and finding the region containing the crystal,
+along with the fluctuations in the size of the crystal.
+These first set of errors are all captured in the variance
+of the melting curve,
+with the effect of the errors minimised 
+by fitting a straight line to all the points.
+This line of best fit
+includes an error in the fit.
+An additional source of error 
+is the variance between the simulation runs.
+This error is found by multiple repetitions of the melting runs
+using independent configurations.
+
+It has been found that the error between simulations
+is significantly larger than the error
+in finding the melting rates for a single simulation.
+For this reason, 
+the standard deviation of the melting rate
+is the standard deviation of the values from each independent simulation.
+This is converted to a standard error
+by dividing by the square root of the number of samples.
+
+This is all that is required for calculating the error
+of the crystallisation rate,
+however we are also combining this value
+with the rotational relaxation time
+which has it's own errors---
+see @sec:Dynamics for the calculation of this value
+and the respective errors.
+These are calculated using bootstrapping,
+since the distribution is non-normal.
+There is no exact method of combining asymmetrical errors [@Barlow2003]
+and there is no standard method in the field,
+instead I am making the errors symmetrical,
+with the size of the largest asymmetrical error.
+
+The two now symmetrical errors in
+the crystallisation rate and the rotational relaxation time 
+can be combined by adding the fractional errors.
+
+$$ \sigma_{C*R} = (\tau_C * \tau_R) \left [ \frac{\simga_C}{\tau_C} + \frac{\sigma_R}{\tau_R} \right ] $$
+
