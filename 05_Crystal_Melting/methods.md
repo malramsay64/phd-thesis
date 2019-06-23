@@ -184,11 +184,11 @@ and finding the region containing the crystal,
 along with the fluctuations in the size of the crystal.
 These first set of errors are all captured in the variance
 of the melting curve,
-with the effect of the errors minimised 
+with the effect of the errors minimised
 by fitting a straight line to all the points.
 This line of best fit
 includes an error in the fit.
-An additional source of error 
+An additional source of error
 is the variance between the simulation runs.
 This error is found by multiple repetitions of the melting runs
 using independent configurations.
@@ -196,7 +196,7 @@ using independent configurations.
 It has been found that the error between simulations
 is significantly larger than the error
 in finding the melting rates for a single simulation.
-For this reason, 
+For this reason,
 the standard deviation of the melting rate
 is the standard deviation of the values from each independent simulation.
 This is converted to a standard error
@@ -217,8 +217,14 @@ instead I am making the errors symmetrical,
 with the size of the largest asymmetrical error.
 
 The two now symmetrical errors in
-the crystallisation rate and the rotational relaxation time 
+the crystallisation rate and the rotational relaxation time
 can be combined by adding the fractional errors.
 
-$$ \sigma_{C*R} = (\tau_C * \tau_R) \left [ \frac{\simga_C}{\tau_C} + \frac{\sigma_R}{\tau_R} \right ] $$
+$$ \sigma_{C \times R} = (\tau_C * \tau_R) \left [ \frac{\sigma_C}{\tau_C} + \frac{\sigma_R}{\tau_R} \right ] $$
 
+Where $\tau_C$ is the crystal growth rate,
+$\sigma_C$ is the error in the crystal growth rate,
+$\tau_R$ is the rotational relaxation time
+$\sigma_R$ is the error in the rotational relaxation time,
+and $\sigma_{C\times R}$ is the error of
+the $\tau_R \times \tau_C$.
