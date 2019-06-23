@@ -149,20 +149,31 @@ provided two-dimensional data.
 The above steps describe the process
 of calculating the volume and surface area
 of the crystal at a single point in time.
-And these values are calculated
-for each individual configuration within a melting simulation.
-From each of these measurements
-a straight line fit
-is used to find the change in area $A$ over time $t$,
-with this being normalised by the initial perimeter $P$,
-to give a crystallisation rate $\tau_C$ as the distance the interface travels.
+If we make the assumption
+that the shape of the crystal region is roughly circular,
+which from observations of the melting behaviour
+is a reasonable description of the melting behaviour.
+This means that we can express the crystallisation rate
+with reference to the radius
 
-$$ \tau_C = \frac{1}{P} \frac{\Delta A}{\Delta t} $$
+$$ \tau_C = \frac{\Delta r}{\Delta t} $$
 
-So that the changing perimeter doesn't
-have too much of an effect on the measured rate,
-the melting is only tracked until it is 50%
-of it's original volume.
+and taking the radius from the volume,
+namely by rearranging the equation
+for the volume of a circle
+
+$$ V = \pi r^2 $$
+
+$$ r = \frac{\sqrt{V}}{\pi} $$
+
+Which gives the relation
+
+$$ \tau_C = \frac{1}{\pi} \frac{\Delta \sqrt{V}}{\Delta t} $$
+
+The change of the radius
+is expected to be linear in time,
+so all the measurements  are fit to a straight line
+to find the overall crystal growth rate.
 
 ### Calculation of Errors
 
