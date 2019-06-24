@@ -3,7 +3,7 @@
     "comments": true
   },
   "rules": {
-    "apostrophe": true,
+    "apostrophe": false,
     "common-misspellings": true,
     "diacritics": true,
     "no-dead-link": true,
