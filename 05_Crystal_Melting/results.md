@@ -115,10 +115,6 @@ Difference $\Delta h_m$    -0.180  -0.066
 Table: The potential energy of the liquid and the crystal at the melting point for both
 pressures. {#tbl:potential_energy_difference}
 
-Using the results in @tbl:potential_energy_difference
-to fit the points in @fig:normalised_melting
-gives the curves shown in @fig:normalised_melting,
-with each pressure getting a different curve.
 
 The Wilson-Frenkel[@Wilson1900,@Frenkel1926] theory of crystal growth,
 describes the velocity $V$ of an interface

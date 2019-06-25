@@ -54,7 +54,7 @@ between the liquid and the crystal phases.
 - supercooled liquids for pedestrians [@Cavagna2009a]
 
 The classical theory of crystal growth
-is developed by Wilson[@Wilson1900] and Frenkel[@Frenkel1926],
+is attributed to Wilson[@Wilson1900] and Frenkel[@Frenkel1926],
 where the growth rate is determined by the liquid diffusion
 near the interface, and the chemical potential between the two phases.
 At temperatures just below the melting point
