@@ -80,13 +80,9 @@ longer crystal melting simulations are finished.
 
 ![The crystal growth rates normalised by the melting point. For clarity a light grey
 line has been marked at a growth rate of 0. These results are for both high and low
-pressure melting, which when normalised by the melting point collapse onto the same
-curve.](../Projects/Crystal_Melting/figures/growth_rates_err.pdf){#fig:growth_rates}
-
-
-- Figure: Rotational relaxation times
-    - Note pressures collapse onto a single curve
-    - These results have been interrupted by the Artemis maintenance window
+pressure melting, which collapse onto the same curve when normalising the temperature by
+the melting point.
+](../Projects/Crystal_Melting/figures/growth_rates_err.pdf){#fig:growth_rates}
 
 The normalisation by the temperature allows
 for the comparison between different pressures,
@@ -100,10 +96,9 @@ tends to get smaller,
 which is the expected behaviour.
 
 ![This normalises both the temeprature by the melting point, and the growth rate by the
-rotational relaxation. The large confidence intervals, reflect the large errors In this
-figure we can see that the growth rate is increases faster than would just be explained
-by the
-dynamics.](../Projects/Crystal_Melting/figures/normalised_melting_err.pdf){#fig:normalised_melting}
+rotational relaxation. This figure shows the growth rate slowing faster than
+can be explained by the dynamics, which is indicated by the values approaching zero.
+](../Projects/Crystal_Melting/figures/normalised_melting_err.pdf){#fig:normalised_melting}
 
 Theory which describes the temperature dependence of the melting rate,
 formulated from a characteristic dynamic timescale of the system
@@ -111,19 +106,81 @@ and the chemical potential energy difference between the phases.
 The chemical energy difference is often replaced with
 the potential energy difference at the melting point.
 
-
-Pressure  Crystal Potential Energy Liquid Potential Energy Difference
---------  ------------------------ ----------------------- ----------
-1.00
-13.50
+Pressure:                    1.00   13.50
+----------                 ------  ------
+Crystal Potential Energy   -1.991  -1.111
+Liquid Potential Energy    -1.811  -1.045
+Difference $\Delta h_m$    -0.180  -0.066
 
 Table: The potential energy of the liquid and the crystal at the melting point for both
-pressures.{#tbl:potential_energy_difference}
+pressures. {#tbl:potential_energy_difference}
 
 Using the results in @tbl:potential_energy_difference
-to fit the points in @fig:normalised_melting_err
-gives a result which is not a good fit for the resulting data,
-having a concavity which doesn't match that of the results.
-Fitting the values to both parameters,
-provides a much improved fit with a potential energy difference
-of about 100 times the calculated value.
+to fit the points in @fig:normalised_melting
+gives the curves shown in @fig:normalised_melting,
+with each pressure getting a different curve.
+
+The Wilson-Frenkel[@Wilson1900,@Frenkel1926] theory of crystal growth,
+describes the velocity $V$ of an interface
+
+$$ V(T) = k(T)[1-\e^{\beta \Delta u}] $$ {#eq:wilson_frenkel_growth}
+
+where $\beta = \frac{1}{k_{\text{B}} T}$
+with $k_{\text{B}}$ being the Boltzmann Constant,
+and $\Delta u$ being the change in chemical potential.
+A standard method @Tang2013 of estimating the chemical potential $\Delta u$ is
+
+$$ \Delta u = \frac{(T_m - T) \Delta h_m}{T_m} $$
+
+allowing, with some rearrangement, to express @eq:wilson_frenkel_growth as
+
+$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp{\frac{(1-T^*)\Delta h_m}{T^*}} \right ]$$ {#eq:normalised_growth}
+
+where $T^* = T/T_m$ the normalised temperature,
+$c$ is a constant
+$\Delta h_m$ is the free energy from the liquid to the crystal
+at the melting point,
+$V(T^*)$ is the velocity of the interface,
+and $\tau_C(T^*)$ is the crystallisation rate.
+This represents a theoretical description
+of the points in @fig:normalised_melting.
+
+Using the points from @fig:normalised_melting
+and the values from @tbl:potential_energy_difference,
+the unknown parameter of @eq:normalised_growth
+was found using the Levenberg-Marquardt algorithm [@Levenberg1944,@Marquardt1963,@More1978,@Jones2001],
+for least squares fitting of non-linear functions.
+This gives the lines of fit in @fig:normalised_melting.
+
+The lines depicting the fit of
+the Wilson-Frenkel theory in @fig:normalised_melting
+deviate from the data in a some significant ways.
+Firstly, while it appears
+that both pressures display a single melting rate curve
+from the simulation data,
+the theory displays two separate curves,
+reflecting the different potential energy differences $\Delta h_m$
+of the crystal and liquid at the melting point.
+Secondly, the shape of each of the curves
+is not a good fit for either dataset,
+with the concavity of the data
+not matching that of the curves based on the theoretical result.
+The higher temperature values $T/T_m > 1.50$
+emphasise the poorness of the fit,
+with results that are a long way from the theoretical value,
+suggesting that the Wilson-Frenkel theory
+doesn't describe the high temperature melting dynamics
+of this liquid.
+
+An alternative method for the analysis
+of the theoretical values
+is to fit both the constant $c$ and the free energy difference $\Delta h_m$
+in @eq:normalised_growth
+to the collected data.
+When using the Levenberg-Marquardt algorithm for the fit
+taking into account the uncertainty of each point
+gives a value for the free energy difference
+close to the experimental value.
+This highlights that while the high temperature values
+are a long way from the expected theoretical value,
+they also have a correspondingly large uncertainty.
