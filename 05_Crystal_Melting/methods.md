@@ -85,7 +85,7 @@ Because the crystal growth and melting rates can vary by such a large value,
 both the (1,0) and the (0,1) faces of the unit cell need to be tested.
 
 Furthermore, the melting rates which are required for studying this system
-are more than three orders of magnitude longer that similar studies. [@Widmer-Cooper2009a,@Kerrache2008,@Tang2013]
+are more than three orders of magnitude longer that similar studies. [@Widmer-Cooper2009a;@Kerrache2008;@Tang2013]
 The rates required are measuring on the order of
 a layer of the crystal melting over
 a billion timesteps.

@@ -41,6 +41,43 @@ at a rate which significantly exceeds the melting rate.
 
 The p2 crystal appears to be the lowest energy crystal structure.
 
+## Melting Behaviour
+
+The melting we are studying that which occurs
+at the liquid--crystal interface.
+This interfacial melting occurs
+from the melting point up to the spinodal Temperature,
+where the crystal phase is no longer metastable
+and starts breaking apart from within.
+Before modelling the melting rate over a range of temperatures,
+we need the temperature range which displays the expected melting behaviour.
+
+<div id="fig:spinodal" class="subfigures">
+
+![](Projects/Crystal_Melting/figures/melting_disorder_P100-T075.pdf){#fig:melting_disorderB width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P100-T060.pdf){#fig:melting_disorderA width=45%}
+
+Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
+melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
+temperature of 0.60. While (b) shows defects within the crystal, these are transient,
+retuning the crystal to it's original structure as they move along the lattice
+dimension. This is unlike in (a) where the defects are persistent and support the
+propagation of melting in the surrounding crystal.
+
+</div>
+
+
+Pressure  Spinodal Temperature
+-------- ---------------------
+1.00            0.60
+13.50           2.20
+
+Table: The temperatures at which the spinodal occurs for the crystal structure at both
+pressures. {#tbl:crystal_spinodal}
+
+The Spinodal temperatures in @tbl:crystal_spinodal represent
+the highest temperature for studying melting.
+
 ## Melting Rates
 
 The above simulations show that the p2 crystal
@@ -52,8 +89,7 @@ is the chosen metric,
 measured using an estimated radius,
 found from the volume
 by assuming a circular crystal.
-@fig:melting_radius shows the time dependence
-which is linear,
+@fig:melting_radius shows a linear time dependence
 fitting the expected behaviour,
 over all temperatures.
 
@@ -116,7 +152,7 @@ Table: The potential energy of the liquid and the crystal at the melting point f
 pressures. {#tbl:potential_energy_difference}
 
 
-The Wilson-Frenkel[@Wilson1900,@Frenkel1926] theory of crystal growth,
+The Wilson-Frenkel[@Wilson1900;@Frenkel1926] theory of crystal growth,
 describes the velocity $V$ of an interface
 
 $$ V(T) = k(T)[1-\e^{\beta \Delta u}] $$ {#eq:wilson_frenkel_growth}
@@ -144,7 +180,7 @@ of the points in @fig:normalised_melting.
 Using the points from @fig:normalised_melting
 and the values from @tbl:potential_energy_difference,
 the unknown parameter of @eq:normalised_growth
-was found using the Levenberg-Marquardt algorithm [@Levenberg1944,@Marquardt1963,@More1978,@Jones2001],
+was found using the Levenberg-Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001],
 for least squares fitting of non-linear functions.
 This gives the lines of fit in @fig:normalised_melting.
 

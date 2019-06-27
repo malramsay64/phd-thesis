@@ -1,7 +1,7 @@
 # Introduction
 
 Current models of motion in the liquid state
-are based on the Stokes-Einstein-Debye relationships[@Debye,@Stokes],
+are based on the Stokes-Einstein-Debye relationships[@Debye;@Stokes],
 which are theoretical models of collective motion
 derived from particles undergoing Brownian motion[@Einstein].
 The most common relationships of the Stokes-Einstein-Debye models are
@@ -249,7 +249,7 @@ given by
 $$G(r, t) = \frac{1}{4\pi r^2 \Delta r} \langle \delta[r_i(t) - r_i(0) - r] \rangle$$
 
 which has also been used for computing structural relaxation
-[@Glotzer2000,@Debnedetti2001,@Levesque1970,@Kob1995].
+[@Glotzer2000;@Debnedetti2001;@Levesque1970;@Kob1995].
 
 More recently, there has been an effort
 to link structure with dynamics on a local level,
@@ -308,7 +308,7 @@ for vectors along the $x, y,$ and $z$ axes into a single
 complete rotational relaxation.
 An approach which is only concerned with isotropic rotational motion
 could also take the approach of Chen et. al [@Chen2017]
-and represent molecular rotation using quaternions[@Furry1957,???],
+and represent molecular rotation using quaternions[@Furry1957;???],
 which capture all rotational information.
 It should be noted that
 the quaternion representation can also be decomposed
@@ -319,7 +319,7 @@ The advantage with using the quaternion approach
 is that quaternions are the most sensible approach
 for computationally representing rotations in three dimensions[@Huynh2009]
 and is commonly used in molecular dynamics simulations
-[@Ciccotti1986,@Omelyan1998,@Rog2003,@Anderson1983,@Refson2000,@Nose1983,@Evans1977,@Rapaport1985].
+[@Ciccotti1986;@Omelyan1998;@Rog2003;@Anderson1983;@Refson2000;@Nose1983;@Evans1977;@Rapaport1985].
 
 ### Methods of rotational relaxations
 

@@ -76,7 +76,7 @@ with *n*-fold cross validation
 being the most common.
 The *n*-fold cross validation is where the
 test dataset is further split into
-*n* components, with $n=10$ being close to optimal[@Zhang1993,@Arlot2010].
+*n* components, with $n=10$ being close to optimal[@Zhang1993;@Arlot2010].
 Cross validation is all about reducing
 the risk that the model is highly specific
 to part of the dataset.

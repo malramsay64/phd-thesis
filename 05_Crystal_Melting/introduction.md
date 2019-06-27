@@ -66,7 +66,7 @@ by the diffusion of particles near the interface.
 
 In the study of many different crystals,
 the growth rates between the different crystal faces
-can vary by as much as three orders of magnitude [@Reinhart2018,@Burke1988].
+can vary by as much as three orders of magnitude [@Reinhart2018;@Burke1988].
 This huge difference between growth rates
 indicates that the growth of the crystal
 is significantly more complicated than posited

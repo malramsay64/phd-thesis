@@ -454,7 +454,7 @@ for a particle to first move beyond this characteristic distance.
     - How are the fastest and slowest particles correlated with each other spatially
     - Does this change as a function of temperature?
     - Does this change as we increase/decrease the timescale?
-    - Ref [@Kob1997, @Donati1999]
+    - Ref [@Kob1997; @Donati1999]
 
 - Onset of activated process?
 
