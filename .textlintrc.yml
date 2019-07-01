@@ -1,0 +1,22 @@
+rules:
+  apostrophe: false,
+  common-misspellings: true,
+  diacritics: true,
+  "no-dead-link": true,
+  "stop-words":
+    defaultWords: true,
+    words:
+      - simply
+      - obviously
+      - basically
+      - clearly
+      - just
+      - easy
+      - so
+      - "everyone knows"
+    exclude:
+      - principal
+  terminology: true,
+  alex: false
+  "write-good": true,
+  "unexpanded-acronym": true
