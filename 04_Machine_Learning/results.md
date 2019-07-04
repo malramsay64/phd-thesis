@@ -86,19 +86,38 @@ PCA is a transformation of the data
 to a new coordinate system
 such that the greatest variance lies on the first coordinate
 and the second greatest variance on the second coordinate.
+@Fig:dim_reduction_PCA shows the first two dimensions of the PCA
+with each local structure plotted as a point.
+The PCA analysis shows the liquid occupying the full range of values,
+reflecting the liquid state being able to explore the full range of configurations.
+Additionally the PCA generally groups the crystal configurations together,
+though there is little separation of the pg crystal from the liquid,
+while the p2 and the p2gg crystals are inseparable from the liquid.
+The main result of the PCA analysis,
+is that the crystal structures are not linearly separable,
+which is also reflected in the Supervised learning results.
 
 ![Dimensionality reduction of the trimer dataset using a linear Principal Components
-Analysis. Each point is coloured according to it's labelled
-structure](../Projects/MLCrystals/figures/dim_reduction_PCA.pdf){#fig:dim_reduction_PCA width=85%}
+Analysis. Each point is coloured according to it's labelled structure. There are regions
+of high density for each crystal structure, though there is little separation of the
+crystal structures.
+](../Projects/MLCrystals/figures/dim_reduction_PCA.pdf){#fig:dim_reduction_PCA width=85%}
 
-- PCA
-    - What is it
-    - What it shows
-    - Groups the crystal structures into their components
-    - there is a lot of overlap with the liquid state
-    - Linear combination not adequate in 2D
+Using a non-linear dimensionality reduction
+is another approach to
 
-A si
+- non-linear approach
+    - umap
+    - retains local structure, and global structure
+- Liquid is mostly co-located in single location
+    - does appear to be two somewhat distinct groups
+- Lots of groups for the crystals
+    - This matches the linear Decomposition
+    - 3 groups of p2
+    - at least 4 groups for p2gg
+    - pg over on it's own
+- Most importantly clear separation of the liquid and each of the crystals.
+
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection.
@@ -115,9 +134,41 @@ with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
 ](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.pdf){#fig:dim_reduction_sorted_UMAP width=85%}
 
+- Sorting works for clustering
+    - simplifying the data
+    - a method of dimensionality reduction
+    - like only having half a matrix to work with
+- There is no advantage for supervised learning
+    - Algorithms able to generate complex boundaries
+    - KNN and DT in particular
+    - There are enough points in each configuration for there not to be and issue
+- However for higher dimensional space this could be important
+- It is also possible to see that many configurations are misclassified
+
+
 ### Clustering
 
-- OPTICS
+From the visualisation of the dimensions in 2D,
+the non-linear transformation of the UMAP algorithm
+clearly separates each of the crystal structures.
+The next problem is finding a clustering algorithm
+which appropriately groups each of the points
+into their respective clusters.
+
+The algorithm chosen for clustering is OPTICS,
+which uses the local density for determining clusters,
+highly suitable to the data generated from using UMAP
+to perform a dimensionality reduction,
+where there are centers of high density.
+Other features of the OPTICS algorithm
+which make it suitable for this application
+is the classification of oddly shaped regions,
+which is a good description
+of the points in the reduced dimensionality.
+Furthermore, the OPTICS algorithm
+requires no information about the number
+or shape of the clusters when performing the clustering,
+requiring little optimisation of parameters to create the clustering.
 
 ![Result of clustering on the reduced dataset using the OPTICS algorithm.
 ](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics_vis.pdf){#fig:cluster_reduced_sorted_optics_vis width=85%}
