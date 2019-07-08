@@ -52,7 +52,6 @@
 
 ## Unsupervised Classification
 
-
 A significant downside to the Supervised Classification of molecules
 is the process of creating an already labelled dataset.
 The process of creating a dataset
@@ -103,30 +102,54 @@ of high density for each crystal structure, though there is little separation of
 crystal structures.
 ](../Projects/MLCrystals/figures/dim_reduction_PCA.pdf){#fig:dim_reduction_PCA width=85%}
 
-Using a non-linear dimensionality reduction
-is another approach to
-
-- non-linear approach
-    - umap
-    - retains local structure, and global structure
-- Liquid is mostly co-located in single location
-    - does appear to be two somewhat distinct groups
-- Lots of groups for the crystals
-    - This matches the linear Decomposition
-    - 3 groups of p2
-    - at least 4 groups for p2gg
-    - pg over on it's own
-- Most importantly clear separation of the liquid and each of the crystals.
-
+With the linear dimensionality reduction
+not providing adequate separation of the crystal structures
+the next step is to investigate non-linear methods.
+The Uniform Manifold Approximation and Projection (UMAP)
+is a technique for dimension reduction with a theoretical foundation
+in Riemann Geometry and algebraic topology. [@McInnes2018]
+The UMAP algorithm attempts to keep neighbouring points close together,
+while also retaining some of the larger scale structure.
+@Fig:dim_reduction_UMAP shows the UMAP dimensionality reduction
+of the dataset.
+Most notable here is that there is a distinct separation
+between the liquid state and all the crystal state,
+supporting the supervised learning results.
+While the UMAP dimensionality reduction
+does separate the different groups we want to classify,
+the splitting is into many separate groups.
+Some of this reflects the grouping of the linear dimensionality reduction,
+the splitting of the p2 and p2gg crystals into multiple clusters,
+however particularly noticeable in the pg crystal
+is the splitting of what was a single cluster in the linear decomposition
+into 3 smaller clusters which appear to be clearly separate.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
-and Projection.
+and Projection. Classes are assigned using the known state of each local environment.
 ](../Projects/MLCrystals/figures/dim_reduction_UMAP.pdf){#fig:dim_reduction_UMAP width=85%}
 
-- Too many clusters, need to reduce
-- Still can get great results, but tedious matching structures
-- Orientations are orders by distance from central molecule
-    - a consequence of the algorithm used
+The UMAP algorithm shows excellent promise for
+visualising the clustering within this dataset,
+with the drawback that each crystal is separated
+into too many smaller clusters.
+Rather than looking for a more complicated algorithm for this,
+is there a way of reducing the complexity
+of the underlying data?
+Currently the angles between molecules are ordered
+by the distance to the neighbouring molecules.
+As the molecules vibrate these distances are going to change
+and likely re-order,
+which is a possible explanation for
+each crystal having many distinct clusters.
+In other methods for crystal detection,
+spherical harmonics are used remove any orientation dependence[@Boattini2018],
+which doesn't map well to this problem.
+Instead I sort by the value of the angles,
+reducing the data to a list of angles
+without any order.
+The result of sorting the angles is shown in @fig:dim_reduction_sorted_UMAP,
+with each crystal having a clearly separated cluster,
+apart from the p2gg crystal which has two distinct clusters.
 
 ![Dimensionality reduction using UMAP of the orientations ordered by value.
 This greatly simplifies the number of clusters,
@@ -134,17 +157,29 @@ with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
 ](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.pdf){#fig:dim_reduction_sorted_UMAP width=85%}
 
-- Sorting works for clustering
-    - simplifying the data
-    - a method of dimensionality reduction
-    - like only having half a matrix to work with
-- There is no advantage for supervised learning
-    - Algorithms able to generate complex boundaries
-    - KNN and DT in particular
-    - There are enough points in each configuration for there not to be and issue
-- However for higher dimensional space this could be important
-- It is also possible to see that many configurations are misclassified
-
+In this approach the sorting acts as a dimensionality reduction,
+removing structural variations form the structures,
+and has the effect of making further dimensionality reduction simpler.
+Since sorting the size of the angles made the visualisation so much simpler,
+wouldn't it make sense to also apply this technique to the supervised learning?
+For this dataset it doesn't.
+Supervised learning is about drawing boundary regions in high dimensional space,
+and the best preforming algorithm, K-Nearest Neighbours,
+is able to create a complex boundary region given enough training data.
+There is no shortage of training data for the supervised learning,
+and so a simplification is not necessary.
+However, when comparing the performance of other, simpler algorithms,
+their performance increases more than 20%
+when using sorted angles compared to no sorting.
+Where more parameters are required to describe a crystal structure,
+having an appropriate ordering of the dimensions
+is likely required for getting the best results.
+Additionally, the simplified behaviour emphasises
+a major trade-off in machine learning,
+a less optimal choice of features
+requires a more complicated algorithm to classify the data,
+while an excellent choice of features
+can require a very simple algorithm for classification.
 
 ### Clustering
 
@@ -184,11 +219,56 @@ Applying the classified labels to the p2 (a), p2gg (b) and pg (c) crystals. Of n
 
 </div>
 
+Using the UMAP algorithm is excellent for visualisation
+showing an excellent correlation between the labelled clusters
+and the visualisations.
+In this case where we have the opportunity
+to confirm the clustering with a labelled dataset
+we can be confident the clusters from the UMAP dimensionality reduction
+match the labelled clustering.
+However, in performing the dimensionality reduction
+the UMAP algorithm can artificially create tears in clusters
+and will increase the density of points.
+This has been discussed for the similar t-SNE algorithm
+[@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
+with the resolution that the dimensionality reduction
+can be used when care is taken in the analysis,
+using additional techniques to ensure the clusters make sense.
+@Fig:dim_reduction_UMAP demonstrates the tearing that is possible in clusters,
+with the pg cluster being torn into three very distinct regions.
+In addition the liquid region appears to be all similar,
+all in a single, or possibly two high density regions.
+These are features which are more a feature of the UMAP algorithm
+rather than the underlying dataset.
+For this particular use case,
+the use of UMAP is best left as a visualisation tool
+rather than a pre-processing step.
 
+While UMAP is not suitable as a pre-processing step for clustering,
+the separation of the crystal structures informs us
+that the different structures are separable,
+just requiring an appropriate clustering algorithm.
+The algorithm chosen for clustering is HDBSCAN [@Campello2013;@McInnes2017]
+which finds areas of high density as clusters,
+leaving the noise as unclustered values.
+Using the HDBSCAN algorithm has a significant difference
+from clustering the reduced data,
+namely that the liquid in this case is considered noise and not clustered,
+indicated by the assignment to the group labelled -1.
+Having the liquid classified as noise
+better reflects its structure in real space,
+and highlights one of the issues
+using UMAP for dimensionality reduction.
+While it is great as a visualisation,
+showing the large scale structure of the space,
+much of the local structure is lost.
+Furthermore,
+the HDBSCAN algorithm has the ability
+to detect finer details of the liquid state,
+identifying clusters of smaller sizes within the liquid,
+representing common and possibly more stable local structures.
 
-## Discussion
-
-- Why so separated
-    - no continuum of structures
-    - Interlocking
-    - 2D radial distribution function
+![Result of clustering using the HDBSCAN algorithm and visualised using the UMAP
+dimensionality reduction. The liquid is in the class with identifier -1, indicating that
+it is considered noise.
+](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.pdf){#fig:cluster_sorted_hdbscan width=80%}
