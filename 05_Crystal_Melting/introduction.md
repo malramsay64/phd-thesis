@@ -97,10 +97,6 @@ where one of the major results has been the decoupling
 of the rotational relaxation time and the diffusion constant,
 with the rotational relaxation getting slower much faster than the dynamics.
 
-
-
-
-
 - Methods of crystal detection
     - Simple methods
         - Density
@@ -112,6 +108,37 @@ with the rotational relaxation getting slower much faster than the dynamics.
         - Water (CHILL)
         - radial harmonics methods
 
+## Important Temperatures
+
+The melting point $T_m$ defines a temperature
+at which both the liquid and the crystal phases
+exist at equilibrium
+---they are equally stable.
+Above the melting point,
+the liquid is the equilibrium phase, however,
+it is also possible for the crystal to exist
+above the melting point as a metastable phase.
+At some temperature above the melting point,
+the crystal is no longer metastable,
+spontaneously melting to form the liquid.
+The temperature at which this spontaneous melting occurs
+is known as the spinodal temperature.
+When a crystal is surrounded by liquid above the melting point,
+there will be melting at the liquid--crystal interface.
+This interfacial melting is explained by
+the Wilson-Frenkel theory of crystal growth.
+It is when the melting is not just occurring at the interface,
+at many points within the crystal itself
+that the temperature is above the spinodal.
+
+Along with the crystal existing as
+a metastable state above the melting point.
+The liquid exists as a metastable state
+below the melting point.
+Similarly to the crystal above the melting point,
+at some temperature below the melting point,
+the liquid will spontaneously crystallise,
+which is another spinodal temperature.
 
 ## Calculation of Melting Rates
 
