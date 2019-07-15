@@ -22,7 +22,6 @@ Table: The potential energy for each molecule for the crystal structures with th
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
 a pressure of 1.00. {#tbl:potential_energy}
 
-
 While the potential energy gives the ground state crystal structure
 molecules will often have a range of crystal structures
 which are stable in different temperature regimes.
@@ -33,15 +32,179 @@ Additionally another method of finding the most stable crystal
 is the crystal which has the highest melting point.
 So this is a method of narrowing down the melting point of the crystal.
 
-- Figure: tracking the proportion of each crystal phase in a simulation.
+### Polymorphic Stability
 
-Most notable is the behaviour of the p2gg crystal
-which undergoes a solid state phase transition
-at a rate which significantly exceeds the melting rate.
+While the potential energy calculations give some idea
+of the most stable polymorph,
+it would still be useful to compare each of the crystals.
 
-The p2 crystal appears to be the lowest energy crystal structure.
+<!-- TODO -->
+fig: Comparison of melting rates
 
-## Melting Behaviour
+![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
+1.37 and a pressure of 13.50 which is just above the melting point of 1.36. Tracking all
+the different crystals within the configuration shows a transition of the p2gg crystal
+structure to the p2 crystal structure.
+](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.37-p2gg.pdf){#fig:solid_state_transition width=80%}
+
+The most notable behaviour of the crystal structures,
+is the solid state phase transition
+that takes place within the p2gg crystal.
+The majority of the p2gg crystal phase
+is converted to the p2 crystal
+at a rate significantly faster than melting.
+The phase transition takes place
+on a timescale similar to that of the rotational relaxation time.
+The Trimer at a temperature $T=1.37$ and pressure $P=13.50$,
+has a rotational relaxation time $\tau_R = \num{5.4e6}$,
+a timescale over which half the crystal
+has undergone the phase transition.
+This only possible explanation
+for this transition to occur so quickly
+is some highly co-ordinated rearrangements.
+Another feature of the transition,
+is after the initial transformation,
+there are periods of no change
+followed by short periods of quick change,
+resulting in a stepped pattern
+---between \num{1e7} and \num{3e7} timesteps in @fig:solid_state_transition.
+
+
+<div id="fig:solid_state_transition_structure" class="subfigures">
+
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf){#fig:transition_init width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf){#fig:transition_process width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf){#fig:transition_end width=33%}
+
+The process of the solid state phase transition with the colouring denoting the
+identified crystal structure. The liquid is blue, the p2 crystal is yellow, the pg
+crystal is red and the p2gg crystal is green. The initial configuration (a), shows the
+entire central crystal classified as p2gg, with some patches of p2 around the border.
+After 4 million timesteps (b), there are now large regions which have been converted to
+the p2 crystal structure. In the final configuration (c) the only remaining p2gg crystal
+are grain boundaries between the layers of p2 crystals.
+
+</div>
+
+The phase change process can be better understood
+by observing how it takes place,
+which is shown in @fig:solid_state_transition_structure.
+This shows the rearrangement
+for the solid state transition
+takes place along the horizontal layers of the crystal.
+@Fig:transition_process shows three layers
+in the process of the transition,
+which started on the right had side,
+and are propagating to the left.
+This does help explain both
+the incredible rate at which the transition takes place
+as well as its step-like nature.
+Once a single pair of molecules
+switches orientations,
+from the four layer p2gg structure
+to the two layer p2 structure,
+this must lower the barrier
+for neighbouring pairs of molecules
+to undergo this same transformation,
+leading to the propagation along
+the crystal axis.
+Once the initial fast transformation has taken place
+there are a smaller number of p2gg molecules
+which are able to initialise the phase transition,
+resulting in periods of waiting for a 'nucleation' event,
+followed by the rapid propagation across the crystal.
+
+Also of note is that there is
+no preferred direction for
+the solid state transformation.
+In the final configuration (@fig:transition_end),
+there are still three rows of the p2gg crystal,
+which are grain boundaries between
+layers of the p2 crystal with different orientations.
+
+While the p2 and the p2gg polymorphs
+have relatively comparable melting rates,
+mostly as a result of the p2gg structure
+undergoing a solid state transition to
+the p2 structure,
+the pg polymorph has a significantly faster melting rate.
+Understanding this may provide some insight
+into the phenomenally slow growth rates of the p2 crystal.
+
+<div id="fig:pg_melting", class="subfigures">
+
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_0.pdf){#fig:pg_melting_0 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_1.pdf){#fig:pg_melting_1 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_2.pdf){#fig:pg_melting_2 width=33%}
+
+This shows the melting of the pg crystal shown in red,
+with the liquid shown in blue.
+Trace amounts of the p2 and the p2gg crystal
+are shown in yellow and green respectively.
+This shows the melting from the initial crystal (a),
+after \num{2e8} timesteps (b)
+and after \num{4e8} timesteps (C).
+While the bottom of the crystal melts,
+the top layer remains the same throughout.
+
+</div>
+
+@Fig:pg_melting shows configurations
+from the melting of the pg crystal,
+which shows highly directional melting
+of the pg crystal.
+In the same time the crystal has melted
+the bottom 30 layers (from @fig:pg_melting_0 to @fig:pg_melting_2),
+the top layer of the crystal
+has remained completely intact,
+containing the same molecules as the initial configuration.
+So what is the difference between these two faces?
+
+<div id="fig:pg_crystal", class="subfigures">
+
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_2.pdf){#fig:pg_crystal_top_end width=33%}
+
+The structure at the top and bottom of the pg crystal
+
+</div>
+
+The primary difference between
+the top and the bottom of the pg crystal,
+is the face of the molecule exposed to the liquid.
+With the rounded back on the top
+and the flatter front on the bottom.
+In both the top and the bottom,
+molecules are locked in the concavities,
+configurations which are fairly similar.
+Another possible clue
+comes from the shape of the crystal after melting.
+@Fig:pg_melting_1 has a crystal shaped like
+an arrow pointed downwards,
+indicating the melting starts at
+the bottom left and right corners
+of the crystal.
+While it does makes sense
+that the corners are 'weak spots'
+in the crystal structure
+from which the disorganisation of the crystal
+has a lower barrier.
+It still doesn't entirely explain
+the difference between the bottom corners
+and the top corners.
+
+Looking past the crystal
+to the first layer of the liquid,
+the layer of liquid above the top (@fig:pg_crystal_top)
+has much more orientational order
+than the layer below the bottom (@fig:pg_crystal_bottom).
+The orientational order observed
+at the start of the simulation
+persists throughout the simulation,
+still remaining after \num{4e8} timesteps (@fig:pg_crystal_top_end).
+
+### Spinodal
 
 The melting we are studying that which occurs
 at the liquid--crystal interface.
@@ -66,7 +229,6 @@ propagation of melting in the surrounding crystal.
 
 </div>
 
-
 Pressure  Spinodal Temperature
 -------- ---------------------
 1.00            0.60
@@ -76,7 +238,10 @@ Table: The temperatures at which the spinodal occurs for the crystal structure a
 pressures. {#tbl:crystal_spinodal}
 
 The Spinodal temperatures in @tbl:crystal_spinodal represent
-the highest temperature for studying melting.
+the highest temperature for which is it possible studying melting.
+
+### Melting Point
+
 
 ## Melting Rates
 
