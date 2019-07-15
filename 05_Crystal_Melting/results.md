@@ -131,7 +131,7 @@ the pg polymorph has a significantly faster melting rate.
 Understanding this may provide some insight
 into the phenomenally slow growth rates of the p2 crystal.
 
-<div id="fig:pg_melting", class="subfigures">
+<div id="fig:pg_melting" class="subfigures">
 
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_0.pdf){#fig:pg_melting_0 width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_1.pdf){#fig:pg_melting_1 width=33%}
@@ -160,7 +160,7 @@ has remained completely intact,
 containing the same molecules as the initial configuration.
 So what is the difference between these two faces?
 
-<div id="fig:pg_crystal", class="subfigures">
+<div id="fig:pg_crystal" class="subfigures">
 
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
