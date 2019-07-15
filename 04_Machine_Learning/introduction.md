@@ -1,4 +1,4 @@
-# Machine Learning for Crystal Detection
+# Introduction
 
 ## Introduction to Machine Learning
 
