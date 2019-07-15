@@ -6,11 +6,9 @@
 
 % Packages required for thesis
 \RequirePackage[australian]{babel}
-\RequirePackage{opensans}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
-\RequirePackage{grffile}
 \RequirePackage{subfig}
 \RequirePackage{siunitx}
 \RequirePackage{hyperref}
@@ -19,8 +17,6 @@
 \RequirePackage{xspace}
 \RequirePackage{parskip}
 \RequirePackage{doi}
-\RequirePackage[version=3]{mhchem}
-\RequirePackage{mysyntax}
 \RequirePackage[export]{adjustbox}
 \RequirePackage{calc}
 \RequirePackage{fp}
@@ -39,10 +35,44 @@
 % and/or - see comments
 \defaultfontfeatures{Ligatures=TeX}
 
-% Required for markdown templated files
-\RequirePackage{lmodern}
+% Requirements for using pandoc as sourced
+% from https://pandoc.org/MANUAL.html#creating-a-pdf
+% Items commented out have issues with compatibility
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+% \RequirePackage{lm}
+% \RequirePackage{unicode-math}
+\RequirePackage{ifxetex}
+\RequirePackage{ifluatex}
+\RequirePackage{listings}
+\RequirePackage{fancyvrb}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
+\RequirePackage{graphicx}
+\RequirePackage{grffile}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+% \RequirePackage{ulem}
+\RequirePackage{geometry}
+\RequirePackage{setspace}
+\RequirePackage[australian]{babel}
+\RequirePackage{fontspec}
+% \RequirePackage{polyglossia}
+% \RequirePackage{xecjk}
+% \RequirePackage{bidi}
+\RequirePackage{upquote}
+\RequirePackage{microtype}
+% \RequirePackage{xurl}
+\RequirePackage{csquotes}
+\RequirePackage{bookmark}
+\RequirePackage{footnote}
+
+% \RequirePackage{lmodern}
+% \RequirePackage{longtable}
+% \RequirePackage{booktabs}
+
+% This is the package with defines syntax highlighting
+\RequirePackage{mysyntax}
 
 % Ensure aspect ratio is kept when converting from markdown
 \makeatletter
