@@ -63,18 +63,20 @@ This only possible explanation
 for this transition to occur so quickly
 is some highly co-ordinated rearrangements.
 Another feature of the transition,
-is after the initial transformation,
+is that after the initial transformation,
 there are periods of no change
 followed by short periods of quick change,
 resulting in a stepped pattern
 ---between \num{1e7} and \num{3e7} timesteps in @fig:solid_state_transition.
 
-
 <div id="fig:solid_state_transition_structure" class="subfigures">
 
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf){#fig:transition_init width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf){#fig:transition_process width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf){#fig:transition_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf)
+{#fig:transition_init width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf)
+{#fig:transition_process width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf)
+{#fig:transition_end width=33%}
 
 The process of the solid state phase transition with the colouring denoting the
 identified crystal structure. The liquid is blue, the p2 crystal is yellow, the pg
@@ -88,12 +90,12 @@ are grain boundaries between the layers of p2 crystals.
 
 The phase change process can be better understood
 by observing how it takes place,
-which is shown in @fig:solid_state_transition_structure.
+shown in @fig:solid_state_transition_structure.
 This shows the rearrangement
 for the solid state transition
 takes place along the horizontal layers of the crystal.
 @Fig:transition_process shows three layers
-in the process of the transition,
+undergoing the transition,
 which started on the right had side,
 and are propagating to the left.
 This does help explain both
@@ -223,7 +225,7 @@ we need the temperature range which displays the expected melting behaviour.
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
 melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
 temperature of 0.60. While (b) shows defects within the crystal, these are transient,
-retuning the crystal to it's original structure as they move along the lattice
+retuning the crystal to its original structure as they move along the lattice
 dimension. This is unlike in (a) where the defects are persistent and support the
 propagation of melting in the surrounding crystal.
 
@@ -237,11 +239,10 @@ Pressure  Spinodal Temperature
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
 pressures. {#tbl:crystal_spinodal}
 
-The Spinodal temperatures in @tbl:crystal_spinodal represent
-the highest temperature for which is it possible studying melting.
+The Spinodal temperatures in @tbl:crystal_spinodal represents
+the highest temperature it is possible to study melting.
 
 ### Melting Point
-
 
 ## Melting Rates
 
@@ -271,7 +272,7 @@ the crystal growth rate is the slope of a linear fit.
 @fig:growth_rates shows the growth rates and their respective errors.
 The normalisation of the melting point
 brings both pressures onto a single curve,
-which is the same result seen for the dynamic quantities.
+the same result as seen for the dynamic quantities.
 
 This is the observation for temperatures
 still well above the melting point.
@@ -294,7 +295,7 @@ This is now the distance the interface travels
 in the relaxation time.
 As the temperature decreases the distance
 tends to get smaller,
-which is the expected behaviour.
+matching the expected behaviour.
 
 ![This normalises both the temeprature by the melting point, and the growth rate by the
 rotational relaxation. This figure shows the growth rate slowing faster than
@@ -315,7 +316,6 @@ Difference $\Delta h_m$    -0.180  -0.066
 
 Table: The potential energy of the liquid and the crystal at the melting point for both
 pressures. {#tbl:potential_energy_difference}
-
 
 The Wilson-Frenkel[@Wilson1900;@Frenkel1926] theory of crystal growth,
 describes the velocity $V$ of an interface

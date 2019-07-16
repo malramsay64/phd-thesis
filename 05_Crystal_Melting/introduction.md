@@ -7,17 +7,16 @@ The process of crystallisation
 can be broken into two separate processes,
 the nucleation rate---the formation of small crystals from the liquid, and
 the crystal growth rate---the speed at which the bulk crystal grows.
-The reason these two processes are considered separately,
-is that the nucleation rate is orders of magnitude
+These two processes are considered separately
+because the nucleation rate is orders of magnitude
 slower than the crystal growth rate.
 It is the slow nucleation rate
 that allows liquids to be supercooled.
 Instead of waiting for a statistically unlikely event to occur,
 crystal growth of experiments uses a seed particle
 from which the crystal growth can propagate.
-The use of seed crystals,
-in addition to initiating the crystal growth,
-can also be used to influence the resulting crystal structure,
+Initiating the crystal growth using Seed crystals
+can influence the resulting crystal structure,
 providing another level of control over the growth process.
 In other cases, particle impurities in the liquid
 or tiny scratches in glassware can also act
@@ -29,7 +28,7 @@ from which the crystal grows at the crystal growth rate.
 Looking at the nucleation rate and the crystal growth rate separately.
 
 Nucleation occurs when a fluctuation in the liquid state,
-forms a crystalline configuration which is stable long enough to grow.
+forms a crystalline configuration stable enough to grow.
 The size of this is influenced by the chemical energy difference
 between the liquid and the crystal phases,
 as well as the energy penalty of the interface between them.
@@ -92,7 +91,7 @@ While the Wilson-Frenkel theory has a characteristic timescale of diffusion
 it may be that for more complicated crystal structures,
 such as Janus Particles [@Reinhart2018], clathrates [@Yagasaki2016] and molecular crystals
 the diffusion may no longer be the relevant characteristic timescale.
-This is particularly important for molecular crystals,
+This is important for molecular crystals,
 where one of the major results has been the decoupling
 of the rotational relaxation time and the diffusion constant,
 with the rotational relaxation getting slower much faster than the dynamics.
@@ -124,7 +123,7 @@ spontaneously melting to form the liquid.
 The temperature at which this spontaneous melting occurs
 is known as the spinodal temperature.
 When a crystal is surrounded by liquid above the melting point,
-there will be melting at the liquid--crystal interface.
+melting will occur at the liquid--crystal interface.
 This interfacial melting is explained by
 the Wilson-Frenkel theory of crystal growth.
 It is when the melting is not just occurring at the interface,
@@ -135,10 +134,10 @@ Along with the crystal existing as
 a metastable state above the melting point.
 The liquid exists as a metastable state
 below the melting point.
-Similarly to the crystal above the melting point,
+Like the crystal above the melting point,
 at some temperature below the melting point,
 the liquid will spontaneously crystallise,
-which is another spinodal temperature.
+another spinodal temperature.
 
 ## Calculation of Melting Rates
 
@@ -241,7 +240,7 @@ which is another spinodal temperature.
       solid--liquid interface at each timestep. It is possible to distinguish the solid
       regions from the aqueous solution using the $F_3$parameter because the
       tetahedrality of water molecules is much higher in ice and clathrate hydrates
-      than in aqueous solution.s
+      than in aqueous solution."
     - "This result demonstrates that the growth rate of THF hydrate is governed by a
       factor (of factors) other than diffusion coefficients.
     - "The temperature dependence of the growth rate of THF significantly deviates from

@@ -104,7 +104,7 @@ is determining which particles
 are in a local crystalline configuration.
 This approach used the K-Nearest Neighbours
 machine learning algorithm (see @sec:MLCrystals).
-In the case of the melting rate,
+For the melting rate,
 we are not so much interested in the types of crystals
 which exist within the structure,
 instead only whether a particle
@@ -114,10 +114,10 @@ reduced to a single category.
 This categorisation of particles into
 liquid and crystal is used
 to create a spatial cluster
-describing the region which is just crystal.
+describing the crystalline region.
 The spatial clustering is undertaken
 using a hierarchical clustering algorithm,
-with each particle starting in it's own cluster
+with each particle starting in its own cluster
 with the clusters being merged to minimise
 the number of misclassified particles,
 having the constraint that merges only occur
@@ -154,7 +154,7 @@ that the shape of the crystal region is roughly circular,
 which from observations of the melting behaviour
 is a reasonable description of the melting behaviour.
 This means that we can express the crystallisation rate
-with reference to the radius
+as a function of the radius
 
 $$ \tau_C = \frac{\Delta r}{\Delta t} $$
 
@@ -177,7 +177,7 @@ to find the overall crystal growth rate.
 
 ### Calculation of Errors
 
-There are a number of different types of errors
+There many of different types of uncertainties
 in the calculation of the melting rates.
 There is the errors in the classification of the crystalline particles
 and finding the region containing the crystal,
@@ -206,7 +206,7 @@ This is all that is required for calculating the error
 of the crystallisation rate,
 however we are also combining this value
 with the rotational relaxation time
-which has it's own errors---
+which has its own errors---
 see @sec:Dynamics for the calculation of this value
 and the respective errors.
 These are calculated using bootstrapping,
