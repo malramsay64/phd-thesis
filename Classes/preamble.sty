@@ -30,11 +30,6 @@
     isbn=false,
     eprint=false]{biblatex}
 
-\RequirePackage{fontspec}
-\defaultfontfeatures{Mapping=tex-text}
-% and/or - see comments
-\defaultfontfeatures{Ligatures=TeX}
-
 % Requirements for using pandoc as sourced
 % from https://pandoc.org/MANUAL.html#creating-a-pdf
 % Items commented out have issues with compatibility
@@ -67,9 +62,22 @@
 \RequirePackage{bookmark}
 \RequirePackage{footnote}
 
-% \RequirePackage{lmodern}
-% \RequirePackage{longtable}
-% \RequirePackage{booktabs}
+%
+% Hyperref configuration
+%
+
+% Use an underlined border for links
+\hypersetup{pdfborderstyle={/S/U/W 1}}
+
+%
+% Font configuration
+%
+\IfFontExistsTF{OpenSans}{%
+  \setmainfont{OpenSans}[Scale=MatchLowercase]
+}{%
+  \RequirePackage{opensans}
+}
+\renewcommand{\familydefault}{\sfdefault}
 
 % This is the package with defines syntax highlighting
 \RequirePackage{mysyntax}
