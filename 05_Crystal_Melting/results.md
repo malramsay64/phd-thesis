@@ -71,12 +71,9 @@ resulting in a stepped pattern
 
 <div id="fig:solid_state_transition_structure" class="subfigures">
 
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf)
-{#fig:transition_init width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf)
-{#fig:transition_process width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf)
-{#fig:transition_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf){#fig:transition_init width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf){#fig:transition_process width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf){#fig:transition_end width=33%}
 
 The process of the solid state phase transition with the colouring denoting the
 identified crystal structure. The liquid is blue, the p2 crystal is yellow, the pg
