@@ -14,7 +14,7 @@ the details of which are discussed in \ref{sec:crystal_melting}
 and presented in @tbl:melting_points.
 
  Pressure   Melting Point
----------  --------------
+ --------  --------------
      1.00            0.36
     13.50            1.35
 
@@ -58,7 +58,7 @@ of both ordered and disordered materials.
 In computational systems,
 the static structure factor is computed from
 the radial distribution function $G(\vect r)$
-which is given by
+given by
 
 $$ G(\vect r) = \frac{1}{\rho} \left \langle
   \sum_{i \ne 0} \delta(\vect r-\vect{r}_i )
@@ -95,7 +95,7 @@ using the following transformation
 
 $$ S(k) = 1 + 4 \pi \rho \frac{1}{q} \int \d r r \sin(qr)[g(r) - 1] $$
 
-Which is plotted for the trimer molecule
+plotted for the trimer molecule
 in @fig:static_structure_factor.
 The position of the first peaks
 for the two pressures studies are
@@ -213,7 +213,7 @@ with the gradient $m$ having the relation
 
 $$ m = 4D. $$
 
-Plotting the Mean Squared displacement (MSD) of the trimer molecule
+Plotting the Mean Squared Displacement (MSD) of the trimer molecule
 gives the image below.
 
 ![The Mean Squared Displacment of the trimer molecule
