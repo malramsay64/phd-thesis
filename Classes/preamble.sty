@@ -4,23 +4,30 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{preamble}
 
-% Packages required for thesis
-\RequirePackage[australian]{babel}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{graphicx}
-\RequirePackage{subfig}
+% This defines all the packages needed for pandoc
+\RequirePackage{pandoc}
+
+% This is the package with defines syntax highlighting
+\RequirePackage{mysyntax}
+
+%%
+%% Packages required for thesis
+%%
+%% These are packages which I am using within a document, calling their
+%% provided commands explicitly.
+%%
+
+% Formatting of numbers and units
 \RequirePackage{siunitx}
-\RequirePackage{hyperref}
-\RequirePackage[version=3]{mhchem}
-\RequirePackage{ccicons}
-\RequirePackage{xspace}
-\RequirePackage{parskip}
-\RequirePackage{doi}
-\RequirePackage[export]{adjustbox}
-\RequirePackage{calc}
-\RequirePackage{fp}
-\RequirePackage{placeins}
+
+%%
+%% Bibliography
+%%
+
+% This uses biblatex with the biber backend for the
+% bibliography. The options are trying to keep the
+% bibliography fairly compact, removing unnecessary
+% details.
 \RequirePackage[%
     backend=biber,
     style=nature,
@@ -30,48 +37,29 @@
     isbn=false,
     eprint=false]{biblatex}
 
-% Requirements for using pandoc as sourced
-% from https://pandoc.org/MANUAL.html#creating-a-pdf
-% Items commented out have issues with compatibility
-\RequirePackage{amsfonts}
-\RequirePackage{amsmath}
-% \RequirePackage{lm}
-% \RequirePackage{unicode-math}
-\RequirePackage{ifxetex}
-\RequirePackage{ifluatex}
-\RequirePackage{listings}
-\RequirePackage{fancyvrb}
-\RequirePackage{longtable}
-\RequirePackage{booktabs}
-\RequirePackage{graphicx}
-\RequirePackage{grffile}
-\RequirePackage{hyperref}
-\RequirePackage{xcolor}
-% \RequirePackage{ulem}
-\RequirePackage{geometry}
-\RequirePackage{setspace}
-\RequirePackage[australian]{babel}
-\RequirePackage{fontspec}
-% \RequirePackage{polyglossia}
-% \RequirePackage{xecjk}
-% \RequirePackage{bidi}
-\RequirePackage{upquote}
-\RequirePackage{microtype}
-% \RequirePackage{xurl}
-\RequirePackage{csquotes}
-\RequirePackage{bookmark}
-\RequirePackage{footnote}
+% Bibliography Settings
+\DeclareFieldFormat{url}{\url{#1}}
+\AtEveryBibitem{\clearlist{language}} % clears language
+\AtEveryBibitem{\clearlist{series}\clearfield{month}\clearfield{note}\clearfield{issue}} % clear series
 
-%
-% Hyperref configuration
-%
 
-% Use an underlined border for links
-\hypersetup{pdfborderstyle={/S/U/W 1}}
+%%
+%% Hyperref configuration
+%%
 
-%
-% Font configuration
-%
+\hypersetup{
+  % Use an underlined border for links
+  pdfborderstyle={/S/U/W 1},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+}
+
+%%
+%% Font configuration
+%%
+
+% Use the OpenSans font
 \IfFontExistsTF{OpenSans}{%
   \setmainfont{OpenSans}[Scale=MatchLowercase]
 }{%
@@ -79,18 +67,19 @@
 }
 \renewcommand{\familydefault}{\sfdefault}
 
-% This is the package with defines syntax highlighting
-\RequirePackage{mysyntax}
+%
+% Configure numbering of sections
+%
+% 1 => Chapter
+% 2 => Section
+% 3 => Subsection
+% 4 => Subsubsection
 
-% Ensure aspect ratio is kept when converting from markdown
-\makeatletter
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% This sets the numbering of titles to the specified depth
+\setcounter{secnumdepth}{4}
+
+% This is the depth for the table of contents
+\setcounter{tocdepth}{3}
 
 % Add date (or version) on right of page
 \RequirePackage{fancyhdr}
@@ -102,11 +91,6 @@
   \fancyfoot[LE,RO]{\@date}%
 }
 \makeatother
-
-\setcounter{tocdepth}{3}
-
-% Defining an empty command to support lists in pandoc
-\newcommand*{\tightlist}{}
 
 % Defining Mathematical Terms
 \newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
@@ -135,36 +119,16 @@
 \DeclareSIUnit[number-unit-product = \,]{\Tm}{\T\melting}
 \DeclareSIUnit[number-unit-product = \,]{\Tk}{\T\kauzmann}
 
+% Helper for defining functions
+\RequirePackage{xspace}
 \newcommand*{\e}{\ensuremath{\text{e}}\xspace}
 \newcommand*{\boltzman}{\ensuremath{k_\text{B}}}
 
-\PassOptionsToPackage{colorlinks=true, linkcolor=blue, citecolor=blue}{hyperref}
-
-% Citations
-\let\cite\supercite
-\newcommand*{\linecite}[1]{Ref.~\onlinecite{#1}}
-
 % Figures appear in section referencing them
+% Place figure in specific location, ensure is in the correct Chapter.
+\RequirePackage{placeins}
 \let\Oldsection\section
 \renewcommand{\section}{\FloatBarrier\Oldsection}
-
-% Bibliography Settings
-\DeclareFieldFormat{url}{\url{#1}}
-\AtEveryBibitem{\clearlist{language}} % clears language
-\AtEveryBibitem{\clearlist{series}\clearfield{month}\clearfield{note}\clearfield{issue}} % clear series
-
-\DeclareCiteCommand{\onlinecite}%[\mkbibbrackets]
-    {\usebibmacro{cite:init}%
-    \usebibmacro{prenote}}
-    {\usebibmacro{citeindex}%
-    \usebibmacro{cite:comp}}
-    {}
-    {\usebibmacro{cite:dump}%
-    \usebibmacro{postnote}}
-
-\renewcommand*{\textcite}[1]{%
-    \citeauthor{#1}~\autocite{#1}
-}
 
 % Changing style of footnote
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
