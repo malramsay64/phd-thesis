@@ -251,9 +251,9 @@ the rotational relaxation function $C(t)$ is a measure of
 how orientationally aligned a configuration is to another
 and is given as
 
-$$ C(t) = \langle \hat\vec e(0) \cdot \hat \vec e(t) \rangle $$
+$$ C(t) = \langle \hat{\vec{e}}(0) \cdot \hat{\vec{e}}(t) \rangle $$
 
-where $\hat \vec e(0)$ and $\hat \vec e(t)$ are the orientations
+where $\hat{\vec{e}}(0)$ and $\hat{\vec{e}}(t)$ are the orientations
 The rotational relaxation time is
 the time taken for the relaxation function to decay to $1/e$.
 When the rotational relaxation function
