@@ -6,7 +6,7 @@ Machine learning is a technique by which
 A machine learns when it changes it's
 structure, program, or data
 based on external information
-such that it's expected future performance improves. [@Nillson]
+such that it's expected future performance improves. [@Nilsson1998]
 With this simple definition,
 the field of statistics could easily be included.
 Adding more data samples to a statistical distribution

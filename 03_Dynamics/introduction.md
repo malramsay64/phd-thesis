@@ -160,7 +160,7 @@ in behaviour as they approach the glass transition temperature.
     - Landscape theory this is where the landscape effects the dynamics
     - elsewhere the onset of different relaxation timescales
     - onset of heterogeneities
-    - cite [@Goldstein????]
+    - cite [@Goldstein1969]
     - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov1996] (Rossler)
     - Express fragility in terms of $T_c$, $\frac{T_g}{T_c - T_g}$
 
@@ -249,7 +249,7 @@ given by
 $$G(r, t) = \frac{1}{4\pi r^2 \Delta r} \langle \delta[r_i(t) - r_i(0) - r] \rangle$$
 
 which has also been used for computing structural relaxation
-[@Glotzer2000;@Debnedetti2001;@Levesque1970;@Kob1995].
+[@Glotzer2000;@Debenedetti2001;@Levesque1970;@Kob1995].
 
 More recently, there has been an effort
 to link structure with dynamics on a local level,
@@ -319,7 +319,7 @@ The advantage with using the quaternion approach
 is that quaternions are the most sensible approach
 for computationally representing rotations in three dimensions[@Huynh2009]
 and is commonly used in molecular dynamics simulations
-[@Ciccotti1986;@Omelyan1998;@Rog2003;@Anderson1983;@Refson2000;@Nose1983;@Evans1977;@Rapaport1985].
+[@Ciccotti1986;@Omelyan1998;@Rog2003;@Andersen1983;@Refson2000;@Nose1983;@Evans1977;@Rapaport1985].
 
 ### Methods of rotational relaxations
 

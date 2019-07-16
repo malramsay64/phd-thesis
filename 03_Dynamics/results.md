@@ -424,7 +424,7 @@ for a particle to first move beyond this characteristic distance.
     - van Hove relaxation -> Histogram over radius and time, for $i \ne j$
     - How close is $G(r)$ at time $t$ to $G(r)$ at time $0$.
     - Two point time dependent correlation $G(r, t)$
-    - Four point time dependent density correlation $G(r_1, r_2, t)$ [@Daspugata1991]
+    - Four point time dependent density correlation $G(r_1, r_2, t)$ [@Dasgupta1991]
     - Assignment matching -> Hungarian Algorithm
     - The idea of memory and caging?
         - A distance of 0.4 is greater than would be expected for caging

@@ -33,7 +33,7 @@ Additionally it is somewhat implied,
 although not strictly stated that the van Hove correlation function
 is a measure of structural relaxation.
 
-- [@Debnedetti2001]
+- [@Debenedetti2001]
     - In supercooled liquids below approximately $1.2 T_g$ there occurs a decoupling
       between translations diffusion and viscosity, and between rotational and
       translational diffusion.
