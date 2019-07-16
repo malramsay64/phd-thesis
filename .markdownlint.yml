@@ -1,0 +1,12 @@
+default: true
+"ul-indent": { "indent": 4 }
+# False positives in equations
+"no-reversed-links": false
+"line-length":
+  "line_length": 100
+"ol-prefix": { "style": "ordered" }
+"no-inline-html":
+  allowed_elements:
+    - "div"
+# Tables give this false positives
+"hr-style": false
