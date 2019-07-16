@@ -1,3 +1,6 @@
 {
-"profanitySureness": 2
+"profanitySureness": 2,
+"allow": [
+    "tang"
+    ]
 }

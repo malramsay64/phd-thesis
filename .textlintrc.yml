@@ -16,6 +16,8 @@ rules:
       - "everyone knows"
     exclude:
       - principal
+      - magnitude
+      - c
   terminology: true,
   alex: false
   "write-good": true,
