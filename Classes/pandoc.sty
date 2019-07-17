@@ -4,54 +4,62 @@
 % Requirements for using pandoc as sourced
 % from https://pandoc.org/MANUAL.html#creating-a-pdf
 % Items commented out have issues with compatibility
-\RequirePackage{amsfonts}
-\RequirePackage{amsmath}
-% \RequirePackage{lm}
-\RequirePackage{unicode-math}
+\RequirePackage{amsfonts}     % Fonts including mathematical symbols
+\RequirePackage{amsmath}      % Additional maths symbols
+% \RequirePackage{lm}           % Latin modern fonts
+\RequirePackage{unicode-math} % Format unicode symbols in maths equations
 \RequirePackage{ifxetex}
 \RequirePackage{ifluatex}
-\RequirePackage{listings}
+\RequirePackage{listings}     % Syntax highlighting of code blocks
 \RequirePackage{fancyvrb}
-\RequirePackage{longtable}
+\RequirePackage{longtable}    % Support for tables which split over the page
 \RequirePackage{booktabs}
-\RequirePackage{graphicx}
-\RequirePackage{grffile}
-\RequirePackage{hyperref}
+\RequirePackage{graphicx}     % Ability to include image files
+\RequirePackage{grffile}      % Package to allow periods and spaces in filename of figures
+\RequirePackage{hyperref}     % Manage hyperlinks inside and outside document
 \RequirePackage{xcolor}
 % \RequirePackage{ulem}
-\RequirePackage{geometry}
+\RequirePackage{geometry}     % Easily configure document margins
 \RequirePackage{setspace}
-\RequirePackage{babel}
-\RequirePackage{fontspec}
-% Polyglossia is an alternative internationalisation library
-% to babel
-% \RequirePackage{polyglossia}
-% Provides Support for CJK documents (chinese)
-% \RequirePackage{xeCJK}
-% Support for bi-directional text
-% \RequirePackage{bidi}
+\RequirePackage{babel}        % Support for languages, particularly hyphenation
+\RequirePackage{fontspec}     % Allow the use of system fonts in xelatex
+% \RequirePackage{polyglossia}  % Alternative internationalisation library to babel
+% \RequirePackage{xeCJK}        % Provides Support for CJK documents (chinese)
+% \RequirePackage{bidi}         % Support for bi-directional text
 \RequirePackage{upquote}
 \RequirePackage{microtype}
-% This has an issue with not being found
 % \RequirePackage{burl}
 \RequirePackage{csquotes}
 \RequirePackage{bookmark}
 \RequirePackage{footnote}
 
-% Required by the crossref plugin
-\RequirePackage{subfig}
+% Required by the pandoc-crossref plugin
+\RequirePackage{subfig} % Support for subfigures
 
-%% Styling allowing just a width or height to be specified
-
-% Ensure aspect ratio is kept when converting from markdown
-\makeatletter
+% Keep figure aspect ratio the same when converting from markdown
 % Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+% margins, while still makin possible to overwrite the defaults.
+% This has the added benefit of being able to specify one of width or height
+% and the aspect ratio is preserved.
+\makeatletter
+\def\maxwidth{%
+  \ifdim\Gin@nat@width>\linewidth%
+    \linewidth%
+  \else%
+    \Gin@nat@width%
+  \fi%
+}
+\def\maxheight{
+  \ifdim\Gin@nat@height>\textheight%
+    \textheight%
+  \else%
+    \Gin@nat@height%
+  \fi%
+}
 \makeatother
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-% Defining an empty command to support lists in pandoc
-\newcommand*{\tightlist}{}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
