@@ -19,6 +19,8 @@
 
 % Formatting of numbers and units
 \RequirePackage{siunitx}
+% Format paragraphs properly (no indentation and separation)
+\RequirePackage{parskip}
 
 %%
 %% Bibliography
@@ -39,8 +41,13 @@
 
 % Bibliography Settings
 \DeclareFieldFormat{url}{\url{#1}}
-\AtEveryBibitem{\clearlist{language}} % clears language
-\AtEveryBibitem{\clearlist{series}\clearfield{month}\clearfield{note}\clearfield{issue}} % clear series
+\AtEveryBibitem{
+  \clearlist{language} % clears language
+  \clearlist{series}
+  \clearfield{month}
+  \clearfield{note}
+  \clearfield{issue}
+}
 
 
 %%
@@ -48,12 +55,11 @@
 %%
 
 \hypersetup{
-  pdfborder=true,           % Use an underlined border for links
-  pdfborderstyle={/S/U/W 1},
-  colorlinks=false,
-  linkcolor=blue,
+  pdfborder=false,           % Use an underlined border for links
+  colorlinks=true,
+  linkcolor=black,
   citecolor=blue,
-  filecolor=blue,
+  filecolor=black,
   urlcolor=blue,
 }
 
@@ -63,9 +69,9 @@
 
 % Use the OpenSans font
 \IfFontExistsTF{OpenSans}{%
-  \setmainfont{OpenSans}[Scale=MatchLowercase]
+  \setmainfont{OpenSans}[Scale=MatchLowercase]%
 }{%
-  \RequirePackage{opensans}
+  \RequirePackage{opensans}%
 }
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -82,17 +88,6 @@
 
 % This is the depth for the table of contents
 \setcounter{tocdepth}{3}
-
-% Add date (or version) on right of page
-\RequirePackage{fancyhdr}
-\makeatletter
-\fancypagestyle{headings}{%
-  \fancyhead[LE,RO]{\textsl{\rightmark}}
-  \fancyhead[LO,RE]{\textsl{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \fancyfoot[LE,RO]{\@date}%
-}
-\makeatother
 
 % Defining Mathematical Terms
 \newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
