@@ -11,7 +11,7 @@
         "textlint-rule-common-misspellings": "^1.0.1",
         "textlint-rule-diacritics": "1.0.0",
         "textlint-rule-no-dead-link": "^4.4.3",
-        "textlint-rule-stop-words": "^1.0.14",
+        "textlint-rule-stop-words": "^1.0.16",
         "textlint-rule-terminology": "^1.1.29",
         "textlint-rule-unexpanded-acronym": "*",
         "textlint-rule-write-good": "^1.6.2"
