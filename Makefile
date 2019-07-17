@@ -7,6 +7,9 @@
 subfiles := $(shell find . -name "*.md" -path "./[0-9][0-9]*")
 subfiles := $(subfiles:.md=.tex)
 
+# The file which comprise the preamble
+preamble = $(wildcard Classes/*.sty)
+
 # The directory which will contain all the temporary output files
 makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
@@ -18,13 +21,13 @@ pandoc_options =
 
 figures = $(shell find Projects/ -name "*.svg")
 
-.PHONY: all clean clean_subfiles test
+.PHONY: all clean clean_subfiles test figures
 
 all: thesis.pdf
 
 figures: $(figures:.svg=.pdf)
 
-thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.svg=.pdf) | $(makedir) $(makesubdirs)
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.svg=.pdf) $(preamble) | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
