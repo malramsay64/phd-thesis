@@ -81,7 +81,7 @@ Cross validation is all about reducing
 the risk that the model is highly specific
 to part of the dataset.
 
-- [@Arlot2010]
+- @Arlot2010
     - As noticed in the early 30s by Larson, training an algorithm and evaluating it's
       statistical performance on the same data yields and overoptimistic result.
     - Cross validation was raised to fix this issue, starting from the remark that

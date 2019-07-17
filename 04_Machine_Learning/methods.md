@@ -63,7 +63,7 @@ The methodology from the machine learning
 
 #### K-Nearest Neighbours
 
-- [@Goldberger2005]
+- @Goldberger2005
     - Simple method
     - Single tunable parameter
     - Non-linear decision surface

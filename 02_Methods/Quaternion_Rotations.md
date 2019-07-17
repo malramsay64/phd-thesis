@@ -58,7 +58,7 @@
       Langevin motions
         - No inverse of singular matrix [@Evans1977]
 
-- [@Evans1977]
+- @Evans1977
     - This anomalous results is explained by the fact that at $\theta = 0$ the angles
       $\phi  and \varphi$ are not independent and are therefore not suiteable as
       generalised coordinates.

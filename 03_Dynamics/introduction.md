@@ -160,7 +160,7 @@ in behaviour as they approach the glass transition temperature.
     - Landscape theory this is where the landscape effects the dynamics
     - elsewhere the onset of different relaxation timescales
     - onset of heterogeneities
-    - cite [@Goldstein1969]
+    - cite @Goldstein1969
     - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov1996] (Rossler)
     - Express fragility in terms of $T_c$, $\frac{T_g}{T_c - T_g}$
 
@@ -299,15 +299,15 @@ It should be noted that this dipole relaxation
 only captures at most two dimensions of the rotational relaxation,
 a rotation about the axis of the dipole is not captured by this relation at all.
 There are a number of different approaches which have been used,
-Brodka et. al. [@Brodka1992] define the rotational relaxation
+@Brodka1992 define the rotational relaxation
 of the spectroscopically available rotation with the $C_2$ method
 whilst other rotational degrees of freedom
 were studied using an angular velocity autocorrelation function.
-Alternatively Jas et. al. [@Jas2000] combine the rotational relaxations
+Alternatively @Jas2000 combine the rotational relaxations
 for vectors along the $x, y,$ and $z$ axes into a single
 complete rotational relaxation.
 An approach which is only concerned with isotropic rotational motion
-could also take the approach of Chen et. al [@Chen2017]
+could also take the approach of @Chen2017
 and represent molecular rotation using quaternions[@Furry1957;???],
 which capture all rotational information.
 It should be noted that
@@ -368,7 +368,7 @@ taking place through the process of large angular jumps.
               multiple particles?
 
 - Kivelson Scaling
-    - viscous slowdown due to packing frustration [@Kivelson1995]
+    - viscous slowdown due to packing frustration @Kivelson1995
 
 - Step Dynamics
     - Motion is an activated process

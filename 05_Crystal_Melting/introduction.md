@@ -71,18 +71,18 @@ indicates that the growth of the crystal
 is significantly more complicated than posited
 in the discussion of the temperature dependence.
 
-Tang and Harrowell [@Tang2013] found
+@Tang2013 found
 for two similar alloys,
 that the difference in crystal growth rates
 could be attributed to
 the ordering of atoms in the interface,
 with the faster glass former displaying ordering
 much further from the boundary of the crystal.
-This observation is supported by the work of Reinhart et. al. [@Reinhart2018]
+This observation is supported by the work of @Reinhart2018
 where in studying Janis particles,
 the stricter the geometric constraints of the crystal phase,
 the slower the growth rate.
-While in work on Lennard Jones Particles Burke et. al. [@Burke1988]
+While in work on Lennard Jones Particles @Burke1988
 attribute the slow growth rate of the (111) crystal face
 to the degeneracy of fcc and hcp stacking,
 with many stacking faults arising during the freezing process as a result.
@@ -144,7 +144,7 @@ another spinodal temperature.
 - Slab geometries
     - Growth/melting rate along a single crystal plane
 
-- [@Reinhart2018]
+- @Reinhart2018
     - "Small free energy differences between competing crystal phases interfering with
       the formation of large single crystals."
     - "that smaller patches lead to stronger anisotropy between crystal faces, with
@@ -164,19 +164,19 @@ another spinodal temperature.
       measurements of the growth rate. Each simulation run required approximately
       \SI{1}{\hour} of computation time on a single GPU."
 
-- [@Burke1988]
+- @Burke1988
     - "The (111) grows at a considerable slower rate than the (100), and it is apparent
       that different mechanisms are responsible for growth on the two faces."
     - "The (111) system clearly shows no preference for either fcc or hcp stacking.
       Stacking faults occur in roughly half the layer growth and pictures of growing
       layers show nucleation on both hcp and fcc sites."
 
-- [@Benjamin2015]
+- @Benjamin2015
     - "Finally, performing a run over \si{500 000} time steps, we determine the interface
       velocity $v_1$."
     - timesteps of size 0.005 $\tau$
 
-- [@Tepper2001]
+- @Tepper2001
     - "Except for very large deviations from the melting temperature, where homogeneous
       nucleation may dominate the dynamics, the process of melting and freezing of a
       crystal takes place at the interface."
@@ -188,7 +188,7 @@ another spinodal temperature.
 
 - Broughton group
 
-- [@Tang2013]
+- @Tang2013
     - "The crystallisation rate is determined by the nucleation rate and the crystal
       growth rate."
     - "but failed to find any sign of crystallisation in the CuZr mixture, despite runs
@@ -210,7 +210,7 @@ another spinodal temperature.
       crystal/liquid interface when comparing a good glass-forming alloy with a poor
       glass former."
 
-- [@Turnbull1969]
+- @Turnbull1969
     - "At the liquid--glass transition viscosity, \SI{e15}{\poise}, and $\Delta T_r =
       0.1$ eqn. (1) predicts that $u$ should be only 1 molecular spacing per 10 to 100
       days."
@@ -222,7 +222,7 @@ another spinodal temperature.
       seed-free would practivally only crystalllise within a narrow temperature range,
       and then only slowly"
 
-- [@Russo2018a]
+- @Russo2018a
     - "Previous studies showed that glass formation is often linked to a suppression of
       the local order that promotes crystal formation."
     - "The key physical factor controlling the glass-forming ability is the structural
@@ -233,7 +233,7 @@ another spinodal temperature.
       measure of the liquid--crystal structural differences."
 
 
-- [@Yagasaki2016]
+- @Yagasaki2016
     - "A simulation is continued for 700 ns or until complete disappearance of either
       solid or liquid part"
     - "To obtain the growth rates of THF hydrate and ice, we evaluate the position of the
@@ -247,7 +247,7 @@ another spinodal temperature.
       the Wilson-Frenkel model."
 
 
-- [@Taffs2016]
+- @Taffs2016
     - "This concept of competition between five-fold symmetry in the liquid and six-fold
       crystalline symmetry underpins the design of materials."
     - "Increasing five fold symmetry leads to an increase in surface tension between
