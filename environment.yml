@@ -11,3 +11,6 @@ dependencies:
   - conda-forge::nodejs
   - conda-forge::cairosvg
   - conda-forge::pandoc-crossref
+  - pip:
+    - hsluv
+
