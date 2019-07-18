@@ -142,7 +142,7 @@ Note the logarithmic scale on the time axis.
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
 takes place through a two step process,
-the initial relaxation to a plateau at \si{1e4} timesteps,
+the initial relaxation to a plateau at \num{1e4} timesteps,
 with the bumps indicating a reversal of relaxation.
 Both these features,
 the two step relaxation,
@@ -154,7 +154,7 @@ the melting point.
 
 ![The characteristic timescales for the intermediate scattering function
 over a range of temperatures and pressures.
-To put multiple preesures on a single scale,
+To put multiple pressures on a single scale,
 all the temperatures have been scaled
 relative to the melting point.
 ](../Projects/Dynamics/figures/thesis/isf_relaxation.pdf){width=80% #fig:isf_relaxation}
@@ -196,7 +196,7 @@ Note the logarithmic scale on the time axis.
 
 The shape of @fig:structural_relaxation has
 many of the same features as @fig:isf_relaxation,
-the reversal of relaxations at \si{10e4} timesteps,
+the reversal of relaxations at \num{10e4} timesteps,
 the exponential relaxation.
 The large difference between the two types of relaxation
 is that the two step relaxation process
@@ -206,7 +206,7 @@ is much more noticeable @fig:isf_relaxation.
 
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
 which over long enough timescales because of the collisions with other particles
-will move away from it's initial position at a linear rate
+will move away from its initial position at a linear rate
 with the gradient $m$ having the relation
 
 <!-- TODO properly write out equation -->
@@ -216,7 +216,7 @@ $$ m = 4D. $$
 Plotting the Mean Squared Displacement (MSD) of the trimer molecule
 gives the image below.
 
-![The Mean Squared Displacment of the trimer molecule
+![The Mean Squared Displacement of the trimer molecule
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale of both axes.
