@@ -277,24 +277,24 @@
 
 % Redo chapter titles
 % Main chapter titles
-\def\@makechapterhead#1{%
-    \parindent\z@\normalfont                            % No paragraph indent
-    \ifnum\c@secnumdepth>\m@ne                          % If you should number chapters
-      \begin{center}
-        \huge\sc \@chapapp\space \thechapter            % huge, small caps, centering , Chapter + number
-      \end{center}
-      \par\nobreak{}                                    % paragraph break without page break
+\def\@makechapterhead#1{                                 %
+  {\parindent \z@ \normalfont                            % No paragraph indent
+    \ifnum \c@secnumdepth >\m@ne                         % If you should number chapters
+        \centering{\huge\sc \@chapapp\space \thechapter} % huge, small caps, centering , Chapter + number
+        \par\nobreak                                     % paragraph break without page break
     \fi
-    \interlinepenalty\@M                                % Penalty
-    {\Huge \bfseries #1\par\nobreak}                    % Huge, bold chapter title
-}
+    \interlinepenalty\@M                                 % Penalty
+    \raggedright
+    \Huge \bfseries #1\par\nobreak                       % Huge, bold chapter title
+  }}
 
+                                                         % Preamble chapter titles or \chapter*
 % Preamble chapter titles or \chapter*
-\def\@makeschapterhead#1{{%
-  \parindent \z@ \normalfont                       % No paragraph indent
-  \raggedright
-  \interlinepenalty\@M                             % Penalty
-  \Huge \bfseries #1\par\nobreak                   % Huge, bold chapter title
+\def\@makeschapterhead#1{                                %
+    {\parindent \z@ \normalfont                          % No paragraph indent
+    \raggedright
+    \interlinepenalty\@M                                 % Penalty
+    \Huge \bfseries #1\par\nobreak                       % Huge, bold chapter title
 }}
 
 % Redefine \thebibliography to go to a new page and put an entry in the
