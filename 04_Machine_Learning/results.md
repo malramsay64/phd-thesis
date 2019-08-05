@@ -267,7 +267,7 @@ of where misclassification takes place
 and is a useful tool for understanding
 the limitations of a model.
 
-![The confusion matrices KNN](../Projects/MLCrystals/figures/confusion_matrix_knn.pdf)
+![The confusion matrices KNN](../Projects/MLCrystals/figures/knn-confusion_matrix.pdf)
 
 The input dataset has roughly the same number
 of local structures which are liquid and crystal,
