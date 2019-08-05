@@ -264,12 +264,10 @@ Establishing whether it is possible to make optimisations
 requires more of an understanding of the underlying classification.
 A confusion matrix is a representation
 of where misclassification takes place
-and is a useful tool in
+and is a useful tool for understanding
+the limitations of a model.
 
-
-![The confusion matrices knn]()
-![The confusion matrices nn]()
-![The confusion matrices dt]()
+![The confusion matrices KNN](../Projects/MLCrystals/figures/confusion_matrix_knn.pdf)
 
 The input dataset has roughly the same number
 of local structures which are liquid and crystal,
@@ -280,35 +278,22 @@ To account for this imbalance in the dataset,
 the accuracy metric which we are optimising is `balanced_accuracy`,
 which combines the accuracy percentage of each class.
 
-
-
- - Is it possible to improve the score
-    - The accuracies presented here are in excess of 97\%
-    - Looking at the confusion matrix,
-        - The diagonal elements are where the model correctly predicted the class
-        - Off diagonal elements are where the model was wrong
-        - Most of the incorrect values are crystals predicted as liquid
-            - Vibrations of crystal structure
-    - The liquid structure by nature of visiting all possible configurations,
-        will exhibit structures which are very crystalline in nature.
-        - this is particularly true for the small local structures we are investigating
-        - Move to larger configurations could help this, although at the expense
-            of spatial granularity.
-    - More degrees of freedom/features?
-        - It would potentially be possible to add more degrees of freedom
-        - Include more than a single neighbourhood
-        - Include distance to molecules
-        - include angles to molecules
-        - Is it useful here?
-    - More complicated algorithm?
-        - KNN is simple
-        - Deep neural networks are all the rage
-            - use computing time instead of good features
-            - Massively complicated and compute heavy
-        - In this case it is possible to express the difference
-            - using insight to guide selection of features
-        - Simple model is far more useful for using the model in production
-
-- Choice of algorithm
-    - Not just for performance in correctness
-    - Performance with regards to classifying quickly
+Looking at the confusion matrix,
+the misclassification with the largest impact on accuracy,
+is the p2gg crystal being predicted as a liquid.
+This is closely followed by the p2 and pg crystals
+being incorrectly classified as liquid.
+There are a number of possible explanations for this,
+from vibrations or defects within the crystal structure,
+particularly at the higher temperatures,
+or alternatively the melting of the crystal,
+Additionally, this only looks at structure at a single point in time,
+both the liquid and crystal structures can be considered vibrations
+around an inherent structure.
+These vibrations can mean that liquid-like and crystal-like
+structure can have some level of overlap
+when considered at a single point in time.
+When considering the range of conditions
+over which these configurations are comprised,
+---which is greater than any theory of melting can describe---
+this result is incredibly impressive.
