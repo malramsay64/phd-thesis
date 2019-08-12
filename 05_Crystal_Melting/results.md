@@ -216,8 +216,8 @@ we need the temperature range which displays the expected melting behaviour.
 
 <div id="fig:spinodal" class="subfigures">
 
-![](Projects/Crystal_Melting/figures/melting_disorder_P100-T075.pdf){#fig:melting_disorderB width=45%}
-![](Projects/Crystal_Melting/figures/melting_disorder_P100-T060.pdf){#fig:melting_disorderA width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderA width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.60.pdf){#fig:melting_disorderB width=45%}
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
 melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
@@ -230,7 +230,7 @@ propagation of melting in the surrounding crystal.
 
 Pressure  Spinodal Temperature
 -------- ---------------------
-1.00            0.60
+1.00            0.55
 13.50           2.20
 
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
@@ -348,33 +348,44 @@ This gives the lines of fit in @fig:normalised_melting.
 
 The lines depicting the fit of
 the Wilson-Frenkel theory in @fig:normalised_melting
-deviate from the data in a some significant ways.
-Firstly, while it appears
-that both pressures display a single melting rate curve
-from the simulation data,
-the theory displays two separate curves,
-reflecting the different potential energy differences $\Delta h_m$
-of the crystal and liquid at the melting point.
-Secondly, the shape of each of the curves
-is not a good fit for either dataset,
-with the concavity of the data
-not matching that of the curves based on the theoretical result.
-The higher temperature values $T/T_m > 1.50$
-emphasise the poorness of the fit,
-with results that are a long way from the theoretical value,
-suggesting that the Wilson-Frenkel theory
-doesn't describe the high temperature melting dynamics
-of this liquid.
+predict significantly slower melting rates
+than observed in the simulations
+for temperatures $T/T_m > 1.20$.
 
-An alternative method for the analysis
-of the theoretical values
-is to fit both the constant $c$ and the free energy difference $\Delta h_m$
-in @eq:normalised_growth
-to the collected data.
-When using the Levenberg-Marquardt algorithm for the fit
-taking into account the uncertainty of each point
-gives a value for the free energy difference
-close to the experimental value.
-This highlights that while the high temperature values
-are a long way from the expected theoretical value,
-they also have a correspondingly large uncertainty.
+This is well above the range of melting rates
+measured in any other simulations;
+
+- @Benjamin2015 go up to $T/T_m = 1.06$,
+- @Kerrache2008 goes up to $T/T_m = 1.07$,
+- @Rozmanov2011 go up to $T/T_m = 1.08$,
+- @Jackson2002 go up to $T/T_m = 1.08$, and
+- @Ramakrishnan2017 go up to $T/T_m = 1.12$.
+
+Along with comparable melting studies,
+@Lu1998 find the onset homogeneous nucleation,
+that is the spinodal temperature,
+for a range of metals at $T/T_m = 1.2$.
+And as another example
+@Norman2002 study rates of nucleation within the crystal
+up to $T/T_m = 1.25$.
+From a comparison with all these studies
+it would appear that the spinodal temperature $T/T_m = 1.6$
+is highly unusual and well above any other materials.
+
+It should be noted that the absurdly high spinodal temperature
+doesn't support a super stable crystal state,
+the crystal only has a small potential energy benefit over the liquid state
+and the melting rate of the crystal
+increases well above that predicted
+by the Wilson-Frenkel model.
+Instead it is indicative of the rarity of nucleation events,
+being the formation of defects within the crystal.
+There are defects which form within the crystal,
+shown in @fig:melting_disorderB,
+however these are transient defects,
+stable within the crystal structure
+and unable propagate melting.
+The defects in @fig:melting_disorderB
+appear to be similar to the defect
+which propagates the solid state phase transition
+of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
