@@ -241,6 +241,44 @@ the highest temperature it is possible to study melting.
 
 ### Melting Point
 
+The melting point $T_m$ is the temperature
+at which the rate of crystal growth
+is the same as the rate of melting
+---the equilibrium state.
+Typically the melting rate is the temperature
+at which the measurement of the growth rate
+crosses from negative (melting) to positive (growth).
+In the case of this molecule no melting has been observed,
+so the melting rate is the temperature
+at which the melting rate is no longer measurable.
+I consider the limit of measuring the melting
+rate being the removal of a single layer of crystal
+over the timescale of the simulation,
+which cannot be extended further due to a
+technical limit of how timesteps are handled in Hoomd[@zotero-1615],
+which can only store numbers up to \num{2^32-1},
+which is just over 4 billion.
+
+The melting points are tabulated in @Tbl:crystal_melting_point
+with the values for the tables extracted
+from @fig:melting_point_rates.
+
+Pressure  Melting Point $T_m$
+-------- ---------------------
+1.00            0.36
+13.50           1.35
+
+Table: The melting points of the crystals
+for both pressures studied in this thesis. {#tbl:crystal_melting_point}
+
+![The melting rates of the p2 crystal close to the melting point
+for pressures of 1.00 and 13.50.
+A melting rate of \num{1e-9}
+is less than a layer of crystal
+over the course of the simulation.
+](../Projects/Crystal_Melting/figures/melting_point_rates.pdf){width=80% #fig:melting_point_rates}
+
+
 ## Melting Rates
 
 The above simulations show that the p2 crystal
