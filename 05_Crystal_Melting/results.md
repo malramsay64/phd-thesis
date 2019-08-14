@@ -256,7 +256,7 @@ rate being the removal of a single layer of crystal
 over the timescale of the simulation,
 which cannot be extended further due to a
 technical limit of how timesteps are handled in Hoomd[@zotero-1615],
-which can only store numbers up to \num{2^32-1},
+which can only store numbers up to $2^{32}-1$,
 which is just over 4 billion.
 
 The melting points are tabulated in @Tbl:crystal_melting_point
