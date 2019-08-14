@@ -424,6 +424,6 @@ however these are transient defects,
 stable within the crystal structure
 and unable propagate melting.
 The defects in @fig:melting_disorderB
-appear to be similar to the defect
+are similar to the defect
 which propagates the solid state phase transition
 of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
