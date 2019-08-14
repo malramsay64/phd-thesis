@@ -217,11 +217,11 @@ we need the temperature range which displays the expected melting behaviour.
 <div id="fig:spinodal" class="subfigures">
 
 ![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderA width=45%}
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.60.pdf){#fig:melting_disorderB width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.pdf){#fig:melting_disorderB width=45%}
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
 melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
-temperature of 0.60. While (b) shows defects within the crystal, these are transient,
+temperature of 0.55. While (b) shows defects within the crystal, these are transient,
 retuning the crystal to its original structure as they move along the lattice
 dimension. This is unlike in (a) where the defects are persistent and support the
 propagation of melting in the surrounding crystal.
