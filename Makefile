@@ -21,9 +21,12 @@ pandoc_options =
 
 figures = $(shell find Projects/ -name "*.svg")
 
-.PHONY: all clean clean_subfiles test figures
+.PHONY: all clean clean_subfiles test figures submodules
 
-all: thesis.pdf
+all: submodules thesis.pdf 
+
+submodules:
+	git submodule update
 
 figures: $(figures:.svg=.pdf)
 
