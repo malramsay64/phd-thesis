@@ -1,5 +1,6 @@
 default: true
 "ul-indent": { "indent": 4 }
+"heading-style": {"style" : "atx"}
 # False positives in equations
 "no-reversed-links": false
 "line-length":
