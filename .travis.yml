@@ -5,6 +5,17 @@ cache:
     - $HOME/.cache/Tectonic
     - $HOME/miniconda
 
+jobs:
+  include:
+    - stage: "Testing"
+      script: make
+  allow_failures:
+    - name: "Linting Style"
+      script: make style
+    - name: "Linting Grammar"
+      script: make grammar
+
+
 before_install:
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
   - bash $HOME/miniconda.sh -b -u -p $HOME/miniconda
@@ -17,9 +28,6 @@ before_install:
   - conda info -a
   - conda env update
   - source activate thesis
-
-script:
-  - make
 
 deploy:
   provider: releases
