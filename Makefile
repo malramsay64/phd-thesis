@@ -23,7 +23,7 @@ figures = $(shell find Projects/ -name "*.svg")
 
 .PHONY: all clean clean_subfiles test figures submodules
 
-all: submodules thesis.pdf 
+all: submodules thesis.pdf
 
 submodules:
 	git submodule update
@@ -56,6 +56,22 @@ clean: clean_subfiles
 clean_subfiles:
 	rm -f $(subfiles)
 	rm -f pandoc.out
+
+#
+# Linting
+#
+# A set of rules to enfore style within the repsitory
+#
+
+.PHONY: lint style grammar
+
+lint: style grammar
+
+style:
+	markdownlint $(subfiles:.tex=.md)
+
+grammar:
+	textlint $(subfiles:.tex=.md)
 
 # vim:ft=make
 #
