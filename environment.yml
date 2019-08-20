@@ -13,3 +13,4 @@ dependencies:
   - conda-forge::pandoc-crossref==0.3.4.0.3
   - pip:
       - hsluv==0.0.2
+      - gitlint==0.12.0
