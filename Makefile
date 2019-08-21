@@ -23,7 +23,7 @@ figures = $(shell find Projects/ -name "*.svg")
 
 .PHONY: all clean clean_subfiles test figures submodules
 
-all: submodules thesis.pdf
+all: thesis.pdf
 
 submodules:
 	git submodule update
