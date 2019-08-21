@@ -86,7 +86,7 @@ temperature $T=1.50$. The radial distribution is taken as an average over 100 co
 the input trajectory. There shape of the molecule means there are three distinct first
 shell peaks, which are also visible in the second shell. In further shells the only
 impact on shape is the longer than usual tails of the peaks.
-](../Projects/Dynamics/figures/thesis/radial_distribution.pdf){width=80% #fig:radial_distribution}
+](../Projects/Dynamics/figures/radial_distribution.pdf){width=80% #fig:radial_distribution}
 
 From the radial distribution function $G(r)$,
 we can obtain the static structure factor $S(k)$
@@ -110,7 +110,7 @@ which are given below.
 ![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
 temperature $T=1.50$. This is calculated from an average over 100 configurations.
 within the trajectory. The first peak corresponds to a value of 2.90.
-](../Projects/Dynamics/figures/thesis/static_structure_factor.pdf){width=80% #fig:static_structure_factor}
+](../Projects/Dynamics/figures/static_structure_factor.pdf){width=80% #fig:static_structure_factor}
 
  Pressure  $k$
  --------  -----
@@ -137,7 +137,7 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/thesis/scattering_function.pdf){width=81% #fig:intermediate_scattering_function}
+](../Projects/Dynamics/figures/scattering_function.pdf){width=81% #fig:intermediate_scattering_function}
 
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
@@ -157,7 +157,7 @@ over a range of temperatures and pressures.
 To put multiple pressures on a single scale,
 all the temperatures have been scaled
 relative to the melting point.
-](../Projects/Dynamics/figures/thesis/isf_relaxation.pdf){width=80% #fig:isf_relaxation}
+](../Projects/Dynamics/figures/isf_relaxation.pdf){width=80% #fig:isf_relaxation}
 
 Taking the characteristic timescale of the
 relaxation of the intermediate scattering function,
@@ -192,7 +192,7 @@ can be identified at each timestep.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/thesis/structural_relaxation.pdf){width=80% #fig:structural_relaxation}
+](../Projects/Dynamics/figures/structural_relaxation.pdf){width=80% #fig:structural_relaxation}
 
 The shape of @fig:structural_relaxation has
 many of the same features as @fig:isf_relaxation,
@@ -220,7 +220,7 @@ gives the image below.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale of both axes.
-](../Projects/Dynamics/figures/thesis/mean_squared_displacement.pdf){width=80% #fig:msd}
+](../Projects/Dynamics/figures/mean_squared_displacement.pdf){width=80% #fig:msd}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -236,7 +236,7 @@ and more notably regions of dynamic heterogeneities.
 
 ![The diffusion constant as a function of temperature
 normalised by the melting point for a range of pressures.
-](../Projects/Dynamics/figures/thesis/diffusion_constant.pdf){width=80% #fig:diffusion_constant}
+](../Projects/Dynamics/figures/diffusion_constant.pdf){width=80% #fig:diffusion_constant}
 
 ## Rotational Relaxations
 
@@ -263,7 +263,7 @@ the relaxation time is the rate of the decay.
 ![The rotational relaxation of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
-](../Projects/Dynamics/figures/thesis/rotational_relaxation.pdf){width=80% #fig:rotational_relaxation}
+](../Projects/Dynamics/figures/rotational_relaxation.pdf){width=80% #fig:rotational_relaxation}
 
 ## Dynamic heterogeneities
 
@@ -288,7 +288,7 @@ deviates from the expected gaussian distribution [@Donati1999].
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/thesis/non_gaussian.pdf){width=80% #fig:non-gaussian}
+scale.](../Projects/Dynamics/figures/non_gaussian.pdf){width=80% #fig:non-gaussian}
 
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-gaussian parameter increases,
