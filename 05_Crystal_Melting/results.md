@@ -71,9 +71,12 @@ resulting in a stepped pattern
 
 <div id="fig:solid_state_transition_structure" class="subfigures">
 
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf){#fig:transition_init width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf){#fig:transition_process width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf){#fig:transition_end width=33%}
+<!-- markdownlint-disable MD045 -->
 
 The process of the solid state phase transition with the colouring denoting the
 identified crystal structure. The liquid is blue, the p2 crystal is yellow, the pg
@@ -132,9 +135,12 @@ into the phenomenally slow growth rates of the p2 crystal.
 
 <div id="fig:pg_melting" class="subfigures">
 
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_0.pdf){#fig:pg_melting_0 width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_1.pdf){#fig:pg_melting_1 width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_2.pdf){#fig:pg_melting_2 width=33%}
+<!-- markdownlint-enable MD045 -->
 
 This shows the melting of the pg crystal shown in red,
 with the liquid shown in blue.
@@ -161,9 +167,12 @@ So what is the difference between these two faces?
 
 <div id="fig:pg_crystal" class="subfigures">
 
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_2.pdf){#fig:pg_crystal_top_end width=33%}
+<!-- markdownlint-enable MD045 -->
 
 The structure at the top and bottom of the pg crystal
 
@@ -216,8 +225,11 @@ we need the temperature range which displays the expected melting behaviour.
 
 <div id="fig:spinodal" class="subfigures">
 
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
 ![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderA width=45%}
 ![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.pdf){#fig:melting_disorderB width=45%}
+<!-- markdownlint-enable MD045 -->
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
 melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
@@ -277,7 +289,6 @@ A melting rate of \num{1e-9}
 is less than a layer of crystal
 over the course of the simulation.
 ](../Projects/Crystal_Melting/figures/melting_point_rates.pdf){width=80% #fig:melting_point_rates}
-
 
 ## Melting Rates
 

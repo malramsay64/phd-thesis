@@ -235,9 +235,11 @@ is to find a suitable algorithm.
 with each being described in @sec:ml_algorithms.
 Of the algorithms shown in @tbl:classification_performance,
 there are three which stand out for their performance;
+
 - K-Nearest Neighbours (KNN),
 - Decision Tree (DT), and
 - Neural Network (NN).
+
 The excellent performance of the decision tree algorithm is interesting,
 since it is sequence of conditional checks,
 which could have been written manually.
@@ -249,7 +251,6 @@ of the resulting algorithm.
 The values which have been chosen using machine learning
 are those which perform the best
 over all the input configurations.
-
 
 Algorithm Accuracy Training Time  Match Time
 --------- -------- -------------  ----------

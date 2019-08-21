@@ -82,7 +82,7 @@ the resulting configuration is equilibrated at a temperature
 above those studied and the desired pressure,
 using a NPT simulation.
 
-#### Simulation Details
+#### Initialisation Simulation Details
 
 - FIRE reference
 
@@ -105,7 +105,7 @@ which is the positions, momenta, orientations, and angular momentum.
 - Methodology -> decrease temperature for half steps or 1e7 whichever is smaller then run at desired
   temperature for remainder
 
-#### Simulation Details
+#### Equilibration Simulation Details
 
 - Zero momentum every 33533 steps
     - chosen for being a prime number
@@ -118,17 +118,17 @@ is only valid should the configurations being sampled
 be representative of the equilibrium state.
 
 - Simulation conditions
-  - NPT
-  - Imaginary mass
+    - NPT
+    - Imaginary mass
 - data on many timescales
     - step sequence
 - constraints of data collection
-  - storage size
-  - network speeds
+    - storage size
+    - network speeds
 - Step sequence -> log scale for dynamics
 - starting configurations
-  - need to average over the equilibrium state
-  - not just a correlated set of trajectories
+    - need to average over the equilibrium state
+    - not just a correlated set of trajectories
 - Zero momentum every 33533 steps
     - chosen for being a prime number
     - less likely to cause issues (citation??)

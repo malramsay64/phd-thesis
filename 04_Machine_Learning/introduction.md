@@ -33,6 +33,7 @@ is the methodology.
 
 When developing a machine learning algorithm for a problem
 there are typically two separate steps,
+
 1. development of optimal models, and
 2. evaluating the performance of these models.
 
@@ -149,7 +150,6 @@ is most useful.
 The features are a set of values which best describe
 the differences which a machine learning algorithm
 should differentiate.
-
 
 - Machine Learning Methods
     - Introduction to machine learning

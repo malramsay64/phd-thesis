@@ -232,7 +232,6 @@ another spinodal temperature.
       of thermodynamic interface penaly, $\beta\gamma\sigma^2$, which is a macroscopic
       measure of the liquid--crystal structural differences."
 
-
 - @Yagasaki2016
     - "A simulation is continued for 700 ns or until complete disappearance of either
       solid or liquid part"
@@ -245,7 +244,6 @@ another spinodal temperature.
       factor (of factors) other than diffusion coefficients.
     - "The temperature dependence of the growth rate of THF significantly deviates from
       the Wilson-Frenkel model."
-
 
 - @Taffs2016
     - "This concept of competition between five-fold symmetry in the liquid and six-fold

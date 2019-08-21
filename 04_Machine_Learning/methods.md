@@ -70,7 +70,6 @@ The methodology from the machine learning
     - Use of kd-trees to reduce dimensionality search [@Bentley1975]
         - This is similar to neighbour search approaches in molecular dynamics [@Howard2016]
 
-
 - Labelling the datasets
 - Types of classifiers
     - algorithms

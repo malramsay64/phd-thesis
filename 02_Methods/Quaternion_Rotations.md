@@ -48,7 +48,6 @@
         - Also known as gimbal lock
         - Other angles are no longer independent degrees of freedom [@Evans1977]
 
-
 - Quaternions are the natural representation of orientation for the molecular dynamics
   simulation of rigid bodies.
     - The use of Euler angles results in a singularity at $\theta = 0$
@@ -84,7 +83,8 @@
     - $$ \ln(q) = \ln \|q\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \arccos \frac{a}{\|q\|} $$
 
 - Quaternion Exponent
-    - $$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a} \left(\cos \|\mathbf{v}\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \sin \|\mathbf{v}\|\right) $$
+    - $$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a}
+    \left(\cos \|\mathbf{v}\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \sin \|\mathbf{v}\|\right) $$
 
 ## Angular Distance From Quaternions
 
@@ -106,7 +106,7 @@
           optimised distance in [@Huynh2009], we get optimised distance calculations
 
         - Use the approach  $\Phi_6 = ∥ log(R1R2 )∥$
-        -  $\Phi_3 = \arccos(|q1 · q2|)$
+        - $\Phi_3 = \arccos(|q1 · q2|)$
 
 ## Quaternions in 2D
 
