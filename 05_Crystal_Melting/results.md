@@ -402,13 +402,18 @@ than observed in the simulations
 for temperatures $T/T_m > 1.20$.
 
 This is well above the range of melting rates
-measured in any other simulations;
+measured in simulations of 3D systems;
 
 - @Benjamin2015 go up to $T/T_m = 1.06$,
 - @Kerrache2008 goes up to $T/T_m = 1.07$,
 - @Rozmanov2011 go up to $T/T_m = 1.08$,
 - @Jackson2002 go up to $T/T_m = 1.08$, and
 - @Ramakrishnan2017 go up to $T/T_m = 1.12$.
+- @Iwamatsu1999 observes nucleation at $T/T_m = 1.11$
+
+which are all in agreement with @Abraham1981,
+in determining the spinodal of
+the 2D Lennard Jones to be $T/T_m = 1.08$
 
 Along with comparable melting studies,
 @Lu1998 find the onset homogeneous nucleation,
