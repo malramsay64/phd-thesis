@@ -24,9 +24,9 @@ Table: The melting points of the trimer molecule for different pressures. {#tbl:
 
 Much of the theory of dynamics in molecular systems
 has been built around the
-Stokes-Einstein relation [@Stokes???]
+Stokes-Einstein relation [@Einstein1956]
 $$ D_t \eta / T = \text{constant} $$
-and the Stokes-Einstein-Debye relations [@Stokes???].
+and the Stokes-Einstein-Debye relations [@Debye1929].
 $$ D_r \eta / T = \text{constant} $$
 where $D_t$ is the diffusion constant of the translational motion
 $D_r$ is the diffusion constant of the rotational degrees of freedom,

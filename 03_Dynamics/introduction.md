@@ -55,7 +55,7 @@ being the lowest energy state
 at a set of conditions.
 However, inherent in any experiment performed
 is a timescale over which observations take place.
-The pitch drop experiment [@Cite???]
+The pitch drop experiment [@Webb2014]
 is an excellent example of how timescale
 can affect our observations.
 Over the course of minutes,
@@ -311,7 +311,7 @@ for vectors along the $x, y,$ and $z$ axes into a single
 complete rotational relaxation.
 An approach which is only concerned with isotropic rotational motion
 could also take the approach of @Chen2017
-and represent molecular rotation using quaternions[@Furry1957;???],
+and represent molecular rotation using quaternions[@Furry1957],
 which capture all rotational information.
 It should be noted that
 the quaternion representation can also be decomposed
