@@ -8,7 +8,7 @@ while the positions are defined by
 the distance $d$ from the center of the central particle,
 and the angle $\theta$ between the centers of the two radial particles.
 
-![This shows the construction of the trimer molecule.][trimer.pdf]
+![This shows the construction of the trimer molecule.](02_Methods/figures/trimer.pdf)
 
 This gives the positions of the particles $\mathbf{P}`$ as;
 
