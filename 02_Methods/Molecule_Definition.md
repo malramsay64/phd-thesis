@@ -16,9 +16,9 @@ $$
 \mathbf{P}` = \left [
 \begin{matrix}
     0 & 0 & 0 \\
-    d\sin{\frac{\theta}{2}} & d\cos{\frac{\theta}{2}} 0 \\
-    -d\sin{\frac{\theta}{2}} & d\cos{\frac{\theta}{2}} 0 \\
-\end {matrix}
+    d\sin{\frac{\theta}{2}} & d\cos{\frac{\theta}{2}} & 0 \\
+    -d\sin{\frac{\theta}{2}} & d\cos{\frac{\theta}{2}} & 0
+\end{matrix}
 \right ]
 $$
 
@@ -42,28 +42,26 @@ which are the properties of the entire molecule.
 
 With the addition of the center-of-mass particle,
 the positions of the particles have to be adjusted,
-with the adjusted position denoted $P$.
+with the adjusted position denoted $\mathbf{P}$.
 
-$$
-COM = \left [ \sum_i P`_{i0}, \sum_i P`_{i1}, \sum_i P`_{i2} \right ]
-P = [P`_{ij} - COM_j]_{ij}
-$$
+\begin{align}
+\mathbf{C} &= \left [ \sum_i \mathbf{P}`_{i0}, \sum_i \mathbf{P}`_{i1}, \sum_i \mathbf{P}`_{i2} \right ] \\
+\mathbf{P} &= {[\mathbf{P}`_{ij} - \mathbf{C}_j]}_{ij}
+\end{align}
 
-Using the position $P$ of molecules from the center of mass,
+Using the position $\mathbf{P}$ of molecules from the center of mass,
 I am calculating the moment-of-inertia $I$.
 
-$$
-Q = \left [
+$$ \mathbf{Q} = \left [
 \begin{matrix}
     0 & 1 & 1 \\
     1 & 0 & 1 \\
     1 & 1 & 0
-\end{matrix} \right ] \times P
-$$
+\end{matrix} \right ] \times \mathbf{P} $$
 
-$$
-I = \left [ \sum_i Q_{i0}, \sum_i Q_{i1}, \sum_i Q_{i2} \right ]
-$$
+$$ I = \left [
+\sum_i \mathbf{Q}_{i0}, \sum_i \mathbf{Q}_{i1}, \sum_i \mathbf{Q}_{i2}
+\right ] $$
 
 Since the trimer molecules are two dimensional,
 the $x$ and $y$ components of the moment-of-inertia
