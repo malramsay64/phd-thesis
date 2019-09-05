@@ -93,7 +93,7 @@ we can obtain the static structure factor $S(k)$
 for an isotropic liquid
 using the following transformation
 
-$$ S(k) = 1 + 4 \pi \rho \frac{1}{q} \int \d r r \sin(qr)[g(r) - 1] $$
+$$ S(k) = 1 + 4 \pi \rho \frac{1}{q} \int \d{r} r \sin(qr)[g(r) - 1] $$
 
 plotted for the trimer molecule
 in @fig:static_structure_factor.

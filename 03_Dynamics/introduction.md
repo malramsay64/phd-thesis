@@ -284,16 +284,16 @@ The relaxation of a dipole $C_l$,
 where the orientation of the dipole is represented by the vector $\vect u$
 can be represented as
 
-$$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(o)) \rangle_i $$
+$$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(0)) \rangle_i $$
 
 Here $P_l$ is the Legendre polynomial of degree $l$,
 and the angle brackets denote an average over
 all molecules and starting configurations.
 To match simulation results with NMR and fluorescence experiments
-the 2nd degree Legendre polynomial is calculated,
+the 2nd degree Legendre polynomial is used,
 giving the equation
 
-$$ C_2(t) = \frac{1}{2} \langle 3(\vect n(0) \cdot \vect n(t))^2 -1 \rangle. $$
+$$ C_2(t) = \frac{1}{2} \langle 3(\vect n(t) \cdot \vect n(0))^2 -1 \rangle. $$
 
 It should be noted that this dipole relaxation
 only captures at most two dimensions of the rotational relaxation,
