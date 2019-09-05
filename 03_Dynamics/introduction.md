@@ -1,10 +1,14 @@
 # Introduction
 
 Current models of motion in the liquid state
-are based on the Stokes-Einstein-Debye relationships[@Debye;@Stokes],
+are based on the Stokes-Einstein-Debye relationships[@Debye1929],
 which are theoretical models of collective motion
-derived from particles undergoing Brownian motion[@Einstein].
-The most common relationships of the Stokes-Einstein-Debye models are
+derived from particles undergoing Brownian motion[@Einstein1956].
+These models define characteristic rates of motion
+known as diffusion constants,
+with $D_t$ being the diffusion constant of translational motion
+while $D_r$ is the diffusion constant of rotational motion.
+The Stokes-Einstein-Debye models define the relationships
 
 $$ D_t \eta / T = \text{constant} $$ {#eq:stokes_einstein}
 
@@ -12,8 +16,7 @@ and
 
 $$ D_r \eta / T = \text{constant} $$ {#eq:einstein_debye}
 
-where $D_t$ is the diffusion constant of the translational motion
-$D_r$ is the diffusion constant of the rotational degrees of freedom,
+where,
 $\eta$ is the shear viscosity, and
 $T$ is the temperature.
 
@@ -332,12 +335,12 @@ where $D_r$ is the rotational diffusion coefficient.
 Comparing this relationship for
 the first and second-order relaxation functions
 $$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
-Where molecules rotate inertially, that is,
-they carry out rotations over reasonably large angular displacements
-before being interrupted by a collision,
-resulting in non-exponential decay, where
+When molecules rotate inertially, that is,
+there are large angular displacements between collisions.
+The type of relaxation is no longer exponential,
+and can be identified by the ratio $\tau_1/\tau_2$
+falling in the range
 $$ 1 < \tau_1/\tau_2 < 3 $$
-
 The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
 that is, assuming rotations take place through a process of small random steps.
 Where there are large changes in orientation,

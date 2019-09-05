@@ -84,7 +84,7 @@ being more comparable to a binary mixture.
 ![The radial distribution function of the Trimer liquid at a pressure $P=13.50$ and a
 temperature $T=1.50$. The radial distribution is taken as an average over 100 configurations of
 the input trajectory. There shape of the molecule means there are three distinct first
-shell peaks, which are also visible in the second shell. In further shells the only
+shell peaks. In further shells the only
 impact on shape is the longer than usual tails of the peaks.
 ](../Projects/Dynamics/figures/radial_distribution.pdf){width=80% #fig:radial_distribution}
 
