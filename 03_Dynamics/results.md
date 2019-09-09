@@ -157,7 +157,7 @@ over a range of temperatures and pressures.
 To put multiple pressures on a single scale,
 all the temperatures have been scaled
 relative to the melting point.
-](../Projects/Dynamics/figures/isf_relaxation.pdf){width=80% #fig:isf_relaxation}
+](../Projects/Dynamics/figures/scattering_function_summary.pdf){width=80% #fig:isf_relaxation}
 
 Taking the characteristic timescale of the
 relaxation of the intermediate scattering function,
@@ -195,12 +195,12 @@ Note the logarithmic scale on the time axis.
 ](../Projects/Dynamics/figures/structural_relaxation.pdf){width=80% #fig:structural_relaxation}
 
 The shape of @fig:structural_relaxation has
-many of the same features as @fig:isf_relaxation,
+many of the same features as @fig:scattering_function,
 the reversal of relaxations at \num{10e4} timesteps,
 the exponential relaxation.
 The large difference between the two types of relaxation
 is that the two step relaxation process
-is much more noticeable @fig:isf_relaxation.
+is much more noticeable @fig:scattering_function.
 
 ## Diffusion
 
@@ -236,7 +236,7 @@ and more notably regions of dynamic heterogeneities.
 
 ![The diffusion constant as a function of temperature
 normalised by the melting point for a range of pressures.
-](../Projects/Dynamics/figures/diffusion_constant.pdf){width=80% #fig:diffusion_constant}
+](../Projects/Dynamics/figures/diffusion_constant_summary.pdf){width=80% #fig:diffusion_constant}
 
 ## Rotational Relaxations
 
