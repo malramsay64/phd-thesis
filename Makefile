@@ -15,8 +15,7 @@ makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
 pandoc_filters = --filter pandoc-crossref
-pandoc_options = -M fignos-cleverref=True -M eqnos-cleverref=True -M tabnos-cleverref=True
-pandoc_options =
+pandoc_options = --listings -M listings -M codeBlockCaptions
 
 
 figures = $(shell find Projects/ -name "*.svg")
