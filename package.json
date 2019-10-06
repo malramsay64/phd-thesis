@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "alex": ">=7.1.0",
+        "alex": ">=8.0.0",
         "diff": ">=3.5.0",
         "markdownlint": "^0.16.0",
         "markdownlint-cli": "^0.18.0",
