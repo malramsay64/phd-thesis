@@ -1,0 +1,33 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Install environment using conda
+      run: $CONDA/bin/conda env create && $CONDA/bin/conda activate thesis
+      
+    - name: Ensure style is correct
+      run: make style
+    
+    - name: Ensure grammar is correct
+      run: make grammar
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+          
+      - name: Install environment using conda
+        run: $CONDA/bin/conda env create && $CONDA/bin/conda activate thesis
+      
+      - name: Compile
+        run: make
