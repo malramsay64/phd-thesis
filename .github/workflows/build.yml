@@ -11,7 +11,7 @@ jobs:
         submodules: true
 
     - name: Install environment using conda
-      run: $CONDA/bin/conda env create && $CONDA/bin/conda activate thesis
+      run: $CONDA/bin/conda env create && $CONDA/bin/source activate thesis
       
     - name: Ensure style is correct
       run: make style
@@ -27,7 +27,7 @@ jobs:
           submodules: true
           
       - name: Install environment using conda
-        run: $CONDA/bin/conda env create && $CONDA/bin/conda activate thesis
+        run: $CONDA/bin/conda env create && $CONDA/bin/conda init $SHELL && $CONDA/bin/conda activate thesis
       
       - name: Compile
         run: make
