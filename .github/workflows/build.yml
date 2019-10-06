@@ -11,19 +11,13 @@ jobs:
         submodules: true
 
     - name: Install environment using conda
-      run: conda env create && source activate thesis
-      env:
-        PATH: $CONDA/bin:$PATH
+      run: $CONDA/bin/conda env create && source $CONDA/bin/activate thesis
       
     - name: Ensure style is correct
       run: make style
-      env:
-        PATH: $CONDA/bin:$PATH
     
     - name: Ensure grammar is correct
       run: make grammar
-      env:
-        PATH: $CONDA/bin:$PATH
   
   build:
     runs-on: ubuntu-latest
@@ -33,11 +27,7 @@ jobs:
           submodules: true
           
       - name: Install environment using conda
-        run: conda env create && source activate thesis
-        env:
-          PATH: $CONDA/bin:$PATH
+        run: $CONDA/bin/conda env create && source $CONDA/bin/activate thesis
       
       - name: Compile
         run: make
-        env:
-          PATH: $CONDA/bin:$PATH
