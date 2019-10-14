@@ -110,6 +110,7 @@ and in most cases it is impossible to send someone
 to turn it off and on again.
 NASA have published a set of Safety Critical Code Guidelines [@Holzmann2006]
 of which the most general are;
+
 - No function should be longer than can be printed on a single sheet of paper.
   Each function should be an understandable and verifiable logical unit.
 - A minimum of two assertions per function.
@@ -125,12 +126,13 @@ of which the most general are;
   but preferably more than one,
   static analysis tool.
   All code should pass with zero warnings.
+
 Another source of guidelines for improved code is from Google [@Henderson2017]
+
 - All changes to the main source code repository MUST be reviewed by at least one other engineer
 - Engineers are encouraged to keep each individual change small
 - All code used in production is expected to have unit tests
 - Style guides for each language to ensure consistency
-
 
 - Fuzz / property testing
 - changes which are beyond current thought, a lack of creativity
@@ -191,7 +193,6 @@ complete set of instructions which generated the figures"
   publications without modifications to the presented equations [@Manninen2017]
 - Even following reproducible practices, it can be difficult to reproduce results
   from within the same lab [@Mesnard2017]
-
 
 Reproducible Research
     - What does this mean for software
@@ -328,6 +329,7 @@ Data Storage
     - Binary file formats are much preferred for data storage
 
 ## Project Management
+
     - Organisation of project [@Wilson2014]
 
     Workflow
