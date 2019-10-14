@@ -7,3 +7,6 @@
 [submodule "Projects/MLCrystals"]
 	path = Projects/MLCrystals
 	url = https://github.com/malramsay64/MLCrystals.git
+[submodule "Projects/random_number_generators"]
+	path = Projects/random_number_generators
+	url = git@github.com:malramsay64/random_number_generators.git
