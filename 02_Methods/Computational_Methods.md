@@ -178,8 +178,8 @@ with velocities which deviate from the expected Maxwell-Boltzmann distribution
 and additionally the equipartition theorem,
 that the energy is equally distributed among degrees of freedom,
 was being violated.[@Palmer2018]
-While this appears to be a bug in the software,
-it appears that the behaviour was the intended behaviour.
+While this could be considered a bug in the software,
+it seems that the behaviour was intended.
 The real issue here is in the communication of the simulation results.
 Seven years worth of papers, emails, and in-person conversations
 were unable to adequately describe what the code was doing.
@@ -188,11 +188,90 @@ As @Buckheit1995 put it
 The actual scholarship is the complete software development environment and the
 complete set of instructions which generated the figures"
 
-- Computational reproducibility [@Baker2016]
-- Unable to reproduce modelling of differential rate equations from 3 of 4
-  publications without modifications to the presented equations [@Manninen2017]
-- Even following reproducible practices, it can be difficult to reproduce results
-  from within the same lab [@Mesnard2017]
+In a study of reproducibility
+@Baker2016 found that 80% of respondents
+finding that missing code or methods
+were sometimes an issue in reproducibility.
+Making code available is only part of the solution,
+it also needs to install and work on your system.
+@Collberg2016 studied computer systems research papers
+where the main result was based on code.
+Of the 500 papers studied,
+only 54% had code which compiled
+even after correspondence with the original author.
+This didn't make any attempt to replicate the original results,
+only going as far as checking the code would run.
+One of the main reasons presented
+for not releasing code is that it
+"it not ready for public consumption",[@Kouatchou2018;@Aut2018;@Collberg2016]
+however I posit that if code is not ready for anyone else to read,
+how is it ready for you to read?
+How can you be sure it is doing what you intend?
+
+Another angle of this is that even if the code works,
+is it using the same version of the software?
+There are differences, [@Mesnard2017]
+some of which don't change the result,
+others which might fix problems in previous versions.
+Without knowing specific versions,
+even with the code, reproducing results can be difficult.
+In a study of 305 of the most highly cited papers
+using the LAMMPS simulation software for molecular dynamics analysis,
+only 5 provided information about the version being used. [@Li2016]
+Of those 5, only 2 gave information
+which point to an exact version rather than a year.
+
+It would seem that we in the field of computational chemistry
+are not doing well in the aspect of reproducibility.
+Since the point of publishing research is for others to build upon it,
+which is measured using citations,
+making it easier, and in many cases possible, to replicate your work
+as the first step of building upon it
+seems fairly fundamental.
+So what are the best practices
+for software within research.
+The five key points which are brought are
+
+1. Version Control [@Eglen2017;@Sandve2013;@Taschuk2017;@Pall2015;@Wilson2014;@Wilson2017;@Coudert2017]
+2. Documentation [@Taschuck2017;@Eglen2017;@Wilson2014;@Wilson2017;@Smith2018]
+3. Tests [@Eglen2017;@Taschuk2017;@Pall2015;@Smith2017]
+4. Peer Review [@Pall2015;@Wilson2014;@Smith2018]
+5. Open Data [@Sandve2013;@Eglen2017;@Wilson2017;@Coudert2017]
+
+### Version Control
+
+- Keep track of what changed and when
+- keep the changes small
+
+### Documentation
+
+- what each function does
+- inputs/outputs
+- What the function does and what it changes
+
+### Tests
+
+- running the code with known good output
+- ensure that any changes to the code have unintended consequences
+-
+
+### Peer Review
+
+- Both of software as a whole and of changes being made
+- Where there are issues, someone else can see the changes
+
+### Open Data
+
+- not just the software, also the input and output files
+
+
+Many groups have had success with practicing reproducible software,
+and @Donoho2009 make a rather fitting observation
+for situations where it has failed;
+"the theory student sees no need to develop more
+disciplined ways of doing computational research."
+
+
 
 Reproducible Research
     - What does this mean for software
@@ -200,17 +279,14 @@ Reproducible Research
         - Traceability -> how was a results produced [@Sandve2013]
         - Avoid manual data manipulation [@Sandve2013]
         - Determinism (Document random seeds) [@Sandve2013;@Taschuck2017]
-        - Documentation [@Taschuck2017;@Eglen2017;@Wilson2014;@Wilson2017;@Smith2018]
+        - Documentation
         - Version Control
-          [@Eglen2017;@Sandve2013;@Taskchuk2017;@Pall2015;@Wilson2014;@Wilson2017]
-        - Tests [@Eglen2017;@Taschuk2017;@Pall2015;@Smith2017]
-        - Data in standard format [@Sandve2013;@Eglen2017;@Wilson2017]
+        - Tests
+        - Data in standard format
         - Provide public access to scripts and results [@Sandve2013;@Wilson2017]
         - Persistent URLs (DOI) [@Sandve2013;@Smith2018]
-        - Peer Review [@Pall2015;@Wilson2014;@Smith2018]
+        - Peer Review
 
-    - When did it fail: *Theorists* the theory student sees no need to develop more
-      disciplined ways of doing computational research. [@Donoho2009]
 
 ## Literate Programming
 
