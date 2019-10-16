@@ -242,20 +242,50 @@ The five key points which are brought are
 
 ### Version Control
 
-- Keep track of what changed and when
-- keep the changes small
+Keeping track of;
+- what changes have been made,
+- who made them, and
+- when they were made
+is a critical part of research.
+Version control systems used in software development, such as Git,
+provide a system for keeping track of these changes
+over the lifespan of a project.
+Keeping track of this can be particularly useful
+in working out the impact of a bug.
+Once the offending code has been identified,
+version control allows looking at
+the history of that piece of code over time
+working out how much data has been affected.
+Importantly when using version control
+is to keep the size of each change fairly small
+as it makes this retrospective analysis much easier.
+Smaller changes are also a lot easier
+for someone else to review. (See @sec:Peer_Review)
 
 ### Documentation
 
-- what each function does
-- inputs/outputs
-- What the function does and what it changes
+At a minimum a project should contain a README file,
+which is a first port of call for anyone coming across a project.
+Much like an abstract of a journal article,
+a README file should;
+- explain what the software does,
+- list what is required for the software to work,
+  including installation instructions,
+- provide instructions and commands to get the user started quickly,
+  an initial check that the installation worked.
+
+In addition to a README,
+each script should contain a description of what it does,
+and ideally how to use it.
+This same process should also be done for functions,
+including what is valid input and expected output.
+This helps in not only describing what a function does,
+it helps later that it is used correctly.
 
 ### Tests
 
 - running the code with known good output
 - ensure that any changes to the code have unintended consequences
--
 
 ### Peer Review
 
@@ -378,9 +408,6 @@ with Jupyter notebooks inspiring poor programming practices.
   copying files then being able to look at results, often with an additional
   processing step for generating the figures.
 
-
-
-
 ## Project Management
 
 Organisation of project [@Wilson2014]
@@ -405,23 +432,32 @@ Workflow
 
 ## Projects
 
-- experi
-    - HTBAC [@Dakka2018]
-    - DRMAA
-    - QGCBroker [@Bosak2012]
-    - SlurmR [@Yon2019]
-    - batchtools [@Lang2017]
+### Simulation Management
+
+This is my primarily my project experi
+which interfaces with sdrun
+for simplifying the variables in the experiment which change.
+
+- HTBAC [@Dakka2018]
+- DRMAA
+- QGCBroker [@Bosak2012]
+- SlurmR [@Yon2019]
+- batchtools [@Lang2017]
 
 - sdrun
     - qtools [@Purg2017]
 
-- sdanalysis / traj3dy
-    - vmd_diffusion_coefficient [@Giorgino2019]
-    - Overview of analysis tools [@Giorgino2019a]
-    - MDTraj [@McGibbon2015]
-    - MDAnalysis [@Gowers2016]
-    - freud [@Harper2016]
-    - rowan [@Ramasubramani2018]
+### Analysis of simulation trajectories
+
+
+My projects sdanalysis and traj3dy
+
+- vmd_diffusion_coefficient [@Giorgino2019]
+- Overview of analysis tools [@Giorgino2019a]
+- MDTraj [@McGibbon2015]
+- MDAnalysis [@Gowers2016]
+- freud [@Harper2016]
+- rowan [@Ramasubramani2018]
 
 ## Data size
 
