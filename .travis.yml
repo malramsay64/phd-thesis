@@ -25,7 +25,7 @@ before_install:
   - conda update -q conda
   - conda install conda-env
   - conda info -a
-  - conda env update
+  - conda env create
   - source activate thesis
 
 deploy:
