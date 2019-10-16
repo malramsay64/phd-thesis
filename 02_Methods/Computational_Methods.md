@@ -52,7 +52,7 @@ so some of the 130 papers citing these scripts
 have results which are potentially incorrect.
 This function, `glob.glob`,
 is a well known feature of the Python programming language,
-appearing in Software Carpentry's [@Wilson2016a] "Programming with Python" lesson, [@zotero-1355]
+appearing in Software Carpentry's [@Wilson2016a] "Programming with Python" lesson, [@programming_python]
 a one day course for introducing researchers to Python.
 Despite the ubiquity of this function and it's behaviour,
 it took 5 years and hundreds of people
@@ -72,7 +72,7 @@ should be treated with caution. [@Press1988]
 
 ![When RANDU generates 'pseudo-random' the coordinates of points in 3D, all the points
 lie on one of 15 planes shown.
-](../Projects/random_number_generators/presentation/figures/randu.png)
+](../Projects/random_number_generators/presentation/figures/randu.png){#fig:randu width=80%}
 
 There are also classes of bugs which are more subtle,
 results which are different yet neither is definitively right.
@@ -134,6 +134,8 @@ Another source of guidelines for improved code is from Google [@Henderson2017]
 - All code used in production is expected to have unit tests
 - Style guides for each language to ensure consistency
 
+### Extra ideas
+
 - Fuzz / property testing
 - changes which are beyond current thought, a lack of creativity
 - scope of software is large, unintended consequences, locally change is fine, but
@@ -154,7 +156,7 @@ Without the code it can be far more difficult.
 In the field of Computational neuroscience
 @Manninen2017 seek to replicate four
 "relatively simple computational models"
-describing the Ca^{2+} concentration over time
+describing the Ca$^{2+}$ concentration over time
 by implementing the series of differential equations
 present in the original publications.
 Of the four models,
@@ -233,9 +235,9 @@ for software within research.
 The five key points which are brought are
 
 1. Version Control [@Eglen2017;@Sandve2013;@Taschuk2017;@Pall2015;@Wilson2014;@Wilson2017;@Coudert2017]
-2. Documentation [@Taschuck2017;@Eglen2017;@Wilson2014;@Wilson2017;@Smith2018]
-3. Tests [@Eglen2017;@Taschuk2017;@Pall2015;@Smith2017]
-4. Peer Review [@Pall2015;@Wilson2014;@Smith2018]
+2. Documentation [@Taschuk2017;@Eglen2017;@Wilson2014;@Wilson2017;@Smith2018]
+3. Tests [@Eglen2017;@Taschuk2017;@Pall2015;@Smith2018]
+4. Peer Review [@Pall2015;@Wilson2014;@Smith2018;@Sandve2013;@Wilson2017]
 5. Open Data [@Sandve2013;@Eglen2017;@Wilson2017;@Coudert2017]
 
 ### Version Control
@@ -271,160 +273,135 @@ for situations where it has failed;
 "the theory student sees no need to develop more
 disciplined ways of doing computational research."
 
+### Additional ideas
+
+- Traceability -> how was a results produced [@Sandve2013]
+- Avoid manual data manipulation [@Sandve2013]
+- Determinism (Document random seeds) [@Sandve2013;@Taschuck2017]
+- Persistent URLs (DOI) [@Sandve2013;@Smith2018]
 
 
-Reproducible Research
-    - What does this mean for software
-    - Best practices
-        - Traceability -> how was a results produced [@Sandve2013]
-        - Avoid manual data manipulation [@Sandve2013]
-        - Determinism (Document random seeds) [@Sandve2013;@Taschuck2017]
-        - Documentation
-        - Version Control
-        - Tests
-        - Data in standard format
-        - Provide public access to scripts and results [@Sandve2013;@Wilson2017]
-        - Persistent URLs (DOI) [@Sandve2013;@Smith2018]
-        - Peer Review
-
+One of the important points about the errors in
+the Willoughby-Hoye scripts, or supercooled water
+is that by making the entire work available,
+the errors were found.
+The process of continual peer review,
+has made these tools and methods better for everyone.
+It is really easy to ascribe blame to someone
+and lose trust in them,
+however it is through these failures,
+that people learn and improve.
 
 ## Literate Programming
 
-Bringing implementation as part of write up.
+Recognising that code is an important component of the research process
+now means that there need to be suitable methods of combining both
+- the ideas in the form of descriptive text and equations, and
+- the implementation of those ideas in the form of code.
+Typically the current method is to place
+the ideas front and center in the paper,
+while the code is hidden away in a collection of files
+which is rarely checked.
+The idea of combing both code and documentation in this way was coined
+*literate programming* by Donald Knuth in 1984.[@Knuth1984]
+This focused on the idea that a program is a work of literature
+concentrating on communicating to humans rather than computers.
+A key point Knuth made in using the literate programming style is that
+"My programs are not only explained better than ever before;
+they are also better programs,
+because the new methodology encourages me to do a better job."
 
-Interactive Computing (Literate programming)
-    - Working with the computer to formulate the answer
-    - Asking lots of questions quickly
-    - Try something out, modify to suit the use case
-    - Generating a figure is an excellent example, read in the dataset, plot, change
-      colours, change size of labels, add axis labels. At each point modifying the
-      underlying code to modify behaviour.
-    - Jupyter notebooks are driving this
-    - Very different to HPC where getting results requires waiting in queues for hours,
-      copying files then being able to look at results, often with an additional
-      processing step for generating the figures.
+There have been implementations of literate programming,
+with Wolfram Mathematica among others,
+none have had the recent popularity of Jupyter notebooks.
+The development has primarily been driven by the field of data science,
+which is solving the same types of problems present in the sciences,
+namely the interactive analysis and plotting of data.
+The Jupyter notebook---previously iPython notebook---has seen
+significant interest within the research community [@Shen2014;@Mascarelli2014].
+With the primary appeal being the ability to provide a computational narrative,
+combining the description of the problem being solved,
+including equations and description,
+along with the working code the solve the problem
+and related visualisations.
+This narrative can be shared, replicated, and explored,
+providing an interactive method of understanding
+your own or a peer's data,
+and communicate that understanding effectively.
 
-Jupyter Notebooks
-    - Provide a mechanism for a computational narrative, which combines the description
-      of the problem being solved, including equations and working along with the code
-      to solve the problem and any visualisations.
-    - Provide a method of interacting with code and data
-    - They are being used to teach complex topics in Chemistry, aiding understanding
-      [@Weiss2017;@Smec2016;@Golman2019;@Smec2017a;@Weiss2017a;@Nguyen2018]
-    - There is a lot of interest from researchers, with the notebooks providing an
-      interactive method of understanding data [@Mascarelli2014].
-    - Mainstream media attention as a replacement for scientific communication as awe
-      know it. [@Somers2018]
-    - There aren't issues with the approach in practice. There are lots of promises, but
-      that doesn't mean they are being delivered on. [@Rule2018]
+Part of the real power of the jupyter notebook is the extensibility,
+with research groups developing software that build upon jupyter,
+simplifying the process of visualising different types of data,
+like @Nguyen2018 developing a widget to view molecular dynamics simulations.
+Furthermore, services like MyBinder, and Google Colaboratory
+provide ways of sharing notebooks online
+without having to install anything on your local computer.
+This makes it possible for your entire audience
+to replicate your research as part of a 20 minute presentation.
+Additionally jupyter notebooks are becoming
+part of the research outputs for papers,
+in particular the LIGO discovery included the accompanying notebook
+so that anyone can replicate their analysis.
+The adoption of Jupyter notebooks within a research environment
+is so prolific that it has even been picked up by mainstream media,
+with The Atlantic publishing a provocatively titled article
+"The Scientific Paper Is Obsolete" [@Somers2018]
+documenting the rise of the computational notebook.
 
-Data size
-    - Typical analysis loads all data into RAM concurrently
-        - need lots of RAM
-        - simple and well established methods
+While the Jupyter notebook has lots of wonderful promises,
+it doesn't mean they are being delivered on in practice.
+@Rule2018 study academic jupyter notebooks available on GitHub,
+evaluating how well they adhere to the promise of literate programming.
+A key part of a scientific publication is the reasoning
+and discussion of the results and their importance,
+yet in the notebooks sampled the discussion of results and reasoning
+only occurred in approximately a third of notebooks studied.
+Of even more concern,
+while 55% of notebooks had an introductory description,
+only 3% had a conclusion,
+making these notebooks no better than the code they are replacing.
+While Donald Knuth found code improvements using literate programming,
+the same is not true for everyone,
+with Jupyter notebooks inspiring poor programming practices.
 
-    - Using disk cache
-        - Data is flushed to disk
 
-    - Data Storage
-        - CSV Files
-            - Advantages
-                - Standard filetype
-                - simple to read/write for both human and computer
-                - Corruption of file can be easily dealt with
-                - Appending is simple
-            - Disadvantages
-                - Data read in is not the same as written out, numbers are converted
-                  from base 2 to base 10, which loses data in the final decimal points
-                - Reading and saving a CSV file in excel can change the file, a cell `1
-                  + 1` will be evaluated and written back as `2`
-                - File size is increased over binary representation
-                - Need to separately run compression
-                - Slow to read/write
+### Additional Ideas
 
-        - HDF5
-            - Used by NASA, CERN and other large research organisations [@DeCarlo2014]
-            - Considered for Molecular Dynamics trajectories [@McGibbon2015]
-            - Interoperable format for chemistry [@Angeli2007]
-            - Solves many of the issues of text files
-            - Advantages
-                - Binary storage format
-                - Compression is part of file specification
-                - widely used in scientific computing
-                - capability of appending files
-                - Can store many datasets in a single file
-                - datasets can have annotations
-                - Specification supports parallel read/write
-            - Disadvantages
-                - Need to use the complex C++ library to read/write, there are bindings
-                  for many/most programming languages
-                - Hard to debug errors/issues with the file
-                - Features are implementation specific
-                - Implementations can be buggy. Pandas 0.24 was leaving a file handle
-                  open when the read didn't go properly
+- Working with the computer to formulate the answer
+- Asking lots of questions quickly
+- Try something out, modify to suit the use case
+- Generating a figure is an excellent example, read in the dataset, plot, change
+  colours, change size of labels, add axis labels. At each point modifying the
+  underlying code to modify behaviour.
+- Jupyter notebooks are driving this
+- Very different to HPC where getting results requires waiting in queues for hours,
+  copying files then being able to look at results, often with an additional
+  processing step for generating the figures.
 
-    - Out of Memory Processing
-        - Where the size of the data is too large to fit in RAM
-        - Approaches
-            - Chunk the data
-                - Each frame in a trajectory
-                - 1000 rows at a time
-                - can add complexity
-                - Also have to consider output
-            - Use a Database for aggregation
-                - Let another computer handle the chunking for you
-                - Requires a database and SQL queries
-                - More infrastructure to maintain
-            - Distributed Processing
-                - Spark/Hadoop/Dask
-                - Huge area of growth
-                - Lots of change in this space
-                - Completely different idea to what HPC is built on
-                - Interactive processing
-                - Libraries which handle the chunking for you, while you write the same
-                  code
-                - Doesn't support all functionality
-            - More RAM
-                - Simplest solution for some cases
-                - This is expensive, and can get really expensive
-                - Only gets you so far
 
-Data Storage
-    - mdtraj [@McGibbon2015]
-    - Trajectories
-        - gsd -> Glotzer group binary
-        - pdb -> text
-        - xtc
-        - trr
-        - dcd -> Binary
-        - binpos
-        - netcdf
-        - mdcrd
-        - prmtop
-        - mdtraj hdf5
-    - Binary file formats are much preferred for data storage
+
 
 ## Project Management
 
-    - Organisation of project [@Wilson2014]
+Organisation of project [@Wilson2014]
 
-    Workflow
-        - Gromacs [@Pall2015]
-            - Gerrit code review
-            - Multiple authors have to approve the changes
-            - User and developer level documentation has to be part of the change
-            - Built across a range of systems using CI
-            - large test suite
-            - tests of new behaviour along with the introduction of it
+Workflow
+- Gromacs [@Pall2015]
+    - Gerrit code review
+    - Multiple authors have to approve the changes
+    - User and developer level documentation has to be part of the change
+    - Built across a range of systems using CI
+    - large test suite
+    - tests of new behaviour along with the introduction of it
 
-        - Biomedical Modelling [@Wright2018]
-            - "bad" data, what to do
-            - complex workflows -> directed acyclic workflow
-            - robustness to errors
-            - HTBAC to manage simulation replications
-            - software carpentry
-            - Managing change
-                - What has changed and when
+- Biomedical Modelling [@Wright2018]
+    - "bad" data, what to do
+    - complex workflows -> directed acyclic workflow
+    - robustness to errors
+    - HTBAC to manage simulation replications
+    - software carpentry
+    - Managing change
+        - What has changed and when
 
 ## Projects
 
@@ -445,3 +422,93 @@ Data Storage
     - MDAnalysis [@Gowers2016]
     - freud [@Harper2016]
     - rowan [@Ramasubramani2018]
+
+## Data size
+
+- Typical analysis loads all data into RAM concurrently
+    - need lots of RAM
+    - simple and well established methods
+
+- Using disk cache
+    - Data is flushed to disk
+
+### Data Storage
+
+- CSV Files
+    - Advantages
+        - Standard filetype
+        - simple to read/write for both human and computer
+        - Corruption of file can be easily dealt with
+        - Appending is simple
+    - Disadvantages
+        - Data read in is not the same as written out, numbers are converted
+          from base 2 to base 10, which loses data in the final decimal points
+        - Reading and saving a CSV file in excel can change the file, a cell `1
+          + 1` will be evaluated and written back as `2`
+        - File size is increased over binary representation
+        - Need to separately run compression
+        - Slow to read/write
+
+- HDF5
+    - Used by NASA, CERN and other large research organisations [@DeCarlo2014]
+    - Considered for Molecular Dynamics trajectories [@McGibbon2015]
+    - Interoperable format for chemistry [@Angeli2007]
+    - Solves many of the issues of text files
+    - Advantages
+        - Binary storage format
+        - Compression is part of file specification
+        - widely used in scientific computing
+        - capability of appending files
+        - Can store many datasets in a single file
+        - datasets can have annotations
+        - Specification supports parallel read/write
+    - Disadvantages
+        - Need to use the complex C++ library to read/write, there are bindings
+          for many/most programming languages
+        - Hard to debug errors/issues with the file
+        - Features are implementation specific
+        - Implementations can be buggy. Pandas 0.24 was leaving a file handle
+          open when the read didn't go properly
+
+### Out of Memory Processing
+
+- Where the size of the data is too large to fit in RAM
+- Approaches
+    - Chunk the data
+        - Each frame in a trajectory
+        - 1000 rows at a time
+        - can add complexity
+        - Also have to consider output
+    - Use a Database for aggregation
+        - Let another computer handle the chunking for you
+        - Requires a database and SQL queries
+        - More infrastructure to maintain
+    - Distributed Processing
+        - Spark/Hadoop/Dask
+        - Huge area of growth
+        - Lots of change in this space
+        - Completely different idea to what HPC is built on
+        - Interactive processing
+        - Libraries which handle the chunking for you, while you write the same
+          code
+        - Doesn't support all functionality
+    - More RAM
+        - Simplest solution for some cases
+        - This is expensive, and can get really expensive
+        - Only gets you so far
+
+### Data Storage
+
+- mdtraj [@McGibbon2015]
+- Trajectories
+    - gsd -> Glotzer group binary
+    - pdb -> text
+    - xtc
+    - trr
+    - dcd -> Binary
+    - binpos
+    - netcdf
+    - mdcrd
+    - prmtop
+    - mdtraj hdf5
+- Binary file formats are much preferred for data storage
