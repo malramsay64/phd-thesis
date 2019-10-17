@@ -485,3 +485,9 @@ with Jupyter notebooks inspiring poor programming practices.
 - Very different to HPC where getting results requires waiting in queues for hours,
   copying files then being able to look at results, often with an additional
   processing step for generating the figures.
+- Groups doing this
+    - Glotzer
+    - Chodera
+    - Molissi
+- Computational project management
+    - molissi project guide
