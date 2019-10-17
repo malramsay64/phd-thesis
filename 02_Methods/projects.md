@@ -71,6 +71,48 @@ both the machine and human readable specification of an experiment.
 - Biomedical Modelling [@Wright2018]
 Organisation of project [@Wilson2014]
 
+Part of the process of running many simulations on HPC resources,
+- many simulations
+- manage submission to a job script
+- simulations are dynamic
+    - find results
+    - improve experiment based on results
+        - more temperatures
+        - longer simulations
+        - issues with simulations / bugs
+- Batch systems are difficult to deal with
+    - minimal interface
+    - lots of required parts
+    - wait in a queue for a long period of time, want to be correct when it runs
+    - test smaller simulations, run on HPC
+
+- many variables in a MD simulation
+    - need to specify all of them
+    - typically no default values
+    - set your own defaults for the range of simulations you are performing
+    - Configure many different steps @Braun2018
+        1. Initialisation of positions
+            - Setup of configurations
+            - plenty of software packages to do this for a variety of molecules and
+              simulations
+                - moltemplate
+                - packmol
+                - atomsk
+            - important the created configuration is appropriate
+        2. Minimization
+            - state from which to compute numerical integration
+            - easy to create exponential time divergence [@Allen1991]
+        3. Equilibration
+            - getting configurations to the appropriate simulation conditions
+            - temperature and pressure correct
+        4. Production
+            - the measurement of the quantities we are interested in
+            - data collection
+
+This is my primarily my project experi
+which interfaces with sdrun
+for simplifying the variables in the experiment which change.
+
 ### Analysis of simulation trajectories
 
 My projects sdanalysis and traj3dy
