@@ -28,13 +28,13 @@ The rate of programming errors within the software industry
 is estimated to be between 15 and 50 errors
 per 1000 lines of delivered code,[@McConnell2004]
 that is code which the original author deemed correct.
-Note that this is studying people employed specifically to write code,
+Note that this is studying people employed to write code,
 typically with formal training in computer science.
 If this is the rate among professionals,
 how do scientists fare?
 @Soergel2015 posits that anywhere from 5-100% of software used in research
 has a bug altering the results obtained from it.
-This is not just a theoretical problem,
+This is not purely a theoretical problem,
 there are many results which are now questionable
 as a result of software errors.
 
@@ -230,9 +230,20 @@ which is measured using citations,
 making it easier, and in many cases possible, to replicate your work
 as the first step of building upon it
 seems fairly fundamental.
+If that is not reason enough,
+to publish in Nature
+"Authors must make available upon request,
+to editors and reviewers,
+any previously unreported custom computer code or algorithm
+used to generate results that are reported in the paper
+and central to its main claims.
+Any reason that would preclude the need for code or algorithm sharing
+will be evaluated by the editors
+who reserve the right to decline the paper if important code is unavailable." [@nature-reporting]
+
 So what are the best practices
-for software within research.
-The five key points which are brought are
+for developing software within research.
+The five key points which are common across a number of best practice guides are;
 
 1. Version Control [@Eglen2017;@Sandve2013;@Taschuk2017;@Pall2015;@Wilson2014;@Wilson2017;@Coudert2017]
 2. Documentation [@Taschuk2017;@Eglen2017;@Wilson2014;@Wilson2017;@Smith2018]
@@ -262,6 +273,20 @@ as it makes this retrospective analysis much easier.
 Smaller changes are also a lot easier
 for someone else to review. (See @sec:Peer_Review)
 
+While small changes are easier to review,
+they should also be self contained,
+since many changes complicate the process.
+This means that an ideal change to adds some new functionality
+should also include documentation for what that functionality does,
+including an update of existing documentation.
+There should also be some test cases,
+ensuring the new functionality behaves as expected
+and future changes are not going to
+inadvertently break the feature.
+In practice this idea situation is rarely realised,
+particularly where software development is not the main goal.
+However it provides a framework for what should be changed.
+
 ### Documentation
 
 At a minimum a project should contain a README file,
@@ -274,28 +299,82 @@ a README file should;
 - provide instructions and commands to get the user started quickly,
   an initial check that the installation worked.
 
-In addition to a README,
+A README provides a high level overview of the project,
+so for a more granular understanding
 each script should contain a description of what it does,
 and ideally how to use it.
 This same process should also be done for functions,
 including what is valid input and expected output.
-This helps in not only describing what a function does,
-it helps later that it is used correctly.
+This helps describe what a function does,
+and also provides a method to ensure
+it is used correctly later.
+This documentation of functions
+should also include how, if at all,
+they cope with "bad" or malformed data,
+as it is important to understand these cases.
 
 ### Tests
 
-- running the code with known good output
-- ensure that any changes to the code have unintended consequences
+A test is the process of running some code,
+and comparing the output with a result
+which is known to be good.
+Testing can take place on many levels,
+from running an entire simulation over many steps,
+to checking that a force-field is calculated correctly.
+The main purpose of tests is to quickly ensure
+that the code is functioning as expected,
+which can be used to ensure that
+a change to the code has no unintended consequences.
+
+A more advanced feature for tests
+is to perform Continuous Integration (CI) testing
+over a range of different operating systems.
+Continuous Integration is the process of
+automatically running all the tests
+whenever a change is made.
+There are a numerous providers which will perform
+this CI testing whenever a change is uploaded to GitHub.
+A key advantage of this type of testing,
+particularly when running the tests on multiple operating systems
+is that it makes finding compatibility problems simpler.
+Many pieces of software are run on different computers,
+developing something on a local computer
+which could be running Windows or macOS
+to then be run on an HPC cluster running Linux,
+or for the Willoughby-Hoye scripts,
+where researchers were running it on all platforms.
+Having the ability to quickly test that your code
+is going to work everywhere it is deployed is extremely powerful.
 
 ### Peer Review
 
-- Both of software as a whole and of changes being made
-- Where there are issues, someone else can see the changes
+The peer review of code comes in two key forms.
+Firstly there is the peer review of the overall work,
+this allows for other experts to find potential issues
+and other points where the author of the code
+has made the underlying behaviour unclear.
+The Journal of Open Source Software (JOSS)
+provides peer-review guidelines for scientific software. [@joss-reveiw-criteria]
+
+In addition to the peer review of the software as a whole,
+for larger or more important software projects
+the peer-review takes place on *every* change made.
+For example the Gromacs project requires approval from multiple
+authors before any change is incorporated into the main code base. [@Pall2015]
+This process ensures that the code is continually of a high standard
+and by providing a range of perspectives on any particular problem
+the solutions are better and have fewer bugs.
+Requiring multiple people to approve changes
+means that when bugs are found,
+there is no attribution of blame to a single person,
+the process failed rather than the person.
 
 ### Open Data
 
-- not just the software, also the input and output files
-
+Finally the software is only part of the story for reproducibility,
+the data used to generate the analysis
+like input configurations for molecular dynamics trajectories
+are important parts of reproducing an analysis.
 
 Many groups have had success with practicing reproducible software,
 and @Donoho2009 make a rather fitting observation
@@ -317,7 +396,7 @@ is that by making the entire work available,
 the errors were found.
 The process of continual peer review,
 has made these tools and methods better for everyone.
-It is really easy to ascribe blame to someone
+It is natural to ascribe blame to someone
 and lose trust in them,
 however it is through these failures,
 that people learn and improve.
@@ -394,7 +473,6 @@ While Donald Knuth found code improvements using literate programming,
 the same is not true for everyone,
 with Jupyter notebooks inspiring poor programming practices.
 
-
 ### Additional Ideas
 
 - Working with the computer to formulate the answer
@@ -407,144 +485,3 @@ with Jupyter notebooks inspiring poor programming practices.
 - Very different to HPC where getting results requires waiting in queues for hours,
   copying files then being able to look at results, often with an additional
   processing step for generating the figures.
-
-## Project Management
-
-Organisation of project [@Wilson2014]
-
-Workflow
-- Gromacs [@Pall2015]
-    - Gerrit code review
-    - Multiple authors have to approve the changes
-    - User and developer level documentation has to be part of the change
-    - Built across a range of systems using CI
-    - large test suite
-    - tests of new behaviour along with the introduction of it
-
-- Biomedical Modelling [@Wright2018]
-    - "bad" data, what to do
-    - complex workflows -> directed acyclic workflow
-    - robustness to errors
-    - HTBAC to manage simulation replications
-    - software carpentry
-    - Managing change
-        - What has changed and when
-
-## Projects
-
-### Simulation Management
-
-This is my primarily my project experi
-which interfaces with sdrun
-for simplifying the variables in the experiment which change.
-
-- HTBAC [@Dakka2018]
-- DRMAA
-- QGCBroker [@Bosak2012]
-- SlurmR [@Yon2019]
-- batchtools [@Lang2017]
-
-- sdrun
-    - qtools [@Purg2017]
-
-### Analysis of simulation trajectories
-
-
-My projects sdanalysis and traj3dy
-
-- vmd_diffusion_coefficient [@Giorgino2019]
-- Overview of analysis tools [@Giorgino2019a]
-- MDTraj [@McGibbon2015]
-- MDAnalysis [@Gowers2016]
-- freud [@Harper2016]
-- rowan [@Ramasubramani2018]
-
-## Data size
-
-- Typical analysis loads all data into RAM concurrently
-    - need lots of RAM
-    - simple and well established methods
-
-- Using disk cache
-    - Data is flushed to disk
-
-### Data Storage
-
-- CSV Files
-    - Advantages
-        - Standard filetype
-        - simple to read/write for both human and computer
-        - Corruption of file can be easily dealt with
-        - Appending is simple
-    - Disadvantages
-        - Data read in is not the same as written out, numbers are converted
-          from base 2 to base 10, which loses data in the final decimal points
-        - Reading and saving a CSV file in excel can change the file, a cell `1
-          + 1` will be evaluated and written back as `2`
-        - File size is increased over binary representation
-        - Need to separately run compression
-        - Slow to read/write
-
-- HDF5
-    - Used by NASA, CERN and other large research organisations [@DeCarlo2014]
-    - Considered for Molecular Dynamics trajectories [@McGibbon2015]
-    - Interoperable format for chemistry [@Angeli2007]
-    - Solves many of the issues of text files
-    - Advantages
-        - Binary storage format
-        - Compression is part of file specification
-        - widely used in scientific computing
-        - capability of appending files
-        - Can store many datasets in a single file
-        - datasets can have annotations
-        - Specification supports parallel read/write
-    - Disadvantages
-        - Need to use the complex C++ library to read/write, there are bindings
-          for many/most programming languages
-        - Hard to debug errors/issues with the file
-        - Features are implementation specific
-        - Implementations can be buggy. Pandas 0.24 was leaving a file handle
-          open when the read didn't go properly
-
-### Out of Memory Processing
-
-- Where the size of the data is too large to fit in RAM
-- Approaches
-    - Chunk the data
-        - Each frame in a trajectory
-        - 1000 rows at a time
-        - can add complexity
-        - Also have to consider output
-    - Use a Database for aggregation
-        - Let another computer handle the chunking for you
-        - Requires a database and SQL queries
-        - More infrastructure to maintain
-    - Distributed Processing
-        - Spark/Hadoop/Dask
-        - Huge area of growth
-        - Lots of change in this space
-        - Completely different idea to what HPC is built on
-        - Interactive processing
-        - Libraries which handle the chunking for you, while you write the same
-          code
-        - Doesn't support all functionality
-    - More RAM
-        - Simplest solution for some cases
-        - This is expensive, and can get really expensive
-        - Only gets you so far
-
-### Data Storage
-
-- mdtraj [@McGibbon2015]
-- Trajectories
-    - gsd -> Glotzer group binary
-    - pdb -> text
-    - xtc
-    - trr
-    - dcd -> Binary
-    - binpos
-    - netcdf
-    - mdcrd
-    - prmtop
-    - mdtraj hdf5
-- Binary file formats are much preferred for data storage
