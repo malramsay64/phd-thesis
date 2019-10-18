@@ -1,0 +1,8 @@
+digraph G {
+    "Initialise" -> "Minimise P1" -> "Equilibration P1 T1" -> "Production P1 T1";
+    "Minimise P1" -> "Equilibration P1 T2" -> "Production P1 T2";
+    "Minimise P1" -> "Equilibration P1 T3" -> "Production P1 T3";
+    "Initialise" -> "Minimise P2" -> "Equilibration P2 T1" -> "Production P2 T1";
+    "Minimise P2" -> "Equilibration P2 T2" -> "Production P2 T2";
+    "Minimise P2" -> "Equilibration P2 T3" -> "Production P2 T3";
+}

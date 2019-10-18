@@ -18,7 +18,7 @@ pandoc_filters = --filter pandoc-crossref
 pandoc_options = --listings -M listings -M codeBlockCaptions
 
 
-figures = $(shell find Projects/ -name "*.svg")
+figures = $(patsubst %.svg, %.pdf, $(shell find Projects/ -name "*.svg")) $(patsubst %.gv, %.pdf, $(shell find -name "*.gv"))
 
 .PHONY: all clean clean_subfiles test figures submodules
 
@@ -27,7 +27,7 @@ all: thesis.pdf
 submodules:
 	git submodule update
 
-figures: $(figures:.svg=.pdf)
+figures: $(figures)
 
 thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.svg=.pdf) $(preamble) | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
@@ -43,6 +43,9 @@ $(makedir) $(makesubdirs): %:
 
 %.pdf: %.svg
 	cairosvg $< -o $@
+
+%.pdf: %.gv
+	dot -Tpdf $< -o $@
 
 test:
 	mdl .
