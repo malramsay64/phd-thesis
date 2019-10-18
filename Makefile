@@ -70,10 +70,10 @@ clean_subfiles:
 lint: style grammar
 
 style:
-	./node_modules/.bin/markdownlint $(subfiles:.tex=.md)
+	@./node_modules/.bin/markdownlint $(subfiles:.tex=.md)
 
 grammar:
-	./node_modules/.bin/textlint $(subfiles:.tex=.md)
+	@./node_modules/.bin/textlint $(subfiles:.tex=.md)
 
 # vim:ft=make
 #
