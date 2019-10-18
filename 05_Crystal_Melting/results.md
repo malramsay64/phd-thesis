@@ -42,10 +42,10 @@ it would still be useful to compare each of the crystals.
 fig: Comparison of melting rates
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
-1.37 and a pressure of 13.50 which is just above the melting point of 1.36. Tracking all
+1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
 the different crystals within the configuration shows a transition of the p2gg crystal
 structure to the p2 crystal structure.
-](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.37-p2gg.pdf){#fig:solid_state_transition width=80%}
+](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.40-p2gg.pdf){#fig:solid_state_transition width=80%}
 
 The most notable behaviour of the crystal structures,
 is the solid state phase transition
@@ -73,9 +73,9 @@ resulting in a stepped pattern
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_init.pdf){#fig:transition_init width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_process.pdf){#fig:transition_process width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.37-p2gg_end.pdf){#fig:transition_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_init.pdf){#fig:transition_init width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_process.pdf){#fig:transition_process width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_end.pdf){#fig:transition_end width=33%}
 <!-- markdownlint-disable MD045 -->
 
 The process of the solid state phase transition with the colouring denoting the
@@ -137,9 +137,9 @@ into the phenomenally slow growth rates of the p2 crystal.
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_0.pdf){#fig:pg_melting_0 width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_1.pdf){#fig:pg_melting_1 width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_2.pdf){#fig:pg_melting_2 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_0.pdf){#fig:pg_melting_0 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_1.pdf){#fig:pg_melting_1 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_2.pdf){#fig:pg_melting_2 width=33%}
 <!-- markdownlint-enable MD045 -->
 
 This shows the melting of the pg crystal shown in red,
@@ -169,9 +169,9 @@ So what is the difference between these two faces?
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.42-pg_top_2.pdf){#fig:pg_crystal_top_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.pdf){#fig:pg_crystal_top_end width=33%}
 <!-- markdownlint-enable MD045 -->
 
 The structure at the top and bottom of the pg crystal
@@ -228,7 +228,7 @@ we need the temperature range which displays the expected melting behaviour.
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
 ![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderA width=45%}
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.pdf){#fig:melting_disorderB width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderB width=45%}
 <!-- markdownlint-enable MD045 -->
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
