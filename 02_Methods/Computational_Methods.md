@@ -254,9 +254,11 @@ The five key points which are common across a number of best practice guides are
 ### Version Control
 
 Keeping track of;
+
 - what changes have been made,
 - who made them, and
 - when they were made
+
 is a critical part of research.
 Version control systems used in software development, such as Git,
 provide a system for keeping track of these changes
@@ -293,6 +295,7 @@ At a minimum a project should contain a README file,
 which is a first port of call for anyone coming across a project.
 Much like an abstract of a journal article,
 a README file should;
+
 - explain what the software does,
 - list what is required for the software to work,
   including installation instructions,
@@ -396,6 +399,7 @@ which allows for starting a new project
 which takes into account all the above recommendations.
 There are also many research groups in the chemical sciences
 using these tools to improve their research;
+
 - the Chodera group,
 - the Glotzer group,
 - Laboratoire de Chimie et Physique Quantiques,
@@ -418,8 +422,10 @@ that people learn and improve.
 
 Recognising that code is an important component of the research process
 now means that there need to be suitable methods of combining both
+
 - the ideas in the form of descriptive text and equations, and
 - the implementation of those ideas in the form of code.
+
 Typically the current method is to place
 the ideas front and center in the paper,
 while the code is hidden away in a collection of files

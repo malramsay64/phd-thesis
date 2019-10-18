@@ -10,10 +10,12 @@ The management of simulations is highly complex,
 particularly where multiple steps are involved.
 For molecular dynamics simulations
 there are four main steps [@Braun2018]
+
 1. Initialisation of positions, consisting
 2. Minimisation
 3. Equilibration
 4. Production
+
 The Initialisation of positions only needs to occur once
 regardless of the additional simulation parameters,
 the minimisation needs to occur for every pressure,
@@ -97,6 +99,7 @@ Part of the process of running many simulations on HPC resources,
 ## Simulation Initialisation
 
 packing
+
 - Based on code from Toby Hudson
 - Rewritten to be easier to read and understand
 - added the ability to model potentials like the lennard jones
@@ -151,25 +154,28 @@ The analysis of molecular dynamics simulation trajectories
 is an area containing many different software packages, [@Giorgino2019a]
 each having their own benefits.
 The main tools available are
-- MDTraj [@McGibbon2015]
-- MDAnalysis [@Gowers2016]
+
+- MDTraj, [@McGibbon2015]
+- MDAnalysis, [@Gowers2016] and
 - freud [@Harper2016]
-with each providing a python interface
+
+Each of these tools provides a python interface
 to a collection of common analyses.
-While these provide an excellent and simple interface
+While these collectively provides tools
 for some analyses which I am conducting,
-they don't provide the breadth of analyses I am performing
-particularly in relation to the understanding
-of rotational motion.
+they don't provide the breadth of analyses I required,
+notably lacking in understanding rotational motion.
 
 I needed to develop my own analyses for this project,
 which I have done with the sdanalysis and `traj3dy` projects.
 The sdanalysis project calculates quantities
 and builds upon two projects from the Glotzer group,
+
 - freud [@Harper2016] which provides the calculations of periodic distances,
   the efficient calculation of the nearest neighbours, and
   voronoi diagrams, and
 - Rowan [@Ramasubramani2018] which provides utilities for working with Quaternions.
+
 These projects were both developing throughout the course of my PhD
 and at various points I was implementing components of these tools,
 however ensuring my code was correct, fast and installable
