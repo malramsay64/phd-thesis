@@ -38,7 +38,7 @@ This is not purely a theoretical problem,
 there are many results which are now questionable
 as a result of software errors.
 
-Recently @Neupand2019 found a bug in the popular Willoughby-Hoye Scripts
+Recently @Neupane2019 found a bug in the popular Willoughby-Hoye Scripts
 for calculating NMR Chemical shifts from the output of
 Quantum Chemical simulations using GAUSSIAN.
 The Willoughby-Hoye scripts published in *Nature Protocols* [@Willoughby2014]
@@ -386,7 +386,7 @@ disciplined ways of doing computational research."
 
 - Traceability -> how was a results produced [@Sandve2013]
 - Avoid manual data manipulation [@Sandve2013]
-- Determinism (Document random seeds) [@Sandve2013;@Taschuck2017]
+- Determinism (Document random seeds) [@Sandve2013;@Taschuk2017]
 - Persistent URLs (DOI) [@Sandve2013;@Smith2018]
 
 
