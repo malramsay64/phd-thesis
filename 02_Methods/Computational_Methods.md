@@ -356,8 +356,9 @@ has made the underlying behaviour unclear.
 The Journal of Open Source Software (JOSS)
 provides peer-review guidelines for scientific software. [@joss-reveiw-criteria]
 
-In addition to the peer review of the software as a whole,
-for larger or more important software projects
+As projects change and develop
+the original review of the work becomes outdated,
+particularly for projects which are widely used and trusted,
 the peer-review takes place on *every* change made.
 For example the Gromacs project requires approval from multiple
 authors before any change is incorporated into the main code base. [@Pall2015]
@@ -376,19 +377,31 @@ the data used to generate the analysis
 like input configurations for molecular dynamics trajectories
 are important parts of reproducing an analysis.
 
+- Traceability -> how was a result produced [@Sandve2013]
+- Avoid manual data manipulation [@Sandve2013]
+- Determinism (Document random seeds) [@Sandve2013;@Taschuk2017]
+- Persistent URLs (DOI) [@Sandve2013;@Smith2018]
+
 Many groups have had success with practicing reproducible software,
 and @Donoho2009 make a rather fitting observation
 for situations where it has failed;
 "the theory student sees no need to develop more
 disciplined ways of doing computational research."
 
-### Additional ideas
-
-- Traceability -> how was a results produced [@Sandve2013]
-- Avoid manual data manipulation [@Sandve2013]
-- Determinism (Document random seeds) [@Sandve2013;@Taschuk2017]
-- Persistent URLs (DOI) [@Sandve2013;@Smith2018]
-
+Within the realms of computational chemistry,
+the Molecular Sciences Software Institute [@molssi]
+provides guides for best practices in the computational molecular sciences
+in particular they provide a template for projects [@molssi-cms]
+which allows for starting a new project
+which takes into account all the above recommendations.
+There are also many research groups in the chemical sciences
+using these tools to improve their research;
+- the Chodera group,
+- the Glotzer group,
+- Laboratoire de Chimie et Physique Quantiques,
+- Foley Lab,
+- Chopra Lab,
+- SUNCAT Center
 
 One of the important points about the errors in
 the Willoughby-Hoye scripts, or supercooled water
@@ -477,7 +490,6 @@ with Jupyter notebooks inspiring poor programming practices.
 
 - Working with the computer to formulate the answer
 - Asking lots of questions quickly
-- Try something out, modify to suit the use case
 - Generating a figure is an excellent example, read in the dataset, plot, change
   colours, change size of labels, add axis labels. At each point modifying the
   underlying code to modify behaviour.
