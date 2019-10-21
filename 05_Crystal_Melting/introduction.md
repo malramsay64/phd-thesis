@@ -139,116 +139,149 @@ at some temperature below the melting point,
 the liquid will spontaneously crystallise,
 another spinodal temperature.
 
+### Models of Melting
+
+- Classical Theory
+- Ginzburg Landau / Square Gradient
+- Phase-field
+- Density functional methods
+
+The field of modelling crystal growth
+is a complete and utter mess of nomenclature
+with no consistency of terminology.
+The different models of crystal growth
+can be roughly divided into four categories;
+
+1. Classical Theory
+2. Square Gradient Approximations
+3. Phase-field theories
+4. Density functional methods
+
+however, actually working out which class
+a model belongs to is rather difficult.
+
+In 1994 @Bagdassarian1994 introduce a model
+which measures the ordering using the parameter $M(\vect{r}, t)$
+which is expressed in the Landau-Ginzburg form
+
+$$ \frac{\partial M(\vect{r}, t)}{\partial t} = \frac{\Gamma}{\rho_s k_\text{b} T_f}
+\frac{\partial \Omega[M]}{\partial M} $$
+
+where;
+- $\Omega[M]$ is the grand canonical free energy, taken as a functional of the order
+  parameter $M(\vect{r}, t)$, and
+- $\Gamma$ is a transport coefficient
+As for why $\Omega[M]$ and not $\Omega[M(\vect{r}, t)]$,
+it would have been nice to have been explained in the paper.
+This initial form was described as a phase-field model.
+
+In 2002 @Oxtoby2002 reviews Density Functional Theory (DFT)
+in the context of statistical mechanics
+and thermodynamic phase behaviour,
+introducing the square gradient approximation,
+which is also known as the Landau-Ginzburg free energy;
+
+$$ F[m(\vect{r})] = \d{r}\left[ f_u(m(\vect{r}) + K | \nabla m(\vect{r}|^2 \right] $$
+
+The equation was presented complete with the missing parentheses
+and no description of any of the symbols.
+Despite initially being described as a phase-field model,
+the same idea is now described as Density Functional Theory.
+
+Then in 2019 @Granasy2019 gives yet another term
+to describe this same idea,
+the Square Gradient approximation,
+making a note that terminology has changed over time.
+Then proceed to use it as a phase-field model.
+So here we have a model of crystal growth
+which has been described by three of
+the four classes of crystal growth models.
+
+#### Classical Theory
+
+The classical model of Crystal Growth and Melting
+known as the Wilson-Frenkel [@Wilson1900;@Frenkel1926]
+is one where the rate of crystal growth $v(T)$
+as a function of temperature $T$
+is represented by the equation
+
+$$ v(T) = k(T) \left[1-\exp{\left(\frac{-\Delta\mu(T)}{k_\text{B} T}\right)\right] $$
+
+where
+- \Delta\mu(T) is the difference between the chemical potentials of the liquid and the
+  crystal phases at the desired temperature, and
+- $k_\text{B}$ is the Boltzman constant.
+
+    - thermally activated process
+    - mobility of molecules in the liquid
+    - One dimensional process -> all parameters proceeding simultaneously [@Russo2016]
+    - *Capillarity approximation* -> small crystalline nuclei are amenable to a
+      thermodynamic description, that is they retain the properties of the bulk solid.
+    - Surface tension -> not the relevant free energy cost
+
+
+- Equation for crystals growth mathematically equivalent to the ising model
+- There are classes of material which can't be described as thermally activated
+    - Kinetic monte carlo
+    - can be modelled using the ising model -> spin flips
+
+- Bond orientational ordering
+    - The idea that there are two order parameters required for crystallisation, even
+      in atomic liquids
+    - Description of liquid as ideal and homogeneous -> $G(r)$ [@Tanaka2012]
+    - long range disordered -> can still posess short range to medium range order
+    - A liquid has locally favourable structures which are formed normally within the liquid
+    - Use bond ordering to describe short range ordering
+    - Importance of orientational ordering has been often overlooked
+    - it is bond orientational order not translational order that triggers crystal
+      nucleation
+
+- Molecular dynamics results suggest that there are two classes of materials. Once where
+  there is an activation barrier for growth, and another where there is no activation
+  barrier for growth. [@Jackson2002]
+
+#### Square Gradient
+
+@Bagdassarian1994 propose an alternative method
+of understanding melting rates
+somewhat modelled on the Marcus [@Marcus1956] theory of electron transfer.
+The model describes an order parameter $M(\vect{r}, t)$
+which describes the local state of the system.
+The fluctuations of the order parameter
+can be approximated by parabolas,
+with one describing each of the phases.
+This paper has a
+
+
+#### Phase Field
+
+- Phase field approach
+    - rigorously derived based on variational principles of irreversible
+      thermodynamics [@Emmerich2009]
+    - used to model more complex behaviours [@Granasy2019;@Ericsson2019]
+        - Dendrites, eutectic patterns, fractal like structures
+    - currently has been used sparingly in the modelling of rates
+
+- Use a local structural order parameter $\phi(\vect{r}, t)$ termed the *phase field*
+    - a measure of local crystallinity
+    - can monitor the presence of many different phases
+- Able to monitor a range of different
+
+- Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}
+
+#### Density Functional Theory
+
+
+
+
 ## Calculation of Melting Rates
+
+- The temperature dependent chemical potential
+  can be approximated as [@Tang2013]
+  $$ \Delta \mu(T) = (T_m - T) \frac{\Delta h_m}{T_m} $$
+  where
+    - $T_m$ is the melting point, and
+    - $\Delta h_m$ is the enthalpy of fusion per particle
 
 - Slab geometries
     - Growth/melting rate along a single crystal plane
-
-- @Reinhart2018
-    - "Small free energy differences between competing crystal phases interfering with
-      the formation of large single crystals."
-    - "that smaller patches lead to stronger anisotropy between crystal faces, with
-      interface velocities up to 100 times faster for the BCT (001) face compared to
-      (110) and 1000 times faster for the perovskite (110) compared to (100)."
-    - Crystallisation of non-spherically symmetrical particles.
-    - Used the local Steinhardt bond order parameter $\bar Q_6$
-    - "Growth with patchy particles is an activated process and not collision-limited,
-      as has been reported for isotropic particles."
-    - "In all of our simulations, we found that smaller patches yielded slower interface
-      velocities, even after adjusting for slower diffusion at their lower melting
-      points. ... complete growth suppression at low $\Delta T$."
-    - "This is likely a result of the strict geometric constraints imposed by the
-      particles during attachment."
-    - "The simulation time step was 0.005 $\tau$"
-    - "We found that \si{2e5} to \si{8e5} time steps were sufficient to give robust
-      measurements of the growth rate. Each simulation run required approximately
-      \SI{1}{\hour} of computation time on a single GPU."
-
-- @Burke1988
-    - "The (111) grows at a considerable slower rate than the (100), and it is apparent
-      that different mechanisms are responsible for growth on the two faces."
-    - "The (111) system clearly shows no preference for either fcc or hcp stacking.
-      Stacking faults occur in roughly half the layer growth and pictures of growing
-      layers show nucleation on both hcp and fcc sites."
-
-- @Benjamin2015
-    - "Finally, performing a run over \si{500 000} time steps, we determine the interface
-      velocity $v_1$."
-    - timesteps of size 0.005 $\tau$
-
-- @Tepper2001
-    - "Except for very large deviations from the melting temperature, where homogeneous
-      nucleation may dominate the dynamics, the process of melting and freezing of a
-      crystal takes place at the interface."
-    - "lead to the general observation that melting rates are larger than
-      crystallisation rates, at equal amounts of supersaturations."
-    - "in a successive paper of the Broughton group, they tried to complement their
-      growth studies with melting, but they failed to produce steady state melting."
-    - "300 thousand timesteps"
-
-- Broughton group
-
-- @Tang2013
-    - "The crystallisation rate is determined by the nucleation rate and the crystal
-      growth rate."
-    - "but failed to find any sign of crystallisation in the CuZr mixture, despite runs
-      of \SI{50}{ns} duration"
-        - Timestep is \SI{1}{fs}
-        - 50 million timesteps
-    - The growth rate $v$ has been determined as follows:
-        $$ v = \frac{V d_1}{2N_1(V_c - V1)} $$
-        where $V$ is the rate of change of the volume of the simulation cell, $d_1$ is
-        the spacing between crystal layers along the interface normal, $N_1$ is the
-        average number of atoms in an as-grown crystal layer....and $V_c$ and $V_1$ are
-        the specific volumes of the bulk crystal and liquid phases respectively.
-    - "The coefficient $k(T)$ corresponds to the rate per unit area at which material is
-      added to the interface, whereas the term in brackets represents the fraction of of
-      the added material that is not removed by the reverse process."
-    - "In units of the diffusion time, the NiAl surface is laying down ten layers for
-      every layer of CuZr."
-    - "The major finding of this Letter is that a striking difference exists in the
-      crystal/liquid interface when comparing a good glass-forming alloy with a poor
-      glass former."
-
-- @Turnbull1969
-    - "At the liquid--glass transition viscosity, \SI{e15}{\poise}, and $\Delta T_r =
-      0.1$ eqn. (1) predicts that $u$ should be only 1 molecular spacing per 10 to 100
-      days."
-    - "Consider now what conditions must be fulfilled by the crystal nucleation
-      frequency and the cooling rate of the liquid is crystallisation is to be
-      bypassed."
-    - "the glass forming ability should increase with the reduced glass temperature
-      $T_g/T_m = T_{rg}$....Liquids with glass temperatures as high as $2/3T_m$ if
-      seed-free would practivally only crystalllise within a narrow temperature range,
-      and then only slowly"
-
-- @Russo2018a
-    - "Previous studies showed that glass formation is often linked to a suppression of
-      the local order that promotes crystal formation."
-    - "The key physical factor controlling the glass-forming ability is the structural
-      difference between as crystal and its melt, which can be quantified by a single
-      adimensional quantity."
-    - "the drastic suppression of the nucleation rate is in fact due to a rapid increase
-      of thermodynamic interface penaly, $\beta\gamma\sigma^2$, which is a macroscopic
-      measure of the liquid--crystal structural differences."
-
-- @Yagasaki2016
-    - "A simulation is continued for 700 ns or until complete disappearance of either
-      solid or liquid part"
-    - "To obtain the growth rates of THF hydrate and ice, we evaluate the position of the
-      solid--liquid interface at each timestep. It is possible to distinguish the solid
-      regions from the aqueous solution using the $F_3$parameter because the
-      tetahedrality of water molecules is much higher in ice and clathrate hydrates
-      than in aqueous solution."
-    - "This result demonstrates that the growth rate of THF hydrate is governed by a
-      factor (of factors) other than diffusion coefficients.
-    - "The temperature dependence of the growth rate of THF significantly deviates from
-      the Wilson-Frenkel model."
-
-- @Taffs2016
-    - "This concept of competition between five-fold symmetry in the liquid and six-fold
-      crystalline symmetry underpins the design of materials."
-    - "Increasing five fold symmetry leads to an increase in surface tension between
-      fluid and crystal, which acts to suppress nucleation."
-    - "a slight trend to faster growth for reduced five-fold symmetry. This suggests
-      that the growth rate and nucleation are decoupled"
