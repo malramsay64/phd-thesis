@@ -18,7 +18,7 @@ pandoc_filters = --filter pandoc-crossref
 pandoc_options = --listings -M listings -M codeBlockCaptions
 
 
-figures = $(patsubst %.svg, %.pdf, $(shell find Projects/ -name "*.svg")) $(patsubst %.gv, %.pdf, $(shell find -name "*.gv"))
+figures = $(patsubst %.svg, %.pdf, $(shell find Projects/ -name "*.svg")) $(patsubst %.gv, %.pdf, $(shell find . -name "*.gv"))
 
 .PHONY: all clean clean_subfiles test figures submodules
 
