@@ -168,6 +168,7 @@ $$ \frac{\partial M(\vect{r}, t)}{\partial t} = \frac{\Gamma}{\rho_s k_\text{b} 
 \frac{\partial \Omega[M]}{\partial M} $$
 
 where;
+
 - $\Omega[M]$ is the grand canonical free energy, taken as a functional of the order
   parameter $M(\vect{r}, t)$, and
 - $\Gamma$ is a transport coefficient
@@ -208,6 +209,7 @@ is represented by the equation
 $$ v(T) = k(T) \left[1-\exp{\frac{-\Delta\mu(T)}{k_\text{B} T}}\right] $$
 
 where
+
 - \Delta\mu(T) is the difference between the chemical potentials of the liquid and the
   crystal phases at the desired temperature, and
 - $k_\text{B}$ is the Boltzman constant.
@@ -218,7 +220,6 @@ where
     - *Capillarity approximation* -> small crystalline nuclei are amenable to a
       thermodynamic description, that is they retain the properties of the bulk solid.
     - Surface tension -> not the relevant free energy cost
-
 
 - Equation for crystals growth mathematically equivalent to the ising model
 - There are classes of material which can't be described as thermally activated
@@ -252,7 +253,6 @@ can be approximated by parabolas,
 with one describing each of the phases.
 This paper has a
 
-
 #### Phase Field
 
 - Phase field approach
@@ -270,9 +270,6 @@ This paper has a
 - Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}$
 
 #### Density Functional Theory
-
-
-
 
 ## Calculation of Melting Rates
 
