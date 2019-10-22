@@ -72,6 +72,9 @@ lint: style grammar
 style:
 	@./node_modules/.bin/markdownlint $(subfiles:.tex=.md)
 
+fix:
+	@./node_modules/.bin/markdownlint --fix $(subfiles:.tex=.md)
+
 grammar:
 	@./node_modules/.bin/textlint $(subfiles:.tex=.md)
 
