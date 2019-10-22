@@ -205,7 +205,7 @@ is one where the rate of crystal growth $v(T)$
 as a function of temperature $T$
 is represented by the equation
 
-$$ v(T) = k(T) \left[1-\exp{\left(\frac{-\Delta\mu(T)}{k_\text{B} T}\right)\right] $$
+$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta\mu(T)}{k_\text{B} T}}\right] $$
 
 where
 - \Delta\mu(T) is the difference between the chemical potentials of the liquid and the
@@ -267,7 +267,7 @@ This paper has a
     - can monitor the presence of many different phases
 - Able to monitor a range of different
 
-- Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}
+- Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}$
 
 #### Density Functional Theory
 
