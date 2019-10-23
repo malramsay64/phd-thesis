@@ -197,6 +197,9 @@ Then proceed to use it as a phase-field model.
 So here we have a model of crystal growth
 which has been described by three of
 the four classes of crystal growth models.
+Because of the lack of notational consistency within the field,
+I am going to be dividing models of crystal growth into
+Classical and Non-Classical.
 
 #### Classical Theory
 
@@ -241,7 +244,7 @@ where
   there is an activation barrier for growth, and another where there is no activation
   barrier for growth. [@Jackson2002]
 
-#### Square Gradient
+#### Non-Classical Theories
 
 @Bagdassarian1994 propose an alternative method
 of understanding melting rates
@@ -252,8 +255,6 @@ The fluctuations of the order parameter
 can be approximated by parabolas,
 with one describing each of the phases.
 This paper has a
-
-#### Phase Field
 
 - Phase field approach
     - rigorously derived based on variational principles of irreversible
@@ -269,7 +270,6 @@ This paper has a
 
 - Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}$
 
-#### Density Functional Theory
 
 ## Calculation of Melting Rates
 
