@@ -4,7 +4,7 @@ During the course of my honours work, I established that the most likely candida
 structure were the p2, p2gg, and pg structures as shown below. The search for structures was first
 performed using hard shapes in an isoconfigurational search algorithm developed by Toby Hudson
 [@Jennings2015]. The resulting crystal structures were then relaxed using the Lennard-Jones potential
-find the energy of each structure. The calculated energies (+@tbl:crystal_energies) are all within
+find the energy of each structure. The calculated energies (@Tbl:crystal_energies) are all within
 2% of each other, indicating there is no significant driving force for a particular crystal
 structure.
 
@@ -26,17 +26,19 @@ that has been previously used in molecular crystals is an orientational order pa
 value of $O_n$ is the relative orientation of nearby molecules, which is typically the nearest
 shell. The measure of orientational alignment for $O_n$ is given by the equation;
 
-$$ O_n = \langle \cos(\theta_{ref} - \theta_i) \rangle_i $$
+$$ O_n = \langle \cos^2(\theta_{ref} - \theta_i) \rangle_i $$
 
 where $\theta_{ref}$ is the orientation of the reference particle and $\theta_i$ is the orientation
 of the particle to be compared. This value is averaged over all $i$, which in this case is the
 particles in the shell of first nearest neighbours. This form of the equation only works in 2D.
 While it is possible to modify the above equation to take three orientations, this is a poor
 implementation due to the occurrence of gimbal lock. Additionally most simulation software uses
-quaternions for orientation to alleviate the issue of gimbal lock. The more natural quaternion based
-representation has the form
+quaternions for orientation to alleviate the issue of gimbal lock.
+The quaternion based representation,
+where the central molecule has orientation $\vect{\hat{q}}_{0}$,
+while the neighbours have orientation $\vect{\hat{q}}_i$
 
-$$ O_n = \langle \text{quaternion maths} \rangle_i $$
+$$ O_N = \frac{1}{N} \sum_{i=1}^{N} \cos^2{\log{\vect{\hat{q}}_{0}^{-1}\cdot \vect{\hat{q}}_{i}}} $$
 
 The quaternion form of the orientation is still unsuitable for even the p2 structure which is the
 most orientationally ordered of all three crystals. In the p2 structure the molecules are arranged
