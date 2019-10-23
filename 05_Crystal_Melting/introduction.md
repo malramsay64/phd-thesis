@@ -270,7 +270,6 @@ This paper has a
 
 - Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}$
 
-
 ## Calculation of Melting Rates
 
 - The temperature dependent chemical potential
