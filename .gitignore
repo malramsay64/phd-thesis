@@ -23,7 +23,7 @@ output
 # Ignore all pdf files
 *.pdf
 # ... except those in the figures directories
-!**/figures/*.pdf
+# !**/figures/*.pdf
 
 # Ignore biblatex files
 *.bbl
