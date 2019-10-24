@@ -1,21 +1,6 @@
 # Methods
 
-## Simulations
-
-There are three distinct types of simulations which are being performed
-for the generation of the dynamics results.
-These are;
-
-- initialisation,
-- equilibration, and
-- production
-
-with each having a different set of conditions
-suited to the aims of the particular simulation.
-This process takes an arbitrary molecular shape
-and generate a representative dataset.
-
-### Choice of Simulation Program
+## Choice of Simulation Program
 
 - GPU Acceleration
     - Benchmarking
@@ -25,132 +10,169 @@ and generate a representative dataset.
 - Handling of Rigid Bodies
 - Version Management / Additional Packages / Installation
 
-### Simulation Details
-
-Simulations of type liquid or interface will be forced into an orthorhombic shape by
-setting the new orthorhombic box shape and moving particles through the new periodic
-boundary conditions. In the image below, the initial configuration is the tilted
-box, with the vertical bars being the simulation box. Particles outside the new box
-are wrapped into the missing regions on the opposite side.
-
-```text
-   ____________________
-  | /               | /
-  |/                |/
-  /                 /
- /|                /|
-/_|_______________/_|
-```
-
-The only difference between simulations of type `"liquid"` and `"interface"`, is
-that the interface simulations will only be integrating the motion of a subset of
-molecules, with the central 2/3 of particles remaining stationary.
-
-For the simulation type `"crystal"`, the momentum is zeroed more often, every 307
-steps instead of 33533 for the liquid and interface simulations. Additionally, to
-allow proper and complete relaxation of the crystal structure, each side of the
-simulation cell is able to move independently and the simulation cell is also
-permitted to tilt.
-
 - Hoomd Reference
 - GPU Hoomd Reference
 
-- step size 0.005
-- reduced units
-- molecule
-- tau = 1.0
-- tauP = 1.0
-- number of molecules
+## Simulations
+
+The breakdown of the different simulation steps follows that defined by @Braun2018
+having four distinct steps,
+
+1. Initialisation
+2. Minimisation
+3. Equilibration
+4. Production
+
+with each step described below.
 
 ### Initialisation
 
-The complex shapes of the molecules makes it difficult to
-manually create a representative initial configuration.
-The initialisation takes an initial configuration
-consisting of particles on a square grid
-having a unit cell length of the largest axis of the molecule.
-The use of this length
-ensures that there is no overlapping of molecules.
-It is important that no molecules overlap
-as this could result in numerical instability of the simulation.
-The low density lattice is then minimised using
-a FIRE energy minimisation scheme,
-chosen for handling rigid molecules.
+The initialisation of the dynamics quantities is initially
+constructed from a square lattice with a single lattice parameter $a$ where
 
-Following minimisation,
-the resulting configuration is equilibrated at a temperature
-above those studied and the desired pressure,
-using a NPT simulation.
+$$a = 2 * r_\text{enclosing}$$
 
-#### Initialisation Simulation Details
+with $r_\text{enclosing}$ being the radius of a circle centered
+on the center of mass of the molecule
+which completely encloses the molecule.
+For the Lennard Jones potential,
+enclosing radius is considered as the value of $\sigma / 2$
+This configuration is chosen for being the simplest configuration
+where there is no possibility of molecules overlapping
+and being in the highly repulsive region of the Lennard-Jones potential.
 
-- FIRE reference
+For evaluating the dynamics quantities,
+the initial lattice was extended in
+the $a$ and $b$ directions for 32 periods each.
+This results in a configuration containing 1024 molecules.
 
-<!-- TODO Check simulation condtions -->
+### Minimisation
+
+The square lattice configuration is a long way
+from an equilibrium liquid configuration,
+so the minimisation steps are extensive,
+comprising of two steps.
+
+The first step of the minimisation
+is using the FIRE energy minimisation technique [@Bitzek2006],
+which is significantly faster
+and more suited to molecular dynamics simulations
+than the steepest-descent or conjugate-gradient approaches.
+The minimisation was run using the NPH ensemble,
+minimising both the energy of the particles and the box,
+with the pressure set to the desired value,
+being one of 13.50 or 1.00.
+While the box was allowed to relax,
+it retained the initial square shape
+throughout the minimisation.
+The minimisation was run until convergence of all parameters was reached
+with the requirements for convergence being
+- energy tolerance: \num{1e-5},
+- force tolerance: 0.1, and
+- angular momentum tolerance: 0.1.
+The step size of the minimisation was 0.001.
+
+With the configuration minimised,
+it is still unlikely to be representative
+of an equilibrated liquid configuration.
+So a simulation run of 1 million timesteps
+was performed for each pressure at a high temperature
+so that the liquid is thoroughly equilibrated.
+These simulation had the conditions
+
+Pressure   Temperature
+--------  ------------
+   13.50          3.00
+    1.00          2.00
+
+with a step size of 0.005.
+To prevent issues with all particles in the
+simulation producing a collective flow,
+the net momentum of the simulation was zeroed every 33533 timesteps,
+chosen for being a large prime number.
+These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+using the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
 
 ### Equilibration
 
-For the purposes of the dynamics simulations
-an equilibration experiment is one designed to
-take a configuration from well equilibrated high temperature liquid phase
-and generate a configuration from a well equilibrated low temperature state.
-A configuration contains all the information required
-to reproduce the simulation exactly,
-which is the positions, momenta, orientations, and angular momentum.
-
-<!-- TODO What constitutes knowing that we have reached equilibrium? -->
-
-- Purpose
-- limitations -> 4 billion timesteps
-- Methodology -> decrease temperature for half steps or 1e7 whichever is smaller then run at desired
-  temperature for remainder
-
-#### Equilibration Simulation Details
-
-- Zero momentum every 33533 steps
-    - chosen for being a prime number
-    - less likely to cause issues (citation??)
+The role of the equilibration is to take
+the minimised simulation to one
+representative of the equilibrated conditions
+for which data collection is intended.
+One of the challenges with equilibrating configurations
+is capturing states which are representative
+of the equilibrium configuration rather than those of a local minima,
+particularly troublesome for the low temperatures
+at which these simulations take place.
+To assist with this the equilibration simulations take place in two parts,
+the first is gradually lowering the temperature
+from that of the minimisation step,
+to the desired simulation temperature.
+This process took place over \num{1e7} timesteps.
+The second part of the equilibration
+was running at the production temperature,
+until the step count reached the timesteps specified in @Tbl:dynamics_steps.
+These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+using the parameters $\tau = 1.0$ and $\tau_P = 1.0$
+and a step size of 0.005.
 
 ### Production
 
-The collection of data for the equilibrium property of the dynamics
-is only valid should the configurations being sampled
-be representative of the equilibrium state.
+Steps
 
-- Simulation conditions
-    - NPT
-    - Imaginary mass
-- data on many timescales
-    - step sequence
-- constraints of data collection
-    - storage size
-    - network speeds
-- Step sequence -> log scale for dynamics
-- starting configurations
-    - need to average over the equilibrium state
-    - not just a correlated set of trajectories
-- Zero momentum every 33533 steps
-    - chosen for being a prime number
-    - less likely to cause issues (citation??)
-    - no diffusion from particle flow
+Temperature     Pressure            Steps
+-----------     --------      -----------
+    1.25           13.50      $\num{4e9}$
+    1.30           13.50      $\num{2e9}$
+    1.35           13.50      $\num{2e9}$
+    1.40           13.50      $\num{2e9}$
+    1.45           13.50      $\num{2e9}$
+    1.50           13.50      $\num{2e8}$
+    1.60           13.50      $\num{2e8}$
+    1.80           13.50      $\num{2e7}$
+    2.00           13.50      $\num{2e7}$
+    2.50           13.50      $\num{2e7}$
+----------      --------      -----------
+    0.30            1.00      $\num{4e9}$
+    0.35            1.00      $\num{2e9}$
+    0.40            1.00      $\num{2e9}$
+    0.45            1.00      $\num{2e9}$
+    0.50            1.00      $\num{2e9}$
+    0.60            1.00      $\num{2e8}$
+    0.80            1.00      $\num{2e8}$
+    1.00            1.00      $\num{2e7}$
+    1.40            1.00      $\num{2e7}$
+    1.80            1.00      $\num{2e7}$
 
-## Error Calculations
+Table: The simulation conditions for each of the production simulations. {#tbl:dynamics_steps}
 
-The calculation of confidence intervals
-has been performed using the bootstrapping procedure[@Efron1979].
-The probability distributions that I am working with
-are typically not normal distributions,
-meaning the typical statistical approach
-which assumes a normal distribution is not appropriate.
-Using a bootstrap method means
-there is no assumption made on the shape of the distribution.
-The bootstrapping approach is a Monte-Carlo method,
-using a random sampling with replacement
-of the measured values.
+Lower temperatures were not considered
+as hoomd is unable to count higher.
+Internally Hoomd uses an unsigned 32 bit integer
+to keep track of the step, [@hoomd_counter]
+which means the largest supported step size is $2^{32-1}$ or \num{~4.2e9}.
 
-<!-- TODO expand on this with equations, code and improved description -->
+The momentum of the simulations was zeroed every 33533 steps
+to prevent flow through the periodic boundaries
+from influencing calculations of the change of displacement.
+The simulations were undertaking in the NPT ensemble,
+with the temperature and pressure held constant
+using the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+having the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
+
+## Data Collection
+
+- The use of the exponential step sequence
+- Multiple independent configurations
+    - what constitutes independent issue #36
+
+## Dynamics Quantities
+
+- Issue #60
 
 ## Calculation of Relaxation Times
+
+- Issue #28
 
 ### Diffusion constant
 
