@@ -11,7 +11,7 @@ particularly where multiple steps are involved.
 For molecular dynamics simulations
 there are four main steps [@Braun2018]
 
-1. Initialisation of positions, consisting
+1. Initialisation of positions
 2. Minimisation
 3. Equilibration
 4. Production

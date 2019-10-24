@@ -45,6 +45,31 @@
     - distance between particles in the static region increases with the rest of the
       simulation cell
 
+Simulations of type liquid or interface will be forced into an orthorhombic shape by
+setting the new orthorhombic box shape and moving particles through the new periodic
+boundary conditions. In the image below, the initial configuration is the tilted
+box, with the vertical bars being the simulation box. Particles outside the new box
+are wrapped into the missing regions on the opposite side.
+
+```text
+   ____________________
+  | /               | /
+  |/                |/
+  /                 /
+ /|                /|
+/_|_______________/_|
+```
+
+The only difference between simulations of type `"liquid"` and `"interface"`, is
+that the interface simulations will only be integrating the motion of a subset of
+molecules, with the central 2/3 of particles remaining stationary.
+
+For the simulation type `"crystal"`, the momentum is zeroed more often, every 307
+steps instead of 33533 for the liquid and interface simulations. Additionally, to
+allow proper and complete relaxation of the crystal structure, each side of the
+simulation cell is able to move independently and the simulation cell is also
+permitted to tilt.
+
 ### Equilibration of Liquid--Crystal Interface
 
 - NPT Simulation

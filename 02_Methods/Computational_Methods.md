@@ -407,6 +407,7 @@ using these tools to improve their research;
 - Chopra Lab,
 - SUNCAT Center
 
+
 One of the important points about the errors in
 the Willoughby-Hoye scripts, or supercooled water
 is that by making the entire work available,
@@ -503,9 +504,3 @@ with Jupyter notebooks inspiring poor programming practices.
 - Very different to HPC where getting results requires waiting in queues for hours,
   copying files then being able to look at results, often with an additional
   processing step for generating the figures.
-- Groups doing this
-    - Glotzer
-    - Chodera
-    - Molissi
-- Computational project management
-    - molissi project guide
