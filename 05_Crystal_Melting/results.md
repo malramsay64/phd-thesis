@@ -229,13 +229,13 @@ we need the temperature range which displays the expected melting behaviour.
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderA width=45%}
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.75.pdf){#fig:melting_disorderB width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.pdf){#fig:melting_disorderA width=45%}
+![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.pdf){#fig:melting_disorderB width=45%}
 <!-- markdownlint-enable MD045 -->
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
-melting simulation at a pressure of 1.0, with (a) at a temperature of 0.75 and (b) at a
-temperature of 0.55. While (b) shows defects within the crystal, these are transient,
+melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
+temperature of 0.50. While (b) shows defects within the crystal, these are transient,
 retuning the crystal to its original structure as they move along the lattice
 dimension. This is unlike in (a) where the defects are persistent and support the
 propagation of melting in the surrounding crystal.
@@ -252,9 +252,12 @@ pressures. {#tbl:crystal_spinodal}
 
 The Spinodal temperatures in @tbl:crystal_spinodal represents
 the temperature where is is no longer possible to study melting
-at an interface.
-
-The melting at
+at an interface as a result of
+nucleation of the liquid phase within the crystal.
+This is the temperature at which a simulation of
+the crystal phase will spontaneously melt
+from the formation of the defects
+within the crystal structure.
 
 ### Melting Point
 
