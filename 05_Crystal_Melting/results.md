@@ -38,8 +38,10 @@ While the potential energy calculations give some idea
 of the most stable polymorph,
 it would still be useful to compare each of the crystals.
 
-<!-- TODO -->
-fig: Comparison of melting rates
+![Comparison of the melting of each of the different crystal types. These values are
+compared at a pressure of 13.50 and a temperature of 1.40. The pg crystals melts
+significantly faster than either the p2 or p2gg crystals.
+](../Projects/Crystal_Melting/figures/melting_crystal_comparison.pdf)
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
 1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
@@ -243,13 +245,16 @@ propagation of melting in the surrounding crystal.
 Pressure  Spinodal Temperature
 -------- ---------------------
 1.00            0.55
-13.50           2.20
+13.50           2.00
 
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
 pressures. {#tbl:crystal_spinodal}
 
 The Spinodal temperatures in @tbl:crystal_spinodal represents
-the highest temperature it is possible to study melting.
+the temperature where is is no longer possible to study melting
+at an interface.
+
+The melting at
 
 ### Melting Point
 
@@ -443,3 +448,7 @@ The defects in @fig:melting_disorderB
 are similar to the defect
 which propagates the solid state phase transition
 of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
+
+## Fluctuation Analysis
+
+With the analysis
