@@ -67,6 +67,7 @@ it retained the initial square shape
 throughout the minimisation.
 The minimisation was run until convergence of all parameters was reached
 with the requirements for convergence being
+
 - energy tolerance: \num{1e-5},
 - force tolerance: 0.1, and
 - angular momentum tolerance: 0.1.

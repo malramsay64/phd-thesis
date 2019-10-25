@@ -1,6 +1,7 @@
 # Packing Optimisation
 
 Alternate approach to finding a crystal structure
+
 - Where we are not concerned with the dynamics
   it is possible to take shortcuts to finding the minima
 
@@ -12,6 +13,7 @@ Alternate approach to finding a crystal structure
         - Thermal annealing
 
 Isopointal Search
+
 - Reduce the dimensionality
 - Choose the space group
     - This then dictates other parameters like the cell type and structure
@@ -30,6 +32,7 @@ Isopointal Search
         - These further reduce the dimensionality of the problem
 
 Monte Carlo Optimisation
+
 - Thermal annealing
 - Many simulations
 - Heavy use of Pseudo Random Number Generators (PRNG)
