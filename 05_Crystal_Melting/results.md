@@ -268,16 +268,16 @@ is the same as the rate of melting
 Typically the melting rate is the temperature
 at which the measurement of the growth rate
 crosses from negative (melting) to positive (growth).
-In the case of this molecule no melting has been observed,
+No crystallisation has been observed for this molecule
 so the melting rate is the temperature
 at which the melting rate is no longer measurable.
 I consider the limit of measuring the melting
 rate being the removal of a single layer of crystal
 over the timescale of the simulation,
-which cannot be extended further due to a
-technical limit of how timesteps are handled in Hoomd[@zotero-1615],
+which cannot be extended further because of
+a technical limit of how timesteps are handled in Hoomd[@hoomd_counter],
 which can only store numbers up to $2^{32}-1$,
-which is just over 4 billion.
+slightly more than 4 billion.
 
 The melting points are tabulated in @Tbl:crystal_melting_point
 with the values for the tables extracted
