@@ -50,7 +50,7 @@ the higher energy crystal nucleus become rarer and rarer,
 however also in favour is the larger energy gap
 between the liquid and the crystal phases.
 
-- supercooled liquids for pedestrians [@Cavagna2009a]
+- supercooled liquids for pedestrians [@Cavagna2009]
 
 The classical theory of crystal growth
 is attributed to Wilson[@Wilson1900] and Frenkel[@Frenkel1926],

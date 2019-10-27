@@ -3,7 +3,7 @@
 ## For Pedestrians
 
 These are notes from Andrea Cavagna's review Supercooled Liquids for Pedestrians
-[@Cavagna2009a]
+[@Cavagna2009]
 
 - Glasses are a distinctly kinetic effect, when the liquid falls out of equilibrium
 
