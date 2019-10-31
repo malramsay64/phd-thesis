@@ -11,6 +11,7 @@ dependencies:
   - nodejs==10.13.0
   - graphviz
   - conda-forge::cairosvg==2.4.0
+  - conda-forge::pandocfilters==1.4.2
   - conda-forge::pandoc-crossref==0.3.4.0.3
   - pip:
       - hsluv==0.0.2
