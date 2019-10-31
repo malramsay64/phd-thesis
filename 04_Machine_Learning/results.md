@@ -50,7 +50,7 @@ which is also reflected in the Supervised learning results.
 Analysis. Each point is coloured according to it's labelled structure. There are regions
 of high density for each crystal structure, though there is little separation of the
 crystal structures.
-](../Projects/MLCrystals/figures/dim_reduction_PCA.pdf){#fig:dim_reduction_PCA width=85%}
+](../Projects/MLCrystals/figures/dim_reduction_PCA.svg){#fig:dim_reduction_PCA width=85%}
 
 With the linear dimensionality reduction
 not providing adequate separation of the crystal structures
@@ -76,7 +76,7 @@ into 3 smaller clusters which appear to be clearly separate.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection. Classes are assigned using the known state of each local environment.
-](../Projects/MLCrystals/figures/dim_reduction_UMAP.pdf){#fig:dim_reduction_UMAP width=85%}
+](../Projects/MLCrystals/figures/dim_reduction_UMAP.svg){#fig:dim_reduction_UMAP width=85%}
 
 The UMAP algorithm shows excellent promise for
 visualising the clustering within this dataset,
@@ -105,7 +105,7 @@ apart from the p2gg crystal which has two distinct clusters.
 This greatly simplifies the number of clusters,
 with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
-](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.pdf){#fig:dim_reduction_sorted_UMAP width=85%}
+](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.svg){#fig:dim_reduction_sorted_UMAP width=85%}
 
 In this approach the sorting acts as a dimensionality reduction,
 removing structural variations form the structures,
@@ -156,13 +156,13 @@ or shape of the clusters when performing the clustering,
 requiring little optimisation of parameters to create the clustering.
 
 ![Result of clustering on the reduced dataset using the OPTICS algorithm.
-](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics_vis.pdf){#fig:cluster_reduced_sorted_optics_vis width=85%}
+](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics_vis.svg){#fig:cluster_reduced_sorted_optics_vis width=85%}
 
 <div id="fig:cluster_reduced_sorted_optics" class="subfigures">
 
-![p2](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2.pdf){#fig:cluster_reduced_sorted_optics_p2 width=33%}
-![p2gg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2gg.pdf){#fig:cluster_reduced_sorted_optics_p2gg width=33%}
-![pg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-pg.pdf){#fig:cluster_reduced_sorted_optics_pg width=33%}
+![p2](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2.svg){#fig:cluster_reduced_sorted_optics_p2 width=33%}
+![p2gg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2gg.svg){#fig:cluster_reduced_sorted_optics_p2gg width=33%}
+![pg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-pg.svg){#fig:cluster_reduced_sorted_optics_pg width=33%}
 
 Applying the classified labels to the p2 (a), p2gg (b) and pg (c) crystals. Of note in
 (b) is the alternating layers, showing molecules in two distinct states.
@@ -221,7 +221,7 @@ representing common and possibly more stable local structures.
 ![Result of clustering using the HDBSCAN algorithm and visualised using the UMAP
 dimensionality reduction. The liquid is in the class with identifier -1, indicating that
 it is considered noise.
-](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.pdf){#fig:cluster_sorted_hdbscan width=80%}
+](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan width=80%}
 
 ## Supervised Classification
 

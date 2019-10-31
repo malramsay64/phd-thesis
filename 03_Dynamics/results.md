@@ -137,7 +137,7 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/scattering_function.pdf){width=81% #fig:intermediate_scattering_function}
+](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:intermediate_scattering_function}
 
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
@@ -157,7 +157,7 @@ over a range of temperatures and pressures.
 To put multiple pressures on a single scale,
 all the temperatures have been scaled
 relative to the melting point.
-](../Projects/Dynamics/figures/scattering_function_summary.pdf){width=80% #fig:isf_relaxation}
+](../Projects/Dynamics/figures/scattering_function_summary.svg){width=80% #fig:isf_relaxation}
 
 Taking the characteristic timescale of the
 relaxation of the intermediate scattering function,
@@ -192,7 +192,7 @@ can be identified at each timestep.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/structural_relaxation.pdf){width=80% #fig:structural_relaxation}
+](../Projects/Dynamics/figures/structural_relaxation.svg){width=80% #fig:structural_relaxation}
 
 The shape of @fig:structural_relaxation has
 many of the same features as @fig:scattering_function,
@@ -220,7 +220,7 @@ gives the image below.
 over a range of temperatures
 at a pressure of 13.50.
 Note the logarithmic scale of both axes.
-](../Projects/Dynamics/figures/mean_squared_displacement.pdf){width=80% #fig:msd}
+](../Projects/Dynamics/figures/mean_squared_displacement.svg){width=80% #fig:msd}
 
 At high temperatures the MSD moves from the ballistic regime,
 where the particles haven't collided
@@ -236,7 +236,7 @@ and more notably regions of dynamic heterogeneities.
 
 ![The diffusion constant as a function of temperature
 normalised by the melting point for a range of pressures.
-](../Projects/Dynamics/figures/diffusion_constant_summary.pdf){width=80% #fig:diffusion_constant}
+](../Projects/Dynamics/figures/diffusion_constant_summary.svg){width=80% #fig:diffusion_constant}
 
 ## Rotational Relaxations
 
@@ -263,7 +263,7 @@ the relaxation time is the rate of the decay.
 ![The rotational relaxation of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
-](../Projects/Dynamics/figures/rotational_relaxation.pdf){width=80% #fig:rotational_relaxation}
+](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
 
 ## Dynamic heterogeneities
 
@@ -288,7 +288,7 @@ deviates from the expected gaussian distribution [@Donati1999].
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/non_gaussian.pdf){width=80% #fig:non-gaussian}
+scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
 
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-gaussian parameter increases,

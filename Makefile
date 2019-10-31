@@ -14,11 +14,10 @@ preamble = $(wildcard Classes/*.sty)
 makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
-pandoc_filters = --filter pandoc-crossref
+pandoc_filters = --filter ../src/pandoc-svg.py --filter pandoc-crossref
 pandoc_options = --listings -M listings -M codeBlockCaptions
 
-
-figures = $(patsubst %.svg, %.pdf, $(shell find Projects/ -name "*.svg")) $(patsubst %.gv, %.pdf, $(shell find . -name "*.gv"))
+figures = $(patsubst %.gv, %.pdf, $(shell find . -name "*.gv"))
 
 .PHONY: all clean clean_subfiles test figures submodules
 
@@ -29,20 +28,17 @@ submodules:
 
 figures: $(figures)
 
-thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(figures:.svg=.pdf) $(preamble) | $(makedir) $(makesubdirs)
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(preamble) | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
 	cp $(makedir)/$(notdir $@) .
 
 %.tex: %.md  # Convert markdown files to latex using pandoc
-	pandoc -t latex $< -o $@ --biblatex $(pandoc_filters) $(pandoc_options)
+	cd $(dir $<); pandoc -t latex $(notdir $<) -o $(notdir $@) --biblatex $(pandoc_filters) $(pandoc_options)
 
 $(makedir) $(makesubdirs): %:
 	mkdir -p $@
-
-%.pdf: %.svg
-	cairosvg $< -o $@
 
 %.pdf: %.gv
 	dot -Tpdf $< -o $@

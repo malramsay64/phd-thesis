@@ -41,13 +41,13 @@ it would still be useful to compare each of the crystals.
 ![Comparison of the melting of each of the different crystal types. These values are
 compared at a pressure of 13.50 and a temperature of 1.40. The pg crystals melts
 significantly faster than either the p2 or p2gg crystals.
-](../Projects/Crystal_Melting/figures/melting_crystal_comparison.pdf)
+](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg)
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
 1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
 the different crystals within the configuration shows a transition of the p2gg crystal
 structure to the p2 crystal structure.
-](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.40-p2gg.pdf){#fig:solid_state_transition width=80%}
+](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.40-p2gg.svg){#fig:solid_state_transition width=80%}
 
 The most notable behaviour of the crystal structures,
 is the solid state phase transition
@@ -75,9 +75,9 @@ resulting in a stepped pattern
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_init.pdf){#fig:transition_init width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_process.pdf){#fig:transition_process width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_end.pdf){#fig:transition_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_init.svg){#fig:transition_init width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_process.svg){#fig:transition_process width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-p2gg_end.svg){#fig:transition_end width=33%}
 <!-- markdownlint-disable MD045 -->
 
 The process of the solid state phase transition with the colouring denoting the
@@ -139,9 +139,9 @@ into the phenomenally slow growth rates of the p2 crystal.
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_0.pdf){#fig:pg_melting_0 width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_1.pdf){#fig:pg_melting_1 width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_2.pdf){#fig:pg_melting_2 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_0.svg){#fig:pg_melting_0 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_1.svg){#fig:pg_melting_1 width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_2.svg){#fig:pg_melting_2 width=33%}
 <!-- markdownlint-enable MD045 -->
 
 This shows the melting of the pg crystal shown in red,
@@ -171,9 +171,9 @@ So what is the difference between these two faces?
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.pdf){#fig:pg_crystal_bottom width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.pdf){#fig:pg_crystal_top width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.pdf){#fig:pg_crystal_top_end width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=33%}
+![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.svg){#fig:pg_crystal_top_end width=33%}
 <!-- markdownlint-enable MD045 -->
 
 The structure at the top and bottom of the pg crystal
@@ -229,8 +229,8 @@ we need the temperature range which displays the expected melting behaviour.
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.pdf){#fig:melting_disorderA width=45%}
-![](Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.pdf){#fig:melting_disorderB width=45%}
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
 <!-- markdownlint-enable MD045 -->
 
 Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
@@ -296,7 +296,7 @@ for pressures of 1.00 and 13.50.
 A melting rate of \num{1e-9}
 is less than a layer of crystal
 over the course of the simulation.
-](../Projects/Crystal_Melting/figures/melting_point_rates.pdf){width=80% #fig:melting_point_rates}
+](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
 
 ## Melting Rates
 
@@ -318,7 +318,7 @@ function of time. The radius is estimated from the volume assuming a circular cr
 Each set of conditions is repeated five times starting from independent
 configurations, which are used to estimate the confidence intervals. The change in
 the radius is expected to change linearly, which is reflected in all the data.
-](../Projects/Crystal_Melting/figures/melting_radius.pdf){#fig:melting_radius}
+](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
 
 With the time dependence of the estimated radius
 matching the expected linear dependence,
@@ -338,7 +338,7 @@ longer crystal melting simulations are finished.
 line has been marked at a growth rate of 0. These results are for both high and low
 pressure melting, which collapse onto the same curve when normalising the temperature by
 the melting point.
-](../Projects/Crystal_Melting/figures/growth_rates_err.pdf){#fig:growth_rates}
+](../Projects/Crystal_Melting/figures/growth_rates_err.svg){#fig:growth_rates}
 
 The normalisation by the temperature allows
 for the comparison between different pressures,
@@ -354,7 +354,7 @@ matching the expected behaviour.
 ![This normalises both the temeprature by the melting point, and the growth rate by the
 rotational relaxation. This figure shows the growth rate slowing faster than
 can be explained by the dynamics, which is indicated by the values approaching zero.
-](../Projects/Crystal_Melting/figures/normalised_melting_err.pdf){#fig:normalised_melting}
+](../Projects/Crystal_Melting/figures/normalised_melting_err.svg){#fig:normalised_melting}
 
 Theory which describes the temperature dependence of the melting rate,
 formulated from a characteristic dynamic timescale of the system
