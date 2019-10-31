@@ -34,7 +34,7 @@ thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(preamble) | $
 	tectonic -o $(makedir) --keep-intermediates $<
 	cp $(makedir)/$(notdir $@) .
 
-%.tex: %.md  # Convert markdown files to latex using pandoc
+%.tex: %.md $(figures) # Convert markdown files to latex using pandoc
 	cd $(dir $<); pandoc -t latex $(notdir $<) -o $(notdir $@) --biblatex $(pandoc_filters) $(pandoc_options)
 
 $(makedir) $(makesubdirs): %:
