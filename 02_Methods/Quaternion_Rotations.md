@@ -1,74 +1,122 @@
 # Quaternion Rotations
 
-## Rotations in 3D
+Measuring rotatiaonal motion in three dimensional space
+is something performed in many applications including
+- robotics,
+- computer graphics,
+- aviation, and
+- molecular dynamics.
+However in all cases,
+there is a need to represent an orientation in 3D space.
+There are many different methods which achieve this,
+each with different strengths and weaknesses.
 
-- There are many methods for representing rotations in 3D space.
-    - Euler angles
-        - Common in robotics applications
-            - Typically a restriction of the robot
-            - Rotations have to take place in a certain order
-        - Value of the rotation is dependent on the order of the rotations
+Mathematically, rotations in 3D belong to the special orthogonal group
+A rotation is a mapping from a position in real space $\mathbf{R}^n$
+to another position in real space,
+presenting the angles between and distances of transformed vectors.
+This space of transformations is known as the Special Orthogonal group $SO(3)$.
 
-    - $3 \times 3$ rotation matrix
-        - requires 9 floating point numbers
-        - after many multiplications round off errors accumulate
-        - difficult to re-orthogonalise
+### Euler Angles
+
+Euler Angles use three different rotations
+to describe the orientation of a body in 3D space,
+relative to a fixed coordinate system.
+A common terminology for these angles is roll, pitch, and yaw,
+however, there are twelve different sequences
+in which the Euler Angles can be defined,
+so their use requires clarification
+of the ordering.
+
+While Euler Angles are the simplest rotational coordinate system,
+they also suffer from a significant issue in Gimbal Lock,
+where two of the rotational axes align,
+restricting motion of the gimbal to two dimensions;
+the angles are no longer independent degrees of freedom. [@Evans1977]
+While this restriction is only present for a single value,
+it presents problems with precision close to the gimbal lock,
+where large changes in the Euler Angle are required
+to describe small absolute changes.
+
+
+In certain applications,
+the "problem" of gimbal lock
+turns out to be a benefit.
+In robotics applications,
+where the movement of a robotic joint is restricted,
+the Gimbal lock can be avoided by
+aligning the reference frame appropriately.
+For most other fields however,
+the Euler Angles are not an appropriate
+representation of orientation.
+
+### Rotation Matrix
+
+This is an alternative to Euler Angles,
+which uses a $3 \times 3$ matrix $R$ to represent rotation.
+For a matrix to properly represent a rotation
+it has to preserve both
+the length
+and the orientation of a transformed vector.
+For a matrix to preserve length,
+the columns of the matrix have to form an orthonormal basis,
+which can be expressed as satisfying the condition
+
+$$ RR^T = R^TR = I $$
+
+where $R^T$ is the transpose of $R$ and $I$ is the identity matrix.
+For an orthonormal matrix to preserver orientation
+it is required to have a determinant $\text{det} R = 1$.
+
+While the rotation matrix doesn't suffer
+the Gimbal Lock issue of the Euler Angles,
+it has complications of it's own in practical applications.
+Euler angles require 3 floating point numbers,
+while a rotation matrix requires 9,
+which can become an issue in storage
+capacity and bandwidth when using many values.
+Another problem is that errors with the finite precision
+of floating point values can add up,
+moving the rotation matrix away from orthonormal,
+which requires a computationally costly
+re-orthonormalisation step to correct.
 
 ## Quaternions
 
-- Quaternions are a method of representing rotations in 3D space.
-    - Are very similar to complex numbers representing rotations in 2D
-    - Mapping of S(3) to S(3)
-    - They use 4 values to do this
-    - represented as $q = a + bi +cj + dk$ where $i$, $j$, and $k$ are complex numbers
-      about the x, y, and z axes respectively.
-    - Quaternions can also represent orientation as a rotation from the 'origin'
-    - While they have 4 degrees of freedom, quaternions representing rotations
-        have a magnitude of $1$ restricting them to all points on the unit sphere.
+Just like how rotations in 2D can be represented
+using complex numbers,
+in 3D the equivalent is the Quaternion $q$,
+which has the representation
 
-- Alternative representations
-    - Euler Angles
-        - $\theta, \phi, \varphi$
-    - Rotation Matrix
-        - $3 \times 3$ matrix
+$$ q = a + bi + cj + dk $$
 
-- Quaternions, and their associated mathematical operations have found use in
-  representing rotations and orientation in a number of fields
-    - Aeronautics
-    - Structure from Motion
-    - Robotics
-    - motion capture
-    - many others ...
+where $i$, $j$, and $k$ are complex numbers about
+the $x$, $y$, and $z$ axes respectively.
+The dimensionality of quaternions is
+larger than the space of rotations,
+however just like complex numbers,
+by restricting rotations to the unit circle,
+or in this case the unit sphere,
+a normalised quaternion can represent all rotations.
 
-- This is because of their numerical stability
-    - re-normalisation is simple
-        - comparison to a matrix
-    - No singularities at $\theta = 0$
-        - Unlike Euler angles
-        - Also known as gimbal lock
-        - Other angles are no longer independent degrees of freedom [@Evans1977]
-
-- Quaternions are the natural representation of orientation for the molecular dynamics
-  simulation of rigid bodies.
-    - The use of Euler angles results in a singularity at $\theta = 0$
-        - This requires special handling
-        - Quaternions don't have this issue
-    - The Singularity is especially an issue for integration of Newtownian, Brownian, or
-      Langevin motions
-        - No inverse of singular matrix [@Evans1977]
-
-- @Evans1977
-    - This anomalous results is explained by the fact that at $\theta = 0$ the angles
-      $\phi  and \varphi$ are not independent and are therefore not suiteable as
-      generalised coordinates.
-    - This equation is also a problem, for at $\theta = 0$ the matrix $\Xi$ is
-      singular
-      and its inverse does not exist.
+Because quaternions have no issues with gimbal lock,
+and there are no issues with matrix normalisation,
+they are a natural choice for describing orientations
+in molecular dynamics simulations. [@Evans1977;Evans1977a]
 
 ## Mathematical Operations of Quaternions
 
-- For ease of working with quaternions, they are typically represented as:
-    - $$ q= a+ bi + cj + dk = a + \mathbf{v} $$
+As part of dealing with quaternions
+understanding their mathematical operations is important.
+Firstly the multiplication of the quaternions has the following rules
+
+$$ \text{todo quaternion rules} $$
+
+When working with quaternions,
+for ease of use the imaginary part is typically referenced by a vector $\vect{v}$
+such that
+
+$$ q = a+ bi + cj + dk = a + \mathbf{v} $$
 
 - Quaternion multiplication
     - What does a multiplication mean?
