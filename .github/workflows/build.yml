@@ -28,6 +28,7 @@ jobs:
         with:
           path: ~/.cache/Tectonic
           key: tectonic_cache
+          restore-keys: tectonic_cache
 
       - name: Install environment using conda
         run: $CONDA/bin/conda env create
