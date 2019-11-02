@@ -2,6 +2,7 @@
 
 Measuring rotatiaonal motion in three dimensional space
 is something performed in many applications including
+
 - robotics,
 - computer graphics,
 - aviation, and
@@ -10,6 +11,8 @@ However in all cases,
 there is a need to represent an orientation in 3D space.
 There are many different methods which achieve this,
 each with different strengths and weaknesses.
+
+## Rotational Representations
 
 Mathematically, rotations in 3D belong to the special orthogonal group
 A rotation is a mapping from a position in real space $\mathbf{R}^n$
@@ -37,7 +40,6 @@ While this restriction is only present for a single value,
 it presents problems with precision close to the gimbal lock,
 where large changes in the Euler Angle are required
 to describe small absolute changes.
-
 
 In certain applications,
 the "problem" of gimbal lock
