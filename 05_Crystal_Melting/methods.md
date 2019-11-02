@@ -9,10 +9,10 @@
 - step size = 0.005
 
 1. Initial Configuration
-1. Minimisation
-1. Melting
-1. Equilibration
-1. Production
+2. Minimisation
+3. Melting
+4. Equilibration
+5. Production
 
 ## Initial Configuration
 
