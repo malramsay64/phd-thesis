@@ -26,7 +26,7 @@ jobs:
       - uses: actions/cache@preview
         id: cache
         with:
-          path: $HOME/.cache/Tectonic
+          path: ~/.cache/Tectonic
           key: tectonic_cache
 
       - name: Install environment using conda
