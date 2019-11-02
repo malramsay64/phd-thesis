@@ -114,7 +114,10 @@
 \newcommand*{\pdddiff}[2]{\ensuremath{\frac{\pdd #1}{\pd #2^2}}}
 
  % Defining Poise as a unit
-\sisetup{qualifier-mode = subscript}
+ \sisetup{
+   qualifier-mode = subscript,
+   separate-uncertainty = true,
+ }
 \DeclareSIUnit[number-unit-product = \,]{\poise}{P}
 
 % Shortcuts for units
