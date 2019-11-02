@@ -8,11 +8,52 @@
 - tauP = 1
 - step size = 0.005
 
-### Creation of Initial Crystal
+1. Initial Configuration
+1. Minimisation
+1. Melting
+1. Equilibration
+1. Production
 
-- Use crystal structure from isopointal search
-- FIRE minimisation to find local minima with LJ potential
-    - Allow tilt and box shinkage/growth
+## Initial Configuration
+
+Since we are unable to determine
+the equilibrium crystal structure
+through molecular dynamics simulations,
+we have to look to alternative techniques
+for finding the initial crystal structures.
+Instead we look to a Monte Carlo type algorithm
+searching for the most stable structure.
+
+The search technique I used was developed by @Hudson2011
+for finding the optimal packing of shapes.
+The optimal packing approach approximates
+the Lennard-Jones potential as a hard disc,
+however the approach has shown to be appropriate
+for predicting crystal structures for a range of materials.
+
+The packing algorithm is comprised of two key ideas,
+an isopointal search algorithm
+which uses symmetry to reduce the search space
+making it more likely to find the true maximum packing,
+with the other being a simulated annealing algorithm
+to efficiently sample the space of packings
+while moving to optimise the best ones.
+The isopointal search provides results for different constraints
+so there are configurations for each of the p2, p2gg and pg crystals
+which were the most likely candidates for the true crystal structure.
+
+### Minimisation
+
+With an initial configuration determined using hard discs
+this needs to be adjusted to account for the Lennard-Jones
+potential used in the simulations.
+The initial minimisation is performed using
+the FIRE energy minimisation technique [@Bitzek2006]
+which ensures the crystal structure is in
+a local minima with the Lennard-Jones potential.
+Because this is optimising the highly rigid crystal structure,
+the box has been allowed to adjust its tilt,
+and each of the axes can move independently of the others.
 
 - NPT simulation to relax structure -> equilibrate
 - All degrees of freedom are decoupled
