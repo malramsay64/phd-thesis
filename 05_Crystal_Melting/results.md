@@ -401,7 +401,18 @@ and the values from @tbl:potential_energy_difference,
 the unknown parameter of @eq:normalised_growth
 was found using the Levenberg-Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001],
 for least squares fitting of non-linear functions.
-This gives the lines of fit in @fig:normalised_melting.
+This gives the lines of fit in @fig:normalised_melting,
+with the parameters from the fit displayed in @tbl:rate_coefficient.
+
+Pressure            $c$
+-----------     -----------------
+1.0             \num{-0.77(5)}
+13.50           \num{-1.5(5)}
+
+Table: The constant defining the rate of crystal growth
+for each of the pressures.
+These values are obtained from the fitting in
+@fig:normalised_melting {#tbl:rate_coefficient}
 
 The lines depicting the fit of
 the Wilson-Frenkel theory in @fig:normalised_melting
