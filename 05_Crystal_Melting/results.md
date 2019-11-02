@@ -524,20 +524,20 @@ the curvature of a parabola $\lambda$
 $$ P(M) = \sqrt{\frac{\lambda}{2\pi}} \exp{-\frac{\lambda}{2}(M-M_\text{phase})^2} $$
 
 where $M_\text{phase}$ is 0 for the liquid, and 1 for the crystal.
-These values are tabulated in @Tab:fluctuation_curvature,
+These values are tabulated in @Tbl:fluctuation_curvature,
 which demonstrates how constrained the Trimer is,
 with the curvature of the liquid phase
 being larger than the solid phase of the LJ-Disc.
 
-Molecule  Phase   Curvature
---------  ------ ----------
+Molecule   Phase  Curvature
+-------- ------- ----------
 Trimer    Liquid       5.69
 Trimer   Crystal    2357.60
 LJ-Disc   Liquid       1.26
 LJ-Disc  Crystal       2.37
 
 Table: The curvature of the distributions
-for the phases of each Molecule. {#tab:fluctuation_curvature}
+for the phases of each Molecule. {#tbl:fluctuation_curvature}
 
 These curvatures can be used to create two parabolas,
 one for the liquid phase
