@@ -54,6 +54,7 @@ this parameter. Firstly, the value of
 0.85 was chosen because I thought it worked well, with no data to validate it is the best value for
 distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure.
 Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
+
 ## Introduction to Machine Learning
 
 Machine learning is a technique by which
@@ -228,7 +229,6 @@ should differentiate.
 
 - Machine Learning for Crystal Detection
     - Existing approaches
-
 
 The field of Machine Learning has well tested and documented procedures for evaluating the best
 value of a parameter to use for the classification of distinct groups. The procure starts with the
