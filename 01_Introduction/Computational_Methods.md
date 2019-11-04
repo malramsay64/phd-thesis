@@ -400,12 +400,14 @@ which takes into account all the above recommendations.
 There are also many research groups in the chemical sciences
 using these tools to improve their research;
 
-- the Chodera group,
-- the Glotzer group,
-- Laboratoire de Chimie et Physique Quantiques,
-- Foley Lab,
-- Chopra Lab,
-- SUNCAT Center
+- the Chodera group, [@chodera_lab]
+- the Glotzer group, [@glotzer_lab]
+- the Pande group, [@pande_lab]
+- Laboratoire de Chimie et Physique Quantiques, [@lcpq_lab]
+- Foley Lab, [@foley_lab]
+- Chopra Lab, [@chopra_lab]
+- SUNCAT Center, [@SUNCAT]
+- DeBuyl Lab, [@debuyl_lab]
 
 One of the important points about the errors in
 the Willoughby-Hoye scripts, or supercooled water
