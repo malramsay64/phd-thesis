@@ -385,7 +385,7 @@ $$ \Delta u = \frac{(T_m - T) \Delta h_m}{T_m} $$
 
 allowing, with some rearrangement, to express @eq:wilson_frenkel_growth as
 
-$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp{\frac{(1-T^*)\Delta h_m}{T^*}} \right ]$$ {#eq:normalised_growth}
+$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp\left(\frac{(1-T^*)\Delta h_m}{T^*}\right) \right ]$$ {#eq:normalised_growth}
 
 where $T^* = T/T_m$ the normalised temperature,
 $c$ is a constant
@@ -474,7 +474,7 @@ can provide more information on this.
 Measuring the fluctuation of the Trimer molecule
 is done using the Orientational order parameter $O_\theta$
 
-$$ O_\theta = \frac{1}{N} \langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \rangle $$
+$$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$
 
 which is normalised such that
 the mean orientational order of the liquid
@@ -497,7 +497,7 @@ in this case using the hexatic order parameter,
 which is indicative of the bond orientational order.
 The hexatic order parameter is given as
 
-$$ \psi_6 = |\frac{1}{6} \sum_j^n \exp{i 6 \theta}| $$
+$$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
 
 which is again normalised such that
 the mean orientational order of the liquid
@@ -532,7 +532,8 @@ the width of the distribution of the order parameter $M$,
 allowing it to be expressed as
 the curvature of a parabola $\lambda$
 
-$$ P(M) = \sqrt{\frac{\lambda}{2\pi}} \exp{-\frac{\lambda}{2}(M-M_\text{phase})^2} $$
+$$ P(M) = \sqrt{\frac{\lambda}{2\pi}}
+\exp\left[-\frac{\lambda}{2}(M-M_\text{phase})^2\right] $$
 
 where $M_\text{phase}$ is 0 for the liquid, and 1 for the crystal.
 These values are tabulated in @Tbl:fluctuation_curvature,
@@ -562,7 +563,7 @@ $$ \omega(M)_\text{liquid} = \frac{\lambda_\text{crystal}}{2} (M - 1)^2 + \Delta
 where $\Delta$ is the free energy difference between the two phases
 which can be estimated as
 
-$$ \Delta \approx \Delta h_m \langle 1 - \frac{T}{T_m} \rangle $$
+$$ \Delta \approx \Delta h_m \left\langle 1 - \frac{T}{T_m} \right\rangle $$
 
 which is shown in @Fig:fluctuation_harmonic.
 

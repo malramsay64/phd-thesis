@@ -38,21 +38,20 @@ The quaternion based representation,
 where the central molecule has orientation $\vect{\hat{q}}_{0}$,
 while the neighbours have orientation $\vect{\hat{q}}_i$
 
-$$ O_N = \frac{1}{N} \sum_{i=1}^{N} \cos^2{\log{\vect{\hat{q}}_{0}^{-1}\cdot \vect{\hat{q}}_{i}}} $$
+$$ O_N = \frac{1}{N} \sum_{i=1}^{N}
+2\cos^2(\log(\hat{\vect{q}}_{0}^{-1}\cdot \hat{\vect{q}}_{i})) $$
 
 The quaternion form of the orientation is still unsuitable for even the p2 structure which is the
 most orientationally ordered of all three crystals. In the p2 structure the molecules are arranged
 parallel and antiparallel, so both these orientations need to contribute positively to the order
-parameter giving an equation of the form
-
-$$ O_n = \langle \text{maths} \rangle+i $$
+parameter hence the $\cos^2$ term.
 
 This form of the equation works reasonably well at distinguishing the liquid from the p2 crystal
 phase, using $O_n > 0.85$ as the measure of the p2 crystal. There are still two issues with using
 this parameter. Firstly, the value of
 0.85 was chosen because I thought it worked well, with no data to validate it is the best value for
-  distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure.
-  Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
+distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure.
+Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
 
 The field of Machine Learning has well tested and documented procedures for evaluating the best
 value of a parameter to use for the classification of distinct groups. The procure starts with the
@@ -98,8 +97,8 @@ growth which has been observed in these crystal structures.
 ## Classification Algorithm
 
 The algorithm I have chosen for the classification is the K-Nearest Neighbours (KNN) as
-implemented in scikit-learn [@Pedregosa2012] with with `sklearn.neighbors.KNeighborsClassifier`
-function. I am using all default values, which means K=5. To perform classification, the KNN
+implemented in scikit-learn [@Pedregosa2012] as `sklearn.neighbors.KNeighborsClassifier`.
+I am using all default values, which means K=5. To perform classification, the KNN
 algorithm finds the K points in the training dataset which are closest to the new value, returning
 the most common class for the new value.
 

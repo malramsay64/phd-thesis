@@ -25,9 +25,13 @@ Table: The melting points of the trimer molecule for different pressures. {#tbl:
 Much of the theory of dynamics in molecular systems
 has been built around the
 Stokes-Einstein relation [@Einstein1956]
+
 $$ D_t \eta / T = \text{constant} $$
+
 and the Stokes-Einstein-Debye relations [@Debye1929].
+
 $$ D_r \eta / T = \text{constant} $$
+
 where $D_t$ is the diffusion constant of the translational motion
 $D_r$ is the diffusion constant of the rotational degrees of freedom,
 $\eta$ is the shear viscosity, and
@@ -93,7 +97,7 @@ we can obtain the static structure factor $S(k)$
 for an isotropic liquid
 using the following transformation
 
-$$ S(k) = 1 + 4 \pi \rho \frac{1}{q} \int \d{r} r \sin(qr)[g(r) - 1] $$
+$$ S(k) = 1 + 4 \pi \rho\, \frac{1}{q} \int \d{r}\ r \sin(qr)[g(r) - 1] $$
 
 plotted for the trimer molecule
 in @fig:static_structure_factor.

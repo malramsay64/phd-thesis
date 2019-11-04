@@ -182,6 +182,8 @@ and thermodynamic phase behaviour,
 introducing the square gradient approximation,
 which is also known as the Landau-Ginzburg free energy;
 
+
+<!-- The missing parenthese is intended -->
 $$ F[m(\vect{r})] = \d{r}\left[ f_u(m(\vect{r}) + K | \nabla m(\vect{r}|^2 \right] $$
 
 The equation was presented complete with the missing parentheses

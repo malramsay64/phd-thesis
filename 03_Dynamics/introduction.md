@@ -10,15 +10,16 @@ with $D_t$ being the diffusion constant of translational motion
 while $D_r$ is the diffusion constant of rotational motion.
 The Stokes-Einstein-Debye models define the relationships
 
-$$ D_t \eta / T = \text{constant} $$ {#eq:stokes_einstein}
+$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
 
 and
 
-$$ D_r \eta / T = \text{constant} $$ {#eq:einstein_debye}
+$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
 
-where,
-$\eta$ is the shear viscosity, and
-$T$ is the temperature.
+where
+
+- $\eta$ is the shear viscosity, and
+- $T$ is the temperature.
 
 One of the detractors of Brownian dynamics
 is that it describes the dynamics of independent events,
@@ -147,8 +148,8 @@ in behaviour as they approach the glass transition temperature.
 - Slowdown near 2/3 of the melting point [@Angell2000]
 
 - Glass transition temperature
-    - Below $~1.2 T_g$ decoupling of rotations and translations occurs
-    - Breakdown occurs between $1.15 T_g$ and $1.25 T_g$ in OTP -> experimental results
+    - Below $~1.2\, T_g$ decoupling of rotations and translations occurs
+    - Breakdown occurs between $1.15\, T_g$ and $1.25 \,T_g$ in OTP -> experimental results
 
 - Kauzmann Temperature $T_K$
     - Where the liquid would have lower entropy than the crystal
@@ -219,9 +220,9 @@ structural relaxation for computational experiments,
 a more common approach is to use
 the intermediate scattering function $F(k, t)$ represented as;
 
-$$ F(\mathbf{k}, t) = \frac{1}{N}\langle \sum_j^N \exp{
-    i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
-} \rangle $$ {#eq:intermediate_scattering_function}
+$$ F(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
+i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
+) \right\rangle $$ {#eq:intermediate_scattering_function}
 
 where the angle brackets denote averaging over multiple initial configurations
 $N$ is the total number of particles,
@@ -238,9 +239,9 @@ we can get a much better representation
 of the relaxation of the liquid.
 This transformation gives $\mathbf{k}$ the form;
 
-$$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M [
+$$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M \left[
     \cos\left(a\frac{2\pi}{M}\right), \sin\left(a\frac{2\pi}{M}\right)
-] $$
+\right] $$
 
 Where the sum is over $N$ values of
 the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
@@ -328,9 +329,13 @@ and is commonly used in molecular dynamics simulations
 
 The Debye model predicts an exponential decay of the $l$th rank
 single-particle orientation time correlation function $C_l^s$,
-$$ C_l^s = \exp \frac{-t}{\tau_l} $$
+
+$$ C_l^s = \exp\left(\frac{-t}{\tau_l}\right) $$
+
 which gives the corresponding relaxation time
+
 $$ \tau_l = \frac{1}{l(l+1)D_r}, $$
+
 where $D_r$ is the rotational diffusion coefficient.
 Comparing this relationship for
 the first and second-order relaxation functions

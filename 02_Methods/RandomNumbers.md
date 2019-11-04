@@ -50,8 +50,8 @@ this transformation provides two independent
 values from a Gaussian distribution
 
 \begin{align}
-z_0 &=  x \sqrt{\frac{-2 \ln{s}}{s}a}
-z_1 &=  y \sqrt{\frac{-2 \ln{s}}{s}a}
+z_0 &=  x\, \sqrt{\frac{-2 \ln{s}}{s}a} \\
+z_1 &=  y\, \sqrt{\frac{-2 \ln{s}}{s}a}
 \end{align}
 
 This algorithm as implemented in Hoomd,

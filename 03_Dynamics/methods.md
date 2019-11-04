@@ -30,7 +30,7 @@ with each step described below.
 The initialisation of the dynamics quantities is initially
 constructed from a square lattice with a single lattice parameter $a$ where
 
-$$a = 2 * r_\text{enclosing}$$
+$$a = 2 r_\text{enclosing}$$
 
 with $r_\text{enclosing}$ being the radius of a circle centered
 on the center of mass of the molecule
@@ -121,28 +121,28 @@ and a step size of 0.005.
 
 Steps
 
-Temperature     Pressure            Steps
------------     --------      -----------
-    1.25           13.50      $\num{4e9}$
-    1.30           13.50      $\num{2e9}$
-    1.35           13.50      $\num{2e9}$
-    1.40           13.50      $\num{2e9}$
-    1.45           13.50      $\num{2e9}$
-    1.50           13.50      $\num{2e8}$
-    1.60           13.50      $\num{2e8}$
-    1.80           13.50      $\num{2e7}$
-    2.00           13.50      $\num{2e7}$
-    2.50           13.50      $\num{2e7}$
-    0.30            1.00      $\num{4e9}$
-    0.35            1.00      $\num{2e9}$
-    0.40            1.00      $\num{2e9}$
-    0.45            1.00      $\num{2e9}$
-    0.50            1.00      $\num{2e9}$
-    0.60            1.00      $\num{2e8}$
-    0.80            1.00      $\num{2e8}$
-    1.00            1.00      $\num{2e7}$
-    1.40            1.00      $\num{2e7}$
-    1.80            1.00      $\num{2e7}$
+Temperature    |  Pressure  | Steps
+-----------:   |  -------:  |-----------:
+    1.25       |    13.50   |   \num{4e9}
+    1.30       |    13.50   |   \num{2e9}
+    1.35       |    13.50   |   \num{2e9}
+    1.40       |    13.50   |   \num{2e9}
+    1.45       |    13.50   |   \num{2e9}
+    1.50       |    13.50   |   \num{2e8}
+    1.60       |    13.50   |   \num{2e8}
+    1.80       |    13.50   |   \num{2e7}
+    2.00       |    13.50   |   \num{2e7}
+    2.50       |    13.50   |   \num{2e7}
+    0.30       |     1.00   |   \num{4e9}
+    0.35       |     1.00   |   \num{2e9}
+    0.40       |     1.00   |   \num{2e9}
+    0.45       |     1.00   |   \num{2e9}
+    0.50       |     1.00   |   \num{2e9}
+    0.60       |     1.00   |   \num{2e8}
+    0.80       |     1.00   |   \num{2e8}
+    1.00       |     1.00   |   \num{2e7}
+    1.40       |     1.00   |   \num{2e7}
+    1.80       |     1.00   |   \num{2e7}
 
 Table: The simulation conditions for each of the production simulations. {#tbl:dynamics_steps}
 

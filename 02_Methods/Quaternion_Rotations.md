@@ -64,11 +64,11 @@ For a matrix to preserve length,
 the columns of the matrix have to form an orthonormal basis,
 which can be expressed as satisfying the condition
 
-$$ RR^T = R^TR = I $$
+$$ R\,R^T = R^TR = I $$
 
 where $R^T$ is the transpose of $R$ and $I$ is the identity matrix.
 For an orthonormal matrix to preserver orientation
-it is required to have a determinant $\text{det} R = 1$.
+it is required to have a determinant $\text{det}\,R = 1$.
 
 While the rotation matrix doesn't suffer
 the Gimbal Lock issue of the Euler Angles,
@@ -104,7 +104,7 @@ a normalised quaternion can represent all rotations.
 Because quaternions have no issues with gimbal lock,
 and there are no issues with matrix normalisation,
 they are a natural choice for describing orientations
-in molecular dynamics simulations. [@Evans1977;Evans1977a]
+in molecular dynamics simulations. [@Evans1977;@Evans1977a]
 
 ## Mathematical Operations of Quaternions
 
@@ -155,7 +155,7 @@ $$ q = a+ bi + cj + dk = a + \mathbf{v} $$
         - Using the `rowan.geometry.intrisic_distance` function, which implements the
           optimised distance in [@Huynh2009], we get optimised distance calculations
 
-        - Use the approach  $\Phi_6 = ∥ log(R1R2 )∥$
+        - Use the approach  $\Phi_6 = ∥ \log(R1R2 )∥$
         - $\Phi_3 = \arccos(|q1 · q2|)$
 
 ## Quaternions in 2D
