@@ -162,9 +162,47 @@ having the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
 
 ## Data Collection
 
-- The use of the exponential step sequence
-- Multiple independent configurations
-    - what constitutes independent issue #36
+The collection of the data is an important part
+of calculating the resulting dynamics quantities.
+Because of the large timescale of the simulations
+and I am looking at phenomena on a range of timescales
+the time between configurations increases
+as the total time increases.
+The sequence of the steps is visually displayed in @tbl:step_sequence
+with each row having 100 steps,
+and the size of the steps increasing by a power of 10
+as we move down the rows.
+
+Step Size |      |       |       |       |       |       |        |
+---------:|:---- |:----- |:----- |:----- |:----- |:----- |:----   | :------
+1         |   1  |  2    | 3     | ...   | 97    | 98    | 99     | 100
+10        | 110  | 120   | 130   | ...   | 970   | 980   | 990    | 1000
+100       |1100  | 1200  | 1300  | ...   | 9700  | 9800  | 9900   | 10000
+1000      |11000 | 12000 | 13000 | ...   | 97000 | 98000 | 99000  | 100000
+
+Table: The step sequence broken into it's two components.
+Across each row are the linear steps,
+while dropping down to the next row
+increases the size of the linear step by a power of 10. {#tbl:step_sequence}
+
+This sequence of steps allows for a singe data point for each simulation,
+however the stochastic nature of simulations means this trajectory
+is only representative of a single possible outcome.
+A typical method of creating many trajectories from a single one
+is the comparison of every measurement with every other [@Buyl2018],
+an approach which only works when there is equal spacing between configurations.
+
+As an alternative,
+I have created what are called key-frames,
+points spaces evenly from which this exponential sequence starts.
+This allows for comparison back to the initial key-frame.
+By using key-frames spaced
+such that they are independent configurations
+I am able to use standard statistical methods to estimate errors.
+
+Independent configurations in molecular dynamics
+are typically considered configurations separated
+by more than the structural relaxation time.
 
 ## Dynamics Quantities
 
