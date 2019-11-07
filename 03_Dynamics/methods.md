@@ -202,7 +202,9 @@ I am able to use standard statistical methods to estimate errors.
 
 Independent configurations in molecular dynamics
 are typically considered configurations separated
-by more than the structural relaxation time.
+by more than the structural relaxation time
+and with enough key-frames
+I can sample the equilibrium configuration.
 
 ## Dynamics Quantities
 
