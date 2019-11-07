@@ -110,33 +110,79 @@ in molecular dynamics simulations. [@Evans1977;@Evans1977a]
 
 As part of dealing with quaternions
 understanding their mathematical operations is important.
-Firstly the multiplication of the quaternions has the following rules
+Firstly the multiplication of the quaternions has the following rule
 
-$$ \text{todo quaternion rules} $$
+$$ i^2 = j^2 = k^2 = ijk = -1 $$
 
-When working with quaternions,
+Which corresponds to the following table of multiplications
+
+$\times$ | **$i$** | **$j$** | **$k$**
+:-------:|:-------:|:-------:|:--:
+ **$i$** | $-1$    | $k$     | $j$
+ **$j$** | $-k$    | $-1$    | $i$
+ **$k$** |$j$      |$-i$     | $-1$
+
+Table: The results of multiplying the value in the left hand column,
+with the label at the top of each row.
+
+For simplWhen working with quaternions,
 for ease of use the imaginary part is typically referenced by a vector $\vect{v}$
 such that
 
-$$ q = a+ bi + cj + dk = a + \mathbf{v} $$
+$$ \begin{align}
+q &= a+ bi + cj + dk
+  &= r + \vect{v}
+\end{align} $$
 
-- Quaternion multiplication
-    - What does a multiplication mean?
-        - Rotating a quaternion by another
-        - Non-commutative
-        - Order of rotations matters (problem with euler angles)
+With this representation,
+the addition of quaternions
+$q_1 = (r_1, \vect{v_1})$ and
+$q_2 = (r_2, \vect{v_2})$
+is expressed as
 
-- Quaternion division
-    - Quaternion inverse
+$$ (r_1, \vect{v_1}) + (r_2, \vect{v_2})  = (r_1 + r_2, \vect{v_1} + \vect{v_2}) $$
 
-- Quaternion Logarithm
-    - $$ \ln(q) = \ln \|q\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \arccos \frac{a}{\|q\|} $$
+while the multiplication can be expressed as
 
-- Quaternion Exponent
-    - $$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a}
+$$ (r_1, \vect{v_1})(r_2, \vect{v_2}) = (r_1r_2 - \vect{v1}\cdot\vect{v_2}, r_1\vect{v2}
++ r_2\vect{v_1} + \vect{v_1} \times \vect{v_2}) $$
+
+where $\cdot$ is the dot product and the $\times$ is the cross product.
+Quaternion multiplication is non-commutative,
+which comes from the non-commutativity of the cross product.
+
+The multiplication of one quaternion by another $q_1 \times q_2$
+gives a resulting quaternion equivalent to
+the rotation $q_2$ followed by $q_1$.
+
+Like complex numbers,
+quaternions also have a complex conjugate $q^*$
+which can be expressed as
+
+$$q^* = (r - \vect{v}) $$
+
+The conjugate allows us to define the norm of a quaternion
+
+$$ ||q|| = \sqrt{qq^*} $$
+
+which is $1$ for quaternions used to define rotations.
+
+The quaternion logarithm is defined as
+
+$$ \ln(q) = \ln \|q\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \arccos \frac{a}{\|q\|} $$
+
+while the exponent is defined as
+
+$$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a}
     \left(\cos \|\mathbf{v}\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \sin \|\mathbf{v}\|\right) $$
 
 ## Angular Distance From Quaternions
+
+When using quaternions for representing rotations
+there are a many different methods of representing
+the distance between them. [@Huynh2009]
+
+<!-- TODO Discussion on quaternions ref #72 -->
 
 - There are many different methods for finding the distance between two quaternions
   [@Huynh2009]
@@ -154,9 +200,19 @@ $$ q = a+ bi + cj + dk = a + \mathbf{v} $$
       molecular dynamics simulations
         - Using the `rowan.geometry.intrisic_distance` function, which implements the
           optimised distance in [@Huynh2009], we get optimised distance calculations
+uses 4 multipliations, 1 arccos, 1 comparison
 
-        - Use the approach  $\Phi_6 = ∥ \log(R1R2 )∥$
-        - $\Phi_3 = \arccos(|q1 · q2|)$
+
+The approach used for the quaternion $\phi_3$
+computes the relationship
+
+$$ \arccos(|q_1 q_2|) $$
+
+which gives values on the range $[0, \pi/2)$.
+Since the maximum rotational distance is $\pi$
+the angle $\theta$ subtended by two quaternions is
+
+$$ \theta = 2\arccos(|q_1 q_2|) $$
 
 ## Quaternions in 2D
 
