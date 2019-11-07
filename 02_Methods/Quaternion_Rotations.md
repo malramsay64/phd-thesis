@@ -129,10 +129,10 @@ For simplWhen working with quaternions,
 for ease of use the imaginary part is typically referenced by a vector $\vect{v}$
 such that
 
-$$ \begin{align}
+\begin{align}
 q &= a+ bi + cj + dk
   &= r + \vect{v}
-\end{align} $$
+\end{align}
 
 With this representation,
 the addition of quaternions
