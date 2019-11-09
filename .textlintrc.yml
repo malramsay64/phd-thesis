@@ -18,6 +18,7 @@ rules:
       - principal
       - magnitude
       - c
+      - s
   terminology: true,
   alex: false
   "write-good": true,
