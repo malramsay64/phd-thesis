@@ -103,9 +103,8 @@ since nucleation starts before equilibrium can be established.
 
 ### Introduction to Glasses
 
-A glass is a disordered state of matter,
-just like a liquid,
-which has a viscosity of \SI{e13}{\poise}.
+A glass is a disordered state of matter, like a liquid,
+which has a viscosity greater than \SI{e13}{\poise}.
 The temperature at which the viscosity reaches this value
 is known as the glass transition temperature, denoted $T_g$.
 When running computer simulations,
@@ -122,12 +121,45 @@ can form crystals on longer time scales.
 The formation of a glass
 is considered a kinetic phase transition,
 there are no thermodynamic changes
-which would indicate a first order phase transition
+indicating a first order phase transition
 typically associated with freezing.
 However, despite the glassy transition
 being arbitrarily defined,
-many materials exhibit similar changes
-in behaviour as they approach the glass transition temperature.
+many materials display similar changes
+in behaviour as they approach the glass transition temperature,
+indicating an intrinsic property of materials.
+The similarity of a range of materials
+is best demonstrated with an Angell plot (@fig:angell_plot).
+
+![The viscosities of a range of supercooled liquids
+as a function of inverse temperature.
+While the shapes of these curves have large variances,
+from the *strong* liquids,
+being those which have a linear relationship
+to the *fragile* liquids displaying a highly
+non-linear relationship,
+each liquid has a significant change in the heat capacity
+at the glass transition temperature (inset).
+](03_Dynamics/figures/angell.jpg){#fig:angell_plot}
+
+The most famous of the strong glass formers is \ce{SiO2},
+where the polymerisation of the \ce{SiO2} polyhedra
+give rise to a viscosity dependent on
+the breaking of an Si---O---Si bond [@McMillan1994]
+a constant energy process which means it obeys
+an Arrhenius rate equation over the entire temperature range
+corresponding to the straight line in @fig:angell_plot.
+On the other end of the spectrum,
+a well studied fragile glass former is ortho-terphenyl,
+which has unlike \ce{SiO2} has a
+strongly temperature dependent relaxation process.
+The best understanding of this process
+attributes the temperature dependence
+to the onset of dynamic heterogeneities,
+that is regions of the liquid which have
+vastly different relaxation times
+which can differ by up to five orders of magnitude.[@Ediger2000]
+While there are descriptions of why
 
 - Creating a glass
     - avoidance of critical point
