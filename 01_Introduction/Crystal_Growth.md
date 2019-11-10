@@ -121,7 +121,7 @@ with the well established theory being the Wilson-Frenkel theory.
 This expresses a relation predicting
 the rate of crystal growth $v(T)$ being
 
-$$ v(T) = k(T) \left[1-\exp{\frac{-\DeltaG_\text{crystal}(T)}{k_\text{B} T}}\right] $$
+$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$
 
 where $k(t)$ is the mobility of particles within the liquid.
 The Wilson-Frenkel model is remarkably similar to that of Classical Nucleation Theory.
