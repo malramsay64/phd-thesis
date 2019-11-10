@@ -113,8 +113,38 @@ it provides enough of a theoretical foundation.
 
 ## Growth Theory
 
-Separate to the nucleation
+Once a crystal has reached the size of the
+critical nucleus and starts to grow,
+we need to switch from using nucleation theory
+to using a theory of crystal growth,
+with the well established theory being the Wilson-Frenkel theory.
+This expresses a relation predicting
+the rate of crystal growth $v(T)$ being
+
+$$ v(T) = k(T) \left[1-\exp{\frac{-\DeltaG_\text{crystal}(T)}{k_\text{B} T}}\right] $$
+
+where $k(t)$ is the mobility of particles within the liquid.
+The Wilson-Frenkel model is remarkably similar to that of Classical Nucleation Theory.
+We have an activated process,
+that is, one governed by an Arrhenius temperature dependence,
+with a factor out the front.
+The key difference here is that the prefactor, $k(T)$
+has a temperature dependence,
+being the mobility of particles within the liquid.
+This gives rise to some interesting behaviour,
+as the temperature drops below the melting point,
+the rate of crystal growth increases,
+with the $\Delta G_\text{crystal}$ term getting larger.
+However, at some point,
+the growth of of the crystals slows down again,
+as the first mobility of the particles $k(T)$
+becomes dominant.
 
 ## Supercooled liquids
 
-For a liquid to
+An important part of understanding nucleation theory,
+is that it gives rise to a metastable state,
+the liquid before a nucleation event has occurred.
+This metastable state,
+which under the right conditions can be long lived,
+is known as a supercooled liquid.
