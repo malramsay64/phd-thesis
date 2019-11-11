@@ -140,6 +140,16 @@ the growth of of the crystals slows down again,
 as the first mobility of the particles $k(T)$
 becomes dominant.
 
+### Measuring Crystal Growth
+
+- Measuring changes in properties
+    - potential energy
+    - volume
+
+- Using a slab geometry
+    - calculate values along one axis
+    - monitor transition over time
+
 ## Supercooled liquids
 
 An important part of understanding nucleation theory,
