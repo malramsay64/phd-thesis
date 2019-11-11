@@ -112,6 +112,18 @@ I looked at LAMMPS which I used during my Honours project and HOOMD-blue.
 
 GPU Implementations
 
+:::{class=subfigures id=gpu_performance}
+
+![Comparison of CPU and GPU implementations of HOOMD](figures/hoomd_relative_performance.pdf)
+![Comparison of CPU and GPU implementations of LAMMPS](figures/lammps_relative_performance.pdf)
+
+Both LAMMPS and HOOMD show significant performance improvements using GPUs.
+However this is a little different when looking at rigid molecules,
+where there is a minimal performance improvement with LAMMPS,
+while there is a significant improvement with HOOMD.
+
+:::
+
 - Lammps has a GPU implementation
     - Limited -> restrictions on what could be run
     - Some calculations on CPU others on GPU
