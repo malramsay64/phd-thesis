@@ -92,10 +92,10 @@ means these are reserved for the most specialised applications.
 
 There are many different implementations of Molecular Dynamics on GPUs
 
-- LAMMPS
+- LAMMPS [@Plimpton1995]
 - GROMACS
 - AMBER
-- HOOMD
+- HOOMD-blue [@Anderson2008;@Nguyen2011]
 - NAMD
 - Q
 - OpenMM
@@ -104,18 +104,67 @@ and evaluating each different software package's approach
 to simulating the same system can be difficult for a team of experts. [@Rizzi2019]
 I looked at LAMMPS which I used during my Honours project and HOOMD-blue.
 
-- lots of papers using it
-    - doesn't make too much of a difference since they don't share data or scripts
-      anyway
-- limitations of rigid body tool
-- doesn't support minimisation
+The software package LAMMPS [@Plimpton1995]
+is a standard tool in the field of Molecular Dynamics
+with over \num{23,000} citations.
+It forms the foundation of many computational analyses,
+however while there are many papers using LAMMPS,
+there are very few that make note of
+the version number @Li2016
+or provide data and scripts for using it.
+This makes it really difficult to replicate work,
+particularly when there are many
+optional parts of LAMMPS to install.
 
-GPU Implementations
+Two of these optionally installed components are
+- the GPU module, for using the GPU for accelerating some calculations, and
+- the Rigid module, providing the ability to simulate rigid molecules.
+While the modularity of LAMMMPS allows for
+the inclusion of these additional modules,
+they are not part of the core functionality.
+This means that there are compromises
+in functionality and performance.
+This can be seen in @fig:gpu_performance_lammps,
+where rigid molecules have
+a small performance increase using the GPU,
+while the standard Lennard-Jones simulations
+see a 20 times speed up.
+The small increase in performance of the Molecular benchmark
+is likely a result of the communication overhead
+transferring data to and from the GPU.
+
+While LAMMPS has GPU support added in an ad-hoc fashion,
+HOOMD-blue [@Anderson2008;@Nguyen2011] is a much more recent software package
+which has been designed from the ground up for GPU computation.
+This means it makes full use of the GPU
+avoiding communication overheads
+and using the best data structures and algorithms,
+like the SARU pseudo-random number generator (see @sec:??).
+While HOOMD-blue is on the cutting edge of technology,
+there is not the same source of literature to draw upon that LAMMPS has.
+This also means that there are not the library of extensions,
+like additional potentials which have been added.
+Although in my case this is a benefit,
+the installation process of HOOMD-blue
+is significantly simpler than for LAMMPS,
+allowing for the installation of a pre-built binary
+from the Glotzer anaconda cloud channel. [@glotzer_anaconda_cloud]
+The optimisation of HOOMD-blue for the GPU
+can be seen with the performance increase on the GPU
+which is 80 times the single core CPU performance
+for a Lennard-Jones molecule (@fig:gpu_performance_hoomd)
+which is much greater than for LAMMPS.
+Also of significant interest for this project,
+is the speed up for the rigid molecular model,
+which shows a 18 times speed up over the CPU implementation.
 
 :::{class=subfigures id=gpu_performance}
 
-![Comparison of CPU and GPU implementations of HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf)
-![Comparison of CPU and GPU implementations of LAMMPS](../02_Methods/figures/lammps_relative_performance.pdf)
+![Comparison of CPU and GPU implementations of
+LAMMPS](../02_Methods/figures/lammps_relative_performance.pdf){#fig:gpu_performance_lammps width=49%}
+![Comparison of CPU and GPU implementations of
+HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf){#fig:gpu_performance_hoomd
+width=49%}
 
 Both LAMMPS and HOOMD show significant performance improvements using GPUs.
 However this is a little different when looking at rigid molecules,
@@ -124,48 +173,35 @@ while there is a significant improvement with HOOMD.
 
 :::
 
-- Lammps has a GPU implementation
-    - Limited -> restrictions on what could be run
-    - Some calculations on CPU others on GPU
-    - large bandwidth costs moving between the two
-- Hoomd built from the ground up to use GPUs
-    - localisation of data
-    - highly optimised
-
-## Reproducibility
-
-Versioning
-
-- highly important for reproducibility
-- Also what was actually installed
-
-LAMMPS
-
-- No standard method of specifying the version used in the literature
-- Doesn't use a versioning standard
-- Contains many optionally installable sub-packages
-    - have not seen any instance of these being specified
-- Compilation and installation are fiendishly difficult
-
-Hoomd
-
-- Uses a Semantic Versioning standard
-- Installable using Conda
-    - distributable binary format
-    - pre-compiled
-
 ## Issues
 
-- GPUs are relatively new to HPC
-    - really new to the systems I was working with
-    - Issues with drivers
-    - Specification of resources
-        - Couldn't specify GPUs
-        - Have to use all GPUs in node at once
-    - limited resources
-        - 5 GPU nodes vs hundreds of CPU nodes
-        - Run 20 vs 5 jobs, can take 4x as long same throughput
+While the software is available supporting computation using GPUs,
+that doesn't mean the availability and management
+of the hardware is available within an HPC context.
+While GPUs were available on the HPC systems I was working with,
+they were a new computational resource
+and so the management was still developing.
+While I was using the HPC resources there were
+issues with the loading of the GPU drivers,
+which on some occasions didn't load at all.
+Additionally the tools to specify
+the use of GPUs as a computational resource
+like memory, number of CPUs and walltime
+within a PBS script took a long time to be useful
+requiring the specification of an entire node
+to use a single GPU.
+On top of all the usability issues with GPUs,
+they were also a limited resource,
+with initially only 5 GPU nodes
+for the 100 or so CPU nodes.
+When initially investigating GPUs
+additional compute resources were intended to be made available,
+however this didn't end up going ahead.
 
-- Promise of more resources
-    - developing a workflow for resources which didn't work out
-    - GPUs in a cluster were promised and never delivered
+The result of all these issues using GPUs is that
+it ended up being easier and faster to run the simulations using a CPU.
+Using 12 cores with Hoomd-blue,
+I was able to get the performance about half that of the GPU,
+and with the overall abundance of CPU cores,
+this approach turned out to be more efficient overall,
+despite individual simulations taking longer.
