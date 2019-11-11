@@ -111,6 +111,7 @@ I looked at LAMMPS which I used during my Honours project and HOOMD-blue.
 - doesn't support minimisation
 
 GPU Implementations
+
 - Lammps has a GPU implementation
     - Limited -> restrictions on what could be run
     - Some calculations on CPU others on GPU
@@ -122,10 +123,12 @@ GPU Implementations
 ## Reproducibility
 
 Versioning
+
 - highly important for reproducibility
 - Also what was actually installed
 
 LAMMPS
+
 - No standard method of specifying the version used in the literature
 - Doesn't use a versioning standard
 - Contains many optionally installable sub-packages
@@ -133,6 +136,7 @@ LAMMPS
 - Compilation and installation are fiendishly difficult
 
 Hoomd
+
 - Uses a Semantic Versioning standard
 - Installable using Conda
     - distributable binary format
