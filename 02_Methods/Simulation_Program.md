@@ -114,8 +114,8 @@ GPU Implementations
 
 :::{class=subfigures id=gpu_performance}
 
-![Comparison of CPU and GPU implementations of HOOMD](figures/hoomd_relative_performance.pdf)
-![Comparison of CPU and GPU implementations of LAMMPS](figures/lammps_relative_performance.pdf)
+![Comparison of CPU and GPU implementations of HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf)
+![Comparison of CPU and GPU implementations of LAMMPS](../02_Methods/figures/lammps_relative_performance.pdf)
 
 Both LAMMPS and HOOMD show significant performance improvements using GPUs.
 However this is a little different when looking at rigid molecules,
