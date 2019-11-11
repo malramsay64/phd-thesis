@@ -1,18 +1,5 @@
 # Methods
 
-## Choice of Simulation Program
-
-- GPU Acceleration
-    - Benchmarking
-    - Designed for GPU decomposition
-    - Long timescales, small simulations -> performance of each frame is important
-    - Supercomputer performance in consumer hardware
-- Handling of Rigid Bodies
-- Version Management / Additional Packages / Installation
-
-- Hoomd Reference
-- GPU Hoomd Reference
-
 ## Simulations
 
 The breakdown of the different simulation steps follows that defined by @Braun2018
