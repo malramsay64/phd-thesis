@@ -117,6 +117,7 @@ particularly when there are many
 optional parts of LAMMPS to install.
 
 Two of these optionally installed components are
+
 - the GPU module, for using the GPU for accelerating some calculations, and
 - the Rigid module, providing the ability to simulate rigid molecules.
 While the modularity of LAMMMPS allows for
