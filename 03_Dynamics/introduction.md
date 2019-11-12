@@ -35,8 +35,7 @@ of Langevin Dynamics.
 
 The Stokes-Einstein-Debye models are suitable for describing
 the dynamic properties of most liquids, however,
-there are instances,
-particularly in supercooled liquids,
+there are instances in supercooled liquids,
 where the Stokes-Einstein-Debye relations
 are insufficient for describing the dynamics which are observed.
 The breakdown in dynamics is primarily
@@ -54,8 +53,7 @@ Structural relaxation is the most fundamental relaxation process [@Angell2000]
 being the process by which a liquid forgets it's structure
 from some earlier time [@Ediger1996].
 The process of structural relaxation occurs over distances
-comparable to the size of the particles which
-comprise the liquid [@Angell1985].
+comparable to the size of the particles within the liquid [@Angell1985].
 These small distances over which the structural relaxation take place
 are comparable to the relaxations that take place
 when the liquid is under a shear stress.
@@ -94,7 +92,7 @@ $$ F(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
 i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
 ) \right\rangle $$ {#eq:intermediate_scattering_function}
 
-where the angle brackets denote averaging over multiple initial configurations
+where the angle brackets signify averaging over multiple initial configurations
 $N$ is the total number of particles,
 $i = \sqrt{-1}$, and $\mathbf{k}$ is the wave vector.
 
@@ -128,8 +126,8 @@ which has also been used for computing structural relaxation
 More recently, there has been an effort
 to link structure with dynamics on a local level,
 which has required a measure of structural relaxation
-which makes the contribution of each particle explicit
-rather than just the entire system as a whole.
+that makes the contribution of each particle explicit
+rather than aggregated over the entire system.
 Widmer-Cooper and Harrowell [@Widmer-Cooper2009a] defined
 a structural relaxation $F_d(t)$ where
 
@@ -138,7 +136,7 @@ $$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:st
 where $w_i(d, t) = 1$ if the particle is within distance $d$
 of it's initial position at time $t$,
 and zero otherwise.
-The angle brackets denote an average over initial times.
+The angle brackets signify an average over initial times.
 The value of $d$ was chosen to be
 
 $$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
@@ -163,7 +161,7 @@ can be represented as
 $$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(0)) \rangle_i $$
 
 Here $P_l$ is the Legendre polynomial of degree $l$,
-and the angle brackets denote an average over
+and the angle brackets signify an average over
 all molecules and starting configurations.
 To match simulation results with NMR and fluorescence experiments
 the 2nd degree Legendre polynomial is used,
@@ -174,7 +172,7 @@ $$ C_2(t) = \frac{1}{2} \langle 3(\vect n(t) \cdot \vect n(0))^2 -1 \rangle. $$
 It should be noted that this dipole relaxation
 only captures at most two dimensions of the rotational relaxation,
 a rotation about the axis of the dipole is not captured by this relation at all.
-There are a number of different approaches which have been used,
+There are many different approaches which have been used,
 @Brodka1992 define the rotational relaxation
 of the spectroscopically available rotation with the $C_2$ method
 whilst other rotational degrees of freedom
@@ -182,14 +180,14 @@ were studied using an angular velocity autocorrelation function.
 Alternatively @Jas2000 combine the rotational relaxations
 for vectors along the $x, y,$ and $z$ axes into a single
 complete rotational relaxation.
-An approach which is only concerned with isotropic rotational motion
+An approach only concerned with isotropic rotational motion
 could also take the approach of @Chen2017
 and represent molecular rotation using quaternions[@Furry1957],
 which capture all rotational information.
 It should be noted that
 the quaternion representation can also be decomposed
 into the component rotational relaxations,
-just as the vectors for each axis
+in the same way the vectors for each axis
 can be combined into an isotropic relaxation.
 The advantage with using the quaternion approach
 is that quaternions are the most sensible approach
@@ -269,7 +267,7 @@ taking place through the process of large angular jumps.
   $$ \tau_2 = \int_0^\infty \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}{\langle | P_2(\cos \theta_0) |^2 \rangle} $$
 
   where $P_2$ is a second-rank Legendre polynomial, $\theta$ is the time-dependent
-  angle of orientation of a given molecular and the angular brackets indicate an
+  angle of orientation of a given molecular and the angular brackets signify an
   equilibrium ensemble average. [@Dote1981]
 
 ## Theoretical Treatment of Dynamics
