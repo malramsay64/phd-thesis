@@ -19,7 +19,11 @@ rules:
       - magnitude
       - c
       - s
-  terminology: true,
+  terminology:
+    defaultTerms: true
+    terms:
+      - HOOMD-blue
+      - [hoomd, HOOMD-blue]
   alex: false
   "write-good": true,
   "unexpanded-acronym": true
