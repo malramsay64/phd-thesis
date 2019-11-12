@@ -243,9 +243,8 @@ $$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 
 
 - gamma
 
-\gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle -
-    \langle\Delta r^2\rangle\langle\Delta \theta^2\rangle
-    }{\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle}
+$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle - \langle\Delta r^2\rangle\langle\Delta \theta^2\rangle}
+    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} $$
 
 ## Molecular Quantities
 

@@ -265,8 +265,9 @@ taking place through the process of large angular jumps.
 
 - in a typical NMR experiment a single particle correlation time $\tau_2$ is
   determined, $\tau_2$ being given as
-  $$\tau_2 = \int_0^\inf \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}
-  {\langle | P_2(\cos \theta_0) |^2 \rangle}$$
+
+  $$ \tau_2 = \int_0^\infty \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}{\langle | P_2(\cos \theta_0) |^2 \rangle} $$
+
   where $P_2$ is a second-rank Legendre polynomial, $\theta$ is the time-dependent
   angle of orientation of a given molecular and the angular brackets indicate an
   equilibrium ensemble average. [@Dote1981]
