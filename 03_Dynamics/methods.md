@@ -134,8 +134,8 @@ Temperature    |  Pressure  | Steps
 Table: The simulation conditions for each of the production simulations. {#tbl:dynamics_steps}
 
 Lower temperatures were not considered
-as hoomd is unable to count higher.
-Internally Hoomd uses an unsigned 32 bit integer
+as HOOMD-blue is unable to count higher.
+Internally HOOMD-blue uses an unsigned 32 bit integer
 to keep track of the step, [@hoomd_counter]
 which means the largest supported step size is $2^{32-1}$ or \num{~4.2e9}.
 
@@ -196,30 +196,71 @@ I can sample the equilibrium configuration.
 ## Dynamics Quantities
 
 - Issue #60
-
-## Calculation of Relaxation Times
-
 - Issue #28
 
-### Diffusion constant
+### Structural Relaxation
 
+- Intermediate scattering function
+$$ F(k, t) = \langle \cos( k [r_{x}(0) - r_{x}(t)]) \rangle $$
+
+- Distance metric
+- relaxation constant
+    - Find first value below 1/e
+    - bootstrap many starting configurations
+
+### Diffusion
+
+- mean squared displacement
 - fit points from 2 to 50
     - fit is to linear function $y = mx + b$
 - Error from bootstrapping different frames
     - calculate for each frame
     - randomly choose results
 
-### Exponential Relaxations
+### Rotational Relaxation
 
-- Structural relaxation
-- Rotational relaxtion
+- Rotational relaxation
 
-- Find first value below 1/e
-- bootstrap many starting configurations
+$$ C_1(t) = \langle \hat{\mathbf{e}}(0) \cdot \hat{\mathbf{e}}(t) \rangle $$
 
-### Maximum Time relaxation
+$$ C_2(t) = \langle 2(\hat{\mathbf{e}}(0) \cdot  \hat{\mathbf{e}}(t))^2 - 1 \rangle $$
 
-- gamma
+### Translational Heterogeneities
+
 - alpha
 
-- Time at which the maximum occurs
+$$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 1 $$
+
+- relaxation time
+    - time of the maximum
+
+### Rotational Heterogeneities
+
+- relaxation time
+    - time of the maximum
+
+### Coupling of Heterogeneities
+
+- gamma
+
+\gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle -
+    \langle\Delta r^2\rangle\langle\Delta \theta^2\rangle
+    }{\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle}
+
+## Molecular Quantities
+
+### Diffusion Equivalent
+
+- Long timescale
+
+### Short timescale relaxation
+
+- Building upon the work of Widmer-Cooper
+
+### Last Passage Time
+
+- Structural relaxation is reversible
+
+### Rotational Diffusion
+
+- Rotational distance
