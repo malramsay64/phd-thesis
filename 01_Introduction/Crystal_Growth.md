@@ -158,3 +158,37 @@ the liquid before a nucleation event has occurred.
 This metastable state,
 which under the right conditions can be long lived,
 is known as a supercooled liquid.
+
+A Supercooled liquid is a liquid
+that has been cooled to a temperature below the melting point
+prior to the rare event of nucleation taking place.
+Supercooled liquids are a metastable state,
+although particularly in simulation studies
+can be referred to as at equilibrium,
+which is a reference to the rarity of the nucleation;
+the supercooled liquid is able to sample
+most of the available phase space
+without encountering a nucleation configuration.
+A typical method of determining when a supercooled liquid
+has reached equilibrium is defining a relaxation timescale,
+being a timescale over which a configuration
+has no 'memory' of a previous configuration.
+
+For each temperature we will have a relaxation time
+---being the typical time for relaxation to occur---
+and a nucleation time
+---being the typical time for nucleation to occur.
+Forming a supercooled liquid,
+can then be expressed as a line between those of
+the relaxation time and the nucleation time
+as shown in @fig:supercooled_liquid_formation.
+The example shown in @fig:supercooled_liquid_formation
+demonstrates a well behaved example,
+with the nucleation time always
+being longer than the relaxation time, however
+there are also supercooled liquids
+where for some range of temperature,
+the relaxation time becomes longer than the nucleation time
+resulting in what is known as a *kinetic spinodal*,
+a temperature where the supercooled liquid does not exist
+since nucleation starts before equilibrium can be established.
