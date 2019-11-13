@@ -16,6 +16,13 @@ jobs:
         with:
           submodules: true
 
+      - uses: actions/cache@preview
+        id: cache
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic_cache
+          restore-keys: tectonic_cache
+
       - name: Install environment using conda
         run: $CONDA/bin/conda env create
 
