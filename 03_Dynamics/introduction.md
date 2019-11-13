@@ -236,7 +236,7 @@ all molecules and starting configurations.
 The rotational relaxation functions $C_l$
 have equivalences in experiments.
 The 2nd degree Legendre polynomial corresponds
-to NMR and fluorescence experiments.
+to NMR [@Dote1981] and fluorescence experiments.
 Which can be calculated in Molecular Dynamics simulations
 through an equation of the form
 
@@ -315,6 +315,7 @@ taking place through the process of large angular jumps.
 ### Translational Heterogeneities
 
 - Developing the idea in 2D
+- alpha
 
 ### Rotational Heterogeneities
 
@@ -336,15 +337,6 @@ taking place through the process of large angular jumps.
 - In supercooled liquids below approximately $1.2 T_g$ there occurs a decoupling
   between translations diffusion and viscosity, and between rotational and
   translational diffusion.[@Debenedetti2001]
-
-- in a typical NMR experiment a single particle correlation time $\tau_2$ is
-  determined, $\tau_2$ being given as
-
-  $$ \tau_2 = \int_0^\infty \frac{\langle P_2(\cos \theta_t)) P_2(\cos \theta_0) \rangle}{\langle | P_2(\cos \theta_0) |^2 \rangle} $$
-
-  where $P_2$ is a second-rank Legendre polynomial, $\theta$ is the time-dependent
-  angle of orientation of a given molecular and the angular brackets signify an
-  equilibrium ensemble average. [@Dote1981]
 
 ## Theoretical Treatment of Dynamics
 
