@@ -244,8 +244,8 @@ $$ C_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -
 
 where $\hat{\vect{n}}(t)$ is the unit vector through the center of mass of a molecule.
 It should be noted that this dipole relaxation
-only captures at most two dimensions of rotational motion,
-rotations about the axis of the dipole are not described.
+only describes at most two dimensions of the rotational relaxation,
+rotations about the axis of the dipole are not expressed.
 There are many different approaches which have been used,
 @Brodka1992 define the rotational relaxation
 of the spectroscopically available rotation with the $C_2$ method
@@ -312,6 +312,25 @@ taking place through the process of large angular jumps.
 
 ## Dynamic Heterogeneities
 
+The typical approach to modelling liquid behaviour
+describes the liquid as a homogeneous continuum.
+This homogeneous model is completely appropriate
+for describing "ordinary" liquids.
+In supercooled liquids,
+the dynamics slow down by many orders of magnitude
+before the glass transition,
+where dynamics in one region of the liquid
+can be orders of magnitude faster
+than dynamics in another region of the liquid.
+The idea that a liquid is not homogeneous
+requires a significant change in how we think about supercooled liquids.
+
+The presence of fast and slow regions within supercooled liquids,
+referred to as dynamic heterogeneities
+is a phenomenon which has garnered significant interest;
+it is considered to be a physical indicator of the glass transition,
+a demonstration that it is more than a kinetic phenomenon.
+
 ### Translational Heterogeneities
 
 - Developing the idea in 2D
@@ -320,6 +339,12 @@ taking place through the process of large angular jumps.
 ### Rotational Heterogeneities
 
 ## Dynamics in Experimental Systems
+
+@Ediger2000
+Hole burning experiments
+NMR Schmidt-Rohr Citations: 37-44
+
+Photobleaching
 
 - Observations of dynamics in supercooled liquids
     - How they have been observed
