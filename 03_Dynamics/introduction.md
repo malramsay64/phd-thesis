@@ -209,10 +209,10 @@ using spherical harmonics $Y_l^m$.
 This allows us to express a rotational relaxation function $R_l(t)$
 in terms of those spherical harmonics
 
-\begin{aligned}
+\begin{align}
 R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle
        &= \exp(-D_r\,l(l+1)t)
-\end{aligned}
+\end{align}
 
 This formulation represents the rotational relaxation as an exponential.
 The exponential is nice in that we can find a characteristic timescale $\tau_l$
