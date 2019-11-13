@@ -8,7 +8,15 @@ These models define characteristic rates of motion
 known as diffusion constants,
 with $D_t$ being the diffusion constant of translational motion
 while $D_r$ is the diffusion constant of rotational motion.
-The Stokes-Einstein-Debye models define the relationships
+The Stokes--Einstein equation for translational motion
+
+$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
+
+and the Stokes--Einstein--Deybe relation for rotational motion
+
+$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
+
+which can be simplified as follows
 
 $$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
 
@@ -147,13 +155,74 @@ This matches with the calculation of the intermediate scattering function
 which will follow the same wave-vector $k_{\text{bragg}}$
 as it will display the largest change over time.
 
-## Rotational Relaxation
+## Translational Diffusion
 
-- TODO Debye vs Einstein formalism
+The translational diffusion constant $D_t$
+is a measure of how fast particles within the liquid
+move over a long time period.
+It's formulation is based upon Brownian dynamics,
+where, over long time periods,
+the displacement from the origin $\Delta x(t)$ at time $t$
+averaged over many initial configurations
+has the relation
 
-In experimental systems,
-the rotational relaxation is typically measured
-as the relaxation of a dipole moment [@citation].
+$$ \langle \Delta x(t)^2 \rangle = 2 D_t t $$
+
+where the angle brackets $\langle\rangle$ represent
+the average over many initial conditions.
+In the case of a molecular dynamics simulation
+this is over all the individual particles.
+The relation shown above is for a 1D random walk,
+with each dimension contributing to the diffusion giving
+
+$$ \langle \Delta \vect{r}(t)^2 \rangle = 4 D_t t $$
+
+for the 2D case and
+
+$$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
+
+for the 3D case.
+Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
+
+- TODO Characteristic shape of the diffusion constant
+
+This behaviour is consistent with experimental results
+where \ce{H1}-NMR is used to measure the diffusion constant
+[@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997].
+
+## Rotational Diffusion
+
+Rotational diffusion can be treated
+in the same way as translational diffusion,
+by measuring the small rotational changes over time
+
+$$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
+
+However, while the translational diffusion
+is directly comparable to experimental results,
+there not a comparable experimental observation.
+Instead rotational diffusion is described
+using a dipole relaxation formulation developed by @Kivelson1970.
+This describes rotational motion as a sequence of
+small infinitesimal jumps around the unit sphere
+using spherical harmonics $Y_l^m$.
+This allows us to express a rotational relaxation function $R_l(t)$
+in terms of those spherical harmonics
+
+\begin{aligned}
+R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle
+       &= \exp(-D_r\,l(l+1)t)
+\end{aligned}
+
+This formulation represents the rotational relaxation as an exponential.
+The exponential is nice in that we can find a characteristic timescale $\tau_l$
+for relaxation to occur, where
+
+$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
+
+Here relaxation is the time taken for relaxation from
+the initial value of $Y_l^m$ to it's first zero.
+
 The relaxation of a dipole $C_l$,
 where the orientation of the dipole is represented by the vector $\vect u$
 can be represented as
@@ -163,15 +232,20 @@ $$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(0)) \rangle_i $$
 Here $P_l$ is the Legendre polynomial of degree $l$,
 and the angle brackets signify an average over
 all molecules and starting configurations.
-To match simulation results with NMR and fluorescence experiments
-the 2nd degree Legendre polynomial is used,
-giving the equation
 
-$$ C_2(t) = \frac{1}{2} \langle 3(\vect n(t) \cdot \vect n(0))^2 -1 \rangle. $$
+The rotational relaxation functions $C_l$
+have equivalences in experiments.
+The 2nd degree Legendre polynomial corresponds
+to NMR and fluorescence experiments.
+Which can be calculated in Molecular Dynamics simulations
+through an equation of the form
 
+$$ C_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$
+
+where $\hat{\vect{n}}(t)$ is the unit vector through the center of mass of a molecule.
 It should be noted that this dipole relaxation
-only captures at most two dimensions of the rotational relaxation,
-a rotation about the axis of the dipole is not captured by this relation at all.
+only captures at most two dimensions of rotational motion,
+rotations about the axis of the dipole are not described.
 There are many different approaches which have been used,
 @Brodka1992 define the rotational relaxation
 of the spectroscopically available rotation with the $C_2$ method
@@ -195,8 +269,6 @@ for computationally representing rotations in three dimensions[@Huynh2009]
 and is commonly used in molecular dynamics simulations
 [@Ciccotti1986;@Omelyan1998;@Rog2003;@Andersen1983;@Refson2000;@Nose1983;@Evans1977;@Rapaport1985].
 
-### Methods of rotational relaxations
-
 The Debye model predicts an exponential decay of the $l$th rank
 single-particle orientation time correlation function $C_l^s$,
 
@@ -209,13 +281,17 @@ $$ \tau_l = \frac{1}{l(l+1)D_r}, $$
 where $D_r$ is the rotational diffusion coefficient.
 Comparing this relationship for
 the first and second-order relaxation functions
+
 $$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
+
 When molecules rotate inertially, that is,
 there are large angular displacements between collisions.
 The type of relaxation is no longer exponential,
 and can be identified by the ratio $\tau_1/\tau_2$
 falling in the range
+
 $$ 1 < \tau_1/\tau_2 < 3 $$
+
 The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
 that is, assuming rotations take place through a process of small random steps.
 Where there are large changes in orientation,
