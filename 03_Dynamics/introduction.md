@@ -301,7 +301,7 @@ with the limit of this being
 single jumps account for both relaxations simultaneously.
 
 In many experimental and simulation studies
-at high temperatures [???]
+at high temperatures [@cite???]
 the relationship $\tau_1/\tau_2 = 3$ has held true.
 In supercooled liquids however,
 there have been many studies
@@ -312,44 +312,16 @@ taking place through the process of large angular jumps.
 
 ## Dynamic Heterogeneities
 
-The typical approach to modelling liquid behaviour
-describes the liquid as a homogeneous continuum.
-This homogeneous model is completely appropriate
-for describing "ordinary" liquids.
-In supercooled liquids,
-the dynamics slow down by many orders of magnitude
-before the glass transition,
-where dynamics in one region of the liquid
-can be orders of magnitude faster
-than dynamics in another region of the liquid.
-The idea that a liquid is not homogeneous
-requires a significant change in how we think about supercooled liquids.
-
-The presence of fast and slow regions within supercooled liquids,
-referred to as dynamic heterogeneities
-is a phenomenon which has garnered significant interest;
-it is considered to be a physical indicator of the glass transition,
-a demonstration that it is more than a kinetic phenomenon.
+1.2 Tg
 
 ### Translational Heterogeneities
 
 - Developing the idea in 2D
-- alpha
+- @Widmer-Cooper2004 -> elements of structure
 
 ### Rotational Heterogeneities
 
 ## Dynamics in Experimental Systems
-
-@Ediger2000
-Hole burning experiments
-NMR Schmidt-Rohr Citations: 37-44
-
-Photobleaching
-
-- Observations of dynamics in supercooled liquids
-    - How they have been observed
-        - experimental techniques
-        - equations
 
 - Characteristic temperatures
     - collective observations
