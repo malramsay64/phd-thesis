@@ -567,7 +567,7 @@ $$ \Delta \approx \Delta h_m \left\langle 1 - \frac{T}{T_m} \right\rangle $$
 
 which is shown in @Fig:fluctuation_harmonic.
 
-::: {id=fig:fluctuation_harmonic class=subfigures}
+:::{id=fig:fluctuation_harmonic class=subfigures}
 
 ![LJ-Disc](../Projects/Crystal_Melting/figures/fluctuation_parabola_disc.svg){width=40%}
 ![Trimer](../Projects/Crystal_Melting/figures/fluctuation_parabola_trimer.svg){width=40%}
@@ -580,3 +580,63 @@ the LJ-Disc and the Trimer.
 
 The intersection of these two parabolas $M_c$ can be found,
 which is 0.95 for the Trimer and 0.42 for the LJ-Disc.
+
+## Packing Analysis
+
+When initially finding the crystal structures which were likely to grow,
+we used the packing of hard molecules
+as a model to predict the most stable structures.
+This approach has been shown to generate structures
+matching those of atomic systems [@cite],
+however it has not been confirmed for molecular structures.
+It is possible that the complete lack of crystal growth
+is a result of seeding the wrong crystal.
+As an alternative method of finding crystal structures,
+I used the same isopointal search algorithm
+as the hard molecule,
+only the hard sphere potential (@fig:packing_p2_hard) was replaced with
+a Shifted Lennard Jones potential
+as used in the molecular dynamics simulation. (@fig:packing_p2_lj)
+The use of the Lennard-Jones potential
+provides a somewhat different picture of packing.
+Most noticeably the spacing of the molecules
+in the Lennard-Jones packing is much greater
+than the hard discs.
+This is expected,
+as the minimum of the Lennard-Jones potential
+lies at a distance of $2^{1/6} \approx 1.12$.
+The main difference is the relative positioning
+of the alternating layers.
+In the LJ case the molecules are positioned directly face on
+an rearrangement which maximises the positive interactions from
+the two smaller molecules.
+In comparison, the Hard potential has the molecules
+offset so the small particles rest
+in the concavity between the small and large particle.
+
+:::{class=subfigures id=fig:packing_p2}
+
+![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj
+width=49%} ![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
+
+A comparison of the packing of the hard and the Lennard Jones potentials.
+The molecules coloured in blue are the real copies of the unit cell,
+while the molecules in green are the periodic copies.
+
+:::
+
+So have I been using the wrong crystal structure?
+Probably not.
+The transition from the structure in @fig:packing_p2_hard
+to that in @fig:packing_p2_lj can be done by sliding each of the layers,
+there is only a small motion for every particle.
+Additionally, these two pictures show extreme values,
+with the LJ-Discs having no pressure applied,
+and the Hard sphere is similar to having a very large pressure applied.
+So the lowest energy crystal structure is likely to be
+somewhere in the middle.
+Additionally, from @fig:solid_state_transition_structure
+we know that a larger solid state transition
+will spontaneously take place,
+making it unreasonable to assume
+this is not the equilibrium crystal form.
