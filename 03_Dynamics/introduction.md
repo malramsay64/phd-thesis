@@ -169,7 +169,7 @@ This allows us to express a rotational relaxation function $R_l(t)$
 in terms of those spherical harmonics
 
 \begin{align}
-R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle
+R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
        &= \exp(-D_r\,l(l+1)t)
 \end{align}
 

@@ -205,7 +205,7 @@ uses 4 multipliations, 1 arccos, 1 comparison
 The approach used for the quaternion $\phi_3$
 computes the relationship
 
-$$ \arccos(|q_1 q_2|) $$
+$$ \phi_3 = \arccos(|q_1 q_2|) $$
 
 which gives values on the range $[0, \pi/2)$.
 Since the maximum rotational distance is $\pi$

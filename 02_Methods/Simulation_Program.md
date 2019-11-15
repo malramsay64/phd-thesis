@@ -159,18 +159,17 @@ Also of significant interest for this project,
 is the speed up for the rigid molecular model,
 which shows a 18 times speed up over the CPU implementation.
 
-:::{class=subfigures id=gpu_performance}
+:::{class=subfigures id=fig:gpu_performance}
 
 ![Comparison of CPU and GPU implementations of
 LAMMPS](../02_Methods/figures/lammps_relative_performance.pdf){#fig:gpu_performance_lammps width=49%}
 ![Comparison of CPU and GPU implementations of
-HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf){#fig:gpu_performance_hoomd
-width=49%}
+HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf){#fig:gpu_performance_hoomd width=49%}
 
-Both LAMMPS and HOOMD show significant performance improvements using GPUs.
+Both LAMMPS and HOOMD-blue show significant performance improvements using GPUs.
 However this is a little different when looking at rigid molecules,
 where there is a minimal performance improvement with LAMMPS,
-while there is a significant improvement with HOOMD.
+while there is a significant improvement with HOOMD-blue.
 
 :::
 

@@ -616,8 +616,8 @@ in the concavity between the small and large particle.
 
 :::{class=subfigures id=fig:packing_p2}
 
-![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj
-width=49%} ![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
+![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
+![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
 
 A comparison of the packing of the hard and the Lennard Jones potentials.
 The molecules coloured in blue are the real copies of the unit cell,
