@@ -186,8 +186,11 @@ there has been no data to suggest this is the case.
 
 :::{class=subfigure id="potential_energy}
 
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
 ![](placeholder_figure.png){#fig:potential_energy_2d width=49%}
 ![](placeholder_figure.png){#fig:potential_energy_3d width=49%}
+<!-- markdownlint-disable MD045 -->
 
 When we look at two dimensions,
 there is no possible path for getting from A to B
