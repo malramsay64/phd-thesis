@@ -1,21 +1,8 @@
-name: CI
+name: Compile Document
 
 on: [push]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-
-    - uses: actions/setup-node@v1
-    - run: npm install
-
-    - name: Ensure style is correct
-      run: make style
-
   build:
     runs-on: ubuntu-latest
     steps:
