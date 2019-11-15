@@ -1,47 +1,6 @@
 # Introduction
 
-Current models of motion in the liquid state
-are based on the Stokes-Einstein-Debye relationships[@Debye1929],
-which are theoretical models of collective motion
-derived from particles undergoing Brownian motion[@Einstein1956].
-These models define characteristic rates of motion
-known as diffusion constants,
-with $D_t$ being the diffusion constant of translational motion
-while $D_r$ is the diffusion constant of rotational motion.
-The Stokes--Einstein equation for translational motion
-
-$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
-
-and the Stokes--Einstein--Deybe relation for rotational motion
-
-$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
-
-which can be simplified as follows
-
-$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
-
-and
-
-$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
-
-where
-
-- $\eta$ is the shear viscosity, and
-- $T$ is the temperature.
-
-One of the detractors of Brownian dynamics
-is that it describes the dynamics of independent events,
-making no account for momentum.
-An alternative method of describing the dynamics of particles
-is through Langevin Dynamics,
-which does include the momentum of particles.
-This ends up giving the same result
-for the Stokes-Einstein-Debye relations.
-This is because it is possible to consider
-Brownian Dynamics as a more granular form
-of Langevin Dynamics.
-
-The Stokes-Einstein-Debye models are suitable for describing
+The Stokes-Einstein-Debye models (@sec:???) are suitable for describing
 the dynamic properties of most liquids, however,
 there are instances in supercooled liquids,
 where the Stokes-Einstein-Debye relations
