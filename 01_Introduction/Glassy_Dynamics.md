@@ -37,7 +37,7 @@ $$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
 which allows us to express a relationship
 between the rotational and translational diffusion
 
-$$ \frac{D_t} \propto \frac{D_r} $$ {#eq:sed_proportionality}
+$$ D_t \propto D_r $$ {#eq:sed_proportionality}
 
 when both are at the same temperature and viscosity.
 
