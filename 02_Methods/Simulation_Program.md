@@ -14,7 +14,7 @@ which are resistant to crystallisation.
 To observe their crystallisation requires simulations
 over long time periods,
 something which was initially investigated
-as part of my Honours thesis. [@Ramsay2015a]
+as part of my Honours thesis. [@Ramsay2015]
 The simulations also need to be of a reasonable size
 to avoid issues with periodic boundary conditions,
 known as finite size effects.

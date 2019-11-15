@@ -22,7 +22,7 @@ with each looking at different properties.
 
 ### Lewis-Wahnström model
 
-The Lewis-Wahnström [@Wanstrom1993] model of ortho-terphenyl
+The Lewis-Wahnström [@Wahnstrom1993] model of ortho-terphenyl
 is probably the simplest possible model to capture
 some of the molecular features.
 The model is comprised of three particles,
@@ -76,7 +76,7 @@ the prediction of diffusion constants,
 with simulations finding
 translations diffusion constants three orders of magnitude
 rotational diffusion constants seven orders of magnitude
-larger than the experimental values near 260 K. [@Lombardo2006;@Wahnstrom1994;@Rinaldi2001]
+larger than the experimental values near 260 K. [@Lombardo2006;@Lewis1994;@Rinaldi2001]
 
 ### Alternative Models
 

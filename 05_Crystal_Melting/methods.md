@@ -190,7 +190,7 @@ having the constraint that merges only occur
 with neighbouring particles.
 This is implemented using the Ward clustering algorithm [@Ward1963]
 from the `AgglomerativeClustering` class
-in the scikit-learn [@Pedregosa2011] library.
+in the scikit-learn [@Pedregosa2012] library.
 The clustering is required
 as there are errors in the crystal/liquid classification
 and this accounts for and smooths the errors

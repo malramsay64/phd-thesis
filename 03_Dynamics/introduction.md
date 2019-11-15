@@ -340,7 +340,7 @@ to paint a picture of the overall dynamics
     - elsewhere the onset of different relaxation timescales
     - onset of heterogeneities
     - cite @Goldstein1969
-    - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov1996] (Rossler)
+    - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov2007] (Rossler)
     - Express fragility in terms of $T_c$, $\frac{T_g}{T_c - T_g}$
 
 - Kivelson Scaling
