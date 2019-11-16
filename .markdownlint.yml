@@ -10,3 +10,4 @@ default: true
     - "div"
 # Tables give this false positives
 "hr-style": false
+"code-block-style": {"style": "fenced"}
