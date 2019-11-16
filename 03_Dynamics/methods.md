@@ -198,6 +198,61 @@ I can sample the equilibrium configuration.
 - Issue #60
 - Issue #28
 
+### Calculation of Wavenumbers
+
+The first step in the calculation of wavenumbers
+is finding the radial distribution function.
+This shows the distribution of particles at each radius
+and can be related to the experimentally measurable scattering function
+through a Fourier transformation.
+I used the function `freud.density.RDF` from
+the freud python package [@Harper2016]
+for the analysis of the radial distribution function.
+The radial distribution is averaged over 1000 frames
+at the melting point
+which is shown in @fig:radial_distribution_function.
+
+### Computing the structure factor
+
+Now that we have nicely computed the radial distribution function
+we can convert it to the structure factor $S(k)$
+using @eq:structure_factor.
+
+$$ S(k) = 1 + \rho \int dr e^{-ikr} [G(r) - 1] $$ {#eq:structure_factor}
+
+Although the computation of the structure factor
+is described as a Fourier transform,
+with the isotropic nature of the liquid,
+we can assume spherical symmetry giving
+
+$$ S(k) = 1 + 4 \pi \rho \frac{1}{k} \int dr r \sin(qr) [G(r) - 1] $$
+
+where $\rho$ is the number density of the liquid.
+Additionally because we can only take finite steps,
+the integration is discretised as
+
+$$ S(k) = 1 + 4 \pi \rho \frac{1}{k} \Delta r \sum_r r \sin(qr) [G(r) - 1] $$ {eq:
+
+The discrete function is calculated with the following function
+
+```python
+import numpy
+
+def static_structure_factor(
+    rdf: freud.density.RDF, wave_number: float, num_particles: int
+):
+    dr = rdf.R[1] - rdf.R[0]
+    integral = dr * numpy.sum((rdf.RDF - 1) * rdf.R * numpy.sin(wave_number * rdf.R))
+    density = num_particles / rdf.box.volume
+    return 1 + 4 * numpy.pi * density / wave_number * integral
+```
+
+The wave number $???$ is the maximum value
+of the static structure factor,
+and can be used to find the characteristic Bragg length $k_\text{bragg}$
+
+$$ k_\text{bragg} = \frac{\pi}{2 ???} $$
+
 ### Structural Relaxation
 
 - Intermediate scattering function
