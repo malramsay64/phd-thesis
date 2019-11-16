@@ -10,11 +10,11 @@ find the energy of each structure. The calculated energies (@Tbl:crystal_energie
 2% of each other, indicating there is no significant driving force for a particular crystal
 structure.
 
-Crystal    Penalty
--------   --------
-     p2     -0.199
-     pg     -0.093
-   p2gg     -0.191
+Crystal| Penalty
+------:|--------:
+p2     |   -0.199
+pg     |   -0.093
+p2gg   |   -0.191
 
 Table: A Comparison on the energies of the potential crystal structures for the Trimer molecule.
 {#tbl:crystal_energies}

@@ -15,8 +15,8 @@ and presented in @tbl:melting_points.
 
  Pressure   Melting Point
  --------  --------------
-     1.00            0.36
-    13.50            1.35
+ 1.00            0.36
+ 13.50            1.35
 
 Table: The melting points of the trimer molecule for different pressures. {#tbl:melting_points}
 
@@ -116,10 +116,10 @@ temperature $T=1.50$. This is calculated from an average over 100 configurations
 within the trajectory. The first peak corresponds to a value of 2.90.
 ](../Projects/Dynamics/figures/static_structure_factor.pdf){width=80% #fig:static_structure_factor}
 
- Pressure  $k$
- --------  -----
-     1.00   2.80
-     13.5   2.90
+Pressure|$k$
+--------|-----
+1.00    | 2.80
+13.5    | 2.90
 
 Table: The wave-numbers $k$ used for each of the pressures studied. {#tbl:wave_numbers}
 
