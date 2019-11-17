@@ -345,12 +345,38 @@ over all the key frames.
 
 ### Diffusion
 
-- mean squared displacement
-- fit points from 2 to 50
-    - fit is to linear function $y = mx + b$
-- Error from bootstrapping different frames
-    - calculate for each frame
-    - randomly choose results
+To calculate the translational diffusion constant
+we first need to calculate the mean squared displacement $MSD$
+
+$$ MSD = \langle ||\vect{r}(t) - \vect{r}(0)||_2^2 \rangle $$
+
+which is calculated for all par
+
+```python
+import numpy
+import freud
+
+def mean_squared_displacement(
+    box: freud.box.Box,
+    initial: numpy.ndarray,
+    final: numpy.ndarray
+) -> numpy.ndarray:
+    return numpy.square(numpy.linalg.norm(box.wrap(final - initial), axis=1))
+```
+
+The linear region of the mean squared displacement,
+which are points with displacements from 2 to 50
+are fit to the linear function
+
+$$ \log(MSD) = m \log(t) + b $$
+
+where $t$ is time and $m = 4D_t$.
+
+The values are aggregated
+over all the starting configurations
+by calculating the diffusion constant of each time sequence
+and using bootstrapping to estimate the mean
+and the confidence interval.
 
 ### Rotational Relaxation
 
