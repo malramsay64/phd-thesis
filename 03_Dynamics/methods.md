@@ -255,13 +255,93 @@ $$ k_\text{bragg} = \frac{\pi}{2 ???} $$
 
 ### Structural Relaxation
 
-- Intermediate scattering function
-$$ F(k, t) = \langle \cos( k [r_{x}(0) - r_{x}(t)]) \rangle $$
+Knowing the value of the wave vector $k_\text{bragg}$
+it is possible to monitor how particles
+move relative to that characteristic distance
+using the intermediate scattering function
 
-- Distance metric
-- relaxation constant
-    - Find first value below 1/e
-    - bootstrap many starting configurations
+$$ F(k, t) = \left \langle \cos \left (
+k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
+\cdot
+[\Delta x_{j}(t), \Delta y_{j}(t)]
+\right ) \right \rangle $$
+
+This can then be converted to a python function:
+
+```python
+from functools import lru_cache
+
+# This decorator is what enables the caching of this function,
+# making this function 100 times faster for subsequent exectutions
+@lru_cache()
+def create_wave_vector(wave_number: float, angular_resolution: int):
+    """Covnert a wave number into a radially symmetric wave vector
+
+    This calculates the values of cos and sin :math:`\theta` for `angular_resolution`
+    values of :math:`\theta` between 0 and :math:`2\pi`.
+
+    The results of this function are cached, so these values only need to be computed
+    a single time, the rest of the time they are just returned.
+
+    """
+    angles = numpy.linspace(
+        0, 2 * numpy.pi, num=angular_resolution, endpoint=False
+    ).reshape((-1, 1))
+    wave_vector = numpy.concatenate([numpy.cos(angles), numpy.sin(angles)], axis=1)
+    return wave_vector * wave_number
+
+
+def intermediate_scattering_function(
+    box: freud.box.Box,
+    initial_position: numpy.ndarray,
+    current_position: numpy.ndarray,
+    wave_number: int,
+    angular_resolution: int = 60,
+) -> float:
+    r"""Calculate the intermediate scattering function for a specific wave-vector
+
+    This calculates the equation
+
+    .. math::
+        F(k, t) = \langle \cos(
+            k [\cos(\theta_a), \sin(\theta_a)] \cdot [r_{x}(0) - r_{x}(t)]
+        ) \rangle
+
+    Where k is the value of `wave_number`, the values of the array `inital_position` are
+    $r_x(0)$, while `current_position` is $r_(t)$. The number of values for the angle is
+    give the `angular_resolution`.
+
+    The values of initial_position and current_position are both expected to be a vector
+    of shape N x 3 and the appropriate elements are extracted from it.
+
+    """
+    wave_vector = create_wave_vector(wave_number, angular_resolution)
+
+    # We only want the x and the y values from the displacements
+    displacement = box.wrap(initial_position - current_position)[:, :2]
+
+    return numpy.mean(numpy.cos(numpy.dot(wave_vector, displacement.T)))
+```
+
+As an alternative and simpler method of
+monitoring structural relaxation $F_d(t)$
+using the quantity suggested by @Widmer-Cooper2009
+
+$$ F_d(t) = \begin{cases}
+    1 &\if \Delta x < d, \\
+    0 & \text{otherwise}
+    \end{cases} $$
+
+Both the intermediate scattering function $F(k, t)$
+and the structural relaxation $F_d(t)$
+have the shape of a stretched exponential.
+For both these values,
+the characteristic relaxation time $\tau_s$ was found by
+finding the first time which the relaxation function
+dropped below the value $1/\text{e}$.
+The expected value and confidence interval
+was estimated by using the bootstrap procedure
+over all the key frames.
 
 ### Diffusion
 
