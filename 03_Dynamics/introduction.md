@@ -29,6 +29,12 @@ otherwise known as shear viscosity and denoted by $\eta$,
 has been shown to have the same temperature scaling
 as the structural relaxation time
 in both experimental [@Ediger2012] and computational [@Perera1999] systems.
+A rationalisation of this relationship
+can be to consider a force pushing on one part of the configuration,
+the structural relaxation time is indicative of
+the time the state takes to adjust to the applied force.
+In a liquid, applying force results in flow
+with the viscosity being a measure of the resistance to flow.
 
 This relationship between the shear viscosity and the structural relaxation
 allows us to rewrite the Stokes-Einstein-Debye relations as
@@ -294,25 +300,7 @@ taking place through the process of large angular jumps.
   between translations diffusion and viscosity, and between rotational and
   translational diffusion.[@Debenedetti2001]
 
-## Theoretical Treatment of Dynamics
-
-How these values can be combined together
-to paint a picture of the overall dynamics
-
-- Understanding Dynamics
-    - $\alpha$ and $\beta$ relaxations
-    - Increasing length scale
-        - higher dimensional space
-        - No direct evidence for this as an idea
-            - Is this the appropriate method of investigating
-    - Cooperative motion
-        - Kinetics of cooperative motion
-            - Can we keep the activation energy the same, yet change the rate to include
-              multiple particles?
-
-- Theories which describe different aspects of the glass transition
-    - fit simulation and experimental results
-    - understand and make predictions
+- Slowdown near 2/3 of the melting point [@Angell2000]
 
 - Vogel--Tammann--Fulcher
     - temperature dependence of relaxation times
@@ -320,64 +308,90 @@ to paint a picture of the overall dynamics
     - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
     - $\eta = A \exp(\frac{B}{T-T_0})$
 
-- Slowdown near 2/3 of the melting point [@Angell2000]
+## Theoretical Treatment of Dynamics
 
-- Glass transition temperature
-    - Below $~1.2\, T_g$ decoupling of rotations and translations occurs
-    - Breakdown occurs between $1.15\, T_g$ and $1.25 \,T_g$ in OTP -> experimental results
+There are numerous methods which can be used to describe
+different aspects of the motion of particles.
+However each individual piece of information
+is only able to tell part of the story,
+so we need to be able to have some theoretical framework
+which provides a scaffolding for combining these values.
 
-- Kauzmann Temperature $T_K$
-    - Where the liquid would have lower entropy than the crystal
-    - not possible, so provides a lower bound for the glass transition temperature
-    - Have potential energy of liquid and crystal
-    - $T_g \ge T_K$
-    - Change in heat capacity
+Experimental observations of supercooled liquids
+find that the breakdown of the Stokes--Einstein--Debye relations at $~1.2\,T_g$
+across a range of different materials. [@Debenedetti2001]
+The general consensus among theories is that something
+occurs at this temperature changing the dynamics.
+In Goldstein's[@Goldstein1969] energy landscape model of dynamics,
+this change in dynamic behaviour is characterised
+by the transition from free diffusion,
+where the energy of the particles
+is greater than the energy of the barriers between configurations,
+to activated diffusion,
+where the transition from one position to another
+requires the concentration of energy at a certain point.
+There has been evidence of this transition from
+free to activated diffusion in simulations of atomic systems [@Barrat1991;@Wahnstrom1991]
+where the dynamics change from many small random motions
+to a large motions from one site to another
+often as part of a correlated motion.
+Where dynamics occurs by the process of large jumps,
+the assumptions made about the Brownian motion start to break down.
+While atomic systems seem to make the transition to jump dynamics,
+there is not the same evidence for molecular systems, [@Lewis1994;@Barrat1991;@Wahnstrom1991]
+namely the Lewis-Wahnström model of *ortho*-terphenyl,
+where rotational motion occurs through jump dynamics
+while the translational motion takes remains Brownian in nature.
 
-- Critical temperature $T_c$
-    - where the is a divergence of multiple timescales
-    - Definition depends on theory
-    - Landscape theory this is where the landscape effects the dynamics
-    - elsewhere the onset of different relaxation timescales
-    - onset of heterogeneities
-    - cite @Goldstein1969
-    - Strong liquids far above $T_g$, fragile close to $T_g$ [@Novikov2007] (Rossler)
-    - Express fragility in terms of $T_c$, $\frac{T_g}{T_c - T_g}$
+One of the key predictions of the energy landscape model of dynamics
+is the incorporation of more dimensions in the motion
+when the molecules no longer have the energy
+to cross potential energy boundaries.
+Since including more dimensions to a motion
+is including more particle degrees of freedom,
+the increased dimensionality is expected to manifest in
+an increase in a length scale as the temperature drops.
+Despite significant effort searching for
+this increasing length scale, [@cite]
+there has been no evidence of it.
+
+An alternative structural model of growth
+has a structural view of the supercooled liquid.
 
 - Kivelson Scaling
     - viscous slowdown due to packing frustration @Kivelson1995
 
-- Step Dynamics
-    - Motion is an activated process
-    - instead of moving freely, diffusion takes place as a number of small steps
-    - Jumps of rotations and translations -> how are these coupled together
-    - when can we ignore hopping
+- purely structural
+    - packing,
+    - jamming
+    - gears @Zwanzig1987
 
-- Breakdown of Stokes-Einstein-Debye
-    - Viscosity scales differently to diffusion
-    - Relationship of rotation relaxation, viscosity, and diffusion
+Despite these models being useful in understanding
+the processes of motion within a liquid,
+there is still the decoupling of the rotational and translational motion.
+Why is one type of motion
+more affected by supercooling than another?
+A consequence of dynamic heterogeneities,
+which is measured by the non-Gaussian parameter $\alpha$
+is the deviation of the distribution of motions
+from that of a Gaussian distribution,
+with the dynamic heterogeneities having
+many orders of magnitude difference
+between the fastest and the slowest particles.
+It is entirely possible
+that the differences between
+the translational and rotational dynamics
+is a result of the averaging we are using.
+For the diffusion constant measured from the mean-squared-displacement,
+particles with fast motions contribute disproportionately
+to increasing this value,
+while for the rotational relaxation it is
+the slow particles which increase this value.
 
-- Relaxation functions
-    - exponential relaxations are expected
-        - Why???
-    - heterogeneous dynamics are a possible reason for this
-    - alternatively there is also a non-exponential process
-
-- Structural component
-    - Is packing frustration a factor in glass formation
-    - Many different crystals formed, just unable to tile space
-    - or in this case forming different incompatible crystal structures
+## Additional Quantities
 
 - Correlations of rotation and translation
     - reptation
-
-- How properties are calculated / expressed
-    - Averaging techniques
-        - mean
-        - harmonic mean
-        - median
-    - Most probable vs average
-
-## Additional Quantities
 
 Introduce some new quantities
 
