@@ -421,7 +421,6 @@ is the time at which the maximum value occurs.
 
 ### Rotational Heterogeneities
 
-
 $$ \alpha = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
 
 - relaxation time
