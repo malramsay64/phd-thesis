@@ -380,22 +380,49 @@ and the confidence interval.
 
 ### Rotational Relaxation
 
-- Rotational relaxation
+The rotational relaxation function, $C_l(t)$
+is calculated for both the first,
 
-$$ C_1(t) = \langle \hat{\mathbf{e}}(0) \cdot \hat{\mathbf{e}}(t) \rangle $$
+$$ C_1(t) = \langle \cos{2\arccos(|q(t) q(0)|)} \rangle $$
 
-$$ C_2(t) = \langle 2(\hat{\mathbf{e}}(0) \cdot  \hat{\mathbf{e}}(t))^2 - 1 \rangle $$
+and second
+
+$$ C_2(t) = \langle 2\cos^2{2\arccos(|q(t) q(0)|)} - 1 \rangle $$
+
+Legendre polynomials,
+where $q(t)$ is the quaternion representing the orientation at time $t$.
+The calculation the quaternion angle
+is done using the Rowan package [@Ramasubramani2018],
+specifically using the function `rowan.geometry.intrinsic_distance`.
+See @sec:quaternion_roataions for more details
+in using quaternions for representing orientations.
+
+For both these values,
+the characteristic relaxation time $\tau_s$ was found by
+finding the first time which the relaxation function
+dropped below the value $1/\text{e}$.
+The expected value and confidence interval
+was estimated by using the bootstrap procedure
+over all the key frames.
 
 ### Translational Heterogeneities
 
-- alpha
+Particles undergoing Brownian motion
+will have a distribution of distances $\Delta r$
+which has a Gaussian distribution.
+The non-Gaussian parameter $\alpha$
+is a measure of how far the actual distribution
+of distances deviates from a Gaussian distribution
 
 $$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 1 $$
 
-- relaxation time
-    - time of the maximum
+The characteristic timescale for the non-Gaussian function
+is the time at which the maximum value occurs.
 
 ### Rotational Heterogeneities
+
+
+$$ \alpha = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
 
 - relaxation time
     - time of the maximum
