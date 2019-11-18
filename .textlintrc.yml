@@ -19,6 +19,7 @@ rules:
       - magnitude
       - c
       - s
+      - resistance
   terminology:
     defaultTerms: true
     terms:
