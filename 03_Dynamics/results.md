@@ -308,16 +308,25 @@ becomes later moving from high temperature to low.
 
 ### Rotational Heterogeneity
 
+![The rotational non-gaussian of the trimer molecule
+over a range of temperatures at a pressure of 13.50.
+Note that time axis is plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/rotational_alpha.svg){width=80% #fig:rotational_non-gaussian}
+
 - calculation of rotational Heterogeneity
 - there are rotational heterogeneities,
 
 ### Rotational and Translational Heterogeneity
+
+![gamma](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
 
 There are rotational heterogeneities and translational heterogeneities
 
 - just a coincidence
 - are they co-located, mobile regions just mobile for everything
 - correlated, high rotational/translational mobility allows the other
+
+![Map of the translational and rotational heterogeneities](../placeholder_figure.png)
 
 - maps overlaying rotational heterogeneities with translational heterogeneities
 
@@ -369,26 +378,32 @@ being considered relaxed.
 Here we are looking for the time taken
 for a particle to first move beyond this characteristic distance.
 
+![Structural relaxation compared with the first passage time
+](../Projects/Dynamics/figures/first_passage_time.svg){width=80% #fig:first_passage_time}
+
+![Structural relaxation compared with the last passage time
+](../Projects/Dynamics/figures/last_passage_time.svg){width=80% #fig:last_passage_time}
+
 ### Single particle diffusion
 
 - Use the length scale associated with the wave-number
     - multiplied by 3
 
-### Reversible relaxations
-
-- In the structural relaxation there are bumps
-    - this indicates there are large reversible fluctuations
-    - the single particle structural relaxation doesn't account for this
-
-- Once a particle leaves it's local neighbourhood it should have no memory of where it
-  was
-- There is some reversibility with brownian motion
-- Relaxation time is the last time it undergoes structural relaxation before diffusion
+![Diffusion constant compared with the diffusive timescale
+](../Projects/Dynamics/figures/diffusive_time.svg){width=80% #fig:diffusive_time}
 
 ### Single particle rotational relaxations
 
 - defined based on the distances for the rotational relaxations
 - Additionally an angle corresponding to half the angle between the smaller particles
+
+![Rotational relaxation times compared with the rotational relaxations
+](../Projects/Dynamics/figures/rotational_time.svg){width=80% #fig:rotational_time}
+
+### Summary
+
+![Summary of comparisons
+](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
 ## Comparison of relaxation times
 
@@ -413,6 +428,17 @@ for a particle to first move beyond this characteristic distance.
     - we can then randomly take the motions from
         the distribution of short time scale motions
     - Over long enough time scales, the heterogeneities disappear
+
+### Reversible relaxations
+
+- In the structural relaxation there are bumps
+    - this indicates there are large reversible fluctuations
+    - the single particle structural relaxation doesn't account for this
+
+- Once a particle leaves it's local neighbourhood it should have no memory of where it
+  was
+- There is some reversibility with brownian motion
+- Relaxation time is the last time it undergoes structural relaxation before diffusion
 
 ## Possible Investigations
 
