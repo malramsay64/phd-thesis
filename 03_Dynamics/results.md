@@ -90,7 +90,7 @@ temperature $T=1.50$. The radial distribution is taken as an average over 100 co
 the input trajectory. There shape of the molecule means there are three distinct first
 shell peaks. In further shells the only
 impact on shape is the longer than usual tails of the peaks.
-](../Projects/Dynamics/figures/radial_distribution.pdf){width=80% #fig:radial_distribution}
+](../Projects/Dynamics/figures/radial_distribution.svg){width=80% #fig:radial_distribution}
 
 From the radial distribution function $G(r)$,
 we can obtain the static structure factor $S(k)$
@@ -114,7 +114,7 @@ which are given below.
 ![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
 temperature $T=1.50$. This is calculated from an average over 100 configurations.
 within the trajectory. The first peak corresponds to a value of 2.90.
-](../Projects/Dynamics/figures/static_structure_factor.pdf){width=80% #fig:static_structure_factor}
+](../Projects/Dynamics/figures/static_structure_factor.svg){width=81% #fig:static_structure_factor}
 
 Pressure|$k$
 --------|-----
