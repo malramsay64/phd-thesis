@@ -405,33 +405,46 @@ The expected value and confidence interval
 was estimated by using the bootstrap procedure
 over all the key frames.
 
-### Translational Heterogeneities
+### Heterogeneous dynamics
 
 Particles undergoing Brownian motion
 will have a distribution of distances $\Delta r$
 which has a Gaussian distribution.
-The non-Gaussian parameter $\alpha$
+The non-Gaussian parameter $\alpha$ [@Rahman1964]
 is a measure of how far the actual distribution
 of distances deviates from a Gaussian distribution
 
 $$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 1 $$
 
-The characteristic timescale for the non-Gaussian function
-is the time at which the maximum value occurs.
+This is the result for relaxation in two dimensions.
 
-### Rotational Heterogeneities
+Like translational motion,
+the rotational motion is also expected to have
+a Gaussian distribution,
+which means it can be expressed in the same way
+as the translational non-Gaussian parameter.
 
-$$ \alpha = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
+$$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
 
-- relaxation time
-    - time of the maximum
+It is additionally possible to investigate
+the coupling of the rotational and translational heterogeneities
+which is measured using the parameter $\gamma$.
 
-### Coupling of Heterogeneities
+$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
+    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
 
-- gamma
+This formulation is simplified from @Faraone2003
+using the same approach as the rotational and translational
+non-Gaussian parameters.
 
-$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle - \langle\Delta r^2\rangle\langle\Delta \theta^2\rangle}
-    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} $$
+Each of these quantities,
+the translational heterogeneities $\alpha$,
+the rotational heterogeneities $\alpha_\text{rotation}$, and
+the coupling of heterogeneities $\gamma$,
+has a characteristic timescale;
+the time at which the dynamics is maximally heterogeneous.
+This allows for the comparison of these quantities
+as a function of temperature.
 
 ## Molecular Quantities
 
