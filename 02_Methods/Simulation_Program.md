@@ -93,12 +93,11 @@ means these are reserved for the most specialised applications.
 There are many different implementations of Molecular Dynamics on GPUs
 
 - LAMMPS [@Plimpton1995]
-- GROMACS
-- AMBER
+- GROMACS [@Lindahl2001;@Hess2008;@Pronk2013;@Berendsen1995;@Abraham2015]
+- AMBER [@Case2006;@Case2008]
 - HOOMD-blue [@Anderson2008;@Nguyen2011]
-- NAMD
-- Q
-- OpenMM
+- NAMD [@Phillips2005]
+- OpenMM [@Eastman2010]
 
 and evaluating each different software package's approach
 to simulating the same system can be difficult for a team of experts. [@Rizzi2019]
