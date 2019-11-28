@@ -275,15 +275,7 @@ from functools import lru_cache
 # making this function 100 times faster for subsequent exectutions
 @lru_cache()
 def create_wave_vector(wave_number: float, angular_resolution: int):
-    """Covnert a wave number into a radially symmetric wave vector
-
-    This calculates the values of cos and sin :math:`\theta` for `angular_resolution`
-    values of :math:`\theta` between 0 and :math:`2\pi`.
-
-    The results of this function are cached, so these values only need to be computed
-    a single time, the rest of the time they are just returned.
-
-    """
+    """Convert a wave number into a radially symmetric wave vector."""
     angles = numpy.linspace(
         0, 2 * numpy.pi, num=angular_resolution, endpoint=False
     ).reshape((-1, 1))
@@ -298,23 +290,7 @@ def intermediate_scattering_function(
     wave_number: int,
     angular_resolution: int = 60,
 ) -> float:
-    r"""Calculate the intermediate scattering function for a specific wave-vector
-
-    This calculates the equation
-
-    .. math::
-        F(k, t) = \langle \cos(
-            k [\cos(\theta_a), \sin(\theta_a)] \cdot [r_{x}(0) - r_{x}(t)]
-        ) \rangle
-
-    Where k is the value of `wave_number`, the values of the array `inital_position` are
-    $r_x(0)$, while `current_position` is $r_(t)$. The number of values for the angle is
-    give the `angular_resolution`.
-
-    The values of initial_position and current_position are both expected to be a vector
-    of shape N x 3 and the appropriate elements are extracted from it.
-
-    """
+    """Calculate the intermediate scattering function for a specific wave-vector."""
     wave_vector = create_wave_vector(wave_number, angular_resolution)
 
     # We only want the x and the y values from the displacements
