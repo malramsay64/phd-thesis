@@ -285,9 +285,9 @@ that is, some regions of the material are moving fast
 while others are moving slow.
 This phenomenon has been observed in a wide range of materials
 both simulated and experimental.
-The quantity used to measure this is the non-gaussian parameter $\alpha$,
+The quantity used to measure this is the non-Gaussian parameter $\alpha$,
 which is a measure of how far the distribution of motions
-deviates from the expected gaussian distribution [@Donati1999].
+deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
 
 ![The non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
@@ -295,7 +295,7 @@ Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
 
 As the temperature decreases from 2.5 to 1.30,
-the maximum value of non-gaussian parameter increases,
+the maximum value of non-Gaussian parameter increases,
 demonstrating an increase in the dynamic heterogeneities,
 that is, there is a big difference between
 the fastest and the slowest particles.
@@ -304,38 +304,93 @@ the value of the maximum,
 the time at which the maximum occurs
 becomes later moving from high temperature to low.
 
-<!-- - TODO Is this anything more than the dynamics slowing down:  <03-05-19, Malcolm Ramsay> - -->
-
 ### Rotational Heterogeneity
+
+The rotational heterogeneities can be calculated
+in the same way as the translational heterogeneities,
+describing the deviation of the dynamics
+from those expected by a Gaussian distribution.
 
 ![The rotational non-gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/rotational_alpha.svg){width=80% #fig:rotational_non-gaussian}
 
-- calculation of rotational Heterogeneity
-- there are rotational heterogeneities,
+The rotational heterogeneities (@fig:rotational_non-gaussian)
+have a very similar shape to that of
+the translational heterogeneities (@fig:non-gaussian).
+One of the main differences,
+is that the curves for the rotational motion
+all follow a single curve before branching out
+to reach the maximum and decay.
+The calculations of the non-Gaussian parameter [@Donati1999;@Horbach1998]
+typically have differing behaviour like in @fig:non-gaussian,
+so it is interesting that the rotations all obey this single "master curve".
 
 ### Rotational and Translational Heterogeneity
 
-![gamma](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
+With the non-Gaussian identifying the presence of heterogeneous dynamics
+in both translational and rotational motion,
+an integral part of understanding this
+is how these two types of motion are combined.
+There are three different descriptions of this
+0. No relation between translational and rotational motion,
+1. coincidence, where the rotational and translational motion
+  happen to have similar timescales with no connection between them,
+2. correlation, where the timescales of both motions are similar for each molecule
+  possibly as a result of the local environment, and
+3. coupling, where rotations are required for translations to occur.
 
-There are rotational heterogeneities and translational heterogeneities
+As we go from 0 to 4,
+the requirements for establishing these become more stringent.
+From the analysis of the translational and rotational heterogeneities,
+with each having a similar timescale,
+it is at least a coincidence that the timescales are the same.
+This is not a very powerful statement,
+which requires additional analysis.
+Based on work by @Faraone2003 on water,
+the coupling parameter $\gamma$
 
-- just a coincidence
-- are they co-located, mobile regions just mobile for everything
-- correlated, high rotational/translational mobility allows the other
+$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
+    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
 
-![Map of the translational and rotational heterogeneities](../placeholder_figure.png)
+provides a method of demonstrating correlation
+between the translational and rotational motion.
+The values of $\gamma$ are large
+for molecules with large values of $\Delta r \Delta \theta$,
+with both components of the motion contributing.
+In @fig:gamma the coupling parameter is very
+similar to the non-Gaussian parameters,
+indicating that highly mobile molecules
+have both degrees of freedom available to them.
+This provides the evidence to establish
+there is correlation between
+rotational and translational motion.
 
-- maps overlaying rotational heterogeneities with translational heterogeneities
+![A plot of the coupling parameter $\gamma$
+](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
 
-- calculation of Gamma
-- figures
+An alternative way of representing this correlation of the motion
+is to plot the spatial distribution of the mobility (@fig:spatial_heterogeneities).
+The plot shows the mobile regions contain
+both types of motion,
+indicating that the local environment is important
+in enabling the motion to occur.
 
-These are methods of looking at the entire system as a whole
+![Map of the translational and rotational
+heterogeneities](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
 
-- it makes sense to be able to define these quantities for single molecules
+Comparing the timescale of the heterogeneities,
+the rotational heterogeneities have their maximum
+slightly before the translational heterogeneities.
+Does this mean that rotational motion
+is causing the translational motion?
+This question, which would mean there is coupling
+between the rotations and translations
+requires additional analysis.
+
+![Comparison of the different
+heterogeneities](../placeholder_figure.png){width=80% #fig:heterogeneities}
 
 ## Molecular Relaxations
 

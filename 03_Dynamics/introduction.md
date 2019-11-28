@@ -388,6 +388,28 @@ to increasing this value,
 while for the rotational relaxation it is
 the slow particles which increase this value.
 
+### Coupling of Translational and Rotational Motion
+
+Part of this story which is still being actively studied
+is the coupling of the rotational and translational motions
+on short timescales.
+A famous result is the decoupling of rotational and translational
+motion in a supercooled liquid, [@Chang1994;@Griffin2012;@Fujara2016]
+indicating a breakdown in the Stokes-Einstein-Debye
+theory of dynamics.
+This result however is an observation of the overall properties
+and doesn't consider the microscopic coupling that takes place.
+In the potential energy landscape model
+as the temperature is lowered,
+it is predicted that more degrees of freedom
+will be used for motion to occur
+and some of these are in
+the rotational motion of molecules.
+This coupling between rotational and translational motion
+on the microscopic scale
+has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
+and liquid crystals [@Jose2006].
+
 ## Additional Quantities
 
 - Correlations of rotation and translation
