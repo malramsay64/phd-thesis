@@ -332,14 +332,15 @@ in both translational and rotational motion,
 an integral part of understanding this
 is how these two types of motion are combined.
 There are three different descriptions of this
-0. No relation between translational and rotational motion,
-1. coincidence, where the rotational and translational motion
-  happen to have similar timescales with no connection between them,
-2. correlation, where the timescales of both motions are similar for each molecule
-  possibly as a result of the local environment, and
-3. coupling, where rotations are required for translations to occur.
 
-As we go from 0 to 4,
+1. No relation between translational and rotational motion,
+2. coincidence, where the rotational and translational motion
+  happen to have similar timescales with no connection between them,
+3. correlation, where the timescales of both motions are similar for each molecule
+  possibly as a result of the local environment, and
+4. coupling, where rotations are required for translations to occur.
+
+As we go from 1 to 4,
 the requirements for establishing these become more stringent.
 From the analysis of the translational and rotational heterogeneities,
 with each having a similar timescale,
