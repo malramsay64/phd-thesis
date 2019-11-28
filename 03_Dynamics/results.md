@@ -544,15 +544,6 @@ of rotational and translational motion?
         - the Kauzmann temperature
         - any other properties
 
-- Calculation of alternative structural relaxations
-    - van Hove relaxation -> Histogram over radius and time, for $i \ne j$
-    - How close is $G(r)$ at time $t$ to $G(r)$ at time $0$.
-    - Two point time dependent correlation $G(r, t)$
-    - Four point time dependent density correlation $G(r_1, r_2, t)$ [@Dasgupta1991]
-    - Assignment matching -> Hungarian Algorithm
-    - The idea of memory and caging?
-        - A distance of 0.4 is greater than would be expected for caging
-
 - Fit non-exponential relaxations
     - Kohlrausch function $\theta(t) = \exp(- (\frac{t}{\tau})^\beta$ where $0 < \beta \le 1$
     - typically the change in function is a result of multiple processes
@@ -566,14 +557,6 @@ of rotational and translational motion?
     - This is the MSD of the rotations
     - Plotting this value could be rather interesting
 
-- Length scales
-    - Bimodal distribution -> fast particles vs slow particles
-    - Clustering of fast particles
-    - Clustering with velocity as a defining variable
-    - Using DBSCAN with connectedness
-    - Is it just a time scale???
-    - Estimate number of particles from rate constant -> does this correspond to size?
-
 - Spatial correlation
     - How are the fastest and slowest particles correlated with each other spatially
     - Does this change as a function of temperature?
@@ -581,17 +564,6 @@ of rotational and translational motion?
     - Ref [@Kob1997; @Donati1999]
 
 - Onset of activated process?
-
-- Velocity autocorrelation
-    - $$ G_v(t) = \frac{\langle \vect v_i(t) \cdot \vect v_i(o) \rangle}
-      {\langle \vect v_i(0) \cdot \vect v_i(0) \rangle} $$
-        [@Brodka1992]
-    - This relates to the choice of the imaginary mass for the thermodynamic properties.
-
-- Temperature dependence of properties
-    - Structural relaxation
-    - Rotational Relaxation
-    - Diffusion constant
 
 - Spatial heterogeneities
     - How long to remove these
@@ -613,9 +585,6 @@ of rotational and translational motion?
 - Pressure dependence
     - [@Ediger1996]
     - Does the fragility change with compression?
-
-- Measure heat capacity
-    - How to do this?
 
 - Step dynamics / hops
     - can this be ignored
