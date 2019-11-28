@@ -474,14 +474,54 @@ for a particle to first move beyond this characteristic distance.
 
 ## Timescale of Motions
 
-- Diffusion is a long timescale behaviour
-    - doesn't capture the heterogeneities
+The foundation of the Stokes--Einstein--Debye relations
+is Brownian motion,
+that is the motion of the particles occurs through
+a sequence of small independent jumps.
+What if the issue with dynamic heterogeneities
+and non-Gaussian behaviour,
+is rather than observing many jumps, hence Brownian motion,
+only a small number of jumps are observed
+resulting in the observed behaviour.
+The single particle relaxation times
+provide a method to investigate this idea.
 
-- Develop jump model
-    - making assumption that a particle has no memory once moved distance $d$
-    - we can then randomly take the motions from
-        the distribution of short time scale motions
-    - Over long enough time scales, the heterogeneities disappear
+In taking the relaxation time of each particle within a simulation,
+we have the distribution of relaxation times that take place.
+So making the assumption that once relaxation has taken place,
+the particle is completely independent of it's initial configuration
+it will then need to undergo another relaxation event to move further.
+This can be modelled by drawing consecutive relaxation times for a particle
+from our experimentally determined distribution of relaxation times.
+This modelling of consecutive relaxations is shown in @fig:jump_heterogeneities
+for the last passage time $\tau_L$,
+which was chosen as a timescale for which
+the relaxation is considered irreversible.
+When we consider long enough length scales (or timescales),
+the heterogeneities within the dynamics disappear.
+Where the long relaxation times
+dominate the averaging over a single time period,
+they are rare occurrences,
+so over multiple relaxation times
+their effect averages out.
+
+![Heterogenneous dynamics taking progressivelyy more relaxation
+times](../placeholder_figure.png){width=80% #fig:jump_heterogeneities}
+
+So here we do observe an increasing length scale
+as the liquid is supercooled;
+the length over which the observed dynamics
+can be considered Brownian.
+This can be an important consideration,
+when comparing the different relaxations.
+The ratio $\tau_1/\tau_2$ shows that
+the rotational relaxation is dominated
+by jump dynamics in the supercooled liquid,
+while the diffusion constant
+is a much longer timescale phenomenon.
+Is the different regions of dynamics
+responsible for the observed decoupling
+of rotational and translational motion?
 
 ### Reversible relaxations
 
