@@ -211,11 +211,9 @@ is much more noticeable @fig:scattering_function.
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
 which over long enough timescales because of the collisions with other particles
 will move away from its initial position at a linear rate
-with the gradient $m$ having the relation
+where the diffusion constant $D$ has the relation
 
-<!-- TODO properly write out equation -->
-
-$$ m = 4D. $$
+$$ D = \frac{1}{4}\lim_{t->\inf} \langle \Delta \vect{r}^2 \rangle $$
 
 Plotting the Mean Squared Displacement (MSD) of the trimer molecule
 gives the image below.
@@ -273,8 +271,8 @@ Note the logarithmic scale of the time axis.
 
 Dynamic heterogeneities have been described qualitatively,
 with features of the previous dynamic quantities
-noted as being a telltale sign of heterogeneous dynamics.
-However to truly discuss them,
+noted as a telltale sign of heterogeneous dynamics.
+However to discuss them,
 they need to be adequately measured.
 
 ### Translational heterogeneities
