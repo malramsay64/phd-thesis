@@ -28,7 +28,7 @@ submodules:
 
 figures: $(figures)
 
-thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(preamble) | $(makedir) $(makesubdirs)
+thesis.pdf: thesis.tex $(subfiles) bibliography/bibliography.bib $(preamble) version.tex | $(makedir) $(makesubdirs)
 	tectonic -o $(makedir) --keep-intermediates -r0 $<
 	if [ -f $(makedir)/$(notdir $(<:.tex=.bcf)) ]; then biber --input-directory $(makedir) $(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
