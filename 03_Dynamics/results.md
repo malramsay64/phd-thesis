@@ -235,6 +235,12 @@ forming a plateau region.
 This plateau region is indicative of dynamics
 which are not described by Brownian motion,
 and more notably regions of dynamic heterogeneities.
+A structural description of this region
+describes the particles being stuck in 'cages',
+local regions which require significant free energy to escape.
+The value of the Mean Squared Displacement
+which corresponds to the end of the plateau region
+can be interpreted as the
 
 ![The diffusion constant as a function of temperature
 normalised by the melting point for a range of pressures.
@@ -271,7 +277,7 @@ Note the logarithmic scale of the time axis.
 
 Dynamic heterogeneities have been described qualitatively,
 with features of the previous dynamic quantities
-noted as a telltale sign of heterogeneous dynamics.
+noted as a characteristic sign of heterogeneous dynamics.
 However to discuss them,
 they need to be adequately measured.
 
@@ -287,7 +293,7 @@ The quantity used to measure this is the non-Gaussian parameter $\alpha$,
 which is a measure of how far the distribution of motions
 deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
 
-![The non-gaussian of the trimer molecule
+![The non-Gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
@@ -309,7 +315,7 @@ in the same way as the translational heterogeneities,
 describing the deviation of the dynamics
 from those expected by a Gaussian distribution.
 
-![The rotational non-gaussian of the trimer molecule
+![The rotational non-Gaussian of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
 Note that time axis is plotted using a logarithmic
 scale.](../Projects/Dynamics/figures/rotational_alpha.svg){width=80% #fig:rotational_non-gaussian}
@@ -416,7 +422,7 @@ The relaxation time of each individual particle,
 being the time taken to move the characteristic distance,
 is the quantity that is averaged over.
 
-### Single particle structural relaxation
+### Reversible behaviour in structural relaxation
 
 When calculating structural relaxation though
 the intermediate scattering function
@@ -431,48 +437,135 @@ with particles having moved further than this distance
 being considered relaxed.
 Here we are looking for the time taken
 for a particle to first move beyond this characteristic distance.
+This length scale is typically considered
+the distance a particle has to move
+to completely forget it's previous environment.[@cite]
+When comparing the structural relaxation time
+to the relaxation time $\tau_F$ (@fig:first_passage_time)
+there is a distinct different in both the timescale
+and the shape of the two curves,
+with a particularly noticeable deviation in shape
+at $T_m/T = 0.80$.
 
 ![Structural relaxation compared with the first passage time
 ](../Projects/Dynamics/figures/first_passage_time.svg){width=80% #fig:first_passage_time}
+
+The idea that reversible relaxations
+play an important role in dynamics
+is one which has been investigated previously [@deSouza2008]
+and presented as an issue when introducing
+a local structural relaxation quantity. [@Widmer-Cooper2009a]
+@Doliwa2003 find metabasins with radii up to 4 times
+the size of the simulated particles
+which is far larger than a half radius
+which is typically considered as
+the escape from the local environment.
+The return to the previous structure is important
+since once a particle leaves it's local neighbourhood
+it should have no memory of where it was.
+This raises the idea
+that a molecule will make multiple attempts
+at escaping the local environment,
+with many of them failing,
+resulting in a reversed relaxation.
+
+When a particle completely escapes it's local environment
+it is entirely possible to return
+as a part of the random process.
+A particle undergoing a random walk in 2D
+is guaranteed to return to it's original position, [@cite]
+and with a probability of 59% in 3D. [@cite]
+
+The approach to solving these issues is using the last passage time,
+building upon the ideas of @Widmer-Cooper2009a and @deSouza2008
+in acknowledging a particle will undergo reversible relaxations,
+however there is a distance beyond which
+the particle has no 'memory' of it's previous location,
+this distance is the diffusive distance,
+and is $3 \frac{\pi}{2k} \approx 1.2$.
+The last passage time $\tau_L$ is the time
+a particle undergoes a structural relaxation,
+that is moves a distance $\approx 0.4$,
+before it moves beyond the diffusive distance.
+The last passage time $\tau_L$ is far better at describing
+the structural relaxation (@fig:last_passage_time),
+closely following the shape of the structural relaxation timescale.
 
 ![Structural relaxation compared with the last passage time
 ](../Projects/Dynamics/figures/last_passage_time.svg){width=80% #fig:last_passage_time}
 
 ### Single particle diffusion
 
-- Use the length scale associated with the wave-number
-    - multiplied by 3
+The length scale which we have associated with diffusion is $3 \frac{\pi}{2k} \approx 1.2$
+chosen for being close to a value of 1
+with the idea that $D = 1/\tau_D$.
+While this does hold true over the range of temperatures (@fig:diffusive_time)
+the timescale is possibly too small.
 
 ![Diffusion constant compared with the diffusive timescale
 ](../Projects/Dynamics/figures/diffusive_time.svg){width=80% #fig:diffusive_time}
 
 ### Single particle rotational relaxations
 
-- defined based on the distances for the rotational relaxations
-- Additionally an angle corresponding to half the angle between the smaller particles
+Of all the molecular quantities,
+the rotational relaxations are
+the most comparable to the traditional
+dipole relaxation times (@fig:rotational_time).
+The reason for this is that the length scale
+for the dipole relaxation is more well defined
+that either the structural relaxation or the diffusion.
+The rotational relaxation $C_2$ has it's first zero
+at an angular displacement of $\pi/4$,
+which is the angular displacement required for
+the relaxation quantity $\tau_{T4}$.
 
 ![Rotational relaxation times compared with the rotational relaxations
 ](../Projects/Dynamics/figures/rotational_time.svg){width=80% #fig:rotational_time}
 
 ### Summary
 
+As a way of summarising the relationships between
+the traditional quantities and the newer molecular relaxation quantities
+@fig:ratio_comparison shows the temperature dependence of
+the ratios of the old and new quantity.
+At $T_m/T \lt 0.5$ the temperature dependence deviates,
+however at lower temperatures,
+there is a nearly constant relation
+between the two types of relaxation.
+This demonstrates these quantities
+are appropriate for developing our
+understanding of dynamics.
+
 ![Summary of comparisons
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
-## Comparison of relaxation times
+## Understanding Molecular Relaxations
 
-- mean vs harmonic mean
-    - weighting motions differently
-    - which values are small
-- randomly sampling the states
+The molecular relaxation quantities also provide a method
+to calculate the dynamic heterogeneities.
+By finding the ratio between the arithmetic mean and the harmonic mean
+of each molecules relaxation
+we can find the degree of heterogeneities $\alpha_M$
 
-- Diffusion compared to molecular diffusion
-    - distance of 2 is still small compared to diffusive motion
-    - at the onset of diffusion
-    - This observes only a few relaxations
-    - when over a longer time-scale, there are many motions
+$$ \alpha_M = \frac{\langle \tau \rangle}{\left\langle \tau^{-1} \right\rangle^{-1}} $$
 
-## Timescale of Motions
+In effect this weights larger and smaller values differently,
+the arithmetic mean is dominated by the longest relaxation times,
+while the harmonic mean is the inverse,
+dominated by the small relaxation times.
+The heterogeneity of each of the molecular relaxation quantities
+is displayed in @fig:molecular_heterogeneities.
+As the temperature drops,
+the heterogeneities dramatically increase,
+however the quantities don't do so equally.
+Quantities which have a longer length-scale
+demonstrate significantly less heterogeneity,
+with $\tau_F$ having the most while $\tau_D$ has the least.
+The longer the distance travelled
+the more Gaussian the relaxation.
+
+![Heterogeneous dynamics of the molecular relaxations
+](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
 
 The foundation of the Stokes--Einstein--Debye relations
 is Brownian motion,
@@ -485,6 +578,21 @@ only a small number of jumps are observed
 resulting in the observed behaviour.
 The single particle relaxation times
 provide a method to investigate this idea.
+
+- jump dynamics
+- what do they look like
+
+:::{class=subfigure id="molecule_trajectory"}
+
+![Fast Particle](../Projects/Dynamics/figures/molecule_trajectory_fast.svg)
+![Slow Particle](../Projects/Dynamics/figures/molecule_trajectory_slow.svg)
+
+The distinct positions of the fast particle are visible as clustered regions,
+with time spent in each one before a large rearrangement
+which is comprised of both a large translational and rotational motion.
+The slow particle has not moved from it's initial state.
+
+:::
 
 In taking the relaxation time of each particle within a simulation,
 we have the distribution of relaxation times that take place.
@@ -505,7 +613,7 @@ they are rare occurrences,
 so over multiple relaxation times
 their effect averages out.
 
-![Heterogenneous dynamics taking progressivelyy more relaxation
+![Heterogeneous dynamics taking progressively more relaxation
 times](../placeholder_figure.png){width=80% #fig:jump_heterogeneities}
 
 So here we do observe an increasing length scale
