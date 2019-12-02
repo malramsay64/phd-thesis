@@ -631,16 +631,30 @@ Is the different regions of dynamics
 responsible for the observed decoupling
 of rotational and translational motion?
 
-### Reversible relaxations
+In the picture of the decoupling of diffusion and rotation @fig:trans_rot_otp
+there are quantities on two different length scales,
+the diffusion measured over a long distance,
+while the rotation is a quantity over a short distance.
+Additionally, as we have seen in @fig:molecular_heterogeneities,
+the way a quantity is averaged, can play a role
+in the resulting value,
+with fast particles dominating the diffusion
+while slow particles dominate the structural relaxation
+and rotational relaxation.
 
-- In the structural relaxation there are bumps
-    - this indicates there are large reversible fluctuations
-    - the single particle structural relaxation doesn't account for this
-
-- Once a particle leaves it's local neighbourhood it should have no memory of where it
-  was
-- There is some reversibility with brownian motion
-- Relaxation time is the last time it undergoes structural relaxation before diffusion
+This also answers a question posed by @Ahn2013,
+"Are rare, long waiting times between rearrangement events
+responsible for the slowdown of dynamics at the glass transition?"
+Although Betteridge's law of Headlines @Betteridge2009
+would imply this is definitively not the case,
+it seems that it depends.
+For long timescale quantities like the diffusion constant,
+this is likely not the case,
+since it is mostly the fastest particles
+which contribute to this quantity,
+however the structural and dipole relaxations
+are likely to be affected by the prevalence
+of long times between rearrangement events.
 
 ## Possible Investigations
 
