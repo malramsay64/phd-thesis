@@ -184,7 +184,7 @@ Despite many experiments [@cite] searching for
 a growing length scale as the temperature drops,
 there has been no data to suggest this is the case.
 
-:::{class=subfigure id="potential_energy}
+:::{class=subfigure id="potential_energy"}
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
@@ -200,7 +200,8 @@ it becomes possible to go around.
 
 :::
 
-![A representation of the potential energy landscape for a liquid.]{placeholder_figure.pg}
+![A representation of the potential energy landscape for a
+liquid.](placeholder_figure.png){#fig:potential_energy_landscape}
 
 Further evidence for the idea that the structure
 plays a role in the resulting dynamics
@@ -241,7 +242,7 @@ Experimental evidence of this is displayed in @fig:trans_rot_otp
 which is supported by additional studies.
 
 ![Translational an rotational coupling within ortho-terphenyl
-breaks down below 290K @Chang1994](placeholder_figure.png){fig:trans_rot_otp}
+breaks down below 290K @Chang1994](../placeholder_figure.png){#fig:trans_rot_otp}
 
 The idea that the rotational and translational diffusion constants
 were proportional to each other
