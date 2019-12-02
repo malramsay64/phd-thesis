@@ -528,7 +528,7 @@ As a way of summarising the relationships between
 the traditional quantities and the newer molecular relaxation quantities
 @fig:ratio_comparison shows the temperature dependence of
 the ratios of the old and new quantity.
-At $T_m/T \lt 0.5$ the temperature dependence deviates,
+At $T_m/T < 0.5$ the temperature dependence deviates,
 however at lower temperatures,
 there is a nearly constant relation
 between the two types of relaxation.
