@@ -579,13 +579,37 @@ resulting in the observed behaviour.
 The single particle relaxation times
 provide a method to investigate this idea.
 
-- jump dynamics
-- what do they look like
+The typical picture of jump dynamics
+is that of the rotational motion,
+where the quantity $\tau_1/\tau_2$ has a value of 4
+when the motion is comprised of small angular jumps,
+and reduces in value to 1 when
+the motion is comprised of large angular jumps. [@Kivelson1970]
+This is depicted in @fig:rotational_jumps
+which has both the traditional $\tau_1/\tau_2$ quantity
+in addition to the ratio of the molecular relaxation quantities $\tau_{T2}/\tau_{T4}$.
+These both display motion of small jumps,
+which becomes large jumps as the temperature drops.
+
+![jump dynamics](../Projects/Dynamics/figures/rotational_jumps.svg){width=80% #fig:rotational_jumps}
+
+This describes angular jumps of the rotations,
+however what does this actually look like
+and does it also occur with translations?
+@Fig:molecule_trajectory shows the translational and rotational displacement
+of two molecules at each time point.
+For a fast molecule (@fig:molecule_trajectory_fast)
+there is some time spent in the initial cage,
+before a large jump including both angular and translational displacement
+puts it within a new cage.
+This is in contrast to the slow molecule (@fig:molecule_trajectory_slow)
+which spends all the time within the initial cage,
+however the size of that cage is significantly larger.
 
 :::{class=subfigure id="molecule_trajectory"}
 
-![Fast Particle](../Projects/Dynamics/figures/molecule_trajectory_fast.svg)
-![Slow Particle](../Projects/Dynamics/figures/molecule_trajectory_slow.svg)
+![Fast Particle](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=48% #fig:molecule_trajectory_fast}
+![Slow Particle](../Projects/Dynamics/figures/molecule_trajectory_slow.svg){width=48% #fig:molecule_trajectory_slow}
 
 The distinct positions of the fast particle are visible as clustered regions,
 with time spent in each one before a large rearrangement
