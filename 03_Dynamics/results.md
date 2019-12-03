@@ -183,6 +183,12 @@ What is particularly interesting about this behaviour
 is that it occurs above the melting point,
 that is, in a liquid not supercooled.
 
+- Fit -> degree of non-arrhenius
+- Predict glass transition temperature
+- Pressure dependence
+    - [@Ediger1996]
+    - Does the fragility change with compression?
+
 ### Contribution of Individual Particles
 
 The intermediate scattering function
@@ -273,6 +279,12 @@ over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
 
+- the dynamics are similar to existing systems
+- not apparent pathological 2D behaviour
+- Above melting point
+- Also well above 1.2 Tg
+    - product of simulation?
+
 ## Dynamic heterogeneities
 
 Dynamic heterogeneities have been described qualitatively,
@@ -331,73 +343,15 @@ The calculations of the non-Gaussian parameter [@Donati1999;@Horbach1998]
 typically have differing behaviour like in @fig:non-gaussian,
 so it is interesting that the rotations all obey this single "master curve".
 
-### Rotational and Translational Heterogeneity
-
-With the non-Gaussian identifying the presence of heterogeneous dynamics
-in both translational and rotational motion,
-an integral part of understanding this
-is how these two types of motion are combined.
-There are three different descriptions of this
-
-1. No relation between translational and rotational motion,
-2. coincidence, where the rotational and translational motion
-  happen to have similar timescales with no connection between them,
-3. correlation, where the timescales of both motions are similar for each molecule
-  possibly as a result of the local environment, and
-4. coupling, where rotations are required for translations to occur.
-
-As we go from 1 to 4,
-the requirements for establishing these become more stringent.
-From the analysis of the translational and rotational heterogeneities,
-with each having a similar timescale,
-it is at least a coincidence that the timescales are the same.
-This is not a very powerful statement,
-which requires additional analysis.
-Based on work by @Faraone2003 on water,
-the coupling parameter $\gamma$
-
-$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
-    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
-
-provides a method of demonstrating correlation
-between the translational and rotational motion.
-The values of $\gamma$ are large
-for molecules with large values of $\Delta r \Delta \theta$,
-with both components of the motion contributing.
-In @fig:gamma the coupling parameter is very
-similar to the non-Gaussian parameters,
-indicating that highly mobile molecules
-have both degrees of freedom available to them.
-This provides the evidence to establish
-there is correlation between
-rotational and translational motion.
-
-![A plot of the coupling parameter $\gamma$
-](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
-
-An alternative way of representing this correlation of the motion
-is to plot the spatial distribution of the mobility (@fig:spatial_heterogeneities).
-The plot shows the mobile regions contain
-both types of motion,
-indicating that the local environment is important
-in enabling the motion to occur.
-
 ![Map of the translational and rotational
 heterogeneities](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
 
-Comparing the timescale of the heterogeneities,
-the rotational heterogeneities have their maximum
-slightly before the translational heterogeneities.
-Does this mean that rotational motion
-is causing the translational motion?
-This question, which would mean there is coupling
-between the rotations and translations
-requires additional analysis.
+- heterogeneities appear related to structure
+    - structure is a minimum in the potential energy landscape
+- co-location in figure
+- Related to structure @Widmer-Cooper2004
 
-![Comparison of the different
-heterogeneities](../placeholder_figure.png){width=80% #fig:heterogeneities}
-
-## Molecular Relaxations
+## Individual Molecule Relaxations
 
 The relaxations we have been calculating
 are characteristic times for
@@ -411,6 +365,8 @@ having characteristic timescales for every particle
 gives us more information on how
 the different relaxations are linked
 for each individual particle.
+
+- described as molecular relaxations
 
 This builds upon the ideas of Widmer-Cooper and Harrowell [@Widmer-Cooper2009]
 in tying the motion of a particle
@@ -539,7 +495,15 @@ understanding of dynamics.
 ![Summary of comparisons
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
-## Understanding Molecular Relaxations
+- valid measure of relaxation
+    - comparable to traditional quantities
+
+### Heterogeneities in Molecular Relaxations
+
+- Distribution of relaxation times
+
+![Histogram displaying the distribution of the relaxation times
+for the last passage time.](../placeholder_figure.png){width=80% #fig:relaxation_distribution}
 
 The molecular relaxation quantities also provide a method
 to calculate the dynamic heterogeneities.
@@ -566,6 +530,8 @@ the more Gaussian the relaxation.
 
 ![Heterogeneous dynamics of the molecular relaxations
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
+
+## Jump Dynamics
 
 The foundation of the Stokes--Einstein--Debye relations
 is Brownian motion,
@@ -680,28 +646,106 @@ however the structural and dipole relaxations
 are likely to be affected by the prevalence
 of long times between rearrangement events.
 
+- Jump dynamics solve SED
+    - just use larger jumps
+    - Turns out this is not the case
+    - @Kawasaki2019 also observes similar phenomenon
+- more to this problem
+
+![Comparison of the structural relaxation vs the
+rotational and translational diffusion.
+The range of rotational metrics describe
+different measures of rotational diffusion.
+](../placeholder_figure.png){width=80% #fig:trans_rot_trimer}
+
+
+## Coupling of translational and rotational motion
+
+There are two main assumptions that the Stokes--Einstein--Debye relations make.
+
+1. Small motions
+2. Translations and rotations independent
+
+The first of these assumptions was addressed above.
+So now we address the second.
+
+- Decoupling at macro-scale
+    - different temperature dependences
+- on the micro-scale
+    - idea that individual motions are coupled
+
+### Rotational and Translational Heterogeneity
+
+With the non-Gaussian identifying the presence of heterogeneous dynamics
+in both translational and rotational motion,
+an integral part of understanding this
+is how these two types of motion are combined.
+There are three different descriptions of this
+
+1. No relation between translational and rotational motion,
+2. coincidence, where the rotational and translational motion
+  happen to have similar timescales with no connection between them,
+3. correlation, where the timescales of both motions are similar for each molecule
+  possibly as a result of the local environment, and
+4. coupling, where rotations are required for translations to occur.
+
+As we go from 1 to 4,
+the requirements for establishing these become more stringent.
+From the analysis of the translational and rotational heterogeneities,
+with each having a similar timescale,
+it is at least a coincidence that the timescales are the same.
+This is not a very powerful statement,
+which requires additional analysis.
+Based on work by @Faraone2003 on water,
+the coupling parameter $\gamma$
+
+$$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
+    {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
+
+provides a method of demonstrating correlation
+between the translational and rotational motion.
+The values of $\gamma$ are large
+for molecules with large values of $\Delta r \Delta \theta$,
+with both components of the motion contributing.
+In @fig:gamma the coupling parameter is very
+similar to the non-Gaussian parameters,
+indicating that highly mobile molecules
+have both degrees of freedom available to them.
+This provides the evidence to establish
+there is correlation between
+rotational and translational motion.
+
+![A plot of the coupling parameter $\gamma$
+](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
+
+An alternative way of representing this correlation of the motion
+is to plot the spatial distribution of the mobility (@fig:spatial_heterogeneities).
+The plot shows the mobile regions contain
+both types of motion,
+indicating that the local environment is important
+in enabling the motion to occur.
+
+Comparing the timescale of the heterogeneities,
+the rotational heterogeneities have their maximum
+slightly before the translational heterogeneities.
+Does this mean that rotational motion
+is causing the translational motion?
+This question, which would mean there is coupling
+between the rotations and translations
+requires additional analysis.
+
+![Comparison of the different
+heterogeneities](../placeholder_figure.png){width=80% #fig:heterogeneities}
+
+- Length scale of heterogeneities
+
+### Coupling of molecular relaxation times
+
+- Rotational distribution at first and last passage time
+    - rotations responsible for irreversible motions
+    - put another way, rotations allow the escape of the cage
+
 ## Possible Investigations
-
-- Kauzmann temperature
-    - Have potential energy of the equilibrium liquid and crystal states
-    - What is the difference?
-    - Can this be used to find an estimate, or bounds on
-        - the glass transition temperature
-        - the Kauzmann temperature
-        - any other properties
-
-- Fit non-exponential relaxations
-    - Kohlrausch function $\theta(t) = \exp(- (\frac{t}{\tau})^\beta$ where $0 < \beta \le 1$
-    - typically the change in function is a result of multiple processes
-
-- What is the glass transition temperature?
-    - A $T_g$ of 1.2 would indicate glassy dynamics at $T=1.45$.
-    - Is 'supercooled liquid' more about dynamics above a glass transition temperature
-      than below a melting point?
-
-- Rotational diffusion constant
-    - This is the MSD of the rotations
-    - Plotting this value could be rather interesting
 
 - Spatial correlation
     - How are the fastest and slowest particles correlated with each other spatially
@@ -723,24 +767,6 @@ of long times between rearrangement events.
     - See the papers on following tubes, 1D dynamics
     - Can rotations do the same thing
         - no longer getting motion which is random because of collective dynamics
-
-- Brownian dynamics breaks down because there is collective motion
-    - length scale of collective motion?
-    - why haven't we observed it?
-
-- Pressure dependence
-    - [@Ediger1996]
-    - Does the fragility change with compression?
-
-- Step dynamics / hops
-    - can this be ignored
-    - over what timescales can it be ignored
-    - how many hops for the distribution to be as expected
-
-- Scaling of Viscosity (structural relaxation)
-    - are there any alternative theories / theoretical results that fit
-        - Uniform local volume expansion [@Dyre1996]
-        - $$\eta = \eta_{0} \left( \frac{C}{G_{\inf} (T)} \right) $$
 
 The dynamics studied here are primarily above the melting point,
 however the liquid displays behaviour normally attributed
