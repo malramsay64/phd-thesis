@@ -790,7 +790,7 @@ and worth investigating further.
 rotational and translational diffusion.
 The range of rotational metrics describe
 different measures of rotational diffusion.
-](../placeholder_figure.png){width=80% #fig:trans_rot_trimer}
+](../Projects/Dynamics/figures/trans_rot_trimer.svg){width=80% #fig:trans_rot_trimer}
 
 ### Conclusion
 
@@ -912,4 +912,4 @@ the particle has moved to a new position.
 
 ![plotting the distribution of rotational motion
 at the first and last passage times.
-](../placeholder_figure.png){width=80% #fig:rotation_last_passage}
+](../Projects/Dynamics/figures/angular_displacement.svg){width=80% #fig:rotation_last_passage}
