@@ -20,8 +20,6 @@ and presented in @tbl:melting_points.
 
 Table: The melting points of the trimer molecule for different pressures. {#tbl:melting_points}
 
-## Comparison with other systems
-
 Much of the theory of dynamics in molecular systems
 has been built around the
 Stokes-Einstein relation [@Einstein1956]
@@ -37,10 +35,14 @@ $D_r$ is the diffusion constant of the rotational degrees of freedom,
 $\eta$ is the shear viscosity, and
 $T$ is the temperature.
 
-## Structural Relaxation
+## Standard Dynamics
 
-The measurement of structural relaxation in two dimensions
-is the same as for three dimensional systems,
+- Demonstrate similar to other fragile liquids
+- No weird issue with 2D
+
+### Structural Relaxation
+
+The structural relaxation is measured
 using the intermediate scattering function (@eq:intermediate_scattering_function).
 To compute the values monitoring
 the structural relaxation,
@@ -181,13 +183,51 @@ with there being a distinct shift in the temperature dependence
 above and below $T_m/T$ of 0.8.
 What is particularly interesting about this behaviour
 is that it occurs above the melting point,
-that is, in a liquid not supercooled.
+that is, in a liquid that is not supercooled.
+The degree to which this behaviour is non-Arrhenius
+can be determined by fitting the Vogel--Tamman--Fulcher (VTF) relations
+which are shown as a black line on the figure.
+With the analytical description of the curve
+it is possible to extrapolate to
+the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
+This gives the estimations of the glass transition temperature
+which are shown in @tbl:glass_transition_temp.
+Also notable about these temperatures
+is that the temperature typically cited
+for the onset of dynamic heterogeneities, $1.2\ T_g$, [@cite]
+is close to the estimated melting point,
+particularly for a pressure of 1.00.
+This raises an important question,
+is the fragility a feature of the supercooled liquid,
+is it a feature of approaching the glass transitions,
+or something else entirely?
 
-- Fit -> degree of non-arrhenius
-- Predict glass transition temperature
-- Pressure dependence
-    - [@Ediger1996]
-    - Does the fragility change with compression?
+Pressure | $T_g$ | $1.2 T_g$ | $T_m$
+---------|-------| --------- | ------
+1.00     | 0.28  | 0.34      | 0.36
+13.50    | 1.05  | 1.26      | 1.35
+
+Table: Estimations of the glass transition temperature $T_g$
+for each pressure based on fitting the
+Vogel--Tammann--Fulcher relation. {#tbl:glass_transition_temp}
+
+The VTF relations also provide a method of finding the fragility $m$,
+measuring how far the dynamics deviate from Arrhenius,
+which has values ranging from $\approx 16$
+for strong liquids and exceeds 200 for fragile liquids. [@Meenakshisundaram2019]
+The structural relaxation has a fragility $m=220$,
+well into the region of the fragile liquids.
+This exceeds the highest fragility $m=188$ found
+for a trimer molecules by @Meenakshisundaram2019,
+who used a machine learning algorithm
+to design the most fragile molecules.
+While the results are not directly comparable
+on account of being 3D compared to our 2D simulations
+this molecule is amongst the best simulated glass formers.
+The determination of a large fragility
+is supported by the dynamic behaviour
+which is representative of fragile liquids,
+namely the step relaxation process (@fig:intermediate_scattering_function).
 
 ### Contribution of Individual Particles
 
@@ -212,7 +252,7 @@ The large difference between the two types of relaxation
 is that the two step relaxation process
 is much more noticeable @fig:scattering_function.
 
-## Diffusion
+### Diffusion
 
 The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
 which over long enough timescales because of the collisions with other particles
@@ -252,7 +292,7 @@ can be interpreted as the
 normalised by the melting point for a range of pressures.
 ](../Projects/Dynamics/figures/diffusion_constant_summary.svg){width=80% #fig:diffusion_constant}
 
-## Rotational Relaxations
+### Rotational Relaxations
 
 While it is typical to consider translational diffusion constants,
 instead of a rotational diffusion constant $D_r$,
@@ -279,17 +319,37 @@ over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
 
-- the dynamics are similar to existing systems
-- not apparent pathological 2D behaviour
-- Above melting point
-- Also well above 1.2 Tg
-    - product of simulation?
+### Summarising Standard Dynamics
+
+The dynamic behaviour of the trimer molecule
+reflects that of a highly fragile liquid,
+displaying dynamic properties
+that fit well with existing theories of dynamics,
+namely the Vogel--Tammann--Fulcher relation
+which extrapolates a fragility $m=220$.
+Additionally the dynamic behaviour
+is indicative of a fragile liquid,
+the two-step relaxation in
+the structural relaxation (@fig:structural_relaxation)
+and the rotational relaxation (@fig:rotational_relaxation).
+This is also supported by the plateau region
+in the mean squared displacement (@fig:msd).
+These behaviours which have also been observed
+in both simulations [@cite] and experiments [@cite] of fragile liquids,
+demonstrate that this molecule is a good candidate
+for further investigation of it's dynamic behaviour
+and there are no issues dealing with a simulation in 2D.
+
+The only unusual property is the onset of this fragility
+well above the melting point.
+This is likely a result of the incredibly slow dynamics at the melting point
+the with a timescale barely accessible to simulation.
 
 ## Dynamic heterogeneities
 
 Dynamic heterogeneities have been described qualitatively,
 with features of the previous dynamic quantities
-noted as a characteristic sign of heterogeneous dynamics.
+noted as a characteristic sign of supercooled liquids.
 However to discuss them,
 they need to be adequately measured.
 
@@ -320,8 +380,6 @@ the value of the maximum,
 the time at which the maximum occurs
 becomes later moving from high temperature to low.
 
-### Rotational Heterogeneity
-
 The rotational heterogeneities can be calculated
 in the same way as the translational heterogeneities,
 describing the deviation of the dynamics
@@ -343,15 +401,40 @@ The calculations of the non-Gaussian parameter [@Donati1999;@Horbach1998]
 typically have differing behaviour like in @fig:non-gaussian,
 so it is interesting that the rotations all obey this single "master curve".
 
-![Map of the translational and rotational
-heterogeneities](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
+In the study of translational heterogeneities
+there has been and understanding
+that the heterogeneities are related to the structure,
+having a spatial component to their distribution.
+The same question could be asked for
+the distribution or rotational heterogeneities.
+@Fig:spatial_heterogeneities displays the spatial distribution
+of both rotational and translational heterogeneities.
+It shows that there is a spatial distribution
+for both the rotations and the translations,
+and more interesting is that
+both distributions appear to overlap.
+That is regions with large translational motions
+also have large rotational motions,
+and regions of small translational motion
+also see small rotational motions.
+This co-location of both translational and rotational motion
+makes sense from a potential energy surface description of the structure.
+Regions where there are low barriers for movement,
+will make use of all the degrees of freedom available to them,
+giving rise to the results we observe.
 
-- heterogeneities appear related to structure
-    - structure is a minimum in the potential energy landscape
-- co-location in figure
-- Related to structure @Widmer-Cooper2004
+![Map of the spatial distribution
+of translational and rotational heterogeneities
+of a simulation at T=1.35 and P=13.50
+at the time of the maximum of the translational non-Gaussian.
+The translational motion is denoted by an arrow depicting
+the size and the direction of the motion,
+while the rotational motion is depicted by ...TODO...
+Areas which are white are indicative of no motion,
+while coloured areas have lots of motion.
+](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
 
-## Individual Molecule Relaxations
+## Relaxations of Individual Molecules
 
 The relaxations we have been calculating
 are characteristic times for
@@ -365,18 +448,20 @@ having characteristic timescales for every particle
 gives us more information on how
 the different relaxations are linked
 for each individual particle.
+This idea of applying a relaxation
+to each individual particle
+was introduced by @Widmer-Cooper2009
+for the structural relaxation.
+Here we build upon this idea
+developing relaxation times
+for all the dynamics quantities.
 
-- described as molecular relaxations
-
-This builds upon the ideas of Widmer-Cooper and Harrowell [@Widmer-Cooper2009]
-in tying the motion of a particle
-at a particular length scale to relaxation.
-In this case, though,
-rather than defining a relaxation function
-with a characteristic time,
-The relaxation time of each individual particle,
-being the time taken to move the characteristic distance,
-is the quantity that is averaged over.
+One of the key differences introduced
+is rather than defining a relaxation function
+which describes the total relaxation,
+the relaxation of each particle is considered.
+With the characteristic timescale
+taken from the average over all the particles.
 
 ### Reversible behaviour in structural relaxation
 
@@ -495,21 +580,34 @@ understanding of dynamics.
 ![Summary of comparisons
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
-- valid measure of relaxation
-    - comparable to traditional quantities
-
 ### Heterogeneities in Molecular Relaxations
 
-- Distribution of relaxation times
+One of the benefits of describing relaxation times
+for each individual molecule
+is it provides methods of probing
+the distribution of timescales
+over which these processes occur.
+This provides methods of understanding
+the effect of unusually slow events
+on the overall dynamics.
+
+The distribution of the last passage time $\tau_L$
+is given in @fig:relaxation_distribution.
+As the temperature drops,
+the proportion of relaxations
+which are far longer than the mean increases,
+which results in raising the mean.
 
 ![Histogram displaying the distribution of the relaxation times
 for the last passage time.](../placeholder_figure.png){width=80% #fig:relaxation_distribution}
 
-The molecular relaxation quantities also provide a method
-to calculate the dynamic heterogeneities.
-By finding the ratio between the arithmetic mean and the harmonic mean
-of each molecules relaxation
-we can find the degree of heterogeneities $\alpha_M$
+It is possible to measure
+the deviation of these relaxations from Gaussian
+by finding the ratio between
+the arithmetic mean and
+the harmonic mean
+of each molecules relaxation.
+Giving a metric for the dynamic heterogeneities $\alpha_M$
 
 $$ \alpha_M = \frac{\langle \tau \rangle}{\left\langle \tau^{-1} \right\rangle^{-1}} $$
 
@@ -531,17 +629,18 @@ the more Gaussian the relaxation.
 ![Heterogeneous dynamics of the molecular relaxations
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
 
+## Conclusion of
+
 ## Jump Dynamics
 
-The foundation of the Stokes--Einstein--Debye relations
-is Brownian motion,
-that is the motion of the particles occurs through
-a sequence of small independent jumps.
+A foundational assumption of the Stokes--Einstein--Debye relations
+is that the particles undergo Brownian motion,
+that is, movement occurs as a sequence of small independent jumps.
 What if the issue with dynamic heterogeneities
 and non-Gaussian behaviour,
-is rather than observing many jumps, hence Brownian motion,
-only a small number of jumps are observed
-resulting in the observed behaviour.
+is rather than observing many jumps,
+over the timescale of the relaxation
+only a small number of jumps are observed.
 The single particle relaxation times
 provide a method to investigate this idea.
 
@@ -646,11 +745,46 @@ however the structural and dipole relaxations
 are likely to be affected by the prevalence
 of long times between rearrangement events.
 
-- Jump dynamics solve SED
-    - just use larger jumps
-    - Turns out this is not the case
-    - @Kawasaki2019 also observes similar phenomenon
-- more to this problem
+### Do Jump Dynamics solve Stokes--Einstein--Debye
+
+The result that the changing length scale of a measurement
+has an effect on the resulting Stokes--Einstein--Debye relation
+has also been observed in models of water.
+@Kawasaki2019 find that changing degree of the Legendre polynomial
+used for the rotational relaxation,
+changes the relationship with the viscosity.
+The first order polynomial corresponding to the largest motion
+is similar to the diffusion constant,
+while the sixth order polynomial, corresponding to the smallest motion
+has a temperature dependence similar to the viscosity.
+This provides additional support to the hypothesis
+that the jump dynamics are an important part
+of understanding the breakdown in SED.
+
+When dealing with translation motion
+we use the mean squared displacement
+to describe long timescale motion,
+taking the limit as the time goes to infinity.
+This allows the sampling of motion
+allowing many relaxations to take place,
+so the jump dynamics are no longer a concern.
+It is possible to also describe
+the rotational diffusion in this way
+
+$$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$
+
+Comparing the rotational diffusion constant
+to the rotational diffusion constant
+and reproducing @fig:trans_rot_otp,
+we get @fig:trans_rot_trimer.
+This shows that jump dynamics
+are not the only cause for
+the breakdown of SED.
+The result in @fig:trans_rot_trimer
+is also produced by @Kawasaki2019
+simulating water in 3D,
+which makes this result even more interesting
+and worth investigating further.
 
 ![Comparison of the structural relaxation vs the
 rotational and translational diffusion.
@@ -658,43 +792,92 @@ The range of rotational metrics describe
 different measures of rotational diffusion.
 ](../placeholder_figure.png){width=80% #fig:trans_rot_trimer}
 
+### Conclusion
+
+A degree of the dynamic heterogeneities
+can be explained by the dynamics
+no longer adhering to Brownian motion,
+with the dynamics at short time scales
+dominated by the motion of large jumps.
+This breaks many of the assumptions
+which rely on the dynamics being Brownian in nature.
+The jumps are present in both
+the rotational and translational motion
+and can be attributed to
+motion associated with breaking out of
+a local potential energy minimum
+and moving to another.
+
+Increasing the length scale
+of the motion measured
+reduces the effect of the jump dynamics.
+With lower temperatures requiring longer length scales.
+It is possible that the length scale
+of the dynamic heterogeneities
+is more related to the size of the jumps
+rather than the size of the heterogeneous regions
+as has been hypothesised.
+As we go down in temperature
+the length scale required
+to return to Brownian motion increases.
+
+While the transition to jump dynamics
+can explain some of the unusual observations in supercooled liquids
+it doesn't explain everything.
+When we remove the effect of jump dynamics
+using the long time diffusion constants
+for both rotational and translational motion,
+we still observe decoupling of these motions.
+This indicates there is still more to understand.
+
 ## Coupling of translational and rotational motion
 
-There are two main assumptions that the Stokes--Einstein--Debye relations make.
+Two of the main assumptions made in the formulation of
+the Stokes--Einstein--Debye relations are;
 
-1. Small motions
-2. Translations and rotations independent
+1. the motion is comprised of many small independent steps, and
+2. translational and rotational motions are independent.
 
-The first of these assumptions was addressed above.
-So now we address the second.
+These assumptions stem from the formulation
+from Brownian motion.
+@Sec:jump_dynamics investigates the first of these assumptions,
+so here we look towards the second.
+@Fig:trans_rot_trimer depicts a decoupling
+of the translational and rotational diffusion constants.
+This is a macro-scale effect,
+observing the different temperature dependence
+in overall dynamics of the liquid.
+When looking at the micro-scale, that is,
+the motions of individual particles within a simulation.
+There appears to be a distinct relationship
+between the rotational and translational motions
+which is represented in @fig:spatial_heterogeneities as
+the co-location of rotationally and translationally mobile regions.
 
-- Decoupling at macro-scale
-    - different temperature dependences
-- on the micro-scale
-    - idea that individual motions are coupled
-
-### Rotational and Translational Heterogeneity
-
-With the non-Gaussian identifying the presence of heterogeneous dynamics
-in both translational and rotational motion,
-an integral part of understanding this
-is how these two types of motion are combined.
-There are three different descriptions of this
+In investigating the coupling of translational and rotational motion
+there are four different levels of confidence
+in the coupling of rotational and translational motion.
 
 1. No relation between translational and rotational motion,
 2. coincidence, where the rotational and translational motion
   happen to have similar timescales with no connection between them,
-3. correlation, where the timescales of both motions are similar for each molecule
-  possibly as a result of the local environment, and
+3. correlation, where the regions of large rotational motions
+  are also the regions of large translational motions, and
 4. coupling, where rotations are required for translations to occur.
 
 As we go from 1 to 4,
 the requirements for establishing these become more stringent.
-From the analysis of the translational and rotational heterogeneities,
-with each having a similar timescale,
-it is at least a coincidence that the timescales are the same.
-This is not a very powerful statement,
-which requires additional analysis.
+The analysis of the translational and rotational heterogeneities
+(@fig:non-gaussian;@fig:rotational_non-gaussian)
+provide enough data for the coincidence.
+Each of the heterogeneities
+have similar shape and timescales.
+Adding @fig:spatial_heterogeneities
+it is possible to consider correlation.
+However, coupling,
+where one motion allows the other to occur
+requires additional analysis.
+
 Based on work by @Faraone2003 on water,
 the coupling parameter $\gamma$
 
@@ -717,56 +900,16 @@ rotational and translational motion.
 ![A plot of the coupling parameter $\gamma$
 ](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
 
-An alternative way of representing this correlation of the motion
-is to plot the spatial distribution of the mobility (@fig:spatial_heterogeneities).
-The plot shows the mobile regions contain
-both types of motion,
-indicating that the local environment is important
-in enabling the motion to occur.
-
-Comparing the timescale of the heterogeneities,
-the rotational heterogeneities have their maximum
-slightly before the translational heterogeneities.
-Does this mean that rotational motion
-is causing the translational motion?
-This question, which would mean there is coupling
-between the rotations and translations
-requires additional analysis.
-
-![Comparison of the different
-heterogeneities](../placeholder_figure.png){width=80% #fig:heterogeneities}
-
-- Length scale of heterogeneities
-
 ### Coupling of molecular relaxation times
 
-- Rotational distribution at first and last passage time
-    - rotations responsible for irreversible motions
-    - put another way, rotations allow the escape of the cage
+Another reasoning about the coupling
+is looking at the effect of rotation
+at the first and the last passage time.
+For the first passage time,
+the motion in reversible,
+while at the last passage time,
+the particle has moved to a new position.
 
-## Possible Investigations
-
-- Spatial correlation
-    - How are the fastest and slowest particles correlated with each other spatially
-    - Does this change as a function of temperature?
-    - Does this change as we increase/decrease the timescale?
-    - Ref [@Kob1997; @Donati1999]
-
-- Onset of activated process?
-
-- Spatial heterogeneities
-    - How long to remove these
-    - Measure of heterogeneous dynamics $\alpha$ follows a single curve
-        - the difference is where the relaxation tips over
-        - What causes the 'master curve'?
-        - What is the cause of the tipping point?
-        - What prevents it from occurring earlier?
-
-- Over the timescale of heterogeneities there is a direction to the motion
-    - See the papers on following tubes, 1D dynamics
-    - Can rotations do the same thing
-        - no longer getting motion which is random because of collective dynamics
-
-The dynamics studied here are primarily above the melting point,
-however the liquid displays behaviour normally attributed
-to a supercooled liquid while above the melting point.
+![plotting the distribution of rotational motion
+at the first and last passage times.
+](../placeholder_figure.png){width=80% #fig:rotation_last_passage}
