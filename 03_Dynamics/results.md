@@ -219,7 +219,7 @@ which over long enough timescales because of the collisions with other particles
 will move away from its initial position at a linear rate
 where the diffusion constant $D$ has the relation
 
-$$ D = \frac{1}{4}\lim_{t->\inf} \langle \Delta \vect{r}^2 \rangle $$
+$$ D = \frac{1}{4}\lim_{t->\infty} \langle \Delta \vect{r}^2 \rangle $$
 
 Plotting the Mean Squared Displacement (MSD) of the trimer molecule
 gives the image below.
