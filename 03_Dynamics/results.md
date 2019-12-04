@@ -429,8 +429,8 @@ When a particle completely escapes it's local environment
 it is entirely possible to return
 as a part of the random process.
 A particle undergoing a random walk in 2D
-is guaranteed to return to it's original position, [@cite]
-and with a probability of 59% in 3D. [@cite]
+is guaranteed to return to it's original position, [@Polya1921]
+and with a probability of 34% in 3D. [@Watson1939;@Weisstein]
 
 The approach to solving these issues is using the last passage time,
 building upon the ideas of @Widmer-Cooper2009a and @deSouza2008
