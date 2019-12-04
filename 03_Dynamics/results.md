@@ -658,7 +658,6 @@ The range of rotational metrics describe
 different measures of rotational diffusion.
 ](../placeholder_figure.png){width=80% #fig:trans_rot_trimer}
 
-
 ## Coupling of translational and rotational motion
 
 There are two main assumptions that the Stokes--Einstein--Debye relations make.
