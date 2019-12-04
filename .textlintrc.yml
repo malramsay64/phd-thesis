@@ -25,6 +25,8 @@ rules:
     terms:
       - HOOMD-blue
       - [hoomd, HOOMD-blue]
+      - Vogel--Tammann--Fulcher
+
   alex: false
   "write-good": true,
   "unexpanded-acronym": true
