@@ -37,8 +37,10 @@ $T$ is the temperature.
 
 ## Standard Dynamics
 
-- Demonstrate similar to other fragile liquids
-- No weird issue with 2D
+Analysing the behaviour of the trimer molecule
+using the standard dynamic quantities
+provides a method of comparing these results
+to both existing experiments and simulations.
 
 ### Structural Relaxation
 
@@ -629,8 +631,6 @@ the more Gaussian the relaxation.
 ![Heterogeneous dynamics of the molecular relaxations
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
 
-## Conclusion of
-
 ## Jump Dynamics
 
 A foundational assumption of the Stokes--Einstein--Debye relations
@@ -769,9 +769,15 @@ This allows the sampling of motion
 allowing many relaxations to take place,
 so the jump dynamics are no longer a concern.
 It is possible to also describe
-the rotational diffusion in this way
+the rotational diffusion using the Einstein formalism
 
 $$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$
+
+@Kim2015 compares the Einstein and the Debye formulations
+of rotational dynamics in colloidal systems,
+finding no difference between the formalisms.
+However they make no mention of jump dynamics,
+so it is possible these didn't play much of a role.
 
 Comparing the rotational diffusion constant
 to the rotational diffusion constant
