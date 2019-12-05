@@ -1,6 +1,6 @@
 # Introduction
 
-The Stokes-Einstein-Debye models (@sec:???) are suitable for describing
+The Stokes-Einstein-Debye models (@sec:introduction-to-dynamics) are suitable for describing
 the dynamic properties of most liquids, however,
 there are instances in supercooled liquids,
 where the Stokes-Einstein-Debye relations
@@ -149,24 +149,42 @@ $$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
 for the 3D case.
 Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
 
-- TODO Characteristic shape of the diffusion constant
+The Mean-Squared-Displacement (MSD) has a characteristic shape,
+with the initial section representing the ballistic motion
+before particles have collided with any other.
+Since the particles are moving freely,
+the MSD has increases as a power law of order 2.
+This ballistic region transitions into a diffusive region
+where the dynamics are governed by many small steps.
+This diffusive regime defines the diffusion constant,
+so the calculation of the diffusion constant
+is often written as
 
-This behaviour is consistent with experimental results
-where \ce{H1}-NMR is used to measure the diffusion constant
-[@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997].
+$$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
+
+reflecting the long timescale behaviour.
+
+The Diffusion is measured in experimental systems
+using \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
+which allows for direct comparison with simulation.
 
 ## Rotational Diffusion
 
-Rotational diffusion can be treated
+There are two different formalisms of estimating rotational diffusion $D_r$,
+referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
+The Einstein formulation treats the rotational motion
 in the same way as translational diffusion,
-by measuring the small rotational changes over time
+by measuring the small rotational changes over time,
+giving
 
 $$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
+
+for rotations in 2D.
 
 However, while the translational diffusion
 is directly comparable to experimental results,
 there not a comparable experimental observation.
-Instead rotational diffusion is described
+Instead the Debye model of rotational diffusion is described
 using a dipole relaxation formulation developed by @Kivelson1970.
 This describes rotational motion as a sequence of
 small infinitesimal jumps around the unit sphere
@@ -265,8 +283,8 @@ since there are much fewer steps required for rotational relaxation to occur,
 with the limit of this being
 single jumps account for both relaxations simultaneously.
 
-In many experimental and simulation studies
-at high temperatures [@cite???]
+In experimental and simulation studies
+at high temperatures [@Laage2006]
 the relationship $\tau_1/\tau_2 = 3$ has held true.
 In supercooled liquids however,
 there have been many studies
@@ -275,38 +293,62 @@ which has given credence to the
 idea of rotational relaxations
 taking place through the process of large angular jumps.
 
-## Dynamic Heterogeneities
-
-1.2 Tg
-
-### Translational Heterogeneities
-
-- Developing the idea in 2D
-- @Widmer-Cooper2004 -> elements of structure
-
-### Rotational Heterogeneities
-
 ## Dynamics in Experimental Systems
 
-- Characteristic temperatures
-    - collective observations
-    - dynamic heterogeneities
-    - breakdown of rotational and translational diffusion
+The transition from a liquid to a glass
+is a purely kinetic phenomenon,
+making the study of the dynamic behaviour
+the key to understanding the phase change.
 
-- Theory and computation drive new experimental observations
-    - design of experiments
+One of the key experimental observations
+is that the relaxation behaviour
+becomes increasingly non-exponential [@Ediger1996]
+and is often fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Kohlrausch1854]
 
-- In supercooled liquids below approximately $1.2 T_g$ there occurs a decoupling
-  between translations diffusion and viscosity, and between rotational and
-  translational diffusion.[@Debenedetti2001]
+$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
 
-- Slowdown near 2/3 of the melting point [@Angell2000]
+The expected relaxation behaviour is an exponential,
+so this raises two possible explanations;
 
-- Vogel--Tammann--Fulcher
-    - temperature dependence of relaxation times
-    - provides a measure of how far from Arrhenius
-    - $\tau = \tau_0 \left ( \frac{T-T_0}{T_0} \right )^{-\beta}$
-    - $\eta = A \exp(\frac{B}{T-T_0})$
+1. each particle is undergoing some alternative non-exponential relaxation process, or
+2. the relaxation of each particle is exponential, however there is a distribution of
+   relaxation timescales. [@Richert1994]
+
+Many experiments and simulations
+[@Hurley1995;@Kob1997;@Cicerone1996;@Cicerone1995b;@Chang1997;@Mapes2006;@Mishra2015;@Lacevic2003;@Glotzer2000]
+have found the cause of the non-exponential relaxation
+to be heterogeneous dynamics.
+
+Another relation used to describe the dynamics in experiments
+is the Vogel--Tammann--Fulcher (VTF) relation
+
+$$ \eta = A \exp(\frac{B}{T-T_0}) $$
+
+where;
+
+- \eta is the viscosity (or any other dynamic behaviour)
+- $T_0$ is an extrapolated temperature found from fitting
+- $B$ is another parameter extrapolated from fitting.
+
+The VTF relation allows for defining a quantity $m$,
+known as the *fragility*,
+which describes how much the temperature dependence
+deviates from an Arrhenius relation
+
+$$ m = \frac{\d \log(\eta)}{\d T_g/T} \right\vert_{T=T_g} $$.
+
+The onset of these heterogeneous dynamics
+occurs at approximately $1.2\ T_g$ for ortho-terphenyl
+and comparable fragile liquids. [@Angell2000;@Blackburn1996;@Rossler1994;@Mapes2006]
+Additional to the onset of heterogeneous dynamics at $1.2\ T_g$,
+there is a decoupling between translational diffusion and viscosity,
+and between rotational and translational diffusion. [@Debenedetti2001;@Fujara1992;@Cicerone1996;@Ediger2000]
+The presence of these changes in dynamics
+has led to a range of theories
+which provide different methods of describing these phenomenon.
+These theories help drive the design of new simulations
+and experiments which can provide additional insights
+into this problem.
 
 ## Theoretical Treatment of Dynamics
 
@@ -317,11 +359,8 @@ is only able to tell part of the story,
 so we need to be able to have some theoretical framework
 which provides a scaffolding for combining these values.
 
-Experimental observations of supercooled liquids
-find that the breakdown of the Stokes--Einstein--Debye relations at $~1.2\,T_g$
-across a range of different materials. [@Debenedetti2001]
-The general consensus among theories is that something
-occurs at this temperature changing the dynamics.
+### Free Energy Landscape
+
 In Goldstein's[@Goldstein1969] energy landscape model of dynamics,
 this change in dynamic behaviour is characterised
 by the transition from free diffusion,
@@ -339,7 +378,7 @@ Where dynamics occurs by the process of large jumps,
 the assumptions made about the Brownian motion start to break down.
 While atomic systems seem to make the transition to jump dynamics,
 there is not the same evidence for molecular systems, [@Lewis1994;@Barrat1991;@Wahnstrom1991]
-namely the Lewis-Wahnström model of *ortho*-terphenyl,
+namely the Lewis--Wahnström model of *ortho*-terphenyl,
 where rotational motion occurs through jump dynamics
 while the translational motion takes remains Brownian in nature.
 
@@ -355,16 +394,56 @@ Despite significant effort searching for
 this increasing length scale, [@cite]
 there has been no evidence of it.
 
-An alternative structural model of growth
-has a structural view of the supercooled liquid.
+### Jamming Transition
 
-- Kivelson Scaling
-    - viscous slowdown due to packing frustration @Kivelson1995
+An alternative structural model of the supercooled liquid
+is the idea of the jamming transition
+which is adapted from an understanding of granular materials.
+[@Silbert2002;@Cates1998;@Cates2005;@Liu2010;@Torquato2010;@vanHecke2010]
+A particle is considered jammed
+when the number of contacts
+is enough to restrict all the degrees of freedom,
+this is known as *isostatic* jamming
+with the requisite contact count $z_\text{iso}$ being
 
-- purely structural
-    - packing,
-    - jamming
-    - gears @Zwanzig1987
+$$ z_\text{iso} = 2d_f $$
+
+where $d_f$ is the number of degrees of freedom
+available to a molecule ($d_f=3$ for our trimer).
+When a molecule is jammed,
+there are no degrees of freedom available
+meaning it is unable to move.
+Using contact numbers is notable
+for concave shapes like the Trimer molecule
+as the concavities allow for contact numbers
+well above $z_\text{iso}$. [@Jennings2015]
+
+The concept of jamming also applies to rotational motion
+where @Zwanzig1987 considers a liquid of 2D gears.
+Once three gears come in contact with each other,
+they are no longer able to rotate.
+
+### Geometric Frustration
+
+Building upon some of the ideas of the jamming transition
+is a model of geometric [@Frank1952] or packing @Tarjus2005;@Kivelson1995] frustration.
+This considers small regions of the liquid,
+which form structures that minimise the local free energy,
+however these structures are then unable to tile space.
+This gives small regions of favourable local structure
+which are highly favourable and unlikely to diffuse.
+
+This idea of geometric frustration is notable for the Trimer molecule,
+as there are a range of crystal structures it can take on.[@sec:stability-of-crystal-phases]
+
+### Conclusion
+
+The jamming model looks at dynamic heterogeneities
+in a different way to Goldstein's energy landscape model.
+The jamming describes the slow parts of the heterogeneities,
+molecules do not have the degrees of freedom to rearrange.
+Conversely, the energy landscape explains the regions of motion,
+co-operatively rearranging to move between local minima.
 
 Despite these models being useful in understanding
 the processes of motion within a liquid,
@@ -409,27 +488,3 @@ This coupling between rotational and translational motion
 on the microscopic scale
 has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
 and liquid crystals [@Jose2006].
-
-## Additional Quantities
-
-- Correlations of rotation and translation
-    - reptation
-
-Introduce some new quantities
-
-- Comparable to existing values
-
-- Single value representing dynamics is challenging
-    - The method of averaging has a large impact on the resulting value
-
-- Alternative methods for understanding dynamics
-    - Identify whether a particle has undergone relaxation
-    - Distance for relaxation
-
-- Reversible relaxation
-    - This is guaranteed for an infinite random walk on 2D
-    - Likely for 3D as well, though not guaranteed
-
-- How do we define additional characteristics
-    - heterogeneities
-    - coupling
