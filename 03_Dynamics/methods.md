@@ -424,18 +424,43 @@ as a function of temperature.
 
 ## Molecular Quantities
 
-### Diffusion Equivalent
+The calculation of the molecular relaxation times
+is done by keeping track of the state of each molecule over time.
+The typically relaxation times,
+diffusion, structural relaxation, and rotational relaxation
+find the first time the particle moves beyond
+the intended distance.
 
-- Long timescale
+The last passage time uses a state machine
+which can have one of three values
 
-### Short timescale relaxation
+The state can have one of three values,
 
-- Building upon the work of Widmer-Cooper
+- 0 => No relaxation has taken place, or particle has moved back within
+        the threshold distance
+- 1 => The distance has passed the threshold, however not the
+          irreversibility distance
+- 2 => The molecule has passed the irreversibility distance
 
-### Last Passage Time
-
-- Structural relaxation is reversible
-
-### Rotational Diffusion
-
-- Rotational distance
+```python
+for state, dist, status in zip(self._state, distance, self._status):
+    if state == 2:
+        # The threshold has been reached so there is now nothing to do
+        continue
+    elif state == 1:
+        # Need to check whether the relaxation has crossed a threshold
+        if dist > self._irreversibility:
+            state = 2
+        elif dist < self.threshold:
+            state = 0
+        else:
+            continue
+    elif state == 0:
+        if dist > self.threshold:
+            status = timediff
+            state = 1
+        else:
+            continue
+    else:
+         RuntimeError("Invalid State")
+```
