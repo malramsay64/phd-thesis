@@ -137,8 +137,6 @@ There is no mention of structural relaxation
       and zero otherwise, and set $b=0.15$.
 Here there is no mention of why this value of $b$ was chosen.
 
-## Rotational Relaxation
-
 - [@Dote1981]
     - in a typical NMR experiment a single particle correlation time $\tau_2$ is
       determined, $\tau_2$ being given as
@@ -215,35 +213,11 @@ Rotational diffusion is calculated using the first order Legendre polynomial
 Demonstrates how to combine the multiple relaxation functions for each axis
 
 - [@Kim2015]
-    - There are two formalisms in order to estimate $D_R$: Einstein and Debye
-      formalisms. In the Einstein formalism, we calculate the mean square angular
-      displacement
-      $\langle [\Delta\phi(t)]^2\rangle = \langle|\phi(t) - \phi(0)|^2\rangle$
-      where $\phi(t) is the unbounded angle of the vector $\vect u (t)$ of a tracer at
-      time $t$. ... And $D_R$ is obtained by using the relation
-      $D_R = \lim_{t->\inf}\langle [\Delta \phi(t)]^2 \rangle / 2t$.
-      On the other hand, in the Debye formalism, the rotational correlation function
-      $U_l(t)$ if tracers is considered, i.e.,
-      $U_l(t) = \langle \exp [il\Delta\phi(t)]\rangle$,
-      where $l$ is the order of the rotational correlation function.
 In this paper there is a fair amount of space dedicated to
 the comparison between the Debye formalism and the Einstein formalism,
 with both giving the same results.
 
 ## Rotational Relaxation
-
-- Debye vs Einstein Dynamics
-    - There are two formalisms in order to estimate $D_R$: Einstein and Debye
-      formalisms. In the Einstein formalism, we calculate the mean square angular
-      displacement
-      $\langle [\Delta\phi(t)]^2\rangle = \langle|\phi(t) - \phi(0)|^2\rangle$
-      where $\phi(t)$ is the unbounded angle of the vector $\vect u (t)$ of a tracer at
-      time $t$. ... And $D_R$ is obtained by using the relation
-      $D_R = \lim_{t->\inf}\langle [\Delta \phi(t)]^2 \rangle / 2t$.
-      On the other hand, in the Debye formalism, the rotational correlation function
-      $U_l(t)$ of tracers is considered, i.e.,
-      $U_l(t) = \langle \exp [il\Delta\phi(t)]\rangle$,
-      where $l$ is the order of the rotational correlation function.
 
 - [@Kivelson1988]
     - In many cases, the nature of the relaxation process, together with the coarseness
