@@ -195,9 +195,6 @@ I can sample the equilibrium configuration.
 
 ## Dynamics Quantities
 
-- Issue #60
-- Issue #28
-
 ### Calculation of Wavenumbers
 
 The first step in the calculation of wavenumbers
