@@ -335,7 +335,7 @@ known as the *fragility*,
 which describes how much the temperature dependence
 deviates from an Arrhenius relation
 
-$$ m = \frac{\d \log(\eta)}{\d T_g/T} \right\vert_{T=T_g} $$.
+$$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$.
 
 The onset of these heterogeneous dynamics
 occurs at approximately $1.2\ T_g$ for ortho-terphenyl
