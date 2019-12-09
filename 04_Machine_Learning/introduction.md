@@ -75,32 +75,75 @@ Both the p2 and p2gg structures are considered part of the liquid phase with the
 
 ### Why Machine Learning
 
-- Why is a Machine Learning approach more suitable?
-    - Alternative is human decision
-    - Other methods of crystal detection
-        - Typically reduce to a single parameter
-        - Reflect the relationships which are important in that crystal structure
-        - Still require a decision to be made about what values are crystalline and
-          which values are liquid
-        - Even in these cases a machine learning methodology can be used to determine
-          the optimal value to differentiate the two groups.
-    - Most of the methods for crystal detection focus on a very small subset of crystal
-      structures
-        - FCC
-        - BCC
-        - Hexagonal
-        - Ice
-    - We have spent a long time developing these algorithms
-        - List some different methods
-        - Early methods
-        - Later methods with higher accuracy
-    - Molecular crystal structures are complex
-        - Spending 30 years developing each method is untenable
-        - Need something which is transferable between systems
-    - Take the work of the past 30 years developing methods of detecting crystals
-        - use it for finding features
-        - complex combination of different features, giving results better than any
-          individual feature.
+There are a range of parameters which can be used
+to identify a particular structure within a simulation.
+In the field of self assembly @Keys2011 describe six;
+
+a. Point matching,
+b. shape histogram,
+c. shape distributions,
+d. harmonic descriptors,
+e. shape context, and
+f. lightfield descriptor.
+
+To accurately describe the similarity of one structure to another
+many of these different descriptors can be used,
+resulting in a multi-dimensional description of a configuration.
+The question then becomes,
+which structure is this closest to?
+
+Using existing data for hypothesis testing
+has been within the realm of statistical analysis for hundreds of years. @Stigler1986
+However, statistical approaches like ANOVA
+are problematic in high dimensional space.
+This is where machine learning can really improve on these existing methods.
+
+Machine learning is becoming widely used within materials science [@Mueller2016;@Vasudevan2019]
+used for applications including;
+
+- detection of crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
+- characterisation of amorphous materials, [@Ballard2016;@Ballard2017]
+- prediction of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
+- the development of interatomic potentials. [@Snyder2012]
+
+A recent example relevant to this thesis
+is the development of a novel amorphous alloy [@Ren2018]
+where machine learning sped up the process nearly 1000 times.
+Another example of the power of machine learning
+is a study finding the best glass formers,
+in which the entire experiment was automated, [@Meenakshisundaram2019]
+requiring no human intervention.
+
+- Large datasets we don't fully understand
+- lots of fitting parameters which are hand tuned
+
+### Machine learning for crystal detection
+
+- Alternative is human decision
+- Other methods of crystal detection
+    - Typically reduce to a single parameter
+    - Reflect the relationships which are important in that crystal structure
+    - Still require a decision to be made about what values are crystalline and
+      which values are liquid
+    - Even in these cases a machine learning methodology can be used to determine
+      the optimal value to differentiate the two groups.
+- Most of the methods for crystal detection focus on a very small subset of crystal
+  structures
+    - FCC
+    - BCC
+    - Hexagonal
+    - Ice
+- We have spent a long time developing these algorithms
+    - List some different methods
+    - Early methods
+    - Later methods with higher accuracy
+- Molecular crystal structures are complex
+    - Spending 30 years developing each method is untenable
+    - Need something which is transferable between systems
+- Take the work of the past 30 years developing methods of detecting crystals
+    - use it for finding features
+    - complex combination of different features, giving results better than any
+      individual feature.
 
 - Want to know which structures are present within the data
     - great diversity of complex structures
@@ -112,16 +155,12 @@ Both the p2 and p2gg structures are considered part of the liquid phase with the
 
 ## Introduction to Machine Learning
 
-Machine learning is a technique by which
-A machine learns when it changes it's
-structure, program, or data
-based on external information
+Machine learning is a technique by which a machine learns
+when it changes it's structure, program, or data based on external information
 such that it's expected future performance improves. [@Nilsson1998]
-With this simple definition,
-the field of statistics could easily be included.
-Adding more data samples to a statistical distribution
-improves the understanding of the data
-and hence one would expect the results to improve.
+This definition includes the field of statistics,
+namely that the more data fed to a statistical distribution,
+the better the performance and understanding of the data.
 There is a strong link between
 the field of statistics and that of machine learning,
 which can be examined at a fundamental level.
@@ -134,9 +173,8 @@ $$ \min_w || Xw -y||^2_2 $$
 
 which is exactly the same as solving the problem
 through statistics.
-For this simple case the difference between
-the typical statistical approach
-and a machine learning approach
+For this linear case, the main difference between
+a statistical approach and a machine learning approach
 is the methodology.
 
 ### Feature Development
