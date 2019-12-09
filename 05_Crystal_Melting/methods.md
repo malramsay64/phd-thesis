@@ -1,8 +1,6 @@
 # Methods
 
-## Reduced Units
-
-## Simulations
+## Crystal Melting Simulations
 
 - tau = 1
 - tauP = 1
@@ -54,6 +52,26 @@ a local minima with the Lennard-Jones potential.
 Because this is optimising the highly rigid crystal structure,
 the box has been allowed to adjust its tilt,
 and each of the axes can move independently of the others.
+The FIRE energy minimisation is performed using
+the NPH ensemble with a pressures of $P=13.50$ and $P=1.00$
+and the kinetic energy of the temperature $T=0.4$.
+
+The initial parameters for the creation of the crystals are:
+
+- Creation of Initial Crystal from Parameters
+    - p2 Crystal parameters
+    - p2gg crystal parameters
+    - pg crystal parameters
+
+- Crystal sizes
+    - p2 -> 48 x 42
+    - pg -> 48 x 42
+    - p2gg -> 48 x 21
+
+- Choice of unit cell parameters
+    - closest to square
+    - conversion of p2 crystal to orthogonal
+    - get the p2 crystal to align when orthogonal
 
 - NPT simulation to relax structure -> equilibrate
 - All degrees of freedom are decoupled
@@ -75,6 +93,16 @@ and each of the axes can move independently of the others.
 
 ### Creation of Liquid--Crystal Interface
 
+With the minimised crystal created I needed to create
+two regions within the configuration
+to mimic the configurations in @Sec:crystal-melting.
+The first step of creating the interface
+is converting the tilted simulation configuration
+to an orthorhombic configuration.
+This is done to make the resulting analysis
+simpler and more consistent
+across the different crystal structures.
+
 - NPT simulation
     - x, y axes expand individually
 - Box of particles in the center third of the simulation cell are not integrated
@@ -92,6 +120,15 @@ boundary conditions. In the image below, the initial configuration is the tilted
 box, with the vertical bars being the simulation box. Particles outside the new box
 are wrapped into the missing regions on the opposite side.
 
+The conversion to the orthorhombic shape
+is done by moving the shifted regions
+as shown in @fig:ortho_rhombisation.
+This does result in the neighbours
+of the top and bottom layers changing
+which requires a careful choice
+of the number of overall layers
+so the orthorhombic configuration is favourable.
+
 ```text
    ____________________
   | /               | /
@@ -100,6 +137,12 @@ are wrapped into the missing regions on the opposite side.
  /|                /|
 /_|_______________/_|
 ```
+
+The outer 1/3 of the orthorhombic configuration is then melted
+at temperatures displayed in @tbl:interface_melt_temps,
+removing any minor mismatch in the alignment of the periodic faces.
+The central crystal region is not integrated during the melting,
+however the distance between particles increases as the box size increases.
 
 The only difference between simulations of type `"liquid"` and `"interface"`, is
 that the interface simulations will only be integrating the motion of a subset of
@@ -121,7 +164,7 @@ permitted to tilt.
 
 - Run for a number of steps at the higher temperature
 
-### Melting of Liquid--Crystal Interface
+### Production Simulations
 
 - NPT Simulation
 
