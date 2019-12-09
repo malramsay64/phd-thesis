@@ -19,8 +19,7 @@ are also used for the unsupervised classification.
 
 ### Visualisation
 
-Clustering doesn't have a simple performance score
-like supervised clustering,
+Clustering does not have a single performance score like supervised clustering,
 and so we have to look to alternate methods
 of evaluating performance.
 One of these methods is the visualisation of the dataset.
@@ -195,9 +194,8 @@ the use of UMAP is best left as a visualisation tool
 rather than a pre-processing step.
 
 While UMAP is not suitable as a pre-processing step for clustering,
-the separation of the crystal structures informs us
-that the different structures are separable,
-just requiring an appropriate clustering algorithm.
+the separation of the crystal structures
+means it is possible with an appropriate clustering algorithm.
 The algorithm chosen for clustering is HDBSCAN [@Campello2013;@McInnes2017]
 which finds areas of high density as clusters,
 leaving the noise as unclustered values.
@@ -227,8 +225,7 @@ it is considered noise.
 
 There are a wide range of algorithms
 which can be used for supervised classification,
-from a simple linear model,
-to a deep neural network.
+ranging from a linear model, to a deep neural network.
 The first step in evaluating performance
 is to find a suitable algorithm.
 @Tbl:classification_performance shows a range of algorithms tested,
@@ -277,14 +274,14 @@ this means there are three times as many liquid configurations
 as there are crystal.
 To account for this imbalance in the dataset,
 the accuracy metric which we are optimising is `balanced_accuracy`,
-which combines the accuracy percentage of each class.
+which combines the fractions of each class scored correct.
 
 Looking at the confusion matrix,
 the misclassification with the largest impact on accuracy,
 is the p2gg crystal being predicted as a liquid.
 This is closely followed by the p2 and pg crystals
 being incorrectly classified as liquid.
-There are a number of possible explanations for this,
+There are many possible explanations for this,
 from vibrations or defects within the crystal structure,
 particularly at the higher temperatures,
 or alternatively the melting of the crystal,
