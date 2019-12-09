@@ -15,7 +15,7 @@ makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
 pandoc_filters = --filter ../src/pandoc-svg.py --filter pandoc-crossref
-pandoc_options = --listings -M listings -M codeBlockCaptions
+pandoc_options = --listings -M listings -M codeBlockCaptions -M autoSectionLabels --number-sections
 
 figures = $(patsubst %.gv, %.pdf, $(shell find . -name "*.gv"))
 
