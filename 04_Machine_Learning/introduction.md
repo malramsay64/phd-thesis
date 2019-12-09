@@ -1,5 +1,23 @@
 # Introduction
 
+The field of machine learning has been actively researched for over 40 years.
+Developing the ideas of helping computers make better decisions for us.
+The relatively recent surge of both research and commercial interest
+is the result of widely available computing power.
+This has seen the rise of more complex algorithms like deep neural networks.
+An important part of the rise in popularity of neural networks
+is the type of operations they perform.
+Training a neural network requires a sequence of matrix operations,
+in particular the multiplication of matrices.
+The multiplication of matrices is important because of Graphics Processing Units (GPUs)
+which can be over 400 times faster at matrix multiplication than CPUs,
+which has made these types of algorithms commercially viable.
+
+One of the large downsides of using a complicated neural network
+is that there is little clarity over how a decision is made.
+In particular, bias in data the algorithm learns from
+is amplified within the algorithm in unexpected ways.
+
 ## Crystal Detection
 
 During the course of my honours work, I established that the most likely candidates for the crystal
@@ -55,6 +73,43 @@ this parameter. Firstly, the value of
 distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure.
 Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
 
+### Why Machine Learning
+
+- Why is a Machine Learning approach more suitable?
+    - Alternative is human decision
+    - Other methods of crystal detection
+        - Typically reduce to a single parameter
+        - Reflect the relationships which are important in that crystal structure
+        - Still require a decision to be made about what values are crystalline and
+          which values are liquid
+        - Even in these cases a machine learning methodology can be used to determine
+          the optimal value to differentiate the two groups.
+    - Most of the methods for crystal detection focus on a very small subset of crystal
+      structures
+        - FCC
+        - BCC
+        - Hexagonal
+        - Ice
+    - We have spent a long time developing these algorithms
+        - List some different methods
+        - Early methods
+        - Later methods with higher accuracy
+    - Molecular crystal structures are complex
+        - Spending 30 years developing each method is untenable
+        - Need something which is transferable between systems
+    - Take the work of the past 30 years developing methods of detecting crystals
+        - use it for finding features
+        - complex combination of different features, giving results better than any
+          individual feature.
+
+- Want to know which structures are present within the data
+    - great diversity of complex structures
+    - hard to find something new
+        - only see what we are looking for rather than what is actually there.
+
+- Machine Learning for Crystal Detection
+    - Existing approaches
+
 ## Introduction to Machine Learning
 
 Machine learning is a technique by which
@@ -84,6 +139,22 @@ the typical statistical approach
 and a machine learning approach
 is the methodology.
 
+### Feature Development
+
+For machine learning,
+features are the set of dimensions
+over which the learning takes place.
+That for a linear regression,
+we have a single feature,
+one input value which maps to an output value.
+When developing a machine learning methodology
+the feature selection is the most important component,
+and where domain expertise for a particular problem
+is most useful.
+The features are a set of values which best describe
+the differences which a machine learning algorithm
+should differentiate.
+
 ### Machine Learning Methodology
 
 When developing a machine learning algorithm for a problem
@@ -107,42 +178,28 @@ For the development of machine learning models,
 which often have a very large parameter space,
 overfitting of the model to the input data
 is a very real concern.
-So one of the methods used to mitigate this
+It was noticed by @Larson1931 in 1931 that
+using the same dataset for training an algorithm
+and evaluating it's statistical performance
+leads to an overoptimistic result.
+One of the methods used to mitigate this
 is to break the dataset into two groups,
-the test set
----typically comprising 80\% of the data---
-which is used for the first step
-of finding an optimal model, and
-the validation set
----comprising the remaining 20\% of the data---
+the test set---typically comprising 80\% of the data---
+used for finding an optimal model, and
+the validation set---comprising the remaining 20\% of the data---
 used for scoring the performance of the models.
-In machine learning,
-the most important metric is
-the performance of the model on data which
-has not yet been seen,
-so splitting the dataset means
-the evaluation of performance is on a dataset
-which the model hasn't previously been exposed to.
-This idea of evaluating performance on
-unseen data extends to the model development.
+The most important metric in machine learning is
+the performance on data which has not yet been seen.
 
-In finding the best model,
+For the process of finding the best model,
 a method of cross-validation is used,
-with *n*-fold cross validation
-being the most common.
-The *n*-fold cross validation is where the
-test dataset is further split into
-*n* components, with $n=10$ being close to optimal[@Zhang1993;@Arlot2010].
+with *n*-fold cross validation being the most common.
+The technique of *n*-fold cross validation splits
+the test dataset into *n* components
+with $n=10$ being close to optimal[@Zhang1993;@Arlot2010].
 Cross validation is all about reducing
 the risk that the model is highly specific
 to part of the dataset.
-
-- @Arlot2010
-    - As noticed in the early 30s by Larson, training an algorithm and evaluating it's
-      statistical performance on the same data yields and overoptimistic result.
-    - Cross validation was raised to fix this issue, starting from the remark that
-      testing the output of the algorithm on new data would yield a good estimate of it's
-      performance.
 
 Once the best models have been established
 using cross validation on the training dataset,
@@ -161,112 +218,38 @@ to the methodology of the development of the best model
 is that more complicated models with many parameters
 are still general enough to work with new data
 
-## Why Machine Learning
+### Supervised Learning Algorithms
 
-- Why is a Machine Learning approach more suitable?
-    - Alternative is human decision
-    - Other methods of crystal detection
-        - Typically reduce to a single parameter
-        - Reflect the relationships which are important in that crystal structure
-        - Still require a decision to be made about what values are crystalline and
-          which values are liquid
-        - Even in these cases a machine learning methodology can be used to determine
-          the optimal value to differentiate the two groups.
-    - Most of the methods for crystal detection focus on a very small subset of crystal
-      structures
-        - FCC
-        - BCC
-        - Hexagonal
-        - Ice
-    - We have spent a long time developing these algorithms
-        - List some different methods
-        - Early methods
-        - Later methods with higher accuracy
-    - Molecular crystal structures are complex
-        - Spending 30 years developing each method is untenable
-        - Need something which is easily transferable between systems
-    - Take the work of the past 30 years developing methods of detecting crystals
-        - use it for finding features
-        - complex combination of different features, giving results better than any
-          individual feature.
+#### Linear Methods
 
-## Feature Development
+#### K-Nearest Neighbours
 
-For machine learning,
-features are the set of dimensions
-over which the learning takes place.
-That for a linear regression,
-we have a single feature,
-one input value which maps to an output value.
-When developing a machine learning methodology
-the feature selection is the most important component,
-and where domain expertise for a particular problem
-is most useful.
-The features are a set of values which best describe
-the differences which a machine learning algorithm
-should differentiate.
+- @Goldberger2005
+    - Simple method
+    - Single unable parameter
+    - Non-linear decision surface
+    - Use of ked-trees to reduce dimensionality search [@Bentley1975]
+        - This is similar to neighbour search approaches in molecular dynamics [@Howard2016]
 
-- Machine Learning Methods
-    - Introduction to machine learning
-        - What is it
-        - How is it different to other techniques
-        - How is it similar to other techniques
-            - Finding a 'best' parameter
-    - Machine Learning for Classification
-        - Common algorithms
-        - scikit-learn
-        - development of the 'best' algorithm
-            - overfitting
-            - cross validation
-            - accuracy vs precision vs ....
-    - Machine Learning for segmentation
-        - unsupervised
-        - no previous knowledge
+#### Decision Trees
 
-- Development of feature sets
+#### Neural Networks
 
-## Detecting crystal Structures using Machine Learning
+### Measuring Success
 
-- Machine Learning for Crystal Detection
-    - Existing approaches
+- confusion matrices
+- accuracy
+- precision
+- recall
+- F1 score
+- false positives/negatives
 
-The field of Machine Learning has well tested and documented procedures for evaluating the best
-value of a parameter to use for the classification of distinct groups. The procure starts with the
-collation of dataset which is labelled according to the true classification. For this dataset I used
-the starting configurations of a liquid--crystal interface simulation. In these configurations, the
-middle two-thirds is a crystal structure while the outer third is liquid with a sharp boundary
-between them. Using the position of each local environment, I was able to assign them labels. The
-molecules which lay on the liquid--crystal boundary were excluded from the analysis as they are not
-well defined as either liquid or crystal and the boundary layer is artificially created. The
-boundary layer for the purposes of this analysis is the first layer either side of the artificial
-boundary created.
+### Unsupervised Learning Algorithms
 
-Characteristics required by a metric of the crystal melting are that it works over a range of
-simulation conditions. It is no use to have a metric which needs to be tweaked to work properly with
-every different simulation condition. Additionally I require a metric which is distinguish the three
-different crystal structures from the liquid and from each other. For this general approach I looked
-to a variety of machine learning algorithms using the Scikit Learn library.
+#### K-Means clustering
 
-The orientational order parameter uses the relative orientation of the molecules for identification
-of local crystalline order. As a first approach I would use the relative orientations as input for
-the machine learning models, although rather than combine all the values into one, I will use each
-separately. A feature of the method I am using to compute the nearest neighbours is the neighbours
-are returned in order of closeness, an ordering which carries into the orientation of the
-neighbours. It is entirely plausible that the ordering of the orientations is additional information
-the machine learning algorithm is picking up.
+#### DBSCAN
 
-Using a number of different machine learning methods, the maximum classification accuracy I was able
-to achieve was 96% which was achieved in a number of different models, even a complicated neural
-network. This tells me that for a higher accuracy to be achieved more input data is required,
-whether that be neighbour distances, longer range effects, or some other value. Additionally in
-investigating many of the incorrect assignments in the liquid phase, these had the character of a
-local crystalline configuration without the long range ordering. This does hint that the accuracies
-in the algorithm may not be so much in the algorithm itself, but instead in my initial
-classification.
+#### Optics
 
-Regardless of the potential issues with the classification and potential improvements, the 95%
-accuracy of the K-Nearest Neighbours (KNN) classifier, along with being one of the fastest
-algorithms for classification, make this ideal for classifying the melting rate of crystals.
-
-A high accuracy is required for the classification algorithm due to the obscenely slow crystal
-growth which has been observed in these crystal structures.
+#### HDBSCAN
