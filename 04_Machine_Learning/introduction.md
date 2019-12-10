@@ -163,7 +163,7 @@ a method of cross-validation is used,
 with *n*-fold cross validation being the most common.
 The technique of *n*-fold cross validation splits
 the test dataset into *n* components
-with $n=10$ being close to optimal[@Zhang1993;@Arlot2010].
+with $n=10$ being close to optimal. [@Zhang1993;@Arlot2010]
 Cross validation is all about reducing
 the risk that the model is highly specific
 to part of the dataset.
