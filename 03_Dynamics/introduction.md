@@ -207,10 +207,10 @@ Here relaxation is the time taken for relaxation from
 the initial value of $Y_l^m$ to it's first zero.
 
 The relaxation of a dipole $C_l$,
-where the orientation of the dipole is represented by the vector $\vect u$
+where the orientation of the dipole is represented by the vector $\hat{\vect{u}}$
 can be represented as
 
-$$ C_{l} = \langle P_l(\vect{u}_i(t) \cdot \vect{u}_i(0)) \rangle_i $$
+$$ C_{l} = \langle P_l(\hat{\vect{u}}_i(t) \cdot \hat{\vect{u}}_i(0)) \rangle_i $$
 
 Here $P_l$ is the Legendre polynomial of degree $l$,
 and the angle brackets signify an average over
