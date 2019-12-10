@@ -46,12 +46,12 @@ There are a range of parameters which can be used
 to identify a particular structure within a simulation.
 In the field of self assembly @Keys2011 describe six;
 
-a. Point matching,
-b. shape histogram,
-c. shape distributions,
-d. harmonic descriptors,
-e. shape context, and
-f. lightfield descriptor.
+1. Point matching,
+2. shape histogram,
+3. shape distributions,
+4. harmonic descriptors,
+5. shape context, and
+6. lightfield descriptor.
 
 To accurately describe the similarity of one structure to another
 many of these different descriptors can be used,
