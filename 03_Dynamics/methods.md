@@ -257,11 +257,11 @@ it is possible to monitor how particles
 move relative to that characteristic distance
 using the intermediate scattering function
 
-$$ F(k, t) = \left \langle \cos \left (
+$$ F(k, t) = \left \langle \cos \left\{
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot
 [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$
+\right\} \right \rangle $$
 
 This can then be converted to a python function:
 
@@ -356,11 +356,11 @@ and the confidence interval.
 The rotational relaxation function, $C_l(t)$
 is calculated for both the first,
 
-$$ C_1(t) = \langle \cos{2\arccos(|q(t) q(0)|)} \rangle $$
+$$ C_1(t) = \langle \cos[2\cos^{-1}(|q(t) q(0)|)] \rangle $$
 
 and second
 
-$$ C_2(t) = \langle 2\cos^2{2\arccos(|q(t) q(0)|)} - 1 \rangle $$
+$$ C_2(t) = \langle 2\cos^2[2\cos^{-1}(|q(t) q(0)|)] - 1 \rangle $$
 
 Legendre polynomials,
 where $q(t)$ is the quaternion representing the orientation at time $t$.
