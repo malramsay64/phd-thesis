@@ -473,7 +473,7 @@ Part of this story which is still being actively studied
 is the coupling of the rotational and translational motions
 on short timescales.
 A famous result is the decoupling of rotational and translational
-motion in a supercooled liquid, [@Chang1994;@Griffin2012;@Fujara2016]
+motion in a supercooled liquid, [@Chang1994;@Griffin2012;@Fujara1992]
 indicating a breakdown in the Stokes-Einstein-Debye
 theory of dynamics.
 This result however is an observation of the overall properties
