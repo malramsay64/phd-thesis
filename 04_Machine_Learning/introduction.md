@@ -18,6 +18,27 @@ is that there is little clarity over how a decision is made.
 In particular, bias in data the algorithm learns from
 is amplified within the algorithm in unexpected ways.
 
+## Introduction to Machine Learning
+
+Machine learning is a technique by which a machine learns
+when it changes it's structure, program, or data based on external information
+such that it's expected future performance improves. [@Nilsson1998]
+This definition includes the field of statistics,
+namely that the more data fed to a statistical distribution,
+the better the performance and understanding of the data.
+There is a strong link between
+the field of statistics and that of machine learning,
+which can be examined at a fundamental level.
+
+One of the simplest applications of machine learning is Linear Regression,
+solving a problem of the form
+
+$$ \min_w || Xw -y||^2_2 $$
+
+exactly the same formulation as using statistics.
+For this linear case, the difference between
+a statistical approach and a machine learning approach
+is the methodology.
 
 ### Why Machine Learning
 
@@ -96,48 +117,10 @@ requiring no human intervention.
     - hard to find something new
         - only see what we are looking for rather than what is actually there.
 
-- Machine Learning for Crystal Detection
-    - Existing approaches
-
-## Introduction to Machine Learning
-
-Machine learning is a technique by which a machine learns
-when it changes it's structure, program, or data based on external information
-such that it's expected future performance improves. [@Nilsson1998]
-This definition includes the field of statistics,
-namely that the more data fed to a statistical distribution,
-the better the performance and understanding of the data.
-There is a strong link between
-the field of statistics and that of machine learning,
-which can be examined at a fundamental level.
-
-One of the simplest approaches to machine learning
-is the use of Linear Regression,
-solving a problem of the form
-
-$$ \min_w || Xw -y||^2_2 $$
-
-which is exactly the same as solving the problem
-through statistics.
-For this linear case, the main difference between
-a statistical approach and a machine learning approach
-is the methodology.
-
-### Feature Development
-
-For machine learning,
-features are the set of dimensions
-over which the learning takes place.
-That for a linear regression,
-we have a single feature,
-one input value which maps to an output value.
-When developing a machine learning methodology
-the feature selection is the most important component,
-and where domain expertise for a particular problem
-is most useful.
-The features are a set of values which best describe
-the differences which a machine learning algorithm
-should differentiate.
+- Take the work of the past 30 years developing methods of detecting crystals
+    - use it for finding features
+    - complex combination of different features, giving results better than any
+      individual feature.
 
 ### Machine Learning Methodology
 
