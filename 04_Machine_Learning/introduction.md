@@ -123,41 +123,99 @@ the underlying behaviour.
 
 ### Machine learning for crystal detection
 
-- Alternative is human decision
-- Other methods of crystal detection
-    - Typically reduce to a single parameter
-    - Reflect the relationships which are important in that crystal structure
-    - Still require a decision to be made about what values are crystalline and
-      which values are liquid
-    - Even in these cases a machine learning methodology can be used to determine
-      the optimal value to differentiate the two groups.
-- Most of the methods for crystal detection focus on a very small subset of crystal
-  structures
-    - FCC
-    - BCC
-    - Hexagonal
-    - Ice
-- We have spent a long time developing these algorithms
-    - List some different methods
-    - Early methods
-    - Later methods with higher accuracy
-- Molecular crystal structures are complex
-    - Spending 30 years developing each method is untenable
-    - Need something which is transferable between systems
-- Take the work of the past 30 years developing methods of detecting crystals
-    - use it for finding features
-    - complex combination of different features, giving results better than any
-      individual feature.
+The problem I am using machine learning to help solve
+is the detection of crystalline structures within the liquid phase.
+This is a problem which has been approached using traditional techniques.
+In 2D simulations the order parameter $\psi_6$ [@Tobochnik1982]
+is commonly used to differentiate between the liquid and crystal regions
 
-- Want to know which structures are present within the data
-    - great diversity of complex structures
-    - hard to find something new
-        - only see what we are looking for rather than what is actually there.
+$$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
 
-- Take the work of the past 30 years developing methods of detecting crystals
-    - use it for finding features
-    - complex combination of different features, giving results better than any
-      individual feature.
+Having a value $\psi_6 = 1$ indicates
+the configuration is perfectly hexagonal
+while a value $\psi_6 = 0$ indicates
+perfect disorder.
+However to classify a local configuration into either
+liquid-like or crystal-like
+there needs to be a cutoff value
+separating the two types of structures,
+something which isn't present in any publication.
+[@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
+The likely reason for this is that the
+value would be chosen arbitrarily.
+Machine learning provides a framework
+for choosing the best value for a given dataset.
+
+For simulations in 3D,
+the ordering in crystal structures is more complex
+making it's detection more challenging.
+Like the 2D case there are a range of methods
+for identifying structures including
+
+- the Steinhardt bond order parameters, [@Steinhardt1983]
+- Bond Angle Analysis, and [@Ackland2006]
+- Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
+
+Each of these different values focus on the identification
+of a small range of structures, typically;
+
+- Face Centered Cubic,
+- Body Centered Cubic, and
+- Hexagonal Close Packed.
+
+The differences between each of these is typically
+a hand picked parameter tuned for each potential.
+
+While the existing approaches for crystal detection
+are limited by arbitrary decisions and limited re-usability.
+There has been a lot of work in choosing these methods
+and they reflect the relationships important in crystal structures.
+So they form a foundation on which to
+develop features for machine learning.
+There are a range of studies [@Reinhart2017;@Dietz2017;@Boattini2018;@Spellings2018]
+building upon the ideas of the more traditional
+crystal order parameters.
+These all take slightly different approaches,
+however each converts one of the parameters above
+into a many dimensional representation
+of the local structure,
+providing far more opportunity
+to distinguish the different structures.
+
+The approaches listed above only deal with spherically symmetric particles,
+molecular crystals are far more complicated
+in their shape and crystal structure.
+Water Ice has 18 different polymorphs we have found so far, @Algara-Siller2015
+with the most recent found in 2015.
+The number of polymorphs for ice is likely to reflect
+the range of structures in many molecular crystals.
+The CHILL [@Moore2010] and CHILL+ [@Nguyen2015]
+are traditional algorithms for
+detecting ice within liquid water
+though they are limited to ice Ih, Ic, and clathrates for CHILL+.
+Machine learning models [@Geiger2013;@Fulford2019]
+provide analysis that is both more accurate
+and covers a wider range of crystal structures.
+
+A further problem,
+highlighted by the example of water
+is that it is important to know
+the types of structures which are present within a sample.
+Not only for the discovery of novel materials
+but also having a complete understanding
+of a configuration.
+A problem with existing tools
+is that you only see the range of structures you are looking for
+rather than the range of structures which exist.
+Machine learning can also be used to
+subdivide the dataset into distinct clusters of crystal structures. [@Spellings2018]
+
+The real power of machine learning
+for the identification and classification
+of crystal structures,
+comes from combining the work of the past 40 years
+of classifying crystal structures
+with the tools available through machine learning.
 
 ### Machine Learning Methodology
 
