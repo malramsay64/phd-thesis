@@ -493,7 +493,7 @@ for the liquid and the crystal phases at the melting point $T=1.35$.
 As a point of comparison,
 similar calculations can be made for 2D Lennard-Jones discs,
 though a different order parameter is required,
-in this case using the hexatic order parameter,
+in this case using the hexatic order parameter, [@Strandburg1984;@Tobochnik1982]
 which is indicative of the bond orientational order.
 The hexatic order parameter is given as
 
