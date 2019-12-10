@@ -279,39 +279,3 @@ The big advantage of this much more complicated approach
 to the methodology of the development of the best model
 is that more complicated models with many parameters
 are still general enough to work with new data
-
-### Supervised Learning Algorithms
-
-#### Linear Methods
-
-#### K-Nearest Neighbours
-
-- @Goldberger2005
-    - Simple method
-    - Single unable parameter
-    - Non-linear decision surface
-    - Use of ked-trees to reduce dimensionality search [@Bentley1975]
-        - This is similar to neighbour search approaches in molecular dynamics [@Howard2016]
-
-#### Decision Trees
-
-#### Neural Networks
-
-### Measuring Success
-
-- confusion matrices
-- accuracy
-- precision
-- recall
-- F1 score
-- false positives/negatives
-
-### Unsupervised Learning Algorithms
-
-#### K-Means clustering
-
-#### DBSCAN
-
-#### Optics
-
-#### HDBSCAN

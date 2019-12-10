@@ -26,5 +26,47 @@ which can then be used for the calculation of
 
 ## Algorithms and Parameters
 
+## Machine Learning Algorithms
+
 - scikit-learn [@Pedregosa2012]
     - API design [@Buitinck2013]
+
+### Supervised Learning Algorithms
+
+@Kotsiantis2006
+
+#### K-Nearest Neighbours
+
+- @Goldberger2005
+    - Simple method
+    - Single unable parameter
+    - Non-linear decision surface
+    - Use of kd-trees to reduce dimensionality search [@Bentley1975]
+        - This is similar to neighbour search approaches in molecular dynamics [@Howard2016]
+
+#### Decision Trees
+
+@Breiman2017;@Breiman1984
+
+#### Neural Networks
+
+@Rumelhart1986;@Kingma2017
+
+### Measuring Success
+
+- confusion matrices
+- accuracy
+- precision
+- recall
+- F1 score
+- false positives/negatives
+
+### Unsupervised Learning Algorithms
+
+#### DBSCAN
+
+#### Optics
+
+#### HDBSCAN
+
+#### K-Means clustering
