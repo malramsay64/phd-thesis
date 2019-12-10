@@ -301,7 +301,7 @@ monitoring structural relaxation $F_d(t)$
 using the quantity suggested by @Widmer-Cooper2009
 
 $$ F_d(t) = \begin{cases}
-    1 &\text{if} \Delta x < d, \\
+    1 &\quad\text{if} \Delta x < d, \\
     0 & \text{otherwise}
     \end{cases} $$
 
