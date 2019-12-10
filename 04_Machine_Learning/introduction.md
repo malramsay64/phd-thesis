@@ -73,16 +73,53 @@ used for applications including;
 - prediction of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
 - the development of interatomic potentials. [@Snyder2012]
 
-A recent example relevant to this thesis
-is the development of a novel amorphous alloy [@Ren2018]
-where machine learning sped up the process nearly 1000 times.
-Another example of the power of machine learning
-is a study finding the best glass formers,
-in which the entire experiment was automated, [@Meenakshisundaram2019]
-requiring no human intervention.
+The places where machine learning is most useful
+is in places where there are many hand tuned fitting parameters, and
+for analysis of large datasets we don't fully understand.
+Where there are many hand tuned parameters,
+machine learning can help guide finding the best solution
+much like @Meenakshisundaram2019 have done
+with finding the best molecular glass formers.
+In running an experiment where
+the data collection and analysis is automated,
+the machine learning directs new simulations
+based on the existing data.
+As more data is collected the directed guesses improve.
+The tuning of parameters using machine learning
+has also been used by @Ren2018 to
+speed up the development of a novel amorphous alloy.
+The optimisations allowed by machine learning
+speed up the process of discovery by 1000 times.
 
-- Large datasets we don't fully understand
-- lots of fitting parameters which are hand tuned
+There are many problems in materials science we don't fully understand,
+like the glass transition,
+and there are tremendous volumes of data
+from both simulations and experiments.
+@DellAnna2008 use machine learning
+to aid in the analysis and understanding of data from
+Time-of-Flight Secondary Ion Mass Spectrometry (ToF-SIMS) spectra.
+Using a Supervised Principal component technique @Bair2006
+to reduce the number of peaks analysed in the resulting spectrum from 55 to 8,
+they were able to develop models to effectively predict
+the chemical composition of thin films.
+
+Machine learning provides a range of tools
+for understanding, analysing, and predicting data.
+However, like a statistical analysis
+machine learning needs to be applied carefully
+using the appropriate analysis for the task at hand.
+It is not a black box which magically solves problems. [@Lehman2019]
+
+### Feature Development
+
+The features of a machine learning model
+are the set of quantities passed to the model.
+For example when we perform a linear regression there is a single feature,
+one input value which can be used to predict an output value.
+Feature selection is the most important part of machine learning
+with a good set of features requiring domain expertise.
+The features are a set of values which best describe
+the underlying behaviour.
 
 ### Machine learning for crystal detection
 
