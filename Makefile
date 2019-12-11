@@ -54,6 +54,7 @@ clean: clean_subfiles
 clean_subfiles:
 	rm -f $(subfiles)
 	rm -f pandoc.out
+	git submodule foreach git clean -fX
 
 #
 # Linting
