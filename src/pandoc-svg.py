@@ -42,8 +42,8 @@ def svg_to_any(key, value, fmt, meta):
                 mtime = -1
             if mtime < os.path.getmtime(src):
                 cmd_line = ["cairosvg", "-f", option, "-o", eps_name, src]
-                sys.stderr.write("Running %s\n" % " ".join(cmd_line))
-                subprocess.call(cmd_line, stdout=sys.stderr.fileno())
+                print("Running\n", " ".join(cmd_line), file=sys.stderr)
+                subprocess.run(cmd_line).check_returncode()
             if attrs:
                 return Image(attrs, alt, [eps_name, title])
             else:
