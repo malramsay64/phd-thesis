@@ -1,12 +1,5 @@
 # Results
 
-## Timescale
-
-- Lewis Wahnström models use the structural relaxation time as the base timescale
-  @Pedersen2011
-- I am going to use rotational motion
-- relative timescales of rotational and translational motion
-
 ## Stability of Crystal Phases
 
 - no crystallisation observed
@@ -286,6 +279,53 @@ The orientational order observed
 at the start of the simulation
 persists throughout the simulation,
 still remaining after \num{4e8} timesteps (@fig:pg_crystal_top_end).
+
+## Characteristic Timescale
+
+When presenting results for crystallisation
+an important part of modelling the melting behaviour
+is a characteristic timescale.
+This is important in evaluating *slow* crystal growth,
+is there something interesting occurring,
+or is it the dynamics slowing down.
+
+In the crystallisation of the Lewis--Wahnström model [@Pedersen2011]
+the structural relaxation time $\tau_S$
+is used as the characteristic timescale.
+However as discussed in @sec:coupling_of_translational_and_rotational_motion
+there is a breakdown in the Stokes--Einstein--Debye relations
+meaning there are different temperature dependences
+for each of the relaxation times.
+Crystallisation is dominated by short range motions,
+particles translating to the nearest crystal site
+or rotating to match orientation with the rest of the particles.
+This means that although the short timescale relaxation times
+of the structural relaxation $\tau_S$ and rotational relaxation $\tau_R$
+are dominated by jump dynamics,
+their timescale best represents crystallisation.
+
+When comparing the timescales of the Lewis--Wahnström model (LW)
+to that of the trimer, (@tbl:relaxation_timescales)
+there is a noticeable difference
+in the ratio of the rotational and structural relaxations.
+The timescale of rotations in the LW model
+is not significant compared to the structural relaxation,
+while for the Trimer model,
+rotations have a longer timescale
+than the structural relaxation.
+A further reason for the choice of rotations
+is from watching the melting of the crystals in @sec:polymorphic_stability
+the motions that result in melting are the rotations.
+
+Model | $\tau_S$ | $\tau_R$
+------|----------|---------
+LW [@Pedersen2011]   | \num{2e-4} | \num{8.7e-9}
+Trimer [@sec:dynamics] | \num{1.4e5} | \num{3.5e5}
+
+Table: Comparison of the structural and rotational relaxation times
+of the Lewis--Wahnström (LW) and Trimer molecules.
+The values for the LW model are given in units of seconds,
+while the Trimer values are in reduced Lennard--Jones time units. {tbl:relaxation_timescales}
 
 ## Melting Rates
 
@@ -654,4 +694,17 @@ the LJ-Disc and the Trimer.
 :::
 
 The intersection of these two parabolas $M_c$ can be found,
-which is 0.95 for the Trimer and 0.42 for the LJ-Disc.
+which is 0.95 for the Trimer and 0.42 for the DJ-Disc.
+
+### Ordering of Multiple Parameters
+
+@Russo2016
+
+In the Lewis--Wahnström model,
+the ordering of multiple parameters can be ignored,
+since the rotational relaxation time
+is five orders of magnitude faster than the structural relaxation time. [@Pedersen2011]
+For the Trimer model here however,
+both relaxations are the same order of magnitude
+meaning we have to consider both of them
+in the model of crystal growth.
