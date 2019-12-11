@@ -1,6 +1,15 @@
 # Results
 
+## Timescale
+
+- Lewis Wahnström models use the structural relaxation time as the base timescale
+  @Pedersen2011
+- I am going to use rotational motion
+- relative timescales of rotational and translational motion
+
 ## Stability of Crystal Phases
+
+- no crystallisation observed
 
 The crystal structures for the trimer molecule
 have been found using an isopointal search algorithm[@Jennings2015]
@@ -31,6 +40,70 @@ at the conditions we are interested in.
 Additionally another method of finding the most stable crystal
 is the crystal which has the highest melting point.
 So this is a method of narrowing down the melting point of the crystal.
+
+- looking for incorrect structure?
+    - ML analysis clustering
+    - Packing of structures, hard packing vs Lennard Jones
+
+### Packing Analysis
+
+When initially finding the crystal structures which were likely to grow,
+we used the packing of hard molecules
+as a model to predict the most stable structures.
+This approach has been shown to generate structures
+matching those of atomic systems [@cite],
+however it has not been confirmed for molecular structures.
+It is possible that the complete lack of crystal growth
+is a result of seeding the wrong crystal.
+As an alternative method of finding crystal structures,
+I used the same isopointal search algorithm
+as the hard molecule,
+only the hard sphere potential (@fig:packing_p2_hard) was replaced with
+a Shifted Lennard Jones potential
+as used in the molecular dynamics simulation. (@fig:packing_p2_lj)
+The use of the Lennard-Jones potential
+provides a somewhat different picture of packing.
+Most noticeably the spacing of the molecules
+in the Lennard-Jones packing is much greater
+than the hard discs.
+This is expected,
+as the minimum of the Lennard-Jones potential
+lies at a distance of $2^{1/6} \approx 1.12$.
+The main difference is the relative positioning
+of the alternating layers.
+In the LJ case the molecules are positioned directly face on
+an rearrangement which maximises the positive interactions from
+the two smaller molecules.
+In comparison, the Hard potential has the molecules
+offset so the small particles rest
+in the concavity between the small and large particle.
+
+:::{class=subfigures id=fig:packing_p2}
+
+![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
+![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
+
+A comparison of the packing of the hard and the Lennard Jones potentials.
+The molecules coloured in blue are the real copies of the unit cell,
+while the molecules in green are the periodic copies.
+
+:::
+
+So have I been using the wrong crystal structure?
+Probably not.
+The transition from the structure in @fig:packing_p2_hard
+to that in @fig:packing_p2_lj can be done by sliding each of the layers,
+there is only a small motion for every particle.
+Additionally, these two pictures show extreme values,
+with the LJ-Discs having no pressure applied,
+and the Hard sphere is similar to having a very large pressure applied.
+So the lowest energy crystal structure is likely to be
+somewhere in the middle.
+Additionally, from @fig:solid_state_transition_structure
+we know that a larger solid state transition
+will spontaneously take place,
+making it unreasonable to assume
+this is not the equilibrium crystal form.
 
 ### Polymorphic Stability
 
@@ -214,90 +287,6 @@ at the start of the simulation
 persists throughout the simulation,
 still remaining after \num{4e8} timesteps (@fig:pg_crystal_top_end).
 
-### Spinodal
-
-The melting we are studying that which occurs
-at the liquid--crystal interface.
-This interfacial melting occurs
-from the melting point up to the spinodal Temperature,
-where the crystal phase is no longer metastable
-and starts breaking apart from within.
-Before modelling the melting rate over a range of temperatures,
-we need the temperature range which displays the expected melting behaviour.
-
-<div id="fig:spinodal" class="subfigures">
-
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
-<!-- markdownlint-enable MD045 -->
-
-Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
-melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
-temperature of 0.50. While (b) shows defects within the crystal, these are transient,
-retuning the crystal to its original structure as they move along the lattice
-dimension. This is unlike in (a) where the defects are persistent and support the
-propagation of melting in the surrounding crystal.
-
-</div>
-
-Pressure  Spinodal Temperature
--------- ---------------------
-1.00            0.55
-13.50           2.00
-
-Table: The temperatures at which the spinodal occurs for the crystal structure at both
-pressures. {#tbl:crystal_spinodal}
-
-The Spinodal temperatures in @tbl:crystal_spinodal represents
-the temperature where is is no longer possible to study melting
-at an interface as a result of
-nucleation of the liquid phase within the crystal.
-This is the temperature at which a simulation of
-the crystal phase will spontaneously melt
-from the formation of the defects
-within the crystal structure.
-
-### Melting Point
-
-The melting point $T_m$ is the temperature
-at which the rate of crystal growth
-is the same as the rate of melting
----the equilibrium state.
-Typically the melting rate is the temperature
-at which the measurement of the growth rate
-crosses from negative (melting) to positive (growth).
-No crystallisation has been observed for this molecule
-so the melting rate is the temperature
-at which the melting rate is no longer measurable.
-I consider the limit of measuring the melting
-rate being the removal of a single layer of crystal
-over the timescale of the simulation,
-which cannot be extended further because of
-a technical limit of how timesteps are handled in Hoomd[@hoomd_counter],
-which can only store numbers up to $2^{32}-1$,
-slightly more than 4 billion.
-
-The melting points are tabulated in @Tbl:crystal_melting_point
-with the values for the tables extracted
-from @fig:melting_point_rates.
-
-Pressure  Melting Point $T_m$
--------- ---------------------
-1.00            0.36
-13.50           1.35
-
-Table: The melting points of the crystals
-for both pressures studied in this thesis. {#tbl:crystal_melting_point}
-
-![The melting rates of the p2 crystal close to the melting point
-for pressures of 1.00 and 13.50.
-A melting rate of \num{1e-9}
-is less than a layer of crystal
-over the course of the simulation.
-](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
-
 ## Melting Rates
 
 The above simulations show that the p2 crystal
@@ -463,7 +452,93 @@ are similar to the defect
 which propagates the solid state phase transition
 of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
 
-## Fluctuation Analysis
+## Characteristic Temperatures
+
+### Spinodal
+
+The melting we are studying that which occurs
+at the liquid--crystal interface.
+This interfacial melting occurs
+from the melting point up to the spinodal Temperature,
+where the crystal phase is no longer metastable
+and starts breaking apart from within.
+Before modelling the melting rate over a range of temperatures,
+we need the temperature range which displays the expected melting behaviour.
+
+<div id="fig:spinodal" class="subfigures">
+
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
+<!-- markdownlint-enable MD045 -->
+
+Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
+melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
+temperature of 0.50. While (b) shows defects within the crystal, these are transient,
+retuning the crystal to its original structure as they move along the lattice
+dimension. This is unlike in (a) where the defects are persistent and support the
+propagation of melting in the surrounding crystal.
+
+</div>
+
+Pressure  Spinodal Temperature
+-------- ---------------------
+1.00            0.55
+13.50           2.00
+
+Table: The temperatures at which the spinodal occurs for the crystal structure at both
+pressures. {#tbl:crystal_spinodal}
+
+The Spinodal temperatures in @tbl:crystal_spinodal represents
+the temperature where is is no longer possible to study melting
+at an interface as a result of
+nucleation of the liquid phase within the crystal.
+This is the temperature at which a simulation of
+the crystal phase will spontaneously melt
+from the formation of the defects
+within the crystal structure.
+
+### Melting Point
+
+The melting point $T_m$ is the temperature
+at which the rate of crystal growth
+is the same as the rate of melting
+---the equilibrium state.
+Typically the melting rate is the temperature
+at which the measurement of the growth rate
+crosses from negative (melting) to positive (growth).
+No crystallisation has been observed for this molecule
+so the melting rate is the temperature
+at which the melting rate is no longer measurable.
+I consider the limit of measuring the melting
+rate being the removal of a single layer of crystal
+over the timescale of the simulation,
+which cannot be extended further because of
+a technical limit of how timesteps are handled in Hoomd[@hoomd_counter],
+which can only store numbers up to $2^{32}-1$,
+slightly more than 4 billion.
+
+The melting points are tabulated in @Tbl:crystal_melting_point
+with the values for the tables extracted
+from @fig:melting_point_rates.
+
+Pressure  Melting Point $T_m$
+-------- ---------------------
+1.00            0.36
+13.50           1.35
+
+Table: The melting points of the crystals
+for both pressures studied in this thesis. {#tbl:crystal_melting_point}
+
+![The melting rates of the p2 crystal close to the melting point
+for pressures of 1.00 and 13.50.
+A melting rate of \num{1e-9}
+is less than a layer of crystal
+over the course of the simulation.
+](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
+
+## Modelling Melting Rates
 
 The incredibly high spinodal point of the trimer,
 is indicative of a crystal structure which is highly constrained,
@@ -580,63 +655,3 @@ the LJ-Disc and the Trimer.
 
 The intersection of these two parabolas $M_c$ can be found,
 which is 0.95 for the Trimer and 0.42 for the LJ-Disc.
-
-## Packing Analysis
-
-When initially finding the crystal structures which were likely to grow,
-we used the packing of hard molecules
-as a model to predict the most stable structures.
-This approach has been shown to generate structures
-matching those of atomic systems [@cite],
-however it has not been confirmed for molecular structures.
-It is possible that the complete lack of crystal growth
-is a result of seeding the wrong crystal.
-As an alternative method of finding crystal structures,
-I used the same isopointal search algorithm
-as the hard molecule,
-only the hard sphere potential (@fig:packing_p2_hard) was replaced with
-a Shifted Lennard Jones potential
-as used in the molecular dynamics simulation. (@fig:packing_p2_lj)
-The use of the Lennard-Jones potential
-provides a somewhat different picture of packing.
-Most noticeably the spacing of the molecules
-in the Lennard-Jones packing is much greater
-than the hard discs.
-This is expected,
-as the minimum of the Lennard-Jones potential
-lies at a distance of $2^{1/6} \approx 1.12$.
-The main difference is the relative positioning
-of the alternating layers.
-In the LJ case the molecules are positioned directly face on
-an rearrangement which maximises the positive interactions from
-the two smaller molecules.
-In comparison, the Hard potential has the molecules
-offset so the small particles rest
-in the concavity between the small and large particle.
-
-:::{class=subfigures id=fig:packing_p2}
-
-![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
-![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
-
-A comparison of the packing of the hard and the Lennard Jones potentials.
-The molecules coloured in blue are the real copies of the unit cell,
-while the molecules in green are the periodic copies.
-
-:::
-
-So have I been using the wrong crystal structure?
-Probably not.
-The transition from the structure in @fig:packing_p2_hard
-to that in @fig:packing_p2_lj can be done by sliding each of the layers,
-there is only a small motion for every particle.
-Additionally, these two pictures show extreme values,
-with the LJ-Discs having no pressure applied,
-and the Hard sphere is similar to having a very large pressure applied.
-So the lowest energy crystal structure is likely to be
-somewhere in the middle.
-Additionally, from @fig:solid_state_transition_structure
-we know that a larger solid state transition
-will spontaneously take place,
-making it unreasonable to assume
-this is not the equilibrium crystal form.
