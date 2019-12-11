@@ -34,9 +34,18 @@ Additionally another method of finding the most stable crystal
 is the crystal which has the highest melting point.
 So this is a method of narrowing down the melting point of the crystal.
 
-- looking for incorrect structure?
-    - ML analysis clustering
-    - Packing of structures, hard packing vs Lennard Jones
+Since we haven't observed any crystallisation at all,
+are we even looking for the correct structures?
+
+### Clustering of liquid structures
+
+@sec:unsupervised_classification used an unsupervised classification method
+to identify crystal structures within the liquid phase.
+The same approach can be used to find
+any structure commonly found in the liquid.
+
+![Clustering analysis of a sequence of liquid
+configurations](../placeholder_figure.png){width=80% #fig:cluster_analysis_liquid}
 
 ### Packing Analysis
 
