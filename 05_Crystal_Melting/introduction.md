@@ -96,17 +96,6 @@ where one of the major results has been the decoupling
 of the rotational relaxation time and the diffusion constant,
 with the rotational relaxation getting slower much faster than the dynamics.
 
-- Methods of crystal detection
-    - Simple methods
-        - Density
-        - energy
-    - 2D Structural Methods
-        - Hexatic order parameter
-        - orientational order parameter
-    - 3D Materials
-        - Water (CHILL)
-        - radial harmonics methods
-
 ## Important Temperatures
 
 The melting point $T_m$ defines a temperature
