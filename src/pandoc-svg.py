@@ -18,8 +18,6 @@ fmt_to_option = {
     "beamer": "pdf",
     # use PNG because EMF and WMF break transparency
     "docx": "png",
-    # because of IE
-    "html": "png",
 }
 
 
