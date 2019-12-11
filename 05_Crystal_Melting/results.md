@@ -2,10 +2,10 @@
 
 ## Stability of Crystal Phases
 
-- no crystallisation observed
-
-The crystal structures for the trimer molecule
-have been found using an isopointal search algorithm[@Jennings2015]
+One of the notable results of this thesis
+is that no crystallisation of any form has been observed.
+As a result of this the crystal structures for the trimer molecule
+have been found using an isopointal search algorithm [@Jennings2015]
 which finds the best packing of the shape.
 It has been assumed that the structures resulting from
 the optimal packing of hard shapes
@@ -54,8 +54,7 @@ as the hard molecule,
 only the hard sphere potential (@fig:packing_p2_hard) was replaced with
 a Shifted Lennard Jones potential
 as used in the molecular dynamics simulation. (@fig:packing_p2_lj)
-The use of the Lennard-Jones potential
-provides a somewhat different picture of packing.
+The Lennard-Jones potential provides a slightly different picture of packing.
 Most noticeably the spacing of the molecules
 in the Lennard-Jones packing is much greater
 than the hard discs.
@@ -278,7 +277,7 @@ than the layer below the bottom (@fig:pg_crystal_bottom).
 The orientational order observed
 at the start of the simulation
 persists throughout the simulation,
-still remaining after \num{4e8} timesteps (@fig:pg_crystal_top_end).
+still remaining after a time of \num{2e6} (@fig:pg_crystal_top_end).
 
 ## Characteristic Timescale
 
@@ -380,7 +379,7 @@ As the temperature decreases the distance
 tends to get smaller,
 matching the expected behaviour.
 
-![This normalises both the temeprature by the melting point, and the growth rate by the
+![This normalises both the temperature by the melting point, and the growth rate by the
 rotational relaxation. This figure shows the growth rate slowing faster than
 can be explained by the dynamics, which is indicated by the values approaching zero.
 ](../Projects/Crystal_Melting/figures/normalised_melting_err.svg){#fig:normalised_melting}
@@ -428,7 +427,7 @@ of the points in @fig:normalised_melting.
 Using the points from @fig:normalised_melting
 and the values from @tbl:potential_energy_difference,
 the unknown parameter of @eq:normalised_growth
-was found using the Levenberg-Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001],
+was found using the Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001],
 for least squares fitting of non-linear functions.
 This gives the lines of fit in @fig:normalised_melting,
 with the parameters from the fit displayed in @tbl:rate_coefficient.
@@ -553,11 +552,14 @@ so the melting rate is the temperature
 at which the melting rate is no longer measurable.
 I consider the limit of measuring the melting
 rate being the removal of a single layer of crystal
-over the timescale of the simulation,
-which cannot be extended further because of
-a technical limit of how timesteps are handled in Hoomd[@hoomd_counter],
+over the timescale of the simulation, a rate of \num{1e-6}.
+The timescale cannot be extended beyond this as
+a technical limit of how timesteps are handled in HOOMD-blue [@hoomd_counter]
 which can only store numbers up to $2^{32}-1$,
 slightly more than 4 billion.
+In concert with the technical limitation
+there is a practical limitation
+with simulations taking multiple weeks to run.
 
 The melting points are tabulated in @Tbl:crystal_melting_point
 with the values for the tables extracted
@@ -581,8 +583,8 @@ over the course of the simulation.
 ## Modelling Melting Rates
 
 The incredibly high spinodal point of the trimer,
-is indicative of a crystal structure which is highly constrained,
-there is very little fluctuation of the structure.
+is indicative of a highly constrained crystal structure
+with very little fluctuation.
 An analysis of the fluctuations within the structure
 can provide more information on this.
 
@@ -591,7 +593,7 @@ is done using the Orientational order parameter $O_\theta$
 
 $$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$
 
-which is normalised such that
+normalised such that
 the mean orientational order of the liquid
 $\langle O_\theta \rangle_\text{liquid} = 0$
 and the mean orientational order of the crystal
@@ -609,12 +611,12 @@ As a point of comparison,
 similar calculations can be made for 2D Lennard-Jones discs,
 though a different order parameter is required,
 in this case using the hexatic order parameter, [@Strandburg1984;@Tobochnik1982]
-which is indicative of the bond orientational order.
+indicative of the bond orientational order.
 The hexatic order parameter is given as
 
 $$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
 
-which is again normalised such that
+again normalised such that
 the mean orientational order of the liquid
 $\langle \psi_6 \rangle_\text{liquid} = 0$
 and the mean orientational order of the crystal
@@ -680,7 +682,7 @@ which can be estimated as
 
 $$ \Delta \approx \Delta h_m \left\langle 1 - \frac{T}{T_m} \right\rangle $$
 
-which is shown in @Fig:fluctuation_harmonic.
+and shown in @Fig:fluctuation_harmonic.
 
 :::{id=fig:fluctuation_harmonic class=subfigures}
 
@@ -693,8 +695,8 @@ the LJ-Disc and the Trimer.
 
 :::
 
-The intersection of these two parabolas $M_c$ can be found,
-which is 0.95 for the Trimer and 0.42 for the DJ-Disc.
+The intersection of these two parabolas $M_c$
+is at 0.95 for the Trimer and 0.42 for the DJ-Disc.
 
 ### Ordering of Multiple Parameters
 
