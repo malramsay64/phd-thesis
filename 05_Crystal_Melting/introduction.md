@@ -128,70 +128,53 @@ at some temperature below the melting point,
 the liquid will spontaneously crystallise,
 another spinodal temperature.
 
-### Models of Melting
+## Models of Melting
 
-- Classical Theory
-- Ginzburg Landau / Square Gradient
-- Phase-field
-- Density functional methods
+The field of modelling crystal melting is full of a range of theories
+the nomenclature of which has changed significantly over time.
+@Granasy2019 attempt to sum up the degree to which the nomenclature has changed
+"the SG [Square Gradient] approximation-based approaches
+were often considered as the simplest form of density functional theories,
+where as the phase-field theory originally meant an SG approach,
+in which as structural order parameter (the phase field)
+monitors the crystal--liquid transition.
+Recently, however, phase-field methods working on the molecular scale,
+termed phase-field crystal (PFC) models were introduced,
+which can be classified as simple dynamical density functional approaches."
+This is notable in not actually clarifying how the naming has changed,
+but also noting that every method
+has been considered a density functional approach at some point.
 
-The field of modelling crystal growth
-is a complete and utter mess of nomenclature
-with no consistency of terminology.
-The different models of crystal growth
-can be roughly divided into four categories;
+The models discussed in this thesis
+are the classical model of crystal growth,
+and a semi-empirical density functional model.
 
-1. Classical Theory
-2. Square Gradient Approximations
-3. Phase-field theories
-4. Density functional methods
+### Classical Theory
 
-however, actually working out which class
-a model belongs to is rather difficult.
+The Wilson-Frenkel[@Wilson1900;@Frenkel1926] theory of crystal growth,
+describes the velocity $V$ of an interface
 
-In 1994 @Bagdassarian1994 introduce a model
-which measures the ordering using the parameter $M(\vect{r}, t)$
-which is expressed in the Landau-Ginzburg form
+$$ V(T) = k(T)[1-\e^{\beta \Delta u}] $$ {#eq:wilson_frenkel_growth}
 
-$$ \frac{\partial M(\vect{r}, t)}{\partial t} = \frac{\Gamma}{\rho_s k_\text{b} T_f}
-\frac{\partial \Omega[M]}{\partial M} $$
+where $\beta = \frac{1}{k_{\text{B}} T}$
+with $k_{\text{B}}$ being the Boltzmann Constant,
+and $\Delta u$ being the change in chemical potential.
+A standard method @Tang2013 of estimating the chemical potential $\Delta u$ is
 
-where;
+$$ \Delta u = \frac{(T_m - T) \Delta h_m}{T_m} $$
 
-- $\Omega[M]$ is the grand canonical free energy, taken as a functional of the order
-  parameter $M(\vect{r}, t)$, and
-- $\Gamma$ is a transport coefficient
-As for why $\Omega[M]$ and not $\Omega[M(\vect{r}, t)]$,
-it would have been nice to have been explained in the paper.
-This initial form was described as a phase-field model.
+allowing, with some rearrangement, to express @eq:wilson_frenkel_growth as
 
-In 2002 @Oxtoby2002 reviews Density Functional Theory (DFT)
-in the context of statistical mechanics
-and thermodynamic phase behaviour,
-introducing the square gradient approximation,
-which is also known as the Landau-Ginzburg free energy;
+$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp\left(\frac{(1-T^*)\Delta h_m}{T^*}\right) \right ]$$ {#eq:normalised_growth}
 
-<!-- The missing parenthese is intended -->
-$$ F[m(\vect{r})] = \d{r}\left[ f_u(m(\vect{r}) + K | \nabla m(\vect{r}|^2 \right] $$
-
-The equation was presented complete with the missing parentheses
-and no description of any of the symbols.
-Despite initially being described as a phase-field model,
-the same idea is now described as Density Functional Theory.
-
-Then in 2019 @Granasy2019 gives yet another term
-to describe this same idea,
-the Square Gradient approximation,
-making a note that terminology has changed over time.
-Then proceed to use it as a phase-field model.
-So here we have a model of crystal growth
-which has been described by three of
-the four classes of crystal growth models.
-Because of the lack of notational consistency within the field,
-I am going to be dividing models of crystal growth into
-Classical and Non-Classical.
-
-#### Classical Theory
+where $T^* = T/T_m$ the normalised temperature,
+$c$ is a constant
+$\Delta h_m$ is the free energy from the liquid to the crystal
+at the melting point,
+$V(T^*)$ is the velocity of the interface,
+and $\tau_C(T^*)$ is the crystallisation rate.
+This represents a theoretical description
+of the points in @fig:normalised_melting.
 
 The classical model of Crystal Growth and Melting
 known as the Wilson-Frenkel [@Wilson1900;@Frenkel1926]
@@ -234,7 +217,72 @@ where
   there is an activation barrier for growth, and another where there is no activation
   barrier for growth. [@Jackson2002]
 
-#### Non-Classical Theories
+### Semi-empirical Density Functional
+
+This models the free energy of a configuration
+based on a distribution of an order parameter $M$ [@Bagdassarian1994]
+defined such that in the bulk liquid $\langle M \rangle = 0$
+and in the bulk crystal $\langle M \rangle = 1$.
+
+This allows the free energy $\Omega$ to be expressed
+in the Cahn and Hilliard square gradient form [@Cahn1958]
+
+$$ \frac{\Omega}{\rho_s k_\text{B} T_m} =
+\int \d{\vect{r}} \left[ \omega(M) + |\frac{K^2}{2}|\nabla M|^2 \right] $$
+
+where;
+
+- $\rho_s$ is the density of the solid,
+- $k_\text{B}$ is the Boltzman constant,
+- $T_m$ is the melting temperature,
+- $K$ is the correlation length of the order parameter
+  describing the distance over which the order parameter
+  can transition from liquid to solid, and
+- $\omega(M)$ is a function which describes the
+  distribution of the order parameter $M$.
+This describes the free energy of the system $\Omega$
+as a functional of $\omega(M)$.
+
+In this model we make the assumption
+that there are fluctuations of the order parameters
+about the mean liquid configuration $\langle M \rangle = 0$
+and about the crystal configuration $\langle M \rangle = 1$.
+This requires the choice of a function describing two minima.
+One choice is using the combination of two parabolas,
+one centered around $0$ for the liquid
+and another centered around $1$ for the crystal
+giving the form
+
+$$ \omega(M) = \min\left[
+\frac{\lambda_\text{liquid}}{2}M^2, \frac{\lambda_\text{crystal}}{2}(M - 1)^2 + \Delta
+\right] $$
+
+introducing the parameters
+
+- $\lambda_\text{liquid}$ describing the curvature of the liquid parabola,
+- $\lambda_\text{crystal}$ describing the curvature of the crystal parabola, and
+- $\Delta$ which is the difference in free energy between the liquid and crystal.
+
+Letting $\lambda_\text{liquid} = \lambda_\text{crystal} = 1$ and $\Delta = 0$
+results in @fig:fluctuation_parabola_example.
+
+![An example of the function $\omega(M)$.
+](../Projects/Crystal_Melting/figures/fluctuation_parabola_example.svg){width=80% #fig:fluctuation_parabola_example}
+
+The time evolution of the order parameter $M$
+is used to study the melting and crystallisation
+given by
+
+$$ \frac{\partial M}{\partial t} =
+-\Kappa \left[ \frac{\d \omega(M)}{\d M} - \K^2 \nabla^2 M \right] $$
+
+where
+
+- $\Kappa$ is a transport coefficient.
+
+landau Ginzburg form
+
+- Critical clusters
 
 @Bagdassarian1994 propose an alternative method
 of understanding melting rates
