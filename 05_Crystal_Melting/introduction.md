@@ -274,7 +274,7 @@ is used to study the melting and crystallisation
 given by
 
 $$ \frac{\partial M}{\partial t} =
--\Kappa \left[ \frac{\d \omega(M)}{\d M} - \K^2 \nabla^2 M \right] $$
+-\Kappa \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
 
 where
 

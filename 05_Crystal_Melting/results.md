@@ -524,7 +524,7 @@ The growth occurs over a period of $\approx 5\tau_S$ within the Lewis-Wahnström
 Here the fastest melting rate is $\approx 0.4 \tau_R$ so in 5 units a single layer will
 have melted.
 
-If we were modelling OTP the simulation timescale would be \SI{3e-5}{\seconds}, four
+If we were modelling OTP the simulation timescale would be \SI{3e-5}{\second}, four
 times longer than the results from @Pedersen2011
 and we are not even below the melting point.
 
@@ -744,7 +744,7 @@ to allow the comparison with the dynamics quantities [@fig:rotational_time_sub]
 the temperature at which the curves deviate
 is the same in both cases.
 
-:::{class=subfigures id=fig:comparison}
+:::{class=subfigures id=fig:comparison_relax_melt}
 
 ![melting rates plotted against inverse
 temperature](../Projects/Crystal_Melting/figures/normalised_melting_err_inv.svg){width=80% #fig:normalised_melting_err_inv}
