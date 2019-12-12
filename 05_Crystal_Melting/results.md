@@ -512,6 +512,11 @@ rotational relaxation. This figure shows the growth rate slowing faster than
 can be explained by the dynamics, which is indicated by the values approaching zero.
 ](../Projects/Crystal_Melting/figures/normalised_melting_err.svg){#fig:normalised_melting}
 
+![This normalises both the temperature by the melting point, and the growth rate by the
+rotational relaxation. This figure shows the growth rate slowing faster than
+can be explained by the dynamics, which is indicated by the values approaching zero.
+](../Projects/Crystal_Melting/figures/normalised_melting_err_low.svg){#fig:normalised_melting}
+
 ### Comparison to Lewis--Wahnström
 
 The growth occurs over a period of $\approx 5\tau_S$ within the Lewis-Wahnström model. [@Pedersen2011]
@@ -725,6 +730,8 @@ the slow crystal growth of the Trimer.
 However, it is not useful as a quantitative description
 of the dynamic processes,
 with classical growth theory being a much better predictor.
+
+![fluctuation modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg)
 
 ## Dynamic Heterogeneities and Melting
 
