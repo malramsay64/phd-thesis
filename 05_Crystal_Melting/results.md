@@ -311,6 +311,13 @@ This means that although the short timescale relaxation times
 of the structural relaxation $\tau_S$ and rotational relaxation $\tau_R$
 are dominated by jump dynamics,
 their timescale best represents crystallisation.
+A further concern is the breakdown
+in the scaling of the Stokes--Einstein--Debye relations,
+with the rotations getting slower at a faster rate
+compared to the dynamics. [@fig:trans_rot_trimer]
+The additional slowdown of the rotations
+is further reasoning for being the characteristic
+timescale of melting.
 
 When comparing the timescales of the Lewis--Wahnström model (LW)
 to that of the trimer, (@tbl:relaxation_timescales)
@@ -327,7 +334,7 @@ the motions that result in melting are the rotations.
 
 Model | $\tau_S$ | $\tau_R$
 ------|----------|---------
-LW [@Pedersen2011]   | \num{2e-4} | \num{8.7e-9}
+LW [@Pedersen2011]   | \num{2e-8} | \num{8.7e-9}
 Trimer [@sec:dynamics] | \num{1.4e5} | \num{3.5e5}
 
 Table: Comparison of the structural and rotational relaxation times
@@ -335,12 +342,124 @@ of the Lewis--Wahnström (LW) and Trimer molecules.
 The values for the LW model are given in units of seconds,
 while the Trimer values are in reduced Lennard--Jones time units. {tbl:relaxation_timescales}
 
+## Characteristic Temperatures
+
+### Spinodal
+
+The melting we are studying that which occurs
+at the liquid--crystal interface.
+This interfacial melting occurs
+from the melting point up to the spinodal Temperature,
+where the crystal phase is no longer metastable
+and starts breaking apart from within.
+Before modelling the melting rate over a range of temperatures,
+we need the temperature range which displays the expected melting behaviour.
+
+<div id="fig:spinodal" class="subfigures">
+
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
+![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
+<!-- markdownlint-enable MD045 -->
+
+Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
+melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
+temperature of 0.50. While (b) shows defects within the crystal, these are transient,
+retuning the crystal to its original structure as they move along the lattice
+dimension. This is unlike in (a) where the defects are persistent and support the
+propagation of melting in the surrounding crystal.
+
+</div>
+
+Pressure  Spinodal Temperature
+-------- ---------------------
+1.00            0.55
+13.50           2.00
+
+Table: The temperatures at which the spinodal occurs for the crystal structure at both
+pressures. {#tbl:crystal_spinodal}
+
+The Spinodal temperatures in @tbl:crystal_spinodal represents
+the temperature where is is no longer possible to study melting
+at an interface as a result of
+nucleation of the liquid phase within the crystal.
+This is the temperature at which a simulation of
+the crystal phase will spontaneously melt
+from the formation of the defects
+within the crystal structure.
+
+This is well above the range of melting rates
+measured in simulations of 3D systems;
+
+- @Benjamin2015 go up to $T/T_m = 1.06$,
+- @Kerrache2008 goes up to $T/T_m = 1.07$,
+- @Rozmanov2011 go up to $T/T_m = 1.08$,
+- @Jackson2002 go up to $T/T_m = 1.08$, and
+- @Ramakrishnan2017 go up to $T/T_m = 1.12$.
+- @Iwamatsu1999 observes nucleation at $T/T_m = 1.11$
+
+which are all in agreement with @Abraham1981,
+in determining the spinodal of
+the 2D Lennard Jones to be $T/T_m = 1.08$
+
+Along with comparable melting studies,
+@Lu1998 find the onset homogeneous nucleation,
+that is the spinodal temperature,
+for a range of metals at $T/T_m = 1.2$.
+And as another example
+@Norman2002 study rates of nucleation within the crystal
+up to $T/T_m = 1.25$.
+From a comparison with all these studies
+it would appear that the spinodal temperature $T/T_m = 1.6$
+is highly unusual and well above any other materials.
+
+### Melting Point
+
+The melting point $T_m$ is the temperature
+at which the rate of crystal growth
+is the same as the rate of melting
+---the equilibrium state.
+Typically the melting rate is the temperature
+at which the measurement of the growth rate
+crosses from negative (melting) to positive (growth).
+No crystallisation has been observed for this molecule
+so the melting rate is the temperature
+at which the melting rate is no longer measurable.
+I consider the limit of measuring the melting
+rate being the removal of a single layer of crystal
+over the timescale of the simulation, a rate of \num{1e-6}.
+The timescale cannot be extended beyond this as
+a technical limit of how timesteps are handled in HOOMD-blue [@hoomd_counter]
+which can only store numbers up to $2^{32}-1$,
+slightly more than 4 billion.
+In concert with the technical limitation
+there is a practical limitation
+with simulations taking multiple weeks to run.
+
+The melting points are tabulated in @Tbl:crystal_melting_point
+with the values for the tables extracted
+from @fig:melting_point_rates.
+
+Pressure  Melting Point $T_m$
+-------- ---------------------
+1.00            0.36
+13.50           1.35
+
+Table: The melting points of the crystals
+for both pressures studied in this thesis. {#tbl:crystal_melting_point}
+
+![The melting rates of the p2 crystal close to the melting point
+for pressures of 1.00 and 13.50.
+A melting rate of \num{1e-9}
+is less than a layer of crystal
+over the course of the simulation.
+](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
+
 ## Melting Rates
 
-The above simulations show that the p2 crystal
-is the most stable,
-so this is the crystal used
-for further analysis of the melting rate.
+The simulations in @sec:?? show the p2 crystal to be most stable,
+meaning it is used for further analysis of the melting rate.
 The isotropic melting rate of the p2 crystal
 is the chosen metric,
 measured using an estimated radius,
@@ -393,6 +512,24 @@ rotational relaxation. This figure shows the growth rate slowing faster than
 can be explained by the dynamics, which is indicated by the values approaching zero.
 ](../Projects/Crystal_Melting/figures/normalised_melting_err.svg){#fig:normalised_melting}
 
+### Comparison to Lewis--Wahnström
+
+The growth occurs over a period of $\approx 5\tau_S$ within the Lewis-Wahnström model. [@Pedersen2011]
+
+Here the fastest melting rate is $\approx 0.4 \tau_R$ so in 5 units a single layer will
+have melted.
+
+If we were modelling OTP the simulation timescale would be \SI{3e-5}{\seconds}, four
+times longer than the results from @Pedersen2011
+and we are not even below the melting point.
+
+The growth of crystals in the trimer is at least two orders of magnitude
+slower than that of the Lewis--Wahnström model.
+It is somewhat difficult to make a comparison
+since no publications made their code or data available.
+
+## Modelling Melting Rates
+
 Theory which describes the temperature dependence of the melting rate,
 formulated from a characteristic dynamic timescale of the system
 and the chemical potential energy difference between the phases.
@@ -408,38 +545,15 @@ Difference $\Delta h_m$    -0.180  -0.066
 Table: The potential energy of the liquid and the crystal at the melting point for both
 pressures. {#tbl:potential_energy_difference}
 
-The Wilson-Frenkel[@Wilson1900;@Frenkel1926] theory of crystal growth,
-describes the velocity $V$ of an interface
+### Classical theory
 
-$$ V(T) = k(T)[1-\e^{\beta \Delta u}] $$ {#eq:wilson_frenkel_growth}
-
-where $\beta = \frac{1}{k_{\text{B}} T}$
-with $k_{\text{B}}$ being the Boltzmann Constant,
-and $\Delta u$ being the change in chemical potential.
-A standard method @Tang2013 of estimating the chemical potential $\Delta u$ is
-
-$$ \Delta u = \frac{(T_m - T) \Delta h_m}{T_m} $$
-
-allowing, with some rearrangement, to express @eq:wilson_frenkel_growth as
-
-$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp\left(\frac{(1-T^*)\Delta h_m}{T^*}\right) \right ]$$ {#eq:normalised_growth}
-
-where $T^* = T/T_m$ the normalised temperature,
-$c$ is a constant
-$\Delta h_m$ is the free energy from the liquid to the crystal
-at the melting point,
-$V(T^*)$ is the velocity of the interface,
-and $\tau_C(T^*)$ is the crystallisation rate.
-This represents a theoretical description
-of the points in @fig:normalised_melting.
-
-Using the points from @fig:normalised_melting
-and the values from @tbl:potential_energy_difference,
-the unknown parameter of @eq:normalised_growth
-was found using the Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001],
-for least squares fitting of non-linear functions.
-This gives the lines of fit in @fig:normalised_melting,
-with the parameters from the fit displayed in @tbl:rate_coefficient.
+The classical theory of crystal describes growth
+normalised by a relaxation time [@eq:normalised_growth].
+Using the points from @fig:normalised_melting and the values from @tbl:potential_energy_difference,
+the unknown parameter $c$ of @eq:normalised_growth was found using the
+Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001] for least squares fitting of non-linear functions.
+This gives the lines of fit displayed in @fig:normalised_melting.
+The parameters of the fit displayed in @tbl:rate_coefficient.
 
 Pressure            $c$
 -----------     -----------------
@@ -456,33 +570,11 @@ the Wilson-Frenkel theory in @fig:normalised_melting
 predict significantly slower melting rates
 than observed in the simulations
 for temperatures $T/T_m > 1.20$.
+A possible cause for this would be the onset of spinodal
+with the melting occurring throughout the structure,
+which is definitely not observed.
 
-This is well above the range of melting rates
-measured in simulations of 3D systems;
-
-- @Benjamin2015 go up to $T/T_m = 1.06$,
-- @Kerrache2008 goes up to $T/T_m = 1.07$,
-- @Rozmanov2011 go up to $T/T_m = 1.08$,
-- @Jackson2002 go up to $T/T_m = 1.08$, and
-- @Ramakrishnan2017 go up to $T/T_m = 1.12$.
-- @Iwamatsu1999 observes nucleation at $T/T_m = 1.11$
-
-which are all in agreement with @Abraham1981,
-in determining the spinodal of
-the 2D Lennard Jones to be $T/T_m = 1.08$
-
-Along with comparable melting studies,
-@Lu1998 find the onset homogeneous nucleation,
-that is the spinodal temperature,
-for a range of metals at $T/T_m = 1.2$.
-And as another example
-@Norman2002 study rates of nucleation within the crystal
-up to $T/T_m = 1.25$.
-From a comparison with all these studies
-it would appear that the spinodal temperature $T/T_m = 1.6$
-is highly unusual and well above any other materials.
-
-It should be noted that the absurdly high spinodal temperature
+It should be noted that the high spinodal temperature
 doesn't support a super stable crystal state,
 the crystal only has a small potential energy benefit over the liquid state
 and the melting rate of the crystal
@@ -500,96 +592,7 @@ are similar to the defect
 which propagates the solid state phase transition
 of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
 
-## Characteristic Temperatures
-
-### Spinodal
-
-The melting we are studying that which occurs
-at the liquid--crystal interface.
-This interfacial melting occurs
-from the melting point up to the spinodal Temperature,
-where the crystal phase is no longer metastable
-and starts breaking apart from within.
-Before modelling the melting rate over a range of temperatures,
-we need the temperature range which displays the expected melting behaviour.
-
-<div id="fig:spinodal" class="subfigures">
-
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
-<!-- markdownlint-enable MD045 -->
-
-Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
-melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
-temperature of 0.50. While (b) shows defects within the crystal, these are transient,
-retuning the crystal to its original structure as they move along the lattice
-dimension. This is unlike in (a) where the defects are persistent and support the
-propagation of melting in the surrounding crystal.
-
-</div>
-
-Pressure  Spinodal Temperature
--------- ---------------------
-1.00            0.55
-13.50           2.00
-
-Table: The temperatures at which the spinodal occurs for the crystal structure at both
-pressures. {#tbl:crystal_spinodal}
-
-The Spinodal temperatures in @tbl:crystal_spinodal represents
-the temperature where is is no longer possible to study melting
-at an interface as a result of
-nucleation of the liquid phase within the crystal.
-This is the temperature at which a simulation of
-the crystal phase will spontaneously melt
-from the formation of the defects
-within the crystal structure.
-
-### Melting Point
-
-The melting point $T_m$ is the temperature
-at which the rate of crystal growth
-is the same as the rate of melting
----the equilibrium state.
-Typically the melting rate is the temperature
-at which the measurement of the growth rate
-crosses from negative (melting) to positive (growth).
-No crystallisation has been observed for this molecule
-so the melting rate is the temperature
-at which the melting rate is no longer measurable.
-I consider the limit of measuring the melting
-rate being the removal of a single layer of crystal
-over the timescale of the simulation, a rate of \num{1e-6}.
-The timescale cannot be extended beyond this as
-a technical limit of how timesteps are handled in HOOMD-blue [@hoomd_counter]
-which can only store numbers up to $2^{32}-1$,
-slightly more than 4 billion.
-In concert with the technical limitation
-there is a practical limitation
-with simulations taking multiple weeks to run.
-
-The melting points are tabulated in @Tbl:crystal_melting_point
-with the values for the tables extracted
-from @fig:melting_point_rates.
-
-Pressure  Melting Point $T_m$
--------- ---------------------
-1.00            0.36
-13.50           1.35
-
-Table: The melting points of the crystals
-for both pressures studied in this thesis. {#tbl:crystal_melting_point}
-
-![The melting rates of the p2 crystal close to the melting point
-for pressures of 1.00 and 13.50.
-A melting rate of \num{1e-9}
-is less than a layer of crystal
-over the course of the simulation.
-](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
-
-## Modelling Melting Rates
+### Semi-empirical Density Functional
 
 The incredibly high spinodal point of the trimer,
 is indicative of a highly constrained crystal structure
@@ -633,7 +636,7 @@ $\langle \psi_6 \rangle_\text{crystal} = 1$.
 The distribution of these values are shown in @Fig:disc_fluctuation.
 
 ![Distributions of the hexatic order parameter $\psi_6$
-in the 2D Lennard-Jones disc at the melting point $T=0.53$
+in the 2D Lennard-Jones disc at the melting point $D=0.53$
 ](../Projects/Crystal_Melting/figures/fluctuation_disc_normalised.svg){#fig:disc_fluctuation width=80%}
 
 The distributions of order parameters
@@ -705,11 +708,65 @@ the LJ-Disc and the Trimer.
 :::
 
 The intersection of these two parabolas $M_c$
-is at 0.95 for the Trimer and 0.42 for the DJ-Disc.
+is at 0.95 for the Trimer and 0.42 for the LJ-Disc.
+
+Describing the motion of crystal growth
+as the motion of a configuration along the curve $\omega(M)$,
+such that it has to pass through the transition state at $M_c$,
+we can use describe the fractions of particles
+able to make the transition
+as a method of comparing the growth rates.
+For the Trimer the fraction is 0.18%,
+far less than the 34% of the LJ-Disc.
+
+Using this semi-empirical density functional theory
+provides some qualitative insight into describing
+the slow crystal growth of the Trimer.
+However, it is not useful as a quantitative description
+of the dynamic processes,
+with classical growth theory being a much better predictor.
+
+## Dynamic Heterogeneities and Melting
+
+An important aspect of the melting behaviour in the Trimer molecule
+is the onset of dynamic heterogeneities,
+which unlike all other materials
+occur above the melting point.
+Plotting the melting rate as inverse temperature, [@fig:normalised_melting_err_inv]
+to allow the comparison with the dynamics quantities [@fig:rotational_time_sub]
+the temperature at which the curves deviate
+is the same in both cases.
+
+:::{class=subfigures id=fig:comparison}
+
+![melting rates plotted against inverse
+temperature](../Projects/Crystal_Melting/figures/normalised_melting_err_inv.svg){width=80% #fig:normalised_melting_err_inv}
+
+![Rotational relaxation times compared with the rotational relaxations
+](../Projects/Dynamics/figures/rotational_time.svg){width=80% #fig:rotational_time_sub}
+
+A comparison of the dynamics and the rotational relaxation time.
+The unusual behaviour is a result of the fragility of the dynamics.
+
+:::
+
+While it does appear that the dynamic heterogeneities
+play a role in the melting behaviour,
+that still doesn't explain why
+the melting is so much slower than the Lewis--Wahnström model,
+when comparing the number of relaxation times.
+
+@Granasy2004
+
+- description of heterogeneities causing
+- large translations before rotational decorrelation
+- interface growth slow relative to reorientation
 
 ### Ordering of Multiple Parameters
 
-@Russo2016
+Instead of describing crystal growth as a single with a single order parameter
+as in @sec:semi-empirical-density-functional,
+@Russo2016 posit that multiple order
 
 In the Lewis--Wahnström model,
 the ordering of multiple parameters can be ignored,
