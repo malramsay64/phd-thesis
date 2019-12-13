@@ -104,6 +104,25 @@
 % This is the depth for the table of contents
 \setcounter{tocdepth}{2}
 
+%%
+%% Configure Captions
+%%
+
+% Set caption width for long table package to the text width.
+% \setlength{\LTcapwidth}{\textwidth}
+
+% Using the caption package automatically sets the spacing at single
+
+% Use margin for captions to differentiate from text
+\RequirePackage{caption}
+\RequirePackage{ltcaption}
+\captionsetup{margin=1cm,labelfont=bf}
+% \captionsetup[longtable]{margin=1cm,labelfont=bf}
+
+%%
+%% Macros
+%%
+
 % Defining Mathematical Terms
 \newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
 
