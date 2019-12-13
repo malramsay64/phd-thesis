@@ -14,11 +14,11 @@ of the molecules with the Lennard Jones potential.
 
 The best packed structures have the following potential energies
 
-Crystal Packing Fraction Potential Energy per Molecule
-------- ---------------- -------------
-p2
-p2gg
-pg
+Crystal| Packing Fraction |Potential Energy per Molecule (\num{10e-4})
+-------| ---------------- |-------------
+p2     | 0.938            | -3.935
+p2gg   | 0.945            | -4.018
+pg     | 0.927            | -4.001
 
 Table: The potential energy for each molecule for the crystal structures with the best
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
