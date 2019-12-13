@@ -11,16 +11,16 @@ It is assumed that the optimal hard packing
 closely matches the crystal structure of the Lennard Jones potential.
 Comparing the packing fraction of each structure
 with the resulting potential energy, [@tbl:potential_energy]
-the best packed structure (p2gg) has the lowest potential energy.
-The remaining structures, p2 and pg
-both have potential energies close to the p2gg structure
-meaning all structures are considered.
+the best packed structure (p2gg) does not have the lowest potential energy,
+with that going to the p2 structure.
+The worst packed structure (pg) has the highest potential energy
+which is in line with our expectations.
 
-Crystal| Packing Fraction |Potential Energy per Molecule (\num{10e-4})
+Crystal| Packing Fraction |Potential Energy per Molecule
 -------| ---------------- |-------------
-p2     | 0.938            | -3.935
-p2gg   | 0.945            | -4.018
-pg     | 0.927            | -4.001
+p2     | 0.938            | -0.198
+p2gg   | 0.945            | -0.190
+pg     | 0.927            | -0.084
 
 Table: The potential energy for each molecule for the crystal structures with the best
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
@@ -95,8 +95,10 @@ in the concavity between the small and large particle.
 ![p2 Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
 ![P2 LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
 
-![pg Hard](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:packing_pg_hard width=49%}
-![pg LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p1g1-LJ.svg){#fig:packing_pg_lj width=49%}
+![pg
+Hard](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:packing_pg_hard width=30%}
+![pg LJ
+Potential](../Projects/Crystal_Melting/figures/Trimer-p1g1-LJ.svg){#fig:packing_pg_lj width=30%}
 
 ![p2gg
 Hard](../Projects/Crystal_Melting/figures/Trimer-p2gg-Hard.svg){#fig:packing_p2gg_hard width=49%}
@@ -125,16 +127,23 @@ will spontaneously take place,
 making it unreasonable to assume
 this is not the equilibrium crystal form.
 
-### Polymorphic Stability
+## Polymorphic Stability
 
-While the potential energy calculations give some idea
-of the most stable polymorph,
-it would still be useful to compare each of the crystals.
+The packing and potential energy calculations [@tbl:potential_energy]
+indicate the p2gg structure as the most stable,
+although it is very close between the structures.
+A significantly improved understanding of the crystals
+can be found by watching them melt.
+@Fig:melting_comparison monitors the size of each crystal as they melt.
+As expected based on the thermodynamic results,
+the pg crystal melts the fastest,
+and has the highest melting point of the crystals,
+denoting it is the least stable.
 
 ![Comparison of the melting of each of the different crystal types. These values are
 compared at a pressure of 13.50 and a temperature of 1.40. The pg crystals melts
 significantly faster than either the p2 or p2gg crystals.
-](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg)
+](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg){#fig:melting_comparison}
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
 1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
@@ -142,9 +151,10 @@ the different crystals within the configuration shows a transition of the p2gg c
 structure to the p2 crystal structure.
 ](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.40-p2gg.svg){#fig:solid_state_transition width=80%}
 
+Looking more closely at the melting of each simulation.
 The most notable behaviour of the crystal structures,
 is the solid state phase transition
-that takes place within the p2gg crystal.
+that takes place within the p2gg crystal. [@fig:solid_state_transition]
 The majority of the p2gg crystal phase
 is converted to the p2 crystal
 at a rate significantly faster than melting.
@@ -156,13 +166,21 @@ a timescale over which half the crystal
 has undergone the phase transition.
 This only possible explanation
 for this transition to occur so quickly
-is some highly co-ordinated rearrangements.
-Another feature of the transition,
+is through highly co-ordinated rearrangements.
+A defect propagating through a solid material
+has been studied in amorphous materials [@Tondl2014]
+and in other phase transitions. [@Allain1986;@Burakovsky2000]
+What makes this transition interesting is the p2gg structure
+can lower it's potential energy far faster
+by undergoing a solid state phase transition
+than by melting.
+
+A characteristic feature of the transition,
 is that after the initial transformation,
 there are periods of no change
-followed by short periods of quick change,
-resulting in a stepped pattern
----between \num{1e7} and \num{3e7} timesteps in @fig:solid_state_transition.
+followed by short periods of quick change.
+Giving a stepped pattern between
+\num{1e7} and \num{3e7} timesteps in @fig:solid_state_transition.
 
 <div id="fig:solid_state_transition_structure" class="subfigures">
 
@@ -183,37 +201,29 @@ are grain boundaries between the layers of p2 crystals.
 
 </div>
 
-The phase change process can be better understood
-by observing how it takes place,
-shown in @fig:solid_state_transition_structure.
-This shows the rearrangement
-for the solid state transition
-takes place along the horizontal layers of the crystal.
-@Fig:transition_process shows three layers
-undergoing the transition,
-which started on the right had side,
-and are propagating to the left.
-This does help explain both
+The phase change process can be understood by
+observing the configurations in which it takes place. [@fig:solid_state_transition_structure]
+This shows the solid state transition
+propagating along the horizontal layers of the crystal.
+@Fig:transition_process shows three layers undergoing the transition,
+with the defect forming on the right hand side
+and transforming the crystal as it moves to the left.
+The highly directional nature of the transition
+in that it can only take place along a single layer of the crystal
+and it doesn't back-track explain both
 the incredible rate at which the transition takes place
-as well as its step-like nature.
-Once a single pair of molecules
-switches orientations,
-from the four layer p2gg structure
-to the two layer p2 structure,
-this must lower the barrier
-for neighbouring pairs of molecules
-to undergo this same transformation,
-leading to the propagation along
-the crystal axis.
+and its step-like nature.
+A single pair of molecules switching from
+the four layer p2gg structure to the two layer p2 structure,
+must lower the barrier for
+neighbouring pairs of molecules to undergo this same transformation.
 Once the initial fast transformation has taken place
 there are a smaller number of p2gg molecules
 which are able to initialise the phase transition,
 resulting in periods of waiting for a 'nucleation' event,
 followed by the rapid propagation across the crystal.
-
-Also of note is that there is
-no preferred direction for
-the solid state transformation.
+Also of note is that the starting point of the propagation
+is completely random.
 In the final configuration (@fig:transition_end),
 there are still three rows of the p2gg crystal,
 which are grain boundaries between
@@ -222,10 +232,9 @@ layers of the p2 crystal with different orientations.
 While the p2 and the p2gg polymorphs
 have relatively comparable melting rates,
 mostly as a result of the p2gg structure
-undergoing a solid state transition to
-the p2 structure,
+undergoing a solid state transition to the p2 structure,
 the pg polymorph has a significantly faster melting rate.
-Understanding this may provide some insight
+Understanding how this crystal melts may provide some insight
 into the phenomenally slow growth rates of the p2 crystal.
 
 <div id="fig:pg_melting" class="subfigures">
