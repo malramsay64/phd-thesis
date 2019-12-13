@@ -360,9 +360,9 @@ A further reason for the choice of rotations
 is from watching the melting of the crystals in @sec:polymorphic_stability
 the motions that result in melting are the rotations.
 
-Model | $\tau_S$ | $\tau_R$
-------|----------|---------
-LW [@Pedersen2011]   | \num{2e-8} | \num{8.7e-9}
+Model                  | $\tau_S$    | $\tau_R$
+------                 |----------   |---------
+LW [@Pedersen2011]     | \num{2e-8}  | \num{8.7e-9}
 Trimer [@sec:dynamics] | \num{1.4e5} | \num{3.5e5}
 
 Table: Comparison of the structural and rotational relaxation times
@@ -518,8 +518,8 @@ I will include more temperatures
 as the results from the
 longer crystal melting simulations are finished.
 
-![The crystal growth rates normalised by the melting point. For clarity a light grey
-line has been marked at a growth rate of 0. These results are for both high and low
+![The crystal growth rates normalised by the melting point. For clarity a light grey.
+These results are for both high and low
 pressure melting, which collapse onto the same curve when normalising the temperature by
 the melting point.
 ](../Projects/Crystal_Melting/figures/growth_rates_err.svg){#fig:growth_rates}
@@ -760,23 +760,6 @@ An important aspect of the melting behaviour in the Trimer molecule
 is the onset of dynamic heterogeneities,
 which unlike all other materials
 occur above the melting point.
-Plotting the melting rate as inverse temperature, [@fig:normalised_melting_err_inv]
-to allow the comparison with the dynamics quantities [@fig:rotational_time_sub]
-the temperature at which the curves deviate
-is the same in both cases.
-
-:::{class=subfigures id=fig:comparison_relax_melt}
-
-![melting rates plotted against inverse
-temperature](../Projects/Crystal_Melting/figures/normalised_melting_err_inv.svg){width=80% #fig:normalised_melting_err_inv}
-
-![Rotational relaxation times compared with the rotational relaxations
-](../Projects/Dynamics/figures/rotational_time.svg){width=80% #fig:rotational_time_sub}
-
-A comparison of the dynamics and the rotational relaxation time.
-The unusual behaviour is a result of the fragility of the dynamics.
-
-:::
 
 While it does appear that the dynamic heterogeneities
 play a role in the melting behaviour,
