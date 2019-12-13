@@ -274,17 +274,17 @@ is used to study the melting and crystallisation
 given by
 
 $$ \frac{\partial M}{\partial t} =
--\Kappa \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
+-\Gamma \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
 
 where
 
-- $\Kappa$ is a transport coefficient.
+- $\Gamma$ is a transport coefficient.
 
 Using a series of "straightforward", and "simple" [@Bagdassarian1994] transformations
 we can find an expression for the growth rate $v(T)$
 as a function of temperature
 
-$$ v(T) = -\left[\frac{2K\Kappa(T)(\sqrt{\lambda_\text{liquid}}(T) +
+$$ v(T) = -\left[\frac{2K\Gamma(T)(\sqrt{\lambda_\text{liquid}}(T) +
 \sqrt{\lambda_\text{crystal}}(T))^2}
 {\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
 \lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}}(T)} \right ] \Delta(T)
