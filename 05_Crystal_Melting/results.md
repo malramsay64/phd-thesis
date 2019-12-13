@@ -697,7 +697,7 @@ $$ \omega(M)_\text{liquid} = \frac{\lambda_\text{crystal}}{2} (M - 1)^2 + \Delta
 where $\Delta$ is the free energy difference between the two phases
 which can be estimated as
 
-$$ \Delta \approx \Delta h_m \left\langle 1 - \frac{T}{T_m} \right\rangle $$
+$$ \Delta \approx \Delta h_m \left[ 1 - \frac{T}{T_m} \right] $$
 
 and shown in @Fig:fluctuation_harmonic.
 
@@ -723,13 +723,6 @@ able to make the transition
 as a method of comparing the growth rates.
 For the Trimer the fraction is 0.18%,
 far less than the 34% of the LJ-Disc.
-
-Using this semi-empirical density functional theory
-provides some qualitative insight into describing
-the slow crystal growth of the Trimer.
-However, it is not useful as a quantitative description
-of the dynamic processes,
-with classical growth theory being a much better predictor.
 
 ![fluctuation modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg)
 

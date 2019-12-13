@@ -56,7 +56,7 @@ The classical theory of crystal growth
 is attributed to Wilson[@Wilson1900] and Frenkel[@Frenkel1926],
 where the growth rate is determined by the liquid diffusion
 near the interface, and the chemical potential between the two phases.
-At temperatures just below the melting point
+At temperatures slightly below the melting point
 the chemical potential is the rate limiting parameter,
 while typically lower temperatures become limited
 by the diffusion of particles near the interface.
@@ -139,7 +139,7 @@ where as the phase-field theory originally meant an SG approach,
 in which as structural order parameter (the phase field)
 monitors the crystal--liquid transition.
 Recently, however, phase-field methods working on the molecular scale,
-termed phase-field crystal (PFC) models were introduced,
+termed Phase-Field Crystal (PFC) models were introduced,
 which can be classified as simple dynamical density functional approaches."
 This is notable in not actually clarifying how the naming has changed,
 but also noting that every method
@@ -261,7 +261,7 @@ introducing the parameters
 
 - $\lambda_\text{liquid}$ describing the curvature of the liquid parabola,
 - $\lambda_\text{crystal}$ describing the curvature of the crystal parabola, and
-- $\Delta$ which is the difference in free energy between the liquid and crystal.
+- $\Delta$ being the difference in free energy between the liquid and crystal.
 
 Letting $\lambda_\text{liquid} = \lambda_\text{crystal} = 1$ and $\Delta = 0$
 results in @fig:fluctuation_parabola_example.
