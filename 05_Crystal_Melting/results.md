@@ -4,15 +4,17 @@
 
 One of the notable results of this thesis
 is that no crystallisation of any form has been observed.
-As a result of this the crystal structures for the trimer molecule
+As a result the crystal structures for the trimer molecule
 have been found using an isopointal search algorithm [@Jennings2015]
-which finds the best packing of the shape.
-It has been assumed that the structures resulting from
-the optimal packing of hard shapes
-will be closely related to the lowest energy structures
-of the molecules with the Lennard Jones potential.
-
-The best packed structures have the following potential energies
+which finds the best hard sphere packing of the shape.
+It is assumed that the optimal hard packing
+closely matches the crystal structure of the Lennard Jones potential.
+Comparing the packing fraction of each structure
+with the resulting potential energy, [@tbl:potential_energy]
+the best packed structure (p2gg) has the lowest potential energy.
+The remaining structures, p2 and pg
+both have potential energies close to the p2gg structure
+meaning all structures are considered.
 
 Crystal| Packing Fraction |Potential Energy per Molecule (\num{10e-4})
 -------| ---------------- |-------------
@@ -24,53 +26,62 @@ Table: The potential energy for each molecule for the crystal structures with th
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
 a pressure of 1.00. {#tbl:potential_energy}
 
-While the potential energy gives the ground state crystal structure
-molecules will often have a range of crystal structures
-which are stable in different temperature regimes.
-This means evaluating the stability of each of the crystal phases
-at the conditions we are interested in.
-
-Additionally another method of finding the most stable crystal
-is the crystal which has the highest melting point.
-So this is a method of narrowing down the melting point of the crystal.
-
-Since we haven't observed any crystallisation at all,
-are we even looking for the correct structures?
+Having a range of possible crystal structures is nothing unusual,
+spheres in 3D will packing in either
+the hexagonal close packed, or
+the body centered cubic
+structures which have exactly the same packing fraction.
+Molecular crystals are often even more complex,
+with competing structures being a possible reason for slow crystal growth.
 
 ### Clustering of liquid structures
 
-@sec:unsupervised_classification used an unsupervised classification method
-to identify crystal structures within the liquid phase.
-The same approach can be used to find
-any structure commonly found in the liquid.
+Since we haven't observed any crystallisation at all,
+are we even looking for the correct structures?
+It is entirely possible there is the formation of
+a complex crystalline configuration
+which hasn't been observed within the simulations.
+@Sec:unsupervised_classification used an unsupervised classification method
+to identify local structures which were known to be present in the liquid phase.
+The same approach can be used to identify clusters of local structure
+which could be the start of crystalline ordering.
+@Fig:cluster_analysis_liquid performs the same clustering
+as in @sec:unsupervised_classification.
+This time, instead of observing distinct regions,
+the particles are distributed evenly throughout configuration space,
+with no significant clustering.
+This makes Monte-Carlo methods the best guess at the crystal structures.
 
-![Clustering analysis of a sequence of liquid
-configurations](../placeholder_figure.png){width=80% #fig:cluster_analysis_liquid}
+![Clustering analysis of a sequence of liquid configurations
+at a temperature $T=0.35$ and pressure $P=1.00$,
+conditions below the melting point of the crystal.
+The HDBSCAN [@McInnes2017] clustering algorithm
+doesn't identify any configurational clusters
+in 10 thousand local structures taken randomly
+from a dynamics trajectory.
+](../Projects/Crystal_Melting/figures/clustering_liquid.svg){width=80% #fig:cluster_analysis_liquid}
 
 ### Packing Analysis
 
-When initially finding the crystal structures which were likely to grow,
-we used the packing of hard molecules
+When initially finding the crystal structures likely to grow,
+the packing of hard molecules was
 as a model to predict the most stable structures.
-This approach has been shown to generate structures
-matching those of atomic systems [@cite],
-however it has not been confirmed for molecular structures.
-It is possible that the complete lack of crystal growth
-is a result of seeding the wrong crystal.
-As an alternative method of finding crystal structures,
-I used the same isopointal search algorithm
-as the hard molecule,
-only the hard sphere potential (@fig:packing_p2_hard) was replaced with
-a Shifted Lennard Jones potential
-as used in the molecular dynamics simulation. (@fig:packing_p2_lj)
+This has been shown to generate crystal structures
+matching those of atomic systems [@Filion2009;@Hudson2011;@OToole2011;@Kummerfeld2008],
+however it has not been verified for molecular structures.
+It is possible that the lack of growth results from seeding the wrong crystal.
+As an alternative method of finding optimal crystal structures,
+I adapted the isopointal search algorithm for hard molecules [@Jennings2015]
+to use a Shifted Lennard Jones potential
+matching that used in the molecular dynamics simulations. [@fig:packing]
 The Lennard-Jones potential provides a slightly different picture of packing.
-Most noticeably the spacing of the molecules
-in the Lennard-Jones packing is much greater
-than the hard discs.
-This is expected,
-as the minimum of the Lennard-Jones potential
+Most noticeably,
+the spacing of the molecules in the Lennard-Jones (LJ) packing
+is greater than for the hard discs.
+This is an expected result
+since the minimum of the Lennard-Jones potential
 lies at a distance of $2^{1/6} \approx 1.12$.
-The main difference is the relative positioning
+The main difference between structures is the relative positioning
 of the alternating layers.
 In the LJ case the molecules are positioned directly face on
 an rearrangement which maximises the positive interactions from
@@ -79,10 +90,18 @@ In comparison, the Hard potential has the molecules
 offset so the small particles rest
 in the concavity between the small and large particle.
 
-:::{class=subfigures id=fig:packing_p2}
+:::{class=subfigures id=fig:packing}
 
-![LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
-![Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
+![p2 Hard](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:packing_p2_hard width=49%}
+![P2 LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
+
+![pg Hard](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:packing_pg_hard width=49%}
+![pg LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p1g1-LJ.svg){#fig:packing_pg_lj width=49%}
+
+![p2gg
+Hard](../Projects/Crystal_Melting/figures/Trimer-p2gg-Hard.svg){#fig:packing_p2gg_hard width=49%}
+![p2gg LJ
+Potential](../Projects/Crystal_Melting/figures/Trimer-p2gg-LJ.svg){#fig:packing_p2gg_lj width=49%}
 
 A comparison of the packing of the hard and the Lennard Jones potentials.
 The molecules coloured in blue are the real copies of the unit cell,
@@ -90,7 +109,7 @@ while the molecules in green are the periodic copies.
 
 :::
 
-So have I been using the wrong crystal structure?
+Have I been using the wrong crystal structures?
 Probably not.
 The transition from the structure in @fig:packing_p2_hard
 to that in @fig:packing_p2_lj can be done by sliding each of the layers,
