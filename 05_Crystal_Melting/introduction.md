@@ -280,33 +280,17 @@ where
 
 - $\Kappa$ is a transport coefficient.
 
-landau Ginzburg form
+Using a series of "straightforward", and "simple" [@Bagdassarian1994] transformations
+we can find an expression for the growth rate $v(T)$
+as a function of temperature
 
-- Critical clusters
+$$ v(T) = -\left[\frac{2K\Kappa(T)(\sqrt{\lambda_\text{liquid}}(T) +
+\sqrt{\lambda_\text{crystal}}(T))^2}
+{\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
+\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}}(T)} \right ] \Delta(T)
+$$ {#eq:dft_growth_rate}
 
-@Bagdassarian1994 propose an alternative method
-of understanding melting rates
-somewhat modelled on the Marcus [@Marcus1956] theory of electron transfer.
-The model describes an order parameter $M(\vect{r}, t)$
-which describes the local state of the system.
-The fluctuations of the order parameter
-can be approximated by parabolas,
-with one describing each of the phases.
-This paper has a
-
-- Phase field approach
-    - rigorously derived based on variational principles of irreversible
-      thermodynamics [@Emmerich2009]
-    - used to model more complex behaviours [@Granasy2019;@Ericsson2019]
-        - Dendrites, eutectic patterns, fractal like structures
-    - currently has been used sparingly in the modelling of rates
-
-- Use a local structural order parameter $\phi(\vect{r}, t)$ termed the *phase field*
-    - a measure of local crystallinity
-    - can monitor the presence of many different phases
-- Able to monitor a range of different
-
-- Front velocity $v_{PF} = (\alpha a / \lambda)\sqrt{3kT/m}$
+with $K$ being the correlation length of the order parameter.
 
 ## Calculation of Melting Rates
 
