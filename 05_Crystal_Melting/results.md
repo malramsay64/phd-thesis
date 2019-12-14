@@ -228,6 +228,9 @@ In the final configuration (@fig:transition_end),
 there are still three rows of the p2gg crystal,
 which are grain boundaries between
 layers of the p2 crystal with different orientations.
+The presence of this phase transition is
+additional evidence that we have identified
+the crystals which will grow in simulation.
 
 While the p2 and the p2gg polymorphs
 have comparable melting rates,
@@ -362,10 +365,10 @@ Trimer [@sec:dynamics] | \num{2.3e-7} | \num{5.6e-7}
 Table: Comparison of the structural and rotational relaxation times
 of the Lewis--Wahnström (LW) and Trimer molecules.
 The values for the Lewis--Wahnström model
-and are for a simulation with a density of \SI{1.135}{\gram\per\mili\liter}
+and are for a simulation with a density of \SI{1.135}{\gram\per\milli\liter}
 and at \SI{375}{\kelvin}, well below the melting point of 816 K.
 The value for the Trimer are at a pressure of \num{1.00}
-and temperature of \num{0.36} which is the melting point.
+and temperature of \num{0.36} being the melting point.
 The real units are to model ortho-terphenyl as presented in @Pedersen2011. {tbl:relaxation_timescales}
 
 The timescales presented in @tbl:relaxation_timescales
@@ -384,16 +387,19 @@ while for the Trimer this of \num{1.2e-5}, 2000 times slower.
 
 ## Characteristic Temperatures
 
-### Spinodal
+When studying melting it is important to understand
+the range of temperatures over which the melting is well defined.
+At the lower bound this is the melting point $T_m$,
+the temperature at which the crystal neither melts or grows.
+The upper bound of melting is the spinodal point.
 
-The melting we are studying that which occurs
+### Spinodal temperature
+
+The melting we are modelling is that which occurs
 at the liquid--crystal interface.
-This interfacial melting occurs
-from the melting point up to the spinodal Temperature,
-where the crystal phase is no longer metastable
-and starts breaking apart from within.
-Before modelling the melting rate over a range of temperatures,
-we need the temperature range which displays the expected melting behaviour.
+The upper limit of the interfacial melting is
+the temperature at which the crystal phase is no longer metastable,
+where it spontaneously melts.
 
 <div id="fig:spinodal" class="subfigures">
 
@@ -458,8 +464,7 @@ is highly unusual and well above any other materials.
 
 The melting point $T_m$ is the temperature
 at which the rate of crystal growth
-is the same as the rate of melting
----the equilibrium state.
+is the same as the rate of melting---the equilibrium state.
 Typically the melting rate is the temperature
 at which the measurement of the growth rate
 crosses from negative (melting) to positive (growth).
@@ -469,13 +474,10 @@ at which the melting rate is no longer measurable.
 I consider the limit of measuring the melting
 rate being the removal of a single layer of crystal
 over the timescale of the simulation, a rate of \num{1e-6}.
-The timescale cannot be extended beyond this as
-a technical limit of how timesteps are handled in HOOMD-blue [@hoomd_counter]
-which can only store numbers up to $2^{32}-1$,
-slightly more than 4 billion.
+The timescale cannot be extended as a technical limit of HOOMD-blue [@hoomd_counter]
+which can only store numbers up to $2^{32}-1$, slightly more than 4 billion.
 In concert with the technical limitation
-there is a practical limitation
-with simulations taking multiple weeks to run.
+there is a practical limitation with simulations taking multiple weeks to run.
 
 The melting points are tabulated in @Tbl:crystal_melting_point
 with the values for the tables extracted
@@ -498,8 +500,8 @@ over the course of the simulation.
 
 ## Melting Rates
 
-The simulations in @sec:?? show the p2 crystal to be most stable,
-meaning it is used for further analysis of the melting rate.
+The simulations in @sec:polymorphic-stability show the p2 crystal to be most stable,
+so is used for further analysis of the melting rate.
 The isotropic melting rate of the p2 crystal
 is the chosen metric,
 measured using an estimated radius,
@@ -519,7 +521,7 @@ the radius is expected to change linearly, which is reflected in all the data.
 With the time dependence of the estimated radius
 matching the expected linear dependence,
 the crystal growth rate is the slope of a linear fit.
-@fig:growth_rates shows the growth rates and their respective errors.
+@fig:melting_rates shows the growth rates and their respective errors.
 The normalisation of the melting point
 brings both pressures onto a single curve,
 the same result as seen for the dynamic quantities.
@@ -534,7 +536,7 @@ longer crystal melting simulations are finished.
 These results are for both high and low
 pressure melting, which collapse onto the same curve when normalising the temperature by
 the melting point.
-](../Projects/Crystal_Melting/figures/growth_rates_err.svg){#fig:growth_rates}
+](../Projects/Crystal_Melting/figures/melting_rates_err.svg){#fig:melting_rates}
 
 The normalisation by the temperature allows
 for the comparison between different pressures,
@@ -546,16 +548,6 @@ in the relaxation time.
 As the temperature decreases the distance
 tends to get smaller,
 matching the expected behaviour.
-
-![This normalises both the temperature by the melting point, and the growth rate by the
-rotational relaxation. This figure shows the growth rate slowing faster than
-can be explained by the dynamics, which is indicated by the values approaching zero.
-](../Projects/Crystal_Melting/figures/normalised_melting_err.svg){#fig:normalised_melting}
-
-![This normalises both the temperature by the melting point, and the growth rate by the
-rotational relaxation. This figure shows the growth rate slowing faster than
-can be explained by the dynamics, which is indicated by the values approaching zero.
-](../Projects/Crystal_Melting/figures/normalised_melting_err_low.svg){#fig:normalised_melting}
 
 ### Comparison to Lewis--Wahnström
 
@@ -597,7 +589,7 @@ normalised by a relaxation time [@eq:normalised_growth].
 Using the points from @fig:normalised_melting and the values from @tbl:potential_energy_difference,
 the unknown parameter $c$ of @eq:normalised_growth was found using the
 Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001] for least squares fitting of non-linear functions.
-This gives the lines of fit displayed in @fig:normalised_melting.
+This gives the lines of fit displayed in @fig:normalised_melting_fit.
 The parameters of the fit displayed in @tbl:rate_coefficient.
 
 Pressure            $c$
@@ -637,6 +629,19 @@ are similar to the defect
 which propagates the solid state phase transition
 of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
 
+:::{class=subfigure id=normalised_melting_fit}
+
+![All the melting rates.](../Projects/Crystal_Melting/figures/normalised_melting_fit.svg){#fig:normalised_melting_all}
+
+![Melting rates which fit the
+model.](../Projects/Crystal_Melting/figures/normalised_melting_fit_low.svg){#fig:normalised_melting_zoom}
+
+This normalises both the temperature by the melting point, and the growth rate by the
+rotational relaxation. This figure shows the growth rate slowing faster than
+can be explained by the dynamics, indicated by the values approaching zero.
+
+:::
+
 ### Semi-empirical Density Functional
 
 The incredibly high spinodal point of the trimer,
@@ -664,8 +669,26 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
+:::{id=fig:fluctuation_rate class=subfigures}
+
+![fluctuation
+modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=80%}
+
+![fluctuation
+modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit_low.svg){width=80%}
+
+The rates of fluctuations
+
+:::
+
+## Slow Melting Rates
+
+The melting rates of the Trimer are significantly slower
+than what is predicted by the classical theory,
+yet the ideas are captured by the fluctuation theory.
+How is this so different to a Lennard--Jones liquid?
 As a point of comparison,
-similar calculations can be made for 2D Lennard-Jones discs,
+similar calculations for the fluctuations can be made for 2D Lennard-Jones discs,
 though a different order parameter is required,
 in this case using the hexatic order parameter, [@Strandburg1984;@Tobochnik1982]
 indicative of the bond orientational order.
@@ -763,39 +786,3 @@ able to make the transition
 as a method of comparing the growth rates.
 For the Trimer the fraction is 0.18%,
 far less than the 34% of the LJ-Disc.
-
-![fluctuation modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg)
-
-## Dynamic Heterogeneities and Melting
-
-An important aspect of the melting behaviour in the Trimer molecule
-is the onset of dynamic heterogeneities,
-which unlike all other materials
-occur above the melting point.
-
-While it does appear that the dynamic heterogeneities
-play a role in the melting behaviour,
-that still doesn't explain why
-the melting is so much slower than the Lewis--Wahnström model,
-when comparing the number of relaxation times.
-
-@Granasy2004
-
-- description of heterogeneities causing
-- large translations before rotational decorrelation
-- interface growth slow relative to reorientation
-
-### Ordering of Multiple Parameters
-
-Instead of describing crystal growth as a single with a single order parameter
-as in @sec:semi-empirical-density-functional,
-@Russo2016 posit that multiple order
-
-In the Lewis--Wahnström model,
-the ordering of multiple parameters can be ignored,
-since the rotational relaxation time
-is five orders of magnitude faster than the structural relaxation time. [@Pedersen2011]
-For the Trimer model here however,
-both relaxations are the same order of magnitude
-meaning we have to consider both of them
-in the model of crystal growth.
