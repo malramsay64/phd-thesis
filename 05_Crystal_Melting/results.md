@@ -786,3 +786,14 @@ able to make the transition
 as a method of comparing the growth rates.
 For the Trimer the fraction is 0.18%,
 far less than the 34% of the LJ-Disc.
+
+## Conclusion
+
+- Melting is really slow
+- Crystal is very rigid -> fluctuation modelling
+- This gives rise to the exceptionally slow growth rate
+- Also explains the high spinodal point of the crystal
+
+- There are however pathways which allow fast melting
+- pg crystal and the corners
+- solid state phase transition
