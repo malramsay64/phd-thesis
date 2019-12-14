@@ -129,9 +129,9 @@ this is not the equilibrium crystal form.
 
 ## Polymorphic Stability
 
-The packing and potential energy calculations [@tbl:potential_energy]
-indicate the p2gg structure as the most stable,
-although it is very close between the structures.
+The potential energy calculations [@tbl:potential_energy]
+propose the p2 structure as the most stable,
+although it is very close in energy to the p2gg structure.
 A significantly improved understanding of the crystals
 can be found by watching them melt.
 @Fig:melting_comparison monitors the size of each crystal as they melt.
@@ -230,8 +230,8 @@ which are grain boundaries between
 layers of the p2 crystal with different orientations.
 
 While the p2 and the p2gg polymorphs
-have relatively comparable melting rates,
-mostly as a result of the p2gg structure
+have comparable melting rates,
+primarily resulting from p2gg structure
 undergoing a solid state transition to the p2 structure,
 the pg polymorph has a significantly faster melting rate.
 Understanding how this crystal melts may provide some insight
@@ -246,74 +246,76 @@ into the phenomenally slow growth rates of the p2 crystal.
 ![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_2.svg){#fig:pg_melting_2 width=33%}
 <!-- markdownlint-enable MD045 -->
 
-This shows the melting of the pg crystal shown in red,
-with the liquid shown in blue.
-Trace amounts of the p2 and the p2gg crystal
+Melting of the pg crystal,
+with crystalline regions shown in red,
+and liquid regions shown in blue.
+Trace quantities of the p2 and the p2gg crystal
 are shown in yellow and green respectively.
-This shows the melting from the initial crystal (a),
-after \num{2e8} timesteps (b)
-and after \num{4e8} timesteps (C).
-While the bottom of the crystal melts,
-the top layer remains the same throughout.
+This shows (a) the melting from the initial crystal,
+(b) after a time of \num{1e6} and
+(c) after a time of \num{2e6}.
 
 </div>
 
 @Fig:pg_melting shows configurations
 from the melting of the pg crystal,
-which shows highly directional melting
-of the pg crystal.
+demonstrating asymmetric melting of the pg crystal.
 In the same time the crystal has melted
 the bottom 30 layers (from @fig:pg_melting_0 to @fig:pg_melting_2),
-the top layer of the crystal
-has remained completely intact,
+the top layer of the crystal remains completely intact,
 containing the same molecules as the initial configuration.
+It is a common occurrence for
+crystal faces to have different melting rates, [@Burke1988;@Tymczak1990]
+however it is far less common for different rates
+on opposite sides of the same crystal,
+such that no other examples have been found within the literature.
 So what is the difference between these two faces?
 
 <div id="fig:pg_crystal" class="subfigures">
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=33%}
-![](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.svg){#fig:pg_crystal_top_end width=33%}
+![Bottom beginning](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=33%}
+![Top Beginning](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=33%}
+![Top End](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.svg){#fig:pg_crystal_top_end width=33%}
 <!-- markdownlint-enable MD045 -->
 
-The structure at the top and bottom of the pg crystal
+Zooming in on the pg crystal structure
+at the beginning of the melting run
+(a) at the bottom and (b) at the top.
+This can be compared to
+(c) the top after a time of \num{2e6}.
 
 </div>
 
 The primary difference between
 the top and the bottom of the pg crystal,
 is the face of the molecule exposed to the liquid.
-With the rounded back on the top
-and the flatter front on the bottom.
-In both the top and the bottom,
-molecules are locked in the concavities,
-configurations which are fairly similar.
-Another possible clue
-comes from the shape of the crystal after melting.
-@Fig:pg_melting_1 has a crystal shaped like
-an arrow pointed downwards,
-indicating the melting starts at
-the bottom left and right corners
-of the crystal.
-While it does makes sense
-that the corners are 'weak spots'
-in the crystal structure
-from which the disorganisation of the crystal
-has a lower barrier.
-It still doesn't entirely explain
-the difference between the bottom corners
-and the top corners.
+The top face of the crystal exposes the larger particle,
+while the bottom face exposes all three particles.
+Interactions at the bottom face of the crystal
+can have much stronger interactions with the liquid
+than at the top of the crystal,
+interactions which can help remove particles from the crystal.
+This isn't the entire story,
+since molecules at the top and bottom of the crystal
+have the same interactions within the crystal
+with each molecule locked into the concavities
+of the neighbouring molecules.
+The melting of the crystal [@fig:pg_melting_1]
+takes place along the diagonal crystal planes
+giving the triangular shape.
+Along this face there isn't the same
+locking of molecules into the crystal structure.
 
 Looking past the crystal
 to the first layer of the liquid,
 the layer of liquid above the top (@fig:pg_crystal_top)
-has much more orientational order
+has much orientational order
 than the layer below the bottom (@fig:pg_crystal_bottom).
 The orientational order observed
 at the start of the simulation
-persists throughout the simulation,
+persists and possibly even extends throughout the simulation,
 still remaining after a time of \num{2e6} (@fig:pg_crystal_top_end).
 
 ## Characteristic Timescale
@@ -325,50 +327,60 @@ This is important in evaluating *slow* crystal growth,
 is there something interesting occurring,
 or is it the dynamics slowing down.
 
-In the crystallisation of the Lewis--Wahnström model [@Pedersen2011]
-the structural relaxation time $\tau_S$
-is used as the characteristic timescale.
-However as discussed in @sec:coupling_of_translational_and_rotational_motion
-there is a breakdown in the Stokes--Einstein--Debye relations
+The crystallisation of the Lewis--Wahnström model [@Pedersen2011]
+uses the structural relaxation time $\tau_S$
+as the characteristic timescale.
+As discussed in @sec:coupling_of_translational_and_rotational_motion
+the Trimer model has a breakdown in the Stokes--Einstein--Debye relations
 meaning there are different temperature dependences
-for each of the relaxation times.
+for the structural, rotational, and diffusive relaxation times.
 Crystallisation is dominated by short range motions,
 particles translating to the nearest crystal site
 or rotating to match orientation with the rest of the particles.
 This means that although the short timescale relaxation times
 of the structural relaxation $\tau_S$ and rotational relaxation $\tau_R$
 are dominated by jump dynamics,
-their timescale best represents crystallisation.
-A further concern is the breakdown
-in the scaling of the Stokes--Einstein--Debye relations,
-with the rotations getting slower at a faster rate
-compared to the dynamics. [@fig:trans_rot_trimer]
-The additional slowdown of the rotations
-is further reasoning for being the characteristic
-timescale of melting.
+their timescale best represents the process of crystallisation.
 
 When comparing the timescales of the Lewis--Wahnström model (LW)
 to that of the trimer, (@tbl:relaxation_timescales)
 there is a noticeable difference
 in the ratio of the rotational and structural relaxations.
-The timescale of rotations in the LW model
-is not significant compared to the structural relaxation,
-while for the Trimer model,
-rotations have a longer timescale
-than the structural relaxation.
-A further reason for the choice of rotations
-is from watching the melting of the crystals in @sec:polymorphic_stability
-the motions that result in melting are the rotations.
+The LW model has a rotational relaxation time about half
+of the structural relaxation time,
+while the Trimer has a structural relaxation
+about half of the rotational relaxation.
+For the Trimer, the rotational motion
+is the limiting contributor to the relaxations
+so it makes sense to use that as characteristic timescale.
 
-Model                  | $\tau_S$    | $\tau_R$
+Model                  | $\tau_S$ (s)   | $\tau_R$ (s)
 ------                 |----------   |---------
 LW [@Pedersen2011]     | \num{2e-8}  | \num{8.7e-9}
-Trimer [@sec:dynamics] | \num{1.4e5} | \num{3.5e5}
+Trimer [@sec:dynamics] | \num{2.3e-7} | \num{5.6e-7}
 
 Table: Comparison of the structural and rotational relaxation times
 of the Lewis--Wahnström (LW) and Trimer molecules.
-The values for the LW model are given in units of seconds,
-while the Trimer values are in reduced Lennard--Jones time units. {tbl:relaxation_timescales}
+The values for the Lewis--Wahnström model
+and are for a simulation with a density of \SI{1.135}{\gram\per\mili\liter}
+and at \SI{375}{\kelvin}, well below the melting point of 816 K.
+The value for the Trimer are at a pressure of \num{1.00}
+and temperature of \num{0.36} which is the melting point.
+The real units are to model ortho-terphenyl as presented in @Pedersen2011. {tbl:relaxation_timescales}
+
+The timescales presented in @tbl:relaxation_timescales
+are at very different temperature ranges
+since that is the data available in publications.
+However the significantly longer relaxation timescales
+even when the trimer is at the melting point
+do help explaining the lack of crystallisation,
+the timescales are beyond the limit of computational simulations.
+@Pedersen2011a documents the diffusive timescale
+at the melting point of the Lewis--Wahnström model,
+allowing for a comparison of the dynamics at the melting point.
+The Lewis--Wahnström model has a melting point diffusion constant
+of \num{3e-2} in reduced Lennard--Jones units,
+while for the Trimer this of \num{1.2e-5}, 2000 times slower.
 
 ## Characteristic Temperatures
 
