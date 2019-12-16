@@ -551,27 +551,41 @@ matching the expected behaviour.
 
 ### Comparison to Lewis--Wahnström
 
-The growth occurs over a period of $\approx 5\tau_S$ within the Lewis-Wahnström model. [@Pedersen2011]
+While it is difficult to make a direct comparison to the Lewis--Wahnström model
+as there is no data published on crystal melting rates, only growth rates. [@Pedersen2011]
+The growth of a Lewis--Wahnström crystal to comprise all 356 molecules in the simulation
+occurs over a period of $\approx 5\tau_S$.
+The *fastest* melting rate measured for the trimer molecule is $\approx 0.4 \tau_R$
+meaning in the same timescale less than 2 layers of the crystal will have melted.
+As an estimate, the dynamics of the melting and growth
+of the Trimer molecule are at least an order of magnitude slower
+than for the Lewis--Wahnström model.
 
-Here the fastest melting rate is $\approx 0.4 \tau_R$ so in 5 units a single layer will
-have melted.
+It is interesting to compare the growth of Lennard--Jones discs,
+in 2D the crystal forms almost instantaneously, [@cite]
+with simulations using binary mixtures to prevent the crystallisation.
+In 3D, DJ particles create the crystal far slower
+often introducing packing defects.
+It is intriguing that this relationship flips for a molecular system.
 
-If we were modelling OTP the simulation timescale would be \SI{3e-5}{\second}, four
-times longer than the results from @Pedersen2011
-and we are not even below the melting point.
-
-The growth of crystals in the trimer is at least two orders of magnitude
-slower than that of the Lewis--Wahnström model.
-It is somewhat difficult to make a comparison
-since no publications made their code or data available.
+The 2D molecules are so much slower
+as a result of the rotational constraints.
+As presented in @sec:dynamics,
+rotational motion is required for translational motion to occur,
+and being two dimensional, the trimer can easily lock up.
+In 3D, the rotations are not so constrained,
+with alternate degrees of freedom available
+to allow further rotation.
 
 ## Modelling Melting Rates
 
-Theory which describes the temperature dependence of the melting rate,
-formulated from a characteristic dynamic timescale of the system
-and the chemical potential energy difference between the phases.
-The chemical energy difference is often replaced with
-the potential energy difference at the melting point.
+Theoretical models of the melting rates
+are able to help understand which aspects
+of the melting behaviour are important
+allowing an explanation of the slow rate of the trimer.
+These theories require the difference in enthalpy
+between the liquid and crystal
+as an estimate of the chemical potential energy.
 
 Pressure:                    1.00   13.50
 ----------                 ------  ------
