@@ -683,6 +683,11 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
+Fitting the fluctuation model to the melting rates
+gives the curves in @fig:fluctuation_rate.
+This predicts the melting over the entire temperature range
+interfacial melting was observed.
+
 :::{id=fig:fluctuation_rate class=subfigures}
 
 ![fluctuation
@@ -691,7 +696,7 @@ modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=8
 ![fluctuation
 modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit_low.svg){width=80%}
 
-The rates of fluctuations
+The melting rates fitted to the fluctuation model
 
 :::
 
