@@ -271,7 +271,7 @@ Importantly when using version control
 is to keep the size of each change fairly small
 as it makes this retrospective analysis much easier.
 Smaller changes are also a lot easier
-for someone else to review. (See @sec:Peer_Review)
+for someone else to review. [@sec:peer-review]
 
 While small changes are easier to review,
 they should also be self contained,
@@ -466,7 +466,7 @@ This makes it possible for your entire audience
 to replicate your research as part of a 20 minute presentation.
 Additionally jupyter notebooks are becoming
 part of the research outputs for papers,
-in particular the LIGO discovery included the accompanying notebook
+in particular the LIGO discovery[@cite] included an accompanying notebook
 so that anyone can replicate their analysis.
 The adoption of Jupyter notebooks within a research environment
 is so prolific that it has even been picked up by mainstream media,

@@ -4,7 +4,7 @@
 
 The simulations for the machine learning dataset
 are created using the same method as the Crystal Melting
-simulations (see @sec:crystal_melting_simulations).
+simulations (see @sec:crystal-melting-simulations).
 This so the models developed for the machine learning
 are as close to the dataset they will be used with as possible.
 The simulations for the crystal melting do take a long time to run

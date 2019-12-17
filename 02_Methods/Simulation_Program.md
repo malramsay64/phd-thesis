@@ -60,7 +60,7 @@ is to use specialised hardware.
 
 Over the past 10 years Graphics Programming Units (GPUs)
 have become a more important part of any HPC solution,
-now comprising more than 20% of the Top 500 Supercomputers. @cite
+now comprising more than 20% of the Top 500 Supercomputers. [@top_500]
 GPUs provide a highly efficient architecture
 for performing the same calculation
 to many pieces of data simultaneously.
@@ -139,7 +139,7 @@ which has been designed from the ground up for GPU computation.
 This means it makes full use of the GPU
 avoiding communication overheads
 and using the best data structures and algorithms,
-like the SARU pseudo-random number generator (see @sec:??).
+like the SARU pseudo-random number generator. [@sec:random_numbers_in_hoomd]
 While HOOMD-blue is on the cutting edge of technology,
 there is not the same source of literature to draw upon that LAMMPS has.
 This also means that there are not the library of extensions,

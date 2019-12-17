@@ -210,6 +210,10 @@ is a phenomenon which has garnered significant interest;
 it is considered to be a physical indicator of the glass transition,
 a demonstration that it is more than a kinetic phenomenon.
 
+![Structural relaxation from a experimental study showing
+the transition to the two-step process characteristic of
+heterogeneous dynamics](../placeholder_figure.png){#fig:relaxation width=80%}
+
 Relaxations $F(t)$ within systems undergoing Brownian motion,
 whether structural or rotational will have the form
 
@@ -225,7 +229,7 @@ and are fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Ko
 $$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
 
 The stretched exponential function provides terms to describe
-the two-step relaxation process in @fig:relaxtion.
+the two-step relaxation process in @fig:relaxation.
 The short timescale relaxation is known as the $\beta$ relaxation,
 in relation to the $\beta$ term of the stretched exponential,
 and is an indicator of dynamic heterogeneities.
@@ -247,7 +251,7 @@ with some even indicating a spatial component.
 It is through simulations that the nature of the heterogeneous
 dynamics has been understood.
 One of the characteristic pictures of dynamic heterogeneities
-is that of @Hurley1995, (@fig:dynamic_heterogenaeties)
+is that of @Hurley1995, [@fig:dynamic_heterogenaeties]
 where there are regions of particles that retain their original structure,
 while others have moved many molecular distances.
 This visualisation of the dynamic heterogeneities
@@ -256,7 +260,7 @@ in describing this phenomenon.
 It captures the phenomenon so succinctly
 because the simulation is in 2D,
 allowing everything to be represented on the page.
-A similar picture is painted in 3D systems [@Donati1999],
+A similar picture is painted in 3D systems, [@Donati1999]
 with spatially separated regions of fast and slow particles.
 
 ![The spatial distribution of motion
@@ -297,7 +301,7 @@ Despite many experiments [@cite] searching for
 a growing length scale as the temperature drops,
 there has been no data to suggest this is the case.
 
-:::{class=subfigure id="potential_energy"}
+:::{class=subfigures id=fig:potential_energy}
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
@@ -305,16 +309,16 @@ there has been no data to suggest this is the case.
 ![](../placeholder_figure.png){#fig:potential_energy_3d width=49%}
 <!-- markdownlint-disable MD045 -->
 
-When we look at two dimensions,
+When we look at two dimensions (a),
 there is no possible path for getting from A to B
 without going over the large energy barrier.
-However, by adding an extra dimension,
+However, by adding an extra dimension (b),
 it becomes possible to go around.
 
 :::
 
 ![A representation of the potential energy landscape for a
-liquid.](../placeholder_figure.png){#fig:potential_energy_landscape}
+liquid.](../placeholder_figure.png){#fig:potential_energy_landscape width=80%}
 
 Further evidence for the idea that the structure
 plays a role in the resulting dynamics
@@ -355,7 +359,7 @@ Experimental evidence of this is displayed in @fig:trans_rot_otp
 which is supported by additional studies.
 
 ![Translational an rotational coupling within ortho-terphenyl
-breaks down below 290K @Chang1994](../placeholder_figure.png){#fig:trans_rot_otp}
+breaks down below 290K @Chang1994](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
 
 The idea that the rotational and translational diffusion constants
 were proportional to each other

@@ -268,17 +268,14 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 This can then be converted to a python function:
 
 ```python
-from functools import lru_cache
-
-# This decorator is what enables the caching of this function,
-# making this function 100 times faster for subsequent exectutions
-@lru_cache()
 def create_wave_vector(wave_number: float, angular_resolution: int):
     """Convert a wave number into a radially symmetric wave vector."""
     angles = numpy.linspace(
         0, 2 * numpy.pi, num=angular_resolution, endpoint=False
     ).reshape((-1, 1))
-    wave_vector = numpy.concatenate([numpy.cos(angles), numpy.sin(angles)], axis=1)
+    wave_vector = numpy.concatenate(
+        [numpy.cos(angles), numpy.sin(angles)], axis=1
+    )
     return wave_vector * wave_number
 
 
@@ -303,7 +300,7 @@ monitoring structural relaxation $F_d(t)$
 using the quantity suggested by @Widmer-Cooper2009
 
 $$ F_d(t) = \begin{cases}
-    1 &\quad\text{if} \Delta x < d, \\
+    1 &\text{if} \quad \Delta x < d, \\
     0 & \text{otherwise}
     \end{cases} $$
 
@@ -369,7 +366,7 @@ where $q(t)$ is the quaternion representing the orientation at time $t$.
 The calculation the quaternion angle
 is done using the Rowan package [@Ramasubramani2018],
 specifically using the function `rowan.geometry.intrinsic_distance`.
-See @sec:quaternion_roataions for more details
+See @sec:quaternion_rotations for more details
 in using quaternions for representing orientations.
 
 For both these values,
@@ -385,9 +382,9 @@ over all the key frames.
 Particles undergoing Brownian motion
 will have a distribution of distances $\Delta r$
 which has a Gaussian distribution.
-The non-Gaussian parameter $\alpha$ [@Rahman1964]
+The non-Gaussian parameter $\alpha$
 is a measure of how far the actual distribution
-of distances deviates from a Gaussian distribution
+of distances deviates from a Gaussian distribution [@Rahman1964]
 
 $$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 1 $$
 

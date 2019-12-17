@@ -247,12 +247,12 @@ Note the logarithmic scale on the time axis.
 ](../Projects/Dynamics/figures/structural_relaxation.svg){width=80% #fig:structural_relaxation}
 
 The shape of @fig:structural_relaxation has
-many of the same features as @fig:scattering_function,
-the reversal of relaxations at \num{10e4} timesteps,
+many of the same features as @fig:intermediate_scattering_function,
+the reversal of relaxations at \num{1e4} timesteps,
 the exponential relaxation.
 The large difference between the two types of relaxation
-is that the two step relaxation process
-is much more noticeable @fig:scattering_function.
+is that the two-step relaxation process
+is much more noticeable @fig:intermediate_scattering_function.
 
 ### Diffusion
 
@@ -337,7 +337,7 @@ and the rotational relaxation (@fig:rotational_relaxation).
 This is also supported by the plateau region
 in the mean squared displacement (@fig:msd).
 These behaviours which have also been observed
-in both simulations [@cite] and experiments [@cite] of fragile liquids,
+in both simulations and experiments of fragile liquids,
 demonstrate that this molecule is a good candidate
 for further investigation of it's dynamic behaviour
 and there are no issues dealing with a simulation in 2D.
@@ -671,7 +671,7 @@ This is in contrast to the slow molecule (@fig:molecule_trajectory_slow)
 which spends all the time within the initial cage,
 however the size of that cage is significantly larger.
 
-:::{class=subfigure id="molecule_trajectory"}
+:::{class=subfigures id=fig:molecule_trajectory}
 
 ![Fast Particle](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=48% #fig:molecule_trajectory_fast}
 ![Slow Particle](../Projects/Dynamics/figures/molecule_trajectory_slow.svg){width=48% #fig:molecule_trajectory_slow}
@@ -784,8 +784,7 @@ to the rotational diffusion constant
 and reproducing @fig:trans_rot_otp,
 we get @fig:trans_rot_trimer.
 This shows that jump dynamics
-are not the only cause for
-the breakdown of SED.
+are not the only cause for the breakdown of SED.
 The result in @fig:trans_rot_trimer
 is also produced by @Kawasaki2019
 simulating water in 3D,
@@ -846,7 +845,7 @@ the Stokes--Einstein--Debye relations are;
 
 These assumptions stem from the formulation
 from Brownian motion.
-@Sec:jump_dynamics investigates the first of these assumptions,
+@Sec:jump-dynamics investigates the first of these assumptions,
 so here we look towards the second.
 @Fig:trans_rot_trimer depicts a decoupling
 of the translational and rotational diffusion constants.

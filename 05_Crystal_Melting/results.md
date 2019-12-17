@@ -41,12 +41,12 @@ are we even looking for the correct structures?
 It is entirely possible there is the formation of
 a complex crystalline configuration
 which hasn't been observed within the simulations.
-@Sec:unsupervised_classification used an unsupervised classification method
+@Sec:unsupervised-classification used an unsupervised classification method
 to identify local structures which were known to be present in the liquid phase.
 The same approach can be used to identify clusters of local structure
 which could be the start of crystalline ordering.
 @Fig:cluster_analysis_liquid performs the same clustering
-as in @sec:unsupervised_classification.
+as in @sec:unsupervised-classification.
 This time, instead of observing distinct regions,
 the particles are distributed evenly throughout configuration space,
 with no significant clustering.
@@ -96,9 +96,9 @@ in the concavity between the small and large particle.
 ![P2 LJ Potential](../Projects/Crystal_Melting/figures/Trimer-p2-LJ.svg){#fig:packing_p2_lj width=49%}
 
 ![pg
-Hard](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:packing_pg_hard width=30%}
+Hard](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:packing_pg_hard height=5cm}
 ![pg LJ
-Potential](../Projects/Crystal_Melting/figures/Trimer-p1g1-LJ.svg){#fig:packing_pg_lj width=30%}
+Potential](../Projects/Crystal_Melting/figures/Trimer-p1g1-LJ.svg){#fig:packing_pg_lj height=5cm}
 
 ![p2gg
 Hard](../Projects/Crystal_Melting/figures/Trimer-p2gg-Hard.svg){#fig:packing_p2gg_hard width=49%}
@@ -143,7 +143,7 @@ denoting it is the least stable.
 ![Comparison of the melting of each of the different crystal types. These values are
 compared at a pressure of 13.50 and a temperature of 1.40. The pg crystals melts
 significantly faster than either the p2 or p2gg crystals.
-](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg){#fig:melting_comparison}
+](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg){#fig:melting_comparison width=80%}
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
 1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
@@ -333,7 +333,7 @@ or is it the dynamics slowing down.
 The crystallisation of the Lewis--Wahnström model [@Pedersen2011]
 uses the structural relaxation time $\tau_S$
 as the characteristic timescale.
-As discussed in @sec:coupling_of_translational_and_rotational_motion
+As discussed in @sec:coupling-of-translational-and-rotational-motion
 the Trimer model has a breakdown in the Stokes--Einstein--Debye relations
 meaning there are different temperature dependences
 for the structural, rotational, and diffusive relaxation times.
@@ -360,7 +360,7 @@ so it makes sense to use that as characteristic timescale.
 Model                  | $\tau_S$ (s)   | $\tau_R$ (s)
 ------                 |----------   |---------
 LW [@Pedersen2011]     | \num{2e-8}  | \num{8.7e-9}
-Trimer [@sec:dynamics] | \num{2.3e-7} | \num{5.6e-7}
+Trimer [@sec:Dynamics] | \num{2.3e-7} | \num{5.6e-7}
 
 Table: Comparison of the structural and rotational relaxation times
 of the Lewis--Wahnström (LW) and Trimer molecules.
@@ -369,7 +369,7 @@ and are for a simulation with a density of \SI{1.135}{\gram\per\milli\liter}
 and at \SI{375}{\kelvin}, well below the melting point of 816 K.
 The value for the Trimer are at a pressure of \num{1.00}
 and temperature of \num{0.36} being the melting point.
-The real units are to model ortho-terphenyl as presented in @Pedersen2011. {tbl:relaxation_timescales}
+The real units are to model ortho-terphenyl as presented in @Pedersen2011. {#tbl:relaxation_timescales}
 
 The timescales presented in @tbl:relaxation_timescales
 are at very different temperature ranges
@@ -605,7 +605,7 @@ pressures. {#tbl:potential_energy_difference}
 
 The classical theory of crystal describes growth
 normalised by a relaxation time [@eq:normalised_growth].
-Using the points from @fig:normalised_melting and the values from @tbl:potential_energy_difference,
+Using the points from @fig:melting_rates and the values from @tbl:potential_energy_difference,
 the unknown parameter $c$ of @eq:normalised_growth was found using the
 Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001] for least squares fitting of non-linear functions.
 This gives the lines of fit displayed in @fig:normalised_melting_fit.
@@ -637,7 +637,7 @@ Without observing crystal growth,
 the melting point is going to be an estimated value,
 and the current estimate is within the error of the simulations.
 
-:::{class=subfigure id=normalised_melting_fit}
+:::{class=subfigures id=fig:normalised_melting_fit}
 
 ![All the melting rates.](../Projects/Crystal_Melting/figures/normalised_melting_fit.svg){#fig:normalised_melting_all}
 

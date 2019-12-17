@@ -346,7 +346,7 @@ they are no longer able to rotate.
 ### Geometric Frustration
 
 Building upon some of the ideas of the jamming transition
-is a model of geometric [@Frank1952] or packing @Tarjus2005;@Kivelson1995] frustration.
+is a model of geometric [@Frank1952] or packing [@Tarjus2005;@Kivelson1995] frustration.
 This considers small regions of the liquid,
 which form structures that minimise the local free energy,
 however these structures are then unable to tile space.
@@ -354,7 +354,7 @@ This gives small regions of favourable local structure
 which are highly favourable and unlikely to diffuse.
 
 This idea of geometric frustration is notable for the Trimer molecule,
-as there are a range of crystal structures it can take on.[@sec:stability-of-crystal-phases]
+as there are a range of crystal structures it can take on. [@sec:stability-of-crystal-phases]
 
 ### Conclusion
 

@@ -72,6 +72,8 @@ with a side length of $\sigma$ and an angle of $75^\circ$
 which is displayed in @fig:lewis_wahnstrom_mol
 
 \begin{figure}
+    \label{fig:lewis_wahnstrom_mol}
+    \caption{Depicting the geometry of the Lewis--Wahnström molecule}
     \begin{tikzpicture}[scale=2]
         \draw (0, 0) circle (0.5) coordinate(x);
         \draw (0.602, 0.793) circle(0.5) coordinate(y);

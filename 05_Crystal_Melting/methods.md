@@ -119,12 +119,14 @@ are wrapped into the missing regions on the opposite side.
 
 The conversion to the orthorhombic shape
 is done by moving the shifted regions
-as shown in @fig:ortho_rhombisation.
+as shown in @fig:orthorhombisation.
 This does result in the neighbours
 of the top and bottom layers changing
 which requires a careful choice
 of the number of overall layers
 so the orthorhombic configuration is favourable.
+
+![
 
 ```text
    ____________________
@@ -135,8 +137,11 @@ so the orthorhombic configuration is favourable.
 /_|_______________/_|
 ```
 
+Depicting conversion to orthorhombic
+](../placeholder_figure.png){width=80% #fig:orthorhombisation}
+
 The outer 1/3 of the orthorhombic configuration is then melted
-at temperatures displayed in @tbl:interface_melt_temps,
+at 2.2 times the melting point,
 removing any minor mismatch in the alignment of the periodic faces.
 The central crystal region is not integrated during the melting,
 however the distance between particles increases as the box size increases.
@@ -178,7 +183,7 @@ through the growth in size of the simulation cell. [@Tang2013]
 Other methods are to compute a local property as a measure of order
 like a hexatic order parameter for 2D simulations,
 or a Steinhardt bond order parameter [@Reinhart2018].
-See @sec:MLCrystals for details about identifying
+See @sec:Machine-Learning for details about identifying
 crystal structure within a liquid.
 These approaches use a slab geometry [@Kerrache2008]
 to measure the growth or melting rates
@@ -209,7 +214,7 @@ The first step in determining the melting rate
 is determining which particles
 are in a local crystalline configuration.
 This approach used the K-Nearest Neighbours
-machine learning algorithm (see @sec:MLCrystals).
+machine learning algorithm. [@sec:Machine-Learning]
 For the melting rate,
 we are not so much interested in the types of crystals
 which exist within the structure,
