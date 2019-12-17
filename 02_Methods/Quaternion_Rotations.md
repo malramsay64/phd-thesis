@@ -179,44 +179,35 @@ $$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a}
 ## Angular Distance From Quaternions
 
 When using quaternions for representing rotations
-there are a many different methods of representing
+there are a range of different methods for finding
 the distance between them. [@Huynh2009]
-
-<!-- TODO Discussion on quaternions ref #72 -->
-
-- There are many different methods for finding the distance between two quaternions
-  [@Huynh2009]
-    - Discussion on methods
-    - The specific method we want and why
-    - The range of values this method provides
-
-- Since this is a fundamental operation of computational analysis,
-    it needs to be fast.
-    - Quaternion operations are not natively built into python or numpy [@Walt2011]
-    - There are python implementations pyquaternion [@Wynn2019], quaternion [@Boyle2019]
-        These however are not optimised for arrays of data
-
-    - rowan [@Ramasubramani2018] Is a package designed for computing quaternions for
-      molecular dynamics simulations
-        - Using the `rowan.geometry.intrisic_distance` function, which implements the
-          optimised distance in [@Huynh2009], we get optimised distance calculations
-uses 4 multipliations, 1 arccos, 1 comparison
-
-The approach used for the quaternion $\phi_3$
-computes the relationship
+Each of these methods can give a different value.
+The two constraints for choosing an appropriate distance measure
+is that it maps well to rotational distance calculated by other means
+like using Euler angles,
+and that the calculation is fast to compute.
+The method chosen to calculate angular distance is $\phi_3$
+computing the relationship
 
 $$ \phi_3 = \arccos(|q_1 q_2|) $$
 
-which gives values on the range $[0, \pi/2)$.
-Since the maximum rotational distance is $\pi$
-the angle $\theta$ subtended by two quaternions is
+giving values on the range $[0, \pi/2)$.
+Using the minimum image convention,
+the maximum rotational distance is $\pi$,
+when a quaternion is antiparallel to another.
+This means finding the angle $\theta$
+subtended by two quaternions is
 
 $$ \theta = 2\arccos(|q_1 q_2|) $$
 
-## Quaternions in 2D
-
-- Still works even when constrained to rotations in a plane
-- Range of motion
-- Why not convert to angles
-    - Fewer operations
-    - same code works to 2 and 3 dimensions
+Quaternion operations are not a standard component
+of either python or numpy. [@Walt2011]
+There are some established python implementations of quaternion operations,
+namely pyquaternion [@Wynn2019] and quaternion [@Boyle2019],
+however these are not optimised for calculating rotations
+on arrays of quaternions.
+More recently the rowan [@Ramasubramani2018] software package was published,
+which is designed for analysing molecular dynamics simulations
+and the array type operations required.
+The function `rowan.geometry.intrisic_distance` implements the calculation of $\phi_3$
+with the angular rotation being calculated as twice this value.
