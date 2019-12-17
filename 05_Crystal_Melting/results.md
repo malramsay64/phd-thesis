@@ -553,7 +553,7 @@ matching the expected behaviour.
 
 While it is difficult to make a direct comparison to the Lewis--Wahnström model
 as there is no data published on crystal melting rates, only growth rates. [@Pedersen2011]
-The growth of a Lewis--Wahnström crystal to comprise all 356 molecules in the simulation
+The growth of a Lewis--Wahnström crystal from zero to all 356 molecules in the simulation
 occurs over a period of $\approx 5\tau_S$.
 The *fastest* melting rate measured for the trimer molecule is $\approx 0.4 \tau_R$
 meaning in the same timescale less than 2 layers of the crystal will have melted.
@@ -572,10 +572,15 @@ The 2D molecules are so much slower
 as a result of the rotational constraints.
 As presented in @sec:dynamics,
 rotational motion is required for translational motion to occur,
-and being two dimensional, the trimer can easily lock up.
+and being two dimensional, the trimer can lock up.
 In 3D, the rotations are not so constrained,
 with alternate degrees of freedom available
 to allow further rotation.
+
+The melting rates measured are the slowest melting rates
+measured by molecular dynamics simulation.
+With simulation timescales orders of magnitude longer
+than comparable studies. [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
 
 ## Modelling Melting Rates
 
