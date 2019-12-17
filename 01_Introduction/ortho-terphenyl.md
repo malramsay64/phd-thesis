@@ -1,23 +1,52 @@
 # Understanding ortho-terphenyl
 
+As one of the most fragile liquids,
+the dynamics and crystal growth of ortho-terphenyl are well studied
+with the hope of understanding what makes it so fragile.
+
 ## Experimental understanding
 
-@Cicerone1996
+There are many experiments studying ortho-terphenyl,
+[@Cicerone1996;@Andreozzi1997;@Chang1994;@Fujara1992;@Mapes2006]
+using a range of techniques to better understand the molecule.
+These have presented a range of observations
+that don't fit within the scope of Stokes--Einstein--Debye dynamics.
+Of primary concern is the breakdown of the scaling of
+translational and rotational diffusion with structural relaxation.
+That is, the relations
 
-- Probe translational motion at $T_g$ occurs 2 orders of magnitude faster than expected
-based on rotation times.
-- Probe Rotation times are dominated by the dynamics of slowly relaxing regions while
-  translational diffusion coefficients are heavily influenced by the more mobile
-  regions.
+$$ D_t \propto D_r \propto 1/\tau_S $$ {#eq:sed_proportionality}
 
-- excellent glass former
-- experimentally interesting
-- experiments only provide so much insight
+don't hold true for a range of temperatures.
+With the translational motion faster than expected
+based on the rotational relaxation times. [@Cicerone1996;@Chang1994]
+
+While experiments can provide critical information
+in confirming a theoretical idea,
+they provide a limited amount of information of the underlying'
+processes which are taking place.
+Computer simulations provide a time and spatial resolution
+unavailable to experiments,
+allowing for the development of ideas and theories,
+which can then be tested in experiment.
+The presence of spatially heterogeneous dynamics,
+was identified in computer simulations @Hurley1995
+and allowed for the design of experiments
+to match these simulated observations. [@Cicerone1995a;@Cicerone1995b;@Schiener1997]
 
 ## Modelling ortho-terphenyl
 
-There are many different levels of approximation
-for computationally modelling ortho-terphenyl,
+The iterative process of
+
+1) making experimental observations,
+2) designing simulations to understand them,
+3) developing theories to describe them, and
+4) designing experiments to test the theories,
+
+is an important cycle for understanding
+the complex phenomenon found in ortho-terphenyl.
+For the development of the simulations,
+there are many different levels of approximately modelling ortho-terphenyl,
 with each looking at different properties.
 
 ### Lewis-Wahnström model
@@ -57,7 +86,7 @@ While this model is highly simplified,
 it still retains many of the characteristics of ortho-terphenyl,
 replicating behaviour observed in experimental data.
 The incoherent scattering function $F^s(q, t)$
-displays the same two step relaxation process
+displays the same two-step relaxation process
 observed within simulations
 for both translational and rotational motion.[@Wahnstrom1993,@Wahnstrom1997,@Lombardo2006]
 This has allowed investigations of dynamic heterogeneities,
@@ -66,7 +95,7 @@ to be applied to rotational motion[@Lombardo2006]
 which has similar non-Gaussian behaviour at short times.
 It also allows the crystallisation behaviour to be studied. [@Pedersen2011]
 
-The Lewis-Wahnström model is a computationally simple method
+The Lewis-Wahnström model is a computationally fast method
 of modelling the behaviour of ortho-terphenyl.
 Importantly it mimics the shape,
 a property of molecular glass formers.
@@ -80,40 +109,77 @@ larger than the experimental values near 260 K. [@Lombardo2006;@Lewis1994;@Rinal
 
 ### Alternative Models
 
-Alternative
+Alternative models of ortho-terphenyl
+trade the long timescales available to the Lewis--Wahnström model
+with a more accurate description of the molecule.
 
-@Mossa2001
+Rather than describing each phenyl ring as a single particle,
+@Mossa2001 models each carbon atom,
+giving rise to the geometry of the rings.
+This models the effect of the phenyl groups
+and the rotational freedom they have,
+degrees of freedom not present in the Lewis--Wahnström model.
+By comparing the results to the Lewis--Wahnström
+we could start to understand the effect these
+additional degrees of freedom have on the overall dynamics.
+A limitation of this model,
+is that it still uses the Lennard--Jones potential
+to model interatomic interactions.
 
-@Berry2006
+Taking the modelling of ortho-terphenyl further
+@Berry2006 use the Accelrys COMPASS force field [@Rigby2004]
+to accurately model gas and liquid state properties.
+This force field allows more degrees of freedom for each molecule,
+increasing the computational complexity
+while also improving the prediction capability of the model.
 
-Molecular-LJ
-Molecular potentials
+While these more complex models can provide
+more accurate information over short timescales,
+the additional computational cost makes them less useful
+for the study of glass formation.
+Glass formation is inherently a long timescale phenomenon.
+The current state of the art in molecular dynamics simulations
+is millisecond timescales @Chen2019a,
+while glass formation takes place over thousands of seconds.
 
-Computational complexity
+## Computational Tractability
 
-- glass formation is a long timescale phenomenon
-- state of the art is reaching ms times
-- glasses are on the order of 1000s
+Part of the issue of modelling glass formation
+is the long timescales required for the simulations.
+By reducing the complexity of computational models
+it becomes easier to access longer timescales,
+why the Lewis--Wahnström model only comprises 3 particles.
 
-## What makes OTP such a good glassformer
+By using so few particles in a simulation,
+it is possible to model larger systems,
+important to minimize finite size effects. [@Maginn2018]
+These are properties measured in a simulation which
+depend on the size of the simulation.
+They arise from the periodic boundary conditions
+in which most molecular dynamics simulations take place.
+This can change the dynamics by more than 10% [@Kikugawa2015]
+and has been raised as an issue with studies of the Lewis--Wahnström model. [@Pedersen2011]
 
-The question we are really asking is why is crystallisation so slow?
+Using simulations in two dimensional space
+is a technique which has already been used to great success
+in understanding the dynamics of supercooled liquids. [@Hurley1995]
+Using only to dimensions helps with computational tractability in a few ways.
+Firstly the calculations are simpler having fewer degrees of freedom,
+although there are also additional benefits
+like fewer neighbour interactions to consider.
+Additionally fewer particles are needed to remove finite size effects
+as there are only particles extending in two dimensions.
+Finally, there are benefits in the analysis of data.
+One of the reasons @fig:dynamic_heterogenaeties is used so widely
+to describe dynamic heterogeneities
+is that it so succinctly captures the idea,
+something made possible by the 2D nature of the simulation.
+Using 2D simulations as a discovery tool,
+using visualisations to develop ideas and analyses
+which can then be applied to more complex systems.
 
-Factors inhibiting crystal growth
-
-- Crystal with low potential energy saving
-- interface
-- competition from competing structures
-- jamming
-
-Just like @Griffith2018 initially developed an idea in 2D
-before moving to 3D.[@Griffith2019]
-
-## Computational Tractability in 2D
-
-- Finite size effects
-    - issues with previous simulations
-    - need fewer particles in 2D
-- Visualisation
-    - 2D page, so 2D is simpler
-- Method used previously for understanding glass formation [@Hurley1995]
+This approach of developing an idea in 2D
+has been employed by @Griffith2018 in understanding
+dense and jammed packing of Trimers.
+A year later [@Griffith2019] they follow up
+applying the lessons learnt to 3D systems.
