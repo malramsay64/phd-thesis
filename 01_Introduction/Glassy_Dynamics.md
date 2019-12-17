@@ -17,7 +17,7 @@ The Stokes--Einstein equation for translational motion
 
 $$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
 
-and the Stokes--Einstein--Deybe relation for rotational motion
+and the Stokes--Einstein--Debye relation for rotational motion
 
 $$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
 
@@ -149,6 +149,9 @@ allowing everything to be represented on the page.
 A similar picture is painted in 3D systems [@Donati1999],
 with spatially separated regions of fast and slow particles.
 
+![The spatial distribution of motion
+@Hurley1995](../placeholder_figure){#fig:dynamic_heterogenaeties width=80%}
+
 There are many theoretical foundations
 for understanding dynamic heterogeneities.
 One of the more general frameworks
@@ -188,8 +191,8 @@ there has been no data to suggest this is the case.
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
-![](placeholder_figure.png){#fig:potential_energy_2d width=49%}
-![](placeholder_figure.png){#fig:potential_energy_3d width=49%}
+![](../placeholder_figure.png){#fig:potential_energy_2d width=49%}
+![](../placeholder_figure.png){#fig:potential_energy_3d width=49%}
 <!-- markdownlint-disable MD045 -->
 
 When we look at two dimensions,
@@ -201,7 +204,7 @@ it becomes possible to go around.
 :::
 
 ![A representation of the potential energy landscape for a
-liquid.](placeholder_figure.png){#fig:potential_energy_landscape}
+liquid.](../placeholder_figure.png){#fig:potential_energy_landscape}
 
 Further evidence for the idea that the structure
 plays a role in the resulting dynamics
@@ -230,7 +233,7 @@ is rotational jamming. [@cite]
 ![Depiction of the jamming of discs.
 The force upon the particles near the exit
 are preventing motion.
-](placeholder_figure.png){#fig:jamming_diagram}
+](../placeholder_figure.png){#fig:jamming_diagram}
 
 ## Breakdown in rotational coupling
 
@@ -248,10 +251,6 @@ The idea that the rotational and translational diffusion constants
 were proportional to each other
 there is the assumption that there is a single "force"
 governing the motion of particles.
-
-- Distribution averaging
-    - rotations are 1/D => small numbers skew mean
-    - translations are D => large numbers skew mean
 
 Our current understanding of the liquid state
 breaks down for supercooled liquids.

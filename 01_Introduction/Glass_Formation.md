@@ -16,30 +16,26 @@ while on the timescale of tens of years
 we observe the formation of droplets
 characteristic of a liquid.
 
-A glass is a disordered state of matter, like a liquid,
-which has a viscosity greater than \SI{e13}{\poise}.
+Now we have learnt about nucleation and growth,
+we know how to avoid it.
+In @fig:supercooled_liquid_formation,
+a supercooled liquid is formed by following a cooling scheme
+which remains between the relaxation time and the nucleation time.
+A glass is a state no longer at equilibrium,
+so where crystallisation is crossing the solid nucleation line,
+glass formation is crossing the dashed relaxation line.
+In experiments, the glass transition occurs
+when the relaxation time, measured as the viscosity
+reached a value of \SI{e13}{\poise}.
 The temperature at which the viscosity reaches this value
 is known as the glass transition temperature, denoted $T_g$.
-When running computer simulations,
-a viscosity this high is beyond our current capability,
-so instead a less stringent criteria is applied;
-a disordered material which behaves as a solid
-on the timescale of the experiment.
-
+In computer simulations a viscosity this high is beyond our current capability. [@Plimpton1995a]
+Instead the glass transition occurs when the timescale of the simulation
+is less than that of the relaxation time.
 This also means that as computational power
 and algorithms improve,
 simulated materials which have been considered glasses
 can form crystals on longer time scales.
-
-## Avoiding the Crystal
-
-Now we have learnt about nucleation and growth,
-we know how to avoid it.
-
-- Creating a glass
-    - avoidance of critical point
-        - Cooling fast enough to prevent nucleation
-    - depiction on phase diagram
 
 ## Intrinsic Properties of the Glass
 
@@ -80,20 +76,10 @@ which has unlike \ce{SiO2} has a
 strongly temperature dependent relaxation process.
 The best understanding of this process
 attributes the temperature dependence
-to the onset of dynamic heterogeneities,
-that is regions of the liquid which have
-vastly different relaxation times
+to the onset of dynamic heterogeneities.
+That is, regions of the liquid which have
+vastly different relaxation times,
 which can differ by up to five orders of magnitude.[@Ediger2000]
-While there are descriptions of why
 
-- Increasing rate of change of viscosity
-- Strong/Fragile
-    - Faster than expected change upon cooling
-
-Heat Capacity
-
-- related to the degrees of freedom
-
-No structural changes
-
-- instead we need to look towards the dynamics
+Because of the kinetic nature of the glass transition
+understanding the dynamics is the key to understanding the transition.

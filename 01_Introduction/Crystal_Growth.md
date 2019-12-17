@@ -7,14 +7,13 @@ For the transition from a disordered liquid phase
 to an ordered crystal phase,
 there needs to be an initial region
 which starts the process of ordering.
-The transition from the liquid phase
-to the crystal phase,
-results in a saving of potential energy $H$,
-with the order of the crystal allowing
-particles to adopt a minimum energy structure.
+The transition from the liquid phase to the crystal phase,
+results in a saving of potential energy $H$;
+the order of the crystal allowing
+particles to adopt a lower energy structure.
 However, a consequence of this ordering
 is the reduction in the range of accessible states
-which is referred to as the entropy $H$.
+known as the entropy $H$.
 The relationship between the changes of these two factors,
 potential energy $\Delta H$, and
 entropy $\Delta S$
@@ -33,9 +32,8 @@ is equal to the energy gained $\Delta H$.
 This temperature, $T_m$, is the melting point.
 
 The relationship in @eq:gibbs_free_energy
-identifies the state which is most stable,
-that is the equilibrium state,
-in any conditions.
+identifies the most stable state for a given condition;
+that is the equilibrium state.
 What it doesn't describe is the process
 of moving from one phase to another,
 we need additional theories.
@@ -62,11 +60,11 @@ which needs to be considered.
 This is the energy at the interface of
 the liquid and crystal regions,
 this is described as the surface tension $\sigma$.
-Using the free energy saving of the crystal $\Delta G_{crystal}$
-which is always negative,
-we can make the assumption that
-any initial crystal structure is going to be spherical
-and express the free energy of a nucleation as
+Using the free energy saving of the crystal $\Delta G_{crystal}$,
+a value that is always negative,
+and making the assumption that
+any initial crystal structure is going to be spherical.
+An expression for the free energy of nucleation $\Delta G_\text{nucleation}$ is
 
 $$ \Delta G_\text{nucleation} = \frac{4}{3} \pi r^3 \Delta G_\text{crystal} + 4 \pi r^2 \sigma $$
 
@@ -104,8 +102,8 @@ to define a timescale on which we expect nucleation to take place.
 
 Classical Nucleation Theory makes many approximations
 the most important being the *capillarity approximation*,
-which is the assumption that the small crystalline nuclei
-has the same thermodynamic properties as the bulk crystal.
+the assumption that small crystalline nuclei
+have the same thermodynamic properties as the bulk crystal.
 While the approximations being made in Classical Nucleation Theory
 can be problematic for modelling nucleation,
 for the purposes of this work
@@ -124,11 +122,11 @@ the rate of crystal growth $v(T)$ being
 $$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$
 
 where $k(t)$ is the mobility of particles within the liquid.
-The Wilson-Frenkel model is remarkably similar to that of Classical Nucleation Theory.
+The Wilson-Frenkel model is similar to that of Classical Nucleation Theory.
 We have an activated process,
 that is, one governed by an Arrhenius temperature dependence,
 with a factor out the front.
-The key difference here is that the prefactor, $k(T)$
+The key difference here is that the pre-factor, $k(T)$
 has a temperature dependence,
 being the mobility of particles within the liquid.
 This gives rise to some interesting behaviour,
@@ -139,16 +137,6 @@ However, at some point,
 the growth of of the crystals slows down again,
 as the first mobility of the particles $k(T)$
 becomes dominant.
-
-### Measuring Crystal Growth
-
-- Measuring changes in properties
-    - potential energy
-    - volume
-
-- Using a slab geometry
-    - calculate values along one axis
-    - monitor transition over time
 
 ## Supercooled liquids
 
@@ -161,12 +149,11 @@ is known as a supercooled liquid.
 
 A Supercooled liquid is a liquid
 that has been cooled to a temperature below the melting point
-prior to the rare event of nucleation taking place.
+before the rare event of nucleation has taken place.
 Supercooled liquids are a metastable state,
-although particularly in simulation studies
-can be referred to as at equilibrium,
-which is a reference to the rarity of the nucleation;
-the supercooled liquid is able to sample
+although simulation studies often reference them as equilibrated;
+a reference to the rarity of the nucleation.
+The supercooled liquid is able to sample
 most of the available phase space
 without encountering a nucleation configuration.
 A typical method of determining when a supercooled liquid
@@ -192,3 +179,8 @@ the relaxation time becomes longer than the nucleation time
 resulting in what is known as a *kinetic spinodal*,
 a temperature where the supercooled liquid does not exist
 since nucleation starts before equilibrium can be established.
+
+![When the nucleation time (solid line) and relaxation time (dashed line) do not cross
+it is possible to equilibrate the liquid to arbitrarily low temperatures
+using a non-linear cooling rate which stays between the lines.
+[@Cavagna2009]](../placeholder_figure.png){#fig:supercooled_liquid_formation width=80%}
