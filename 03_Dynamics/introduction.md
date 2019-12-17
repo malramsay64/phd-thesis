@@ -14,39 +14,7 @@ no longer strictly undergoing Brownian Motion,
 does this affect how we can describe the
 collective dynamics of the liquid.
 
-## Structural Relaxation
-
-Structural relaxation is the most fundamental relaxation process [@Angell2000]
-being the process by which a liquid forgets it's structure
-from some earlier time [@Ediger1996].
-The process of structural relaxation occurs over distances
-comparable to the size of the particles within the liquid [@Angell1985].
-These small distances over which the structural relaxation take place
-are comparable to the relaxations that take place
-when the liquid is under a shear stress.
-The motion of the liquid under a shear stress,
-otherwise known as shear viscosity and denoted by $\eta$,
-has been shown to have the same temperature scaling
-as the structural relaxation time
-in both experimental [@Ediger2012] and computational [@Perera1999] systems.
-A rationalisation of this relationship
-can be to consider a force pushing on one part of the configuration,
-the structural relaxation time is indicative of
-the time the state takes to adjust to the applied force.
-In a liquid, applying force results in flow
-with the viscosity being a measure of the resistance to flow.
-
-This relationship between the shear viscosity and the structural relaxation
-allows us to rewrite the Stokes-Einstein-Debye relations as
-
-$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
-
-where we are using the structural relaxation time
-as the fundamental relaxation time,
-providing a link between
-the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
-
-### Measuring structural relaxation
+## Measuring structural relaxation
 
 In practical experiments on liquid dynamics,
 the structural relaxation is measured using
@@ -119,54 +87,6 @@ the maximum peak of the static structure factor $S(k)$.
 This matches with the calculation of the intermediate scattering function
 which will follow the same wave-vector $k_{\text{bragg}}$
 as it will display the largest change over time.
-
-## Translational Diffusion
-
-The translational diffusion constant $D_t$
-is a measure of how fast particles within the liquid
-move over a long time period.
-It's formulation is based upon Brownian dynamics,
-where, over long time periods,
-the displacement from the origin $\Delta x(t)$ at time $t$
-averaged over many initial configurations
-has the relation
-
-$$ \langle \Delta x(t)^2 \rangle = 2 D_t t $$
-
-where the angle brackets $\langle\rangle$ represent
-the average over many initial conditions.
-In the case of a molecular dynamics simulation
-this is over all the individual particles.
-The relation shown above is for a 1D random walk,
-with each dimension contributing to the diffusion giving
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 4 D_t t $$
-
-for the 2D case and
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
-
-for the 3D case.
-Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
-
-The Mean-Squared-Displacement (MSD) has a characteristic shape,
-with the initial section representing the ballistic motion
-before particles have collided with any other.
-Since the particles are moving freely,
-the MSD has increases as a power law of order 2.
-This ballistic region transitions into a diffusive region
-where the dynamics are governed by many small steps.
-This diffusive regime defines the diffusion constant,
-so the calculation of the diffusion constant
-is often written as
-
-$$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
-
-reflecting the long timescale behaviour.
-
-The Diffusion is measured in experimental systems
-using \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
-which allows for direct comparison with simulation.
 
 ## Rotational Diffusion
 

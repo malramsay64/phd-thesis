@@ -64,20 +64,130 @@ no longer adhering to Brownian motion.
 
 ### Structural Relaxation
 
-- Short timescale
-- local "cage"
-- measured in simulations and experiments
+Structural relaxation is the most fundamental relaxation process [@Angell2000]
+being the process by which a liquid forgets it's structure
+from some earlier time [@Ediger1996].
+The process of structural relaxation occurs over distances
+comparable to the size of the particles within the liquid [@Angell1985].
+These small distances over which the structural relaxation take place
+are comparable to the relaxations that take place
+when the liquid is under a shear stress.
+The motion of the liquid under a shear stress,
+otherwise known as shear viscosity and denoted by $\eta$,
+has been shown to have the same temperature scaling
+as the structural relaxation time
+in both experimental [@Ediger2012] and computational [@Perera1999] systems.
+A rationalisation of this relationship
+can be to consider a force pushing on one part of the configuration,
+the structural relaxation time is indicative of
+the time the state takes to adjust to the applied force.
+In a liquid, applying force results in flow
+with the viscosity being a measure of the resistance to flow.
+
+Consider a force pushing on the material,
+the structural relaxation is the timescale
+over which the material can rearrange to reduce that force.
+When the force is continuous,
+we are measuring the viscosity,
+so the structural relaxation is used within experiments
+in the place of viscosity.
+
+This relationship between the shear viscosity and the structural relaxation
+allows us to rewrite the Stokes-Einstein-Debye relations as
+
+$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
+
+where we are using the structural relaxation time
+as the fundamental relaxation time,
+providing a link between
+the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
 
 ### Diffusion Constant
 
-- long timescale motion
-- derived from Brownian motion
-- measured in both simulations and experiments
+The translational diffusion constant $D_t$
+is a measure of how fast particles within the liquid
+move over a long time period.
+It's formulation is based upon Brownian dynamics,
+where, over long time periods,
+the displacement from the origin $\Delta x(t)$ at time $t$
+averaged over many initial configurations
+has the relation
 
-### Rotational (Dipole) Relaxation
+$$ \langle \Delta x(t)^2 \rangle = 2 D_t t $$
 
-- Relaxation of the orientation of a dipole
-- measured in simulations and experiments
+where the angle brackets $\langle\rangle$ represent
+the average over many initial conditions.
+In the case of a molecular dynamics simulation
+this is over all the individual particles.
+The relation shown above is for a 1D random walk,
+with each dimension contributing to the diffusion giving
+
+$$ \langle \Delta \vect{r}(t)^2 \rangle = 4 D_t t $$
+
+for the 2D case and
+
+$$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
+
+for the 3D case.
+Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
+
+The Mean-Squared-Displacement (MSD) has a characteristic shape,
+with the initial section representing the ballistic motion
+before particles have collided with any other.
+Since the particles are moving freely,
+the MSD has increases as a power law of order 2.
+This ballistic region transitions into a diffusive region
+where the dynamics are governed by many small steps.
+This diffusive regime defines the diffusion constant,
+so the calculation of the diffusion constant
+is often written as
+
+$$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
+
+reflecting the long timescale behaviour.
+
+The Diffusion is measured in experimental systems
+using \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
+which allows for direct comparison with simulation.
+
+### Rotational Relaxation
+
+What is termed rotational relaxation,
+is typically measured as a dipole relaxation.
+This describes rotational motion as a sequence of
+small infinitesimal jumps of a dipole around the unit sphere
+using spherical harmonics $Y_l^m$.
+This allows us to express a rotational relaxation function $R_l(t)$
+in terms of those spherical harmonics
+
+\begin{align}
+R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
+       &= \exp(-D_r\,l(l+1)t)
+\end{align}
+
+This formulation represents the rotational relaxation as an exponential.
+The exponential is nice in that we can find a characteristic timescale $\tau_l$
+for relaxation to occur, where
+
+$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
+
+Here relaxation is the time taken for relaxation from
+the initial value of $Y_l^m$ to it's first zero.
+
+The relaxation of a dipole $C_l$,
+where the orientation of the dipole is represented by the vector $\hat{\vect{u}}$
+can be represented as
+
+$$ C_{l} = \langle P_l(\hat{\vect{u}}_i(t) \cdot \hat{\vect{u}}_i(0)) \rangle_i $$
+
+Here $P_l$ is the Legendre polynomial of degree $l$,
+and the angle brackets signify an average over
+all molecules and starting configurations.
+
+The rotational relaxation functions $C_l$
+have equivalences in experiments.
+The 2nd degree Legendre polynomial corresponds
+to NMR [@Dote1981] and fluorescence experiments.
 
 ## Dynamic Heterogeneities
 
