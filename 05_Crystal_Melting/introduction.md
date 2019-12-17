@@ -190,32 +190,12 @@ where
   crystal phases at the desired temperature, and
 - $k_\text{B}$ is the Boltzman constant.
 
-    - thermally activated process
-    - mobility of molecules in the liquid
-    - One dimensional process -> all parameters proceeding simultaneously [@Russo2016]
-    - *Capillarity approximation* -> small crystalline nuclei are amenable to a
-      thermodynamic description, that is they retain the properties of the bulk solid.
-    - Surface tension -> not the relevant free energy cost
-
-- Equation for crystals growth mathematically equivalent to the ising model
-- There are classes of material which can't be described as thermally activated
-    - Kinetic monte carlo
-    - can be modelled using the ising model -> spin flips
-
-- Bond orientational ordering
-    - The idea that there are two order parameters required for crystallisation, even
-      in atomic liquids
-    - Description of liquid as ideal and homogeneous -> $G(r)$ [@Tanaka2012]
-    - long range disordered -> can still posess short range to medium range order
-    - A liquid has locally favourable structures which are formed normally within the liquid
-    - Use bond ordering to describe short range ordering
-    - Importance of orientational ordering has been often overlooked
-    - it is bond orientational order not translational order that triggers crystal
-      nucleation
-
-- Molecular dynamics results suggest that there are two classes of materials. Once where
-  there is an activation barrier for growth, and another where there is no activation
-  barrier for growth. [@Jackson2002]
+The value $k(T)$ describes
+the rate per unit area at which material is added to the surface
+which is assumed to be proportional to a transport coefficient of the liquid.
+The term in brackets describes
+the thermally activated rate at which material is removed from the surface.
+When measuring melting the added and removed are switched. [@Tang2013]
 
 ### Semi-empirical Density Functional
 
@@ -294,12 +274,33 @@ with $K$ being the correlation length of the order parameter.
 
 ## Calculation of Melting Rates
 
-- The temperature dependent chemical potential
-  can be approximated as [@Tang2013]
-  $$ \Delta \mu(T) = (T_m - T) \frac{\Delta h_m}{T_m} $$
-  where
-    - $T_m$ is the melting point, and
-    - $\Delta h_m$ is the enthalpy of fusion per particle
+Crystallisation rates within simulations
+are typically measured along a single lattice direction.
+[@Tang2013;@Tymczak1990;@Burke1988;@Broughton1982a]
+This is done by creating a slab geometry,
+which is a region of perfect crystal of the desired geometry
+onto which the liquid can attach and grow.
+The slab geometry allows for measuring both melting and growth
+and creates a highly controlled environment for growth.
 
-- Slab geometries
-    - Growth/melting rate along a single crystal plane
+When measuring the crystal growth within a slab geometry
+there are a range of methods used.
+@Tang2013 measure the growth rate using
+the increase in density from the liquid to the crystal,
+which allows for the growth rate $v$ to be measured as
+
+$$ v = \frac{d_l}{2N(V_c - V_l)} \frac{\d V}{\d t} $$
+
+where;
+
+- $V$ is the volume of the simulation cell,
+- $d_l$ is the average spacing between crystal layers along the direction of crystal
+  growth,
+- $N$ is the average number of atoms in a liquid layer at the interface,
+- $V_c$ is the specific volume of the crystal, and
+- $V_l$ is the specific volume of the liquid.
+
+An alternate approach, [@Tymczak1990]
+is to monitor an order parameter along the axis of crystal growth.
+The growth rate can then be measured as
+the progression of that order parameter.
