@@ -622,31 +622,20 @@ These values are obtained from the fitting in
 @fig:normalised_melting {#tbl:rate_coefficient}
 
 The lines depicting the fit of
-the Wilson-Frenkel theory in @fig:normalised_melting
+the Wilson-Frenkel theory in @fig:normalised_melting_all
 predict significantly slower melting rates
 than observed in the simulations
 for temperatures $T/T_m > 1.20$.
 A possible cause for this would be the onset of spinodal
 with the melting occurring throughout the structure,
-which is definitely not observed.
-
-It should be noted that the high spinodal temperature
-doesn't support a super stable crystal state,
-the crystal only has a small potential energy benefit over the liquid state
-and the melting rate of the crystal
-increases well above that predicted
-by the Wilson-Frenkel model.
-Instead it is indicative of the rarity of nucleation events,
-being the formation of defects within the crystal.
-There are defects which form within the crystal,
-shown in @fig:melting_disorderB,
-however these are transient defects,
-stable within the crystal structure
-and unable propagate melting.
-The defects in @fig:melting_disorderB
-are similar to the defect
-which propagates the solid state phase transition
-of the p2gg crystal to the p2 crystal (@fig:solid_state_transition_structure).
+through this is not observed.
+When only looking at the temperatures close to the melting point
+[@fig:normalised_melting_zoom]
+the data would seem to fit a melting point at 0.97,
+slightly lower than was predicted by observing melting.
+Without observing crystal growth,
+the melting point is going to be an estimated value,
+and the current estimate is within the error of the simulations.
 
 :::{class=subfigure id=normalised_melting_fit}
 
