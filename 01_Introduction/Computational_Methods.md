@@ -1,7 +1,5 @@
 # Computational Methods
 
-## Introduction
-
 The nature of using simulations to model a chemical system,
 requires using computers for both running the simulations,
 and for the follow-up analysis of large volumes of data.
@@ -188,7 +186,7 @@ were unable to adequately describe what the code was doing.
 As @Buckheit1995 put it
 "an article about computational results is advertising, not scholarship.
 The actual scholarship is the complete software development environment and the
-complete set of instructions which generated the figures"
+complete set of instructions which generated the figures".
 
 In a study of reproducibility
 @Baker2016 found that 80% of respondents
@@ -253,7 +251,7 @@ The five key points which are common across a number of best practice guides are
 
 ### Version Control
 
-Keeping track of;
+The process of keeping track of;
 
 - what changes have been made,
 - who made them, and
@@ -292,7 +290,7 @@ However it provides a framework for what should be changed.
 ### Documentation
 
 At a minimum a project should contain a README file,
-which is a first port of call for anyone coming across a project.
+a first port of call for anyone coming across a project.
 Much like an abstract of a journal article,
 a README file should;
 
@@ -319,8 +317,7 @@ as it is important to understand these cases.
 ### Tests
 
 A test is the process of running some code,
-and comparing the output with a result
-which is known to be good.
+and comparing the output with a known good result.
 Testing can take place on many levels,
 from running an entire simulation over many steps,
 to checking that a force-field is calculated correctly.
@@ -430,8 +427,7 @@ now means that there need to be suitable methods of combining both
 
 Typically the current method is to place
 the ideas front and center in the paper,
-while the code is hidden away in a collection of files
-which is rarely checked.
+while the code is hidden away in a rarely checked collection of files.
 The idea of combing both code and documentation in this way was coined
 *literate programming* by Donald Knuth in 1984.[@Knuth1984]
 This focused on the idea that a program is a work of literature
@@ -445,7 +441,7 @@ There have been implementations of literate programming,
 with Wolfram Mathematica among others,
 none have had the recent popularity of Jupyter notebooks.
 The development has primarily been driven by the field of data science,
-which is solving the same types of problems present in the sciences,
+which solves the same types of problems present in the sciences,
 namely the interactive analysis and plotting of data.
 The Jupyter notebook---previously iPython notebook---has seen
 significant interest within the research community [@Shen2014;@Mascarelli2014].
@@ -493,15 +489,3 @@ making these notebooks no better than the code they are replacing.
 While Donald Knuth found code improvements using literate programming,
 the same is not true for everyone,
 with Jupyter notebooks inspiring poor programming practices.
-
-### Additional Ideas
-
-- Working with the computer to formulate the answer
-- Asking lots of questions quickly
-- Generating a figure is an excellent example, read in the dataset, plot, change
-  colours, change size of labels, add axis labels. At each point modifying the
-  underlying code to modify behaviour.
-- Jupyter notebooks are driving this
-- Very different to HPC where getting results requires waiting in queues for hours,
-  copying files then being able to look at results, often with an additional
-  processing step for generating the figures.

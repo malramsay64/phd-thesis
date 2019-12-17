@@ -25,7 +25,7 @@ from which the crystal grows at the crystal growth rate.
 
 ## Temperature Dependence of Growth Rates
 
-Looking at the nucleation rate and the crystal growth rate separately.
+- Looking at the nucleation rate and the crystal growth rate separately.
 
 Nucleation occurs when a fluctuation in the liquid state,
 forms a crystalline configuration stable enough to grow.

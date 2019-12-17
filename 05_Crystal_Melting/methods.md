@@ -93,9 +93,6 @@ The initial parameters for the creation of the crystals are:
 
 ### Creation of Liquid--Crystal Interface
 
-With the minimised crystal created I needed to create
-two regions within the configuration
-to mimic the configurations in @Sec:crystal-melting.
 The first step of creating the interface
 is converting the tilted simulation configuration
 to an orthorhombic configuration.

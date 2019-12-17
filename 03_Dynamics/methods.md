@@ -206,8 +206,10 @@ I used the function `freud.density.RDF` from
 the freud python package [@Harper2016]
 for the analysis of the radial distribution function.
 The radial distribution is averaged over 1000 frames
-at the melting point
-which is shown in @fig:radial_distribution_function.
+at the melting point shown in @fig:radial_distribution_function.
+
+![The radial distribution function of the Trimer
+molecule](../placeholder_figure.png){#fig:radial_distribution_function width=80%}
 
 ### Computing the structure factor
 
@@ -228,7 +230,7 @@ where $\rho$ is the number density of the liquid.
 Additionally because we can only take finite steps,
 the integration is discretised as
 
-$$ S(k) = 1 + 4 \pi \rho \frac{1}{k} \Delta r \sum_r r \sin(qr) [G(r) - 1] $$ {eq:
+$$ S(k) = 1 + 4 \pi \rho \frac{1}{k} \Delta r \sum_r r \sin(qr) [G(r) - 1] $$
 
 The discrete function is calculated with the following function
 
@@ -244,11 +246,11 @@ def static_structure_factor(
     return 1 + 4 * numpy.pi * density / wave_number * integral
 ```
 
-The wave number $???$ is the maximum value
+The wave number $v$ is the maximum value
 of the static structure factor,
 and can be used to find the characteristic Bragg length $k_\text{bragg}$
 
-$$ k_\text{bragg} = \frac{\pi}{2 ???} $$
+$$ k_\text{bragg} = \frac{\pi}{2 v} $$
 
 ### Structural Relaxation
 

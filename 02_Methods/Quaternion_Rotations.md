@@ -125,12 +125,12 @@ $\times$ | **$i$** | **$j$** | **$k$**
 Table: The results of multiplying the value in the left hand column,
 with the label at the top of each row.
 
-For simplWhen working with quaternions,
-for ease of use the imaginary part is typically referenced by a vector $\vect{v}$
+When working with quaternions,
+the imaginary components are often referenced by a vector $\vect{v}$
 such that
 
 \begin{align}
-q &= a+ bi + cj + dk
+q &= r + bi + cj + dk \\
   &= r + \vect{v}
 \end{align}
 

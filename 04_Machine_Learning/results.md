@@ -348,5 +348,5 @@ structure can have some level of overlap
 when considered at a single point in time.
 When considering the range of conditions
 over which these configurations are comprised,
----which is greater than any theory of melting can describe---
+greater than any theory of melting can describe,
 this result is incredibly impressive.

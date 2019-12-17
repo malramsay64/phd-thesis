@@ -336,14 +336,14 @@ to move past each other. [@fig:jamming_diagram]
 With molecules that contain concave components,
 there is even more susceptibility to jamming.
 Another aspect of jamming which has less attention
-is rotational jamming. [@cite]
+is rotational jamming.
 
 @Zwanzig1987
 
 ![Depiction of the jamming of discs.
 The force upon the particles near the exit
 are preventing motion.
-](../placeholder_figure.png){#fig:jamming_diagram}
+](../placeholder_figure.png){#fig:jamming_diagram width=80%}
 
 ## Breakdown in rotational coupling
 
