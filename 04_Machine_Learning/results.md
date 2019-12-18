@@ -350,3 +350,26 @@ When considering the range of conditions
 over which these configurations are comprised,
 greater than any theory of melting can describe,
 this result is incredibly impressive.
+
+## Machine Learning in Practice
+
+The ultimate test of any machine learning algorithm
+is how well it holds up in real world applications.
+This will be how well it can monitor
+the melting of a crystal.
+@Fig:melting demonstrates the ability
+of the resulting algorithm to distinguish
+the liquid from the solid in a complex simulation.
+
+:::{class=subfigures id=fig:melting}
+
+![Melting near start](../placeholder_figure.png){width=80%}
+![Melting at middle](../placeholder_figure.png){width=80%}
+![Melting near end](../placeholder_figure.png){width=80%}
+
+Figures showing the progression of melting of a p2 crystal.
+The colour of the molecules describes their orientation.
+The lighter molecules are classified as liquid while
+the darker molecules are classified as crystalline.
+
+:::
