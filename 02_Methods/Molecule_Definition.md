@@ -74,3 +74,36 @@ with the interaction parameter $\sigma_{AA} = 2$.
 The two radial particles are labelled 'B'
 with interaction parameter $\sigma_{BB} = 2r$.
 The mixed interaction potential $\sigma_{AB} = 1+r$.
+
+## Reduced Units
+
+The units used throughout this thesis are based on
+the fundamental units of
+
+- distance $\mathcal{D}$,
+- energy $\mathcal{E}$, and
+- mass $\mathcal{M}$
+
+with all other units derived from these.
+For the Lennard Jones system these values are all dimensionless.
+
+The units of temperature are $kT$,
+where $k$ is the Boltzmann constant,
+having a value of 1 in LJ units.
+
+From the fundamental units derived units can be calculated [@hoomd_units]
+
+- time: $\tau = \sqrt{\frac{\mathcal{M}\mathcal{D}^2}{\mathcal{E}}}$
+- volume: $\mathcal{D}^3$
+- velocity: $\mathcal{D}/\tau$
+
+By setting values for the fundamental units,
+appropriate for a molecular system,
+the derived units can also be calculated.
+For simulating *ortho*-terphenyl, [@Pedersen2011]
+
+- $\mathcal{D} = \si{0.242}{\nano\meter}$
+- $\mathcal{E} = k_B\times\si{600}{\kelvin} \approx \si{4.988}{\kilo\joules\per\mole}$
+- $\mathcal{M} = \si{76.760}{\atomicmassunit}$
+
+which derives a time $\tau = \si{0.95}{\nano\second}
