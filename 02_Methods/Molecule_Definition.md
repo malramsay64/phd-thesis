@@ -102,8 +102,8 @@ appropriate for a molecular system,
 the derived units can also be calculated.
 For simulating *ortho*-terphenyl, [@Pedersen2011]
 
-- $\mathcal{D} = \si{0.242}{\nano\meter}$
-- $\mathcal{E} = k_B\times\si{600}{\kelvin} \approx \si{4.988}{\kilo\joules\per\mole}$
-- $\mathcal{M} = \si{76.760}{\atomicmassunit}$
+- $\mathcal{D} = \SI{0.242}{\nano\metre}$
+- $\mathcal{E} = k_B\times\SI{600}{\kelvin} \approx \SI{4.988}{\kilo\joule\per\mole}$
+- $\mathcal{M} = \SI{76.760}{\atomicmassunit}$
 
-which derives a time $\tau = \si{0.95}{\nano\second}
+which derives a time $\tau = \SI{0.95}{\nano\second}
