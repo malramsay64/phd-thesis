@@ -24,7 +24,7 @@ This means that calculating the rotational motion $\Delta \varphi(t)$
 is expressed as the integration of the angular velocity [@Kammerer1997;@Lombardo2006]
 
 $$ \Delta \vect{\varphi}(t) = \vect{\varphi}(t) - \vect{\varphi}(0) =
-\int_0^t \dt' \vect{\omega}(t') $$
+\int_0^t \d t' \vect{\omega}(t') $$
 
 In practice, this involves summing the rotation at every preceding configuration.
 
@@ -66,7 +66,7 @@ calculate the periodicity in the fractional coordinates
 followed by the conversion back to real coordinates.
 Using a matrix representation for the cell $C$ and coordinates $\vect{x}$
 
-$$ C(C^{-1} \vect{x} - \floor{C^{-1} \vect{x}}) $$
+$$ C(C^{-1} \vect{x} - \lfloor{C^{-1} \vect{x}}\rfloor) $$
 
 ## Rotational Distance using Quaternions
 
