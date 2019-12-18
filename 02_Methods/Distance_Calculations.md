@@ -24,7 +24,7 @@ This means that calculating the rotational motion $\Delta \varphi(t)$
 is expressed as the integration of the angular velocity [@Kammerer1997;@Lombardo2006]
 
 $$ \Delta \vect{\varphi}(t) = \vect{\varphi}(t) - \vect{\varphi}(0) =
-\int_0^t \dt\`\ \vect{\omega}(t\`) $$
+\int_0^t \dt' \vect{\omega}(t') $$
 
 In practice, this involves summing the rotation at every preceding configuration.
 
