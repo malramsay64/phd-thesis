@@ -71,18 +71,7 @@ the three particles are arranged rigidly
 with a side length of $\sigma$ and an angle of $75^\circ$
 which is displayed in @fig:lewis_wahnstrom_mol
 
-\begin{figure}
-    \label{fig:lewis_wahnstrom_mol}
-    \caption{Depicting the geometry of the Lewis--Wahnström molecule}
-    \begin{tikzpicture}[scale=2]
-        \draw (0, 0) circle (0.5) coordinate(x);
-        \draw (0.602, 0.793) circle(0.5) coordinate(y);
-        \draw (-0.602, 0.793) circle(0.5) coordinate(z);
-        \draw (x) -- (y) node [midway, below] {$\sigma$};
-        \draw (x) -- (z) node {};
-        \pic [draw, ->, angle radius=1.2, "$75^\circ$"] {angle = y--x--z};
-    \end{tikzpicture}
-\end{figure}
+![The geometry of the Lewis--Wahnström model](../placeholder_figure.png){width=80% #fig:lewis_wahnstrom_mol}
 
 While this model is highly simplified,
 it still retains many of the characteristics of ortho-terphenyl,

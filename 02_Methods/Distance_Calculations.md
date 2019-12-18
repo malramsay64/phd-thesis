@@ -68,7 +68,7 @@ Using a matrix representation for the cell $C$ and coordinates $\vect{x}$
 
 $$ C(C^{-1} \vect{x} - \lfloor{C^{-1} \vect{x}}\rfloor) $$
 
-## Rotational Distance using Quaternions
+## Rotational Distance using Quaternions {#sec:quaternion_rotations}
 
 Measuring rotational motion in three dimensional space
 is something performed in many applications including

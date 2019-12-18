@@ -2,7 +2,7 @@
 
 ## Crystal Detection
 
-During the course of my honours work, I established that the most likely candidates for the crystal
+During my honours work, I established that the most likely candidates for the crystal
 structure were the p2, p2gg, and pg structures as shown below. The search for structures was first
 performed using hard shapes in an isoconfigurational search algorithm developed by Toby Hudson
 [@Jennings2015]. The resulting crystal structures were then relaxed using the Lennard-Jones potential
@@ -364,7 +364,9 @@ the liquid from the solid in a complex simulation.
 :::{class=subfigures id=fig:melting}
 
 ![Melting near start](../placeholder_figure.png){width=80%}
+
 ![Melting at middle](../placeholder_figure.png){width=80%}
+
 ![Melting near end](../placeholder_figure.png){width=80%}
 
 Figures showing the progression of melting of a p2 crystal.

@@ -132,19 +132,6 @@ Another source of guidelines for improved code is from Google [@Henderson2017]
 - All code used in production is expected to have unit tests
 - Style guides for each language to ensure consistency
 
-### Extra ideas
-
-- Fuzz / property testing
-- changes which are beyond current thought, a lack of creativity
-- scope of software is large, unintended consequences, locally change is fine, but
-  might not be fine somewhere else
-- Rust programming language uses Crater to run changes to the compiler against all
-  publicly available code written in rust, making sure the tests still pass.
-    - No unintended consequences
-    - How are people actually using features
-
-Importantly testing, readability, and review
-
 ## Reproducibility
 
 As was mentioned in the scope of correctness,
