@@ -1,23 +1,72 @@
 # Calculating Distance in Molecular Dynamics
 
-## Translational Distance
+The periodic boundary conditions of molecular dynamics simulations
+make the calculation of distances somewhat more challenging.
+When given an initial position $\vect{r_0}$ and a final position $\vect{r_t}$
+with the periodic boundary conditions there are two possible directions
+the particle could have moved in each direction. [@fig:periodic_distance]
+The same is also true for rotational motion.
+The standard method of handling this is the minimum image convention,
+where the distance is calculated for the shortest of the two paths.
 
-- minimum image convention
-    - simple cells fine to wrap co-ordinates
-    - more complex cells this is difficult
-    - Instead create cell matrix
-    - convert to fractional co-ordinates
-    - wrap fractional co-ordinates
-    - return to Cartesian co-ordinates
+![Demonstrating periodic boundary conditions
+](../placeholder_figure.png){width=80% #fig:periodic_distance}
 
-- This will only handle distances to half the cell length
-    - use image information
+The problem with the minimum image convention
+is it breaks down for large motions,
+especially for rotations.
 
-- Track motion between cells
-    - integration of distances
-    - need to integrate each dimension separately
+## Integrated Distances
 
-## Rotational Distance
+An alternate approach is to keep track of
+the distance moved during a simulation.
+This means that calculating the rotational motion $\Delta \varphi(t)$
+is expressed as the integration of the angular velocity [@Kammerer1997;@Lombardo2006]
+
+$$ \Delta \vect{\varphi}(t) = \vect{\varphi}(t) - \vect{\varphi}(0) =
+\int_0^t \dt\`\ \vect{\omega}(t\`) $$
+
+In practice, this involves summing the rotation at every preceding configuration.
+
+$$ \Delta \vect{\varphi}(t) = \sum_0^t \vect{\varphi}(t) - \vect{\varphi}(t-\Delta t) $$
+
+This is allows for keeping track of rotational motions over large timescales
+and allowing many rotations.
+It should be noted that this approach still uses the minimum image convention,
+however the timescales and distances of comparison are typically smaller
+avoiding ambiguity.
+The same approach can also be used to study translational motions.
+
+## Periodic distances for Translations
+
+The calculation periodic distances of a single dimension
+can be performed using a comparison.
+Given the length of a periodic box `len_x`,
+and the translational motion `delta_x`
+the periodic_distance can be calculated using conditionals
+
+```python
+if delta_x > len_x / 2:
+    delta_x -= len_x
+elif delta_x < -len_x / 2:
+    delta_x += len_x
+```
+
+This approach only works for wrapping a coordinate
+which is in the next periodic cell,
+that is, `3 * len_x` will only get wrapped to `2 * len_x`.
+Additionally when using multiple dimensions
+where the simulation cell is no longer orthogonal,
+the checks required are complicated and error-prone.
+
+The approach used by many molecular dynamics simulation tools
+[@Giorgino2019;@Gowers2016;@Harper2016;@lumol-org/lumol;@Linke2019]
+is to convert the distance to fractional coordinates,
+calculate the periodicity in the fractional coordinates
+followed by the conversion back to real coordinates.
+Using a matrix representation for the cell $C$ and coordinates $\vect{x}$
+
+$$ C(C^{-1} \vect{x} - \floor{C^{-1} \vect{x}}) $$
 
 ## Rotational Distance using Quaternions
 
@@ -232,21 +281,3 @@ which is designed for analysing molecular dynamics simulations
 and the array type operations required.
 The function `rowan.geometry.intrisic_distance` implements the calculation of $\phi_3$
 with the angular rotation being calculated as twice this value.
-
-- minimum image convention
-    - wrap to -pi, pi
-    - from quaternion representation
-
-- This only handles very small rotational motion
-    - fine for rotational relaxation
-    - not fine for rotational diffusion
-
-- Integrate motion
-- keep track of position
-- update change in rotation
-- combine at the end
-
-- equivalent to integrating angular momentum
-- accounting for the changes between timesteps
-
-This allows for studying rotations over longer timescales.
