@@ -108,7 +108,7 @@ pg      | 48               | 42
 p2gg    | 48               | 21
 
 Table: The unit cell dimensions for each of the crystal
-structures. {tbl:unit_cell_dimensions}
+structures. {#tbl:unit_cell_dimensions}
 
 The once the initial configuration is created,
 an NPT simulation at a temperature $T=0.1$

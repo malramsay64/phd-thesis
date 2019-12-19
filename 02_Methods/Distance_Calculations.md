@@ -1,4 +1,4 @@
-# Calculating Distance in Molecular Dynamics
+# Distance in Molecular Dynamics
 
 The periodic boundary conditions of molecular dynamics simulations
 make the calculation of distances somewhat more challenging.
