@@ -363,11 +363,11 @@ the liquid from the solid in a complex simulation.
 
 :::{class=subfigures id=fig:melting}
 
-![Melting near start](../placeholder_figure.png){width=80%}
+![Melting near start](../placeholder_figure.png){width=70%}
 
-![Melting at middle](../placeholder_figure.png){width=80%}
+![Melting at middle](../placeholder_figure.png){width=70%}
 
-![Melting near end](../placeholder_figure.png){width=80%}
+![Melting near end](../placeholder_figure.png){width=70%}
 
 Figures showing the progression of melting of a p2 crystal.
 The colour of the molecules describes their orientation.
