@@ -246,7 +246,7 @@ $$ \eta = A \exp(\frac{B}{T-T_0}) $$
 
 where;
 
-- \eta is the viscosity (or any other dynamic behaviour)
+- $\eta$ is the viscosity (or any other dynamic behaviour)
 - $T_0$ is an extrapolated temperature found from fitting
 - $B$ is another parameter extrapolated from fitting.
 

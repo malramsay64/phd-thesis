@@ -106,4 +106,4 @@ For simulating *ortho*-terphenyl, [@Pedersen2011]
 - $\mathcal{E} = k_B\times\SI{600}{\kelvin} \approx \SI{4.988}{\kilo\joule\per\mole}$
 - $\mathcal{M} = \SI{76.760}{\atomicmassunit}$
 
-which derives a time $\tau = \SI{0.95}{\nano\second}
+which derives a time $\tau = \SI{0.95}{\nano\second}$

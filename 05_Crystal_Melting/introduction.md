@@ -146,7 +146,7 @@ $$ v(T) = k(T) \left[1-\exp{\frac{-\Delta\mu(T)}{k_\text{B} T}}\right] $$
 
 where
 
-- \Delta\mu(T) is the difference between the chemical potentials of the liquid and the
+- $\Delta\mu(T)$ is the difference between the chemical potentials of the liquid and the
   crystal phases at the desired temperature, and
 - $k_\text{B}$ is the Boltzman constant.
 

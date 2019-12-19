@@ -215,7 +215,7 @@ $$ (r_1, \vect{v_1}) + (r_2, \vect{v_2})  = (r_1 + r_2, \vect{v_1} + \vect{v_2})
 while the multiplication can be expressed as
 
 $$ (r_1, \vect{v_1})(r_2, \vect{v_2}) =
-(r_1r_2 - \vect{v1}\cdot\vect{v_2}, r_1\vect{v2}+r_2\vect{v_1} + \vect{v_1} \times \vect{v_2}) $$
+(r_1r_2 - \vect{v_1}\cdot\vect{v_2}, r_1\vect{v_2}+r_2\vect{v_1} + \vect{v_1} \times \vect{v_2}) $$
 
 where $\cdot$ is the dot product and the $\times$ is the cross product.
 Quaternion multiplication is non-commutative,
