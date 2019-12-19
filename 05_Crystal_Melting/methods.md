@@ -2,9 +2,22 @@
 
 ## Crystal Melting Simulations
 
-- tau = 1
-- tauP = 1
-- step size = 0.005
+All the simulations for the crystal melting
+were conducted using the HOOMD-blue package.
+The simulations were conducted using the NPT ensemble,
+having the number of particles, the pressure, and the temperature
+constant throughout the simulations.
+The pressure and temperature are kept constant
+using the Martyna--Tobias--Klein thermostat and barostat [@Martyna1994]
+with a coupling constants $\tau = 1$ for the temperature
+and $\tau_P = 1$ for the pressure.
+The timestep was set to 0.005.
+
+The creation of the liquid--crystal interface
+requires an additional step compared to
+the dynamics calculations,
+being the melting of the liquid crystal interface.
+These steps are all documented below.
 
 1. Initial Configuration
 2. Minimisation
@@ -56,40 +69,56 @@ The FIRE energy minimisation is performed using
 the NPH ensemble with a pressures of $P=13.50$ and $P=1.00$
 and the kinetic energy of the temperature $T=0.4$.
 
-The initial parameters for the creation of the crystals are:
+The parameters for the creation of the crystal unit cells
+are documented in @fig:crystal_unit_cell.
+For the initial configuration these unit cells
+were packed together
 
-- Creation of Initial Crystal from Parameters
-    - p2 Crystal parameters
-    - p2gg crystal parameters
-    - pg crystal parameters
+:::{class=subfigures id=fig:crystal_unit_cell}
 
-- Crystal sizes
-    - p2 -> 48 x 42
-    - pg -> 48 x 42
-    - p2gg -> 48 x 21
+![p2](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2}
+![pg](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_pg}
+![p2gg](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2gg}
 
-- Choice of unit cell parameters
-    - closest to square
-    - conversion of p2 crystal to orthogonal
-    - get the p2 crystal to align when orthogonal
+The unit cells of the p2 (a) the pg (b) and the p2gg (c) crystals
+documenting the unit cell parameters
+and the positions of each particle within the cell.
+The initial configurations used many replications
+of these unit cells along the $a$ and $b$ crystal axes.
+The number of replications for each crystal is in @tbl:unit_cell_dimensions.
+These numbers were based on the p2 crystal,
+which doesn't have an orthorhombic unit cell,
+required for the melting step.
+The choice of 42 is such that
+the periodicity of the simulation cell in the $y$ direction
+is nearly the same as the $b$ crystal direction
+allowing for adjusting the shape.
+The remaining parameters were chosen
+to keep the simulation cells close to square in shape.
+Note that the p2gg unit cell has twice as many molecules
+as the other unit cells.
 
-- NPT simulation to relax structure -> equilibrate
-- All degrees of freedom are decoupled
-    - box is allowed to tilt
-    - x,y,z increase independently
-- Momentum is zeroed every 307 steps
+:::
 
-- Creation of Initial Crystal from Parameters
-    - p2 Crystal paramters
-    - p2gg crystal parameters
-    - pg crystal parameters
+Crystal | Replications $a$ | Replications $b$
+------- |----              |----
+p2      | 48               | 42
+pg      | 48               | 42
+p2gg    | 48               | 21
 
-- Choice of unit cell parameters
-    - closest to square
-    - conversion of p2 crystal to orthogonal
-    - get the p2 crystal to align when orthogonal
+Table: The unit cell dimensions for each of the crystal
+structures. {tbl:unit_cell_dimensions}
 
-- initialised at a lower temperature
+The once the initial configuration is created,
+an NPT simulation at a temperature $T=0.1$
+is run to allow the molecules to relax.
+The positions are based off the packing of hard spheres
+so this allows the particles to relax to their minimum.
+During this relaxation process all degrees of freedom
+of the simulation cell are decoupled
+and the box is allowed to tilt,
+giving the crystal the most freedom to find
+the minimum energy configuration.
 
 ### Creation of Liquid--Crystal Interface
 
@@ -99,23 +128,6 @@ to an orthorhombic configuration.
 This is done to make the resulting analysis
 simpler and more consistent
 across the different crystal structures.
-
-- NPT simulation
-    - x, y axes expand individually
-- Box of particles in the center third of the simulation cell are not integrated
-    - temperature for these not included in calculation
-- start at the higher temperature
-    - randomly initialise velocities and angular velocities
-- run until the crystal melts
-- Positions of all particles are increased
-    - distance between particles in the static region increases with the rest of the
-      simulation cell
-
-Simulations of type liquid or interface will be forced into an orthorhombic shape by
-setting the new orthorhombic box shape and moving particles through the new periodic
-boundary conditions. In the image below, the initial configuration is the tilted
-box, with the vertical bars being the simulation box. Particles outside the new box
-are wrapped into the missing regions on the opposite side.
 
 The conversion to the orthorhombic shape
 is done by moving the shifted regions
@@ -135,29 +147,52 @@ removing any minor mismatch in the alignment of the periodic faces.
 The central crystal region is not integrated during the melting,
 however the distance between particles increases as the box size increases.
 
-The only difference between simulations of type `"liquid"` and `"interface"`, is
-that the interface simulations will only be integrating the motion of a subset of
-molecules, with the central 2/3 of particles remaining stationary.
-
-For the simulation type `"crystal"`, the momentum is zeroed more often, every 307
-steps instead of 33533 for the liquid and interface simulations. Additionally, to
-allow proper and complete relaxation of the crystal structure, each side of the
-simulation cell is able to move independently and the simulation cell is also
-permitted to tilt.
-
 ### Equilibration of Liquid--Crystal Interface
 
-- NPT Simulation
-- Temperature gradually decreased
-    - more steps for lower temperatures
-    - simulation at the lower temperature
-- Non-integrated region remains stationary
-
-- Run for a number of steps at the higher temperature
+The equilibration component involves
+reducing the temperature of the liquid region
+to represent the equilibrium liquid at each temperature.
+This is done by equilibrating only the liquid regions
+for the number of steps in @tbl:melting_conditions.
+These simulations are replicated five times
+for each set of conditions,
+each with a different initial momentum.
 
 ### Production Simulations
 
-- NPT Simulation
+The steps for the production simulations are shown in @tbl:melting_conditions,
+with each simulation replicated five times for the calculation of errors.
+Each simulation has 100 output configurations to measure the rate of melting.
+
+Pressure | Temperature | Steps
+----     |--           |--
+1.00     | 0.70        | \num{4e4}
+1.00     | 0.60        | \num{1e5}
+1.00     | 0.55        | \num{5e5}
+1.00     | 0.50        | \num{5e6}
+1.00     | 0.45        | \num{1e7}
+1.00     | 0.42        | \num{1e8}
+1.00     | 0.40        | \num{5e8}
+1.00     | 0.39        | \num{1e9}
+1.00     | 0.38        | \num{1e9}
+1.00     | 0.37        | \num{1e9}
+1.00     | 0.36        | \num{1e9}
+1.00     | 0.35        | \num{1e9}
+13.50    | 3.00        | \num{4e4}
+13.50    | 2.50        | \num{1e5}
+13.50    | 2.20        | \num{5e5}
+13.50    | 2.20        | \num{5e6}
+13.50    | 1.80        | \num{1e7}
+13.50    | 1.60        | \num{1e8}
+13.50    | 1.50        | \num{5e8}
+13.50    | 1.45        | \num{1e9}
+13.50    | 1.40        | \num{1e9}
+13.50    | 1.38        | \num{1e9}
+13.50    | 1.35        | \num{1e9}
+13.50    | 1.33        | \num{1e9}
+
+Table: The conditions for the simulations for the crystal
+melting rates. {#tbl:melting_conditions}
 
 ## Crystal Melting Rates
 
