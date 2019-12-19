@@ -82,6 +82,7 @@
 %% Font configuration
 %%
 
+% Fonts are installed through conda so will always be available
 \setmainfont{Open Sans}[Scale=MatchLowercase]
 \setmathfont{STIX Two Math}[Scale=MatchLowercase]
 
@@ -103,16 +104,10 @@
 %% Configure Captions
 %%
 
-% Set caption width for long table package to the text width.
-% \setlength{\LTcapwidth}{\textwidth}
-
 % Using the caption package automatically sets the spacing at single
-
-% Use margin for captions to differentiate from text
 \RequirePackage{caption}
-\RequirePackage{ltcaption}
-\captionsetup{margin=1cm,labelfont=bf}
-% \captionsetup[longtable]{margin=1cm,labelfont=bf}
+% Use margin for captions to differentiate from text
+\captionsetup{margin=1cm,labelfont=bf,position=bottom}
 
 %%
 %% Macros
