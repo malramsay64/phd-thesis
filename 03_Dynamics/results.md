@@ -187,7 +187,7 @@ What is particularly interesting about this behaviour
 is that it occurs above the melting point,
 that is, in a liquid that is not supercooled.
 The degree to which this behaviour is non-Arrhenius
-can be determined by fitting the Vogel--Tamman--Fulcher (VTF) relations
+can be determined by fitting the Vogel--Tammann--Fulcher (VTF) relations
 which are shown as a black line on the figure.
 With the analytical description of the curve
 it is possible to extrapolate to
@@ -872,8 +872,8 @@ in the coupling of rotational and translational motion.
 
 As we go from 1 to 4,
 the requirements for establishing these become more stringent.
-The analysis of the translational and rotational heterogeneities
-(@fig:non-gaussian;@fig:rotational_non-gaussian)
+The analysis of the translational [@fig:non-gaussian] and
+rotational [@fig:rotational_non-gaussian] heterogeneities
 provide enough data for the coincidence.
 Each of the heterogeneities
 have similar shape and timescales.

@@ -83,6 +83,9 @@ were packed together
 The unit cells of the p2 (a) the pg (b) and the p2gg (c) crystals
 documenting the unit cell parameters
 and the positions of each particle within the cell.
+
+:::
+
 The initial configurations used many replications
 of these unit cells along the $a$ and $b$ crystal axes.
 The number of replications for each crystal is in @tbl:unit_cell_dimensions.
@@ -97,8 +100,6 @@ The remaining parameters were chosen
 to keep the simulation cells close to square in shape.
 Note that the p2gg unit cell has twice as many molecules
 as the other unit cells.
-
-:::
 
 Crystal | Replications $a$ | Replications $b$
 ------- |----              |----
