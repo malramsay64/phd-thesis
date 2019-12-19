@@ -1,7 +1,17 @@
 # Crystal Growth
 
-The growth of crystals is important.
-...
+Much of the world we interact with is built using solid materials,
+from all the electronics within your phone,
+to the skyscrapers that tower over us.
+All these applications demand materials which have properties
+better suited for their particular task,
+whether that is strength, corrosion resistance, magnetic properties, and many others.
+One of the main methods for the formation of these materials is from the melt.
+The properties of these materials can be influenced by
+the crystal structure which forms,
+and also the micro-structure of the crystal. [@Granasy2004]
+This involves understanding all aspects of crystal growth
+so we have the control to design the materials we need.
 
 For the transition from a disordered liquid phase
 to an ordered crystal phase,
