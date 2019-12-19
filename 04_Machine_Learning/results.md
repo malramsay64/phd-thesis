@@ -284,7 +284,7 @@ ranging from a linear model, to a deep neural network.
 The first step in evaluating performance
 is to find a suitable algorithm.
 @Tbl:classification_performance shows a range of algorithms tested,
-with each being described in @sec:ml_algorithms.
+with each being described in @sec:supervised-learning-algorithms.
 Of the algorithms shown in @tbl:classification_performance,
 there are three which stand out for their performance;
 

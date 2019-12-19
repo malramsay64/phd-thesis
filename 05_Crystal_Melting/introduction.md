@@ -173,8 +173,6 @@ $\Delta h_m$ is the free energy from the liquid to the crystal
 at the melting point,
 $V(T^*)$ is the velocity of the interface,
 and $\tau_C(T^*)$ is the crystallisation rate.
-This represents a theoretical description
-of the points in @fig:normalised_melting.
 
 The classical model of Crystal Growth and Melting
 known as the Wilson-Frenkel [@Wilson1900;@Frenkel1926]

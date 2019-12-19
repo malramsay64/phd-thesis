@@ -139,7 +139,7 @@ which has been designed from the ground up for GPU computation.
 This means it makes full use of the GPU
 avoiding communication overheads
 and using the best data structures and algorithms,
-like the SARU pseudo-random number generator. [@sec:random_numbers_in_hoomd]
+like the SARU pseudo-random number generator. [@sec:random-numbers-in-hoomd]
 While HOOMD-blue is on the cutting edge of technology,
 there is not the same source of literature to draw upon that LAMMPS has.
 This also means that there are not the library of extensions,

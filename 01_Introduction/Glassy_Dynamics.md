@@ -220,7 +220,7 @@ whether structural or rotational will have the form
 $$ F(t) = c \e^{-t/\tau} $$
 
 where $\tau$ is the characteristic timescale of the relaxation.
-These produce the curves at higher temperatures shown in @fig:relaxtion
+These produce the curves at higher temperatures shown in @fig:relaxation
 which also has curves which don't fit this description,
 an indicator of heterogeneous dynamics.
 The other relaxations display a stretched exponential behaviour
@@ -384,7 +384,7 @@ is the breakdown of the Stokes--Einstein--Debye relations,
 that is, the proportionality in @eq:sed_proportionality
 no longer holds true.
 Experimental evidence of this is displayed in @fig:trans_rot_otp
-which is supported by additional studies.
+and supported by additional studies. [@cite]
 
 ![Translational an rotational coupling within ortho-terphenyl
 breaks down below 290K @Chang1994](../placeholder_figure.png){#fig:trans_rot_otp width=80%}

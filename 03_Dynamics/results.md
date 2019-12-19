@@ -10,7 +10,7 @@ where $T$ is the experimental temperature and $T_m$ is the melting point.
 For the results presented here,
 we don't have an accurate determination of the melting point,
 instead using our best approximation,
-the details of which are discussed in \ref{sec:crystal_melting}
+the details of which are discussed in @sec:Crystal_Melting
 and presented in @tbl:melting_points.
 
  Pressure   Melting Point

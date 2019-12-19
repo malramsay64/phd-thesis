@@ -542,7 +542,7 @@ The normalisation by the temperature allows
 for the comparison between different pressures,
 while a normalisation by the dynamics
 shows how the process of crystal growth changes
-as a function of temperature (@fig:normalised_melting).
+as a function of temperature. [@fig:normalised_melting_fit]
 This is now the distance the interface travels
 in the relaxation time.
 As the temperature decreases the distance
@@ -570,7 +570,7 @@ It is intriguing that this relationship flips for a molecular system.
 
 The 2D molecules are so much slower
 as a result of the rotational constraints.
-As presented in @sec:dynamics,
+As presented in @sec:Dynamics,
 rotational motion is required for translational motion to occur,
 and being two dimensional, the trimer can lock up.
 In 3D, the rotations are not so constrained,
@@ -619,7 +619,7 @@ Pressure            $c$
 Table: The constant defining the rate of crystal growth
 for each of the pressures.
 These values are obtained from the fitting in
-@fig:normalised_melting {#tbl:rate_coefficient}
+@fig:normalised_melting_fit {#tbl:rate_coefficient}
 
 The lines depicting the fit of
 the Wilson-Frenkel theory in @fig:normalised_melting_all

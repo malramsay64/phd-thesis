@@ -126,18 +126,7 @@ which requires a careful choice
 of the number of overall layers
 so the orthorhombic configuration is favourable.
 
-![
-
-```text
-   ____________________
-  | /               | /
-  |/                |/
-  /                 /
- /|                /|
-/_|_______________/_|
-```
-
-Depicting conversion to orthorhombic
+![Depicting conversion of tilted cell to orthorhombic
 ](../placeholder_figure.png){width=80% #fig:orthorhombisation}
 
 The outer 1/3 of the orthorhombic configuration is then melted
@@ -183,7 +172,7 @@ through the growth in size of the simulation cell. [@Tang2013]
 Other methods are to compute a local property as a measure of order
 like a hexatic order parameter for 2D simulations,
 or a Steinhardt bond order parameter [@Reinhart2018].
-See @sec:Machine-Learning for details about identifying
+See @sec:Machine_Learning for details about identifying
 crystal structure within a liquid.
 These approaches use a slab geometry [@Kerrache2008]
 to measure the growth or melting rates
@@ -214,7 +203,7 @@ The first step in determining the melting rate
 is determining which particles
 are in a local crystalline configuration.
 This approach used the K-Nearest Neighbours
-machine learning algorithm. [@sec:Machine-Learning]
+machine learning algorithm. [@sec:Machine_Learning]
 For the melting rate,
 we are not so much interested in the types of crystals
 which exist within the structure,
