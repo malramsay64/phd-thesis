@@ -57,7 +57,6 @@ with the requirements for convergence being
 
 - energy tolerance: \num{1e-5},
 - force tolerance: 0.1, and
-- angular momentum tolerance: 0.1.
 The step size of the minimisation was 0.001.
 
 With the configuration minimised,
@@ -99,14 +98,17 @@ to the desired simulation temperature.
 This process took place over \num{1e7} timesteps.
 The second part of the equilibration
 was running at the production temperature,
-until the step count reached the timesteps specified in @Tbl:dynamics_steps.
+until the step count reached the timesteps specified in @tbl:dynamics_steps.
 These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
 using the parameters $\tau = 1.0$ and $\tau_P = 1.0$
 and a step size of 0.005.
 
 ### Production
 
-Steps
+The timesteps used for each of the production simulations
+are documented in @tbl:dynamics_steps.
+These steps are chosen to ensure relaxation of the simulation
+and to have enough key-frames for averaging over many initial conditions.
 
 Temperature |Pressure| Steps
 -----------:|-------:|-----------:
