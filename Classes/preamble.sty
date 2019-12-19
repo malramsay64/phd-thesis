@@ -82,13 +82,8 @@
 %% Font configuration
 %%
 
-% Use the OpenSans font
-\IfFontExistsTF{OpenSans}{%
-  \setmainfont{OpenSans}[Scale=MatchLowercase]%
-}{%
-  \RequirePackage{opensans}%
-}
-\renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Open Sans}[Scale=MatchLowercase]
+\setmathfont{STIX Two Math}[Scale=MatchLowercase]
 
 %
 % Configure numbering of sections
