@@ -1,17 +1,16 @@
 name: thesis
 dependencies:
   - python=3.7
-  - pip=19.3
-  - setuptools==41.0.1
-  - pandoc==2.8.1
+  - conda-forge::pandoc==2.9
   - conda-forge::tectonic==0.1.12
   - malramsay::biber==2.11
-  - pre_commit=1.18
+  - conda-forge::pre-commit==1.20
   - nodejs==10.13.0
   - conda-forge::graphviz==2.42.3
   - conda-forge::cairosvg==2.4.2
   - conda-forge::pandocfilters==1.4.2
-  - conda-forge::pandoc-crossref==0.3.5.0.2
+  - conda-forge::pandoc-crossref==0.3.6
+  - conda-forge::hsluv==0.0.2
+  - pip=19.3
   - pip:
-      - hsluv==0.0.2
       - gitlint==0.12.0
