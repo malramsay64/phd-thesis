@@ -23,44 +23,6 @@ or tiny scratches in glassware can also act
 as a seed site,
 from which the crystal grows at the crystal growth rate.
 
-## Temperature Dependence of Growth Rates
-
-- Looking at the nucleation rate and the crystal growth rate separately.
-
-Nucleation occurs when a fluctuation in the liquid state,
-forms a crystalline configuration stable enough to grow.
-The size of this is influenced by the chemical energy difference
-between the liquid and the crystal phases,
-as well as the energy penalty of the interface between them.
-As the size of an nucleation site increases,
-the energy gained from the crystal phase increases
-as the cube of the radius,
-while the penalty for the surface area increases
-as the square of the radius.
-The two different power laws mean that at some finite size,
-a crystalline configuration is stabilised
-and can continue to grow.
-The initial creation of this unstable state
-arises from the random fluctuations of the liquid;
-the average energy has spatial and temporal fluctuations
-which with some rare occurrence,
-create structures which are possible for nucleation.
-As the temperature decreases the fluctuations creating
-the higher energy crystal nucleus become rarer and rarer,
-however also in favour is the larger energy gap
-between the liquid and the crystal phases.
-
-- supercooled liquids for pedestrians [@Cavagna2009]
-
-The classical theory of crystal growth
-is attributed to Wilson[@Wilson1900] and Frenkel[@Frenkel1926],
-where the growth rate is determined by the liquid diffusion
-near the interface, and the chemical potential between the two phases.
-At temperatures slightly below the melting point
-the chemical potential is the rate limiting parameter,
-while typically lower temperatures become limited
-by the diffusion of particles near the interface.
-
 ## Anomalously Slow Growth Rates
 
 In the study of many different crystals,
