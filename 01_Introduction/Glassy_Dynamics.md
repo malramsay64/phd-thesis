@@ -264,7 +264,8 @@ A similar picture is painted in 3D systems, [@Donati1999]
 with spatially separated regions of fast and slow particles.
 
 ![The spatial distribution of motion
-@Hurley1995](../placeholder_figure){#fig:dynamic_heterogenaeties width=80%}
+*Used with permission from @Hurley1995 © 1995 American Physical Society*
+](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
 
 There are many theoretical foundations
 for understanding dynamic heterogeneities.

@@ -192,5 +192,6 @@ since nucleation starts before equilibrium can be established.
 
 ![When the nucleation time (solid line) and relaxation time (dashed line) do not cross
 it is possible to equilibrate the liquid to arbitrarily low temperatures
-using a non-linear cooling rate which stays between the lines.
-[@Cavagna2009]](../placeholder_figure.png){#fig:supercooled_liquid_formation width=80%}
+using a non-linear cooling rate which stays between the lines.\
+*Adapted with permission from @Cavagna2009 © 2009 Elsevier*
+](../01_Introduction/figures/supercooled_liquid_formation.jpg){#fig:supercooled_liquid_formation width=80%}
