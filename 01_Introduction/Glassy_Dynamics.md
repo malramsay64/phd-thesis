@@ -212,7 +212,9 @@ a demonstration that it is more than a kinetic phenomenon.
 
 ![Structural relaxation from a experimental study showing
 the transition to the two-step process characteristic of
-heterogeneous dynamics](../placeholder_figure.png){#fig:relaxation width=80%}
+heterogeneous dynamics
+*Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
+](../01_Introduction/figures/ortho-terphenyl_structural.png){#fig:relaxation width=80%}
 
 Relaxations $F(t)$ within systems undergoing Brownian motion,
 whether structural or rotational will have the form
@@ -264,8 +266,7 @@ A similar picture is painted in 3D systems, [@Donati1999]
 with spatially separated regions of fast and slow particles.
 
 ![The spatial distribution of motion
-*Used with permission from @Hurley1995 © 1995 American Physical Society*
-](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
+*Used with permission from @Hurley1995 © 1995 American Physical Society*](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
 
 There are many theoretical foundations
 for understanding dynamic heterogeneities.
@@ -319,7 +320,9 @@ it becomes possible to go around.
 :::
 
 ![A representation of the potential energy landscape for a
-liquid.](../placeholder_figure.png){#fig:potential_energy_landscape width=80%}
+liquid.\
+*Used with permission from @Stillinger1995 © 1995 AAAS*](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
+](../01_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
 Further evidence for the idea that the structure
 plays a role in the resulting dynamics
@@ -343,8 +346,10 @@ there is even more susceptibility to jamming.
 Another aspect of jamming which has less attention
 is rotational jamming.
 
-![Depiction of the jamming of discs.
-](../placeholder_figure.png){#fig:jamming_diagram width=80%}
+![Depiction of the jamming of discs in an inherent structure
+for a trimer molecule with $r=0.7$ and $\theta=120^\circ$\
+*Figure from @Jennings2015 used with permission © 2015 Taylor and Francis*
+](../01_Introduction/figures/jammed_discs.png){#fig:jamming_diagram width=80%}
 
 Gears are a method of mechanically transferring rotational motion
 from one location to another,
@@ -367,8 +372,8 @@ will all rotate together acting as a single body.
 
 :::{class=subfigures id=fig:gears}
 
-![Three gears](../placeholder_figure.png){#fig:gears_triple width=40%}
-![Four gears](../placeholder_figure.png){#fig:gears_quad width=40%}
+![Three gears](../01_Introduction/figures/cogs_3.svg){#fig:gears_triple width=40%}
+![Four gears](../01_Introduction/figures/cogs_4.svg){#fig:gears_quad width=40%}
 
 If we model the rotational motion of a gear network
 Where there are three gears,
