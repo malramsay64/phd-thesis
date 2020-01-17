@@ -393,7 +393,9 @@ Experimental evidence of this is displayed in @fig:trans_rot_otp
 and supported by additional studies. [@cite]
 
 ![Translational an rotational coupling within ortho-terphenyl
-breaks down below 290K @Chang1994](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
+breaks down below 290K \
+*Figure from @Chang1994 used with permission © Elsevier*
+](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
 
 The idea that the rotational and translational diffusion constants
 were proportional to each other
