@@ -210,8 +210,12 @@ for the analysis of the radial distribution function.
 The radial distribution is averaged over 1000 frames
 at the melting point shown in @fig:radial_distribution_function.
 
-![The radial distribution function of the Trimer
-molecule](../placeholder_figure.png){#fig:radial_distribution_function width=80%}
+![The radial distribution function of the Trimer liquid at a pressure $P=13.50$ and a
+temperature $T=1.50$. The radial distribution is taken as an average over 100 configurations of
+the input trajectory. There shape of the molecule means there are three distinct first
+shell peaks. In further shells the only
+impact on shape is the longer than usual tails of the peaks.
+](../Projects/Dynamics/figures/radial_distribution.svg){width=80% #fig:radial_distribution}
 
 ### Computing the structure factor
 
@@ -253,6 +257,11 @@ of the static structure factor,
 and can be used to find the characteristic Bragg length $k_\text{bragg}$
 
 $$ k_\text{bragg} = \frac{\pi}{2 v} $$
+
+![The static structure factor of the Trimer liquid at a pressure $P=13.50$ and a
+temperature $T=1.50$. This is calculated from an average over 100 configurations.
+within the trajectory. The first peak corresponds to a value of 2.90.
+](../Projects/Dynamics/figures/static_structure_factor.svg){width=81% #fig:static_structure_factor}
 
 ### Structural Relaxation
 
