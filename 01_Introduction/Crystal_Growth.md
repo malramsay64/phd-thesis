@@ -56,6 +56,35 @@ is comprised of two distinct steps,
 2. the continued growth of crystal as it
     propagates forward from the initial boundary.
 
+## Growth Theory
+
+Once a crystal has reached the size of the
+critical nucleus and starts to grow,
+we need to switch from using nucleation theory
+to using a theory of crystal growth,
+with the well established theory being the Wilson-Frenkel theory.
+This expresses a relation predicting
+the rate of crystal growth $v(T)$ being
+
+$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$
+
+where $k(t)$ is the mobility of particles within the liquid.
+The Wilson-Frenkel model is similar to that of Classical Nucleation Theory.
+We have an activated process,
+that is, one governed by an Arrhenius temperature dependence,
+with a factor out the front.
+The key difference here is that the pre-factor, $k(T)$
+has a temperature dependence,
+being the mobility of particles within the liquid.
+This gives rise to some interesting behaviour,
+as the temperature drops below the melting point,
+the rate of crystal growth increases,
+with the $\Delta G_\text{crystal}$ term getting larger.
+However, at some point,
+the growth of of the crystals slows down again,
+as the first mobility of the particles $k(T)$
+becomes dominant.
+
 ## Nucleation Theory
 
 The current description of nucleation,
@@ -118,35 +147,6 @@ While the approximations being made in Classical Nucleation Theory
 can be problematic for modelling nucleation,
 for the purposes of this work
 it provides enough of a theoretical foundation.
-
-## Growth Theory
-
-Once a crystal has reached the size of the
-critical nucleus and starts to grow,
-we need to switch from using nucleation theory
-to using a theory of crystal growth,
-with the well established theory being the Wilson-Frenkel theory.
-This expresses a relation predicting
-the rate of crystal growth $v(T)$ being
-
-$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$
-
-where $k(t)$ is the mobility of particles within the liquid.
-The Wilson-Frenkel model is similar to that of Classical Nucleation Theory.
-We have an activated process,
-that is, one governed by an Arrhenius temperature dependence,
-with a factor out the front.
-The key difference here is that the pre-factor, $k(T)$
-has a temperature dependence,
-being the mobility of particles within the liquid.
-This gives rise to some interesting behaviour,
-as the temperature drops below the melting point,
-the rate of crystal growth increases,
-with the $\Delta G_\text{crystal}$ term getting larger.
-However, at some point,
-the growth of of the crystals slows down again,
-as the first mobility of the particles $k(T)$
-becomes dominant.
 
 ## Supercooled liquids
 

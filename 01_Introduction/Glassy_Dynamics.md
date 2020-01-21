@@ -1,66 +1,9 @@
-# Glassy Dynamics
+# Dynamics of Supercooled Liquids
 
 Dynamics are important to both Crystal Growth, as a rate term
 and to understanding the Glass.
 
-## Introduction to Dynamics
-
-Current models of motion in the liquid state
-are based on the Stokes-Einstein-Debye relationships[@Debye1929],
-which are theoretical models of collective motion
-derived from particles undergoing Brownian motion[@Einstein1956].
-These models define characteristic rates of motion
-known as diffusion constants,
-with $D_t$ being the diffusion constant of translational motion
-while $D_r$ is the diffusion constant of rotational motion.
-The Stokes--Einstein equation for translational motion
-
-$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
-
-and the Stokes--Einstein--Debye relation for rotational motion
-
-$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
-
-where
-
-- $\eta$ is the shear viscosity, and
-- $T$ is the temperature.
-
-These equations can be simplified as follows
-
-$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
-
-and
-
-$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
-
-which allows us to express a relationship
-between the rotational and translational diffusion
-
-$$ D_t \propto D_r $$ {#eq:sed_proportionality}
-
-when both are at the same temperature and viscosity.
-
-One of the detractors of Brownian dynamics
-is that it describes the dynamics of independent events,
-making no account for momentum.
-An alternative method of describing the dynamics of particles
-is through Langevin Dynamics,
-which does include the momentum of particles.
-This ends up giving the same result
-for the Stokes-Einstein-Debye relations.
-This is because it is possible to consider
-Brownian Dynamics as a more granular form
-of Langevin Dynamics.
-
-The Stokes-Einstein-Debye models are suitable for describing
-the dynamic properties of most liquids, however,
-there are instances in supercooled liquids,
-where the Stokes-Einstein-Debye relations
-are insufficient for describing the dynamics which are observed.
-The breakdown in dynamics is primarily
-a case of the underlying particle motions
-no longer adhering to Brownian motion.
+## Dynamic Quantities
 
 ### Structural Relaxation
 
@@ -383,7 +326,66 @@ while four gears allow motion to propagate.
 
 :::
 
-## Breakdown in rotational coupling
+## Stokes--Einstein--Debye Models
+
+Current models of motion in the liquid state
+are based on the Stokes-Einstein-Debye relationships[@Debye1929],
+which are theoretical models of collective motion
+derived from particles undergoing Brownian motion[@Einstein1956].
+These models define characteristic rates of motion
+known as diffusion constants,
+with $D_t$ being the diffusion constant of translational motion
+while $D_r$ is the diffusion constant of rotational motion.
+The Stokes--Einstein equation for translational motion
+
+$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
+
+and the Stokes--Einstein--Debye relation for rotational motion
+
+$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
+
+where
+
+- $\eta$ is the shear viscosity, and
+- $T$ is the temperature.
+
+These equations can be simplified as follows
+
+$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
+
+and
+
+$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
+
+which allows us to express a relationship
+between the rotational and translational diffusion
+
+$$ D_t \propto D_r $$ {#eq:sed_proportionality}
+
+when both are at the same temperature and viscosity.
+
+One of the detractors of Brownian dynamics
+is that it describes the dynamics of independent events,
+making no account for momentum.
+An alternative method of describing the dynamics of particles
+is through Langevin Dynamics,
+which does include the momentum of particles.
+This ends up giving the same result
+for the Stokes-Einstein-Debye relations.
+This is because it is possible to consider
+Brownian Dynamics as a more granular form
+of Langevin Dynamics.
+
+The Stokes-Einstein-Debye models are suitable for describing
+the dynamic properties of most liquids, however,
+there are instances in supercooled liquids,
+where the Stokes-Einstein-Debye relations
+are insufficient for describing the dynamics which are observed.
+The breakdown in dynamics is primarily
+a case of the underlying particle motions
+no longer adhering to Brownian motion.
+
+### Breakdown in rotational coupling
 
 Another unusual behaviour of supercooled liquids,
 is the breakdown of the Stokes--Einstein--Debye relations,
