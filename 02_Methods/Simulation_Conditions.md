@@ -1,6 +1,174 @@
-# Methods
+# Simulation Conditions
 
-## Crystal Melting Simulations
+## Dynamics Simulations
+
+The breakdown of the different simulation steps follows that defined by @Braun2018
+having four distinct steps,
+
+1. Initialisation
+2. Minimisation
+3. Equilibration
+4. Production
+
+with each step described below.
+
+### Initialisation
+
+The initialisation of the dynamics quantities is initially
+constructed from a square lattice with a single lattice parameter $a$ where
+
+$$a = 2 r_\text{enclosing}$$
+
+with $r_\text{enclosing}$ being the radius of a circle centered
+on the center of mass of the molecule
+which completely encloses the molecule.
+For the Lennard Jones potential,
+enclosing radius is considered as the value of $\sigma / 2$
+This configuration is chosen for being the simplest configuration
+where there is no possibility of molecules overlapping
+and being in the highly repulsive region of the Lennard-Jones potential.
+
+For evaluating the dynamics quantities,
+the initial lattice was extended in
+the $a$ and $b$ directions for 32 periods each.
+This results in a configuration containing 1024 molecules.
+
+### Minimisation
+
+The square lattice configuration is a long way
+from an equilibrium liquid configuration,
+so the minimisation steps are extensive,
+comprising of two steps.
+
+The first step of the minimisation
+is using the FIRE energy minimisation technique [@Bitzek2006],
+which is significantly faster
+and more suited to molecular dynamics simulations
+than the steepest-descent or conjugate-gradient approaches.
+The minimisation was run using the NPH ensemble,
+minimising both the energy of the particles and the box,
+with the pressure set to the desired value,
+being one of 13.50 or 1.00.
+While the box was allowed to relax,
+it retained the initial square shape
+throughout the minimisation.
+The minimisation was run until convergence of all parameters was reached
+with the requirements for convergence being
+
+- energy tolerance: \num{1e-5},
+- force tolerance: 0.1, and
+The step size of the minimisation was 0.001.
+
+With the configuration minimised,
+it is still unlikely to be representative
+of an equilibrated liquid configuration.
+So a simulation run of 1 million timesteps
+was performed for each pressure at a high temperature
+so that the liquid is thoroughly equilibrated.
+These simulation had the conditions
+
+Pressure   Temperature
+--------  ------------
+   13.50          3.00
+    1.00          2.00
+
+with a step size of 0.005.
+To prevent issues with all particles in the
+simulation producing a collective flow,
+the net momentum of the simulation was zeroed every 33533 timesteps,
+chosen for being a large prime number.
+These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+using the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
+
+### Equilibration
+
+The role of the equilibration is to take
+the minimised simulation to one
+representative of the equilibrated conditions
+for which data collection is intended.
+One of the challenges with equilibrating configurations
+is capturing states which are representative
+of the equilibrium configuration rather than those of a local minima,
+particularly troublesome for the low temperatures
+at which these simulations take place.
+To assist with this the equilibration simulations take place in two parts,
+the first is gradually lowering the temperature
+from that of the minimisation step,
+to the desired simulation temperature.
+This process took place over \num{1e7} timesteps.
+The second part of the equilibration
+was running at the production temperature,
+until the step count reached the timesteps specified in @tbl:dynamics_steps.
+These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+using the parameters $\tau = 1.0$ and $\tau_P = 1.0$
+and a step size of 0.005.
+
+### Production
+
+The timesteps used for each of the production simulations
+are documented in @tbl:dynamics_steps.
+These steps are chosen to ensure relaxation of the simulation
+and to have enough key-frames for averaging over many initial conditions.
+
+Temperature |Pressure| Steps
+-----------:|-------:|-----------:
+1.25        |  13.50 |   \num{4e9}
+1.30        |  13.50 |   \num{2e9}
+1.35        |  13.50 |   \num{2e9}
+1.40        |  13.50 |   \num{2e9}
+1.45        |  13.50 |   \num{2e9}
+1.50        |  13.50 |   \num{2e8}
+1.60        |  13.50 |   \num{2e8}
+1.80        |  13.50 |   \num{2e7}
+2.00        |  13.50 |   \num{2e7}
+2.50        |  13.50 |   \num{2e7}
+0.30        |   1.00 |   \num{4e9}
+0.35        |   1.00 |   \num{2e9}
+0.40        |   1.00 |   \num{2e9}
+0.45        |   1.00 |   \num{2e9}
+0.50        |   1.00 |   \num{2e9}
+0.60        |   1.00 |   \num{2e8}
+0.80        |   1.00 |   \num{2e8}
+1.00        |   1.00 |   \num{2e7}
+1.40        |   1.00 |   \num{2e7}
+1.80        |   1.00 |   \num{2e7}
+
+Table: The simulation conditions for each of the production simulations. {#tbl:dynamics_steps}
+
+Lower temperatures were not considered
+as HOOMD-blue is unable to count higher.
+Internally HOOMD-blue uses an unsigned 32 bit integer
+to keep track of the step, [@hoomd_counter]
+which means the largest supported step size is $2^{32-1}$ or \num{~4.2e9}.
+
+The momentum of the simulations was zeroed every 33533 steps
+to prevent flow through the periodic boundaries
+from influencing calculations of the change of displacement.
+The simulations were undertaking in the NPT ensemble,
+with the temperature and pressure held constant
+using the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+having the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
+
+## Machine Learning Simulations
+
+The simulations for the machine learning dataset
+are created using the same method as the Crystal Melting
+simulations (see @sec:crystal-melting-simulations).
+This so the models developed for the machine learning
+are as close to the dataset they will be used with as possible.
+The simulations for the crystal melting do take a long time to run
+and since for the machine learning we concerned with
+finding a range of representative structures rather than thermodynamic equilibrium
+I can take some shortcuts to save time.
+Rather than the equilibration at each temperature running up to 4 billion timesteps,
+all the equilibration is done in 10 thousand steps.
+
+The configurations used for the machine learning tasks
+was from a timestep of 100,
+chosen for having a range of thermal motions within the crystal,
+without the melting at higher temperatures interfering with the structure.
+
+## Melting Simulations
 
 All the simulations for the crystal melting
 were conducted using the HOOMD-blue package.
@@ -53,7 +221,7 @@ The isopointal search provides results for different constraints
 so there are configurations for each of the p2, p2gg and pg crystals
 which were the most likely candidates for the true crystal structure.
 
-### Minimisation
+### Minimisation of local structure
 
 With an initial configuration determined using hard discs
 this needs to be adjusted to account for the Lennard-Jones
@@ -194,173 +362,3 @@ Pressure | Temperature | Steps
 
 Table: The conditions for the simulations for the crystal
 melting rates. {#tbl:melting_conditions}
-
-## Crystal Melting Rates
-
-### Measuring Melting Rates
-
-For simulations where there is
-a large difference in density
-between the liquid and the crystal phases,
-it is possible to monitor the rate of crystallisation
-through the growth in size of the simulation cell. [@Tang2013]
-
-Other methods are to compute a local property as a measure of order
-like a hexatic order parameter for 2D simulations,
-or a Steinhardt bond order parameter [@Reinhart2018].
-See @sec:Machine_Learning for details about identifying
-crystal structure within a liquid.
-These approaches use a slab geometry [@Kerrache2008]
-to measure the growth or melting rates
-of a single face of the crystal.
-
-There is no precedence in the literature
-for the creation of a slab geometry
-for a unit cell that doesn't fit in an orthorhombic unit cell.
-Because the crystal growth and melting rates can vary by such a large value,
-both the (1,0) and the (0,1) faces of the unit cell need to be tested.
-
-Furthermore, the melting rates which are required for studying this system
-are more than three orders of magnitude longer that similar studies. [@Widmer-Cooper2009a;@Kerrache2008;@Tang2013]
-The rates required are measuring on the order of
-a layer of the crystal melting over
-a billion timesteps.
-
-As a method of getting around the limitations of these simulations,
-a crystal blob was created,
-with the central crystal region being completely surrounded by the liquid.
-This ensures that the p2 crystal
-is not artificially strained by the periodic boundary conditions,
-and has the additional benefit
-of being able to observe melting on all faces simultaneously
-finding an Isotropic melting rate.
-
-The first step in determining the melting rate
-is determining which particles
-are in a local crystalline configuration.
-This approach used the K-Nearest Neighbours
-machine learning algorithm. [@sec:Machine_Learning]
-For the melting rate,
-we are not so much interested in the types of crystals
-which exist within the structure,
-instead only whether a particle
-is crystal-like or liquid-like,
-so the categorisation into each crystal structure is
-reduced to a single category.
-This categorisation of particles into
-liquid and crystal is used
-to create a spatial cluster
-describing the crystalline region.
-The spatial clustering is undertaken
-using a hierarchical clustering algorithm,
-with each particle starting in its own cluster
-with the clusters being merged to minimise
-the number of misclassified particles,
-having the constraint that merges only occur
-with neighbouring particles.
-This is implemented using the Ward clustering algorithm [@Ward1963]
-from the `AgglomerativeClustering` class
-in the scikit-learn [@Pedregosa2012] library.
-The clustering is required
-as there are errors in the crystal/liquid classification
-and this accounts for and smooths the errors
-and the fluctuations on the surface of the crystal.
-
-With the clustering algorithm defining the particles which are crystalline,
-this needs to be converted into units of distance.
-This is done by taking the convex hull
-of the crystal cluster,
-being the area which encloses all the crystal particles.
-The convex hull is used to calculate the area and perimeter.
-The Qhull algorithm [@Barber1996] is used for
-the calculation of the convex hull,
-accessed through the interface of the SciPy library. [@Jones2001]
-It should be noted that the Application Programming Interface (API)
-defines the calculated quantities as
-the volume (area) and surface area (perimeter),
-reflecting the names of the 3D equivalents,
-despite calculating the relevant quantities when
-provided two-dimensional data.
-
-The above steps describe the process
-of calculating the volume and surface area
-of the crystal at a single point in time.
-If we make the assumption
-that the shape of the crystal region is roughly circular,
-which from observations of the melting behaviour
-is a reasonable description of the melting behaviour.
-This means that we can express the crystallisation rate
-as a function of the radius
-
-$$ \tau_C = \frac{\Delta r}{\Delta t} $$
-
-and taking the radius from the volume,
-namely by rearranging the equation
-for the volume of a circle
-
-$$ V = \pi r^2 $$
-
-$$ r = \frac{\sqrt{V}}{\pi} $$
-
-Which gives the relation
-
-$$ \tau_C = \frac{1}{\pi} \frac{\Delta \sqrt{V}}{\Delta t} $$
-
-The change of the radius
-is expected to be linear in time,
-so all the measurements  are fit to a straight line
-to find the overall crystal growth rate.
-
-### Calculation of Errors
-
-There many of different types of uncertainties
-in the calculation of the melting rates.
-There is the errors in the classification of the crystalline particles
-and finding the region containing the crystal,
-along with the fluctuations in the size of the crystal.
-These first set of errors are all captured in the variance
-of the melting curve,
-with the effect of the errors minimised
-by fitting a straight line to all the points.
-This line of best fit
-includes an error in the fit.
-An additional source of error
-is the variance between the simulation runs.
-This error is found by multiple repetitions of the melting runs
-using independent configurations.
-
-It has been found that the error between simulations
-is significantly larger than the error
-in finding the melting rates for a single simulation.
-For this reason,
-the standard deviation of the melting rate
-is the standard deviation of the values from each independent simulation.
-This is converted to a standard error
-by dividing by the square root of the number of samples.
-
-This is all that is required for calculating the error
-of the crystallisation rate,
-however we are also combining this value
-with the rotational relaxation time
-which has its own errors---
-see @sec:Dynamics for the calculation of this value
-and the respective errors.
-These are calculated using bootstrapping,
-since the distribution is non-normal.
-There is no exact method of combining asymmetrical errors [@Barlow2003]
-and there is no standard method in the field,
-instead I am making the errors symmetrical,
-with the size of the largest asymmetrical error.
-
-The two now symmetrical errors in
-the crystallisation rate and the rotational relaxation time
-can be combined by adding the fractional errors.
-
-$$ \sigma_{C \times R} = (\tau_C * \tau_R) \left [ \frac{\sigma_C}{\tau_C} + \frac{\sigma_R}{\tau_R} \right ] $$
-
-Where $\tau_C$ is the crystal growth rate,
-$\sigma_C$ is the error in the crystal growth rate,
-$\tau_R$ is the rotational relaxation time
-$\sigma_R$ is the error in the rotational relaxation time,
-and $\sigma_{C\times R}$ is the error of
-the $\tau_R \times \tau_C$.
