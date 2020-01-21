@@ -14,17 +14,43 @@ Abstract:
 
 ## Introduction
 
-- Crystal Growth and Melting
-    - Growth theory
-    - Nucleation theory
-        - required for the formation of a supercooled liquid
+- Crystal Growth and Melting => General overview of the field and basic assumptions
+    - Growth theory => This is the theory we are using within the thesis
+        - Classical Growth theory => Activated process
+        - Wilson--Frenkel => Dynamic process
+    - Nucleation theory => required for Understanding the formation of a supercooled liquid
 - Supercooled liquids
+    - State of matter => what is it and why is it important for glasses
+    - Relationship to nucleation time => metastability
 - Glass Formation
-    - Properties of the glass
-    - Dynamics
-- Understanding dynamics in ortho-terphenyl
+    - Properties of the glass => Heat capacity
+        - Equilibrium properties => temperature and pressure
+        - Strong and fragile liquids => Why do these liquids display this behaviour
+        - Timescale dependent in simulations => materials which were considered glasses previously will
+          crystallise
+- Dynamics in Supercooled Liquids => display interesting behaviours
+    - Introduction to theories of liquid dynamics
+        - Built upon Brownian motion => small infinitesimal jumps
+        - Diffusion constant => long time relaxation
+        - Structural relaxation => short timescale
+        - Rotational relaxation => measured as a dipole relaxation
+        - Stokes--Einstein--Debye relations => brining these quantities together
+    - Dynamic Heterogeneities => Supercooled liquids are unusual
+    - Breakdown in Rotational Coupling
 
-- What are the deficiencies in existing theories and what am I trying to achieve.
+- Understanding dynamics and crystallisation in ortho-terphenyl
+    - Crystallisation rates
+    - Abstract models show the same properties as experiments making them useful
+    - Complex computer models have their own downsides
+    - There are still computational issues in current models
+
+### Project Goals
+
+- What are the deficiencies in existing theories and what am I trying to achieve?
+    - What differentiates ortho-terphenyl as a fragile liquid from the strong liquids
+      like SiO2
+    - Molecular glasses are fantastically slow at crystallisation, can we understand
+      what might be contributing to that process
 
 ## Computational Methods
 
@@ -153,7 +179,7 @@ Abstract:
     - How to replicate project
 - Software packages I have developed
     - Include README
-    - links to documentation, package, zenodo, and repository
+    - links to documentation, package, Zenodo, and repository
 - Software packages I have used
     - Specific version numbers
     - links to documentation, package, Zenodo/GitHub release, and repository
