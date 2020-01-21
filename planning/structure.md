@@ -54,16 +54,39 @@ Abstract:
 
 ## Computational Methods
 
+- Care is required when using computer modelling
+- Important for complex projects
+
+### Best Practices for Computational Methods
+
 - Correctness
 - Reproducibility
 - Literate programming
 
-### Methods
+- The code and data for this project, including the entire history is available at ...
+- Followed these best practices
 
-- Molecular Definition
-- Calculating Distance
+### Molecular Dynamics Methods
+
 - Choice of simulation program
+- Molecular Definition
+- Reduced units => Including conversion to ortho-terphenyl
+- Calculating Distance
+    - Periodic distances
+    - Integrated distances
+    - Rotational representations and distances
+- Quaternion Operations
 - Random Numbers
+
+### Calculation of Dynamics Quantities
+
+- Data collection => Timesteps and how data was collected
+- Wavenumbers/Structure factor/structural relaxation
+- MSD => Diffusion Constant
+- Heterogeneous dynamics
+- Rotational Relaxation => rotational relaxation time
+- Structural Relaxation =>  structural relaxation time
+- Molecular relaxation quantities
 
 ### Machine Learning Methods
 
@@ -89,10 +112,6 @@ Abstract:
 ### Simulation Conditions
 
 - Dynamics
-    - MSD
-    - Rotational Relaxation
-    - Structural Relaxation
-    - Gamma
 - Machine Learning
 - Crystal Melting
 
@@ -100,16 +119,81 @@ Abstract:
 
 ### Introduction to Dynamics
 
+- Measuring structural relaxation => why I am using these quantities
+    - How this is done in experiments
+    - Replications in simulations
+    - Further simplifications
+- Rotational diffusion => what makes these quantities useful
+    - Measurement using spherical harmonics
+    - Jump dynamics => experimental grounding
+- Dynamics in experiments => linking simulation results to those from experiments
+    - relationships found from experiments
+    - All in supercooled liquids
+    - Decoupling of rotations and translations
+- Theory of dynamics
+    - Different theories to explain observations
+    - Length scale is important
+
+#### Dynamics Key Results
+
+- The 2D molecular liquid exhibits the same behaviour as theory and experiments predict
+- Dynamic heterogeneities above the melting point
+- Length scale of dynamics increases => jump dynamics over short time/length scales
+- Coupling of rotations and translations => SED assumes independent
+- Relaxations of individual molecules provide important insights
+
 ### Dynamics Results
 
-- Comparison of dynamics to other existing literature results
-- Noting of interesting behaviour
-- Is this an artefact of 2D dynamics
-- Develop characteristic timescale for melting
+- Structural Relaxation
+    - Trimer is a Fragile liquid => strongly fragile
+        - comparison to studies
+    - Estimation of glass transition temperature
+    - Contribution of individual particles
+- Diffusion => normal though fragile
+- Rotational Relaxations => normal but fragile
+
+- Summary
+
+### Dynamic Heterogeneities
+
+- Translational heterogeneities
+- Rotational heterogeneities
+
+- Rotations and translational heterogeneities are colocated spatially
+
+### Molecular Relaxations
+
+- These match their counterparts
+
+### Jump Dynamics
+
+### Translational and Rotational Coupling
+
+### Dynamics Conclusion
+
+- The 2D molecular liquid exhibits the same behaviour as theory and experiments predict
+- Dynamic heterogeneities above the melting point
+- Length scale of dynamics increases => jump dynamics over short time/length scales
+- Coupling of rotations and translations => SED assumes independent
+- Relaxations of individual molecules provide important insights
 
 ## Machine Learning
 
+- overview of problem machine learning is solving
+- why existing techniques are not adequate
+
 ### Introduction to Machine Learning
+
+- What differentiates machine learning from statistics
+- Classification problems => Supervised learning
+- Unsupervised classification => Unsupervised learning
+- Introduce Jargon
+
+#### ML Key Results
+
+- Unsupervised learning is a process allowing for the identification of regions of local
+  structure which are locally favoured
+- Supervised learning is a suitable method for crystal detection and monitoring
 
 ### Machine Learning Results
 
@@ -120,6 +204,13 @@ Abstract:
 
 - Supervised learning trimer
     - 'simple' methods
+
+### Machine Learning Conclusion
+
+- Unsupervised algorithms are a useful tool for identifying interesting local
+  structures within a simulation
+- Supervised algorithms were highly suited to monitoring regions of crystal to measure
+  melting and growth
 
 ## Crystal Melting
 
