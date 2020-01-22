@@ -1,0 +1,19 @@
+listings: true
+codeBlockCaptions: true
+autoSectionLabels: true
+autoEqnLabels: true
+figPrefix:
+  - "figure"
+  - "figures"
+eqnPrefix:
+  - "equation"
+  - "equations"
+tblPrefix:
+  - "table"
+  - "tables"
+lstPrefix:
+  - "listing"
+  - "listings"
+secPrefix:
+  - "section"
+  - "sections"

@@ -3,6 +3,9 @@
 # Malcolm Ramsay, 2018-07-03 10:48
 #
 
+# Find the direcotry of this makefile so files can be referenced relative to this
+WORK_DIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+
 # Find all the markdown files which have a path starting with two digits
 subfiles := $(shell find . -name "*.md" -path "./[0-9][0-9]*")
 subfiles := $(subfiles:.md=.tex)
@@ -14,9 +17,8 @@ preamble = $(wildcard Classes/*.sty)
 makedir = output
 makesubdirs = $(addprefix $(makedir)/, $(wildcard [0-9]*))
 
-pandoc_filters = --filter ../src/pandoc-svg.py --filter pandoc-crossref
-pandoc_options = --listings -M listings -M codeBlockCaptions -M autoSectionLabels -M autoEqnLabels --number-sections
-
+pandoc_filters = --filter $(WORK_DIR)/src/pandoc-svg.py --filter pandoc-crossref
+pandoc_options = --listings --number-sections --metadata-file=$(WORK_DIR)/pandoc_options.yml
 figures = $(patsubst %.gv, %.pdf, $(shell find . -name "*.gv"))
 
 .PHONY: all clean clean_subfiles test figures submodules
