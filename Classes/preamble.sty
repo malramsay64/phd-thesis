@@ -111,6 +111,23 @@
 \captionsetup{margin=1cm,labelfont=bf,position=bottom}
 
 %%
+%% Configure spacing in tables
+%%
+
+\RequirePackage{setspace}
+
+\let\oldLongtable\longtable
+\let\endOldLongtable\endlongtable
+
+\renewenvironment{longtable}{%
+  \begin{singlespace}
+  \oldLongtable
+  }{%
+  \endOldLongtable
+  \end{singlespace}
+}
+
+%%
 %% Macros
 %%
 
