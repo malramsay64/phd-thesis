@@ -28,6 +28,9 @@ Abstract:
         - Strong and fragile liquids => Why do these liquids display this behaviour
         - Timescale dependent in simulations => materials which were considered glasses previously will
           crystallise
+    - Glass formation is related to slow crystal growth => good glass formers are slow
+      crystal growers
+        - growth rates of OTP and other crystals
 - Dynamics in Supercooled Liquids => display interesting behaviours
     - Introduction to theories of liquid dynamics
         - Built upon Brownian motion => small infinitesimal jumps
@@ -38,11 +41,11 @@ Abstract:
     - Dynamic Heterogeneities => Supercooled liquids are unusual
     - Breakdown in Rotational Coupling
 
-- Understanding dynamics and crystallisation in ortho-terphenyl
-    - Crystallisation rates
+- Computational modelling of supercooled liquid dynamics
     - Abstract models show the same properties as experiments making them useful
     - Complex computer models have their own downsides
     - There are still computational issues in current models
+    - Using 2D systems for simplifying computations
 
 ### Project Goals
 
