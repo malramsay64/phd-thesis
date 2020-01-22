@@ -40,76 +40,6 @@ For this linear case, the difference between
 a statistical approach and a machine learning approach
 is the methodology.
 
-### Why Machine Learning
-
-There are a range of parameters which can be used
-to identify a particular structure within a simulation.
-In the field of self assembly @Keys2011 describe six;
-
-1. Point matching,
-2. shape histogram,
-3. shape distributions,
-4. harmonic descriptors,
-5. shape context, and
-6. lightfield descriptor.
-
-To accurately describe the similarity of one structure to another
-many of these different descriptors can be used,
-resulting in a multi-dimensional description of a configuration.
-The question then becomes,
-which structure is this closest to?
-
-Using existing data for hypothesis testing
-has been within the realm of statistical analysis for hundreds of years. @Stigler1986
-However, statistical approaches like ANOVA
-are problematic in high dimensional space.
-This is where machine learning can really improve on these existing methods.
-
-Machine learning is becoming widely used within materials science [@Mueller2016;@Vasudevan2019]
-used for applications including;
-
-- detection of crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
-- characterisation of amorphous materials, [@Ballard2016;@Ballard2017]
-- prediction of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
-- the development of interatomic potentials. [@Snyder2012]
-
-The places where machine learning is most useful
-is in places where there are many hand tuned fitting parameters, and
-for analysis of large datasets we don't fully understand.
-Where there are many hand tuned parameters,
-machine learning can help guide finding the best solution
-much like @Meenakshisundaram2019 have done
-with finding the best molecular glass formers.
-In running an experiment where
-the data collection and analysis is automated,
-the machine learning directs new simulations
-based on the existing data.
-As more data is collected the directed guesses improve.
-The tuning of parameters using machine learning
-has also been used by @Ren2018 to
-speed up the development of a novel amorphous alloy.
-The optimisations allowed by machine learning
-speed up the process of discovery by 1000 times.
-
-There are many problems in materials science we don't fully understand,
-like the glass transition,
-and there are tremendous volumes of data
-from both simulations and experiments.
-@DellAnna2008 use machine learning
-to aid in the analysis and understanding of data from
-Time-of-Flight Secondary Ion Mass Spectrometry (ToF-SIMS) spectra.
-Using a Supervised Principal component technique @Bair2006
-to reduce the number of peaks analysed in the resulting spectrum from 55 to 8,
-they were able to develop models to effectively predict
-the chemical composition of thin films.
-
-Machine learning provides a range of tools
-for understanding, analysing, and predicting data.
-However, like a statistical analysis
-machine learning needs to be applied carefully
-using the appropriate analysis for the task at hand.
-It is not a black box which magically solves problems. [@Lehman2019]
-
 ### Feature Development
 
 The features of a machine learning model
@@ -120,102 +50,6 @@ Feature selection is the most important part of machine learning
 with a good set of features requiring domain expertise.
 The features are a set of values which best describe
 the underlying behaviour.
-
-### Machine learning for crystal detection
-
-The problem I am using machine learning to help solve
-is the detection of crystalline structures within the liquid phase.
-This is a problem which has been approached using traditional techniques.
-In 2D simulations the order parameter $\psi_6$ [@Tobochnik1982]
-is commonly used to differentiate between the liquid and crystal regions
-
-$$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
-
-Having a value $\psi_6 = 1$ indicates
-the configuration is perfectly hexagonal
-while a value $\psi_6 = 0$ indicates
-perfect disorder.
-However to classify a local configuration into either
-liquid-like or crystal-like
-there needs to be a cutoff value
-separating the two types of structures,
-something which isn't present in any publication.
-[@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
-The likely reason for this is that the
-value would be chosen arbitrarily.
-Machine learning provides a framework
-for choosing the best value for a given dataset.
-
-For simulations in 3D,
-the ordering in crystal structures is more complex
-making it's detection more challenging.
-Like the 2D case there are a range of methods
-for identifying structures including
-
-- the Steinhardt bond order parameters, [@Steinhardt1983]
-- Bond Angle Analysis, and [@Ackland2006]
-- Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
-
-Each of these different values focus on the identification
-of a small range of structures, typically;
-
-- Face Centered Cubic,
-- Body Centered Cubic, and
-- Hexagonal Close Packed.
-
-The differences between each of these is typically
-a hand picked parameter tuned for each potential.
-
-While the existing approaches for crystal detection
-are limited by arbitrary decisions and limited re-usability.
-There has been a lot of work in choosing these methods
-and they reflect the relationships important in crystal structures.
-So they form a foundation on which to
-develop features for machine learning.
-There are a range of studies [@Reinhart2017;@Dietz2017;@Boattini2018;@Spellings2018]
-building upon the ideas of the more traditional
-crystal order parameters.
-These all take slightly different approaches,
-however each converts one of the parameters above
-into a many dimensional representation
-of the local structure,
-providing far more opportunity
-to distinguish the different structures.
-
-The approaches listed above only deal with spherically symmetric particles,
-molecular crystals are far more complicated
-in their shape and crystal structure.
-Water Ice has 18 different polymorphs we have found so far, @Algara-Siller2015
-with the most recent found in 2015.
-The number of polymorphs for ice is likely to reflect
-the range of structures in many molecular crystals.
-The CHILL [@Moore2010] and CHILL+ [@Nguyen2015]
-are traditional algorithms for
-detecting ice within liquid water
-though they are limited to ice Ih, Ic, and clathrates for CHILL+.
-Machine learning models [@Geiger2013;@Fulford2019]
-provide analysis that is both more accurate
-and covers a wider range of crystal structures.
-
-A further problem,
-highlighted by the example of water
-is that it is important to know
-the types of structures which are present within a sample.
-Not only for the discovery of novel materials
-but also having a complete understanding
-of a configuration.
-A problem with existing tools
-is that you only see the range of structures you are looking for
-rather than the range of structures which exist.
-Machine learning can also be used to
-subdivide the dataset into distinct clusters of crystal structures. [@Spellings2018]
-
-The real power of machine learning
-for the identification and classification
-of crystal structures,
-comes from combining the work of the past 40 years
-of classifying crystal structures
-with the tools available through machine learning.
 
 ## Labelling Local structures
 
@@ -245,23 +79,6 @@ while the outside is classified as liquid](../placeholder_figure.png){width=80% 
 The algorithms used for the machine learning
 leverage the scikit-learn package [@Pedregosa2012]
 utilising the well designed interface. [@Buitinck2013]
-
-### Supervised Learning Algorithms
-
-The K-Nearest Neighbours algorithm @Goldberger2005
-is used for the supervised classification of particles.
-This was chosen based on performance,
-both in the task of classification
-but also the speed with which classification took place.
-The K-Nearest Neighbours algorithm has a single parameter
-being the value of $K$,
-the number of neighbours from which a consensus is formed.
-Testing a range of values with cross validation found that a value of 5
-produced the best performing algorithm.
-
-To get the best performance from the algorithm
-kd-trees [@Bentley1975] are used for the neighbour search
-an algorithm which finds use in molecular dynamics simulations [@Howard2016]
 
 ### Measuring Success
 
