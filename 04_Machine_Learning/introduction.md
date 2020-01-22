@@ -1,62 +1,32 @@
 # Introduction
 
-During my honours work, I established that the most likely candidates for the crystal
-structure were the p2, p2gg, and pg structures as shown below. The search for structures was first
-performed using hard shapes in an isoconfigurational search algorithm developed by Toby Hudson
-[@Jennings2015]. The resulting crystal structures were then relaxed using the Lennard-Jones potential
-find the energy of each structure. The calculated energies (@Tbl:crystal_energies) are all within
-2% of each other, indicating there is no significant driving force for a particular crystal
-structure.
+The three densest packed structures of the Trimer molecule
+as determined by the iso-configuration search algorithm developed by @Hudson2011
+belong to the space groups p2, pg, and p2gg.
+Each of these structures could potentially form within a simulation
+requiring an algorithm able to monitor the presence of each of these structures.
+A standard tool for crystal detection is to use an order parameter;
+a single value which describes a local configuration on a scale
+from a perfect liquid $0$, to a perfect crystal $1$.
+A measure of this type previously used for molecular crystals
+is an orientational order parameter $O_6$.
+The value of $O_6$ is the orientation of the closest shell of 6 neighbours
+relative to the orientation of the central molecule.
+The orientational ordering for $O_6$ is given by the equation;
 
-Crystal| Penalty
-------:|--------:
-p2     |   -0.199
-pg     |   -0.093
-p2gg   |   -0.191
+$$ O_6 = \frac{1}{6}\sum_{i=1}^6 \cos^2(\theta_{ref} - \theta_i) \rangle_i $$ {#eq:orientational_order_parameter}
 
-Table: A Comparison on the energies of the potential crystal structures for the Trimer molecule.
-{#tbl:crystal_energies}
-
-The lack of a single definitive crystal structure requires that further investigation of the
-crystallisation behaviour needs to handle all the different structures. The standard tool for
-crystal detection is to use an order parameter; a single value which captures the closeness of a
-configuration to the liquid state. These values are typically scaled to be of the range $[0-1]$
-where 0 is completely liquid character and 1 is perfect crystal character. A measure of this type
-that has been previously used in molecular crystals is an orientational order parameter $O_n$. The
-value of $O_n$ is the relative orientation of nearby molecules, which is typically the nearest
-shell. The measure of orientational alignment for $O_n$ is given by the equation;
-
-$$ O_n = \langle \cos^2(\theta_{ref} - \theta_i) \rangle_i $$ {#eq:orientational_order_parameter}
-
-where $\theta_{ref}$ is the orientation of the reference particle and $\theta_i$ is the orientation
-of the particle to be compared. This value is averaged over all $i$, which in this case is the
-particles in the shell of first nearest neighbours. This form of the equation only works in 2D.
-While it is possible to modify the above equation to take three orientations, this is a poor
-implementation due to the occurrence of gimbal lock. Additionally most simulation software uses
-quaternions for orientation to alleviate the issue of gimbal lock.
-The quaternion based representation,
-where the central molecule has orientation $\vect{\hat{q}}_{0}$,
-while the neighbours have orientation $\vect{\hat{q}}_i$
-
-$$ O_N = \frac{1}{N} \sum_{i=1}^{N}
-2\cos^2(\log(\hat{\vect{q}}_{0}^{-1}\cdot \hat{\vect{q}}_{i})) $$
-
-The quaternion form of the orientation is still unsuitable for even the p2 structure which is the
-most orientationally ordered of all three crystals. In the p2 structure the molecules are arranged
-parallel and antiparallel, so both these orientations need to contribute positively to the order
-parameter hence the $\cos^2$ term.
-
-This form of the equation works reasonably well at distinguishing the liquid from the p2 crystal
-phase, using $O_n > 0.85$ as the measure of the p2 crystal. There are still two issues with using
-this parameter. Firstly, the value of
-0.85 was chosen because I thought it worked well, with no data to validate it is the best value for
-distinguishing the two phases. Secondly, $O_n$ is only suitable at identifying the p2 structure.
-Both the p2 and p2gg structures are considered part of the liquid phase with the chosen parameter.
-
-![The range of values of the orientational order parameter $O_n$
-overlap for each of the crystals and the liquid.
-](../placeholder_figure.png){width=80% #fig:order_parameter_overlap}
-
+where $\theta_{ref}$ is the orientation of the reference particle and
+$\theta_i$ is the orientation of the neighbouring particle.
+The orientational order parameter as expressed
+can reasonably distinguish the liquid from the p2 structure
+as shown in @fig:order_parameter_overlap.
+However, there are no values
+which can distinguish the p2gg or pg structures in this way.
+While it is likely possible to develop
+some alternate formulation to identify these different crystal structures,
+this highlights that values along more than a single dimension
+are needed to separate these values.
 The formula for the order parameter [@eq:orientational_order_parameter]
 takes the orientation of each neighbour,
 and collapses those into a single value,
@@ -68,30 +38,20 @@ indicating the value of each $n$ neighbours.
 Machine Learning is a tool which can assist in handling
 values in higher dimensional space.
 
-## Why Machine Learning
+- also for selecting a value in the first place
 
-There are a range of parameters which can be used
-to identify a particular structure within a simulation.
-In the field of self assembly @Keys2011 describe six;
+However to classify a local configuration into either
+liquid-like or crystal-like
+there needs to be a cutoff value
+separating the two types of structures,
+something which isn't present in any publication.
+[@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
 
-1. Point matching,
-2. shape histogram,
-3. shape distributions,
-4. harmonic descriptors,
-5. shape context, and
-6. lightfield descriptor.
+![The range of values of the orientational order parameter $O_6$
+overlap for each of the crystals and the liquid.
+](../Projects/MLCrystals/figures/order_parameter_overlap.svg){width=80% #fig:order_parameter_overlap}
 
-To accurately describe the similarity of one structure to another
-many of these different descriptors can be used,
-resulting in a multi-dimensional description of a configuration.
-The question then becomes,
-which structure is this closest to?
-
-Using existing data for hypothesis testing
-has been within the realm of statistical analysis for hundreds of years. @Stigler1986
-However, statistical approaches like ANOVA
-are problematic in high dimensional space.
-This is where machine learning can really improve on these existing methods.
+## Machine Learning in Chemistry
 
 Machine learning is becoming widely used within materials science [@Mueller2016;@Vasudevan2019]
 used for applications including;
@@ -140,28 +100,28 @@ It is not a black box which magically solves problems. [@Lehman2019]
 
 ## Machine learning for crystal detection
 
-The problem I am using machine learning to help solve
-is the detection of crystalline structures within the liquid phase.
-This is a problem which has been approached using traditional techniques.
-In 2D simulations the order parameter $\psi_6$ [@Tobochnik1982]
-is commonly used to differentiate between the liquid and crystal regions
+There are a range of parameters which can be used
+to identify local structure within a simulation.
+In the field of self assembly @Keys2011 describe six;
 
-$$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
+1. Point matching,
+2. shape histogram,
+3. shape distributions,
+4. harmonic descriptors,
+5. shape context, and
+6. lightfield descriptor.
 
-Having a value $\psi_6 = 1$ indicates
-the configuration is perfectly hexagonal
-while a value $\psi_6 = 0$ indicates
-perfect disorder.
-However to classify a local configuration into either
-liquid-like or crystal-like
-there needs to be a cutoff value
-separating the two types of structures,
-something which isn't present in any publication.
-[@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
-The likely reason for this is that the
-value would be chosen arbitrarily.
-Machine learning provides a framework
-for choosing the best value for a given dataset.
+To accurately describe the similarity of one structure to another
+many of these different descriptors can be used,
+resulting in a multi-dimensional description of a configuration.
+The question then becomes,
+which structure is this closest to?
+
+Using existing data for hypothesis testing
+has been within the realm of statistical analysis for hundreds of years. @Stigler1986
+However, statistical approaches like ANOVA
+are problematic in high dimensional space.
+This is where machine learning can really improve on these existing methods.
 
 For simulations in 3D,
 the ordering in crystal structures is more complex
@@ -253,6 +213,8 @@ the features of interest
 better than a linear fit
 margin that the model of choice.
 
+### Supervised Learning
+
 Machine Learning models normally have many fitting parameters,
 making the over-fitting of the model to the input data
 more of a concern than statistical methods.
@@ -295,8 +257,6 @@ to the methodology of the development of the best model
 is that more complicated models with many parameters
 are still general enough to work with new data
 
-### Supervised Learning
-
 The K-Nearest Neighbours algorithm [@Goldberger2005]
 is used for the supervised classification of particles.
 This was chosen based on performance,
@@ -313,6 +273,15 @@ kd-trees [@Bentley1975] are used for the neighbour search
 an algorithm which finds use in molecular dynamics simulations [@Howard2016]
 
 ### Unsupervised Learning
+
+Unsupervised algorithms in machine learning
+can also be considered clustering algorithms.
+They take a dataset and are divide it into subsets (or clusters)
+where values within each cluster are more closely related to each other
+that values in different clusters. [@Russell2016]
+
+- This technique has been used to understand energy landscapes [@Wales2018;@Ballard2016;@Ballard2017]
+- Divide into distinct groups present [@Spellings2018]
 
 ## Machine Learning Goals
 
