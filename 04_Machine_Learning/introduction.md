@@ -254,6 +254,10 @@ with the tools available through machine learning.
 
 ## Machine Learning Goals
 
-- Unsupervised learning is a process allowing for the identification of regions of local
-  structure which are locally favoured
-- Supervised learning is a suitable method for crystal detection and monitoring
+This chapter demonstrates the applicability of machine learning
+to understanding crystal structures within molecular crystals.
+Firstly to demonstrate Unsupervised Learning as a tool for
+the identification of regions of local structure within a simulation
+requiring no previous knowledge.
+Secondly demonstrating Supervised learning for the accurate detection and monitoring
+of many molecular crystal structures within a simulation.
