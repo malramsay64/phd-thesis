@@ -1,37 +1,35 @@
 # Results
 
+Using the relative orientation $\theta_{ref} - \theta_i$
+as the features, that is the input to the machine learning model.
+The orientational order parameter $O_6$ [@eq:orientational_order_parameter] had problems
+because it reduces 6 values to 1.
+For the Machine Learning models,
+rather than reducing the 6 values,
+instead we can use the relative orientation
+of each neighbour as the features for our models.
+
 ## Unsupervised Classification
 
-A significant downside to the Supervised Classification of molecules
-is the process of creating an already labelled dataset.
-The process of creating a dataset
-required a Monte-Carlo optimisation[@Jennings2015]
-to search for possible crystal structures.
-A alternate method of searching for structures
-is taking simulation configurations
-and using unsupervised classification
----also known as clustering---
-on the configurations
-using each cluster as a local structure.
-The same set of configurations
-used for supervised classification
-are also used for the unsupervised classification.
-
-### Visualisation of High Dimensional Data
-
+The goal of unsupervised classification is to group
+each the local environments of the different crystal structures
+into clusters with no previous knowledge of the dataset.
 Clustering does not have a single performance score like supervised clustering,
 and so we have to look to alternate methods
 of evaluating performance.
-One of these methods is the visualisation of the dataset.
-Reducing the six dimensional dataset to two dimensions for visualisation
-requires a dimensionality reduction algorithm.
+One of these methods is the visualisation of the dataset
+like in @fig:order_parameter_overlap.
+Now that each local environment is described by six values,
+that is, represented as a point in 6D space,
+visualisation is trickier,
+now requiring the reduction of dimensions to 2.
+
+### Visualisation of High Dimensional Data
 
 The simplest method for dimensionality reduction
 is Principal Component Analysis (PCA).
-A linear PCA is equivalent to
-a Singular Value Decomposition matrix factorisation.
-PCA is a transformation of the data
-to a new coordinate system
+A linear PCA is matrix factorisation using Singular Value Decomposition.
+PCA transforms the data to a new coordinate system
 such that the greatest variance lies on the first coordinate
 and the second greatest variance on the second coordinate.
 @Fig:dim_reduction_PCA shows the first two dimensions of the PCA
@@ -43,7 +41,7 @@ though there is little separation of the pg crystal from the liquid,
 while the p2 and the p2gg crystals are inseparable from the liquid.
 The main result of the PCA analysis,
 is that the crystal structures are not linearly separable,
-which is also reflected in the Supervised learning results.
+a result reflected in the Supervised learning results.
 
 ![Dimensionality reduction of the trimer dataset using a linear Principal Components
 Analysis. Each point is coloured according to it's labelled structure. There are regions
@@ -53,25 +51,19 @@ crystal structures.
 
 With the linear dimensionality reduction
 not providing adequate separation of the crystal structures
-the next step is to investigate non-linear methods.
+there are a suite of non-linear methods.
 The Uniform Manifold Approximation and Projection (UMAP)
-is a technique for dimension reduction with a theoretical foundation
-in Riemann Geometry and algebraic topology. [@McInnes2018]
-The UMAP algorithm attempts to keep neighbouring points close together,
-while also retaining some of the larger scale structure.
-@Fig:dim_reduction_UMAP shows the UMAP dimensionality reduction
-of the dataset.
-Most notable here is that there is a distinct separation
-between the liquid state and all the crystal state,
-supporting the supervised learning results.
+is a technique for dimension reduction
+with a theoretical foundation in Riemann Geometry and algebraic topology. [@McInnes2018]
+The UMAP algorithm keeps points which are close in 6D,
+close together in the 2D representation,
+while also retaining the general structure over longer distances.
+The UMAP dimensionality reduction of @Fig:dim_reduction_UMAP of the relative angles
+shows a distinct separation between the liquid state and all the crystal states,
+indicating that separation is possible with an Unsupervised Learning algorithm.
 While the UMAP dimensionality reduction
-does separate the different groups we want to classify,
-the splitting is into many separate groups.
-Some of this reflects the grouping of the linear dimensionality reduction,
-the splitting of the p2 and p2gg crystals into multiple clusters,
-however particularly noticeable in the pg crystal
-is the splitting of what was a single cluster in the linear decomposition
-into 3 smaller clusters which appear to be clearly separate.
+does separate each of the different groups we want to classify,
+each is split into many smaller components.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection. Classes are assigned using the known state of each local environment.
@@ -81,23 +73,25 @@ The UMAP algorithm shows excellent promise for
 visualising the clustering within this dataset,
 with the drawback that each crystal is separated
 into too many smaller clusters.
-Rather than looking for a more complicated algorithm for this,
+One of the ways of increasing the complexity of a machine learning algorithm [@sec:supervised_learning]
+is to introduce more classes to distinguish between.
+Before having to increase the complexity
+of a machine learning algorithm to handle many classes,
 is there a way of reducing the complexity
 of the underlying data?
-Currently the angles between molecules are ordered
-by the distance to the neighbouring molecules.
-As the molecules vibrate these distances are going to change
-and likely re-order,
-which is a possible explanation for
-each crystal having many distinct clusters.
-In other methods for crystal detection,
-spherical harmonics are used remove any orientation dependence[@Boattini2018],
-which doesn't map well to this problem.
-Instead I sort by the value of the angles,
-reducing the data to a list of angles
-without any order.
+For any six values of the relative orientation
+there are $6!$ points in space which represent those values
+reflecting the different ways of ordering the values.
+As an implementation detail of the nearest-neighbours algorithm [@sec:nearest-neighbours]
+the relative orientations are ordered by
+the distance to the neighbour.
+As molecules vibrate these distances are going to change re-order,
+a possible explanation for each crystal having many distinct clusters.
+We need a method of reducing the degeneracy of states.
+By sorting the values of relative orientation from smallest to largest,
+any six values are only represented by a single point in space.
 The result of sorting the angles is shown in @fig:dim_reduction_sorted_UMAP,
-with each crystal having a clearly separated cluster,
+with each crystal having a separated cluster,
 apart from the p2gg crystal which has two distinct clusters.
 
 ![Dimensionality reduction using UMAP of the orientations ordered by value.
@@ -106,40 +100,20 @@ with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
 ](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.svg){#fig:dim_reduction_sorted_UMAP width=85%}
 
-In this approach the sorting acts as a dimensionality reduction,
-removing structural variations form the structures,
-and has the effect of making further dimensionality reduction simpler.
-Since sorting the size of the angles made the visualisation so much simpler,
-wouldn't it make sense to also apply this technique to the supervised learning?
-For this dataset it doesn't.
-Supervised learning is about drawing boundary regions in high dimensional space,
-and the best preforming algorithm, K-Nearest Neighbours,
-is able to create a complex boundary region given enough training data.
-There is no shortage of training data for the supervised learning,
-and so a simplification is not necessary.
-However, when comparing the performance of other, simpler algorithms,
-their performance increases more than 20%
-when using sorted angles compared to no sorting.
-Where more parameters are required to describe a crystal structure,
-having an appropriate ordering of the dimensions
-is likely required for getting the best results.
-Additionally, the simplified behaviour emphasises
-a major trade-off in machine learning,
-a less optimal choice of features
-requires a more complicated algorithm to classify the data,
-while an excellent choice of features
-can require a very simple algorithm for classification.
+The visualisation of the dataset is important for three reasons.
+Firstly, the failure of the Principal Components Analysis
+to separate the structures indicates a non-linear method
+is required for separating the different structures.
+Secondly, separating the structures with the UMAP algorithm for visualisation,
+indicates it is possible to separate the crystal structures
+using a Unsupervised Learning or clustering method.
+Finally, we have found that reducing the degeneracy of the features
+is an important simplification
+which reduces the complexity of subsequent steps.
 
 ### Clustering
 
-From the visualisation of the dimensions in 2D,
-the non-linear transformation of the UMAP algorithm
-clearly separates each of the crystal structures.
-The next problem is finding a clustering algorithm
-which appropriately groups each of the points
-into their respective clusters.
-
-The algorithm chosen for clustering is OPTICS,
+The algorithm chosen for clustering is OPTICS [@Kriegel2011],
 which uses the local density for determining clusters,
 highly suitable to the data generated from using UMAP
 to perform a dimensionality reduction,
@@ -295,6 +269,24 @@ When considering the range of conditions
 over which these configurations are comprised,
 greater than any theory of melting can describe,
 this result is incredibly impressive.
+
+Supervised learning is about drawing boundary regions in high dimensional space,
+and the best preforming algorithm, K-Nearest Neighbours,
+is able to create a complex boundary region given enough training data.
+There is no shortage of training data for the supervised learning,
+and so a simplification is not necessary.
+However, when comparing the performance of other, simpler algorithms,
+their performance increases more than 20%
+when using sorted angles compared to no sorting.
+Where more parameters are required to describe a crystal structure,
+having an appropriate ordering of the dimensions
+is likely required for getting the best results.
+Additionally, the simplified behaviour emphasises
+a major trade-off in machine learning,
+a less optimal choice of features
+requires a more complicated algorithm to classify the data,
+while an excellent choice of features
+can require a very simple algorithm for classification.
 
 ## Machine Learning in Practice
 
