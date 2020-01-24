@@ -113,35 +113,6 @@ which reduces the complexity of subsequent steps.
 
 ### Clustering
 
-The algorithm chosen for clustering is OPTICS [@Kriegel2011],
-which uses the local density for determining clusters,
-highly suitable to the data generated from using UMAP
-to perform a dimensionality reduction,
-where there are centers of high density.
-Other features of the OPTICS algorithm
-which make it suitable for this application
-is the classification of oddly shaped regions,
-which is a good description
-of the points in the reduced dimensionality.
-Furthermore, the OPTICS algorithm
-requires no information about the number
-or shape of the clusters when performing the clustering,
-requiring little optimisation of parameters to create the clustering.
-
-![Result of clustering on the reduced dataset using the OPTICS algorithm.
-](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics_vis.svg){#fig:cluster_reduced_sorted_optics_vis width=85%}
-
-<div id="fig:cluster_reduced_sorted_optics" class="subfigures">
-
-![p2](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2.svg){#fig:cluster_reduced_sorted_optics_p2 width=33%}
-![p2gg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-p2gg.svg){#fig:cluster_reduced_sorted_optics_p2gg width=33%}
-![pg](../Projects/MLCrystals/figures/cluster_reduced_sorted_optics-pg.svg){#fig:cluster_reduced_sorted_optics_pg width=33%}
-
-Applying the classified labels to the p2 (a), p2gg (b) and pg (c) crystals. Of note in
-(b) is the alternating layers, showing molecules in two distinct states.
-
-</div>
-
 Using the UMAP algorithm is excellent for visualisation
 showing an excellent correlation between the labelled clusters
 and the visualisations.
@@ -166,6 +137,20 @@ rather than the underlying dataset.
 For this particular use case,
 the use of UMAP is best left as a visualisation tool
 rather than a pre-processing step.
+
+![Result of clustering on the reduced dataset using the HDBSCAN algorithm.
+](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan_vis width=85%}
+
+<div id="fig:cluster_sorted_hdbscan" class="subfigures">
+
+![p2](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_p2.svg){#fig:cluster_reduced_sorted_hdbscan_p2 width=33%}
+![p2gg](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_p2gg.svg){#fig:cluster_reduced_sorted_hdbscan_p2gg width=33%}
+![pg](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_pg.svg){#fig:cluster_reduced_sorted_hdbscan_pg width=33%}
+
+Applying the classified labels to the p2 (a), p2gg (b) and pg (c) crystals. Of note in
+(b) is the alternating layers, showing molecules in two distinct states.
+
+</div>
 
 While UMAP is not suitable as a pre-processing step for clustering,
 the separation of the crystal structures
@@ -204,12 +189,6 @@ The first step in evaluating performance
 is to find a suitable algorithm.
 @Tbl:classification_performance shows a range of algorithms tested,
 with each being described in @sec:supervised-learning-algorithms.
-Of the algorithms shown in @tbl:classification_performance,
-there are three which stand out for their performance;
-
-- K-Nearest Neighbours (KNN),
-- Decision Tree (DT), and
-- Neural Network (NN).
 
 The excellent performance of the decision tree algorithm is interesting,
 since it is sequence of conditional checks,
@@ -222,13 +201,6 @@ of the resulting algorithm.
 The values which have been chosen using machine learning
 are those which perform the best
 over all the input configurations.
-
-Algorithm Accuracy Training Time  Match Time
---------- -------- -------------  ----------
-NN          96          long        long
-KNN         96          short       short
-
-Table: The performance of a range of ML algorithms {#tbl:classification_performance}
 
 The above scores were obtained using all default parameters,
 having no specific tuning for each dataset.
@@ -300,10 +272,18 @@ the liquid from the solid in a complex simulation.
 
 :::{class=subfigures id=fig:melting}
 
-![Melting near start](../placeholder_figure.png){width=49%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2_9.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2gg_9.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_pg_9.svg){width=33%}
 
-![Melting at middle](../placeholder_figure.png){width=49%}
-![Melting near end](../placeholder_figure.png){width=49%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2_1499.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2gg_1499.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_pg_1499.svg){width=33%}
+
+![Melting near
+start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2_2999.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2gg_2999.svg){width=33%}
+![Melting near start](../Projects/Crystal_Melting/figures/ml_demo_trimer_pg_2999.svg){width=33%}
 
 Figures showing the progression of melting of a p2 crystal.
 The colour of the molecules describes their orientation.

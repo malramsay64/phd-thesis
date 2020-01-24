@@ -78,8 +78,8 @@ Increasing the complexity of the machine learning algorithm comes from;
 
 :::{class=subfigure id=fig:machine_learning_demo}
 
-![Regression](../Projects/MLCrystals/figures/linear_regression_demo.svg){#fig:regression_demo}
-![Classification](../Projects/MLCrystals/figures/clustering_demo.svg){#fig:classification_demo}
+![Regression](../Projects/MLCrystals/figures/linear_regression_demo.svg){#fig:regression_demo width=49%}
+![Classification](../Projects/MLCrystals/figures/clustering_demo.svg){#fig:classification_demo width=49%}
 
 The application of machine learning to example problems in both
 regression (a) and classification (b).
