@@ -1,31 +1,39 @@
 # Results
 
-Using the relative orientation $\theta_{ref} - \theta_i$
-as the features, that is the input to the machine learning model.
 The orientational order parameter $O_6$ [@eq:orientational_order_parameter] had problems
 because it reduces 6 values to 1.
 For the Machine Learning models,
 rather than reducing the 6 values,
-instead we can use the relative orientation
-of each neighbour as the features for our models.
+instead we can use the relative orientation of each neighbour $\theta_{ref} - \theta_i$
+as the features for our models.
+Features in machine learning
+are measured quantities used to differentiate the input.
 
 ## Unsupervised Classification
 
 The goal of unsupervised classification is to group
-each the local environments of the different crystal structures
-into clusters with no previous knowledge of the dataset.
-Clustering does not have a single performance score like supervised clustering,
-and so we have to look to alternate methods
-of evaluating performance.
-One of these methods is the visualisation of the dataset
-like in @fig:order_parameter_overlap.
-Now that each local environment is described by six values,
+local environments of each crystal structure into clusters
+while having no previous knowledge of the dataset.
+Clustering is hard to give a numerical score like supervised clustering,
+so we look to alternate methods of evaluating performance.
+Visualisation of the dataset like in @fig:order_parameter_overlap
+is a fantastic method of understanding the data
+and evaluating how well the clustering has performed.
+For the unsupervised classification,
+each local environment is described by six features,
 that is, represented as a point in 6D space,
-visualisation is trickier,
-now requiring the reduction of dimensions to 2.
+making the visualisation on a 2D page somewhat more difficult.
+Before evaluating the performance of the Unsupervised Classification
+we need to find appropriate tools for visualising
+the high dimensional data.
 
-### Visualisation of High Dimensional Data
+### Visualisation of High Dimensional Data {#sec:visualisation}
 
+When visualising data on a page, like in this thesis,
+we are limited to the display of two spatial dimensions at a time.
+So in visualising a six dimensional dataset,
+the problem becomes one of reducing the number of dimensions to two,
+while retaining properties of the six dimensional dataset.
 The simplest method for dimensionality reduction
 is Principal Component Analysis (PCA).
 A linear PCA is matrix factorisation using Singular Value Decomposition.
@@ -40,8 +48,7 @@ Additionally the PCA generally groups the crystal configurations together,
 though there is little separation of the pg crystal from the liquid,
 while the p2 and the p2gg crystals are inseparable from the liquid.
 The main result of the PCA analysis,
-is that the crystal structures are not linearly separable,
-a result reflected in the Supervised learning results.
+is that the crystal structures are not linearly separable in 2D.
 
 ![Dimensionality reduction of the trimer dataset using a linear Principal Components
 Analysis. Each point is coloured according to it's labelled structure. There are regions
@@ -51,19 +58,22 @@ crystal structures.
 
 With the linear dimensionality reduction
 not providing adequate separation of the crystal structures
-there are a suite of non-linear methods.
+there are a suite of non-linear methods
+which could be more suitable for this problem.
 The Uniform Manifold Approximation and Projection (UMAP)
 is a technique for dimension reduction
 with a theoretical foundation in Riemann Geometry and algebraic topology. [@McInnes2018]
-The UMAP algorithm keeps points which are close in 6D,
-close together in the 2D representation,
-while also retaining the general structure over longer distances.
+The UMAP algorithm finds the nearest neighbours of every point in space,
+using it to find a low dimensional representation
+where points share the same neighbours.
+The low dimensional representation has the same local structures
+as the original high dimensional data,
 The UMAP dimensionality reduction of @Fig:dim_reduction_UMAP of the relative angles
-shows a distinct separation between the liquid state and all the crystal states,
-indicating that separation is possible with an Unsupervised Learning algorithm.
-While the UMAP dimensionality reduction
-does separate each of the different groups we want to classify,
-each is split into many smaller components.
+shows a distinct separation between the liquid state and all the crystal states.
+This firstly indicates that UMAP is
+a fantastic tool for the visualisation of these datasets,
+and additionally that separation of each of the crystals
+is possible using an Unsupervised Learning algorithm.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection. Classes are assigned using the known state of each local environment.
@@ -100,6 +110,27 @@ with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
 ](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.svg){#fig:dim_reduction_sorted_UMAP width=85%}
 
+Using the UMAP algorithm is excellent for visualisation
+showing an excellent correlation between the labelled clusters
+and the visualisations.
+In this case where we have the opportunity
+to confirm the clustering with a labelled dataset,
+we can be confident the clusters from the UMAP dimensionality reduction
+match the labelled clustering.
+However, when performing the dimensionality reduction
+the UMAP algorithm can artificially create tears in clusters
+and additionally increase the density of points for each cluster.
+The increased density of points is present for the liquid,
+with @fig:dim_reduction_sorted_UMAP having a nice clustering
+of all the liquid configurations,
+while the Principal Component Analysis (@fig:dim_reduction_PCA)
+visualises the liquid as covering all the phase space.
+These issues which make UMAP unsuitable for clustering
+have been documented for the similar t-SNE algorithm
+[@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
+with a consensus that these dimensionality reduction techniques
+should be used for visualisation and other algorithms used for clustering.
+
 The visualisation of the dataset is important for three reasons.
 Firstly, the failure of the Principal Components Analysis
 to separate the structures indicates a non-linear method
@@ -113,33 +144,44 @@ which reduces the complexity of subsequent steps.
 
 ### Clustering
 
-Using the UMAP algorithm is excellent for visualisation
-showing an excellent correlation between the labelled clusters
-and the visualisations.
-In this case where we have the opportunity
-to confirm the clustering with a labelled dataset
-we can be confident the clusters from the UMAP dimensionality reduction
-match the labelled clustering.
-However, in performing the dimensionality reduction
-the UMAP algorithm can artificially create tears in clusters
-and will increase the density of points.
-This has been discussed for the similar t-SNE algorithm
-[@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
-with the resolution that the dimensionality reduction
-can be used when care is taken in the analysis,
-using additional techniques to ensure the clusters make sense.
-@Fig:dim_reduction_UMAP demonstrates the tearing that is possible in clusters,
-with the pg cluster being torn into three very distinct regions.
-In addition the liquid region appears to be all similar,
-all in a single, or possibly two high density regions.
-These are features which are more a feature of the UMAP algorithm
-rather than the underlying dataset.
-For this particular use case,
-the use of UMAP is best left as a visualisation tool
-rather than a pre-processing step.
+With UMAP not being a suitable algorithm for clustering,
+an alternate choice is required.
+The non-linear separation allowed by UMAP
+does provide a hint as to the algorithms which will be suitable.
+The algorithm chosen for clustering is HDBSCAN [@Campello2013;@McInnes2017]
+which finds areas of high density assigning them to clusters.
+The HDBSCAN algorithm doesn't require all points to belong to a cluster,
+with those too far from an area of high density
+being considered noise and left unclustered.
+Leaving points unclustered is a better fit for clustering configurations
+since only configurations which have a high density of points,
+that is locally favoured configurations
+will be assigned to a cluster.
+The result of clustering using the HDBSCAN algorithm
+is displayed in @fig:cluster_sorted_hdbscan_vis
+using the UMAP algorithm for visualisation (see @sec:visualisation).
+This shows the unsupervised assignment of clusters
+matches the groups formed from the visualisation.
+The assignment of structures to the clusters
+has to be performed manually,
+with @fig:cluster_sorted_hdbscan displaying the entire configurations
+from which the assignment can be made.
+Most interesting is that the structure of the p2gg crystal
+has two distinct alternating layers
+which explains why there are more clusters than distinct crystals.
+This additional knowledge demonstrates that
+while the dataset used in the clustering
+was known and understood,
+the clustering made no use of that knowledge.
 
-![Result of clustering on the reduced dataset using the HDBSCAN algorithm.
-](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan_vis width=85%}
+![Result of clustering using the HDBSCAN algorithm
+using the six dimensional features.
+The resulting cluster assignment is visualised using
+the UMAP dimensionality reduction as a method of gauging
+the effectiveness of the clustering algorithm.
+The label -1 indicates points in no cluster,
+while all other labels have no meaning.
+](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan_vis width=80%}
 
 <div id="fig:cluster_sorted_hdbscan" class="subfigures">
 
@@ -147,48 +189,41 @@ rather than a pre-processing step.
 ![p2gg](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_p2gg.svg){#fig:cluster_reduced_sorted_hdbscan_p2gg width=33%}
 ![pg](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_pg.svg){#fig:cluster_reduced_sorted_hdbscan_pg width=33%}
 
-Applying the classified labels to the p2 (a), p2gg (b) and pg (c) crystals. Of note in
-(b) is the alternating layers, showing molecules in two distinct states.
+Applying the cluster labels from @fig:cluster_sorted_hdbscan_vis
+to the p2 (a), p2gg (b) and pg (c) crystals using the same colourscheme.
+These are the configurations used to form the local environments.
 
 </div>
 
-While UMAP is not suitable as a pre-processing step for clustering,
-the separation of the crystal structures
-means it is possible with an appropriate clustering algorithm.
-The algorithm chosen for clustering is HDBSCAN [@Campello2013;@McInnes2017]
-which finds areas of high density as clusters,
-leaving the noise as unclustered values.
-Using the HDBSCAN algorithm has a significant difference
-from clustering the reduced data,
-namely that the liquid in this case is considered noise and not clustered,
-indicated by the assignment to the group labelled -1.
-Having the liquid classified as noise
-better reflects its structure in real space,
-and highlights one of the issues
-using UMAP for dimensionality reduction.
-While it is great as a visualisation,
-showing the large scale structure of the space,
-much of the local structure is lost.
-Furthermore,
-the HDBSCAN algorithm has the ability
-to detect finer details of the liquid state,
-identifying clusters of smaller sizes within the liquid,
-representing common and possibly more stable local structures.
+Unsupervised Learning, or clustering
+is a tool allowing for the identification of
+distinct local structures within a simulation
+with no previous knowledge of the data.
+These local structures can be manually labelled
+providing information about the types of structures present.
+The step of manual labelling is a downside to clustering,
+with no way to apply the learned information to new datasets.
 
-![Result of clustering using the HDBSCAN algorithm and visualised using the UMAP
-dimensionality reduction. The liquid is in the class with identifier -1, indicating that
-it is considered noise.
-](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan width=80%}
+## Supervised Learning
 
-## Supervised Classification
+Unsupervised learning is unable to give a specific label to a configuration,
+requiring manual labelling by a researcher,
+a tedious and time consuming task.
+This is the domain of Supervised Learning.
+Supervised Learning is the task of taking features
+which have been manually labelled
+and developing an algorithm which can assign that same label
+to sets of previously unlabelled features.
+The creation of the manually labelled dataset
+is a crucial part of the process,
+and @sec:unsupervised_learning presents a method
+for constructing this dataset for some unstructured crystal growth data.
 
 There are a wide range of algorithms
-which can be used for supervised classification,
+which can be used for supervised learning,
 ranging from a linear model, to a deep neural network.
 The first step in evaluating performance
 is to find a suitable algorithm.
-@Tbl:classification_performance shows a range of algorithms tested,
-with each being described in @sec:supervised-learning-algorithms.
 
 The excellent performance of the decision tree algorithm is interesting,
 since it is sequence of conditional checks,
