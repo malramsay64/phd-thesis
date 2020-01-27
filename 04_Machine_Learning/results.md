@@ -9,21 +9,20 @@ as the features for our models.
 Features in machine learning
 are measured quantities used to differentiate the input.
 
-## Unsupervised Classification
+## Clustering
 
-The goal of unsupervised classification is to group
-local environments of each crystal structure into clusters
-while having no previous knowledge of the dataset.
+The goal of clustering
+is to group together similar local environments
+with no previous knowledge of the dataset.
 Clustering is hard to give a numerical score like supervised clustering,
 so we look to alternate methods of evaluating performance.
 Visualisation of the dataset like in @fig:order_parameter_overlap
 is a fantastic method of understanding the data
 and evaluating how well the clustering has performed.
-For the unsupervised classification,
-each local environment is described by six features,
+For clustering, each local environment is described by six features,
 that is, represented as a point in 6D space,
 making the visualisation on a 2D page somewhat more difficult.
-Before evaluating the performance of the Unsupervised Classification
+Before evaluating the performance of the clustering
 we need to find appropriate tools for visualising
 the high dimensional data.
 
@@ -73,7 +72,7 @@ shows a distinct separation between the liquid state and all the crystal states.
 This firstly indicates that UMAP is
 a fantastic tool for the visualisation of these datasets,
 and additionally that separation of each of the crystals
-is possible using an Unsupervised Learning algorithm.
+is possible using an clustering algorithm.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection. Classes are assigned using the known state of each local environment.
@@ -136,13 +135,12 @@ Firstly, the failure of the Principal Components Analysis
 to separate the structures indicates a non-linear method
 is required for separating the different structures.
 Secondly, separating the structures with the UMAP algorithm for visualisation,
-indicates it is possible to separate the crystal structures
-using a Unsupervised Learning or clustering method.
+indicates it is possible to separate the crystal structures using clustering.
 Finally, we have found that reducing the degeneracy of the features
 is an important simplification
 which reduces the complexity of subsequent steps.
 
-### Clustering
+### Clustering Performance
 
 With UMAP not being a suitable algorithm for clustering,
 an alternate choice is required.
@@ -160,7 +158,7 @@ will be assigned to a cluster.
 The result of clustering using the HDBSCAN algorithm
 is displayed in @fig:cluster_sorted_hdbscan_vis
 using the UMAP algorithm for visualisation (see @sec:visualisation).
-This shows the unsupervised assignment of clusters
+This shows the assignment of clusters
 matches the groups formed from the visualisation.
 The assignment of structures to the clusters
 has to be performed manually,
@@ -195,10 +193,9 @@ These are the configurations used to form the local environments.
 
 </div>
 
-Unsupervised Learning, or clustering
-is a tool allowing for the identification of
+Clustering is a tool allowing for the identification of
 distinct local structures within a simulation
-with no previous knowledge of the data.
+having no previous knowledge of the data.
 These local structures can be manually labelled
 providing information about the types of structures present.
 The step of manual labelling is a downside to clustering,
@@ -206,7 +203,7 @@ with no way to apply the learned information to new datasets.
 
 ## Supervised Learning
 
-Unsupervised learning is unable to give a specific label to a configuration,
+Clustering is unable to give a specific label to a configuration,
 requiring manual labelling by a researcher,
 a tedious and time consuming task.
 This is the domain of Supervised Learning.
@@ -216,7 +213,7 @@ and developing an algorithm which can assign that same label
 to sets of previously unlabelled features.
 The creation of the manually labelled dataset
 is a crucial part of the process,
-and @sec:unsupervised_learning presents a method
+and @sec:clustering presents a method
 for constructing this dataset for some unstructured crystal growth data.
 
 There are a wide range of algorithms

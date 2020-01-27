@@ -200,7 +200,8 @@ Abstract:
 
 ### Machine Learning Results
 
-- Unsupervised classification trimer
+- Unsupervised learning trimer
+    - Referred to as clustering
     - what clusters are formed
     - how well do they match the crystal polymorphs
     - what other structures are found

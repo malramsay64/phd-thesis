@@ -125,21 +125,20 @@ also known as clustering algorithms,
 they take a dataset and are divide it into subsets (or clusters)
 where values within each cluster are more closely related to each other
 that values in different clusters. [@Russell2016]
-Rather than being able to identify liquid or crystal structure
-like supervised learning,
-Unsupervised learning can identify
-there are two distinct types of structure present
+Rather than being able to identify liquid or crystal structure like supervised learning,
+unsupervised learning can identify there are two distinct types of structure present
 and the elements which belong to each.
+The term clustering will be used to refer to Unsupervised learning
+throughout the rest of this thesis.
 
 Within the field of Chemistry,
-Unsupervised learning has been used
-to help understand energy landscapes [@Wales2018;@Ballard2016;@Ballard2017]
+clustering has been used to help understand energy landscapes [@Wales2018;@Ballard2016;@Ballard2017]
 grouping together similar configurations within a molecular dynamics simulation,
 providing a method of understanding how the simulation state
 moves between the available configurations.
 Other uses within Molecular Dynamics
 is finding the different local structures present within a simulation.
-@Spellings2018 use Unsupervised Learning to identify
+@Spellings2018 use clustering to identify
 a range of complex crystal structures,
 a process estimated to take weeks manually, in 30 minutes.
 The results from the machine learning matched those from
@@ -256,7 +255,7 @@ with the tools available through machine learning.
 
 This chapter demonstrates the applicability of machine learning
 to understanding crystal structures within molecular crystals.
-Firstly to demonstrate Unsupervised Learning as a tool for
+Firstly to demonstrate clustering as a tool for
 the identification of regions of local structure within a simulation
 requiring no previous knowledge.
 Secondly demonstrating Supervised learning for the accurate detection and monitoring
