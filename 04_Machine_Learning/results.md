@@ -9,7 +9,7 @@ as the features for our models.
 Features in machine learning
 are measured quantities used to differentiate the input.
 
-## Clustering
+## Clustering {#sec:clustering}
 
 The goal of clustering
 is to group together similar local environments
@@ -91,7 +91,7 @@ of the underlying data?
 For any six values of the relative orientation
 there are $6!$ points in space which represent those values
 reflecting the different ways of ordering the values.
-As an implementation detail of the nearest-neighbours algorithm [@sec:nearest-neighbours]
+As an implementation detail of the nearest-neighbours algorithm [@sec:nearest_neighbours]
 the relative orientations are ordered by
 the distance to the neighbour.
 As molecules vibrate these distances are going to change re-order,
@@ -140,7 +140,7 @@ Finally, we have found that reducing the degeneracy of the features
 is an important simplification
 which reduces the complexity of subsequent steps.
 
-### Clustering Performance
+### Clustering Performance {#sec:clustering_performance}
 
 With UMAP not being a suitable algorithm for clustering,
 an alternate choice is required.
@@ -201,7 +201,7 @@ providing information about the types of structures present.
 The step of manual labelling is a downside to clustering,
 with no way to apply the learned information to new datasets.
 
-## Supervised Learning
+## Supervised Learning {#sec:supervised_learning}
 
 The process of clustering is unable to give a specific label to a configuration,
 requiring manual labelling by a researcher,
@@ -300,9 +300,9 @@ for the labelling of local structures in one dataset,
 it doesn't show whether the algorithm is suitable
 for a generalised case using completely different data.
 
-The KNN algorithm will be used in @sec:Melting
+The KNN algorithm will be used in @sec:Crystal_Melting
 for monitoring the melting of each crystal structure.
-The dataset used in @sec:Melting,
+The dataset used in @sec:Crystal_Melting,
 is completely different to that used in this chapter,
 in particular containing the melting over a long timescale.
 @Fig:melting shows the application of the KNN algorithm

@@ -387,6 +387,10 @@ Using a matrix representation for the cell $C$ and coordinates $\vect{x}$
 
 $$ C(C^{-1} \vect{x} - \lfloor{C^{-1} \vect{x}}\rfloor) $$
 
+### Nearest Neighbours {#sec:nearest_neighbours}
+
+- Calculating the nearest neighbours of a particle
+
 ### Rotational Distance using Quaternions {#sec:quaternion_rotations}
 
 Measuring rotational motion in three dimensional space

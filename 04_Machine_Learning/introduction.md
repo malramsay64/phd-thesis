@@ -61,7 +61,7 @@ where data with known values is used to develop a predictive model and
 Unsupervised Learning,
 which is used to better understand an unknown dataset.
 
-### Supervised Learning
+### Supervised Learning {#sec:supervised_learning_intro}
 
 Supervised learning is a tool for developing a predictive model
 based on previous results with a known value.
@@ -118,7 +118,7 @@ Supervised Learning provides a formal method
 for the determination of the best value
 based on the available data.
 
-### Unsupervised Learning
+### Unsupervised Learning {#sec:clustering_intro}
 
 Unsupervised algorithms in machine learning,
 also known as clustering algorithms,

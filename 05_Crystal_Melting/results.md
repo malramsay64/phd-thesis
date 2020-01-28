@@ -127,7 +127,7 @@ will spontaneously take place,
 making it unreasonable to assume
 this is not the equilibrium crystal form.
 
-## Polymorphic Stability
+## Polymorphic Stability {#sec:polymorphic_stability}
 
 The potential energy calculations [@tbl:potential_energy]
 propose the p2 structure as the most stable,
