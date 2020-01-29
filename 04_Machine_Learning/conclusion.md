@@ -16,3 +16,18 @@ between the states of interest.
 This allows for simpler models
 which are both faster to compute
 but also more understandable and describable.
+
+An extension of this work is the validation of this method
+on a wide variety of molecular shapes.
+This would involve the process of generating crystal structures
+using the isopointal search technique [@Hudson2011]
+and following the methodology used here
+for creating the liquid and crystal configurations.
+For molecular crystals with less orientational ordering,
+additional parameters may be needed to completely describe
+the crystal structures.
+It is envisioned that the limitations of orientational ordering
+would be most noticeable in 3D, requiring additional features.
+However, it is possible this method can be generalised
+to have a set of features which works for most molecules,
+only requiring training to be useful for monitoring growth.
