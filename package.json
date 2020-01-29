@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "alex": "^8.1.0",
+        "alex": "^8.1.1",
         "diff": "^4.0.2",
         "markdownlint-cli": "^0.21.0",
         "prettier": "^1.19.1",
@@ -11,7 +11,7 @@
         "textlint-rule-diacritics": "1.0.0",
         "textlint-rule-no-dead-link": "^4.6.2",
         "textlint-rule-stop-words": "^2.0.0",
-        "textlint-rule-terminology": "^2.0.1",
+        "textlint-rule-terminology": "^2.0.3",
         "textlint-rule-unexpanded-acronym": "*",
         "textlint-rule-write-good": "^1.6.2"
     }
