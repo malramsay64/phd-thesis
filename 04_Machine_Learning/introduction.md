@@ -1,15 +1,15 @@
 # Introduction
 
-The three densest packed structures of the Trimer molecule
-as determined by the iso-configuration search algorithm developed by @Hudson2011
+The three densest packed crystal structures for the Trimer molecule
+determined by iso-configurational search [@Hudson2011]
 belong to the space groups p2, pg, and p2gg.
-Each of these structures could potentially form within a simulation
-requiring an algorithm able to monitor the presence of each of these structures.
-A standard tool for crystal detection is to use an order parameter;
+Any of these three structures could potentially form within a simulation
+requiring an algorithm able to monitor the presence of all structures.
+A standard tool for crystal detection is to use an order parameter; [@Russo2016;@Sultan2014;@Tanaka2012;@Tanaka2014;@Kuczynski2002]
 a single value which describes a local configuration on a scale
 from a perfect liquid $0$, to a perfect crystal $1$.
-A measure of this type previously used for molecular crystals
-is an orientational order parameter $O_6$.
+A measure of this type previously used for molecular crystals [@Sims2019;@Kuczynski2002]
+is the orientational order parameter $O_6$.
 The value of $O_6$ is the orientation of the closest shell of 6 neighbours
 relative to the orientation of the central molecule.
 The orientational ordering for $O_6$ is given by the equation;
@@ -18,25 +18,27 @@ $$ O_6 = \frac{1}{6}\sum_{i=1}^6 \cos^2(\theta_{ref} - \theta_i) \rangle_i $$ {#
 
 where $\theta_{ref}$ is the orientation of the reference particle and
 $\theta_i$ is the orientation of the neighbouring particle.
-The orientational order parameter as expressed
+The orientational order parameter
 can reasonably distinguish the liquid from the p2 structure
-as shown in @fig:order_parameter_overlap.
-However, there are no values
-which can distinguish the p2gg or pg structures in this way.
-While it is likely possible to develop
-some alternate formulation to identify these different crystal structures,
-this highlights that values along more than a single dimension
-are needed to separate these values.
+as shown in @fig:order_parameter_overlap,
+with values above 0.90 considered crystalline,
+while values below 0.90 considered liquid.
+However, the overlap of the liquid with the p2 and p2gg crystals
+means they can't be identified in this way.
+While it is possible to develop an alternate formulation of an order parameter
+to identify each of these different structures,
+the diversity of structure indicates that the separation of structures
+needs a higher dimensional space.
 The formula for the order parameter [@eq:orientational_order_parameter]
-takes the orientation of each neighbour,
-and collapses those into a single value,
-being a point on a number line.
+takes the orientation for each neighbour,
+collapsing them into a single value
+represented as a point on a number line.
 The original data,
-being the orientation of each neighbour
-can be represented as a point in $n$ dimensional space
-indicating the value of each $n$ neighbours.
-Machine Learning is a tool which can assist in handling
-values in higher dimensional space.
+being the relative orientation of each neighbour
+can be represented as a point in 6 dimensional space
+which better allows for separation of values.
+Machine Learning is a tool which can assist in finding surfaces
+to separate values in higher dimensional space.
 
 ![The range of values of the orientational order parameter $O_6$
 overlap for each of the crystals and the liquid.
@@ -64,7 +66,7 @@ which is used to better understand an unknown dataset.
 ### Supervised Learning {#sec:supervised_learning_intro}
 
 Supervised learning is a tool for developing a predictive model
-based on previous results with a known value.
+based on previous data with a known outcome.
 The supervised part of the learning
 is the process of drawing a line to predict future outcomes.
 This can either be finding the line of best fit [@fig:regression_demo],
@@ -89,31 +91,29 @@ finding the line which can be best used to predict further behaviour.
 :::
 
 Supervised Learning within the context of Chemistry
-has been primarily focused on the optimisation of parameters
-for simulations or experiments,
+has focused on the optimisation of parameters in simulations or experiments,
 cases which would have previously required tedious hand optimisation.
-@Meenakshisundaram2019 used Machine Learning to find the geometry
-of molecules with liquids that were the most fragile.
-In running an experiment where
-the data collection and analysis is automated,
-the machine learning directs simulations with new geometries
-based on the existing data.
+@Meenakshisundaram2019 used Machine Learning to find
+the most fragile molecular liquids for a given number of particles.
+The machine learning was able to direct
+simulations of molecules with new geometries
+based on the automated data collection and analysis of previous geometries.
 As more data is collected the directed guesses improve.
 The tuning of parameters using machine learning
-has also been used by @Ren2018 to
-speed up the development of a novel amorphous alloy.
+has also been used by @Ren2018
+to speed up the development of a novel amorphous alloy.
 The optimisations allowed by machine learning
-speed up the process of discovery by 1000 times.
+speed up discovery by 1000 times over previous methods.
 
-The process of optimisation can also be applied to smaller problems.
-In the motivating example for using machine learning [@fig:order_parameter_overlap]
+Optimisation using machine learning can also be applied to smaller problems.
+In the motivating example @fig:order_parameter_overlap]
+to sepearate the liquid and p2 structures
 we need to choose a value below which a structure is considered liquid-like
 and above is considered crystal like.
-The choice of this value can dramatically change how well this classification performs,
+The choice of this value can change how well this classification performs,
 however in a survey of publications using similar techniques
 [@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
-there is no mention of the value
-or the method used to determine it.
+there is no mention of the value or the method used to determine it.
 Supervised Learning provides a formal method
 for the determination of the best value
 based on the available data.
@@ -122,13 +122,13 @@ based on the available data.
 
 Unsupervised algorithms in machine learning,
 also known as clustering algorithms,
-they take a dataset and are divide it into subsets (or clusters)
+take a dataset and are divide it into clusters,
 where values within each cluster are more closely related to each other
 that values in different clusters. [@Russell2016]
 Rather than being able to identify liquid or crystal structure like supervised learning,
 unsupervised learning can identify there are two distinct types of structure present
-and the elements which belong to each.
-The term clustering will be used to refer to Unsupervised learning
+and the structures which belong to each.
+The term clustering will be used over unsupervised learning
 throughout the rest of this thesis.
 
 Within the field of Chemistry,
@@ -139,10 +139,11 @@ moves between the available configurations.
 Other uses within Molecular Dynamics
 is finding the different local structures present within a simulation.
 @Spellings2018 use clustering to identify
-a range of complex crystal structures,
-a process estimated to take weeks manually, in 30 minutes.
+a range of complex crystal structures.
 The results from the machine learning matched those from
-the manual assignment which was previously published. [@Engel2015]
+the manual assignment which was previously published [@Engel2015]
+despite the clustering taking 30 minutes,
+while the manual assignment was estimated to take weeks.
 A further application of clustering is in the analysis of instrument data
 where @DellAnna2008 reduce the number of peaks in
 Time-of-Flight Secondary Ion Mass Spectrometry (ToF-SIMS) spectra
@@ -168,88 +169,70 @@ In the field of self assembly @Keys2011 describe six;
 5. shape context, and
 6. lightfield descriptor.
 
-To accurately describe the similarity of one structure to another
-many of these different descriptors can be used,
-resulting in a multi-dimensional description of a configuration.
-The question then becomes,
-which structure is this closest to?
-
-Using existing data for hypothesis testing
-has been within the realm of statistical analysis for hundreds of years. @Stigler1986
-However, statistical approaches like ANOVA
-are problematic in high dimensional space.
-This is where machine learning can really improve on these existing methods.
-
-For simulations in 3D,
-the ordering in crystal structures is more complex
-making it's detection more challenging.
-Like the 2D case there are a range of methods
-for identifying structures including
-
-- the Steinhardt bond order parameters, [@Steinhardt1983]
-- Bond Angle Analysis, and [@Ackland2006]
-- Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
-
-Each of these different values focus on the identification
-of a small range of structures, typically;
-
-- Face Centered Cubic,
-- Body Centered Cubic, and
-- Hexagonal Close Packed.
-
-The differences between each of these is typically
-a hand picked parameter tuned for each potential.
-
-While the existing approaches for crystal detection
-are limited by arbitrary decisions and limited re-usability.
-There has been a lot of work in choosing these methods
-and they reflect the relationships important in crystal structures.
-So they form a foundation on which to
-develop features for machine learning.
+Describing the similarity of one structure to another
+can require one, or many of these parameters.
+For simulations of atomic particles
+there are a range of order parameters
+making use of the above descriptions,
+the Steinhardt bond order parameters, [@Steinhardt1983]
+Bond Angle Analysis, and [@Ackland2006]
+Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
+Each of these different order parameters
+focus on the identification of a small range of structures,
+which is typically; Face Centered Cubic, Body Centered Cubic, and Hexagonal Close Packed.
+The identification of each structure
+uses hand picked parameters
+tuned for the potential used for the simulation.
+While the hand tuned parameters limits the re-usability of these methods,
+they reflect the relationships important in crystal structures
+and have been developed and tested over many years.
 There are a range of studies [@Reinhart2017;@Dietz2017;@Boattini2018;@Spellings2018]
-building upon the ideas of the more traditional
-crystal order parameters.
-These all take slightly different approaches,
-however each converts one of the parameters above
-into a many dimensional representation
-of the local structure,
-providing far more opportunity
-to distinguish the different structures.
+which build upon these traditional methods,
+using machine learning to combine many values
+and make decisions for new datasets.
+Each of these machine learning approaches have slightly different approaches,
+however they use existing tools for crystal detection
+as one of the dimensions describing local structure.
 
-The approaches listed above only deal with spherically symmetric particles,
-molecular crystals are far more complicated
-in their shape and crystal structure.
-Water Ice has 18 different polymorphs we have found so far, @Algara-Siller2015
+Current applications of machine learning for crystal detection
+only deal with spherically symmetric particles.
+Many molecular crystals are far more complicated, [@Beran2016] for example
+water Ice has 18 different polymorphs we have found so far, @Algara-Siller2015
 with the most recent found in 2015.
-The number of polymorphs for ice is likely to reflect
-the range of structures in many molecular crystals.
-The CHILL [@Moore2010] and CHILL+ [@Nguyen2015]
-are traditional algorithms for
-detecting ice within liquid water
-though they are limited to ice Ih, Ic, and clathrates for CHILL+.
-Machine learning models [@Geiger2013;@Fulford2019]
+Other examples of this diversity are
+to flufenamic acid [@Lopez-Mejias2012] with at least 9 polymorphs, and
+triacetone-triperoxide [@Reany2009] with at least 6 polymorphs.
+The abundance of molecular polymorphs is such that @McCrone1965 noted that
+"the number of forms known for each compound is proportional to
+the time and money spent researching that compound."
+This diversity of structure raises additional complications
+in the identification of these structures.
+The CHILL [@Moore2010] and CHILL+ [@Nguyen2015] algorithms
+are traditional approaches for detecting ice within liquid water
+however, they are limited to the detection of ice Ih, and Ic.
+Machine learning models for the identification of ice crystal structures [@Geiger2013;@Fulford2019]
 provide analysis that is both more accurate
 and covers a wider range of crystal structures.
 
-A further problem,
-highlighted by the example of water
-is that it is important to know
-the types of structures which are present within a sample.
-Not only for the discovery of novel materials
-but also having a complete understanding
-of a configuration.
-A problem with existing tools
+A further problem with molecules having so many polymorphs
+is finding the different structures present within a simulation.
+Not only for the discovery of novel polymorphs
+but also ensuring a complete understanding of a configuration.
+One of the limitations of existing detection methods
 is that you only see the range of structures you are looking for
 rather than the range of structures which exist.
-Machine learning can also be used to
-subdivide the dataset into distinct clusters of crystal structures. [@Spellings2018]
+Using a clustering approach [@Spellings2018]
+provides a complete overview of the structures present
+with minimal additional effort.
 
-The real power of machine learning
+Machine learning is a tool ideally suited
 for the identification and classification
-of crystal structures,
-comes from combining the work of the past 40 years
-of classifying crystal structures
-with the tools available through machine learning.
+of molecular crystal structures.
+Able to account for the diversity and complexity
+of these structures.
+Machine Learning accelerates research
+by taking care of the tedious time consuming elements
+allowing the researcher to focus on the science.
 
 ## Machine Learning Goals
 
