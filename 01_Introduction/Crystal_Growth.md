@@ -3,44 +3,39 @@
 Much of the world we interact with is built using solid materials,
 from all the electronics within your phone,
 to the skyscrapers that tower over us.
-All these applications demand materials which have properties
-better suited for their particular task,
-whether that is strength, corrosion resistance, magnetic properties, and many others.
-One of the main methods for the formation of these materials is from the melt.
-The properties of these materials can be influenced by
-the crystal structure which forms,
-and also the micro-structure of the crystal. [@Granasy2004]
-This involves understanding all aspects of crystal growth
-so we have the control to design the materials we need.
+Each application has specific requirements on the materials used
+whether that is strength, corrosion resistance, magnetic properties, among many others.
+One of the key methods of forming these materials is from the melt.
+The properties of a material can be influenced by
+the crystal structure which forms, [@cite]
+and the micro-structure of that crystal. [@Granasy2004]
+Manufacturing materials to these exacting specifications
+requires understanding all aspects of crystal growth.
 
-For the transition from a disordered liquid phase
-to an ordered crystal phase,
-there needs to be an initial region
-which starts the process of ordering.
-The transition from the liquid phase to the crystal phase,
-results in a saving of potential energy $H$;
-the order of the crystal allowing
-particles to adopt a lower energy structure.
-However, a consequence of this ordering
-is the reduction in the range of accessible states
-known as the entropy $H$.
-The relationship between the changes of these two factors,
-potential energy $\Delta H$, and
-entropy $\Delta S$
-is codified in the equation for
-the change in the Gibbs free energy $\Delta G$.
+The transition from a disordered liquid phase to an ordered crystal phase,
+requires an initial region of order from which it can propagate,
+a process known as nucleation.
+The highly structured order of the crystal phase results in
+a lower enthalpy $H$ than that of the liquid.
+However, a consequence of the ordering of a crystal
+is a reduction in the range of accessible states,
+known as entropy $S$.
+This means the transition from the liquid to the crystal
+results in a decrease in the enthalpy $\Delta H < 0$
+and an increase in the entropy $\Delta S > 0$.
+The change in the Gibbs free energy $\Delta G$ [@eq:gibbs_free_energy]
+describes how changes in the enthalpy $\Delta H$ and entropy $\Delta S$
+contribute to possibility of spontaneous change from
+a liquid configuration to a crystal configuration.
 
 $$ \Delta G = \Delta H + T \Delta S $$ {#eq:gibbs_free_energy}
 
-This equation additionally includes the term $T$,
-which represents the temperature.
-This relationship for the Gibbs free energy
-provides an important relationship,
-at some temperature $T_m$,
-the entropy lost by forming the crystal $T_m \Delta S$
-is equal to the energy gained $\Delta H$.
-This temperature, $T_m$, is the melting point.
-
+@Eq:gibbs_free_energy includes a term for the temperature $T$,
+which changes the influence of the entropy,
+where at the melting point $T_m$
+the enthalpy lost from crystallisation
+is equal to the entropy gained
+resulting in $\Delta G = 0$.
 The relationship in @eq:gibbs_free_energy
 identifies the most stable state for a given condition;
 that is the equilibrium state.
@@ -50,14 +45,18 @@ we need additional theories.
 The growth of a crystal from the melt
 is comprised of two distinct steps,
 
-1. the nucleation of an initial *seed* crystal
-    which provides a structure from which
-    the crystal can continue to grow, and
-2. the continued growth of crystal as it
-    propagates forward from the initial boundary.
+1. the microscopic nucleation of a crystal within the liquid, and
+2. the macroscopic growth (or melting) of the crystal
+
+These two steps are important for understanding
+the formation of supercooled liquids
+and the growth of crystals
+which will be described in the following sections.
 
 ## Growth Theory
 
+Theories of crystal growth
+describe the attachment of molecules to the liquid--crystal interface.
 Once a crystal has reached the size of the
 critical nucleus and starts to grow,
 we need to switch from using nucleation theory
