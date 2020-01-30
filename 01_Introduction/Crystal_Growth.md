@@ -35,13 +35,9 @@ which changes the influence of the entropy,
 where at the melting point $T_m$
 the enthalpy lost from crystallisation
 is equal to the entropy gained
-resulting in $\Delta G = 0$.
-The relationship in @eq:gibbs_free_energy
-identifies the most stable state for a given condition;
-that is the equilibrium state.
-What it doesn't describe is the process
-of moving from one phase to another,
-we need additional theories.
+giving $\Delta G = 0$.
+Having a negative $\Delta G$ indicates that a phase transition is possible,
+it doesn't describe is the process of crystal growth.
 The growth of a crystal from the melt
 is comprised of two distinct steps,
 
@@ -55,34 +51,19 @@ which will be described in the following sections.
 
 ## Growth Theory
 
-Theories of crystal growth
-describe the attachment of molecules to the liquid--crystal interface.
-Once a crystal has reached the size of the
-critical nucleus and starts to grow,
-we need to switch from using nucleation theory
-to using a theory of crystal growth,
-with the well established theory being the Wilson-Frenkel theory.
-This expresses a relation predicting
-the rate of crystal growth $v(T)$ being
+Theories of crystal growth describe
+the attachment of molecules to an existing liquid--crystal interface.
+Classical theories of crystal growth have the form
 
-$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$
+$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$ {#eq:crystal_growth_general}
 
-where $k(t)$ is the mobility of particles within the liquid.
-The Wilson-Frenkel model is similar to that of Classical Nucleation Theory.
-We have an activated process,
-that is, one governed by an Arrhenius temperature dependence,
-with a factor out the front.
-The key difference here is that the pre-factor, $k(T)$
-has a temperature dependence,
-being the mobility of particles within the liquid.
-This gives rise to some interesting behaviour,
-as the temperature drops below the melting point,
-the rate of crystal growth increases,
-with the $\Delta G_\text{crystal}$ term getting larger.
-However, at some point,
-the growth of of the crystals slows down again,
-as the first mobility of the particles $k(T)$
-becomes dominant.
+where $k_\text{B}$ is the Boltzman constant and
+$-\Delta G_\text{crystal}$ is the change in free energy
+going from the liquid to the crystal.
+The exponential term in the square brackets
+describes the process of attaching and detaching from the crystal surface,
+while $k(T)$ is a function
+which takes different forms depending on the growth theory.
 
 ## Nucleation Theory
 
