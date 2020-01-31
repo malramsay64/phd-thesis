@@ -1,4 +1,4 @@
-# Crystal Growth
+# Crystal Growth {#sec:crystal_growth}
 
 Much of the world we interact with is built using solid materials,
 from all the electronics within your phone,

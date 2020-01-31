@@ -1,96 +1,77 @@
 # Introduction
 
 The crystallisation of a solid from the liquid melt
-is a process underpinning the production
-of a wide range of materials.
-The process of crystallisation
-can be broken into two separate processes,
-the nucleation rate---the formation of small crystals from the liquid, and
-the crystal growth rate---the speed at which the bulk crystal grows.
-These two processes are considered separately
-because the nucleation rate is orders of magnitude
-slower than the crystal growth rate.
-It is the slow nucleation rate
-that allows liquids to be supercooled.
-Instead of waiting for a statistically unlikely event to occur,
-crystal growth of experiments uses a seed particle
-from which the crystal growth can propagate.
-Initiating the crystal growth using Seed crystals
-can influence the resulting crystal structure,
-providing another level of control over the growth process.
-In other cases, particle impurities in the liquid
-or tiny scratches in glassware can also act
-as a seed site,
-from which the crystal grows at the crystal growth rate.
+is a process underpinning the production of a wide range of materials.
+As discussed in @sec:intro_crystal_growth
+crystallisation can be broken into two separate processes,
+nucleation and crystal growth.
+In this chapter we are studying
+the crystal growth and melting of the Trimer molecule
+to understand the slow growth rates of molecular crystals.
+To remove the need to wait for the nucleation step
+a seed crystal is used,
+forming a base from which the growth and melting can take place.
 
-## Anomalously Slow Growth Rates
+## Theories of Crystal Growth
 
-In the study of many different crystals,
-the growth rates between the different crystal faces
-can vary by as much as three orders of magnitude [@Reinhart2018;@Burke1988].
-This huge difference between growth rates
-indicates that the growth of the crystal
-is significantly more complicated than posited
-in the discussion of the temperature dependence.
+### Classical Theories of Growth
 
-@Tang2013 found
-for two similar alloys,
-that the difference in crystal growth rates
-could be attributed to
-the ordering of atoms in the interface,
-with the faster glass former displaying ordering
-much further from the boundary of the crystal.
-This observation is supported by the work of @Reinhart2018
-where in studying Janis particles,
-the stricter the geometric constraints of the crystal phase,
-the slower the growth rate.
-While in work on Lennard Jones Particles @Burke1988
-attribute the slow growth rate of the (111) crystal face
-to the degeneracy of fcc and hcp stacking,
-with many stacking faults arising during the freezing process as a result.
+There are two classical theories of crystal growth which will be explored;
+the Wilson--Frenkel theory [@Wilson1900;@Frenkel1926], and
+the Turnbull theory [@Hillig1956;@Turnbull1981].
+Both these theories describe the velocity $V$ of an interface
+through the equation;
 
-While the Wilson-Frenkel theory has a characteristic timescale of diffusion
-it may be that for more complicated crystal structures,
-such as Janus Particles [@Reinhart2018], clathrates [@Yagasaki2016] and molecular crystals
-the diffusion may no longer be the relevant characteristic timescale.
-This is important for molecular crystals,
-where one of the major results has been the decoupling
-of the rotational relaxation time and the diffusion constant,
-with the rotational relaxation getting slower much faster than the dynamics.
+$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$ {#eq:crystal_growth_general}
 
-## Important Temperatures
+with $k_{\text{B}}$ being the Boltzmann Constant,
+and $\Delta u$ being the change in chemical potential.
+The quantity $k(T)$ is where these two models of growth differ.
 
-The melting point $T_m$ defines a temperature
-at which both the liquid and the crystal phases
-exist at equilibrium
----they are equally stable.
-Above the melting point,
-the liquid is the equilibrium phase, however,
-it is also possible for the crystal to exist
-above the melting point as a metastable phase.
-At some temperature above the melting point,
-the crystal is no longer metastable,
-spontaneously melting to form the liquid.
-The temperature at which this spontaneous melting occurs
-is known as the spinodal temperature.
-When a crystal is surrounded by liquid above the melting point,
-melting will occur at the liquid--crystal interface.
-This interfacial melting is explained by
-the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not just occurring at the interface,
-at many points within the crystal itself
-that the temperature is above the spinodal.
+The Wilson--Frenkel model describes
+the addition of liquid particles onto the crystal surface
+as a diffusion limited process,
+that is the movement of particles
+from their current position to their position on the crystal lattice
+is a limiting factor in the crystal growth process.
+This gives the form for $k(T)$
 
-Along with the crystal existing as
-a metastable state above the melting point.
-The liquid exists as a metastable state
-below the melting point.
-Like the crystal above the melting point,
-at some temperature below the melting point,
-the liquid will spontaneously crystallise,
-another spinodal temperature.
+$$ k(T) = \frac{D a}{\Lambda^2} f $$
 
-## Models of Melting
+where $D$ is the diffusion constant,
+$a$ is the interatomic spacing,
+$\Lambda$ is the diffusional mean free path, and
+$f$ is a factor to account for
+not all collisions resulting in attachment to the crystal. [@Jackson1984]
+The Wilson--Frenkel model of growth is considered a thermally activated process,
+through the activate comes indirectly through the diffusion constant.
+
+The Turnbull theory describes a process of crystal growth
+where the growth is dependent on the thermal velocity of molecules,
+rather than their diffusion.
+This has the form of
+
+$$ k(T) = \frac{a}{\lambda} \sqrt{\frac{3 kT}{m}} f $$
+
+where $\lambda$ is a parameter of fit
+being the distance required to move to the crystal state, and
+$m$ is the mass of the molecule.
+Notably the Turnbull theory lacks activated growth,
+having much faster growth which extends well below the melting point.
+
+![Plot of the Wilson--Frekel model of crystal growth (solid line)
+and the Turnbull theory (dashed
+line). [@Jackson1984]](../placeholder_figure.png){#fig:classical_growth}
+
+The difference between these two theories is shown in @fig:classical_growth.
+In this figure the points marked are for a Lennard--Jones molecule,
+which fits the Turnbull model.
+However, there are many molecules which follow the Wilson--Frenkel model of growth.
+The distinction between the two groups of molecules
+is those that a good glass formers have Wilson--Frenkel behaviour,
+while metals have the behaviour of the Turnbull model.
+
+### Semi-empirical Density Functional
 
 The field of modelling crystal melting is full of a range of theories
 the nomenclature of which has changed significantly over time.
@@ -110,54 +91,6 @@ has been considered a density functional approach at some point.
 The models discussed in this thesis
 are the classical model of crystal growth,
 and a semi-empirical density functional model.
-
-### Classical Theory
-
-The Wilson-Frenkel[@Wilson1900;@Frenkel1926] theory of crystal growth,
-describes the velocity $V$ of an interface
-
-$$ V(T) = k(T)[1-\e^{\beta \Delta u}] $$ {#eq:wilson_frenkel_growth}
-
-where $\beta = \frac{1}{k_{\text{B}} T}$
-with $k_{\text{B}}$ being the Boltzmann Constant,
-and $\Delta u$ being the change in chemical potential.
-A standard method @Tang2013 of estimating the chemical potential $\Delta u$ is
-
-$$ \Delta u = \frac{(T_m - T) \Delta h_m}{T_m} $$
-
-allowing, with some rearrangement, to express @eq:wilson_frenkel_growth as
-
-$$ V(T^*)\tau_C(T^*) = c\left [ 1-\exp\left(\frac{(1-T^*)\Delta h_m}{T^*}\right) \right ]$$ {#eq:normalised_growth}
-
-where $T^* = T/T_m$ the normalised temperature,
-$c$ is a constant
-$\Delta h_m$ is the free energy from the liquid to the crystal
-at the melting point,
-$V(T^*)$ is the velocity of the interface,
-and $\tau_C(T^*)$ is the crystallisation rate.
-
-The classical model of Crystal Growth and Melting
-known as the Wilson-Frenkel [@Wilson1900;@Frenkel1926]
-is one where the rate of crystal growth $v(T)$
-as a function of temperature $T$
-is represented by the equation
-
-$$ v(T) = k(T) \left[1-\exp{\frac{-\Delta\mu(T)}{k_\text{B} T}}\right] $$
-
-where
-
-- $\Delta\mu(T)$ is the difference between the chemical potentials of the liquid and the
-  crystal phases at the desired temperature, and
-- $k_\text{B}$ is the Boltzman constant.
-
-The value $k(T)$ describes
-the rate per unit area at which material is added to the surface
-which is assumed to be proportional to a transport coefficient of the liquid.
-The term in brackets describes
-the thermally activated rate at which material is removed from the surface.
-When measuring melting the added and removed are switched. [@Tang2013]
-
-### Semi-empirical Density Functional
 
 This models the free energy of a configuration
 based on a distribution of an order parameter $M$ [@Bagdassarian1994]
@@ -231,6 +164,70 @@ $$ v(T) = -\left[\frac{2K\Gamma(T)(\sqrt{\lambda_\text{liquid}}(T) +
 $$ {#eq:dft_growth_rate}
 
 with $K$ being the correlation length of the order parameter.
+
+## Anomalously Slow Growth Rates
+
+In the study of many different crystals,
+the growth rates between the different crystal faces
+can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
+This huge difference between growth rates
+indicates that the growth of the crystal
+is significantly more
+
+In a study of two similar alloys @Tang2013
+attributed the difference in crystal growth rates to
+the ordering of atoms in the interface,
+with the faster glass former displaying ordering
+much further from the boundary of the crystal.
+This observation is supported by the work of @Reinhart2018
+where in studying Janis particles,
+the stricter the geometric constraints of the crystal phase,
+the slower the growth rate.
+While in work on Lennard Jones Particles,
+@Burke1988 attribute the slow growth rate of the (111) crystal face
+to the degeneracy of fcc and hcp stacking,
+with many stacking faults arising during the freezing process as a result.
+
+While the Wilson-Frenkel theory has a characteristic timescale of diffusion
+it may be that for more complicated crystal structures,
+such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
+the diffusion may no longer be the relevant characteristic timescale.
+This is important for molecular crystals,
+where one of the major results has been the decoupling
+of the rotational relaxation time and the diffusion constant,
+with the rotational relaxation getting slower much faster than the dynamics.
+
+## Important Temperatures
+
+The melting point $T_m$ defines a temperature
+at which both the liquid and the crystal phases
+exist at equilibrium
+---they are equally stable.
+Above the melting point,
+the liquid is the equilibrium phase, however,
+it is also possible for the crystal to exist
+above the melting point as a metastable phase.
+At some temperature above the melting point,
+the crystal is no longer metastable,
+spontaneously melting to form the liquid.
+The temperature at which this spontaneous melting occurs
+is known as the spinodal temperature.
+When a crystal is surrounded by liquid above the melting point,
+melting will occur at the liquid--crystal interface.
+This interfacial melting is explained by
+the Wilson-Frenkel theory of crystal growth.
+It is when the melting is not just occurring at the interface,
+at many points within the crystal itself
+that the temperature is above the spinodal.
+
+Along with the crystal existing as
+a metastable state above the melting point.
+The liquid exists as a metastable state
+below the melting point.
+Like the crystal above the melting point,
+at some temperature below the melting point,
+the liquid will spontaneously crystallise,
+another spinodal temperature.
 
 ## Calculation of Melting Rates
 
