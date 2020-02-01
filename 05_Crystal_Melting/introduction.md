@@ -8,21 +8,21 @@ nucleation and crystal growth.
 In this chapter we are studying
 the crystal growth and melting of the Trimer molecule
 to understand the slow growth rates of molecular crystals.
-To remove the need to wait for the nucleation step
+To remove the influence of the nucleation
 a seed crystal is used,
-forming a base from which the growth and melting can take place.
+forming a known base from which the growth and melting can take place.
 [@Russo2012;@Shimura2017]
 
 ## Theories of Crystal Growth
 
 In studying crystal growth there are a range of processes
-which can be the rate limiting component
+which can limit the growth rate
 including the diffusion of the melt,
 the flow of heat away from the surface, and
 reactions at the liquid--crystal interface. [@Kirkpatrick1975]
 This diversity of behaviours has resulted in
 the development of many theories of crystal growth,
-with each describing different interactions
+each describing different interactions
 of the rate limiting components.
 These range from empirical descriptions [@Wilson1900;@Frenkel1926;;@Turnbull1981;@Hillig1956]
 to rigorously derived phase-field models. [@Granasy2019]
@@ -30,9 +30,9 @@ to rigorously derived phase-field models. [@Granasy2019]
 ### Classical Theories of Growth
 
 There are two classical theories of crystal growth which will be explored;
-the Wilson--Frenkel theory [@Wilson1900;@Frenkel1926], and
-the Turnbull theory [@Hillig1956;@Turnbull1981].
-Both these theories describe the velocity $V$ of an interface
+the Wilson--Frenkel theory, [@Wilson1900;@Frenkel1926] and
+the Turnbull theory. [@Hillig1956;@Turnbull1981]
+Both these theories describe the velocity $v$ of an interface
 through the equation;
 
 $$ v(T) = k(T) \left[1-\exp{\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}}\right] $$ {#eq:crystal_growth_general}
@@ -47,7 +47,7 @@ as a diffusion limited process,
 that is the movement of particles
 from their current position to their position on the crystal lattice
 is a limiting factor in the crystal growth process.
-This gives the form for $k(T)$
+This gives the following form for $k(T)$;
 
 $$ k(T) = \frac{D a}{\Lambda^2} f $$
 
@@ -57,12 +57,12 @@ $\Lambda$ is the diffusional mean free path, and
 $f$ is a factor to account for
 not all collisions resulting in attachment to the crystal. [@Jackson1984]
 The Wilson--Frenkel model of growth is considered a thermally activated process,
-through the activate comes indirectly through the diffusion constant.
+through the activation comes indirectly through the diffusion constant.
 
 The Turnbull theory describes a process of crystal growth
 where the growth is dependent on the thermal velocity of molecules,
 rather than their diffusion.
-This has the form of
+This has the resulting form of $k(T)$;
 
 $$ k(T) = \frac{a}{\lambda} \sqrt{\frac{3 kT}{m}} f $$
 
@@ -74,7 +74,7 @@ having much faster growth which extends well below the melting point.
 
 ![Plot of the Wilson--Frekel model of crystal growth (solid line)
 and the Turnbull theory (dashed
-line). [@Jackson1984]](../placeholder_figure.png){#fig:classical_growth}
+line). [@Jackson1984]](../placeholder_figure.png){#fig:classical_growth width=80%}
 
 The difference between these two theories is shown in @fig:classical_growth.
 In this figure the points marked are for a Lennard--Jones molecule,
