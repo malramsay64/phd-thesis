@@ -1,5 +1,14 @@
 # Conclusion
 
+- Find the most stable crystal structure of the trimer molecule
+    -> p2
+- Find the melting point of the trimer molecule
+    -> Estimated
+- Observe crystal growth
+    -> Could't...why
+- Why is crystallisation slow
+    -> Why is melting slow
+
 The melting of the Trimer molecule is incredibly slow,
 even when accounting for the slow dynamics.
 This slow dynamics can be attributed to the stiff liquid and crystal forms

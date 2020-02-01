@@ -279,3 +279,10 @@ An alternate approach, [@Tymczak1990]
 is to monitor an order parameter along the axis of crystal growth.
 The growth rate can then be measured as
 the progression of that order parameter.
+
+## Crystal Melting Goals
+
+- Find the most stable crystal structure of the trimer molecule
+- Find the melting point of the trimer molecule
+- Observe crystal growth
+- Why is crystallisation slow
