@@ -1,7 +1,7 @@
 # Introduction
 
 The crystallisation of a solid from the liquid melt
-is a process underpinning the production of a wide range of materials.
+is a process underpinning the production of a wide range of materials. [@Shimura2012;@Shimura2017;@Harkonen2005]
 As discussed in @sec:intro_crystal_growth
 crystallisation can be broken into two separate processes,
 nucleation and crystal growth.
@@ -84,9 +84,9 @@ The distinction between the two groups of molecules
 is those that a good glass formers have Wilson--Frenkel behaviour,
 while metals have the behaviour of the Turnbull model.
 
-### Non-Classical Methods
+### Semi-Empirical Density Functional Model of Growth
 
-The field of modelling crystal growth using non-classical methods
+The field of modelling crystal growth using free energy functionals
 has many theories of growth and nomenclature which has changed over time. [@Granasy2019]
 These theories describe the liquid and crystal
 through a structural order parameter $\phi(\vect{r}, t)$. [@Collins1985]
@@ -112,16 +112,15 @@ in the Cahn and Hilliard square gradient form [@Cahn1958]
 $$ \frac{\Omega}{\rho_s k_\text{B} T_m} =
 \int \d{\vect{r}} \left[ \omega(M) + |\frac{K^2}{2}|\nabla M|^2 \right] $$
 
-where;
-
-- $\rho_s$ is the density of the solid,
-- $k_\text{B}$ is the Boltzman constant,
-- $T_m$ is the melting temperature,
-- $K$ is the correlation length of the order parameter
-  describing the distance over which the order parameter
-  can transition from liquid to solid, and
-- $\omega(M)$ is a function which describes the
-  distribution of the order parameter $M$.
+where
+$\rho_s$ is the density of the solid,
+$k_\text{B}$ is the Boltzman constant,
+$T_m$ is the melting temperature,
+$K$ is the correlation length of the order parameter
+describing the distance over which the order parameter
+can transition from liquid to solid, and
+$\omega(M)$ is a function which describes the
+distribution of the order parameter $M$.
 The free energy of the system $\Omega$
 is described as a functional of $\omega(M)$.
 
@@ -142,11 +141,10 @@ $$ \omega(M) = \min\left[
 \frac{\lambda_\text{liquid}}{2}M^2, \frac{\lambda_\text{crystal}}{2}(M - 1)^2 + \Delta
 \right] $$ {#eq:phase_field}
 
-and introducing the parameters
-
-- $\lambda_\text{liquid}$ describing the curvature of the liquid parabola,
-- $\lambda_\text{crystal}$ describing the curvature of the crystal parabola, and
-- $\Delta$ being the difference in free energy between the liquid and crystal.
+and introducing the parameters;
+$\lambda_\text{liquid}$ describing the curvature of the liquid parabola,
+$\lambda_\text{crystal}$ describing the curvature of the crystal parabola, and
+$\Delta$ being the difference in free energy between the liquid and crystal.
 
 This choice of $\omega(M)$ is shown in @fig:fluctuation_parabola_example.
 
@@ -164,9 +162,7 @@ given by
 $$ \frac{\partial M}{\partial t} =
 -\Gamma \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
 
-where
-
-- $\Gamma$ is a transport coefficient.
+where $\Gamma$ is a transport coefficient.
 
 We can find an expression for the growth rate $v(T)$
 as a function of temperature
@@ -217,14 +213,18 @@ with the rotational relaxation getting slower much faster than the dynamics.
 
 ## Important Temperatures
 
-The melting point $T_m$ defines a temperature
-at which both the liquid and the crystal phases
-exist at equilibrium
----they are equally stable.
-Above the melting point,
-the liquid is the equilibrium phase, however,
-it is also possible for the crystal to exist
-above the melting point as a metastable phase.
+In characterising crystal growth
+the most important temperature is the melting point $T_m$
+at which both the liquid and crystals phases
+exist at equilibrium.
+That is, the rate of particles attaching to the interface
+is equal to the number of particles detaching from the interface.
+The melting point can be found through simulation
+as the temperature at which the growth rate goes from negative to positive.
+
+In @sec:supercooled_liquids it was discussed that
+a liquid can exist as a metastable state below the melting point.
+The same is also true of the crystal above the melting point.
 At some temperature above the melting point,
 the crystal is no longer metastable,
 spontaneously melting to form the liquid.
@@ -234,7 +234,7 @@ When a crystal is surrounded by liquid above the melting point,
 melting will occur at the liquid--crystal interface.
 This interfacial melting is explained by
 the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not just occurring at the interface,
+It is when the melting is not only occurring at the interface,
 at many points within the crystal itself
 that the temperature is above the spinodal.
 
@@ -253,7 +253,7 @@ Crystallisation rates within simulations
 are typically measured along a single lattice direction.
 [@Tang2013;@Tymczak1990;@Burke1988;@Broughton1982a]
 This is done by creating a slab geometry,
-which is a region of perfect crystal of the desired geometry
+a region of perfect crystal of the desired geometry
 onto which the liquid can attach and grow.
 The slab geometry allows for measuring both melting and growth
 and creates a highly controlled environment for growth.
@@ -267,22 +267,28 @@ which allows for the growth rate $v$ to be measured as
 $$ v = \frac{d_l}{2N(V_c - V_l)} \frac{\d V}{\d t} $$
 
 where;
-
-- $V$ is the volume of the simulation cell,
-- $d_l$ is the average spacing between crystal layers along the direction of crystal
-  growth,
-- $N$ is the average number of atoms in a liquid layer at the interface,
-- $V_c$ is the specific volume of the crystal, and
-- $V_l$ is the specific volume of the liquid.
-
-An alternate approach, [@Tymczak1990]
-is to monitor an order parameter along the axis of crystal growth.
-The growth rate can then be measured as
-the progression of that order parameter.
+$V$ is the volume of the simulation cell,
+$d_l$ is the average spacing between crystal layers along the direction of crystal
+growth,
+$N$ is the average number of atoms in a liquid layer at the interface,
+$V_c$ is the specific volume of the crystal, and
+$V_l$ is the specific volume of the liquid.
+An alternate approach for measuring the growth rate,
+is to monitor an order parameter along the axis of crystal growth. [@Tymczak1990]
+The position of the interface is then defined by the order parameter,
+this position can either be based on a specific value of the order parameter [@Burke1988]
+by fitting a curve to the order parameter as a function of distance. [@Yagasaki2016]
+The growth rate can be calculated from the propagation velocity
+of the interface.
 
 ## Crystal Melting Goals
 
-- Find the most stable crystal structure of the trimer molecule
-- Find the melting point of the trimer molecule
-- Observe crystal growth
-- Why is crystallisation slow
+This chapter aims to study the crystal melting and growth of the Trimer molecule,
+to aid in understanding why the process of crystallisation
+is so slow for fragile liquids.
+This involves finding the thermodynamically favourable crystal structure,
+along with the melting point
+which are both required for modelling the growth rates.
+An understanding of the slow growth comes from
+using a model which to accurately describe
+the temperature dependence of the growth rate.
