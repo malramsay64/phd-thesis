@@ -85,8 +85,8 @@ This relation describes particles which move
 small distances between their liquid and crystal configurations,
 meaning there are no interactions with neighbouring particles.
 Through not having a dependence on a process with an activation energy
-the Turnbull theory describes growth far faster than the Wilson--Frenkel theory,
-particularly below the melting point.
+the Turnbull theory describes growth below the melting point
+faster than that of the Wilson--Frenkel theory,
 
 ![Plot of the Wilson--Frekel model of crystal growth (solid line)
 and the Turnbull theory (dashed
@@ -108,7 +108,7 @@ Materials described by the Turnbull growth rate
 are metals, [@Rodway1991]
 inert gasses, [@Jackson2002;@Broughton1982a]
 and a small number of molecular materials [@Jackson2002]
-all of which have low entropies of fusion, behaving like spheres.
+which have low entropies of fusion, behaving like spheres.
 
 ### Semi-Empirical Density Functional Model of Growth
 
@@ -181,13 +181,12 @@ $\lambda_\text{liquid} = \lambda_\text{crystal} = 1$ and $\Delta = 0$
 ](../Projects/Crystal_Melting/figures/fluctuation_parabola_example.svg){width=80% #fig:fluctuation_parabola_example}
 
 The time evolution of the order parameter $M$
-found by taking the time derivative of @eq:square_gradient,
-can be used to study the melting and crystallisation
-which is given by
 
 $$ \frac{\partial M}{\partial t} =
 -D \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
 
+found by taking the time derivative of @eq:square_gradient,
+can be used to study the melting and crystallisation,
 where $D$ is a diffusion constant.
 Along with the differential equation describing growth
 we need to set up appropriate boundary conditions.
