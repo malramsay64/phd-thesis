@@ -220,7 +220,21 @@ Abstract:
 
 ### Introduction to Crystal Melting
 
+- Crystal Growth in glass formers
+    - Examples of OTP and others
+- Potential reasons for slow growth rates
+- Theories of Crystal Growth/Melting
+    - Turnbull => no diffusion limiting/thermal activation
+    - Wilson--Frenkel => Diffusion limited, activated
+    - Density functional methods
+
 ### Crystal Melting Results
+
+- No melting
+- Correct crystal structure
+    - Clustering analysis
+    - packing analysis
+    - polymorphic stability
 
 - Machine Learning is necessary for crystal detection
     - Solid state phase transition
