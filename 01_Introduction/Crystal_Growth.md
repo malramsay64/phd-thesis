@@ -1,4 +1,4 @@
-# Crystal Growth {#sec:crystal_growth}
+# Crystal Growth {#sec:intro_crystal_growth}
 
 Much of the world we interact with is built using solid materials,
 from all the electronics within your phone,
@@ -11,6 +11,10 @@ the crystal structure which forms, [@cite]
 and the micro-structure of that crystal. [@Granasy2004]
 Manufacturing materials to these exacting specifications
 requires understanding all aspects of crystal growth.
+
+Single crystals of silicon up to 400 mm in diameter have been growth without
+dislocations. [@Shiraishi2001]
+Crystals of similar sizes are routinely produced for semiconductor uses.
 
 The transition from a disordered liquid phase to an ordered crystal phase,
 requires an initial region of order from which it can propagate,
@@ -64,6 +68,10 @@ The exponential term in the square brackets
 describes the process of attaching and detaching from the crystal surface,
 while $k(T)$ is a function
 which takes different forms depending on the growth theory.
+
+Growth is measured from a seed,
+a crystal with a know orientation
+dipped into the melt to grow a single crystal. [@Lan2004]
 
 ## Nucleation Theory
 
