@@ -242,7 +242,7 @@ to be heterogeneous dynamics.
 Another relation used to describe the dynamics in experiments
 is the Vogel--Tammann--Fulcher (VTF) relation
 
-$$ \eta = A \exp(\frac{B}{T-T_0}) $$
+$$ \eta = A \exp(\frac{B}{T-T_0}) $$ {#eq:VTF}
 
 where;
 
