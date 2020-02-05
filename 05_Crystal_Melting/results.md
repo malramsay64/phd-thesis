@@ -1,12 +1,12 @@
 # Results
 
-## Stability of Crystal Phases
-
-One of the notable results of this thesis
-is that no crystallisation of any form has been observed.
-As a result the crystal structures for the trimer molecule
-have been found using an isopointal search algorithm [@Jennings2015]
-which finds the best hard sphere packing of the shape.
+While one of the main goals of this thesis
+is to understand the slow crystal growth associated with glass formation,
+one of the notable results is the complete lack of any crystal growth.
+Because of the lack of crystal growth,
+crystal structures for the trimer molecule
+have been found using an isopointal search algorithm, [@Jennings2015]
+finding the best hard packing of the shape.
 It is assumed that the optimal hard packing
 closely matches the crystal structure of the Lennard Jones potential.
 Comparing the packing fraction of each structure
@@ -26,31 +26,44 @@ Table: The potential energy for each molecule for the crystal structures with th
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
 a pressure of 1.00. {#tbl:potential_energy}
 
-Having a range of possible crystal structures is nothing unusual,
-spheres in 3D will packing in either
-the hexagonal close packed, or
-the body centered cubic
-structures which have exactly the same packing fraction.
-Molecular crystals are often even more complex,
-with competing structures being a possible reason for slow crystal growth.
+## Investigating Alternate Crystal Structures
+
+There are many reasons for not observing crystal growth,
+one of which can be that we are looking at the wrong crystal structures.
+In this section we investigate the possibility
+that we are looking for the growth of the wrong crystal,
+using a range of tools to look for structures
+which are more stable than the ones studied.
+In ruling out other structures
+we can focus on the melting behaviour
+knowing this is the information we can obtain.
 
 ### Clustering of liquid structures
 
-Since we haven't observed any crystallisation at all,
-are we even looking for the correct structures?
-It is entirely possible there is the formation of
-a complex crystalline configuration
-which hasn't been observed within the simulations.
-@Sec:unsupervised-classification used an unsupervised classification method
-to identify local structures which were known to be present in the liquid phase.
-The same approach can be used to identify clusters of local structure
-which could be the start of crystalline ordering.
-@Fig:cluster_analysis_liquid performs the same clustering
-as in @sec:unsupervised-classification.
-This time, instead of observing distinct regions,
-the particles are distributed evenly throughout configuration space,
-with no significant clustering.
-This makes Monte-Carlo methods the best guess at the crystal structures.
+In looking for crystal growth
+we are searching for what we consider to be appropriate structures,
+however, it is plausible our collection of structures is incomplete.
+There are possibly additional crystal structures
+not identified in the isopointal search.
+In @sec:clustering, we use clustering to identify
+the crystal structures constructed from the isopointal search.
+It is possible to use this same clustering technique
+to find regions of local structure which could be a new crystal structure.
+@Fig:cluster_analysis_liquid performs clustering of configurations
+using the HDBSCAN algorithm as described in @sec:clustering.
+The configurations used for clustering are from the end of a dynamics simulation,
+being the longest timescale which can be studied.
+The liquid structure was also chosen to allow any stable structure to form,
+not just the pre-determined structures.
+Instead of the distinct crystal structures observed in @fig:cluster_sorted_hdbscan,
+the configurations are distributed evenly throughout the configuration space,
+with no regions of high density clustering.
+The clustering analysis of the HDBSCAN algorithm
+matches the visualisation from the UMAP algorithm
+finding no configurations belonging to local clusters.
+With no additional configurations forming,
+the structures from the isopointal search
+remain the best guess.
 
 ![Clustering analysis of a sequence of liquid configurations
 at a temperature $T=0.35$ and pressure $P=1.00$,
@@ -63,32 +76,34 @@ from a dynamics trajectory.
 
 ### Packing Analysis
 
-When initially finding the crystal structures likely to grow,
-the packing of hard molecules was
-as a model to predict the most stable structures.
-This has been shown to generate crystal structures
-matching those of atomic systems [@Filion2009;@Hudson2011;@OToole2011;@Kummerfeld2008],
-however it has not been verified for molecular structures.
-It is possible that the lack of growth results from seeding the wrong crystal.
-As an alternative method of finding optimal crystal structures,
-I adapted the isopointal search algorithm for hard molecules [@Jennings2015]
-to use a Shifted Lennard Jones potential
-matching that used in the molecular dynamics simulations. [@fig:packing]
-The Lennard-Jones potential provides a slightly different picture of packing.
-Most noticeably,
-the spacing of the molecules in the Lennard-Jones (LJ) packing
-is greater than for the hard discs.
-This is an expected result
-since the minimum of the Lennard-Jones potential
-lies at a distance of $2^{1/6} \approx 1.12$.
-The main difference between structures is the relative positioning
-of the alternating layers.
-In the LJ case the molecules are positioned directly face on
-an rearrangement which maximises the positive interactions from
-the two smaller molecules.
-In comparison, the Hard potential has the molecules
-offset so the small particles rest
-in the concavity between the small and large particle.
+In finding the crystal structures using an isopointal search algorithm [@Hudson2011]
+we use the best packing of hard molecules
+as the predictor of the most stable crystal structures.
+The approximation of a Lennard--Jones potential as a hard shape
+been shown to generate crystal structures
+matching those of atomic systems, [@Filion2009;@Hudson2011;@OToole2011;@Kummerfeld2008]
+however it is yet to be verified for molecular structures.
+It is possible that the molecular shapes mean that
+a short minimisation simulation is unable to find
+the local minima once the Lennard--Jones potential is applied.
+The isopointal search algorithm for hard molecules [@Jennings2015]
+was rewritten and adapted [@packing_code]
+to optimise molecules interacting via the Shifted Lennard--Jones potential,
+matching the potential used for the molecular dynamics simulations.
+The structures generated using the hard potential and the Shifted Lennard--Jones
+potential are compared in @fig:packing.
+The main difference between the Lennard--Jones (LJ) and hard disc packing
+is the larger spacing of the LJ packing,
+which corresponds to the minimum of the potential
+which lies a distance of $2^{1/6}\sigma \approx 1.12\sigma$.
+Along with the larger spacing for the LJ packing,
+there is a slight difference in the stacking of layers,
+most noticeable in the p2 crystal
+where the hard discs [@fig:packing_p2_hard] are offset
+such that the small molecules sit in the concavity between
+the small and large particle
+while the LJ molecules [@fig:packing_p2_lj] are aligned
+as a mirror image.
 
 :::{class=subfigures id=fig:packing}
 
@@ -111,21 +126,25 @@ while the molecules in green are the periodic copies.
 
 :::
 
-Have I been using the wrong crystal structures?
-Probably not.
-The transition from the structure in @fig:packing_p2_hard
-to that in @fig:packing_p2_lj can be done by sliding each of the layers,
-there is only a small motion for every particle.
-Additionally, these two pictures show extreme values,
-with the LJ-Discs having no pressure applied,
-and the Hard sphere is similar to having a very large pressure applied.
-So the lowest energy crystal structure is likely to be
-somewhere in the middle.
-Additionally, from @fig:solid_state_transition_structure
-we know that a larger solid state transition
-will spontaneously take place,
-making it unreasonable to assume
-this is not the equilibrium crystal form.
+While the Hard and Shifted Lennard--Jones potentials
+give different structures
+the transformation between them requires little motion.
+The transition from the Hard potential structure [@fig:packing_p2_hard]
+to the LJ structure [@fig:packing_p2_lj]
+requires a sliding of the layers
+with a small translational motion from each particle,
+a motion likely to occur in a minimisation.
+Furthermore, the LJ structure has no pressure applied
+putting it at the extreme of possible structures.
+The Hard packing provides a suitable foundation
+for the analysis of crystal structures.
+
+From the analysis of the trimer molecule
+there are no structures we are missing in this analysis.
+The timescales required for crystallisation
+are beyond the current limits of our simulations.
+Rather than focusing on crystal growth,
+we instead turn to developing an understanding of crystal melting.
 
 ## Polymorphic Stability {#sec:polymorphic_stability}
 
@@ -393,6 +412,40 @@ At the lower bound this is the melting point $T_m$,
 the temperature at which the crystal neither melts or grows.
 The upper bound of melting is the spinodal point.
 
+In characterising crystal growth
+the most important temperature is the melting point $T_m$
+at which both the liquid and crystals phases
+exist at equilibrium.
+That is, the rate of particles attaching to the interface
+is equal to the number of particles detaching from the interface.
+The melting point can be found through simulation
+as the temperature at which the growth rate goes from negative to positive.
+
+In @sec:supercooled_liquids it was discussed that
+a liquid can exist as a metastable state below the melting point.
+The same is also true of the crystal above the melting point.
+At some temperature above the melting point,
+the crystal is no longer metastable,
+spontaneously melting to form the liquid.
+The temperature at which this spontaneous melting occurs
+is known as the spinodal temperature.
+When a crystal is surrounded by liquid above the melting point,
+melting will occur at the liquid--crystal interface.
+This interfacial melting is explained by
+the Wilson-Frenkel theory of crystal growth.
+It is when the melting is not only occurring at the interface,
+at many points within the crystal itself
+that the temperature is above the spinodal.
+
+Along with the crystal existing as
+a metastable state above the melting point.
+The liquid exists as a metastable state
+below the melting point.
+Like the crystal above the melting point,
+at some temperature below the melting point,
+the liquid will spontaneously crystallise,
+another spinodal temperature.
+
 ### Spinodal temperature
 
 The melting we are modelling is that which occurs
@@ -548,6 +601,38 @@ in the relaxation time.
 As the temperature decreases the distance
 tends to get smaller,
 matching the expected behaviour.
+
+## Anomalously Slow Growth Rates
+
+In the study of many different crystals,
+the growth rates between the different crystal faces
+can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
+This huge difference between growth rates
+indicates that the growth of the crystal
+is significantly more
+
+In a study of two similar alloys @Tang2013
+attributed the difference in crystal growth rates to
+the ordering of atoms in the interface,
+with the faster glass former displaying ordering
+much further from the boundary of the crystal.
+This observation is supported by the work of @Reinhart2018
+where in studying Janis particles,
+the stricter the geometric constraints of the crystal phase,
+the slower the growth rate.
+While in work on Lennard Jones Particles,
+@Burke1988 attribute the slow growth rate of the (111) crystal face
+to the degeneracy of fcc and hcp stacking,
+with many stacking faults arising during the freezing process as a result.
+
+While the Wilson-Frenkel theory has a characteristic timescale of diffusion
+it may be that for more complicated crystal structures,
+such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
+the diffusion may no longer be the relevant characteristic timescale.
+This is important for molecular crystals,
+where one of the major results has been the decoupling
+of the rotational relaxation time and the diffusion constant,
+with the rotational relaxation getting slower much faster than the dynamics.
 
 ### Comparison to Lewis--Wahnström
 
