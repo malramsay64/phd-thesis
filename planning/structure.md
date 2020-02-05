@@ -234,22 +234,42 @@ Abstract:
 - Correct crystal structure
     - Clustering analysis
     - packing analysis
-    - polymorphic stability
+- Instead refocus on crystal growth
 
-- Machine Learning is necessary for crystal detection
-    - Solid state phase transition
-    - comparison with existing methods
-- Melting rates
-    - Proportional to characteristic dynamic quantity
+- What happens when they melt
+- polymorphic stability
+    - Unusual behaviour of p2gg => solid state phase transition
+    - pg => asymmetric growth
+        - Observed in other materials
+        - Density difference
+
 - An estimation of the melting point
-- Defect creation and propagation
-    - What different types of defects look like
-    - How the crystal handles defects
-- Melting rate behaviour
-    - Why is crystallisation so slow
-- Solid state behaviour
-    - How this motion compares to the melting rate
-    - Defects are important in mobility
+    - Needed for melting models
+    - Timescale
+    - Estimation => upper bound
+    - estimation of spinodal point
+
+- Melting rates
+    - Measured rates of melting
+
+    - Modelling with different methods
+        - Fit Turnbull model
+        - Fit Wilson--Frenkel model
+        - Fit SEDF model
+
+- Why is melting so slow?
+    - Comparison to other materials
+        - OTP
+        - LJ
+
+    - Defect creation and propagation
+        - What different types of defects look like
+        - How the crystal handles defects
+
+    - Solid state behaviour
+        - How this motion compares to the melting rate
+        - Defects are important in mobility
+
 - What can defects tell us about melting/growth
 - Is this a pathological property of 2D systems
 
