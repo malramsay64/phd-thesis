@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Crystal Melting
 
 The crystallisation of a solid from the liquid melt
 is a process underpinning the production of a wide range of materials. [@Shimura2012;@Shimura2017;@Harkonen2005]
@@ -10,8 +10,7 @@ the crystal growth and melting of the Trimer molecule
 to understand the slow growth rates of molecular crystals.
 To remove the influence of the nucleation
 a seed crystal is used,
-forming a known base from which the growth and melting can take place.
-[@Russo2012;@Shimura2017]
+forming a known base from which the growth and melting can take place. [@Russo2012;@Shimura2017]
 
 ## Theories of Crystal Growth
 
@@ -217,73 +216,15 @@ The important part of this semi-empirical density functional model
 is modelling the rate of transition between the liquid and crystal phase
 and allowing it to change as a function of temperature.
 
-## Anomalously Slow Growth Rates
+## Explaining Slow Growth
 
-In the study of many different crystals,
-the growth rates between the different crystal faces
-can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
-This huge difference between growth rates
-indicates that the growth of the crystal
-is significantly more
-
-In a study of two similar alloys @Tang2013
-attributed the difference in crystal growth rates to
-the ordering of atoms in the interface,
-with the faster glass former displaying ordering
-much further from the boundary of the crystal.
-This observation is supported by the work of @Reinhart2018
-where in studying Janis particles,
-the stricter the geometric constraints of the crystal phase,
-the slower the growth rate.
-While in work on Lennard Jones Particles,
-@Burke1988 attribute the slow growth rate of the (111) crystal face
-to the degeneracy of fcc and hcp stacking,
-with many stacking faults arising during the freezing process as a result.
-
-While the Wilson-Frenkel theory has a characteristic timescale of diffusion
-it may be that for more complicated crystal structures,
-such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
-the diffusion may no longer be the relevant characteristic timescale.
-This is important for molecular crystals,
-where one of the major results has been the decoupling
-of the rotational relaxation time and the diffusion constant,
-with the rotational relaxation getting slower much faster than the dynamics.
-
-## Important Temperatures
-
-In characterising crystal growth
-the most important temperature is the melting point $T_m$
-at which both the liquid and crystals phases
-exist at equilibrium.
-That is, the rate of particles attaching to the interface
-is equal to the number of particles detaching from the interface.
-The melting point can be found through simulation
-as the temperature at which the growth rate goes from negative to positive.
-
-In @sec:supercooled_liquids it was discussed that
-a liquid can exist as a metastable state below the melting point.
-The same is also true of the crystal above the melting point.
-At some temperature above the melting point,
-the crystal is no longer metastable,
-spontaneously melting to form the liquid.
-The temperature at which this spontaneous melting occurs
-is known as the spinodal temperature.
-When a crystal is surrounded by liquid above the melting point,
-melting will occur at the liquid--crystal interface.
-This interfacial melting is explained by
-the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not only occurring at the interface,
-at many points within the crystal itself
-that the temperature is above the spinodal.
-
-Along with the crystal existing as
-a metastable state above the melting point.
-The liquid exists as a metastable state
-below the melting point.
-Like the crystal above the melting point,
-at some temperature below the melting point,
-the liquid will spontaneously crystallise,
-another spinodal temperature.
+A material having a range of competing polymorphs is not unusual,
+with 3D spheres adopting either
+a hexagonal close packed, or
+body centered cubic structure,
+both of which have the same packing fraction.
+Molecular crystals are often even more complex,
+with competing structures being a possible reason for slow crystal growth.
 
 ## Calculation of Melting Rates
 
