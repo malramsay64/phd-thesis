@@ -148,51 +148,111 @@ we instead turn to developing an understanding of crystal melting.
 
 ## Polymorphic Stability {#sec:polymorphic_stability}
 
+We have three crystal structures which at a best guess estimate
+the different structures available to the trimer molecule.
+So we want to understand how they melt.
+This section investigates the melting behaviour
+of all the different crystal structures
+to understand their different behaviour.
+The main goal of this section is to find
+the most stable of the p2, p2gg, and pg crystals
+to use for the calculation of the melting rate.
+
 The potential energy calculations [@tbl:potential_energy]
 propose the p2 structure as the most stable,
-although it is very close in energy to the p2gg structure.
-A significantly improved understanding of the crystals
-can be found by watching them melt.
-@Fig:melting_comparison monitors the size of each crystal as they melt.
-As expected based on the thermodynamic results,
-the pg crystal melts the fastest,
-and has the highest melting point of the crystals,
-denoting it is the least stable.
+with a slightly lower enthalpy than the p2gg structure.
+The pg structure is significantly higher in enthalpy
+than either the p2 or p2gg structures.
+To see the effect of these enthalpy differences on the melting rates,
+@fig:melting_comparison monitors the size of the crystal region
+starting from a rectangle of each crystal structure.
+The crystal which melts the fastest is from the pg structure,
+an expected result given the enthalpy is higher
+than the p2 and p2gg crystals.
+The melting rates of the p2 and p2gg crystals follow this trend,
+with the p2gg crystal melting faster having higher enthalpy.
 
 ![Comparison of the melting of each of the different crystal types. These values are
 compared at a pressure of 13.50 and a temperature of 1.40. The pg crystals melts
-significantly faster than either the p2 or p2gg crystals.
+faster than either the p2 or p2gg crystals.
 ](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg){#fig:melting_comparison width=80%}
+
+The melting of the entire crystalline region
+is only one aspect of the melting rate.
+Using the machine learning algorithm developed in @sec:04_Machine_Learning,
+it is possible to monitor the fraction of each crystal polymorph within a simulation.
+The monitoring of each polymorph within a simulation of the p2gg crystal
+is shown in @fig:solid_state_transition,
+which shows the majority of the p2gg polymorph
+converting to the pg polymorph
+in a solid state phase transition.
+The rate of this solid state transition
+is orders of magnitude faster than melting
+with the transition to the p2 polymorph taking place completely
+before melting is observed.
+The solid state phase transition
+takes place on a timescale similar to that of
+the rotational relaxation time.
+The Trimer at a temperature $T=1.40$ and pressure $P=13.50$,
+has a rotational relaxation time $\tau_R = \num{2.8e5}$,
+a timescale over which all the crystal
+has undergone the solid state phase transition.
+For the phase transition to take place so quickly,
+it must take place through a series of highly co-ordinated rearrangements.
+
+Both the p2 and the p2gg structures
+are comprised of the same dimer like units. [@fig:...]
+These units are all in the same direction in the p2 structure
+while the p2gg structure has layers of dimers offset by \SI{90}{\degrees}.
+The rearrangements taking place within the solid state phase transition
+are the rotations of dimers to match the orientation of the rows above and below.
+These reorientations are shown in @fig:solid_state_transition_structure,
+where a defect is propagating along the horizontal layers
+changing the orientation of the layers.
+@Fig:transition_process shows three layers undergoing the transition,
+with the defect forming on the right hand side
+and transforming a single layer of the p2gg crystal to p2
+as it moves to the left.
+
+<!-- TODO from here -->
+
+The processes of defect propagation
+has been studied in amorphous materials [@Tondl2014]
+and in other phase transitions, [@Allain1986;@Burakovsky2000]
+
+What makes this transition interesting is the p2gg structure
+can lower it's potential energy far faster
+by undergoing a solid state phase transition
+than by melting.
+The highly directional nature of the transition
+in that it can only take place along a single layer of the crystal
+and it doesn't back-track explain both
+the incredible rate at which the transition takes place
+and its step-like nature.
+A single pair of molecules switching from
+the four layer p2gg structure to the two layer p2 structure,
+must lower the barrier for
+neighbouring pairs of molecules to undergo this same transformation.
+Once the initial fast transformation has taken place
+there are a smaller number of p2gg molecules
+which are able to initialise the phase transition,
+resulting in periods of waiting for a 'nucleation' event,
+followed by the rapid propagation across the crystal.
+Also of note is that the starting point of the propagation
+is completely random.
+In the final configuration (@fig:transition_end),
+there are still three rows of the p2gg crystal,
+which are grain boundaries between
+layers of the p2 crystal with different orientations.
+The presence of this phase transition is
+additional evidence that we have identified
+the crystals which will grow in simulation.
 
 ![Monitoring the proportion of each crystal within the p2gg crystal at a temperature of
 1.40 and a pressure of 13.50 which is slightly above the melting point of 1.36. Tracking all
 the different crystals within the configuration shows a transition of the p2gg crystal
 structure to the p2 crystal structure.
 ](../Projects/Crystal_Melting/figures/solid_state_transition-P13.50-T1.40-p2gg.svg){#fig:solid_state_transition width=80%}
-
-Looking more closely at the melting of each simulation.
-The most notable behaviour of the crystal structures,
-is the solid state phase transition
-that takes place within the p2gg crystal. [@fig:solid_state_transition]
-The majority of the p2gg crystal phase
-is converted to the p2 crystal
-at a rate significantly faster than melting.
-The phase transition takes place
-on a timescale similar to that of the rotational relaxation time.
-The Trimer at a temperature $T=1.37$ and pressure $P=13.50$,
-has a rotational relaxation time $\tau_R = \num{5.4e6}$,
-a timescale over which half the crystal
-has undergone the phase transition.
-This only possible explanation
-for this transition to occur so quickly
-is through highly co-ordinated rearrangements.
-A defect propagating through a solid material
-has been studied in amorphous materials [@Tondl2014]
-and in other phase transitions. [@Allain1986;@Burakovsky2000]
-What makes this transition interesting is the p2gg structure
-can lower it's potential energy far faster
-by undergoing a solid state phase transition
-than by melting.
 
 A characteristic feature of the transition,
 is that after the initial transformation,
@@ -219,37 +279,6 @@ the p2 crystal structure. In the final configuration (c) the only remaining p2gg
 are grain boundaries between the layers of p2 crystals.
 
 </div>
-
-The phase change process can be understood by
-observing the configurations in which it takes place. [@fig:solid_state_transition_structure]
-This shows the solid state transition
-propagating along the horizontal layers of the crystal.
-@Fig:transition_process shows three layers undergoing the transition,
-with the defect forming on the right hand side
-and transforming the crystal as it moves to the left.
-The highly directional nature of the transition
-in that it can only take place along a single layer of the crystal
-and it doesn't back-track explain both
-the incredible rate at which the transition takes place
-and its step-like nature.
-A single pair of molecules switching from
-the four layer p2gg structure to the two layer p2 structure,
-must lower the barrier for
-neighbouring pairs of molecules to undergo this same transformation.
-Once the initial fast transformation has taken place
-there are a smaller number of p2gg molecules
-which are able to initialise the phase transition,
-resulting in periods of waiting for a 'nucleation' event,
-followed by the rapid propagation across the crystal.
-Also of note is that the starting point of the propagation
-is completely random.
-In the final configuration (@fig:transition_end),
-there are still three rows of the p2gg crystal,
-which are grain boundaries between
-layers of the p2 crystal with different orientations.
-The presence of this phase transition is
-additional evidence that we have identified
-the crystals which will grow in simulation.
 
 While the p2 and the p2gg polymorphs
 have comparable melting rates,
