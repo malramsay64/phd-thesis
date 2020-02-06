@@ -203,7 +203,7 @@ it must take place through a series of highly co-ordinated rearrangements.
 Both the p2 and the p2gg structures
 are comprised of the same dimer like units. [@fig:...]
 These units are all in the same direction in the p2 structure
-while the p2gg structure has layers of dimers offset by \SI{90}{\degrees}.
+while the p2gg structure has layers of dimers offset by \SI{90}{\degree}.
 The rearrangements taking place within the solid state phase transition
 are the rotations of dimers to match the orientation of the rows above and below.
 These reorientations are shown in @fig:solid_state_transition_structure,
