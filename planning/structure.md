@@ -216,7 +216,7 @@ Abstract:
 - Supervised algorithms were highly suited to monitoring regions of crystal to measure
   melting and growth
 
-## Crystal Melting
+## Crystal Melting Rates
 
 ### Introduction to Crystal Melting
 
@@ -229,19 +229,6 @@ Abstract:
     - Density functional methods
 
 ### Crystal Melting Results
-
-- No melting
-- Correct crystal structure
-    - Clustering analysis
-    - packing analysis
-- Instead refocus on crystal growth
-
-- What happens when they melt
-- polymorphic stability
-    - Unusual behaviour of p2gg => solid state phase transition
-    - pg => asymmetric growth
-        - Observed in other materials
-        - Density difference
 
 - An estimation of the melting point
     - Needed for melting models
@@ -262,13 +249,32 @@ Abstract:
         - OTP
         - LJ
 
-    - Defect creation and propagation
-        - What different types of defects look like
-        - How the crystal handles defects
+## A Qualitative Understanding of Melting
 
-    - Solid state behaviour
-        - How this motion compares to the melting rate
-        - Defects are important in mobility
+### Introduction to Melting Behaviour
+
+### Results
+
+- No melting
+- Correct crystal structure
+    - Clustering analysis
+    - packing analysis
+- Instead refocus on crystal growth
+
+- What happens when they melt
+- polymorphic stability
+    - Unusual behaviour of p2gg => solid state phase transition
+    - pg => asymmetric growth
+        - Observed in other materials
+        - Density difference
+
+- Defect creation and propagation
+    - What different types of defects look like
+    - How the crystal handles defects
+
+- Solid state behaviour
+    - How this motion compares to the melting rate
+    - Defects are important in mobility
 
 - What can defects tell us about melting/growth
 - Is this a pathological property of 2D systems
