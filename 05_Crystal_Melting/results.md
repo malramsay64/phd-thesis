@@ -200,6 +200,8 @@ has undergone the solid state phase transition.
 For the phase transition to take place so quickly,
 it must take place through a series of highly co-ordinated rearrangements.
 
+### Investigating the Solid State phase transition of the p2gg polymorph
+
 Both the p2 and the p2gg structures
 are comprised of the same dimer like units. [@fig:...]
 These units are all in the same direction in the p2 structure
@@ -207,23 +209,37 @@ while the p2gg structure has layers of dimers offset by \SI{90}{\degree}.
 The rearrangements taking place within the solid state phase transition
 are the rotations of dimers to match the orientation of the rows above and below.
 These reorientations are shown in @fig:solid_state_transition_structure,
-where a defect is propagating along the horizontal layers
-changing the orientation of the layers.
-@Fig:transition_process shows three layers undergoing the transition,
-with the defect forming on the right hand side
-and transforming a single layer of the p2gg crystal to p2
-as it moves to the left.
+where a defect propagates along the horizontal layers
+changing their orientation.
+The process of defect propagation
+is similar to that studied in amorphous materials [@Tondl2014]
+and in other phase transitions. [@Allain1986;@Burakovsky2000]
+The transition displayed here
+is interesting in that it is limited to 1D,
+only taking place along the planes of the crystal lattice.
 
-<!-- TODO from here -->
+::: {#fig:p2gg_phase_transition subfigures}
 
-The processes of defect propagation
-has been studied in amorphous materials [@Tondl2014]
-and in other phase transitions, [@Allain1986;@Burakovsky2000]
+![test](../placeholder_figure.png)
 
-What makes this transition interesting is the p2gg structure
-can lower it's potential energy far faster
-by undergoing a solid state phase transition
-than by melting.
+There are subfigures
+
+:::
+
+The transition of the p2gg crystal to the p2 crystal
+takes place at a fast rate,
+however the reverse reaction is not observed.
+This highly directional reaction indicates
+a large difference in the free energy $\Delta G$
+between the p2 and p2gg polymorphs.
+With the potential energy difference between the polymorphs
+being relatively small [@tbl:potential_energy],
+the only other contributor must be the entropy.
+This highlights a limitation of using the packing approach
+for the generation of crystal structures,
+by only considering the static configurations
+we are only considering the enthalpy component of the free energy.
+
 The highly directional nature of the transition
 in that it can only take place along a single layer of the crystal
 and it doesn't back-track explain both
@@ -279,6 +295,8 @@ the p2 crystal structure. In the final configuration (c) the only remaining p2gg
 are grain boundaries between the layers of p2 crystals.
 
 </div>
+
+### Investigating the Fast Growth of the pg structure
 
 While the p2 and the p2gg polymorphs
 have comparable melting rates,
