@@ -12,7 +12,7 @@ To remove the influence of the nucleation
 a seed crystal is used,
 forming a known base from which the growth and melting can take place. [@Russo2012;@Shimura2017]
 
-## Theories of Crystal Growth
+## Theories of Crystal Growth {#sec:crystal_growth_theories}
 
 In studying crystal growth there are a range of processes
 which can limit the growth rate

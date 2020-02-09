@@ -770,7 +770,7 @@ for both rotational and translational motion,
 we still observe decoupling of these motions.
 This indicates there is still more to understand.
 
-## Coupling of translational and rotational motion
+## Coupling of translational and rotational motion {#sec:trans_rot_coupling}
 
 Two of the main assumptions made in the formulation of
 the Stokes--Einstein--Debye relations are;
