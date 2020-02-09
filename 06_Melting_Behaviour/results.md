@@ -386,3 +386,68 @@ The orientational order observed
 at the start of the simulation
 persists and possibly even extends throughout the simulation,
 still remaining after a time of \num{2e6} (@fig:pg_crystal_top_end).
+
+## Anomalously Slow Growth Rates
+
+In the study of many different crystals,
+the growth rates between the different crystal faces
+can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
+This huge difference between growth rates
+indicates that the growth of the crystal
+is significantly more
+
+In a study of two similar alloys @Tang2013
+attributed the difference in crystal growth rates to
+the ordering of atoms in the interface,
+with the faster glass former displaying ordering
+much further from the boundary of the crystal.
+This observation is supported by the work of @Reinhart2018
+where in studying Janis particles,
+the stricter the geometric constraints of the crystal phase,
+the slower the growth rate.
+While in work on Lennard Jones Particles,
+@Burke1988 attribute the slow growth rate of the (111) crystal face
+to the degeneracy of fcc and hcp stacking,
+with many stacking faults arising during the freezing process as a result.
+
+While the Wilson-Frenkel theory has a characteristic timescale of diffusion
+it may be that for more complicated crystal structures,
+such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
+the diffusion may no longer be the relevant characteristic timescale.
+This is important for molecular crystals,
+where one of the major results has been the decoupling
+of the rotational relaxation time and the diffusion constant,
+with the rotational relaxation getting slower much faster than the dynamics.
+
+### Comparison to Lewis--Wahnström
+
+While it is difficult to make a direct comparison to the Lewis--Wahnström model
+as there is no data published on crystal melting rates, only growth rates. [@Pedersen2011]
+The growth of a Lewis--Wahnström crystal from zero to all 356 molecules in the simulation
+occurs over a period of $\approx 5\tau_S$.
+The *fastest* melting rate measured for the trimer molecule is $\approx 0.4 \tau_R$
+meaning in the same timescale less than 2 layers of the crystal will have melted.
+As an estimate, the dynamics of the melting and growth
+of the Trimer molecule are at least an order of magnitude slower
+than for the Lewis--Wahnström model.
+
+It is interesting to compare the growth of Lennard--Jones discs,
+in 2D the crystal forms almost instantaneously, [@cite]
+with simulations using binary mixtures to prevent the crystallisation.
+In 3D, DJ particles create the crystal far slower
+often introducing packing defects.
+It is intriguing that this relationship flips for a molecular system.
+
+The 2D molecules are so much slower
+as a result of the rotational constraints.
+As presented in @sec:Dynamics,
+rotational motion is required for translational motion to occur,
+and being two dimensional, the trimer can lock up.
+In 3D, the rotations are not so constrained,
+with alternate degrees of freedom available
+to allow further rotation.
+
+The melting rates measured are the slowest melting rates
+measured by molecular dynamics simulation.
+With simulation timescales orders of magnitude longer
+than comparable studies. [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]

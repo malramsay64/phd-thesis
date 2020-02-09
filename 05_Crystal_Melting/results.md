@@ -1,141 +1,75 @@
 # Results
 
-While one of the main goals of this thesis
-is to understand the slow crystal growth associated with glass formation,
-one of the notable results is the complete lack of any crystal growth.
-Because of the lack of crystal growth,
-crystal structures for the trimer molecule
-have been found using an isopointal search algorithm, [@Jennings2015]
-finding the best hard packing of the shape.
-It is assumed that the optimal hard packing
-closely matches the crystal structure of the Lennard Jones potential.
-Comparing the packing fraction of each structure
-with the resulting potential energy, [@tbl:potential_energy]
-the best packed structure (p2gg) does not have the lowest potential energy,
-with that going to the p2 structure.
-The worst packed structure (pg) has the highest potential energy
-which is in line with our expectations.
+This section models the melting rate of the p2 crystal
+as a methods of understanding which part of the process
+is responsible for the slow crystallisation and melting.
+We start by finding the quantities used in the analysis of the melting rates,
+followed by fitting the three theories described in @sec:crystal_growth_theories,
+giving insight into why the crystal growth is slow.
 
-Crystal| Packing Fraction |Potential Energy per Molecule
--------| ---------------- |-------------
-p2     | 0.938            | -0.198
-p2gg   | 0.945            | -0.190
-pg     | 0.927            | -0.084
+## Important quantities for Melting and Growth
 
-Table: The potential energy for each molecule for the crystal structures with the best
-packing fractions. The potential energy was evaluated at a temperature of 0.1 and
-a pressure of 1.00. {#tbl:potential_energy}
+In this section we are calculating the quantities
+needed to model the crystal growth.
+The melting point $T_m$,
+the spinodal temperature,
+the chemical potential $\Delta \mu$, and
+the transport coefficient.
 
-## Transport Coefficients
+### Melting Point
 
-Both the Wilson--Frenkel and the Semi-empirical density functional theories of growth
-include a term for a transport coefficient,
-which is normally the diffusion constant $D$.
+The melting point $T_m$ is the temperature
+at which the rate of crystal growth
+is the same as the rate of melting---the equilibrium state.
+Typically the melting rate is the temperature
+at which the measurement of the growth rate
+crosses from negative (melting) to positive (growth).
+No crystallisation has been observed for this molecule
+so the melting rate is the temperature
+at which the melting rate is no longer measurable.
+I consider the limit of measuring the melting
+rate being the removal of a single layer of crystal
+over the timescale of the simulation, a rate of \num{1e-6}.
+The timescale cannot be extended as a technical limit of HOOMD-blue [@hoomd_counter]
+which can only store numbers up to $2^{32}-1$, slightly more than 4 billion.
+In concert with the technical limitation
+there is a practical limitation with simulations taking multiple weeks to run.
 
-The crystallisation of the Lewis--Wahnström model [@Pedersen2011]
-uses the structural relaxation time $\tau_S$
-as the characteristic timescale.
-As discussed in @sec:coupling-of-translational-and-rotational-motion
-the Trimer model has a breakdown in the Stokes--Einstein--Debye relations
-meaning there are different temperature dependences
-for the structural, rotational, and diffusive relaxation times.
-Crystallisation is dominated by short range motions,
-particles translating to the nearest crystal site
-or rotating to match orientation with the rest of the particles.
-This means that although the short timescale relaxation times
-of the structural relaxation $\tau_S$ and rotational relaxation $\tau_R$
-are dominated by jump dynamics,
-their timescale best represents the process of crystallisation.
+@GarciaFernandez2006
 
-When comparing the timescales of the Lewis--Wahnström model (LW)
-to that of the trimer, (@tbl:relaxation_timescales)
-there is a noticeable difference
-in the ratio of the rotational and structural relaxations.
-The LW model has a rotational relaxation time about half
-of the structural relaxation time,
-while the Trimer has a structural relaxation
-about half of the rotational relaxation.
-For the Trimer, the rotational motion
-is the limiting contributor to the relaxations
-so it makes sense to use that as characteristic timescale.
+The melting points are tabulated in @Tbl:crystal_melting_point
+with the values for the tables extracted
+from @fig:melting_point_rates.
 
-Model                  | $\tau_S$ (s)   | $\tau_R$ (s)
-------                 |----------   |---------
-LW [@Pedersen2011]     | \num{2e-8}  | \num{8.7e-9}
-Trimer [@sec:Dynamics] | \num{2.3e-7} | \num{5.6e-7}
+Pressure  Melting Point $T_m$
+-------- ---------------------
+1.00            0.36
+13.50           1.35
 
-Table: Comparison of the structural and rotational relaxation times
-of the Lewis--Wahnström (LW) and Trimer molecules.
-The values for the Lewis--Wahnström model
-and are for a simulation with a density of \SI{1.135}{\gram\per\milli\liter}
-and at \SI{375}{\kelvin}, well below the melting point of 816 K.
-The value for the Trimer are at a pressure of \num{1.00}
-and temperature of \num{0.36} being the melting point.
-The real units are to model ortho-terphenyl as presented in @Pedersen2011. {#tbl:relaxation_timescales}
+Table: The melting points of the crystals
+for both pressures studied in this thesis. {#tbl:crystal_melting_point}
 
-The timescales presented in @tbl:relaxation_timescales
-are at very different temperature ranges
-since that is the data available in publications.
-However the significantly longer relaxation timescales
-even when the trimer is at the melting point
-do help explaining the lack of crystallisation,
-the timescales are beyond the limit of computational simulations.
-@Pedersen2011a documents the diffusive timescale
-at the melting point of the Lewis--Wahnström model,
-allowing for a comparison of the dynamics at the melting point.
-The Lewis--Wahnström model has a melting point diffusion constant
-of \num{3e-2} in reduced Lennard--Jones units,
-while for the Trimer this of \num{1.2e-5}, 2000 times slower.
-
-## Characteristic Temperatures
-
-When studying melting it is important to understand
-the range of temperatures over which the melting is well defined.
-At the lower bound this is the melting point $T_m$,
-the temperature at which the crystal neither melts or grows.
-The upper bound of melting is the spinodal point.
-
-In characterising crystal growth
-the most important temperature is the melting point $T_m$
-at which both the liquid and crystals phases
-exist at equilibrium.
-That is, the rate of particles attaching to the interface
-is equal to the number of particles detaching from the interface.
-The melting point can be found through simulation
-as the temperature at which the growth rate goes from negative to positive.
-
-In @sec:supercooled_liquids it was discussed that
-a liquid can exist as a metastable state below the melting point.
-The same is also true of the crystal above the melting point.
-At some temperature above the melting point,
-the crystal is no longer metastable,
-spontaneously melting to form the liquid.
-The temperature at which this spontaneous melting occurs
-is known as the spinodal temperature.
-When a crystal is surrounded by liquid above the melting point,
-melting will occur at the liquid--crystal interface.
-This interfacial melting is explained by
-the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not only occurring at the interface,
-at many points within the crystal itself
-that the temperature is above the spinodal.
-
-Along with the crystal existing as
-a metastable state above the melting point.
-The liquid exists as a metastable state
-below the melting point.
-Like the crystal above the melting point,
-at some temperature below the melting point,
-the liquid will spontaneously crystallise,
-another spinodal temperature.
+![The melting rates of the p2 crystal close to the melting point
+for pressures of 1.00 and 13.50.
+A melting rate of \num{1e-9}
+is less than a layer of crystal
+over the course of the simulation.
+](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
 
 ### Spinodal temperature
 
-The melting we are modelling is that which occurs
-at the liquid--crystal interface.
-The upper limit of the interfacial melting is
-the temperature at which the crystal phase is no longer metastable,
-where it spontaneously melts.
+All the theories described in @sec:crystal_growth_theories
+make the assumption that the melting and growth
+is occurring at a well defined interface.
+There is an alternative method of growth,
+where the crystal spontaneously melts,
+which has been known as the Homogeneous Nucleation Catastrophe. [@Lu]
+This spontaneous melting can be described as a spinodal point
+and defines the upper limit
+for which interfacial melting can occur.
+The spinodal point can also exist as a lower temperature bound [@Cavagna2009]
+with spontaneous crystallisation at many locations,
+however that is beyond the reach of our current simulations.
 
 <div id="fig:spinodal" class="subfigures">
 
@@ -196,43 +130,100 @@ From a comparison with all these studies
 it would appear that the spinodal temperature $T/T_m = 1.6$
 is highly unusual and well above any other materials.
 
-### Melting Point
+When studying melting it is important to understand
+the range of temperatures over which the melting is well defined.
+At the lower bound this is the melting point $T_m$,
+the temperature at which the crystal neither melts or grows.
+The upper bound of melting is the spinodal point.
 
-The melting point $T_m$ is the temperature
-at which the rate of crystal growth
-is the same as the rate of melting---the equilibrium state.
-Typically the melting rate is the temperature
-at which the measurement of the growth rate
-crosses from negative (melting) to positive (growth).
-No crystallisation has been observed for this molecule
-so the melting rate is the temperature
-at which the melting rate is no longer measurable.
-I consider the limit of measuring the melting
-rate being the removal of a single layer of crystal
-over the timescale of the simulation, a rate of \num{1e-6}.
-The timescale cannot be extended as a technical limit of HOOMD-blue [@hoomd_counter]
-which can only store numbers up to $2^{32}-1$, slightly more than 4 billion.
-In concert with the technical limitation
-there is a practical limitation with simulations taking multiple weeks to run.
+In characterising crystal growth
+the most important temperature is the melting point $T_m$
+at which both the liquid and crystals phases
+exist at equilibrium.
+That is, the rate of particles attaching to the interface
+is equal to the number of particles detaching from the interface.
+The melting point can be found through simulation
+as the temperature at which the growth rate goes from negative to positive.
 
-The melting points are tabulated in @Tbl:crystal_melting_point
-with the values for the tables extracted
-from @fig:melting_point_rates.
+In @sec:supercooled_liquids it was discussed that
+a liquid can exist as a metastable state below the melting point.
+The same is also true of the crystal above the melting point.
+At some temperature above the melting point,
+the crystal is no longer metastable,
+spontaneously melting to form the liquid.
+The temperature at which this spontaneous melting occurs
+is known as the spinodal temperature.
+When a crystal is surrounded by liquid above the melting point,
+melting will occur at the liquid--crystal interface.
+This interfacial melting is explained by
+the Wilson-Frenkel theory of crystal growth.
+It is when the melting is not only occurring at the interface,
+at many points within the crystal itself
+that the temperature is above the spinodal.
 
-Pressure  Melting Point $T_m$
--------- ---------------------
-1.00            0.36
-13.50           1.35
+Along with the crystal existing as
+a metastable state above the melting point.
+The liquid exists as a metastable state
+below the melting point.
+Like the crystal above the melting point,
+at some temperature below the melting point,
+the liquid will spontaneously crystallise,
+another spinodal temperature.
 
-Table: The melting points of the crystals
-for both pressures studied in this thesis. {#tbl:crystal_melting_point}
+### Chemical Potential Energy
 
-![The melting rates of the p2 crystal close to the melting point
-for pressures of 1.00 and 13.50.
-A melting rate of \num{1e-9}
-is less than a layer of crystal
-over the course of the simulation.
-](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
+@Tang2013
+
+Standard to use alternative measure.
+
+Theoretical models of the melting rates
+are able to help understand which aspects
+of the melting behaviour are important
+allowing an explanation of the slow rate of the trimer.
+These theories require the difference in enthalpy
+between the liquid and crystal
+as an estimate of the chemical potential energy.
+
+Pressure:                    1.00   13.50
+----------                 ------  ------
+Crystal Potential Energy   -1.991  -1.111
+Liquid Potential Energy    -1.811  -1.045
+Difference $\Delta h_m$    -0.180  -0.066
+
+Table: The potential energy of the liquid and the crystal at the melting point for both
+pressures. {#tbl:potential_energy_difference}
+
+### Choosing a Transport Coefficient
+
+Both the Wilson--Frenkel and the Semi-empirical density functional theories of growth
+include a term for a transport coefficient,
+which is normally the diffusion constant $D$. [@Jackson2002]
+In the case of the Trimer molecule,
+we have both the translational diffusion constant $D_t$
+and the rotational diffusion constant $D_r$,
+both of which could be used here.
+In studies of the crystallisation of liquid water,
+the translational diffusion constant
+has been used as the transport coefficient, [@Xu2016;@Rozmanov2011]
+with no mention of rotational diffusion.
+Another place where there are multiple transport coefficients
+is the study of alloys,
+where @Tang2013 use the slowest diffusion rate
+to model with Wilson--Frenkel growth,
+noting that the choice of transport coefficient
+didn't make much difference to the fit.
+Because of the breakdown in the Stokes--Einstein--Debye relations [@sec:trans_rot_coupling]
+and noting that the transition between the liquid and crystal
+mostly takes place through orientational motions,
+the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_relaxations]
+was chosen as the transport coefficient.
+The rotational relaxation time $\tau_r$ is the time
+for half of the molecules to have reoriented by \SI{90}{\degree}.
+
+@Ediger2008
+
+- Viscosity is not an appropriate measure of growth
+as a result of dynamics heterogeneities.
 
 ## Melting Rates
 
@@ -285,91 +276,13 @@ As the temperature decreases the distance
 tends to get smaller,
 matching the expected behaviour.
 
-## Anomalously Slow Growth Rates
+### Turnbull Theory of Melting
 
-In the study of many different crystals,
-the growth rates between the different crystal faces
-can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
-This huge difference between growth rates
-indicates that the growth of the crystal
-is significantly more
+![turnbull](../Projects/Crystal_Melting/figures/melting_turnbull.svg)
 
-In a study of two similar alloys @Tang2013
-attributed the difference in crystal growth rates to
-the ordering of atoms in the interface,
-with the faster glass former displaying ordering
-much further from the boundary of the crystal.
-This observation is supported by the work of @Reinhart2018
-where in studying Janis particles,
-the stricter the geometric constraints of the crystal phase,
-the slower the growth rate.
-While in work on Lennard Jones Particles,
-@Burke1988 attribute the slow growth rate of the (111) crystal face
-to the degeneracy of fcc and hcp stacking,
-with many stacking faults arising during the freezing process as a result.
+### Wilson--Frenkel Theory of Melting
 
-While the Wilson-Frenkel theory has a characteristic timescale of diffusion
-it may be that for more complicated crystal structures,
-such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
-the diffusion may no longer be the relevant characteristic timescale.
-This is important for molecular crystals,
-where one of the major results has been the decoupling
-of the rotational relaxation time and the diffusion constant,
-with the rotational relaxation getting slower much faster than the dynamics.
-
-### Comparison to Lewis--Wahnström
-
-While it is difficult to make a direct comparison to the Lewis--Wahnström model
-as there is no data published on crystal melting rates, only growth rates. [@Pedersen2011]
-The growth of a Lewis--Wahnström crystal from zero to all 356 molecules in the simulation
-occurs over a period of $\approx 5\tau_S$.
-The *fastest* melting rate measured for the trimer molecule is $\approx 0.4 \tau_R$
-meaning in the same timescale less than 2 layers of the crystal will have melted.
-As an estimate, the dynamics of the melting and growth
-of the Trimer molecule are at least an order of magnitude slower
-than for the Lewis--Wahnström model.
-
-It is interesting to compare the growth of Lennard--Jones discs,
-in 2D the crystal forms almost instantaneously, [@cite]
-with simulations using binary mixtures to prevent the crystallisation.
-In 3D, DJ particles create the crystal far slower
-often introducing packing defects.
-It is intriguing that this relationship flips for a molecular system.
-
-The 2D molecules are so much slower
-as a result of the rotational constraints.
-As presented in @sec:Dynamics,
-rotational motion is required for translational motion to occur,
-and being two dimensional, the trimer can lock up.
-In 3D, the rotations are not so constrained,
-with alternate degrees of freedom available
-to allow further rotation.
-
-The melting rates measured are the slowest melting rates
-measured by molecular dynamics simulation.
-With simulation timescales orders of magnitude longer
-than comparable studies. [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
-
-## Modelling Melting Rates
-
-Theoretical models of the melting rates
-are able to help understand which aspects
-of the melting behaviour are important
-allowing an explanation of the slow rate of the trimer.
-These theories require the difference in enthalpy
-between the liquid and crystal
-as an estimate of the chemical potential energy.
-
-Pressure:                    1.00   13.50
-----------                 ------  ------
-Crystal Potential Energy   -1.991  -1.111
-Liquid Potential Energy    -1.811  -1.045
-Difference $\Delta h_m$    -0.180  -0.066
-
-Table: The potential energy of the liquid and the crystal at the melting point for both
-pressures. {#tbl:potential_energy_difference}
-
-### Classical theory
+![Wilson](../Projects/Crystal_Melting/figures/melting_wilson.svg)
 
 The classical theory of crystal describes growth
 normalised by a relaxation time [@eq:normalised_growth].
@@ -404,19 +317,6 @@ slightly lower than was predicted by observing melting.
 Without observing crystal growth,
 the melting point is going to be an estimated value,
 and the current estimate is within the error of the simulations.
-
-:::{class=subfigures id=fig:normalised_melting_fit}
-
-![All the melting rates.](../Projects/Crystal_Melting/figures/normalised_melting_fit.svg){#fig:normalised_melting_all}
-
-![Melting rates which fit the
-model.](../Projects/Crystal_Melting/figures/normalised_melting_fit_low.svg){#fig:normalised_melting_zoom}
-
-This normalises both the temperature by the melting point, and the growth rate by the
-rotational relaxation. This figure shows the growth rate slowing faster than
-can be explained by the dynamics, indicated by the values approaching zero.
-
-:::
 
 ### Semi-empirical Density Functional
 
