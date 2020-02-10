@@ -345,125 +345,12 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
+![dft](../Projects/Crystal_Melting/figures/melting_dft.svg){#fig:melting_dft width=80%}
+
 Fitting the fluctuation model to the melting rates
 gives the curves in @fig:fluctuation_rate.
 This predicts the melting over the entire temperature range
 interfacial melting was observed.
 
-:::{id=fig:fluctuation_rate class=subfigures}
-
 ![fluctuation
 modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=80%}
-
-![fluctuation
-modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit_low.svg){width=80%}
-
-The melting rates fitted to the fluctuation model
-
-:::
-
-## Slow Melting Rates
-
-The melting rates of the Trimer are significantly slower
-than what is predicted by the classical theory,
-yet the ideas are captured by the fluctuation theory.
-How is this so different to a Lennard--Jones liquid?
-As a point of comparison,
-similar calculations for the fluctuations can be made for 2D Lennard-Jones discs,
-though a different order parameter is required,
-in this case using the hexatic order parameter, [@Strandburg1984;@Tobochnik1982]
-indicative of the bond orientational order.
-The hexatic order parameter is given as
-
-$$ \psi_6 = \left|\frac{1}{6} \sum_j^n \exp(i 6 \theta)\right| $$
-
-again normalised such that
-the mean orientational order of the liquid
-$\langle \psi_6 \rangle_\text{liquid} = 0$
-and the mean orientational order of the crystal
-$\langle \psi_6 \rangle_\text{crystal} = 1$.
-The distribution of these values are shown in @Fig:disc_fluctuation.
-
-![Distributions of the hexatic order parameter $\psi_6$
-in the 2D Lennard-Jones disc at the melting point $D=0.53$
-](../Projects/Crystal_Melting/figures/fluctuation_disc_normalised.svg){#fig:disc_fluctuation width=80%}
-
-The distributions of order parameters
-within these two different systems is wildly different.
-While the Trimer (@fig:trimer_fluctuation)
-has a clear separation of the liquid and crystal phases,
-the LJ-Disc (@fig:disc_fluctuation) has a large overlap,
-with no clear point distinguishing the two phases.
-Additionally the distribution of values within the LJ-Disc
-are much wider than that of the Trimer.
-A rather interesting feature of the LJ-Disc
-is the complexity of the distribution
-containing small bumps which deviate from
-a Gaussian distribution,
-while the Trimer,
-despite being a more complex molecule
-has a near perfect Gaussian distribution.
-
-Fitting these values to a Gaussian function
-allows for a more direct comparison of
-the width of the distribution of the order parameter $M$,
-allowing it to be expressed as
-the curvature of a parabola $\lambda$
-
-$$ P(M) = \sqrt{\frac{\lambda}{2\pi}}
-\exp\left[-\frac{\lambda}{2}(M-M_\text{phase})^2\right] $$
-
-where $M_\text{phase}$ is 0 for the liquid, and 1 for the crystal.
-These values are tabulated in @Tbl:fluctuation_curvature,
-which demonstrates how constrained the Trimer is,
-with the curvature of the liquid phase
-being larger than the solid phase of the LJ-Disc.
-
-Molecule   Phase  Curvature
--------- ------- ----------
-Trimer    Liquid       5.69
-Trimer   Crystal    2357.60
-LJ-Disc   Liquid       1.26
-LJ-Disc  Crystal       2.37
-
-Table: The curvature of the distributions
-for the phases of each Molecule. {#tbl:fluctuation_curvature}
-
-These curvatures can be used to create two parabolas,
-one for the liquid phase
-
-$$ \omega(M)_\text{liquid} = \frac{\lambda_\text{liquid}}{2} M^2 $$
-
-and another for the solid
-
-$$ \omega(M)_\text{liquid} = \frac{\lambda_\text{crystal}}{2} (M - 1)^2 + \Delta $$
-
-where $\Delta$ is the free energy difference between the two phases
-which can be estimated as
-
-$$ \Delta \approx \Delta h_m \left[ 1 - \frac{T}{T_m} \right] $$
-
-and shown in @Fig:fluctuation_harmonic.
-
-:::{id=fig:fluctuation_harmonic class=subfigures}
-
-![LJ-Disc](../Projects/Crystal_Melting/figures/fluctuation_parabola_disc.svg){width=40%}
-![Trimer](../Projects/Crystal_Melting/figures/fluctuation_parabola_trimer.svg){width=40%}
-
-A harmonic description of the fluctuations
-demonstrating the large difference between
-the LJ-Disc and the Trimer.
-
-:::
-
-The intersection of these two parabolas $M_c$
-is at 0.95 for the Trimer and 0.42 for the LJ-Disc.
-
-Describing the motion of crystal growth
-as the motion of a configuration along the curve $\omega(M)$,
-such that it has to pass through the transition state at $M_c$,
-we can use describe the fractions of particles
-able to make the transition
-as a method of comparing the growth rates.
-For the Trimer the fraction is 0.18%,
-far less than the 34% of the LJ-Disc.
