@@ -215,6 +215,11 @@ The creation of the manually labelled dataset
 is a crucial part of the process,
 and @sec:clustering_performance presents a method
 for constructing this dataset for some unstructured crystal growth data.
+Because this method has been primarily developed
+for the classification of configurations in @sec:Crystal_Melting,
+the constructed crystals are used directly to train the model.
+The creation of the crystal structures and
+the labelling of each configuration is described in @sec:methods_ml_dataset.
 In this section we develop a method
 for taking a small manually labelled dataset
 and training an algorithm to apply those labels to new data.
