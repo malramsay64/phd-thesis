@@ -49,12 +49,18 @@ Pressure  Melting Point $T_m$
 Table: The melting points of the crystals
 for both pressures studied in this thesis. {#tbl:crystal_melting_point}
 
-![The melting rates of the p2 crystal close to the melting point
+::: {#fig:melting_point_rates class=subfigure}
+
+![P=1.00](../Projects/Crystal_Melting/figures/melting_point_rates_P1.00.svg){width=80% #fig:melting_point_p1}
+![P=13.50](../Projects/Crystal_Melting/figures/melting_point_rates_P13.50.svg){width=80% #fig:melting_point_p13}
+
+The melting rates of the p2 crystal close to the melting point
 for pressures of 1.00 and 13.50.
 A melting rate of \num{1e-9}
 is less than a layer of crystal
 over the course of the simulation.
-](../Projects/Crystal_Melting/figures/melting_point_rates.svg){width=80% #fig:melting_point_rates}
+
+:::
 
 ### Spinodal temperature
 
@@ -276,47 +282,64 @@ As the temperature decreases the distance
 tends to get smaller,
 matching the expected behaviour.
 
-### Turnbull Theory of Melting
+### Classical Theories of Growth
 
-![turnbull](../Projects/Crystal_Melting/figures/melting_turnbull.svg)
+The expression for classical theories of crystal growth [@eq:crystal_growth_general]
+can be rewritten as
 
-### Wilson--Frenkel Theory of Melting
+$$ \frac{v(T)}{p(T)} \propto \left[1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}\right] $$ {#eq:crystal_growth_refactor}
 
-![Wilson](../Projects/Crystal_Melting/figures/melting_wilson.svg)
+where $p(T) \propto k(T)$ having removed the constants
+and only describing the temperature dependence of the transport property.
+If these models describe the observed crystal growth behaviour
+plotting $v(T)/p(T)$ vs $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}$
+will give a straight line.
 
-The classical theory of crystal describes growth
-normalised by a relaxation time [@eq:normalised_growth].
-Using the points from @fig:melting_rates and the values from @tbl:potential_energy_difference,
-the unknown parameter $c$ of @eq:normalised_growth was found using the
-Levenberg--Marquardt algorithm [@Levenberg1944;@Marquardt1963;@More1978;@Jones2001] for least squares fitting of non-linear functions.
-This gives the lines of fit displayed in @fig:normalised_melting_fit.
-The parameters of the fit displayed in @tbl:rate_coefficient.
+The Turnbull model of melting defines $p(T) = \sqrt{T}$
+which is plotted in @fig:melting_turnbull.
+The ratio between the two axes displayed
+is nothing close to a straight line,
+indicating it is a very poor fit to this data.
+Another interesting feature of @fig:melting_turnbull
+is that the two pressures have very different ratios
+between these quantities.
+The constants which are used in creating the Turnbull model, [@eq:constants_turnbull]
+the interatomic spacing, the diffusional mean free path and the collision factor
+all describe values which are similar between pressures.
+It is not surprising the Turnbull model,
+normally used for materials which crystallise quickly,
+doesn't describe the growth of such a fragile liquid.
 
-Pressure            $c$
------------     -----------------
-1.0             \num{-0.77(5)}
-13.50           \num{-1.5(5)}
+![turnbull
+](../Projects/Crystal_Melting/figures/melting_turnbull.svg){#fig:melting_turnbull width=80%}
 
-Table: The constant defining the rate of crystal growth
-for each of the pressures.
-These values are obtained from the fitting in
-@fig:normalised_melting_fit {#tbl:rate_coefficient}
+The Wilson--Frenkel model which would be expected to model the growth of the trimer,
+defines the temperature dependent function $p(T) = D(T)$,
+where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$. [@sec:transport_coefficient]
+The ratio for the Wilson--Frenkel model is shown in @fig:melting_wilson.
+The ratio between the two components is much improved over the Turnbull model,
+showing a linear region close to the melting point
+($1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$)
+while further away there is a sharp deviation,
+with what looks to be a completely different model of melting.
 
-The lines depicting the fit of
-the Wilson-Frenkel theory in @fig:normalised_melting_all
-predict significantly slower melting rates
-than observed in the simulations
-for temperatures $T/T_m > 1.20$.
-A possible cause for this would be the onset of spinodal
-with the melting occurring throughout the structure,
-through this is not observed.
-When only looking at the temperatures close to the melting point
-[@fig:normalised_melting_zoom]
-the data would seem to fit a melting point at 0.97,
-slightly lower than was predicted by observing melting.
-Without observing crystal growth,
-the melting point is going to be an estimated value,
-and the current estimate is within the error of the simulations.
+![Wilson
+](../Projects/Crystal_Melting/figures/melting_wilson.svg){#fig:melting_wilson width=80%}
+
+It would appear that the classical melting theory
+is unable to describe the melting behaviour.
+In particular,
+while the classical theory predicts different melting rates
+based on the difference in chemical potential
+between the liquid and the solid.
+For the trimer molecule there is not this relationship.
+The difference in the Chemical Potential energy $\Delta \mu$
+between the liquid and crystal changes based on the pressure,
+however, when normalised by the melting point, [@fig:melting_rates]
+there is no discernible difference between the melting rates.
+We will need to look to alternate descriptions
+of the melting behaviour
+which better match the observed results.
 
 ### Semi-empirical Density Functional
 

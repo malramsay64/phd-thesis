@@ -53,9 +53,9 @@ from their current position to their position on the crystal lattice
 is considered a limiting factor in the crystal growth process,
 giving the following form for $k(T)$;
 
-$$ k(T) = \frac{D a}{\Lambda^2} f $$
+$$ k(T) = \frac{D(T) a}{\Lambda^2} f $$ {#eq:constants_turnbull}
 
-where $D$ is the diffusion constant,
+where $D(T)$ is the diffusion constant,
 $a$ is the interatomic spacing,
 $\Lambda$ is the diffusional mean free path, and
 $f$ is a factor to account for the fraction of
