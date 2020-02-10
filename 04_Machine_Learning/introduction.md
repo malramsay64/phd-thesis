@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Machine Learning {#sec:ml_introduction}
 
 The three densest packed crystal structures for the Trimer molecule
 determined by iso-configurational search [@Hudson2011]
@@ -48,11 +48,10 @@ overlap for each of the crystals and the liquid.
 
 Machine learning is becoming widely used within materials science [@Mueller2016;@Vasudevan2019]
 for applications including;
-
-- detection of crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
-- characterisation of amorphous materials, [@Ballard2016;@Ballard2017]
-- prediction of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
-- the development of interatomic potentials. [@Snyder2012]
+detecting of crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
+characterising amorphous materials, [@Ballard2016;@Ballard2017]
+predicting of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
+developing of interatomic potentials. [@Snyder2012]
 
 Machine learning is most useful where there are many hand tuned fitting parameters,
 and for the analysis of large datasets we don't yet fully understand.
@@ -72,11 +71,10 @@ is the process of drawing a line to predict future outcomes.
 This can either be finding the line of best fit [@fig:regression_demo],
 or a decision surface which separates one class from another [@fig:classification_demo].
 Increasing the complexity of the machine learning algorithm comes from;
-
-- increasing the number of inputs, creating a line or surface in higher dimensional
-  space
-- increasing the complexity of the line or surface, or
-- increasing the number of lines to distinguish a larger number of different classes.
+increasing the number of inputs, creating a line or surface in higher dimensional
+  space,
+increasing the complexity of the line or surface, or
+increasing the number of lines to distinguish a larger number of classes.
 
 :::{class=subfigure id=fig:machine_learning_demo}
 
@@ -161,13 +159,12 @@ It is not a black box which magically solves problems. [@Lehman2019]
 There are a range of parameters which can be used
 to identify local structure within a simulation.
 In the field of self assembly @Keys2011 describe six;
-
-1. Point matching,
-2. shape histogram,
-3. shape distributions,
-4. harmonic descriptors,
-5. shape context, and
-6. lightfield descriptor.
+Point matching,
+shape histogram,
+shape distributions,
+harmonic descriptors,
+shape context, and
+lightfield descriptor.
 
 Describing the similarity of one structure to another
 can require one, or many of these parameters.
