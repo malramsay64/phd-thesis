@@ -1,16 +1,18 @@
 # Results
 
-This section models the melting rate of the p2 crystal
-as a methods of understanding which part of the process
-is responsible for the slow crystallisation and melting.
+This section measures the melting rate of the p2 crystal
+and describes the rates using different models of growth.
+This allows us to understand which aspects of the growth and melting rates
+are important for describing the process,
+giving an understanding of why crystallisation and growth is so slow.
 We start by finding the quantities used in the analysis of the melting rates,
-followed by fitting the three theories described in @sec:crystal_growth_theories,
-giving insight into why the crystal growth is slow.
+followed by fitting the three theories described in @sec:crystal_growth_theories
+discussing how each of them describe the melting process.
 
 ## Important quantities for Melting and Growth
 
 In this section we are calculating the quantities
-needed to model the crystal growth.
+needed to model crystal growth.
 The melting point $T_m$,
 the spinodal temperature,
 the chemical potential $\Delta \mu$, and
@@ -19,27 +21,35 @@ the transport coefficient.
 ### Melting Point
 
 The melting point $T_m$ is the temperature
-at which the rate of crystal growth
-is the same as the rate of melting---the equilibrium state.
-Typically the melting rate is the temperature
-at which the measurement of the growth rate
-crosses from negative (melting) to positive (growth).
-No crystallisation has been observed for this molecule
-so the melting rate is the temperature
-at which the melting rate is no longer measurable.
-I consider the limit of measuring the melting
-rate being the removal of a single layer of crystal
-over the timescale of the simulation, a rate of \num{1e-6}.
-The timescale cannot be extended as a technical limit of HOOMD-blue [@hoomd_counter]
-which can only store numbers up to $2^{32}-1$, slightly more than 4 billion.
-In concert with the technical limitation
-there is a practical limitation with simulations taking multiple weeks to run.
+at which the rates of attachment and detachment
+at the crystal surface are the same,
+there is no net growth or melting.
+A method of determining the melting point
+from molecular dynamics simulations
+is finding the temperature at which
+the growth rate crosses from
+crosses from negative (melting) to positive (growth). [@GarciaFernandez2006]
+Throughout the study of the Trimer molecule,
+no crystallisation has been observed,
+despite running simulations as long as HOOMD-blue allows.
+A technical decision in the development of the HOOMD-blue
+molecular dynamics package deemed that a 32 bit unsigned integer
+was enough to keep track of the number of timesteps;
+HOOMD-blue can only count up to $2^{32}-1$, slightly more than 4 billion. [@hoomd_counter]
+This means with the chosen timestep of 0.005,
+the longest possible timescale for a simulation is $2e7$.
 
-@GarciaFernandez2006
-
-The melting points are tabulated in @Tbl:crystal_melting_point
-with the values for the tables extracted
-from @fig:melting_point_rates.
+With the absence of crystal growth,
+the melting point becomes as estimate.
+The melting point is defined here
+as the temperature at which melting is no longer observed,
+with the limit of being the melting of a single layer of crystal.
+The melting rate which corresponds to the melting
+of a single layer of crystal over
+the course of the entire simulation is \num{3e-7}.
+This estimate is a upper bound of the melting point
+and are tabulated in @Tbl:crystal_melting_point
+with the values extracted from @fig:melting_point_rates.
 
 Pressure  Melting Point $T_m$
 -------- ---------------------
@@ -52,12 +62,12 @@ for both pressures studied in this thesis. {#tbl:crystal_melting_point}
 ::: {#fig:melting_point_rates class=subfigure}
 
 ![P=1.00](../Projects/Crystal_Melting/figures/melting_point_rates_P1.00.svg){width=80% #fig:melting_point_p1}
+
 ![P=13.50](../Projects/Crystal_Melting/figures/melting_point_rates_P13.50.svg){width=80% #fig:melting_point_p13}
 
 The melting rates of the p2 crystal close to the melting point
-for pressures of 1.00 and 13.50.
-A melting rate of \num{1e-9}
-is less than a layer of crystal
+for pressures of 1.00 (a) and 13.50 (b).
+A melting rate of \num{3e-7} is less than a single layer of crystal
 over the course of the simulation.
 
 :::
@@ -112,18 +122,11 @@ from the formation of the defects
 within the crystal structure.
 
 This is well above the range of melting rates
-measured in simulations of 3D systems;
-
-- @Benjamin2015 go up to $T/T_m = 1.06$,
-- @Kerrache2008 goes up to $T/T_m = 1.07$,
-- @Rozmanov2011 go up to $T/T_m = 1.08$,
-- @Jackson2002 go up to $T/T_m = 1.08$, and
-- @Ramakrishnan2017 go up to $T/T_m = 1.12$.
-- @Iwamatsu1999 observes nucleation at $T/T_m = 1.11$
-
-which are all in agreement with @Abraham1981,
-in determining the spinodal of
-the 2D Lennard Jones to be $T/T_m = 1.08$
+measured in simulations of 3D systems
+[@Benjamin2015;@Kerrache2008;@Rozmanov2011;@Jackson2002;@Ramakrishnan2017;@Iwamatsu1999]
+which all observe a spinodal close to $T/T_m = 1.09$
+which agrees with the spinodal of
+the 2D Lennard Jones liquid of $T/T_m = 1.08$. [@Abraham1981]
 
 Along with comparable melting studies,
 @Lu1998 find the onset homogeneous nucleation,
@@ -319,8 +322,9 @@ where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$. [@sec:tran
 The ratio for the Wilson--Frenkel model is shown in @fig:melting_wilson.
 The ratio between the two components is much improved over the Turnbull model,
 showing a linear region close to the melting point
-($1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$)
-while further away there is a sharp deviation,
+which is where the x axis is zero,
+that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$.
+Further further away from the melting point there is a sharp deviation,
 with what looks to be a completely different model of melting.
 
 ![Wilson
@@ -343,22 +347,27 @@ which better match the observed results.
 
 ### Semi-empirical Density Functional
 
-The incredibly high spinodal point of the trimer,
-is indicative of a highly constrained crystal structure
-with very little fluctuation.
-An analysis of the fluctuations within the structure
-can provide more information on this.
-
-Measuring the fluctuation of the Trimer molecule
-is done using the Orientational order parameter $O_\theta$
+The choice of order parameter for to describe the crystal growth
+is the orientational order parameter $O_\theta$
 
 $$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$
 
-normalised such that
+which is described in @sec:ml_introduction.
+In machine learning, the reduction in dimensionality was problematic
+while in this case we are looking for a one-dimensional description
+making this an excellent choice.
+To make the orientational order parameter
+have the distribution of values expected for $M$,
+the values are modified so that
 the mean orientational order of the liquid
 $\langle O_\theta \rangle_\text{liquid} = 0$
 and the mean orientational order of the crystal
 $\langle O_\theta \rangle_\text{crystal} = 1$.
+This is done using the below relation
+
+$$ M = \frac{O_\theta - \langle O_\theta \rangle_\text{liquid}}
+{\langle O_\theta \rangle_\text{crystal} - \langle O_\theta \rangle_\text{liquid}} $$
+
 The distributions of these values are shown in @Fig:trimer_fluctuation
 where the distribution of the crystal phase
 is far narrower than that of the liquid phase,
