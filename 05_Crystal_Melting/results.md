@@ -326,7 +326,7 @@ This is done using the below relation
 $$ M = \frac{O_\theta - \langle O_\theta \rangle_\text{liquid}}
 {\langle O_\theta \rangle_\text{crystal} - \langle O_\theta \rangle_\text{liquid}} $$
 
-The distributions of these values are shown in @Fig:trimer_fluctuation
+The distributions of these values are shown in @fig:fluctuation_normalised
 where the distribution of the crystal phase
 is far narrower than that of the liquid phase,
 with very little overlap.
@@ -335,6 +335,20 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
+The distributions of the orientational order parameter
+can be converted to probabilities through the relations
+
+$$ P_\text{liquid}(M) = \sqrt{\frac{\lambda_0}{2\pi}} \exp \left[-\frac{\lambda_0}{2} M^2 \right] $$
+
+and
+
+$$ P_\text{solid}(M) = \sqrt{\frac{\lambda_s}{2\pi}} \exp \left[-\frac{\lambda_s}{2} (M-M_s)^2 \right] $$
+
+$$ v(T) = -\left[\frac{2KD(T)(\sqrt{\lambda_\text{liquid}}(T) +
+\sqrt{\lambda_\text{crystal}}(T))^2}
+{\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
+\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] \Delta(T)
+$$
 ![The relationship of the thermally normalised relaxation on the y axis
 to the rate description of the semi-empirical density functional model
 on the x axis.
@@ -345,6 +359,12 @@ Fitting the fluctuation model to the melting rates
 gives the curves in @fig:fluctuation_rate.
 This predicts the melting over the entire temperature range
 interfacial melting was observed.
+By using the fluctuation of the liquid and crystal
+the semi-empirical density functional model
+describes the transition from the liquid to the crystal
+by the rigidity of the different phases.
+That it there is a kinetic component to the phase transition
+and not only a thermodynamic one.
 
 ![Fitting the semi-empirical density functional model
 to the melting rate.
