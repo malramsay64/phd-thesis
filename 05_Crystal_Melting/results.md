@@ -74,18 +74,35 @@ over the course of the simulation.
 
 ### Spinodal temperature
 
+In @sec:supercooled_liquids it was discussed that
+a liquid can exist as a metastable state below the melting point.
+The same is also true of the crystal above the melting point.
+At some temperature above the melting point,
+the crystal is no longer metastable,
+spontaneously melting to form the liquid.
+The temperature at which this spontaneous melting occurs
+is known as the spinodal temperature.
+When a crystal is surrounded by liquid above the melting point,
+melting will occur at the liquid--crystal interface.
+This interfacial melting is explained by
+the Wilson-Frenkel theory of crystal growth.
+It is when the melting is not only occurring at the interface,
+at many points within the crystal itself
+that the temperature is above the spinodal.
+
 All the theories described in @sec:crystal_growth_theories
 make the assumption that the melting and growth
 is occurring at a well defined interface.
-There is an alternative method of growth,
-where the crystal spontaneously melts,
-which has been known as the Homogeneous Nucleation Catastrophe. [@Lu]
-This spontaneous melting can be described as a spinodal point
-and defines the upper limit
-for which interfacial melting can occur.
+There is an alternative method of melting,
+which takes place spontaneously
+which has been known as the Homogeneous Nucleation Catastrophe. [@Lu1998]
+This onset of this spontaneous melting occurs at the spinodal point
+defining an upper limit for which interfacial melting can occur.
 The spinodal point can also exist as a lower temperature bound [@Cavagna2009]
-with spontaneous crystallisation at many locations,
-however that is beyond the reach of our current simulations.
+with spontaneous crystallisation at many points within the liquid.
+The spinodal point for crystallisation within the liquid
+is beyond the reach of our current simulations
+and so is not studied here.
 
 <div id="fig:spinodal" class="subfigures">
 
@@ -112,86 +129,19 @@ Pressure  Spinodal Temperature
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
 pressures. {#tbl:crystal_spinodal}
 
-The Spinodal temperatures in @tbl:crystal_spinodal represents
-the temperature where is is no longer possible to study melting
-at an interface as a result of
-nucleation of the liquid phase within the crystal.
-This is the temperature at which a simulation of
-the crystal phase will spontaneously melt
-from the formation of the defects
-within the crystal structure.
-
-This is well above the range of melting rates
-measured in simulations of 3D systems
-[@Benjamin2015;@Kerrache2008;@Rozmanov2011;@Jackson2002;@Ramakrishnan2017;@Iwamatsu1999]
-which all observe a spinodal close to $T/T_m = 1.09$
-which agrees with the spinodal of
-the 2D Lennard Jones liquid of $T/T_m = 1.08$. [@Abraham1981]
-
-Along with comparable melting studies,
-@Lu1998 find the onset homogeneous nucleation,
-that is the spinodal temperature,
-for a range of metals at $T/T_m = 1.2$.
-And as another example
-@Norman2002 study rates of nucleation within the crystal
-up to $T/T_m = 1.25$.
-From a comparison with all these studies
-it would appear that the spinodal temperature $T/T_m = 1.6$
-is highly unusual and well above any other materials.
-
-When studying melting it is important to understand
-the range of temperatures over which the melting is well defined.
-At the lower bound this is the melting point $T_m$,
-the temperature at which the crystal neither melts or grows.
-The upper bound of melting is the spinodal point.
-
-In characterising crystal growth
-the most important temperature is the melting point $T_m$
-at which both the liquid and crystals phases
-exist at equilibrium.
-That is, the rate of particles attaching to the interface
-is equal to the number of particles detaching from the interface.
-The melting point can be found through simulation
-as the temperature at which the growth rate goes from negative to positive.
-
-In @sec:supercooled_liquids it was discussed that
-a liquid can exist as a metastable state below the melting point.
-The same is also true of the crystal above the melting point.
-At some temperature above the melting point,
-the crystal is no longer metastable,
-spontaneously melting to form the liquid.
-The temperature at which this spontaneous melting occurs
-is known as the spinodal temperature.
-When a crystal is surrounded by liquid above the melting point,
-melting will occur at the liquid--crystal interface.
-This interfacial melting is explained by
-the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not only occurring at the interface,
-at many points within the crystal itself
-that the temperature is above the spinodal.
-
-Along with the crystal existing as
-a metastable state above the melting point.
-The liquid exists as a metastable state
-below the melting point.
-Like the crystal above the melting point,
-at some temperature below the melting point,
-the liquid will spontaneously crystallise,
-another spinodal temperature.
-
 ### Chemical Potential Energy
 
-@Tang2013
+The change in the chemical potential energy $\Delta \mu$
+is an important part of describing the crystal melting dynamics
+in the classical models of melting.
+Finding the chemical potential energy at each temperature
+is a complex process,
+so a standard approach [@Tang2013]
+is to estimate the change in chemical potential $\Delta \mu$ as
 
-Standard to use alternative measure.
+$$ \Delta \mu = \frac{\Delta h_m(T_m - T)}{T_m} $$
 
-Theoretical models of the melting rates
-are able to help understand which aspects
-of the melting behaviour are important
-allowing an explanation of the slow rate of the trimer.
-These theories require the difference in enthalpy
-between the liquid and crystal
-as an estimate of the chemical potential energy.
+where $\Delta h_m$ is the enthalpy of fusion per particle.
 
 Pressure:                    1.00   13.50
 ----------                 ------  ------
@@ -207,6 +157,9 @@ pressures. {#tbl:potential_energy_difference}
 Both the Wilson--Frenkel and the Semi-empirical density functional theories of growth
 include a term for a transport coefficient,
 which is normally the diffusion constant $D$. [@Jackson2002]
+@Ediger2008 has noted that the viscosity
+is not an appropriate transport coefficient
+on account of the dynamic heterogeneities present at low temperatures.
 In the case of the Trimer molecule,
 we have both the translational diffusion constant $D_t$
 and the rotational diffusion constant $D_r$,
@@ -224,15 +177,10 @@ didn't make much difference to the fit.
 Because of the breakdown in the Stokes--Einstein--Debye relations [@sec:trans_rot_coupling]
 and noting that the transition between the liquid and crystal
 mostly takes place through orientational motions,
-the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_relaxations]
+the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_diffusion]
 was chosen as the transport coefficient.
 The rotational relaxation time $\tau_r$ is the time
 for half of the molecules to have reoriented by \SI{90}{\degree}.
-
-@Ediger2008
-
-- Viscosity is not an appropriate measure of growth
-as a result of dynamics heterogeneities.
 
 ## Melting Rates
 
@@ -313,7 +261,11 @@ It is not surprising the Turnbull model,
 normally used for materials which crystallise quickly,
 doesn't describe the growth of such a fragile liquid.
 
-![turnbull
+![Determining the relationship between components of the Turnbull model
+of melting. The contribution from the chemical potential is on the x axis
+while the thermal contribution is on the y axis.
+The lack of a linear relationship indicates
+they Turnbull model is not suitable for describing the melting.
 ](../Projects/Crystal_Melting/figures/melting_turnbull.svg){#fig:melting_turnbull width=80%}
 
 The Wilson--Frenkel model which would be expected to model the growth of the trimer,
@@ -327,7 +279,13 @@ that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} =
 Further further away from the melting point there is a sharp deviation,
 with what looks to be a completely different model of melting.
 
-![Wilson
+![Determining the relationship between components of
+the Wilson--Frenkel model of melting.
+The contribution from the chemical potential is on the x axis
+while the thermal contribution is on the y axis.
+A linear relationship indicates that the Wilson--Frenkel model
+adequately describes the melting,
+which occurs close to $x=0$.
 ](../Projects/Crystal_Melting/figures/melting_wilson.svg){#fig:melting_wilson width=80%}
 
 It would appear that the classical melting theory
@@ -377,12 +335,18 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
-![dft](../Projects/Crystal_Melting/figures/melting_dft.svg){#fig:melting_dft width=80%}
+![The relationship of the thermally normalised relaxation on the y axis
+to the rate description of the semi-empirical density functional model
+on the x axis.
+A straight line means a perfect description of the melting behaviour.
+](../Projects/Crystal_Melting/figures/melting_dft.svg){#fig:melting_dft width=80%}
 
 Fitting the fluctuation model to the melting rates
 gives the curves in @fig:fluctuation_rate.
 This predicts the melting over the entire temperature range
 interfacial melting was observed.
 
-![fluctuation
-modelling](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=80%}
+![Fitting the semi-empirical density functional model
+to the melting rate.
+Both pressures are fit with the same constant $K=3.7$.
+](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=80%}

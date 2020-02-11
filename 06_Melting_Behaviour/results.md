@@ -557,3 +557,14 @@ able to make the transition
 as a method of comparing the growth rates.
 For the Trimer the fraction is 0.18%,
 far less than the 34% of the LJ-Disc.
+
+## Spinodal Point
+
+The spinodal points presented in @sec:spinodal,
+are much higher than in similar studies,
+having a normalised temperature $T/T_m = 1.6$ for both pressures.
+For comparison,
+the spinodal of the 2D Lennard Jones Crystal occurs a $T/T_m = 1.08$, [@Abraham1981]
+while a range of metals have a spinodal at $T/T_m=1.2$. [@Lu1998]
+This is also well above the temperatures of melting rates published in 3D systems.
+[@Benjamin2015;@Kerrache2008;@Rozmanov2011;@Jackson2002;@Ramakrishnan2017;@Iwamatsu1999]
