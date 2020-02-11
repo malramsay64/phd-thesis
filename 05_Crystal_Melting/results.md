@@ -335,20 +335,22 @@ with very little overlap.
 for the liquid and the crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
-The distributions of the orientational order parameter
-can be converted to probabilities through the relations
+The equation for the growth rate of
+the semi-empirical density functional model [@eq:dft_growth_rate]
+can be written as
 
-$$ P_\text{liquid}(M) = \sqrt{\frac{\lambda_0}{2\pi}} \exp \left[-\frac{\lambda_0}{2} M^2 \right] $$
+$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$
 
-and
+where
 
-$$ P_\text{solid}(M) = \sqrt{\frac{\lambda_s}{2\pi}} \exp \left[-\frac{\lambda_s}{2} (M-M_s)^2 \right] $$
-
-$$ v(T) = -\left[\frac{2KD(T)(\sqrt{\lambda_\text{liquid}}(T) +
+$$ f(t) = \frac{(\sqrt{\lambda_\text{liquid}}(T) +
 \sqrt{\lambda_\text{crystal}}(T))^2}
 {\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
-\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] \Delta(T)
-$$
+\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] $$
+
+that is, the contribution to the growth rate
+from the fluctuations.
+
 ![The relationship of the thermally normalised relaxation on the y axis
 to the rate description of the semi-empirical density functional model
 on the x axis.

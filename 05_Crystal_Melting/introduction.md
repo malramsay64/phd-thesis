@@ -193,13 +193,33 @@ Assuming spherical symmetry with a crystal centered at the origin,
 the radial cross section can be described using $M(r, t)$,
 where $M(0, t) = 1$ indicating a perfect crystal,
 while $M(\infty, t) = 0$ being a perfect liquid.
+
+The distributions of the orientational order parameter
+can be converted to probabilities through the relations
+
+$$ P_\text{liquid}(M) = \sqrt{\frac{\lambda_\text{liquid}}{2\pi}} \exp
+\left[-\frac{\lambda_\text{liquid}}{2} M^2 \right] $$
+
+and
+
+$$ P_\text{solid}(M) = \sqrt{\frac{\lambda_\text{solid}}{2\pi}} \exp
+\left[-\frac{\lambda_\text{solid}}{2} (M-1)^2 \right] $$
+
+introducing the parameters
+$\lambda_\text{liquid}$ and
+$\lambda_\text{solid}$
+which describe the curvature of the parabolas
+of the liquid and solid fluctuations respectively.
+We can describe the growth rate
+in terms of the curvature of each phase
 We can find an expression for the growth rate $v(T)$
+given the curvature of each phase
 as a function of temperature
 
 $$ v(T) = -\left[\frac{2KD(T)(\sqrt{\lambda_\text{liquid}}(T) +
 \sqrt{\lambda_\text{crystal}}(T))^2}
 {\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
-\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] \Delta(T)
+\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] \Delta\mu(T)
 $$ {#eq:dft_growth_rate}
 
 with $K$ being the correlation length of the order parameter.
