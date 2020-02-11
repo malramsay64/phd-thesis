@@ -216,16 +216,6 @@ The important part of this semi-empirical density functional model
 is modelling the rate of transition between the liquid and crystal phase
 and allowing it to change as a function of temperature.
 
-## Explaining Slow Growth
-
-A material having a range of competing polymorphs is not unusual,
-with 3D spheres adopting either
-a hexagonal close packed, or
-body centered cubic structure,
-both of which have the same packing fraction.
-Molecular crystals are often even more complex,
-with competing structures being a possible reason for slow crystal growth.
-
 ## Calculation of Melting Rates
 
 Crystallisation rates within simulations
@@ -265,9 +255,9 @@ of the interface.
 This chapter aims to study the crystal melting and growth of the Trimer molecule,
 to aid in understanding why the process of crystallisation
 is so slow for fragile liquids.
-This involves finding the thermodynamically favourable crystal structure,
-along with the melting point
-which are both required for modelling the growth rates.
+This requires an understanding of the appropriate
+thermodynamic properties
+to properly model the growth and melting rates.
 An understanding of the slow growth comes from
 using a model which to accurately describe
 the temperature dependence of the growth rate.
