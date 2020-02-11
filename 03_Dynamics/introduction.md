@@ -88,7 +88,7 @@ This matches with the calculation of the intermediate scattering function
 which will follow the same wave-vector $k_{\text{bragg}}$
 as it will display the largest change over time.
 
-## Rotational Diffusion
+## Rotational Diffusion {#sec:rotational_diffusion}
 
 There are two different formalisms of estimating rotational diffusion $D_r$,
 referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
