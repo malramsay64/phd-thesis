@@ -60,7 +60,7 @@ being those which have a linear relationship
 to the *fragile* liquids displaying a highly
 non-linear relationship,
 each liquid has a significant change in the heat capacity
-at the glass transition temperature.
+at the glass transition temperature. \
 *Adapted with permission from @Lubchenko2007 © Annual Reviews*
 ](01_Introduction/figures/angell.png){#fig:angell_plot}
 

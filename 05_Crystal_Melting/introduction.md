@@ -89,8 +89,10 @@ the Turnbull theory describes growth below the melting point
 faster than that of the Wilson--Frenkel theory,
 
 ![Plot of the Wilson--Frekel model of crystal growth (solid line)
-and the Turnbull theory (dashed
-line). [@Jackson1984]](../placeholder_figure.png){#fig:classical_growth width=80%}
+and the Turnbull theory (dashed line).
+The circles are the melting rate of a Lennard--Jones potential,
+and both axes use dimensionless units.\
+*Figure from @Jackson1984 used with permission © Elsevier*](../05_Crystal_Melting/figures/classical_growth.png){#fig:classical_growth width=80%}
 
 The difference between these two theories is shown in @fig:classical_growth.
 In this figure the points marked are for a Lennard--Jones molecule,
