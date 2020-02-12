@@ -2,7 +2,7 @@
     "dependencies": {
         "alex": "^8.1.1",
         "diff": "^4.0.2",
-        "markdownlint-cli": "^0.21.0",
+        "markdownlint-cli": "^0.22.0",
         "prettier": "^1.19.1",
         "textlint": "^11.6.3",
         "textlint-filter-rule-comments": "^1.2.2",
