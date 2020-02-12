@@ -1,8 +1,7 @@
 # Results
 
-While one of the main goals of this thesis
-is to understand the slow crystal growth associated with glass formation,
-one of the notable results is the complete lack of any crystal growth.
+## Static analysis of the Trimer Polymorphs
+
 Because of the lack of crystal growth,
 crystal structures for the trimer molecule
 have been found using an isopointal search algorithm, [@Jennings2015]
@@ -26,8 +25,6 @@ Table: The potential energy for each molecule for the crystal structures with th
 packing fractions. The potential energy was evaluated at a temperature of 0.1 and
 a pressure of 1.00. {#tbl:potential_energy}
 
-## Investigating Alternate Crystal Structures
-
 There are many reasons for not observing crystal growth,
 one of which can be that we are looking at the wrong crystal structures.
 In this section we investigate the possibility
@@ -38,7 +35,7 @@ In ruling out other structures
 we can focus on the melting behaviour
 knowing this is the information we can obtain.
 
-### Clustering of liquid structures
+### Clustering liquid structures
 
 In looking for crystal growth
 we are searching for what we consider to be appropriate structures,
@@ -146,7 +143,7 @@ are beyond the current limits of our simulations.
 Rather than focusing on crystal growth,
 we instead turn to developing an understanding of crystal melting.
 
-## Polymorphic Stability {#sec:polymorphic_stability}
+## Polymorphic Stability in simulations {#sec:polymorphic_stability}
 
 We have three crystal structures which at a best guess estimate
 the different structures available to the trimer molecule.
@@ -203,7 +200,7 @@ it must take place through a series of highly co-ordinated rearrangements.
 ### Investigating the Solid State phase transition of the p2gg polymorph
 
 Both the p2 and the p2gg structures
-are comprised of the same dimer like units. [@fig:...]
+are comprised of the same dimer like units.
 These units are all in the same direction in the p2 structure
 while the p2gg structure has layers of dimers offset by \SI{90}{\degree}.
 The rearrangements taking place within the solid state phase transition
@@ -296,7 +293,7 @@ are grain boundaries between the layers of p2 crystals.
 
 </div>
 
-### Investigating the Fast Growth of the pg structure
+### Investigating the fast melting of the pg structure
 
 While the p2 and the p2gg polymorphs
 have comparable melting rates,
@@ -452,7 +449,7 @@ measured by molecular dynamics simulation.
 With simulation timescales orders of magnitude longer
 than comparable studies. [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
 
-## Slow Melting Rates
+### Fluctuations in the Lennard--Jones model
 
 The melting rates of the Trimer are significantly slower
 than what is predicted by the classical theory,
@@ -494,16 +491,6 @@ while the Trimer,
 despite being a more complex molecule
 has a near perfect Gaussian distribution.
 
-Fitting these values to a Gaussian function
-allows for a more direct comparison of
-the width of the distribution of the order parameter $M$,
-allowing it to be expressed as
-the curvature of a parabola $\lambda$
-
-$$ P(M) = \sqrt{\frac{\lambda}{2\pi}}
-\exp\left[-\frac{\lambda}{2}(M-M_\text{phase})^2\right] $$
-
-where $M_\text{phase}$ is 0 for the liquid, and 1 for the crystal.
 These values are tabulated in @Tbl:fluctuation_curvature,
 which demonstrates how constrained the Trimer is,
 with the curvature of the liquid phase
@@ -518,22 +505,6 @@ LJ-Disc  Crystal       2.37
 
 Table: The curvature of the distributions
 for the phases of each Molecule. {#tbl:fluctuation_curvature}
-
-These curvatures can be used to create two parabolas,
-one for the liquid phase
-
-$$ \omega(M)_\text{liquid} = \frac{\lambda_\text{liquid}}{2} M^2 $$
-
-and another for the solid
-
-$$ \omega(M)_\text{liquid} = \frac{\lambda_\text{crystal}}{2} (M - 1)^2 + \Delta $$
-
-where $\Delta$ is the free energy difference between the two phases
-which can be estimated as
-
-$$ \Delta \approx \Delta h_m \left[ 1 - \frac{T}{T_m} \right] $$
-
-and shown in @Fig:fluctuation_harmonic.
 
 :::{id=fig:fluctuation_harmonic class=subfigures}
 

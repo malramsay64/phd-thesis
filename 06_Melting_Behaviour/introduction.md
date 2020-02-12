@@ -58,7 +58,7 @@ Competing structures don't only occur in the freezing transition,
 they can also occur in the melting transition.
 The solid Acetaldehyde Phenylhydrazone has been found to have
 two different melting points,
-at \SI{56}{\celcius} and \SI{80}{\degree\celcius} [@Lockemann1905]
+at \SI{56}{\degreeCelsius} and \SI{80}{\degreeCelsius} [@Lockemann1905]
 which could chosen by adding trace amounts of acid or base.
 After much investigation and characterisation,
 @Bernades2019 find the difference in melting points
