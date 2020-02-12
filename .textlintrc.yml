@@ -21,6 +21,7 @@ rules:
       - c
       - s
       - resistance
+      - "relative to"
   terminology:
     defaultTerms: true
     terms:
@@ -31,3 +32,8 @@ rules:
   alex: false
   "write-good": true,
   "unexpanded-acronym": true
+  "no-start-duplicated-conjunction":
+    interval: 2
+  "max-comma":
+    max: 3
+  "abbr-within-parentheses": true
