@@ -215,11 +215,23 @@ The transition displayed here
 is interesting in that it is limited to 1D,
 only taking place along the planes of the crystal lattice.
 
-::: {#fig:p2gg_phase_transition subfigures}
+::: {#fig:p2gg_phase_transition class=subfigures}
 
-![test](../placeholder_figure.png)
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
+![](../Projects/Crystal_Melting/figures/phase_transition_0.svg){width=20%}
+![](../Projects/Crystal_Melting/figures/phase_transition_1.svg){width=20%}
+![](../Projects/Crystal_Melting/figures/phase_transition_2.svg){width=20%}
+![](../Projects/Crystal_Melting/figures/phase_transition_3.svg){width=20%}
+![](../Projects/Crystal_Melting/figures/phase_transition_4.svg){width=20%}
+<!-- markdownlint-enable MD045 -->
 
-There are subfigures
+Steps showing the propagation of a defect within the p2gg crystal.
+The p2gg crystal is coloured green, the p2 crystal is coloured yellow
+and the liquid is coloured blue.
+As the simulation progresses from (a) to (e),
+the defect propagates from right to left
+along a layer of the crystal.
 
 :::
 
@@ -384,37 +396,19 @@ at the start of the simulation
 persists and possibly even extends throughout the simulation,
 still remaining after a time of \num{2e6} (@fig:pg_crystal_top_end).
 
-## Anomalously Slow Growth Rates
+### Does the interface influence the dynamics
 
-In the study of many different crystals,
-the growth rates between the different crystal faces
-can vary by as much as three orders of magnitude. [@Reinhart2018;@Burke1988]
-This huge difference between growth rates
-indicates that the growth of the crystal
-is significantly more
+## Is the melting actually slow
 
-In a study of two similar alloys @Tang2013
-attributed the difference in crystal growth rates to
-the ordering of atoms in the interface,
-with the faster glass former displaying ordering
-much further from the boundary of the crystal.
-This observation is supported by the work of @Reinhart2018
-where in studying Janis particles,
-the stricter the geometric constraints of the crystal phase,
-the slower the growth rate.
-While in work on Lennard Jones Particles,
-@Burke1988 attribute the slow growth rate of the (111) crystal face
-to the degeneracy of fcc and hcp stacking,
-with many stacking faults arising during the freezing process as a result.
+Is crystal growth really that slow compared to other materials
 
-While the Wilson-Frenkel theory has a characteristic timescale of diffusion
-it may be that for more complicated crystal structures,
-such as Janus Particles, [@Reinhart2018] clathrates [@Yagasaki2016] and molecular crystals
-the diffusion may no longer be the relevant characteristic timescale.
-This is important for molecular crystals,
-where one of the major results has been the decoupling
-of the rotational relaxation time and the diffusion constant,
-with the rotational relaxation getting slower much faster than the dynamics.
+- Do the slow dynamics play a major role
+
+![Melting of the pg
+crystal](../Projects/Crystal_Melting/figures/spatial_relaxation_pg.svg){width=80% #fig:spatial_relaxation_pg}
+
+![Melting of the p2
+crystal](../Projects/Crystal_Melting/figures/spatial_relaxation_p2.svg){#fig:spatial_relaxation_p2 width=80%}
 
 ### Comparison to Lewis--Wahnström
 
