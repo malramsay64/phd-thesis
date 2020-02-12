@@ -517,7 +517,7 @@ understanding of dynamics.
 ![Summary of comparisons
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
-### Heterogeneities in Molecular Relaxations
+### Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}
 
 One of the benefits of describing relaxation times
 for each individual molecule

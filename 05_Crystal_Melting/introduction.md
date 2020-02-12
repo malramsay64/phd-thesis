@@ -41,9 +41,10 @@ with $k_{\text{B}}$ being the Boltzmann Constant,
 and $\Delta u$ being the change in chemical potential.
 The quantity $k(T)$ is a temperature dependent rate constant
 and is the difference between the classical models.
-The term within the square brackets
-describes the difference between the rates
-of particles arriving and departing from the surface of the crystal.[@Jackson2002]
+The term within the square brackets,
+part of all classical models,
+describes the difference between the rates of particles
+arriving and departing from the interface. [@Jackson2002]
 
 The Wilson--Frenkel model describes
 the addition of liquid particles onto the crystal surface
@@ -53,7 +54,7 @@ from their current position to their position on the crystal lattice
 is considered a limiting factor in the crystal growth process,
 giving the following form for $k(T)$;
 
-$$ k(T) = \frac{D(T) a}{\Lambda^2} f $$ {#eq:constants_turnbull}
+$$ k(T) = \frac{D(T) a}{\Lambda^2} f $$ {#eq:constants_wilson}
 
 where $D(T)$ is the diffusion constant,
 $a$ is the interatomic spacing,
@@ -75,7 +76,7 @@ The Turnbull theory describes a process of crystal growth
 where the growth is dependent on the thermal velocity of molecules,
 giving $k(T)$ the form;
 
-$$ k(T) = \frac{a}{\lambda} \sqrt{\frac{3 kT}{m}} f $$
+$$ k(T) = \frac{a}{\lambda} \sqrt{\frac{3 kT}{m}} f $$ {#eq:constants_turnbull}
 
 where $\lambda$ is a parameter of fit
 being the distance required to move to the crystal state, and

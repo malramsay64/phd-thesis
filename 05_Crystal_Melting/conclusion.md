@@ -1,36 +1,17 @@
 # Conclusion
 
-- Find the most stable crystal structure of the trimer molecule
-    -> p2
-- Find the melting point of the trimer molecule
-    -> Estimated
-- Observe crystal growth
-    -> Could't...why
-- Why is crystallisation slow
-    -> Why is melting slow
+In modelling the crystal growth behaviour of the Trimer
+using range of models,
+we have seen insights into why the crystal melting is so slow.
+The lack of any observable growth
+has significantly complicated this analysis,
+primarily in the estimation of the melting point.
 
-The melting of the Trimer molecule is incredibly slow,
-even when accounting for the slow dynamics.
-This slow dynamics can be attributed to the stiff liquid and crystal forms
-which prevent a wide range of structures.
-It is entirely possible the onset of dynamic heterogeneities
-plays a role in this structural rigidity.
-Taking a structural approach,
-particles are generally stuck within a local environment
-which mirror the results from the fluctuation modelling.
-This structural rigidity is important well above the melting point
-playing a role in the exceptionally high spinodal point of the crystal.
-This raises an interesting observation
-that the metastability of the crystal phase
-can be a good indicator of the glass forming ability.
-Stable crystals are going to have fewer fluctuations
-and hence a slower growth and melting rate.
-
-While we have observed phenomenally slow crystal growth
-there are also pathways which allow for fast rearrangement and melting.
-The pg crystal melted much faster than the p2,
-meaning a slight rearrangement in the structure
-provides a point from which melting can take place.
-Additionally the solid state phase transition
-of the p2gg to p2 structures shows that the right rearrangements
-can result in large structural changes very quickly.
+The semi-empirical density functional model of crystal melting
+is the best descriptor for the melting of the Trimer molecule.
+This removes the classical idea of molecules
+regularly attaching and detaching from the surface,
+instead describing that rate by
+the fluctuations within the liquid and crystal.
+This gives a single description of melting
+for both pressures.

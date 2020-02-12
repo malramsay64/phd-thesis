@@ -38,6 +38,10 @@ was enough to keep track of the number of timesteps;
 HOOMD-blue can only count up to $2^{32}-1$, slightly more than 4 billion. [@hoomd_counter]
 This means with the chosen timestep of 0.005,
 the longest possible timescale for a simulation is $2e7$.
+It is possible this timescale could be extended by increasing
+the size of the timestep [@Stocker2003;@Fass2018]
+however that is unlikely to significantly increase the timescale
+by the order of magnitude required to observe crystal growth.
 
 With the absence of crystal growth,
 the melting point becomes as estimate.
@@ -50,6 +54,9 @@ the course of the entire simulation is \num{3e-7}.
 This estimate is a upper bound of the melting point
 and are tabulated in @Tbl:crystal_melting_point
 with the values extracted from @fig:melting_point_rates.
+While the melting point is only an estimate,
+as an upper bound, any lowering of the melting point
+emphasises the results found within this thesis.
 
 Pressure  Melting Point $T_m$
 -------- ---------------------
@@ -59,7 +66,7 @@ Pressure  Melting Point $T_m$
 Table: The melting points of the crystals
 for both pressures studied in this thesis. {#tbl:crystal_melting_point}
 
-::: {#fig:melting_point_rates class=subfigure}
+::: {#fig:melting_point_rates class=subfigures}
 
 ![P=1.00](../Projects/Crystal_Melting/figures/melting_point_rates_P1.00.svg){width=80% #fig:melting_point_p1}
 
@@ -277,7 +284,7 @@ showing a linear region close to the melting point
 which is where the x axis is zero,
 that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$.
 Further further away from the melting point there is a sharp deviation,
-with what looks to be a completely different model of melting.
+with what looks to be a different temperature dependence of melting rate.
 
 ![Determining the relationship between components of
 the Wilson--Frenkel model of melting.
@@ -287,6 +294,24 @@ A linear relationship indicates that the Wilson--Frenkel model
 adequately describes the melting,
 which occurs close to $x=0$.
 ](../Projects/Crystal_Melting/figures/melting_wilson.svg){#fig:melting_wilson width=80%}
+
+The slope of the lines shown in @fig:melting_wilson
+give the proportionality constant for the Wilson--Frenkel model. [@eq:constants_wilson]
+This is comprised of the interatomic spacing,
+the mean free path and the collision factor.
+This collision factor can be compared across different materials
+and gives us a place to understand why the growth is so slow.
+The slope of the lines where the Wilson--Frenkel model
+is a good fit $T/T_m < 1.2$ are $-4.5$ for $P=1.00$ and $-5.6$ for $P=13.50$.
+Since we are using the rotational relaxation rather than a diffusion constant,
+we make the assumption that
+the collision factor and mean free path are close to 1.
+@Tang2013 found a collision factor of $5.3$ for NiAl,
+close to the value of our Trimer molecule.
+Their anomalously slow crystalliser CuZr has a collision factor of $0.4$,
+much smaller than the Trimer.
+This means it is likely that the slow crystal melting
+is a result of the slow dynamics of the Trimer.
 
 It would appear that the classical melting theory
 is unable to describe the melting behaviour.
@@ -339,34 +364,39 @@ The equation for the growth rate of
 the semi-empirical density functional model [@eq:dft_growth_rate]
 can be written as
 
-$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$
+$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$ {#eq:proportionality_daft}
 
 where
 
 $$ f(t) = \frac{(\sqrt{\lambda_\text{liquid}}(T) +
 \sqrt{\lambda_\text{crystal}}(T))^2}
 {\lambda_\text{crystal}(T)\sqrt{\lambda_\text{liquid}(T)} +
-\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] $$
+\lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} $$
 
 that is, the contribution to the growth rate
 from the fluctuations.
+In representing the model as this proportion
+we are able to plot the proportionality
+in the same way we have for the classical models.
+@Fig:melting_dft shows the proportionality of @eq:proportionality_dft,
+with a straight line indicating perfect proportionality.
+Using the fluctuations shows a much improved
+fit to the model than either of the classical models. [@fig:melting_turnbull;@fig:melting_wilson]
+There is a change in the melting behaviour
+near the middle of the temperature range
+so this is not a perfect model,
+however unlike either of the classical models,
+the fluctuation model has both pressures on a single line.
+This means there is a single set of constants describing the growth,
+evidence the model properly describes the melting.
+Fitting the fluctuation model to the melting rates
+gives the curves in @fig:fluctuation_rate.
 
 ![The relationship of the thermally normalised relaxation on the y axis
 to the rate description of the semi-empirical density functional model
 on the x axis.
 A straight line means a perfect description of the melting behaviour.
 ](../Projects/Crystal_Melting/figures/melting_dft.svg){#fig:melting_dft width=80%}
-
-Fitting the fluctuation model to the melting rates
-gives the curves in @fig:fluctuation_rate.
-This predicts the melting over the entire temperature range
-interfacial melting was observed.
-By using the fluctuation of the liquid and crystal
-the semi-empirical density functional model
-describes the transition from the liquid to the crystal
-by the rigidity of the different phases.
-That it there is a kinetic component to the phase transition
-and not only a thermodynamic one.
 
 ![Fitting the semi-empirical density functional model
 to the melting rate.
