@@ -248,51 +248,85 @@ where the middle row of blue/orange dimer pair
 reorients to face the same direction as the layers above and below.
 This process of reorientation continues along the crystal lattice.
 
-A characteristic feature of the transition,
-is that after the initial transformation,
-there are periods of no change
-followed by short periods of quick change.
-Giving a stepped pattern between
-\num{1e7} and \num{3e7} timesteps in @fig:solid_state_transition.
-This can be described by a two step process,
-the initial creation of a defect,
-and the propagation of that defect.
-The periods of no change occur when
-there is annihilation of defects.
-The process of defect propagation
-is similar to that studied in amorphous materials [@Tondl2014]
+::: {#fig:solid_state_transition class=subfigures}
+
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
+![](../Projects/Crystal_Melting/figures/phase_transition_0.svg){width=40% #fig:solid_state_transition_0}
+
+![](../Projects/Crystal_Melting/figures/phase_transition_1.svg){width=40% #fig:solid_state_transition_1}
+
+![](../Projects/Crystal_Melting/figures/phase_transition_2.svg){width=40% #fig:solid_state_transition_2}
+
+![](../Projects/Crystal_Melting/figures/phase_transition_3.svg){width=40% #fig:solid_state_transition_3}
+
+![](../Projects/Crystal_Melting/figures/phase_transition_4.svg){width=40% #fig:solid_state_transition_4}
+<!-- markdownlint-enable MD045 -->
+
+Steps showing the propagation of a defect within the p2gg crystal.
+The p2gg crystal is coloured green, the p2 crystal is coloured yellow
+and the liquid is coloured blue.
+As the simulation progresses from (a) to (e),
+the defect propagates from right to left
+along a layer of the crystal.
+The time between the first and last frame is \num{5e2},
+or 0.05 of the rotational relaxation time.
+
+:::
+
+The reorientation of molecules along the layers of the crystal
+is similar to the process of defect propagation
+studied in amorphous materials [@Tondl2014]
 and in other phase transitions. [@Allain1986;@Burakovsky2000]
-What makes this transition notable
-is that the propagation of the defect
-only occurs along a single dimension,
-moving along the plane of the crystal lattice.
+In @fig:solid_state_transition_1 we see the creation of the defect,
+two dimer units on the right hand side have flipped to reorient.
+The remaining figures (@fig:solid_state_transition_2 to @fig:solid_state_transition_4)
+show the propagation of the defect along the crystal lattice.
+This propagation continues until it reaches
+the other side of the crystal and is able to annihilate.
+The propagation of the Trimer defect is interesting for three reasons.
+Firstly, the motion of the defect is much faster than
+the rotational relaxation time in the liquid,
+with the rotational relaxation dominated
+by relaxations in the crystal.
+Defects significantly speeding up
+the relaxation process was also observed by @Tondl2014,
+so is an expected property of defects.
+Secondly, the propagation of the defect
+only occurs along a single dimension.
+The crystal lattice defines a highly directional
+structure on which the defect can move
+resulting in motion along a single dimension.
+This directionality of this motion is very different
+to defects in amorphous materials.
+Thirdly, the defects only facilitate
+relaxation from the p2gg crystal to the p2.
+The motion of the defect does occasionally
+reverse along it's path of motion,
+however there are no defects created in the p2 crystal.
+The lack of reversibility means that
+the final relaxed p2 configuration [@fig:transition_end]
+contains three grain boundaries.
 
-- switchable properties
-- transport properties
-
-The transition displayed here
-is interesting in that it is limited to 1D,
-only taking place along the planes of the crystal lattice.
-There is no reversal,
-crystal defects will anneal,
-here there is no annealing.
-The transition of the p2gg crystal to the p2 crystal
-takes place at a fast rate,
-however the reverse reaction is not observed.
-This highly directional reaction indicates
-a large difference in the free energy $\Delta G$
-between the p2 and p2gg polymorphs.
-With the potential energy difference between the polymorphs
-being relatively small [@tbl:potential_energy],
-the only other contributor must be the entropy.
-
-In the final configuration (@fig:transition_end),
-there are still three rows of the p2gg crystal,
-which are grain boundaries between
-layers of the p2 crystal with different orientations.
-The presence of this phase transition is
-additional evidence that we have identified
-the crystals which will grow in simulation.
+A characteristic feature of the transition
+from the p2gg to p2 polymorph
+is the stepped nature in which it takes place.
+There are periods of rapid transition
+followed by periods of no change.
+This stepped pattern is noticeable
+from a time of \num{4e4} to \num{1.6e4} in @fig:solid_state_transition.
+The presence of these steps
+can be described by a two step process.
+The initial creation of a defect,
+and the propagation of that defect,
+where the propagation of the defect
+occurs at a much higher rate than the nucleation.
+The periods of no change
+occur when all the defects have annihilated,
+that is, they have converted their entire row to the p2 structure.
+We only see the two step process
+towards the end of the transformation
+where most of the p2gg crystal has converted to p2.
 
 <div id="fig:solid_state_transition_structure" class="subfigures">
 
@@ -313,52 +347,15 @@ are grain boundaries between the layers of p2 crystals.
 
 </div>
 
-::: {#fig:p2gg_phase_transition class=subfigures}
-
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/phase_transition_0.svg){width=20%}
-![](../Projects/Crystal_Melting/figures/phase_transition_1.svg){width=20%}
-![](../Projects/Crystal_Melting/figures/phase_transition_2.svg){width=20%}
-![](../Projects/Crystal_Melting/figures/phase_transition_3.svg){width=20%}
-![](../Projects/Crystal_Melting/figures/phase_transition_4.svg){width=20%}
-<!-- markdownlint-enable MD045 -->
-
-Steps showing the propagation of a defect within the p2gg crystal.
-The p2gg crystal is coloured green, the p2 crystal is coloured yellow
-and the liquid is coloured blue.
-As the simulation progresses from (a) to (e),
-the defect propagates from right to left
-along a layer of the crystal.
-
-:::
-
-The highly directional nature of the transition
-in that it can only take place along a single layer of the crystal
-and it doesn't back-track explain both
-the incredible rate at which the transition takes place
-and its step-like nature.
-A single pair of molecules switching from
-the four layer p2gg structure to the two layer p2 structure,
-must lower the barrier for
-neighbouring pairs of molecules to undergo this same transformation.
-Once the initial fast transformation has taken place
-there are a smaller number of p2gg molecules
-which are able to initialise the phase transition,
-resulting in periods of waiting for a 'nucleation' event,
-followed by the rapid propagation across the crystal.
-Also of note is that the starting point of the propagation
-is completely random.
-
 ### Investigating the fast melting of the pg structure
 
-While the p2 and the p2gg polymorphs
+Both the p2 and the p2gg polymorphs
 have comparable melting rates,
-primarily resulting from p2gg structure
-undergoing a solid state transition to the p2 structure,
-the pg polymorph has a significantly faster melting rate.
-Understanding how this crystal melts may provide some insight
-into the phenomenally slow growth rates of the p2 crystal.
+likely resulting from the solid state phase transition
+of the p2gg structure to the p2 structure.
+However, the pg polymorph has a significantly faster melting rate.
+In this section we investigate the melting of this polymorph
+to understand why is is so much faster.
 
 <div id="fig:pg_melting" class="subfigures">
 
