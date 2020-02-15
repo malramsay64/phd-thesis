@@ -20,6 +20,8 @@ rules:
       - magnitude
       - c
       - s
+      - o
+      - f
       - resistance
       - "relative to"
   terminology:
@@ -31,7 +33,10 @@ rules:
 
   alex: false
   "write-good": true,
-  "unexpanded-acronym": true
+  "unexpanded-acronym":
+    ignore_acronyms:
+      - "HOOMD"
+      - "UMAP"
   "no-start-duplicated-conjunction":
     interval: 2
   "max-comma":

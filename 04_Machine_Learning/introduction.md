@@ -199,7 +199,7 @@ with the most recent found in 2015.
 Other examples of this diversity are
 to flufenamic acid [@Lopez-Mejias2012] with at least 9 polymorphs, and
 triacetone-triperoxide [@Reany2009] with at least 6 polymorphs.
-The abundance of molecular polymorphs is such that @McCrone1965 noted that
+The prevalence of molecular polymorphs is such that @McCrone1965 noted that
 "the number of forms known for each compound is proportional to
 the time and money spent researching that compound."
 This diversity of structure raises additional complications

@@ -1,7 +1,7 @@
 # Results
 
-This section measures the melting rate of the p2 crystal
-which is found to be the best candidate for growth, @sec:Melting_Behaviour
+This section measures the melting rate of the p2 crystal,
+found to be the best candidate for growth, @sec:Melting_Behaviour
 describing the growth rates through different models.
 This allows us to understand which aspects of the growth and melting rates
 are important for describing the process,
@@ -167,11 +167,11 @@ pressures. {#tbl:potential_energy_difference}
 
 Both the Wilson--Frenkel and the Semi-empirical density functional theories of growth
 include a term for a transport coefficient,
-which is normally the diffusion constant $D$. [@Jackson2002]
+normally the diffusion constant $D$. [@Jackson2002]
 @Ediger2008 has noted that the viscosity
 is not an appropriate transport coefficient
 on account of the dynamic heterogeneities present at low temperatures.
-In the case of the Trimer molecule,
+For the Trimer molecule,
 we have both the translational diffusion constant $D_t$
 and the rotational diffusion constant $D_r$,
 both of which could be used here.
@@ -257,8 +257,8 @@ If these models describe the observed crystal growth behaviour
 plotting $v(T)/p(T)$ vs $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}$
 will give a straight line.
 
-The Turnbull model of melting defines $p(T) = \sqrt{T}$
-which is plotted in @fig:melting_turnbull.
+The Turnbull model of melting defines $p(T) = \sqrt{T}$,
+plotted in @fig:melting_turnbull.
 The ratio between the two axes displayed
 is nothing close to a straight line,
 indicating it is a very poor fit to this data.
@@ -285,7 +285,7 @@ where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$. [@sec:tran
 The ratio for the Wilson--Frenkel model is shown in @fig:melting_wilson.
 The ratio between the two components is much improved over the Turnbull model,
 showing a linear region close to the melting point
-which is where the x axis is zero,
+being where the x axis is zero,
 that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$.
 Further further away from the melting point there is a sharp deviation,
 with what looks to be a different temperature dependence of melting rate.
@@ -346,7 +346,7 @@ is the orientational order parameter $O_\theta$
 
 $$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$
 
-which is described in @sec:ml_introduction.
+described in @sec:ml_introduction.
 In machine learning, the reduction in dimensionality was problematic
 while in this case we are looking for a one-dimensional description
 making this an excellent choice.

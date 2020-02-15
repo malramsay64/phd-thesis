@@ -31,8 +31,7 @@ In a study of two alloys (\ce{CuZr} and \ce{NiAl}) with similar crystal structur
 This difference between the growth rates has been attributed to
 the ordering of liquid \ce{NiAl} over many atomic diameters near the crystal interface.
 The presence of a large interface width
-has been shown to be important for fast growth, [@Sun2018a]
-particularly in the barrier-less Turnbull type growth.
+has been shown to be important for fast Turnbull type growth. [@Sun2018a]
 
 ## Competing Structures
 

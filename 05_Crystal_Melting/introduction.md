@@ -62,7 +62,7 @@ $\Lambda$ is the diffusional mean free path, and
 $f$ is a factor to account for the fraction of
 collisions resulting in attachment to the crystal. [@Jackson1984]
 With the diffusion constant of the trimer molecule
-begin described by the Vogel--Tammann--Fulcher relation, [@eq:VTF]
+begin described by the Vogel--Tammann--Fulcher relation, [@eq:vtf]
 the exponential dependence on temperature
 significantly reduces the rate of crystal growth as the temperature drops.
 There is typically a crossover point
@@ -214,7 +214,7 @@ $\lambda_\text{solid}$
 which describe the curvature of the parabolas
 of the liquid and solid fluctuations respectively.
 We can describe the growth rate
-in terms of the curvature of each phase
+using the curvature of each phase
 We can find an expression for the growth rate $v(T)$
 given the curvature of each phase
 as a function of temperature
