@@ -1,7 +1,8 @@
 # Results
 
 This section measures the melting rate of the p2 crystal
-and describes the rates using different models of growth.
+which is found to be the best candidate for growth, @sec:Melting_Behaviour
+describing the growth rates through different models.
 This allows us to understand which aspects of the growth and melting rates
 are important for describing the process,
 giving an understanding of why crystallisation and growth is so slow.
@@ -38,9 +39,12 @@ was enough to keep track of the number of timesteps;
 HOOMD-blue can only count up to $2^{32}-1$, slightly more than 4 billion. [@hoomd_counter]
 This means with the chosen timestep of 0.005,
 the longest possible timescale for a simulation is $2e7$.
-It is possible this timescale could be extended by increasing
+This limitation of HOOMD-blue is not an issue for
+similar studies of crystal growth [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
+which use timescales 2-4 orders of magnitude less than used here.
+It is possible the maximum timescale could be extended by increasing
 the size of the timestep [@Stocker2003;@Fass2018]
-however that is unlikely to significantly increase the timescale
+however that is unlikely to increase the timescale
 by the order of magnitude required to observe crystal growth.
 
 With the absence of crystal growth,
@@ -285,6 +289,13 @@ which is where the x axis is zero,
 that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$.
 Further further away from the melting point there is a sharp deviation,
 with what looks to be a different temperature dependence of melting rate.
+In a study of Janus particles which require rotational reorientation,
+@Reinhart2018 also find that the Wilson--Frenkel model of growth
+is insufficient for describing their observations.
+The strict geometric requirements
+for the Janus particles to join the crystal
+are hypothesised to form
+an activation barrier large enough to dominate the growth rate.
 
 ![Determining the relationship between components of
 the Wilson--Frenkel model of melting.

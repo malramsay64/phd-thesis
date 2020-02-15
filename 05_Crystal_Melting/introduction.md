@@ -244,7 +244,8 @@ and allowing it to change as a function of temperature.
 Crystallisation rates within simulations
 are typically measured along a single lattice direction.
 [@Tang2013;@Tymczak1990;@Burke1988;@Broughton1982a]
-This is done by creating a slab geometry,
+This is done using the Free Solidification Method, [@Hoyt2002;@Hoyt1999]
+creating a slab geometry,
 a region of perfect crystal of the desired geometry
 onto which the liquid can attach and grow.
 The slab geometry allows for measuring both melting and growth

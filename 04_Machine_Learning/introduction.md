@@ -176,7 +176,7 @@ Bond Angle Analysis, and [@Ackland2006]
 Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
 Each of these different order parameters
 focus on the identification of a small range of structures,
-which is typically; Face Centered Cubic, Body Centered Cubic, and Hexagonal Close Packed.
+typically; Face Centered Cubic, Body Centered Cubic, and Hexagonal Close Packed.
 The identification of each structure
 uses hand picked parameters
 tuned for the potential used for the simulation.

@@ -61,7 +61,7 @@ to the *fragile* liquids displaying a highly
 non-linear relationship,
 each liquid has a significant change in the heat capacity
 at the glass transition temperature. \
-*Adapted with permission from @Lubchenko2007 © Annual Reviews*
+*Figure from @Lubchenko2007 used with permission © Annual Reviews*
 ](01_Introduction/figures/angell.png){#fig:angell_plot}
 
 The most famous of the strong glass formers is \ce{SiO2},
