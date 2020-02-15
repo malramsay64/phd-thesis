@@ -34,7 +34,7 @@ and using the clustering algorithm developed in @sec:clustering
 to identify new structures in the liquid configurations.
 
 Crystal| Packing Fraction |Potential Energy per Molecule
--------| ---------------- |-------------
+-------| ----------------:|-------------:
 p2     | 0.938            | **-0.198**
 p2gg   | **0.945**        | -0.190
 pg     | 0.927            | -0.084
@@ -254,12 +254,9 @@ This process of reorientation continues along the crystal lattice.
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
 ![](../Projects/Crystal_Melting/figures/phase_transition_0.svg){width=40% #fig:solid_state_transition_0}
-
 ![](../Projects/Crystal_Melting/figures/phase_transition_1.svg){width=40% #fig:solid_state_transition_1}
 
 ![](../Projects/Crystal_Melting/figures/phase_transition_2.svg){width=40% #fig:solid_state_transition_2}
-
-![](../Projects/Crystal_Melting/figures/phase_transition_3.svg){width=40% #fig:solid_state_transition_3}
 
 ![](../Projects/Crystal_Melting/figures/phase_transition_4.svg){width=40% #fig:solid_state_transition_4}
 <!-- markdownlint-enable MD045 -->

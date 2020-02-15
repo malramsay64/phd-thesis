@@ -83,7 +83,7 @@ over the course of the simulation.
 
 :::
 
-### Spinodal temperature
+### Spinodal temperature {#sec:spinodal}
 
 In @sec:supercooled_liquids it was discussed that
 a liquid can exist as a metastable state below the melting point.
@@ -195,24 +195,14 @@ for half of the molecules to have reoriented by \SI{90}{\degree}.
 
 ## Melting Rates
 
-The simulations in @sec:polymorphic-stability show the p2 crystal to be most stable,
-so is used for further analysis of the melting rate.
-The isotropic melting rate of the p2 crystal
-is the chosen metric,
-measured using an estimated radius,
-found from the volume
-by assuming a circular crystal.
-@fig:melting_radius shows a linear time dependence
-fitting the expected behaviour,
-over all temperatures.
-
-![This figure shows the change in the estimated radius of the crystal as a
-function of time. The radius is estimated from the volume assuming a circular crystal.
-Each set of conditions is repeated five times starting from independent
-configurations, which are used to estimate the confidence intervals. The change in
-the radius is expected to change linearly, which is reflected in all the data.
-](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
-
+The simulations in @sec:polymorphic_stability find
+the p2 polymorph to be the most stable crystal structure,
+so is used for an analysis of the melting rate.
+The isotropic melting rate of the p2 crystal is the rate we are measuring,
+measured by estimating the radius of the crystal
+found from the volume and assuming a circular crystal.
+This assumption is validated by @fig:melting_radius
+showing the expected linear melting over all temperatures.
 With the time dependence of the estimated radius
 matching the expected linear dependence,
 the crystal growth rate is the slope of a linear fit.
@@ -221,11 +211,12 @@ The normalisation of the melting point
 brings both pressures onto a single curve,
 the same result as seen for the dynamic quantities.
 
-This is the observation for temperatures
-still well above the melting point.
-I will include more temperatures
-as the results from the
-longer crystal melting simulations are finished.
+![This figure shows the change in the estimated radius of the crystal as a
+function of time. The radius is estimated from the volume assuming a circular crystal.
+Each set of conditions is repeated five times starting from independent
+configurations, which are used to estimate the confidence intervals. The change in
+the radius is expected to change linearly, which is reflected in all the data.
+](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
 
 ![The crystal growth rates normalised by the melting point. For clarity a light grey.
 These results are for both high and low
@@ -362,7 +353,7 @@ This is done using the below relation
 $$ M = \frac{O_\theta - \langle O_\theta \rangle_\text{liquid}}
 {\langle O_\theta \rangle_\text{crystal} - \langle O_\theta \rangle_\text{liquid}} $$
 
-The distributions of these values are shown in @fig:fluctuation_normalised
+The distributions of these values are shown in @fig:trimer_fluctuation
 where the distribution of the crystal phase
 is far narrower than that of the liquid phase,
 with very little overlap.
@@ -375,7 +366,7 @@ The equation for the growth rate of
 the semi-empirical density functional model [@eq:dft_growth_rate]
 can be written as
 
-$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$ {#eq:proportionality_daft}
+$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$ {#eq:proportionality_dft}
 
 where
 
@@ -412,4 +403,4 @@ A straight line means a perfect description of the melting behaviour.
 ![Fitting the semi-empirical density functional model
 to the melting rate.
 Both pressures are fit with the same constant $K=3.7$.
-](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){width=80%}
+](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){#fig:fluctuation_rate width=80%}
