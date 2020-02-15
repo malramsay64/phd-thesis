@@ -5,7 +5,8 @@ looking at whether there are additional structures we haven't considered.
 This is followed by an analysis of the melting dynamics
 of each crystal structure,
 looking at their stability
-and whether there is competition between structures.
+whether there is competition between structures,
+and what the fluctuation model can tell us about the structure.
 
 ## Static analysis of the Trimer Polymorphs
 
@@ -357,6 +358,20 @@ However, the pg polymorph has a significantly faster melting rate.
 In this section we investigate the melting of this polymorph
 to understand why is is so much faster.
 
+The melting of the pg polymorph is shown in @fig:pg_melting,
+which shows asymmetric melting of the crystal.
+In the same time the bottom 30 layers of the crystal
+have melted (from @fig:pg_melting_0 to @fig:pg_melting_2),
+the top layer of the crystal remains completely intact,
+containing the same molecules as the initial configuration.
+There are many instances of crystals
+having a melting or growth rate
+dependent on the face of the crystal used for the measurement. [@Burke1988;@Tymczak1990;@Reinhart2017]
+The melting rate which changes depending on
+the direction along a crystal face
+is a phenomenon for which I have found no other examples in the literature,
+making it incredibly interesting for study.
+
 <div id="fig:pg_melting" class="subfigures">
 
 <!-- These captions are intentionally left blank -->
@@ -374,37 +389,6 @@ are shown in yellow and green respectively.
 This shows (a) the melting from the initial crystal,
 (b) after a time of \num{1e6} and
 (c) after a time of \num{2e6}.
-
-</div>
-
-@Fig:pg_melting shows configurations
-from the melting of the pg crystal,
-demonstrating asymmetric melting of the pg crystal.
-In the same time the crystal has melted
-the bottom 30 layers (from @fig:pg_melting_0 to @fig:pg_melting_2),
-the top layer of the crystal remains completely intact,
-containing the same molecules as the initial configuration.
-It is a common occurrence for
-crystal faces to have different melting rates, [@Burke1988;@Tymczak1990]
-however it is far less common for different rates
-on opposite sides of the same crystal,
-such that no other examples have been found within the literature.
-So what is the difference between these two faces?
-
-<div id="fig:pg_crystal" class="subfigures">
-
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![Bottom beginning](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=33%}
-![Top Beginning](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=33%}
-![Top End](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_2.svg){#fig:pg_crystal_top_end width=33%}
-<!-- markdownlint-enable MD045 -->
-
-Zooming in on the pg crystal structure
-at the beginning of the melting run
-(a) at the bottom and (b) at the top.
-This can be compared to
-(c) the top after a time of \num{2e6}.
 
 </div>
 
@@ -428,62 +412,58 @@ giving the triangular shape.
 Along this face there isn't the same
 locking of molecules into the crystal structure.
 
-Looking past the crystal
-to the first layer of the liquid,
-the layer of liquid above the top (@fig:pg_crystal_top)
-has much orientational order
-than the layer below the bottom (@fig:pg_crystal_bottom).
-The orientational order observed
-at the start of the simulation
-persists and possibly even extends throughout the simulation,
-still remaining after a time of \num{2e6} (@fig:pg_crystal_top_end).
+<div id="fig:pg_crystal" class="subfigures">
 
-### Does the interface influence the dynamics
+<!-- These captions are intentionally left blank -->
+<!-- markdownlint-disable MD045 -->
+![Bottom beginning
+](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=40%}
+![Top Beginning
+](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=40%}
+<!-- markdownlint-enable MD045 -->
 
-## Is the melting actually slow
+Zooming in on the pg crystal structure
+at the beginning of the melting run
+showing the configurations of the particles.
+(a) at the bottom and (b) at the top.
 
-Is crystal growth really that slow compared to other materials
+</div>
 
-- Do the slow dynamics play a major role
+Examining the dynamics at the interface [@fig:spatial_relaxation_pg]
+there appears to be a difference
+between the relaxation times at the top of the crystal
+and those around the edges.
+Extending beyond the top of the crystal,
+there appears to be a large region where
+the rotations are significantly longer than the mean,
+indicating a suppression of the dynamics.
+This suppression doesn't appear on the edges,
+with relaxation times close to those of the equilibrium liquid.
+Considering the gear network of @Zwanzig1987,
+in creating a surface where rotations are unable to take place,
+being the crystal,
+molecules interacting with that surface
+will be unable to rotate
+since the surface won't move with it.
 
-![Melting of the pg
-crystal](../Projects/Crystal_Melting/figures/spatial_relaxation_pg.svg){width=80% #fig:spatial_relaxation_pg}
+![Time for each molecule in a simulation melting
+a crystal of the pg polymorph to rotationally relax.
+The mean relaxation time in the liquid is white.
+Relaxation times longer than the mean are coloured orange
+and those shorter than the mean are coloured blue.
+](../Projects/Crystal_Melting/figures/spatial_relaxation_pg.svg){#fig:spatial_relaxation_pg width=80%}
 
-![Melting of the p2
-crystal](../Projects/Crystal_Melting/figures/spatial_relaxation_p2.svg){#fig:spatial_relaxation_p2 width=80%}
+The same effect of the interface can also be
+considered for the p2 interface. [@fig:spatial_relaxation_p2]
+In this example the dynamics are
+more even across the simulation.
 
-### Comparison to Lewis--Wahnström
-
-While it is difficult to make a direct comparison to the Lewis--Wahnström model
-as there is no data published on crystal melting rates, only growth rates. [@Pedersen2011]
-The growth of a Lewis--Wahnström crystal from zero to all 356 molecules in the simulation
-occurs over a period of $\approx 5\tau_S$.
-The *fastest* melting rate measured for the trimer molecule is $\approx 0.4 \tau_R$
-meaning in the same timescale less than 2 layers of the crystal will have melted.
-As an estimate, the dynamics of the melting and growth
-of the Trimer molecule are at least an order of magnitude slower
-than for the Lewis--Wahnström model.
-
-It is interesting to compare the growth of Lennard--Jones discs,
-in 2D the crystal forms almost instantaneously, [@cite]
-with simulations using binary mixtures to prevent the crystallisation.
-In 3D, DJ particles create the crystal far slower
-often introducing packing defects.
-It is intriguing that this relationship flips for a molecular system.
-
-The 2D molecules are so much slower
-as a result of the rotational constraints.
-As presented in @sec:Dynamics,
-rotational motion is required for translational motion to occur,
-and being two dimensional, the trimer can lock up.
-In 3D, the rotations are not so constrained,
-with alternate degrees of freedom available
-to allow further rotation.
-
-The melting rates measured are the slowest melting rates
-measured by molecular dynamics simulation.
-With simulation timescales orders of magnitude longer
-than comparable studies. [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
+![Time for each molecule in a simulation melting
+a crystal of the p2 polymorph to rotationally relax.
+The mean relaxation time in the liquid is white.
+Relaxation times longer than the mean are coloured orange
+and those shorter than the mean are coloured blue.
+](../Projects/Crystal_Melting/figures/spatial_relaxation_p2.svg){#fig:spatial_relaxation_p2 width=80%}
 
 ### Fluctuations in the Lennard--Jones model {#sec:fluctuations}
 
@@ -565,13 +545,15 @@ as a method of comparing the growth rates.
 For the Trimer the fraction is 0.18%,
 far less than the 34% of the LJ-Disc.
 
-## Spinodal Point
-
-The spinodal points presented in @sec:spinodal,
-are much higher than in similar studies,
-having a normalised temperature $T/T_m = 1.6$ for both pressures.
-For comparison,
-the spinodal of the 2D Lennard Jones Crystal occurs a $T/T_m = 1.08$, [@Abraham1981]
-while a range of metals have a spinodal at $T/T_m=1.2$. [@Lu1998]
-This is also well above the temperatures of melting rates published in 3D systems.
-[@Benjamin2015;@Kerrache2008;@Rozmanov2011;@Jackson2002;@Ramakrishnan2017;@Iwamatsu1999]
+The highly rigid structure of the p2 crystal
+is likely responsible for the high spinodal point
+presented in @sec:spinodal.
+Experiments [@Lu1998] and
+simulation studies in 3D [@Benjamin2015;@Kerrache2008;@Rozmanov2011;@Jackson2002;@Ramakrishnan2017;@Iwamatsu1999]
+and 2D [@Abraham1981]
+find spinodal points ranging from $T/T_m = 1.08$ to $T/T_m = 1.2$.
+Our value of $T/T_m = 1.6$,
+is far above this range.
+This analysis of the fluctuations
+shows that transitions from the crystal to the liquid
+are rare and require significant energy to take place.

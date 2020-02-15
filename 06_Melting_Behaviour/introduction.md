@@ -73,6 +73,9 @@ when understanding the transition between the liquid and solid phase.
 
 ## Goals
 
+The primary goal of this chapter is to establish
+the most stable crystal structure
+which can be used to study growth.
 The goals of this chapter are to establish whether
 it is reasonable to describe the crystal growth
 of the Trimer as anomalously slow.
