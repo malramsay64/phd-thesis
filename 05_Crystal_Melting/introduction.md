@@ -158,7 +158,7 @@ inert gasses, [@Jackson2002;@Broughton1982a]
 and a small number of molecular materials [@Jackson2002]
 which have low entropies of fusion, behaving like spheres.
 
-### Semi-Empirical Density Functional Model of Growth
+### Semi-Empirical Density Functional Model of Growth {#sec:dft_model}
 
 The field of modelling crystal growth using free energy functionals
 has a wide range of theories using nomenclature that has changed over time. [@Granasy2019]
@@ -284,13 +284,23 @@ and allowing it to change as a function of temperature.
 
 ## Crystal Melting Goals
 
-This chapter aims to study the crystal melting and growth of the Trimer molecule
-to aid in understanding why the process of crystallisation
-is so slow for fragile liquids.
-Using a range of models of crystal growth
-we are able to find which can describe the observed behaviour
-and where the others fall short.
-This gives us a way to determine
-why the growth of the trimer,
-and other fragile liquids,
-is so slow.
+This chapter studies the crystal melting of
+the p2 polymorph of the Trimer molecule,
+to understand why the process of growth is so slow.
+In @sec:melting_point we find that measuring growth
+of the trimer crystal is not possible on the timescales
+accessible to simulation,
+so rather than modelling growth,
+we focus on understanding what the slow melting rates
+are able to tell us about
+the slow growth and melting of fragile liquids.
+In @sec:melting_thermodynamics
+we find the thermodynamic quantities
+required to model the melting rates
+using the models described in @sec:crystal_growth_theories.
+This is followed in @sec:melting_rates by
+the calculation of the growth rates of the p2 polymorph,
+followed by fitting each of the models to these observations.
+This allows us to understand which aspects of the models
+are important for describing melting in the Trimer
+which can be applied to understanding other materials.

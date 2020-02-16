@@ -83,3 +83,14 @@ however this chapter aims to describe it in more relative terms.
 Additionally where we are able to describe the growth as slow
 are there any aspects of the crystal growth
 which could explain why it is so slow.
+
+In @sec:static_analysis, we start with
+a revisit of some of our assumptions about our crystal structures,
+followed by an analysis of the configurations,
+looking for additional structures we haven't considered.
+This is followed in @sec:dynamic_analysis by
+an analysis of the melting dynamics of each crystal structure,
+looking at their stability and identifying competition between structures.
+This concludes with an analysis of what the fluctuations used
+in the Semi-Empirical Density Functional model of melting (@sec:dft_model)
+can tell us about the crystal structure.
