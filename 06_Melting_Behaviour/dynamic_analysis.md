@@ -15,21 +15,11 @@ The melting of each crystal polymorph is shown in @fig:melting_comparison,
 monitoring the size of the crystalline region for each polymorph as they melt.
 The pg polymorph melts the fastest,
 an expected result based on the higher potential energy
-than the other polymorphs. [@tbl:potential_energy]
+than the other polymorphs. (@tbl:potential_energy)
 The other polymorphs, being p2 and p2gg follow this trend,
 the p2 polymorph with the lowest potential energy melts the slowest.
 The melting of the entire crystalline region
 is only one aspect of melting.
-Using the machine learning algorithm developed in @sec:Machine_Learning,
-it is possible to monitor the fraction of each polymorph within a simulation,
-shown for the p2gg polymorph in @fig:solid_state_transition.
-This figure shows most of the p2gg polymorph
-undergoing a solid state transition to
-the p2 polymorph before the melting takes place.
-The rate of this solid state transition
-is orders of magnitude faster than melting,
-with the transition to the p2 polymorph taking place completely
-before melting is observed.
 
 ![Comparison of the melting of each of the different crystal types.
 These values are compared at a pressure of 13.50 and a temperature of 1.40.
@@ -38,29 +28,30 @@ The pg crystals melts faster than either the p2 or p2gg crystals.
 
 ## Investigating the Solid State phase transition of the p2gg polymorph
 
-The transition of the p2gg polymorph to the p2 polymorph
-shown in @fig:solid_state_transition
-takes place incredibly quickly.
+Using the machine learning algorithm developed in @sec:Machine_Learning,
+it is possible to monitor the fraction of each polymorph within a simulation,
+providing a more complete understanding of melting.
+The count of each polymorph is shown in @fig:solid_state_transition,
+monitoring the melting of a crystal that starts as the p2gg polymorph.
+This figure shows most of the p2gg polymorph
+undergoing a solid state transition to the p2 polymorph.
+The rate of this solid state transition
+is orders of magnitude faster than melting,
+with the transition to the p2 polymorph taking place completely
+before melting is observed.
 The timescale of this conversion
 is similar to that of the rotational relaxation time $\tau_R = \num{1.0e4}$
 of the liquid at the same conditions.
 More than half the particles have undergone a transition
 in twice the rotational relaxation time.
-What is unusual about this transition
-is the initial fast reaction
+Along with the speed of the transition,
+the shape of conversion is notable,
+the initial fast reaction
 is followed by a period of no reaction taking place,
 followed by a fast reaction, then nothing.
 This profile is similar to that of crystal growth
 where the nucleation of a new island on the interface
 is very slow relative to the growth rate. [@Markov2003]
-The speed of this transition is also notable
-since it is so much faster than the melting rate
-and in @sec:fluctuations we see the crystal structure
-is incredibly stiff.
-Along with the speed of the transition,
-the shape of conversion is notable.
-This section investigates why the solid state phase transition
-from the p2gg to the p2 polymorph is so fast.
 
 ![Monitoring the proportion of each polymorph within a crystal
 which is initially comprised of the p2gg polymorph.
@@ -96,7 +87,6 @@ This process of reorientation continues along the crystal lattice.
 ![](../Projects/Crystal_Melting/figures/phase_transition_1.svg){width=40% #fig:solid_state_transition_1}
 
 ![](../Projects/Crystal_Melting/figures/phase_transition_2.svg){width=40% #fig:solid_state_transition_2}
-
 ![](../Projects/Crystal_Melting/figures/phase_transition_4.svg){width=40% #fig:solid_state_transition_4}
 <!-- markdownlint-enable MD045 -->
 
