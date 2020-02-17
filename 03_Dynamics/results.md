@@ -35,7 +35,7 @@ $D_r$ is the diffusion constant of the rotational degrees of freedom,
 $\eta$ is the shear viscosity, and
 $T$ is the temperature.
 
-## Standard Dynamics
+## Standard Dynamics {#sec:dynamics_results}
 
 Analysing the behaviour of the trimer molecule
 using the standard dynamic quantities

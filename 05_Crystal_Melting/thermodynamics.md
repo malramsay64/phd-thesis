@@ -1,45 +1,47 @@
 # Thermodynamic quantities for Melting and Growth
 
-In this section we are calculating the quantities
-needed to model crystal growth.
-The melting point $T_m$,
-the spinodal temperature,
-the chemical potential $\Delta \mu$, and
-the transport coefficient.
+In this section we find the quantities
+needed to model crystal growth
+using the models described in @sec:crystal_growth_theories.
+These quantities are
+the melting point $T_m$ (@sec:melting_point),
+the spinodal temperature (@sec:spinodal),
+the chemical potential $\Delta \mu$ (@sec:chemical_potential), and
+the transport coefficient (@sec:crystal_transport).
 
 ## Melting Point {#sec:melting_point}
 
 The melting point $T_m$ is the temperature
 at which the rates of attachment and detachment
 at the crystal surface are the same,
-there is no net growth or melting.
-A method of determining the melting point
-from molecular dynamics simulations
-is finding the temperature at which
-the growth rate crosses from
-crosses from negative (melting) to positive (growth). [@GarciaFernandez2006]
-Throughout the study of the Trimer molecule,
-no crystallisation has been observed,
-despite running simulations as long as HOOMD-blue allows.
-A technical decision in the development of the HOOMD-blue
-molecular dynamics package deemed that a 32 bit unsigned integer
-was enough to keep track of the number of timesteps;
-HOOMD-blue can only count up to $2^{32}-1$, slightly more than 4 billion. [@hoomd_counter]
-This means with the chosen timestep of 0.005,
+that is, there is no net growth or melting.
+A standard method of determining the melting point in molecular dynamics simulations
+is to find the temperature at which
+the growth rate crosses from negative (melting) to positive (growth). [@GarciaFernandez2006]
+Throughout the study of the Trimer molecule no crystallisation has been observed,
+despite running simulations for as many timesteps as HOOMD-blue allows.
+A technical decision in the development of HOOMD-blue
+deemed a 32 bit unsigned integer enough to keep track of the current timestep,
+meaning HOOMD-blue can only count up to $2^{32}-1$, slightly more than 4 billion. [@hoomd_counter]
+With the chosen timestep in our simulations of 0.005,
 the longest possible timescale for a simulation is $2e7$.
 This limitation of HOOMD-blue is not an issue for
 similar studies of crystal growth [@Reinhart2018;@Benjamin2015;@Tang2013;@Yagasaki2016]
 which use timescales 2-4 orders of magnitude less than used here.
 It is possible the maximum timescale could be extended by increasing
 the size of the timestep [@Stocker2003;@Fass2018]
-however that is unlikely to increase the timescale
+however, it is unlikely to increase the timescale
 by the order of magnitude required to observe crystal growth.
 
-With the absence of crystal growth,
-the melting point becomes as estimate.
-The melting point is defined here
-as the temperature at which melting is no longer observed,
+With the absence of observed growth
+we need an alternate description of the melting point.
+We define the melting point as
+the temperature at which melting is no longer observed,
 with the limit of being the melting of a single layer of crystal.
+This means the melting point becomes an estimate
+since we are unable to distinguish between
+the melting rate reaching zero because of thermodynamics
+or the timescale being too short to observe.
 The melting rate which corresponds to the melting
 of a single layer of crystal over
 the course of the entire simulation is \num{3e-7}.
@@ -74,24 +76,17 @@ over the course of the simulation.
 ## Spinodal temperature {#sec:spinodal}
 
 In @sec:supercooled_liquids it was discussed that
-a liquid can exist as a metastable state below the melting point.
-The same is also true of the crystal above the melting point.
+a liquid can exist as a metastable state below the melting point
+giving a supercooled liquid.
+The same phenomenon is also true of the crystal above the melting point.
 At some temperature above the melting point,
 the crystal is no longer metastable,
 spontaneously melting to form the liquid.
 The temperature at which this spontaneous melting occurs
-is known as the spinodal temperature.
-When a crystal is surrounded by liquid above the melting point,
-melting will occur at the liquid--crystal interface.
-This interfacial melting is explained by
-the Wilson-Frenkel theory of crystal growth.
-It is when the melting is not only occurring at the interface,
-at many points within the crystal itself
-that the temperature is above the spinodal.
-
+is known as the spinodal point $T_s$.
 All the theories described in @sec:crystal_growth_theories
 make the assumption that the melting and growth
-is occurring at a well defined interface.
+is occurring at a well defined liquid--crystal interface.
 There is an alternative method of melting,
 which takes place spontaneously
 which has been known as the Homogeneous Nucleation Catastrophe. [@Lu1998]
@@ -103,22 +98,21 @@ The spinodal point for crystallisation within the liquid
 is beyond the reach of our current simulations
 and so is not studied here.
 
-<div id="fig:spinodal" class="subfigures">
+::: {#fig:spinodal class=subfigures}
 
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
-![](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
-<!-- markdownlint-enable MD045 -->
+![T=0.50](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
+![T=0.55 ($T_s$)](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
 
-Melting behaviour above (a) and below (b) the spinodal. These are configurations from a
-melting simulation at a pressure of 1.0, with (a) at a temperature of 0.55 and (b) at a
-temperature of 0.50. While (b) shows defects within the crystal, these are transient,
-retuning the crystal to its original structure as they move along the lattice
-dimension. This is unlike in (a) where the defects are persistent and support the
-propagation of melting in the surrounding crystal.
+Melting behaviour below (a) and at (b) the spinodal.
+These are configurations from a melting simulation
+at a pressure of 1.0,
+with (a) at a temperature of 0.50,
+and (b) at a temperature of 0.55.
+The defects in the center of the crystal
+are spontaneously appear,
+indicating spontaneous melting.
 
-</div>
+:::
 
 Pressure  Spinodal Temperature
 -------- ---------------------
@@ -128,34 +122,38 @@ Pressure  Spinodal Temperature
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
 pressures. {#tbl:crystal_spinodal}
 
-## Chemical Potential Energy
+## Chemical Potential Energy {#sec:chemical_potential}
 
 The change in the chemical potential energy $\Delta \mu$
-is an important part of describing the crystal melting dynamics
-in the classical models of melting.
-Finding the chemical potential energy at each temperature
-is a complex process,
-so a standard approach [@Tang2013]
-is to estimate the change in chemical potential $\Delta \mu$ as
+between the liquid and crystal states
+is an important part of describing crystal melting dynamics.
+Finding the chemical potential energy at each temperature is a complex process,
+so a standard approach [@Tang2013] is
+to estimate the change in chemical potential $\Delta \mu$ as
 
 $$ \Delta \mu = \frac{\Delta h_m(T_m - T)}{T_m} $$
 
-where $\Delta h_m$ is the enthalpy of fusion per particle.
+where $\Delta h_m$ is the enthalpy of fusion per particle at the melting point,
+a quantity which can be calculated once.
+The values for the enthalpy of melting $\Delta h_m$
+are shown in @tbl:potential_energy_difference.
+The higher pressure $P=13.50$ creates a slightly larger
+enthalpy at the melting point than at the lower pressure $P=1.00$.
 
 Pressure:                    1.00   13.50
 ----------                 ------  ------
-Crystal Potential Energy   -1.991  -1.111
-Liquid Potential Energy    -1.811  -1.045
-Difference $\Delta h_m$    -0.180  -0.066
+Crystal Potential Energy   -1.873  -0.737
+Liquid Potential Energy    -1.675  -0.535
+Difference $\Delta h_m$    -0.198  -0.202
 
 Table: The potential energy of the liquid and the crystal at the melting point for both
 pressures. {#tbl:potential_energy_difference}
 
-## Choosing a Transport Coefficient
+## Choosing a Transport Coefficient {#sec:crystal_transport}
 
 Both the Wilson--Frenkel and the Semi-empirical density functional theories of growth
 include a term for a transport coefficient,
-normally the diffusion constant $D$. [@Jackson2002]
+normally the translational diffusion constant $D_t$. [@Jackson2002]
 @Ediger2008 has noted that the viscosity
 is not an appropriate transport coefficient
 on account of the dynamic heterogeneities present at low temperatures.
@@ -177,6 +175,7 @@ Because of the breakdown in the Stokes--Einstein--Debye relations [@sec:trans_ro
 and noting that the transition between the liquid and crystal
 mostly takes place through orientational motions,
 the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_diffusion]
-was chosen as the transport coefficient.
+has been chosen as the transport coefficient.
 The rotational relaxation time $\tau_r$ is the time
-for half of the molecules to have reoriented by \SI{90}{\degree}.
+for half of the molecules to have reoriented by \SI{90}{\degree}
+a rotation which is important for the crystal growth.

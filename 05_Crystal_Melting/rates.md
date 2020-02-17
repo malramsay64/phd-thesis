@@ -1,12 +1,12 @@
-# Melting Rates
+# Melting Rates {#sec:melting_rates}
 
 The simulations in @sec:polymorphic_stability find
 the p2 polymorph to be the most stable crystal structure,
-so is used for an analysis of the melting rate.
-The isotropic melting rate of the p2 crystal is the rate we are measuring,
-measured by estimating the radius of the crystal
+so it is used for this analysis of the melting rate.
+We measure the isotropic melting of the p2 crystal,
+which is measured by estimating the radius of the crystal
 found from the volume and assuming a circular crystal.
-This assumption is validated by @fig:melting_radius
+This assumption of a circular crystal is validated by @fig:melting_radius
 showing the expected linear melting over all temperatures.
 With the time dependence of the estimated radius
 matching the expected linear dependence,
@@ -23,27 +23,23 @@ configurations, which are used to estimate the confidence intervals. The change 
 the radius is expected to change linearly, which is reflected in all the data.
 ](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
 
+The normalisation by the temperature allows
+for the comparison of the rates between different pressures,
+with both pressures collapsing on to the same curve. [@fig:melting_rates]
+The same collapse of both pressures onto a single curve
+when normalised by the melting point
+is also seen in the dynamics (@sec:dynamics_results).
+
 ![The crystal growth rates normalised by the melting point. For clarity a light grey.
 These results are for both high and low
 pressure melting, which collapse onto the same curve when normalising the temperature by
 the melting point.
 ](../Projects/Crystal_Melting/figures/melting_rates_err.svg){#fig:melting_rates}
 
-The normalisation by the temperature allows
-for the comparison between different pressures,
-while a normalisation by the dynamics
-shows how the process of crystal growth changes
-as a function of temperature. [@fig:normalised_melting_fit]
-This is now the distance the interface travels
-in the relaxation time.
-As the temperature decreases the distance
-tends to get smaller,
-matching the expected behaviour.
-
 ## Classical Theories of Growth
 
-The expression for classical theories of crystal growth [@eq:crystal_growth_general]
-can be rewritten as
+The expression for classical theories of crystal growth (@eq:crystal_growth_general)
+can be rewritten as a proportionality, removing all the constant terms
 
 $$ \frac{v(T)}{p(T)} \propto \left[1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}\right] $$ {#eq:crystal_growth_refactor}
 
@@ -53,20 +49,24 @@ If these models describe the observed crystal growth behaviour
 plotting $v(T)/p(T)$ vs $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}$
 will give a straight line.
 
-The Turnbull model of melting defines $p(T) = \sqrt{T}$,
+The Turnbull model of melting gives $p(T) = \sqrt{T}$,
 plotted in @fig:melting_turnbull.
-The ratio between the two axes displayed
-is nothing close to a straight line,
-indicating it is a very poor fit to this data.
-Another interesting feature of @fig:melting_turnbull
-is that the two pressures have very different ratios
-between these quantities.
-The constants which are used in creating the Turnbull model, [@eq:constants_turnbull]
-the interatomic spacing, the diffusional mean free path and the collision factor
-all describe values which are similar between pressures.
-It is not surprising the Turnbull model,
-normally used for materials which crystallise quickly,
-doesn't describe the growth of such a fragile liquid.
+The ratio between the two axes is highly non-linear
+indicating it is a poor fit to this data.
+This is not a surprising result,
+as the Turnbull model normally describes materials
+with a fast crystallisation rate,
+which doesn't describe fragile liquids or the Trimer molecule.
+While there is a clear non-linearity,
+what is also interesting is that the Turnbull model
+has a very different temperature dependence for each pressure,
+primarily resulting from the thermodynamic term.
+The constants of the Turnbull model (@eq:constants_turnbull)
+do describe the distance to the crystal position
+which is pressure dependent,
+there is still a large difference to explain.
+The Turnbull model is not suitable
+for describing the melting of the Trimer molecule.
 
 ![Determining the relationship between components of the Turnbull model
 of melting. The contribution from the chemical potential is on the x axis
@@ -75,23 +75,29 @@ The lack of a linear relationship indicates
 they Turnbull model is not suitable for describing the melting.
 ](../Projects/Crystal_Melting/figures/melting_turnbull.svg){#fig:melting_turnbull width=80%}
 
-The Wilson--Frenkel model which would be expected to model the growth of the trimer,
-defines the temperature dependent function $p(T) = D(T)$,
+The Wilson--Frenkel model is the classical model
+which would be expected to model the growth of the trimer,
+being a fragile liquid.
+The Wilson--Frenkel model defines the temperature dependent function $p(T) = D(T)$,
 where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$. [@sec:transport_coefficient]
-The ratio for the Wilson--Frenkel model is shown in @fig:melting_wilson.
-The ratio between the two components is much improved over the Turnbull model,
-showing a linear region close to the melting point
-being where the x axis is zero,
-that is $1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)} = 0$.
-Further further away from the melting point there is a sharp deviation,
-with what looks to be a different temperature dependence of melting rate.
+The ratio (@eq:classical_growth_refactor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
+which describes an improved relationship over the Turnbull mode.
+Close to the melting point,
+which is the value of 0 on the x axis of @fig:melting_wilson,
+there is a linear region for both pressures.
+In both cases the linear region deviates sharply,
+having a different temperature dependence.
 In a study of Janus particles which require rotational reorientation,
 @Reinhart2018 also find that the Wilson--Frenkel model of growth
 is insufficient for describing their observations.
-The strict geometric requirements
+It is hypothesised that the strict geometric requirements
 for the Janus particles to join the crystal
-are hypothesised to form
-an activation barrier large enough to dominate the growth rate.
+create an activation barrier large enough to dominate the growth rate.
+This idea of an activation barrier preventing growth
+is supported by our data,
+at low temperatures,
+where the activation barrier will be noticed
+there is a significantly slower melting.
 
 ![Determining the relationship between components of
 the Wilson--Frenkel model of melting.
@@ -102,38 +108,39 @@ adequately describes the melting,
 which occurs close to $x=0$.
 ](../Projects/Crystal_Melting/figures/melting_wilson.svg){#fig:melting_wilson width=80%}
 
-The slope of the lines shown in @fig:melting_wilson
+In evaluating whether the melting of the crystal is slow,
+the slope of the lines in @fig:melting_wilson
 give the proportionality constant for the Wilson--Frenkel model. [@eq:constants_wilson]
 This is comprised of the interatomic spacing,
 the mean free path and the collision factor.
 This collision factor can be compared across different materials
-and gives us a place to understand why the growth is so slow.
+and can help to understand why the growth is so slow.
 The slope of the lines where the Wilson--Frenkel model
-is a good fit $T/T_m < 1.2$ are $-4.5$ for $P=1.00$ and $-5.6$ for $P=13.50$.
+is a good fit, that is $T/T_m < 1.2$,
+are $-4.5$ for $P=1.00$ and $-5.6$ for $P=13.50$.
 Since we are using the rotational relaxation rather than a diffusion constant,
-we make the assumption that
-the collision factor and mean free path are close to 1.
-@Tang2013 found a collision factor of $5.3$ for NiAl,
+we can make the assumption that
+the interatomic spacing and mean free path are close to 1.
+@Tang2013 find a collision factor of $5.3$ for NiAl,
 close to the value of our Trimer molecule.
 Their anomalously slow crystalliser CuZr has a collision factor of $0.4$,
 much smaller than the Trimer.
-This means it is likely that the slow crystal melting
-is a result of the slow dynamics of the Trimer.
+This tells us that the melting is occurring over a similar number of collisions
+only the collisions take place far slower than other materials
+as a result of the slow dynamics.
 
-It would appear that the classical melting theory
-is unable to describe the melting behaviour.
+The classical melting theory is unable to
+adequately describe the melting behaviour
+of the Trimer molecule.
 In particular,
-while the classical theory predicts different melting rates
+the classical theory predicts different melting rates
 based on the difference in chemical potential
 between the liquid and the solid.
-For the trimer molecule there is not this relationship.
-The difference in the Chemical Potential energy $\Delta \mu$
-between the liquid and crystal changes based on the pressure,
-however, when normalised by the melting point, [@fig:melting_rates]
-there is no discernible difference between the melting rates.
-We will need to look to alternate descriptions
-of the melting behaviour
-which better match the observed results.
+We don't observe this significant difference in the melting rates
+within simulations,
+with both pressures having the same melting rate.
+We can look at alternate models to describe
+the melting behaviour.
 
 ## Semi-empirical Density Functional
 
@@ -142,12 +149,18 @@ is the orientational order parameter $O_\theta$
 
 $$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$
 
-described in @sec:ml_introduction.
-In machine learning, the reduction in dimensionality was problematic
-while in this case we are looking for a one-dimensional description
-making this an excellent choice.
-To make the orientational order parameter
-have the distribution of values expected for $M$,
+which describes the local order around reference particle
+with orientation $\theta_0$.
+This order parameter is described in @sec:ml_introduction
+where the description of the local environment with a single value
+was unsuitable for that task.
+For the semi-empirical density functional model
+we want to describe the local environment using a single value,
+which makes this an excellent choice.
+Additionally we are only comparing the p2 polymorph
+with the liquid configurations.
+To ensure the orientational order parameter
+has the distribution of values expected for $M$,
 the values are modified so that
 the mean orientational order of the liquid
 $\langle O_\theta \rangle_\text{liquid} = 0$
@@ -181,7 +194,7 @@ $$ f(t) = \frac{(\sqrt{\lambda_\text{liquid}}(T) +
 \lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} $$
 
 that is, the contribution to the growth rate
-from the fluctuations.
+from the fluctuation of each phase.
 In representing the model as this proportion
 we are able to plot the proportionality
 in the same way we have for the classical models.
