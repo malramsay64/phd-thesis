@@ -13,7 +13,7 @@ as an upper bound the value is only going to decrease,
 which strengthens all the arguments
 that include a comparison of the melting point.
 The melting point is also crucial to our discussion of
-dynamics in @sec:dynamics,
+dynamics in @sec:Dynamics,
 used as a method of comparing the dynamics at each pressure.
 
 The measurement of the melting rates in @sec:melting_rates
