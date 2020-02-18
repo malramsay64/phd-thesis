@@ -12,7 +12,7 @@ A measure of this type previously used for molecular crystals [@Sims2019;@Kuczyn
 is the orientational order parameter $O_6$.
 The value of $O_6$ is the orientation of the closest shell of 6 neighbours
 relative to the orientation of the central molecule.
-The orientational ordering for $O_6$ is given by the equation;
+The orientational ordering $O_6$ of reference particle is given by the equation;
 
 $$ O_6 = \frac{1}{6}\sum_{i=1}^6 \cos^2(\theta_{ref} - \theta_i) \rangle_i $$ {#eq:orientational_order_parameter}
 
