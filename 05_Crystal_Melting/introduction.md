@@ -225,12 +225,12 @@ to the fluctuations present within a simulation.
 Which gives;
 
 $$ P_\text{liquid}(M) = \sqrt{\frac{\lambda_\text{liquid}}{2\pi}} \exp
-\left[-\frac{\lambda_\text{liquid}}{2} M^2 \right] $$
+\left[-\frac{\lambda_\text{liquid}}{2} M^2 \right] $$ {#eq:probability_liquid}
 
 and
 
 $$ P_\text{solid}(M) = \sqrt{\frac{\lambda_\text{solid}}{2\pi}} \exp
-\left[-\frac{\lambda_\text{solid}}{2} (M-1)^2 \right] $$
+\left[-\frac{\lambda_\text{solid}}{2} (M-1)^2 \right] $$ {#eq:probability_solid}
 
 where $P_\text{liquid}(M)$ and $P_\text{solid}(M)$
 are the probability of a value of the order parameter
