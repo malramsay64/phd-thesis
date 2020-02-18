@@ -100,6 +100,3 @@ looking for additional structures we haven't considered.
 This is followed in @sec:dynamic_analysis by
 an analysis of the melting dynamics of each crystal structure,
 looking at their stability and identifying competition between structures.
-This concludes with an analysis of what the fluctuations used
-in the Semi-Empirical Density Functional model of melting (@sec:dft_model)
-can tell us about the crystal structure.
