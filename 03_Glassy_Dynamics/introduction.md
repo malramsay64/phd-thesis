@@ -1,136 +1,11 @@
-# Dynamics of Supercooled Liquids {#sec:supercooled_liquids}
+# Introduction
+
+## Breakdown in Stokes--Einstein--Debye
+
+@Ediger2012
 
 Dynamics are important to both Crystal Growth, as a rate term
 and to understanding the Glass.
-
-## Dynamic Quantities
-
-### Structural Relaxation
-
-Structural relaxation is the most fundamental relaxation process [@Angell2000]
-being the process by which a liquid forgets it's structure
-from some earlier time [@Ediger1996].
-The process of structural relaxation occurs over distances
-comparable to the size of the particles within the liquid [@Angell1985].
-These small distances over which the structural relaxation take place
-are comparable to the relaxations that take place
-when the liquid is under a shear stress.
-The motion of the liquid under a shear stress,
-otherwise known as shear viscosity and denoted by $\eta$,
-has been shown to have the same temperature scaling
-as the structural relaxation time
-in both experimental [@Ediger2012] and computational [@Perera1999] systems.
-A rationalisation of this relationship
-can be to consider a force pushing on one part of the configuration,
-the structural relaxation time is indicative of
-the time the state takes to adjust to the applied force.
-In a liquid, applying force results in flow
-with the viscosity being a measure of the resistance to flow.
-
-Consider a force pushing on the material,
-the structural relaxation is the timescale
-over which the material can rearrange to reduce that force.
-When the force is continuous,
-we are measuring the viscosity,
-so the structural relaxation is used within experiments
-in the place of viscosity.
-
-This relationship between the shear viscosity and the structural relaxation
-allows us to rewrite the Stokes-Einstein-Debye relations as
-
-$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
-
-where we are using the structural relaxation time
-as the fundamental relaxation time,
-providing a link between
-the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
-
-### Diffusion Constant
-
-The translational diffusion constant $D_t$
-is a measure of how fast particles within the liquid
-move over a long time period.
-It's formulation is based upon Brownian dynamics,
-where, over long time periods,
-the displacement from the origin $\Delta x(t)$ at time $t$
-averaged over many initial configurations
-has the relation
-
-$$ \langle \Delta x(t)^2 \rangle = 2 D_t t $$
-
-where the angle brackets $\langle\rangle$ represent
-the average over many initial conditions.
-In the case of a molecular dynamics simulation
-this is over all the individual particles.
-The relation shown above is for a 1D random walk,
-with each dimension contributing to the diffusion giving
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 4 D_t t $$
-
-for the 2D case and
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
-
-for the 3D case.
-Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
-
-The Mean-Squared-Displacement (MSD) has a characteristic shape,
-with the initial section representing the ballistic motion
-before particles have collided with any other.
-Since the particles are moving freely,
-the MSD has increases as a power law of order 2.
-This ballistic region transitions into a diffusive region
-where the dynamics are governed by many small steps.
-This diffusive regime defines the diffusion constant,
-so the calculation of the diffusion constant
-is often written as
-
-$$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
-
-reflecting the long timescale behaviour.
-
-The Diffusion is measured in experimental systems
-using \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
-which allows for direct comparison with simulation.
-
-### Rotational Relaxation
-
-What is termed rotational relaxation,
-is typically measured as a dipole relaxation.
-This describes rotational motion as a sequence of
-small infinitesimal jumps of a dipole around the unit sphere
-using spherical harmonics $Y_l^m$.
-This allows us to express a rotational relaxation function $R_l(t)$
-in terms of those spherical harmonics
-
-\begin{align}
-R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
-       &= \exp(-D_r\,l(l+1)t)
-\end{align}
-
-This formulation represents the rotational relaxation as an exponential.
-The exponential is nice in that we can find a characteristic timescale $\tau_l$
-for relaxation to occur, where
-
-$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
-
-Here relaxation is the time taken for relaxation from
-the initial value of $Y_l^m$ to it's first zero.
-
-The relaxation of a dipole $C_l$,
-where the orientation of the dipole is represented by the vector $\hat{\vect{u}}$
-can be represented as
-
-$$ C_{l} = \langle P_l(\hat{\vect{u}}_i(t) \cdot \hat{\vect{u}}_i(0)) \rangle_i $$
-
-Here $P_l$ is the Legendre polynomial of degree $l$,
-and the angle brackets signify an average over
-all molecules and starting configurations.
-
-The rotational relaxation functions $C_l$
-have equivalences in experiments.
-The 2nd degree Legendre polynomial corresponds
-to NMR [@Dote1981] and fluorescence experiments.
 
 ## Dynamic Heterogeneities
 
@@ -328,6 +203,8 @@ while four gears allow motion to propagate.
 
 ## Stokes--Einstein--Debye Models
 
+@Shi2013
+
 Current models of motion in the liquid state
 are based on the Stokes-Einstein-Debye relationships[@Debye1929],
 which are theoretical models of collective motion
@@ -363,6 +240,8 @@ between the rotational and translational diffusion
 $$ D_t \propto D_r $$ {#eq:sed_proportionality}
 
 when both are at the same temperature and viscosity.
+
+@Bian2016
 
 One of the detractors of Brownian dynamics
 is that it describes the dynamics of independent events,
@@ -410,3 +289,167 @@ The assumptions we have made developing
 a theoretical understanding of the liquid,
 do not take into account the unusual behaviour
 observed in supercooled liquids.
+
+## Theoretical Treatment of Dynamics
+
+@Cummins1997 is a great review
+@Royall2018 also reviews the topic
+
+There are numerous methods which can be used to describe
+different aspects of the motion of particles.
+However each individual piece of information
+is only able to tell part of the story,
+so we need to be able to have some theoretical framework
+which provides a scaffolding for combining these values.
+
+### Free Energy Landscape {#sec:energy_landscape}
+
+@Niblett2016
+@Wales2018
+@deSouza2017
+@Ballard2017
+@Niblett2017
+
+In Goldstein's[@Goldstein1969] energy landscape model of dynamics,
+this change in dynamic behaviour is characterised
+by the transition from free diffusion,
+where the energy of the particles
+is greater than the energy of the barriers between configurations,
+to activated diffusion,
+where the transition from one position to another
+requires the concentration of energy at a certain point.
+There has been evidence of this transition from
+free to activated diffusion in simulations of atomic systems [@Barrat1991;@Wahnstrom1991]
+where the dynamics change from many small random motions
+to a large motions from one site to another
+often as part of a correlated motion.
+Where dynamics occurs by the process of large jumps,
+the assumptions made about the Brownian motion start to break down.
+While atomic systems seem to make the transition to jump dynamics,
+there is not the same evidence for molecular systems, [@Lewis1994;@Barrat1991;@Wahnstrom1991]
+namely the Lewis--Wahnström model of *ortho*-terphenyl,
+where rotational motion occurs through jump dynamics
+while the translational motion takes remains Brownian in nature.
+
+One of the key predictions of the energy landscape model of dynamics
+is the incorporation of more dimensions in the motion
+when the molecules no longer have the energy
+to cross potential energy boundaries.
+Since including more dimensions to a motion
+is including more particle degrees of freedom,
+the increased dimensionality is expected to manifest in
+an increase in a length scale as the temperature drops.
+Despite significant effort searching for
+this increasing length scale, [@cite]
+there has been no evidence of it.
+
+### Jamming Transition
+
+@vanHecke2010
+@Torquato2010
+
+An alternative structural model of the supercooled liquid
+is the idea of the jamming transition
+which is adapted from an understanding of granular materials.
+[@Silbert2002;@Cates1998;@Cates2005;@Liu2010;@Torquato2010;@vanHecke2010]
+A particle is considered jammed
+when the number of contacts
+is enough to restrict all the degrees of freedom,
+this is known as *isostatic* jamming
+with the requisite contact count $z_\text{iso}$ being
+
+$$ z_\text{iso} = 2d_f $$
+
+where $d_f$ is the number of degrees of freedom
+available to a molecule ($d_f=3$ for our trimer).
+When a molecule is jammed,
+there are no degrees of freedom available
+meaning it is unable to move.
+Using contact numbers is notable
+for concave shapes like the Trimer molecule
+as the concavities allow for contact numbers
+well above $z_\text{iso}$. [@Jennings2015]
+
+The concept of jamming also applies to rotational motion
+where @Zwanzig1987 considers a liquid of 2D gears.
+Once three gears come in contact with each other,
+they are no longer able to rotate.
+
+### Geometric Frustration
+
+Building upon some of the ideas of the jamming transition
+is a model of geometric [@Frank1952] or packing [@Tarjus2005;@Kivelson1995] frustration.
+This considers small regions of the liquid,
+which form structures that minimise the local free energy,
+however these structures are then unable to tile space.
+This gives small regions of favourable local structure
+which are highly favourable and unlikely to diffuse.
+
+This idea of geometric frustration is notable for the Trimer molecule,
+as there are a range of crystal structures it can take on. [@sec:stability-of-crystal-phases]
+
+### Conclusion
+
+The jamming model looks at dynamic heterogeneities
+in a different way to Goldstein's energy landscape model.
+The jamming describes the slow parts of the heterogeneities,
+molecules do not have the degrees of freedom to rearrange.
+Conversely, the energy landscape explains the regions of motion,
+co-operatively rearranging to move between local minima.
+
+Despite these models being useful in understanding
+the processes of motion within a liquid,
+there is still the decoupling of the rotational and translational motion.
+Why is one type of motion
+more affected by supercooling than another?
+A consequence of dynamic heterogeneities,
+which is measured by the non-Gaussian parameter $\alpha$
+is the deviation of the distribution of motions
+from that of a Gaussian distribution,
+with the dynamic heterogeneities having
+many orders of magnitude difference
+between the fastest and the slowest particles.
+It is entirely possible
+that the differences between
+the translational and rotational dynamics
+is a result of the averaging we are using.
+For the diffusion constant measured from the mean-squared-displacement,
+particles with fast motions contribute disproportionately
+to increasing this value,
+while for the rotational relaxation it is
+the slow particles which increase this value.
+
+### Coupling of Translational and Rotational Motion
+
+Part of this story which is still being actively studied
+is the coupling of the rotational and translational motions
+on short timescales.
+A famous result is the decoupling of rotational and translational
+motion in a supercooled liquid, [@Chang1994;@Griffin2012;@Fujara1992]
+indicating a breakdown in the Stokes-Einstein-Debye
+theory of dynamics.
+This result however is an observation of the overall properties
+and doesn't consider the microscopic coupling that takes place.
+In the potential energy landscape model
+as the temperature is lowered,
+it is predicted that more degrees of freedom
+will be used for motion to occur
+and some of these are in
+the rotational motion of molecules.
+This coupling between rotational and translational motion
+on the microscopic scale
+has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
+and liquid crystals [@Jose2006].
+
+## Goals for Dynamics
+
+In @sec:molecular_relaxation we introduce new relaxation quantities
+which describe the relaxations of individual molecules.
+These molecular relaxation quantities allow more insight
+into the dynamic heterogeneities present in supercooled liquids.
+As part of introducing these quantities
+we establish their equivalence to the quantities measured in @sec:dynamics_results.
+Finally to conclude this chapter
+we use a combination of the standard dynamics quantities from @sec:dynamics_results
+and the newly introduced molecular relaxations from @sec:molecular_relaxation
+to explain the breakdown in the Stokes--Einstein--Debye relations.

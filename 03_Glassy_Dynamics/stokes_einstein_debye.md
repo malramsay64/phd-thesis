@@ -1,8 +1,13 @@
 # Understanding the breakdown of Stokes--Einstein--Debye
 
+@Sengupta2013
+
 ## Jump Dynamics
 
 @Nair2019
+@Karmakar2014 growing length scales
+@Zasetsky2010
+@Laage2006
 
 A foundational assumption of the Stokes--Einstein--Debye relations
 is that the particles undergo Brownian motion,
@@ -209,6 +214,8 @@ This indicates there is still more to understand.
 ## Coupling of translational and rotational motion {#sec:trans_rot_coupling}
 
 @Meyer2019
+@Griffin2012
+@Faraone2003
 
 Two of the main assumptions made in the formulation of
 the Stokes--Einstein--Debye relations are;

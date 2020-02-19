@@ -107,124 +107,19 @@ While the results are not directly comparable
 on account of being 3D compared to our 2D simulations
 the Trimer sits amongst the best simulated glass formers.
 
-## Diffusion
-
-The Stokes-Einstein relation was derived for particles undergoing Brownian motion,
-which over long enough timescales because of the collisions with other particles
-will move away from its initial position at a linear rate
-where the diffusion constant $D$ has the relation
-
-$$ D = \frac{1}{4}\lim_{t->\infty} \langle \Delta \vect{r}^2 \rangle $$
-
-Plotting the Mean Squared Displacement (MSD) of the trimer molecule
-gives the image below.
-
-![The Mean Squared Displacement of the trimer molecule
-over a range of temperatures
-at a pressure of 13.50.
-Note the logarithmic scale of both axes.
-](../Projects/Dynamics/figures/mean_squared_displacement.svg){width=80% #fig:msd}
-
-At high temperatures the MSD moves from the ballistic regime,
-where the particles haven't collided
-so the displacement is increasing with a power law of order 2.
-There is then a quick transition to the diffusive regime,
-where particles are undergoing Brownian motion.
-At lower temperatures,
-the quick transition from the ballistic becomes much longer
-forming a plateau region.
-This plateau region is indicative of dynamics
-which are not described by Brownian motion,
-and more notably regions of dynamic heterogeneities.
-A structural description of this region
-describes the particles being stuck in 'cages',
-local regions which require significant free energy to escape.
-The value of the Mean Squared Displacement
-which corresponds to the end of the plateau region
-can be interpreted as the
-
-![The diffusion constant as a function of temperature
-normalised by the melting point for a range of pressures.
-](../Projects/Dynamics/figures/diffusion_constant_summary.svg){width=80% #fig:diffusion_constant}
-
-## Rotational Relaxations
-
-While it is typical to consider translational diffusion constants,
-instead of a rotational diffusion constant $D_r$,
-the quantity typically calculated for rotations
-is a rotational relaxation time $\tau_r$
-where $\tau_r \propto 1/D_r$.
-This is a way of dealing with the periodicity of rotational motion,
-instead of keeping track of every rotation of a molecule,
-the rotational relaxation function $C(t)$ is a measure of
-how orientationally aligned a configuration is to another
-and is given as
-
-$$ C(t) = \langle \hat{\vect{e}}(0) \cdot \hat{\vect{e}}(t) \rangle $$
-
-where $\hat{\vect{e}}(0)$ and $\hat{\vect{e}}(t)$ are the orientations
-The rotational relaxation time is
-the time taken for the relaxation function to decay to $1/e$.
-When the rotational relaxation function
-is approximated as a exponential decay,
-the relaxation time is the rate of the decay.
-
-![The rotational relaxation of the trimer molecule
-over a range of temperatures at a pressure of 13.50.
-Note the logarithmic scale of the time axis.
-](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
-
-@Meyer2019 Pressure dependence
-
-The dynamic behaviour of the trimer molecule
-reflects that of a highly fragile liquid,
-displaying dynamic properties
-that fit well with existing theories of dynamics,
-namely the Vogel--Tammann--Fulcher relation
-which extrapolates a fragility $m=220$.
-Additionally the dynamic behaviour
-is indicative of a fragile liquid,
-the two-step relaxation in
-the structural relaxation (@fig:structural_relaxation)
-and the rotational relaxation (@fig:rotational_relaxation).
-This is also supported by the plateau region
-in the mean squared displacement (@fig:msd).
-These behaviours which have also been observed
-in both simulations and experiments of fragile liquids,
-demonstrate that this molecule is a good candidate
-for further investigation of it's dynamic behaviour
-and there are no issues dealing with a simulation in 2D.
-
-The only unusual property is the onset of this fragility
-well above the melting point.
-This is likely a result of the incredibly slow dynamics at the melting point
-the with a timescale barely accessible to simulation.
-
 ## Dynamic heterogeneities
 
-Dynamic heterogeneities have been described qualitatively,
-with features of the previous dynamic quantities
-noted as a characteristic sign of supercooled liquids.
-However to discuss them,
-they need to be adequately measured.
-
-### Translational heterogeneities
-
-Dynamic heterogeneities are a phenomenon
-where there are multiple timescales within a single material,
+The non-exponential structural relaxation in @fig:intermediate_scattering_function
+also hints at the presence of dynamic heterogeneities.
+This is where there are multiple timescales within a single material,
 that is, some regions of the material are moving fast
 while others are moving slow.
+Dynamic heterogeneities are a phenomenon
 This phenomenon has been observed in a wide range of materials
 both simulated and experimental.
 The quantity used to measure this is the non-Gaussian parameter $\alpha$,
 which is a measure of how far the distribution of motions
 deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
-
-![The non-Gaussian of the trimer molecule
-over a range of temperatures at a pressure of 13.50.
-Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
-
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-Gaussian parameter increases,
 demonstrating an increase in the dynamic heterogeneities,
@@ -234,6 +129,11 @@ In addition to the increase in
 the value of the maximum,
 the time at which the maximum occurs
 becomes later moving from high temperature to low.
+
+![The non-Gaussian of the trimer molecule
+over a range of temperatures at a pressure of 13.50.
+Note that time axis is plotted using a logarithmic
+scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
 
 The rotational heterogeneities can be calculated
 in the same way as the translational heterogeneities,
@@ -255,6 +155,14 @@ to reach the maximum and decay.
 The calculations of the non-Gaussian parameter [@Donati1999;@Horbach1998]
 typically have differing behaviour like in @fig:non-gaussian,
 so it is interesting that the rotations all obey this single "master curve".
+
+@Lacevic2003
+@Glotzer2000
+@Ediger2000
+@Angell2000
+@Sillescu1999
+@Perera1999
+@Donati1999
 
 In the study of translational heterogeneities
 there has been and understanding
@@ -280,7 +188,7 @@ giving rise to the results we observe.
 
 ![Map of the spatial distribution
 of translational and rotational heterogeneities
-of a simulation at T=1.35 and P=13.50
+of a simulation at D=1.35 and Pp=13.50
 at the time of the maximum of the translational non-Gaussian.
 The translational motion is denoted by an arrow depicting
 the size and the direction of the motion,
@@ -288,3 +196,23 @@ while the rotational motion is depicted by ...TODO...
 Areas which are white are indicative of no motion,
 while coloured areas have lots of motion.
 ](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
+
+The Trimer molecule displays dynamics which are
+characteristic of experimental fragile liquids like ortho-terphenyl.
+The structural relaxation (@fig:isf_relaxation),
+the rotational relaxation (@fig:rotational_relaxtion)
+and the diffusion constant (@fig:diffusion_constant)
+all display non-Arrhenius temperature dependences
+like that of ortho-terphenyl.
+Additionally the presence of the dynamic heterogeneities
+confirms the
+
+in both simulations and experiments of fragile liquids,
+demonstrate that this molecule is a good candidate
+for further investigation of it's dynamic behaviour
+and there are no issues dealing with a simulation in 2D.
+
+The only unusual property is the onset of this fragility
+well above the melting point.
+This is likely a result of the incredibly slow dynamics at the melting point
+the with a timescale barely accessible to simulation.
