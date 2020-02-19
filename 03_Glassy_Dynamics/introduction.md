@@ -1,11 +1,31 @@
 # Introduction
 
+- Increasing length scale
+
 ## Breakdown in Stokes--Einstein--Debye
 
 @Ediger2012
 
 Dynamics are important to both Crystal Growth, as a rate term
 and to understanding the Glass.
+
+Consider a force pushing on the material,
+the structural relaxation is the timescale
+over which the material can rearrange to reduce that force.
+When the force is continuous,
+we are measuring the viscosity,
+so the structural relaxation is used within experiments
+in the place of viscosity.
+
+This relationship between the shear viscosity and the structural relaxation
+allows us to rewrite the Stokes-Einstein-Debye relations as
+
+$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
+
+where we are using the structural relaxation time
+as the fundamental relaxation time,
+providing a link between
+the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
 
 ## Dynamic Heterogeneities
 
@@ -289,6 +309,47 @@ The assumptions we have made developing
 a theoretical understanding of the liquid,
 do not take into account the unusual behaviour
 observed in supercooled liquids.
+
+The Debye model predicts an exponential decay of the $l$th rank
+single-particle orientation time correlation function $C_l^s$,
+
+$$ C_l^s = \exp\left(\frac{-t}{\tau_l}\right) $$
+
+which gives the corresponding relaxation time
+
+$$ \tau_l = \frac{1}{l(l+1)D_r}, $$
+
+where $D_r$ is the rotational diffusion coefficient.
+Comparing this relationship for
+the first and second-order relaxation functions
+
+$$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
+
+When molecules rotate inertially, that is,
+there are large angular displacements between collisions.
+The type of relaxation is no longer exponential,
+and can be identified by the ratio $\tau_1/\tau_2$
+falling in the range
+
+$$ 1 < \tau_1/\tau_2 < 3 $$
+
+The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
+that is, assuming rotations take place through a process of small random steps.
+Where there are large changes in orientation,
+the two relaxation times become correlated,
+since there are much fewer steps required for rotational relaxation to occur,
+with the limit of this being
+single jumps account for both relaxations simultaneously.
+
+In experimental and simulation studies
+at high temperatures [@Laage2006]
+the relationship $\tau_1/\tau_2 = 3$ has held true.
+In supercooled liquids however,
+there have been many studies
+which have found $\tau_1/\tau_2 < 3$,
+which has given credence to the
+idea of rotational relaxations
+taking place through the process of large angular jumps.
 
 ## Theoretical Treatment of Dynamics
 
