@@ -1,124 +1,86 @@
 # Dynamics of the Trimer Molecule {#sec:dynamics_results}
 
-To allow the comparison of dynamics between materials with a range of properties,
-dynamics quantities are presented relative to the melting point of the material,
-that is using the quantity
+The dynamics of different materials with a range of melting points
+can be compared using the ratio of the temperature to the melting point,
+that is;
 
 $$ T/T_m $$
 
 where $T$ is the experimental temperature and $T_m$ is the melting point.
-For the results within this chapter
-we use the melting points determined in @sec:Crystal_Melting
-which are tabulated in @tbl:melting_points.
+The results within this chapter use the melting points determined in @sec:Crystal_Melting
+being $T=0.36$ for a pressure $P=1.00$ and
+$T=1.35$ for a pressure $P=13.50$.
 
- Pressure   Melting Point
- --------  --------------
- 1.00            0.36
- 13.50            1.35
+## Structural Relaxation and Non-Arrhenius Dynamics
 
-Table: The melting points of the trimer molecule for different pressures. {#tbl:melting_points}
-
-Analysing the behaviour of the trimer molecule
-using the standard dynamic quantities
-provides a method of comparing these results
-to both existing experiments and simulations.
-
-## Structural Relaxation
-
-The structural relaxation is measured
-using the intermediate scattering function (@eq:intermediate_scattering_function).
-To compute the values monitoring
-the structural relaxation,
-we first have to compute the value of the wave-number
-which will give the greatest change
-In computing the values for this function,
-it is first required to
-find the wave-number which corresponds to
-to first maximum of the static structure factor.
-
-Pressure|$k$
---------|-----
-1.00    | 2.80
-13.5    | 2.90
-
-Table: The wave-numbers $k$ used for each of the pressures studied. {#tbl:wave_numbers}
-
-### Intermediate Scattering Function
-
-Having found the value of the wave number
-to calculate the decay of the intermediate scattering function,
-we can move out attention to the calculation of the value.
-When dealing with an isotropic liquid in two dimensions,
-we can evaluate the intermediate scattering function
-using the below equation
-
-$$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
-k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
-\cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$ {#eq:intermediate_scattering_function}
+The structural relaxation (@eq:intermediate_scattering_function) is calculated
+for a single value of the wave-number $k$.
+The value of this wave-number $k$
+that is going to give the best measurement [@Widmer-Cooper2008]
+is the first maximum in the structure factor $S(k)$
+which is the single time value of the intermediate scattering function.
+The different pressures of the simulations
+have different values for the wave number $k$.
+The low pressure $P=1.0$ has a wave-number $k=2.80$ and
+the high pressure $P=13.50$ has a wave-number $k=2.90$.
+The wave-number is in reciprocal space,
+meaning the larger wave number at a higher pressure
+describes particles which are closer together,
+which is inline with expectations.
 
 ![The intermediate scattering function of the trimer molecule
-over a range of temperatures
-at a pressure of 13.50.
+over a range of temperatures at a pressure $P=13.50$.
 Note the logarithmic scale on the time axis.
 ](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:intermediate_scattering_function}
 
+The structural relaxation of the Trimer molecule
+is shown in @fig:intermediate_scattering_function.
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
 takes place through a two step process,
-the initial relaxation to a plateau at \num{1e4} timesteps,
-with the bumps indicating a reversal of relaxation.
-Both these features,
-the two step relaxation,
-and the reversal of relaxation
-are features characteristic of a supercooled liquid,
-an interesting phenomenon,
-particularly since there is an onset above
-the melting point.
+comprised of an initial relaxation to a plateau that starts around \num{1e4} timesteps,
+followed by a secondary relaxation.
+This two step relaxation process is present
+in experiments [@Mapes2006;@Chang1994;@Sidebottom1993;@Li1992;@Mezei1987]
+and simulations [@Chong2004;@Rinaldi2001;@Roland1997;@Donati1999] of supercooled liquids.
+The two step process describes two types of relaxations,
+fast $\beta$-relaxations which are the relaxations before the plateau
+and slow $\alpha$-relaxations being the long timescale relaxations. [@Cavagna2009]
+The $\beta$-relaxations are only present at the low temperatures
+and are associated with supercooled liquids and the onset of the glass transition.
+While the $\alpha$-relaxation is present for all temperatures
+and is the relaxation measured by the structural relaxation time $\tau_S$
+being the longest timescale relaxation.
+The timescales of the structural relaxation $\tau_S$
+are shown in @fig:isf_relaxtion,
+which includes the relaxation from both
+high ($P=13.5$) and low ($P=1.0$) simulations.
 
-![The characteristic timescales for the intermediate scattering function
-over a range of temperatures and pressures.
-To put multiple pressures on a single scale,
-all the temperatures have been scaled
-relative to the melting point.
+![The structural relaxation time $\tau_S$
+for a range of temperatures pressures.
+The temperature has been normalised by the melting point
+reducing both pressures to a single curve.
+The black line is a fit of the Vogel--Tammann--Fulcher relation
+with a fragility $m$ of 220.
 ](../Projects/Dynamics/figures/scattering_function_summary.svg){width=80% #fig:isf_relaxation}
 
-Taking the characteristic timescale of the
-relaxation of the intermediate scattering function,
-which is the rate coefficient of the exponential decay,
-we get @fig:isf_relaxation.
-This includes results from both
-a high pressure simulation ($P=13.50$),
-and a low pressure simulation ($P=1.00$).
-Plotting the results from both simulations
-normalising the temperature by
-the melting point of each pressure,
-the results collapse onto a single curve.
-
-@fig:isf_relaxation is also an excellent example
-of non-Arrhenius behaviour commonly found in supercooled-liquids,
-with there being a distinct shift in the temperature dependence
-above and below $T_m/T$ of 0.8.
-What is particularly interesting about this behaviour
+The structural relaxation time (@fig:isf_relaxation)
+is an excellent example of non-Arrhenius behaviour found in supercooled-liquids.
+What is notable for the Trimer
 is that it occurs above the melting point,
 that is, in a liquid that is not supercooled.
-The degree to which this behaviour is non-Arrhenius
-can be determined by fitting the Vogel--Tammann--Fulcher (VTF) relations
-which are shown as a black line on the figure.
-With the analytical description of the curve
-it is possible to extrapolate to
-the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
-This gives the estimations of the glass transition temperature
-which are shown in @tbl:glass_transition_temp.
-Also notable about these temperatures
-is that the temperature typically cited
-for the onset of dynamic heterogeneities, $1.2\ T_g$, [@cite]
-is close to the estimated melting point,
-particularly for a pressure of 1.00.
-This raises an important question,
-is the fragility a feature of the supercooled liquid,
-is it a feature of approaching the glass transitions,
-or something else entirely?
+Here we have direct evidence that the onset of non-Arrhenius dynamics
+occur close to the glass transition temperature
+rather than a property of supercooled liquids.
+With the analytical description of the Vogel--Tammann--Fulcher (VTF) relation
+allows for extrapolation to the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
+This provides an estimation of the glass transition temperature,
+shown for each pressure in @tbl:glass_transition_temp.
+The onset of non-Arrhenius dynamics has been found to occur
+at a temperature of $1.2\ T_g$, [@Ediger2000;@Sillescu1999;@Chang1994]
+which is very close to the melting point,
+further evidence that the supercooled liquid is not important
+for non-Arrhenius behaviour.
 
 Pressure | $T_g$ | $1.2 T_g$ | $T_m$
 ---------|-------| --------- | ------
@@ -129,46 +91,21 @@ Table: Estimations of the glass transition temperature $T_g$
 for each pressure based on fitting the
 Vogel--Tammann--Fulcher relation. {#tbl:glass_transition_temp}
 
-The VTF relations also provide a method of finding the fragility $m$,
-measuring how far the dynamics deviate from Arrhenius,
+The degree to which the non-Arrhenius dynamics
+plays a role in the dynamics is measured through the fragility $m$,
 which has values ranging from $\approx 16$
 for strong liquids and exceeds 200 for fragile liquids. [@Meenakshisundaram2019]
-The structural relaxation has a fragility $m=220$,
-well into the region of the fragile liquids.
-This exceeds the highest fragility $m=188$ found
-for a trimer molecules by @Meenakshisundaram2019,
-who used a machine learning algorithm
-to design the most fragile molecules.
+The structural relaxation of the Trimer molecule has a fragility $m=220$,
+well into the region of the fragile liquids,
+making it an excellent candidate to study
+the dynamics of fragile liquids.
+The fragility of the Trimer molecule is so high
+that a machine learning algorithm developed to design
+the most fragile 3D molecule possible
+managed a fragility $m=188$ for Trimers. [@Meenakshisundaram2019]
 While the results are not directly comparable
 on account of being 3D compared to our 2D simulations
-this molecule is amongst the best simulated glass formers.
-The determination of a large fragility
-is supported by the dynamic behaviour
-which is representative of fragile liquids,
-namely the step relaxation process (@fig:intermediate_scattering_function).
-
-### Contribution of Individual Particles
-
-The intermediate scattering function
-describes the relaxation of the entire configuration
-with no way of ascribing relaxation to individual particles.
-Here we use the structural relaxation defined in @eq:structural_relaxation
-where particles contributing to relaxation
-can be identified at each timestep.
-
-![The structural relaxation of the trimer molecule
-over a range of temperatures
-at a pressure of 13.50.
-Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/structural_relaxation.svg){width=80% #fig:structural_relaxation}
-
-The shape of @fig:structural_relaxation has
-many of the same features as @fig:intermediate_scattering_function,
-the reversal of relaxations at \num{1e4} timesteps,
-the exponential relaxation.
-The large difference between the two types of relaxation
-is that the two-step relaxation process
-is much more noticeable @fig:intermediate_scattering_function.
+the Trimer sits amongst the best simulated glass formers.
 
 ## Diffusion
 
