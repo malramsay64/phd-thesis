@@ -2,31 +2,6 @@
 
 - Increasing length scale
 
-## Breakdown in Stokes--Einstein--Debye
-
-@Ediger2012
-
-Dynamics are important to both Crystal Growth, as a rate term
-and to understanding the Glass.
-
-Consider a force pushing on the material,
-the structural relaxation is the timescale
-over which the material can rearrange to reduce that force.
-When the force is continuous,
-we are measuring the viscosity,
-so the structural relaxation is used within experiments
-in the place of viscosity.
-
-This relationship between the shear viscosity and the structural relaxation
-allows us to rewrite the Stokes-Einstein-Debye relations as
-
-$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
-
-where we are using the structural relaxation time
-as the fundamental relaxation time,
-providing a link between
-the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
-
 ## Dynamic Heterogeneities
 
 The typical approach to modelling liquid behaviour
@@ -52,7 +27,7 @@ a demonstration that it is more than a kinetic phenomenon.
 the transition to the two-step process characteristic of
 heterogeneous dynamics
 *Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
-](../01_Introduction/figures/ortho-terphenyl_structural.png){#fig:relaxation width=80%}
+](../00_Introduction/figures/ortho-terphenyl_structural.png){#fig:relaxation width=80%}
 
 Relaxations $F(t)$ within systems undergoing Brownian motion,
 whether structural or rotational will have the form
@@ -104,7 +79,8 @@ A similar picture is painted in 3D systems, [@Donati1999]
 with spatially separated regions of fast and slow particles.
 
 ![The spatial distribution of motion
-*Used with permission from @Hurley1995 © 1995 American Physical Society*](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
+*Used with permission from @Hurley1995 © 1995 American Physical
+Society*](../00_Introduction/figures/dynamic_heterogeneities.png){#fig:dynamic_heterogeneities width=80%}
 
 There are many theoretical foundations
 for understanding dynamic heterogeneities.
@@ -159,8 +135,8 @@ it becomes possible to go around.
 
 ![A representation of the potential energy landscape for a
 liquid.\
-*Used with permission from @Stillinger1995 © 1995 AAAS*](../01_Introduction/figures/dynamic_heterogenaeties.png){#fig:dynamic_heterogenaeties width=80%}
-](../01_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
+*Used with permission from @Stillinger1995 © 1995 AAAS*
+](../00_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
 Further evidence for the idea that the structure
 plays a role in the resulting dynamics
@@ -187,7 +163,7 @@ is rotational jamming.
 ![Depiction of the jamming of discs in an inherent structure
 for a trimer molecule with $r=0.7$ and $\theta=120^\circ$\
 *Figure from @Jennings2015 used with permission © 2015 Taylor and Francis*
-](../01_Introduction/figures/jammed_discs.png){#fig:jamming_diagram width=80%}
+](../00_Introduction/figures/jammed_discs.png){#fig:jamming_diagram width=80%}
 
 Gears are a method of mechanically transferring rotational motion
 from one location to another,
@@ -210,8 +186,8 @@ will all rotate together acting as a single body.
 
 :::{class=subfigures id=fig:gears}
 
-![Three gears](../01_Introduction/figures/cogs_3.svg){#fig:gears_triple width=40%}
-![Four gears](../01_Introduction/figures/cogs_4.svg){#fig:gears_quad width=40%}
+![Three gears](../00_Introduction/figures/cogs_3.svg){#fig:gears_triple width=40%}
+![Four gears](../00_Introduction/figures/cogs_4.svg){#fig:gears_quad width=40%}
 
 If we model the rotational motion of a gear network
 Where there are three gears,

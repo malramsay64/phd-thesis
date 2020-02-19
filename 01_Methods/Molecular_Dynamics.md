@@ -163,9 +163,9 @@ which shows a 18 times speed up over the CPU implementation.
 :::{class=subfigures id=fig:gpu_performance}
 
 ![Comparison of CPU and GPU implementations of
-LAMMPS](../02_Methods/figures/lammps_relative_performance.pdf){#fig:gpu_performance_lammps width=49%}
+LAMMPS](../01_Methods/figures/lammps_relative_performance.pdf){#fig:gpu_performance_lammps width=49%}
 ![Comparison of CPU and GPU implementations of
-HOOMD](../02_Methods/figures/hoomd_relative_performance.pdf){#fig:gpu_performance_hoomd width=49%}
+HOOMD](../01_Methods/figures/hoomd_relative_performance.pdf){#fig:gpu_performance_hoomd width=49%}
 
 Both LAMMPS and HOOMD-blue show significant performance improvements using GPUs.
 However this is a little different when looking at rigid molecules,
@@ -217,7 +217,7 @@ while the positions are defined by
 the distance $d$ from the center of the central particle,
 and the angle $\theta$ between the centers of the two radial particles.
 
-![This shows the construction of the trimer molecule.](02_Methods/figures/trimer.pdf)
+![This shows the construction of the trimer molecule.](01_Methods/figures/trimer.pdf)
 
 This gives the positions of the particles $\mathbf{P}`$ as;
 
