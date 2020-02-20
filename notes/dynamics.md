@@ -137,6 +137,25 @@ There is no mention of structural relaxation
       and zero otherwise, and set $b=0.15$.
 Here there is no mention of why this value of $b$ was chosen.
 
+## Rotational Relaxation
+
+- [@Kivelson1988]
+    - In many cases, the nature of the relaxation process, together with the coarseness
+      of the observations, have allowed
+      $$\langle Y_{lm}(t)Y_{lm}(0)*\rangle$$
+      to be represented as a single exponential, in which case $\tau_l$ is its decay
+      time. Under the assumption that a rotating molecule can ber represented as a
+      brownian particle of volume $v$ in a homogenous, continuous hydrodynamic flud,
+      the correlation time $\tau_l$ can be expressed as
+      $$ \tau_l = \frac{v\rho}{k_BTl(l+1)}8\pi C$$
+      where $k_B$ is the Boltzmann constant and $C$ is a paramter...
+For diffusional motion we expect that $\tau_1/\tau_2 = 3$
+For internally rotating molecules,
+we expect $1 < \tau_1/\tau_2 < 3$
+For supercooled liquids, we get behaviour which is non-diffusive,
+that is $\tau_1/\tau_2 < 3$,
+which suggests that the relaxation takes place by means of large angular jumps.
+
 - [@Dote1981]
     - in a typical NMR experiment a single particle correlation time $\tau_2$ is
       determined, $\tau_2$ being given as
@@ -217,21 +236,26 @@ In this paper there is a fair amount of space dedicated to
 the comparison between the Debye formalism and the Einstein formalism,
 with both giving the same results.
 
-## Rotational Relaxation
+## Experiments
 
-- [@Kivelson1988]
-    - In many cases, the nature of the relaxation process, together with the coarseness
-      of the observations, have allowed
-      $$\langle Y_{lm}(t)Y_{lm}(0)*\rangle$$
-      to be represented as a single exponential, in which case $\tau_l$ is its decay
-      time. Under the assumption that a rotating molecule can ber represented as a
-      brownian particle of volume $v$ in a homogenous, continuous hydrodynamic flud,
-      the correlation time $\tau_l$ can be expressed as
-      $$ \tau_l = \frac{v\rho}{k_BTl(l+1)}8\pi C$$
-      where $k_B$ is the Boltzmann constant and $C$ is a paramter...
-For diffusional motion we expect that $\tau_1/\tau_2 = 3$
-For internally rotating molecules,
-we expect $1 < \tau_1/\tau_2 < 3$
-For supercooled liquids, we get behaviour which is non-diffusive,
-that is $\tau_1/\tau_2 < 3$,
-which suggests that the relaxation takes place by means of large angular jumps.
+Supercooled OTP Spin relaxation times using \ce{^2H}-NMR @Dries1988
+    - largely analogous to the intermediate scattering function
+
+Dielectric Spectroscopy $\tau_\alpha$ @Cummins1997
+
+Depolarised light scattering for structural relaxation @Singh1998
+
+## Stokes--Einstein--Debye Breakdown
+
+@Shi2013
+@Ediger2012
+
+## Heterogeneities
+
+@Lacevic2003
+@Glotzer2000
+@Ediger2000
+@Angell2000
+@Sillescu1999
+@Perera1999
+@Donati1999
