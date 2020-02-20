@@ -23,12 +23,6 @@ is a phenomenon which has garnered significant interest;
 it is considered to be a physical indicator of the glass transition,
 a demonstration that it is more than a kinetic phenomenon.
 
-![Structural relaxation from a experimental study showing
-the transition to the two-step process characteristic of
-heterogeneous dynamics
-*Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
-](../00_Introduction/figures/ortho-terphenyl_structural.png){#fig:relaxation width=80%}
-
 Relaxations $F(t)$ within systems undergoing Brownian motion,
 whether structural or rotational will have the form
 
@@ -50,37 +44,6 @@ in relation to the $\beta$ term of the stretched exponential,
 and is an indicator of dynamic heterogeneities.
 The longer timescale relaxation, denoted the $\alpha$ relaxation
 is related to the value of $\tau_\alpha$.
-This stretched exponential behaviour has to describe
-dynamic heterogeneities and relaxation behaviour
-in experimental studies of supercooled relaxations
-measured using a range of techniques, including;
-
-- probe molecules [@Cicerone1995a;@Cicerone1995b],
-- hole burning experiments [@Schmidt-Rohr1991;@Cicerone1995;@Schiener1997],
-- photobleaching [@Cicerone1993], and
-- optical microscopy [@Bartko1999].
-
-While the results from experimental systems
-are useful in describing the presence of dynamic heterogeneities,
-with some even indicating a spatial component.
-It is through simulations that the nature of the heterogeneous
-dynamics has been understood.
-One of the characteristic pictures of dynamic heterogeneities
-is that of @Hurley1995, [@fig:dynamic_heterogenaeties]
-where there are regions of particles that retain their original structure,
-while others have moved many molecular distances.
-This visualisation of the dynamic heterogeneities
-is one which has been, and still is, used extensively
-in describing this phenomenon.
-It captures the phenomenon so succinctly
-because the simulation is in 2D,
-allowing everything to be represented on the page.
-A similar picture is painted in 3D systems, [@Donati1999]
-with spatially separated regions of fast and slow particles.
-
-![The spatial distribution of motion
-*Used with permission from @Hurley1995 © 1995 American Physical
-Society*](../00_Introduction/figures/dynamic_heterogeneities.png){#fig:dynamic_heterogeneities width=80%}
 
 There are many theoretical foundations
 for understanding dynamic heterogeneities.
@@ -197,6 +160,30 @@ while four gears allow motion to propagate.
 
 :::
 
+More recently, there has been an effort
+to link structure with dynamics on a local level,
+which has required a measure of structural relaxation
+that makes the contribution of each particle explicit
+rather than aggregated over the entire system.
+Widmer-Cooper and Harrowell [@Widmer-Cooper2009] defined
+a structural relaxation $F_d(t)$ where
+
+$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
+
+where $w_i(d, t) = 1$ if the particle is within distance $d$
+of it's initial position at time $t$,
+and zero otherwise.
+The angle brackets signify an average over initial times.
+The value of $d$ was chosen to be
+
+$$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
+
+where $k_{\text{bragg}}$ is the wave-vector of
+the maximum peak of the static structure factor $S(k)$.
+This matches with the calculation of the intermediate scattering function
+which will follow the same wave-vector $k_{\text{bragg}}$
+as it will display the largest change over time.
+
 ## Stokes--Einstein--Debye Models
 
 @Shi2013
@@ -261,18 +248,6 @@ a case of the underlying particle motions
 no longer adhering to Brownian motion.
 
 ### Breakdown in rotational coupling
-
-Another unusual behaviour of supercooled liquids,
-is the breakdown of the Stokes--Einstein--Debye relations,
-that is, the proportionality in @eq:sed_proportionality
-no longer holds true.
-Experimental evidence of this is displayed in @fig:trans_rot_otp
-and supported by additional studies. [@cite]
-
-![Translational an rotational coupling within ortho-terphenyl
-breaks down below 290K \
-*Figure from @Chang1994 used with permission © Elsevier*
-](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
 
 The idea that the rotational and translational diffusion constants
 were proportional to each other
@@ -477,6 +452,26 @@ This coupling between rotational and translational motion
 on the microscopic scale
 has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
 and liquid crystals [@Jose2006].
+
+There are two different formalisms of estimating rotational diffusion $D_r$,
+referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
+The Einstein formulation treats the rotational motion
+in the same way as translational diffusion,
+by measuring the small rotational changes over time,
+giving
+
+$$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
+
+for rotations in 2D.
+
+However, while the translational diffusion
+is directly comparable to experimental results,
+there not a comparable experimental observation.
+Instead the Debye model of rotational diffusion is described
+using a dipole relaxation formulation developed by @Kivelson1970.
+This describes rotational motion as a sequence of
+small infinitesimal jumps around the unit sphere
+described using spherical harmonics $Y_l^m$.
 
 ## Goals for Dynamics
 

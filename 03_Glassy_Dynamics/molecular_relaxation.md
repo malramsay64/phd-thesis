@@ -59,7 +59,7 @@ The idea that reversible relaxations
 play an important role in dynamics
 is one which has been investigated previously [@deSouza2008]
 and presented as an issue when introducing
-a local structural relaxation quantity. [@Widmer-Cooper2009a]
+a local structural relaxation quantity. [@Widmer-Cooper2009]
 @Doliwa2003 find metabasins with radii up to 4 times
 the size of the simulated particles
 which is far larger than a half radius
@@ -82,7 +82,7 @@ is guaranteed to return to it's original position, [@Polya1921]
 and with a probability of 34% in 3D. [@Watson1939;@Weisstein]
 
 The approach to solving these issues is using the last passage time,
-building upon the ideas of @Widmer-Cooper2009a and @deSouza2008
+building upon the ideas of @Widmer-Cooper2009 and @deSouza2008
 in acknowledging a particle will undergo reversible relaxations,
 however there is a distance beyond which
 the particle has no 'memory' of it's previous location,
