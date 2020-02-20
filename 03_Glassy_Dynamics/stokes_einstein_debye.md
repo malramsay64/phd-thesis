@@ -1,4 +1,4 @@
-# Understanding the breakdown of Stokes--Einstein--Debye
+# Understanding the breakdown of Stokes--Einstein--Debye {#sec:sed}
 
 @Sengupta2013
 
@@ -171,7 +171,7 @@ and worth investigating further.
 rotational and translational diffusion.
 The range of rotational metrics describe
 different measures of rotational diffusion.
-](../Projects/Dynamics/figures/trans_rot_trimer.svg){width=80% #fig:trans_rot_trimer}
+](../Projects/Dynamics/figures/trans_rot_diff_trimer.svg){width=80% #fig:trans_rot_diff_trimer}
 
 ### Conclusion
 

@@ -159,7 +159,7 @@ def intermediate_scattering_function(
 
 As an alternative and simpler method of
 monitoring structural relaxation $F_d(t)$
-using the quantity suggested by @Widmer-Cooper2009
+using the quantity suggested by @Widmer-Cooper2008
 
 $$ F_d(t) = \begin{cases}
     1 &\text{if} \quad \Delta x < d, \\
