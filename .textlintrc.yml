@@ -24,12 +24,14 @@ rules:
       - f
       - resistance
       - "relative to"
+      - b
   terminology:
     defaultTerms: true
     terms:
       - HOOMD-blue
       - [hoomd, HOOMD-blue]
       - Vogel--Tammann--Fulcher
+      - [two step, two-step]
 
   alex: false
   "write-good": true,
