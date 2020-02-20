@@ -7,7 +7,7 @@ In particular we want it to display dynamics similar to that of ortho-terphenyl.
 Here we introduce some dynamics quantities which are measured in
 both experiments and simulations.
 
-## Non-exponential Temperature Dependence
+## Non-exponential Temperature Dependence {#sec:intro_vtf}
 
 One of the motivating examples for studying ortho-terphenyl
 was the fragility of the liquid (@fig:angell).
@@ -37,13 +37,13 @@ The fragility $m$ is given by;
 $$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$.
 
 which is the slope at the glass transition temperature and
-has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@BohBohmer1993;@Meenakshisundaram2019]
+has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@Bohmer1993;@Meenakshisundaram2019]
 Ortho-terphenyl has a fragility $m=80$. [@Bohmer1993;@Schug1998]
 When describing the temperature dependence of the VTF relation using simulations,
 the structural relaxation time $\tau_S$ is commonly used in place of viscosity
 since it has a similar temperature dependence. [@Lubchenko2007]
 
-## Structural Relaxation
+## Structural Relaxation {#sec:intro_structural}
 
 The structural relaxation is the most fundamental relaxation process [@Angell2000]
 describing the time required for a liquid to
@@ -93,9 +93,9 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 The structural relaxation of ortho-terphenyl
 becomes a two-step process close to the glass transition.
 This behaviour is shown in @fig:otp_structural_relaxation,
-where the relaxation at high temperatures (\SI{>255}{\Kelvin})
+where the relaxation at high temperatures (\SI{>255}{\kelvin})
 takes place through a single exponential process,
-while for lower temperatures (\SI{<248}{\Kelvin})
+while for lower temperatures (\SI{<248}{\kelvin})
 there is an initial fast relaxation followed by a plateau
 then the slower secondary relaxation.
 This two step relaxation process is present
@@ -158,6 +158,10 @@ probe molecules, [@Cicerone1995a;@Cicerone1995b]
 hole burning experiments, [@Schmidt-Rohr1991;@Cicerone1995;@Schiener1997]
 photobleaching, [@Cicerone1993]
 and optical microscopy. [@Bartko1999]
+
+The quantity used to measure this is the non-Gaussian parameter $\alpha$,
+which is a measure of how far the distribution of motions
+deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
 
 ![The trajectories in a simulation of over 20 structural relaxation times.
 The lines represent the trajectories each particle took within the simulation. \
@@ -247,7 +251,7 @@ There is the presence of jump dynamics
 
 $R_1/R_2$ = 1
 
-### Breakdown in Stokes--Einstein--Debye
+### Decoupling of Translational and Rotational motion
 
 Models describing the dynamics of ortho-terphenyl
 are based on the Stokes-Einstein-Debye relationships, [@Einstein1956;@Debye1929]
@@ -288,7 +292,7 @@ is the breakdown of these relations, that is,
 the proportionality described in @eq:sed_proportionality no longer hold true. [@Chang1994]
 This is described as the decoupling of rotational and translational motion
 where and is shown in @fig:trans_rot_otp as the
-different behaviour for the rotations and translations below \si{290}{\Kelvin}
+different behaviour for the rotations and translations below \SI{290}{\kelvin}
 when plotted against viscosity.
 This decoupling has been observed in further studies
 of supercooled liquids
@@ -297,7 +301,7 @@ and remains an unexplained phenomenon. [@Debenedetti2001;@Fujara1992;@Cicerone19
 ![Translational an rotational coupling within ortho-terphenyl
 breaks down below 290K \
 *Figure from @Chang1994 used with permission © Elsevier*
-](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
+](../00_Introduction/figures/trans_rot_coupling.png){#fig:trans_rot_otp width=80%}
 
 ## Successfully Modelling ortho-terphenyl
 
@@ -312,7 +316,7 @@ These are;
 2. the two-step structural relaxation described in @sec:structural_realaxation
 3. The presence of dynamic heterogeneities
 4. Jump dynamics in the rotational relaxation
-5. Breakdown in the Stokes--Einstein--Debye relations
+5. Decoupling of translational and rotational motion
 
 The rest of this chapter is about characterising these dynamic quantities
 for the Trimer and comparing them to the expected results for ortho-terphenyl.

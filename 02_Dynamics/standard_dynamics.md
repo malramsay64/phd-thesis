@@ -11,7 +11,7 @@ The results within this chapter use the melting points determined in @sec:Crysta
 being $T=0.36$ for a pressure $P=1.00$ and
 $T=1.35$ for a pressure $P=13.50$.
 
-## Structural Relaxation and Non-Arrhenius Dynamics
+## Structural Relaxation and Non-Arrhenius Dynamics {#sec:structural_relaxation}
 
 The structural relaxation (@eq:intermediate_scattering_function) is calculated
 for a single value of the wave-number $k$.
@@ -40,47 +40,58 @@ the relaxation of the intermediate scattering function
 takes place through a two step process,
 comprised of an initial relaxation to a plateau that starts around \num{1e4} timesteps,
 followed by a secondary relaxation.
-This two step relaxation process is present
-in experiments [@Mapes2006;@Chang1994;@Sidebottom1993;@Li1992;@Mezei1987]
-and simulations [@Chong2004;@Rinaldi2001;@Roland1997;@Donati1999] of supercooled liquids.
-The two step process describes two types of relaxations,
-fast $\beta$-relaxations which are the relaxations before the plateau
-and slow $\alpha$-relaxations being the long timescale relaxations. [@Cavagna2009]
-The $\beta$-relaxations are only present at the low temperatures
-and are associated with supercooled liquids and the onset of the glass transition.
-While the $\alpha$-relaxation is present for all temperatures
-and is the relaxation measured by the structural relaxation time $\tau_S$
-being the longest timescale relaxation.
-The timescales of the structural relaxation $\tau_S$
-are shown in @fig:isf_relaxtion,
-which includes the relaxation from both
-high ($P=13.5$) and low ($P=1.0$) simulations.
+This is the same two step process
+observed in the structural relaxation of ortho-terphenyl [@Mapes2006]
+and described in @sec:intro_structural.
+This indicates that the structural relaxation
+is taking place through similar processes as ortho-terphenyl.
 
 ![The structural relaxation time $\tau_S$
 for a range of temperatures pressures.
 The temperature has been normalised by the melting point
 reducing both pressures to a single curve.
 The black line is a fit of the Vogel--Tammann--Fulcher relation
-with a fragility $m$ of 220.
+where the fragility $m$ has been found to be 220.
 ](../Projects/Dynamics/figures/scattering_function_summary.svg){width=80% #fig:isf_relaxation}
 
-The structural relaxation time (@fig:isf_relaxation)
-is an excellent example of non-Arrhenius behaviour found in supercooled-liquids.
-What is notable for the Trimer
-is that it occurs above the melting point,
-that is, in a liquid that is not supercooled.
-Here we have direct evidence that the onset of non-Arrhenius dynamics
-occur close to the glass transition temperature
-rather than a property of supercooled liquids.
-With the analytical description of the Vogel--Tammann--Fulcher (VTF) relation
-allows for extrapolation to the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
-This provides an estimation of the glass transition temperature,
-shown for each pressure in @tbl:glass_transition_temp.
-The onset of non-Arrhenius dynamics has been found to occur
-at a temperature of $1.2\ T_g$, [@Ediger2000;@Sillescu1999;@Chang1994]
-which is very close to the melting point,
-further evidence that the supercooled liquid is not important
-for non-Arrhenius behaviour.
+The timescales of the structural relaxation $\tau_S$
+are shown in @fig:isf_relaxtion,
+which include the relaxation from both
+high ($P=13.5$) and low ($P=1.0$) pressure simulations.
+These structural relaxation times
+are excellent examples of the non-Arrhenius
+temperature dependence of the dynamics in ortho-terphenyl (@sec:vtf).
+The fragility $m=220$ of the Trimer liquid
+is much higher than that of ortho-terphenyl,
+which makes it an even more interesting candidate.
+Ortho-terphenyl has been studied because it
+is one of the most fragile glass formers (@fig:angell)
+and the slowest crystal growth (@fig:growth_rates),
+so is going to best express the features of those phenomena.
+Having an even more fragile liquid
+is a better way of understanding what makes a liquid fragile.
+The fragility of the Trimer molecule is so high
+that a machine learning algorithm developed to design
+the most fragile 3D molecule possible
+found a fragility $m=188$ for trimer molecules. [@Meenakshisundaram2019]
+While the results are not directly comparable
+on account of being 3D compared to our 2D simulations
+the Trimer sits amongst the best simulated glass formers.
+
+An interesting observation about the Trimer dynamics
+is that the non-Arrhenius dynamics and two-step relaxation
+occur above the melting point.
+These are behaviours which have been attributed to the supercooled liquid, [@cite]
+yet here are the first known observations of these quantities above the melting point.
+Rather than describing the onset of these quantities
+as properties of supercooled liquids,
+they should instead be described as occurring at the onset
+of the glass transition temperature.
+We can describe these quantities relative to the glass transition temperature
+using the analytical description of the Vogel--Tammann--Fulcher (VTF) relation
+to extrapolate to the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
+This gives an estimate for the glass transition temperature,
+shown in @tbl:glass_transition_temp.
 
 Pressure | $T_g$ | $1.2 T_g$ | $T_m$
 ---------|-------| --------- | ------
@@ -91,35 +102,10 @@ Table: Estimations of the glass transition temperature $T_g$
 for each pressure based on fitting the
 Vogel--Tammann--Fulcher relation. {#tbl:glass_transition_temp}
 
-The degree to which the non-Arrhenius dynamics
-plays a role in the dynamics is measured through the fragility $m$,
-which has values ranging from $\approx 16$
-for strong liquids and exceeds 200 for fragile liquids. [@Meenakshisundaram2019]
-The structural relaxation of the Trimer molecule has a fragility $m=220$,
-well into the region of the fragile liquids,
-making it an excellent candidate to study
-the dynamics of fragile liquids.
-The fragility of the Trimer molecule is so high
-that a machine learning algorithm developed to design
-the most fragile 3D molecule possible
-managed a fragility $m=188$ for Trimers. [@Meenakshisundaram2019]
-While the results are not directly comparable
-on account of being 3D compared to our 2D simulations
-the Trimer sits amongst the best simulated glass formers.
-
-## Dynamic heterogeneities
+## Dynamic heterogeneities {#sec:dynamic_heterogeneities}
 
 The non-exponential structural relaxation in @fig:intermediate_scattering_function
 also hints at the presence of dynamic heterogeneities.
-This is where there are multiple timescales within a single material,
-that is, some regions of the material are moving fast
-while others are moving slow.
-Dynamic heterogeneities are a phenomenon
-This phenomenon has been observed in a wide range of materials
-both simulated and experimental.
-The quantity used to measure this is the non-Gaussian parameter $\alpha$,
-which is a measure of how far the distribution of motions
-deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-Gaussian parameter increases,
 demonstrating an increase in the dynamic heterogeneities,
@@ -156,14 +142,6 @@ The calculations of the non-Gaussian parameter [@Donati1999;@Horbach1998]
 typically have differing behaviour like in @fig:non-gaussian,
 so it is interesting that the rotations all obey this single "master curve".
 
-@Lacevic2003
-@Glotzer2000
-@Ediger2000
-@Angell2000
-@Sillescu1999
-@Perera1999
-@Donati1999
-
 In the study of translational heterogeneities
 there has been and understanding
 that the heterogeneities are related to the structure,
@@ -197,22 +175,39 @@ Areas which are white are indicative of no motion,
 while coloured areas have lots of motion.
 ](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
 
-The Trimer molecule displays dynamics which are
-characteristic of experimental fragile liquids like ortho-terphenyl.
-The structural relaxation (@fig:isf_relaxation),
-the rotational relaxation (@fig:rotational_relaxtion)
-and the diffusion constant (@fig:diffusion_constant)
-all display non-Arrhenius temperature dependences
-like that of ortho-terphenyl.
-Additionally the presence of the dynamic heterogeneities
-confirms the
+## Decoupling of Translations and Rotations {#sec:trans_rot_decoupling}
 
-in both simulations and experiments of fragile liquids,
-demonstrate that this molecule is a good candidate
-for further investigation of it's dynamic behaviour
-and there are no issues dealing with a simulation in 2D.
+The relationship between the structural relaxation times,
+the rotational relaxation times,
+and the diffusion constant
+are a component of confirming that
+the observed dynamical behaviour is as expected.
+The figures showing the rotational relaxation times
+and the diffusion constant are shown in @sec:extra_dynamics.
+While the ratios between the quantities
+are displayed in @fig:trans_rot_trimer.
+This is interesting
+in that the choice of rotational diffusion constant
+changes the presence of the breakdown,
+with both the rotational and translational diffusion
+having the same dependence on the structural relaxation time.
+The observed behaviour deviates from the results obtained by @Chang1994.
+The breakdown of the Stokes--Einstein--Debye relations
+turns out to be a more complex topic.
+In a study of the Lewis--Wahnström model,
+@Lombardo2006 find that the decoupling of translational and rotational motions
+gives different results depending on
+the method used to calculate the rotational diffusion,
+while in simulations of water
+@Kawasaki2019 describe different breakdowns
+depending on the choice of the polynomial
+used for rotational relaxation.
+While the breakdown of the SED model
+doesn't match the behaviour of ortho-terphenyl,
+it is likely an issue with the methods used to calculate the breakdown
+because of the discrepancies in other models. [@Lombardo2006;@Kawasaki2019]
+The calculation of the breakdown of rotational and translational motion
+is explored further in @sec:sed.
 
-The only unusual property is the onset of this fragility
-well above the melting point.
-This is likely a result of the incredibly slow dynamics at the melting point
-the with a timescale barely accessible to simulation.
+![Breakdown of the Stokes--Einstein--Debye
+relations](../Projects/Dynamics/figures/trans_rot_trimer.svg){#fig:trans_rot_trimer width=80%}
