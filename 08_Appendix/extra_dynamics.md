@@ -1,10 +1,13 @@
-# Extra Dynamics
+---
+top-level-division: chapter
+title: Dynamics
+---
 
 These are additional figures for the analysis of the dynamics
 which are not required for the main narrative,
 acting as supporting information.
 
-## Translational Diffusion
+# Translational Diffusion
 
 The translational diffusion is characterised by the
 Mean Squared Displacement (MSD) of particles
@@ -34,7 +37,7 @@ Note the logarithmic scale of both axes.
 normalised temperature for high and low pressures.
 ](../Projects/Dynamics/figures/diffusion_constant_summary.svg){width=80% #fig:diffusion_constant}
 
-## Rotational Relaxations
+# Rotational Relaxations
 
 The rotational relaxations are given by the relaxation of a dipole (@eq:rot_relax)
 and shown in @fig:rotational_relaxation.
@@ -50,3 +53,5 @@ the relaxation time is the rate of the decay.
 over a range of temperatures at a pressure of 13.50.
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
+
+<!-- markdownlint-disable-file MD025 -->

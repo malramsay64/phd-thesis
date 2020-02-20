@@ -1,8 +1,14 @@
-# Introduction
+---
+top-level-division: chapter
+title: Introduction
+---
 
 - There are many aspects of molecular liquids which are not understood
     - growth rates
     - fragile liquid
+
+![Growth of different crystals](../placeholder_figure.png){#fig:growth_rates}
+![Angell plot](../00_Introduction/figures/angell.png){#fig:angell}
 
 - Molecular liquids are challenging
     - Rotational motion
@@ -45,13 +51,7 @@ was identified in computer simulations @Hurley1995
 and allowed for the design of experiments
 to match these simulated observations. [@Cicerone1995a;@Cicerone1995b;@Schiener1997]
 
-- The idea of taking a computationally simple system that is easy to visualise and
-  applying the ideas to 3D has been done in many cases
-    - dynamic heterogeneities
-    - packing of Trimers
-    - binary Lennard Jones discs
-
-## Modelling ortho-terphenyl
+# Modelling ortho-terphenyl
 
 The iterative process of
 
@@ -66,7 +66,7 @@ For the development of the simulations,
 there are many different levels of approximately modelling ortho-terphenyl,
 with each looking at different properties.
 
-### Lewis-Wahnström model
+## Lewis-Wahnström model
 
 The Lewis-Wahnström [@Wahnstrom1993] model of ortho-terphenyl
 is probably the simplest possible model to capture
@@ -115,7 +115,7 @@ translations diffusion constants three orders of magnitude
 rotational diffusion constants seven orders of magnitude
 larger than the experimental values near 260 K. [@Lombardo2006;@Lewis1994;@Rinaldi2001]
 
-### Alternative Models
+## Alternative Models
 
 Alternative models of ortho-terphenyl
 trade the long timescales available to the Lewis--Wahnström model
@@ -150,7 +150,7 @@ The current state of the art in molecular dynamics simulations
 is millisecond timescales @Chen2019a,
 while glass formation takes place over thousands of seconds.
 
-## Computational Tractability
+# Computational Tractability
 
 Part of the issue of modelling glass formation
 is the long timescales required for the simulations.
@@ -195,7 +195,13 @@ applying the lessons learnt to 3D systems.
 - Here we introduce the Trimer
     - molecule definition
 
-## Project Outline
+- The idea of taking a computationally simple system that is easy to visualise and
+  applying the ideas to 3D has been done in many cases
+    - dynamic heterogeneities
+    - packing of Trimers
+    - binary Lennard Jones discs
+
+# Project Outline
 
 - Demonstrate the trimer molecule is an appropriate model for the dynamic behaviours of
   ortho-terphenyl and other fragile liquids.
@@ -207,3 +213,5 @@ applying the lessons learnt to 3D systems.
 - Characterise the melting rate of the Trimer molecule, comparing it to different
   theories.
 - Investigate the slow melting rates of the trimer.
+
+<!-- markdownlint-disable-file MD025 -->

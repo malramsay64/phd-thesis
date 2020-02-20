@@ -1,4 +1,7 @@
-# Data Storage
+---
+top-level-division: chapter
+title: Data Storage
+---
 
 - Typical analysis loads all data into RAM concurrently
     - need lots of RAM
@@ -43,7 +46,7 @@
         - Implementations can be buggy. Pandas 0.24 was leaving a file handle
           open when the read didn't go properly
 
-## Out of Memory Processing
+# Out of Memory Processing
 
 - Where the size of the data is too large to fit in RAM
 - Approaches
@@ -70,7 +73,7 @@
         - This is expensive, and can get really expensive
         - Only gets you so far
 
-## Trajectory File Format
+# Trajectory File Format
 
 - mdtraj [@McGibbon2015]
 - Trajectories
@@ -84,3 +87,5 @@
     - mdcrd
     - prmtop
     - mdtraj hdf5
+
+<!-- markdownlint-disable-file MD025 -->

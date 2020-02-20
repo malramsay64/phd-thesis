@@ -1,10 +1,13 @@
-# Software Projects
+---
+top-level-division: chapter
+title: Software Projects
+---
 
 As part of my PhD I have developed a range of software
 which each solve specific problems I have run into.
 This software is all open source and freely available on GitHub.
 
-## Simulation Management
+# Simulation Management
 
 The management of simulations is highly complex,
 particularly where multiple steps are involved.
@@ -96,7 +99,7 @@ Part of the process of running many simulations on HPC resources,
     - wait in a queue for a long period of time, want to be correct when it runs
     - test smaller simulations, run on HPC
 
-## Simulation Initialisation
+# Simulation Initialisation
 
 packing
 
@@ -148,7 +151,7 @@ The structure is very similar to the qtools software [@Purg2017]
 which provides a similar capability for the Q molecular dynamics package,
 while `sdrun` provides the capability for Hoomd.
 
-## Analysis of simulation trajectories
+# Analysis of simulation trajectories
 
 The analysis of molecular dynamics simulation trajectories
 is an area containing many different software packages, [@Giorgino2019a]
@@ -192,3 +195,5 @@ of a small set of analyses in the Rust programming language.
 In the calculation of fluctuations
 it is over 100x faster than the `sdanalysis` implementation
 which takes the analysis from hours to minutes.
+
+<!-- markdownlint-disable-file MD025 -->
