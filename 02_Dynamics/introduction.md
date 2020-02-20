@@ -1,38 +1,20 @@
 # Introduction
 
-The Trimer molecule is designed to model the dynamic quantities of ortho-terphenyl.
-What do these look like.
+## Characterisation of Dynamics
 
-What is a successful model of OTP?
-    - fragile liquid
-    - dynamic heterogeneities
-    - Stokes--Einstein--Debye breakdown
+The Trimer models is designed to model the dynamics of a fragile liquid.
+In particular we want it to display dynamics similar to that of ortho-terphenyl.
+Here we introduce some dynamics quantities which are measured in
+both experiments and simulations.
 
-## Dynamics in Experimental Systems
+## Non-exponential Temperature Dependence
 
-One of the key experimental observations
-is that the relaxation behaviour
-becomes increasingly non-exponential [@Ediger1996]
-and is often fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Kohlrausch1854]
-
-$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
-
-The expected relaxation behaviour is an exponential,
-so this raises two possible explanations;
-
-1. each particle is undergoing some alternative non-exponential relaxation process, or
-2. the relaxation of each particle is exponential, however there is a distribution of
-   relaxation timescales. [@Richert1994]
-
-Many experiments and simulations
-[@Hurley1995;@Kob1997;@Cicerone1996;@Cicerone1995b;@Chang1997;@Mapes2006;@Mishra2015;@Lacevic2003;@Glotzer2000]
-have found the cause of the non-exponential relaxation
-to be heterogeneous dynamics.
-
-@Schiener1997 dielectric hole burning
-
-Another relation used to describe the dynamics in experiments
-is the Vogel--Tammann--Fulcher[^vtf] (VTF) relation [@Debenedetti2001]
+One of the motivating examples for studying ortho-terphenyl
+was the fragility of the liquid (@fig:angell).
+The highly non-Arrhenius temperature dependence of the viscosity
+is an characteristic of molecular liquids.
+The non-Arrhenius behaviour can be described by
+the Vogel--Tammann--Fulcher[^vtf] (VTF) relation [@Debenedetti2001]
 
 $$ \eta = A \exp(\frac{B}{T-T_0}) $$ {#eq:vtf}
 
@@ -44,83 +26,56 @@ over the appropriate term to use.
 Vogel--Fulcher--Tammann.
 Furthermore, @Cummins1997 uses both Vogel--Fulcher and Vogel--Fulcher--Tammann within the same paper.
 
-where;
-
-- $\eta$ is the viscosity (or any other dynamic behaviour)
-- $T_0$ is an extrapolated temperature found from fitting
-- $B$ is another parameter extrapolated from fitting.
-
-The VTF relation allows for defining a quantity $m$,
-known as the *fragility*,
+where $\eta$ is the viscosity (or any other dynamic behaviour),
+$T_0$ is an extrapolated temperature found from fitting, and
+$B$ is a parameter extrapolated from fitting.
+The VTF relation allows for defining a quantity $m$, known as the *fragility*,
 which describes how much the temperature dependence
-deviates from an Arrhenius relation
+deviates from an Arrhenius relation.
+The fragility $m$ is given by;
 
 $$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$.
 
-The onset of these heterogeneous dynamics
-occurs at approximately $1.2\ T_g$ for ortho-terphenyl
-and comparable fragile liquids. [@Angell2000;@Blackburn1996;@Rossler1994;@Mapes2006]
-Additional to the onset of heterogeneous dynamics at $1.2\ T_g$,
-there is a decoupling between translational diffusion and viscosity,
-and between rotational and translational diffusion. [@Debenedetti2001;@Fujara1992;@Cicerone1996;@Ediger2000]
-The presence of these changes in dynamics
-has led to a range of theories
-which provide different methods of describing these phenomenon.
-These theories help drive the design of new simulations
-and experiments which can provide additional insights
-into this problem.
+which is the slope at the glass transition temperature and
+has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@BohBohmer1993;@Meenakshisundaram2019]
+Ortho-terphenyl has a fragility $m=80$. [@Bohmer1993;@Schug1998]
+When describing the temperature dependence of the VTF relation using simulations,
+the structural relaxation time $\tau_S$ is commonly used in place of viscosity
+since it has a similar temperature dependence. [@Lubchenko2007]
 
 ## Structural Relaxation
 
-Structural relaxation is the most fundamental relaxation process [@Angell2000]
-being the process by which a liquid forgets it's structure
-from some earlier time [@Ediger1996].
-The process of structural relaxation occurs over distances
-comparable to the size of the particles within the liquid [@Angell1985].
-These small distances over which the structural relaxation take place
-are comparable to the relaxations that take place
-when the liquid is under a shear stress.
-The motion of the liquid under a shear stress,
-otherwise known as shear viscosity and denoted by $\eta$,
-has been shown to have the same temperature scaling
-as the structural relaxation time
-in both experimental [@Ediger2012] and computational [@Perera1999] systems.
-A rationalisation of this relationship
-can be to consider a force pushing on one part of the configuration,
-the structural relaxation time is indicative of
-the time the state takes to adjust to the applied force.
-In a liquid, applying force results in flow
-with the viscosity being a measure of the resistance to flow.
-
-In practical experiments measuring liquid dynamics,
-the structural relaxation is measured using techniques
-including; x-ray and neutron scattering, and
-neutron spin echo [@Mezei1987]
-probe molecules [@Wendt1998]
-light scattering [@Sidebottom1993;@Li1992;@Singh1998]
-Find more from @Berry2006
-These experiments measure the intermediate scattering function $F(k, t)$
-a measure describing the similarity of a configuration
-to a reference configuration from an earlier point in time.
-The intermediate scattering function is measuring
-the local density fluctuations[@Angell2000] through a density-density autocorrelation.
-Although the density-density autocorrelation is one method of calculating
-structural relaxation for computational experiments,
-a more common approach is to use
-the intermediate scattering function $F(k, t)$ represented as;
+The structural relaxation is the most fundamental relaxation process [@Angell2000]
+describing the time required for a liquid to
+return to equilibrium after a small perturbation. [@Ediger2012]
+The process of structural relaxation takes place over distances
+comparable to the size of the particles within the liquid. [@Angell1985]
+It "describes the process by which a liquid forgets it's structure
+from some earlier time",[@Ediger1996]
+which can be measured through density fluctuations. [@Angell2000]
+The structural relaxation is measured through a range of
+different experimental techniques, including;
+neutron scattering, [@Mezei1987;@Bartsch1995;@Tolle2001]
+probe molecules, [@Wendt1998;@Cicerone1995]
+light scattering, [@Sidebottom1993;@Li1992;@Singh1998;@Griffin2012]
+NMR, [@McCall1969;@Dries1988;@Bohmer1996;@Hinze1996;@Fujara1992]
+and dielectric relaxation. [@Hansen1997;@Naoki1987;@Richert1994;@Richert2005]
+These neutron and light studies measure the intermediate scattering function $F(\vect{k}, t)$
+which is a Fourier transform of the density-density autocorrelation,
+measuring the quantity in wave-vector space rather than real space. [@Angell2000]
+The intermediate scattering function is also calculated in simulations
+[@Shi2013;@Chong2004;@Kawasaki2019;@Widmer-Cooper2004]
+and is given by
 
 $$ F(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
 i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
-) \right\rangle $$ {#eq:intermediate_scattering_function}
+) \right\rangle $$ {#eg:intermediate_scattering_function}
 
 where the angle brackets signify averaging over multiple initial configurations
 $N$ is the total number of particles,
 $i = \sqrt{-1}$, and $\mathbf{k}$ is the wave vector.
-
-Since the intermediate scattering function
-is a measure of the scattering from a radiation source,
-in an isotropic liquid we can take a spherical average
-over all wave-vectors.
+In an isotropic liquid, where all directions are equivalent,
+we can take a spherical average over all wave-vectors,
 giving $\mathbf{k}$ the form;
 
 $$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M \left[
@@ -133,243 +88,233 @@ the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
 $$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$ {#eq:intermediate_scattering_function}
+\right ) \right \rangle $$ {#eg:intermediate_scattering_function}
 
-The intermediate scattering function
-is the spatial transform of the van-Hove relaxation function $G(r, t)$,
-given by
+The structural relaxation of ortho-terphenyl
+becomes a two-step process close to the glass transition.
+This behaviour is shown in @fig:otp_structural_relaxation,
+where the relaxation at high temperatures (\SI{>255}{\Kelvin})
+takes place through a single exponential process,
+while for lower temperatures (\SI{<248}{\Kelvin})
+there is an initial fast relaxation followed by a plateau
+then the slower secondary relaxation.
+This two step relaxation process is present
+in experiments [@Mapes2006;@Chang1994;@Sidebottom1993;@Li1992;@Mezei1987]
+and simulations [@Chong2004;@Rinaldi2001;@Roland1997;@Donati1999] of supercooled liquids.
+The two step process describes two types of relaxations,
+fast $\beta$-relaxations which are the relaxations before the plateau
+and slow $\alpha$-relaxations being the long timescale relaxations. [@Cavagna2009]
+The $\beta$-relaxations are only present at the low temperatures
+and are associated with supercooled liquids and the onset of the glass transition.
+While the $\alpha$-relaxation is present for all temperatures
+and is the relaxation measured by the structural relaxation time $\tau_S$
+being the longest timescale relaxation.
+As the structural relaxation behaviour becomes increasingly non-exponential, [@Ediger1996]
+it is often fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Kohlrausch1854]
 
-$$G(r, t) = \frac{1}{4\pi r^2 \Delta r} \langle \delta[r_i(t) - r_i(0) - r] \rangle$$
+$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
 
-which has also been used for computing structural relaxation
-[@Glotzer2000;@Debenedetti2001;@Levesque1970;@Kob1995].
+Where the values for $\beta$ and $\alpha$ represent
+the fast and slow relaxations respectively.
 
-More recently, there has been an effort
-to link structure with dynamics on a local level,
-which has required a measure of structural relaxation
-that makes the contribution of each particle explicit
-rather than aggregated over the entire system.
-Widmer-Cooper and Harrowell [@Widmer-Cooper2009a] defined
-a structural relaxation $F_d(t)$ where
+![Experimentally determined structural relaxation of ortho-terphenyl
+using photon correlation spectroscopy.
+This displays the transition to a two-step relaxation process
+which is characteristic of ortho-terphenyl
+and other supercooled liquids. \
+*Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
+](../00_Introduction/figures/ortho-terphenyl_structural.png){#fig:otp_structural_relaxation width=80%}
 
-$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
+## Dynamic Heterogeneities
 
-where $w_i(d, t) = 1$ if the particle is within distance $d$
-of it's initial position at time $t$,
-and zero otherwise.
-The angle brackets signify an average over initial times.
-The value of $d$ was chosen to be
+The expected shape of structural relaxation is an exponential decay,
+meaning the observed non-exponential shape needs to be explained.
+The non-exponential shape is the average over a range of particles
+which gives rise to two possible explanations for non-exponentially; [@Richert1994]
 
-$$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
+1. each particle is undergoing the same non-exponential relaxation process, or
+2. the relaxation of each particle remains exponential,
+however non-exponential is a distribution of
+   relaxation timescales.
 
-where $k_{\text{bragg}}$ is the wave-vector of
-the maximum peak of the static structure factor $S(k)$.
-This matches with the calculation of the intermediate scattering function
-which will follow the same wave-vector $k_{\text{bragg}}$
-as it will display the largest change over time.
+This was initially investigated by simulation studies,
+which found the presence of spatially heterogeneous dynamics within the liquid. [@Hurley1995]
+This idea is encapsulated in @fig:dynamic_heterogeneities
+where there are regions of the simulation
+in which particles remain in their initial positions,
+while other regions show motion over many particle distances.
+This visualisation of dynamic heterogeneities
+is one which has been, and still is, used extensively
+in describing this phenomenon.
+It captures the phenomenon so succinctly
+because the simulation is in 2D,
+allowing everything to be represented on the page.
+These same spatially heterogeneous regions
+are also present in simulations of ortho-terphenyl, [@Lombardo2006]
+and other fragile liquids. [@Hurley1995;@Kob1997;@Chang1997;@Mapes2006;@Mishra2015;@Lacevic2003;@Glotzer2000]
+There are also many experimental techniques
+which have been designed to measure dynamic heterogeneities;
+probe molecules, [@Cicerone1995a;@Cicerone1995b]
+hole burning experiments, [@Schmidt-Rohr1991;@Cicerone1995;@Schiener1997]
+photobleaching, [@Cicerone1993]
+and optical microscopy. [@Bartko1999]
 
-<!-- TODO What does OTP do -->
+![The trajectories in a simulation of over 20 structural relaxation times.
+The lines represent the trajectories each particle took within the simulation. \
+*Used with permission from @Hurley1995 © 1995 American Physical Society*
+](../00_Introduction/figures/dynamic_heterogeneities.png){#fig:dynamic_heterogeneities width=80%}
 
-## Diffusion Constant
+## Stokes--Einstein--Debye Relations
 
-The Diffusion is measured in experimental systems
-using \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
-which allows for direct comparison with simulation.
+The Stokes--Einstein--Debye relations describe the relationship
+between three important components of dynamics,
+the viscosity or structural relaxation,
+the translational diffusion constant $D_t$, and
+the rotational diffusion constant.
+
+### Translational Diffusion Constant
 
 The translational diffusion constant $D_t$
 is a measure of how fast particles within the liquid
 move over a long time period.
 It's formulation is based upon Brownian dynamics,
 where, over long time periods,
-the displacement from the origin $\Delta x(t)$ at time $t$
+the displacement from the origin $\Delta \vect{r}(t)$ at time $t$
 averaged over many initial configurations
 has the relation
 
-$$ \langle \Delta x(t)^2 \rangle = 2 D_t t $$
+$$ \langle \Delta \vect{r}(t)^2 \rangle = 2 N_\text{dim} D_t t $$
 
-where the angle brackets $\langle\rangle$ represent
+where $N_\text{dim}$ is the number of spatial dimensions in $\vect{r}$
+and the angle brackets $\langle\rangle$ represent
 the average over many initial conditions.
-In the case of a molecular dynamics simulation
-this is over all the individual particles.
-The relation shown above is for a 1D random walk,
-with each dimension contributing to the diffusion giving
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 4 D_t t $$
-
-for the 2D case and
-
-$$ \langle \Delta \vect{r}(t)^2 \rangle = 6 D_t t $$
-
-for the 3D case.
-Where $\Delta \vect{r}(t)$ is the displacement over all dimensions.
-
-The Mean-Squared-Displacement (MSD) has a characteristic shape,
-with the initial section representing the ballistic motion
-before particles have collided with any other.
-Since the particles are moving freely,
-the MSD has increases as a power law of order 2.
-This ballistic region transitions into a diffusive region
-where the dynamics are governed by many small steps.
-This diffusive regime defines the diffusion constant,
+The left hand side of the above equation $\langle \Delta \vect{r}(t)^2 \rangle$
+is known as the Mean-Squared-Displacement.
+The Mean-Squared-Displacement has a timescale dependence
 so the calculation of the diffusion constant
-is often written as
+is normally written as;
 
 $$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
 
-reflecting the long timescale behaviour.
+reflecting the intended long timescale behaviour.
+Within experiments, the diffusion constant is often measured using
+\ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
+which allows for the comparison with simulations.
 
-## Rotational Relaxation
+### Rotational Diffusion Constant
 
-The rotational relaxation functions $C_l$
-have equivalences in experiments.
-The 2nd degree Legendre polynomial corresponds
-to NMR [@Dote1981] and fluorescence experiments.
-
-What is termed rotational relaxation,
-is typically measured as a dipole relaxation.
-This describes rotational motion as a sequence of
-small infinitesimal jumps of a dipole around the unit sphere
-using spherical harmonics $Y_l^m$.
-This allows us to express a rotational relaxation function $R_l(t)$
-in terms of those spherical harmonics
-
-\begin{align}
-R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
-       &= \exp(-D_r\,l(l+1)t)
-\end{align}
-
-This formulation represents the rotational relaxation as an exponential.
-The exponential is nice in that we can find a characteristic timescale $\tau_l$
-for relaxation to occur, where
-
-$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
-
-Here relaxation is the time taken for relaxation from
-the initial value of $Y_l^m$ to it's first zero.
-
-The relaxation of a dipole $C_l$,
-where the orientation of the dipole is represented by the vector $\hat{\vect{u}}$
-can be represented as
-
-$$ C_{l} = \langle P_l(\hat{\vect{u}}_i(t) \cdot \hat{\vect{u}}_i(0)) \rangle_i $$
-
-Here $P_l$ is the Legendre polynomial of degree $l$,
-and the angle brackets signify an average over
-all molecules and starting configurations.
-
-There are two different formalisms of estimating rotational diffusion $D_r$,
-referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
-The Einstein formulation treats the rotational motion
-in the same way as translational diffusion,
-by measuring the small rotational changes over time,
-giving
-
-$$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
-
-for rotations in 2D.
-
-However, while the translational diffusion
-is directly comparable to experimental results,
-there not a comparable experimental observation.
-Instead the Debye model of rotational diffusion is described
-using a dipole relaxation formulation developed by @Kivelson1970.
-This describes rotational motion as a sequence of
-small infinitesimal jumps around the unit sphere
-using spherical harmonics $Y_l^m$.
-This allows us to express a rotational relaxation function $R_l(t)$
-in terms of those spherical harmonics
+While the values calculated for the translational diffusion constant
+in simulations and experiments are relatively comparable,
+the rotational diffusion is a little different.
+In experimental systems rather than measuring rotational diffusion $D_r$,
+the rotational relaxation time $\tau_r$.
+The equivalence of the rotational relaxation time to the diffusion constant
+can be made using spherical harmonics,
+describing the rotational relaxation function $R_l(t)$ as
 
 \begin{align}
 R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
        &= \exp(-D_r\,l(l+1)t)
 \end{align}
 
-This formulation represents the rotational relaxation as an exponential.
-The exponential is nice in that we can find a characteristic timescale $\tau_l$
-for relaxation to occur, where
+where $l$ describes the degree of the spherical harmonic.
+This formulation represents the rotational relaxation as an exponentially decaying
+function like the intermediate scattering function,
+allowing the relationship between the rotational relaxation time
+and the rotational diffusion constant to be expressed as
 
 $$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
 
-Here relaxation is the time taken for relaxation from
-the initial value of $Y_l^m$ to it's first zero.
+the inverse of the diffusion constant.
+The rotational relaxation time is found using techniques including;
+dielectric spectroscopy, [@Fujara1992]
+optical anisotropy, [@Williams1970;@Williams1971;@Shears1973]
+NMR, [@Dote1981]
+and spin resonance spectroscopy [@Andreozzi1996;@Andreozzi1997]
+It should be noted that while these experiments
+describe their measurements of a rotational relaxation time,
+they actually measure a dipole relaxation,
+ignoring the rotational motion about the axis of the dipole.
+The measurement of the dipole relaxation extends to simulations
+where the rotational relaxation is described by
+the 2nd degree Legendre polynomial
+chosen for matching the spectroscopic rotation [@Brodka1992]
+with the form;
 
-The relaxation of a dipole $C_l$,
-where the orientation of the dipole is represented by the vector $\hat{\vect{u}}$
-can be represented as
+$$ R_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$ {#eg:rot_relax}
 
-$$ C_{l} = \langle P_l(\hat{\vect{u}}_i(t) \cdot \hat{\vect{u}}_i(0)) \rangle_i $$
+There is the presence of jump dynamics
 
-Here $P_l$ is the Legendre polynomial of degree $l$,
-and the angle brackets signify an average over
-all molecules and starting configurations.
+$R_1/R_2$ = 1
 
-The rotational relaxation functions $C_l$
-have equivalences in experiments.
-The 2nd degree Legendre polynomial corresponds
-to NMR [@Dote1981] and fluorescence experiments.
-Which can be calculated in Molecular Dynamics simulations
-through an equation of the form
+### Breakdown in Stokes--Einstein--Debye
 
-$$ C_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$ {#eq:rot_relax}
+Models describing the dynamics of ortho-terphenyl
+are based on the Stokes-Einstein-Debye relationships, [@Einstein1956;@Debye1929]
+which are derived from particles undergoing Brownian motion.
+There are two predicted relationships which are important,
+with the Stokes--Einstein relation describing
+the translational diffusion constant
 
-where $\hat{\vect{n}}(t)$ is the unit vector through the center of mass of a molecule.
-It should be noted that this dipole relaxation
-only describes at most two dimensions of the rotational relaxation,
-rotations about the axis of the dipole are not expressed.
-There are many different approaches which have been used,
-@Brodka1992 define the rotational relaxation
-of the spectroscopically available rotation with the $C_2$ method
-whilst other rotational degrees of freedom
-were studied using an angular velocity autocorrelation function.
-Alternatively @Jas2000 combine the rotational relaxations
-for vectors along the $x, y,$ and $z$ axes into a single
-complete rotational relaxation.
-An approach only concerned with isotropic rotational motion
-could also take the approach of @Chen2017
-and represent molecular rotation using quaternions[@Furry1957],
-which capture all rotational information.
-It should be noted that
-the quaternion representation can also be decomposed
-into the component rotational relaxations,
-in the same way the vectors for each axis
-can be combined into an isotropic relaxation.
-The advantage with using the quaternion approach
-is that quaternions are the most sensible approach
-for computationally representing rotations in three dimensions[@Huynh2009]
-and is commonly used in molecular dynamics simulations
-[@Ciccotti1986;@Omelyan1998;@Rog2003;@Andersen1983;@Refson2000;@Nose1983;@Evans1977;@Rapaport1985].
+$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
 
-## Breakdown in Stokes--Einstein--Debye
+and the Stokes--Einstein--Debye relation describing the rotational diffusion constant
 
-@Ediger2012
+$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
 
-Dynamics are important to both Crystal Growth, as a rate term
-and to understanding the Glass.
+where $\eta$ is the shear viscosity,
+$T$ is the temperature, and
+$R$ is .....
+These equations can be simplified by grouping all the constant terms
 
-Consider a force pushing on the material,
-the structural relaxation is the timescale
-over which the material can rearrange to reduce that force.
-When the force is continuous,
-we are measuring the viscosity,
-so the structural relaxation is used within experiments
-in the place of viscosity.
+$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
 
-This relationship between the shear viscosity and the structural relaxation
-allows us to rewrite the Stokes-Einstein-Debye relations as
+and
 
-$$ D \propto \frac{1}{\tau_s} \text{ and } \tau_r \propto \tau_s $$
+$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
 
-where we are using the structural relaxation time
-as the fundamental relaxation time,
-providing a link between
-the diffusion constant $D$ and the rotational relaxation time $\tau_r$.
+Using the structural relaxation time $\tau_S$ instead of the viscosity $\eta$
+we can describe a proportionality between all
+the dynamic quantities we have described above
 
-## Goals for Dynamics
+$$ D_t \propto D_r \propto \frac{1}{\tau_r} \propto \frac{1}{\tau_s} $$ {#eq:sed_proportionality}
 
-In @sec:dynamics_results we analyse the dynamics of the Trimer molecule
-using standard quantities which are related to
-experimentally determined values.
-This is to establish that the behaviours observed
-match those of existing molecular liquids,
-and that the liquid displays the behaviour of a fragile liquid
-like that of ortho-terphenyl which we are modelling.
+the translational diffusion constant $D_t$ ,
+the rotational diffusion constant $D_r$,
+the rotational relaxation time $\tau_r$,
+and the structural relaxation time $\tau_s$.
+One of the characteristic features of the dynamics of ortho-terphenyl
+is the breakdown of these relations, that is,
+the proportionality described in @eq:sed_proportionality no longer hold true. [@Chang1994]
+This is described as the decoupling of rotational and translational motion
+where and is shown in @fig:trans_rot_otp as the
+different behaviour for the rotations and translations below \si{290}{\Kelvin}
+when plotted against viscosity.
+This decoupling has been observed in further studies
+of supercooled liquids
+and remains an unexplained phenomenon. [@Debenedetti2001;@Fujara1992;@Cicerone1996;@Ediger2000]
+
+![Translational an rotational coupling within ortho-terphenyl
+breaks down below 290K \
+*Figure from @Chang1994 used with permission © Elsevier*
+](../placeholder_figure.png){#fig:trans_rot_otp width=80%}
+
+## Successfully Modelling ortho-terphenyl
+
+The aim of this chapter is to establish that the Trimer
+is an appropriate dynamical model for ortho-terphenyl.
+To do this we need to consider which elements of
+the dynamical behaviour of ortho-terphenyl
+we expect the Trimer model to display.
+These are;
+
+1. the non-Arrhenius temperature dependence characteristic of a fragile liquid
+2. the two-step structural relaxation described in @sec:structural_realaxation
+3. The presence of dynamic heterogeneities
+4. Jump dynamics in the rotational relaxation
+5. Breakdown in the Stokes--Einstein--Debye relations
+
+The rest of this chapter is about characterising these dynamic quantities
+for the Trimer and comparing them to the expected results for ortho-terphenyl.
+@Sec:structural_realaxation describes 1, and 2, @sec:dynamic_heterogeneities describes
+3, while 4 and 5 are described in @sec:stokes_einstein_debye.
