@@ -37,10 +37,10 @@ The structural relaxation of the Trimer molecule
 is shown in @fig:intermediate_scattering_function.
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
-takes place through a two step process,
+takes place through a two-step process,
 comprised of an initial relaxation to a plateau that starts around \num{1e4} timesteps,
 followed by a secondary relaxation.
-This is the same two step process
+This is the same two-step process
 observed in the structural relaxation of ortho-terphenyl [@Mapes2006]
 and described in @sec:intro_structural.
 This indicates that the structural relaxation

@@ -161,7 +161,7 @@ followed by periods of no change.
 This stepped pattern is noticeable
 from a time of \num{4e4} to \num{1.6e4} in @fig:solid_state_transition.
 The presence of these steps
-can be explained by a two step process,
+can be explained by a two-step process,
 the first step being the creation of a defect,
 and the second the propagation of that defect along the crystal lattice.
 As mentioned above,
@@ -170,7 +170,7 @@ results in it propagating incredibly quickly.
 This results in the periods of no change
 occurring when all the defects have annihilated,
 that is, they have converted their entire row to the p2 structure.
-The two step process of the phase transition
+The two-step process of the phase transition
 becomes more noticeable as it progresses,
 providing additional information for understanding nucleation.
 Nucleation is a process which can occur on any layer of the crystal,

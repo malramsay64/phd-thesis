@@ -348,7 +348,7 @@ the original review of the work becomes outdated,
 particularly for projects which are widely used and trusted,
 the peer-review takes place on *every* change made.
 For example the Gromacs project requires approval from multiple
-authors before any change is incorporated into the main code base. [@Pall2015]
+authors before any change is incorporated into the main codebase. [@Pall2015]
 This process ensures that the code is continually of a high standard
 and by providing a range of perspectives on any particular problem
 the solutions are better and have fewer bugs.

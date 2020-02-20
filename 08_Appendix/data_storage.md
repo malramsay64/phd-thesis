@@ -12,7 +12,7 @@ title: Data Storage
 
 - CSV Files
     - Advantages
-        - Standard filetype
+        - Standard file type
         - simple to read/write for both human and computer
         - Corruption of file can be easily dealt with
         - Appending is simple

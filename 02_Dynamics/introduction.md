@@ -98,10 +98,10 @@ takes place through a single exponential process,
 while for lower temperatures (\SI{<248}{\kelvin})
 there is an initial fast relaxation followed by a plateau
 then the slower secondary relaxation.
-This two step relaxation process is present
+This two-step relaxation process is present
 in experiments [@Mapes2006;@Chang1994;@Sidebottom1993;@Li1992;@Mezei1987]
 and simulations [@Chong2004;@Rinaldi2001;@Roland1997;@Donati1999] of supercooled liquids.
-The two step process describes two types of relaxations,
+The two-step process describes two types of relaxations,
 fast $\beta$-relaxations which are the relaxations before the plateau
 and slow $\alpha$-relaxations being the long timescale relaxations. [@Cavagna2009]
 The $\beta$-relaxations are only present at the low temperatures

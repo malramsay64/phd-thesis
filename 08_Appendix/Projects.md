@@ -50,14 +50,14 @@ with limited ability to express complex tasks.
 This resulted in the workflow of
 defining the simulation in my notebook,
 which I would then convert to a PBS script.
-This conversion process was error prone and hard to test
+This conversion process was error-prone and hard to test
 with the additional problem of being difficult to
 cross check between simulation definition and
 what was actually run.
 The largest issue though was changing the simulation,
 by either adding more conditions
 or modifying the existing ones,
-which was more error prone than the initial writing.
+which was more error-prone than the initial writing.
 
 Solving this problem is my project `experi`,
 which breaks the problem into two separate parts,
@@ -149,7 +149,7 @@ Finally there is the production,
 which handles the output.
 The structure is very similar to the qtools software [@Purg2017]
 which provides a similar capability for the Q molecular dynamics package,
-while `sdrun` provides the capability for Hoomd.
+while `sdrun` provides the capability for HOOMD-blue.
 
 # Analysis of simulation trajectories
 

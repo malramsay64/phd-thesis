@@ -42,7 +42,7 @@ normalised temperature for high and low pressures.
 The rotational relaxations are given by the relaxation of a dipole (@eq:rot_relax)
 and shown in @fig:rotational_relaxation.
 Like the structural relaxation and mean squared displacement,
-the rotational relaxation is characterised by a two step process.
+the rotational relaxation is characterised by a two-step process.
 The rotational relaxation time is
 the time taken for the relaxation function to decay to $1/e$.
 When the rotational relaxation function

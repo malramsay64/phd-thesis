@@ -3,7 +3,7 @@
 ## Choice of Simulation Program
 
 For the simulations throughout this thesis
-I use the simulation program Hoomd-blue [@Nguyen2011;@Anderson2008;@Glaser2015]
+I use the simulation program HOOMD-blue [@Nguyen2011;@Anderson2008;@Glaser2015]
 which is actively developed by the Glotzer group
 led by Joshua Anderson at the University of Michigan.
 The reason for this choice is documented below.
@@ -236,9 +236,9 @@ for being the simplest basis set for defining these types of molecules.
 The algebraic definition of the molecule allows for
 modelling a range of shapes.
 
-### Representation in Hoomd
+### Representation in HOOMD-blue
 
-The integration of rigid bodies in Hoomd is performed by
+The integration of rigid bodies in HOOMD-blue is performed by
 calculating the force on all the particles and then
 using the calculated forces to integrate a central particle of a molecule
 which undergoes both the translations and rotations.
@@ -617,11 +617,11 @@ is an algorithm for generating statistically random values
 that is, their distribution matches that of true randomness,
 while being possible to exactly replicate a sequence.
 
-### Random Numbers in Hoomd
+### Random Numbers in HOOMD-blue
 
 Random numbers are used in Hoomd
 for the initialisation of translational and rotational velocities.
-Hoomd uses the Saru PRNG [@Afshar2013],
+HOOMD-blue uses the Saru PRNG [@Afshar2013],
 which was chosen for it's performance on GPUs,
 in particular the algorithm for generating random values
 takes a seed comprising three numbers,
@@ -706,12 +706,12 @@ Note that for the PCG random number generators,
 there is a transformation from the seed
 to the initial state of the PRNG.
 
-The initial seed for random numbers in Hoomd is
+The initial seed for random numbers in HOOMD-blue is
 42 for most simulations.
 Where there are multiple replications of a simulation,
 with each having it's own simulations id
 as specified in the filename,
-the initial seed is the value of the simulation id.
+the initial seed is the value of the simulation ID.
 
 For the packing analysis,
 there are many replications run,
