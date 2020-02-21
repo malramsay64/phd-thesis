@@ -1,6 +1,6 @@
 # Introduction
 
-## Characterisation of Dynamics
+## Characterisation of Dynamics {#sec:intro_dynamics}
 
 The Trimer models is designed to model the dynamics of a fragile liquid.
 In particular we want it to display dynamics similar to that of ortho-terphenyl.
@@ -22,8 +22,8 @@ $$ \eta = A \exp(\frac{B}{T-T_0}) $$ {#eq:vtf}
 however, there seems to be significant disagreement within the literature
 over the appropriate term to use.
 @Debenedetti2001 use Vogel--Tammann--Fulcher to describe this relation, while
-@Lubchenko2007 use Vogel--Fulcher to describe and @Royall2018 uses
-Vogel--Fulcher--Tammann.
+@Lubchenko2007 use Vogel--Fulcher to
+and @Royall2018 uses Vogel--Fulcher--Tammann.
 Furthermore, @Cummins1997 uses both Vogel--Fulcher and Vogel--Fulcher--Tammann within the same paper.
 
 where $\eta$ is the viscosity (or any other dynamic behaviour),
@@ -34,7 +34,7 @@ which describes how much the temperature dependence
 deviates from an Arrhenius relation.
 The fragility $m$ is given by;
 
-$$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$.
+$$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$
 
 which is the slope at the glass transition temperature and
 has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@Bohmer1993;@Meenakshisundaram2019]
@@ -88,7 +88,7 @@ the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
 $$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$ {#eg:intermediate_scattering_function}
+\right ) \right \rangle $$ {#eq:intermediate_scattering_function}
 
 The structural relaxation of ortho-terphenyl
 becomes a two-step process close to the glass transition.
@@ -168,9 +168,9 @@ The lines represent the trajectories each particle took within the simulation. \
 *Used with permission from @Hurley1995 © 1995 American Physical Society*
 ](../00_Introduction/figures/dynamic_heterogeneities.png){#fig:dynamic_heterogeneities width=80%}
 
-## Stokes--Einstein--Debye Relations
+## Stokes--Einstein--Debye Relations {#sec:intro_sed}
 
-The Stokes--Einstein--Debye relations describe the relationship
+The Stokes--Einstein--Debye relations [@Debye1929;@Einstein1956] describe the relationship
 between three important components of dynamics,
 the viscosity or structural relaxation,
 the translational diffusion constant $D_t$, and
