@@ -1,40 +1,64 @@
 # Introduction
 
-The current set of tools we have for understanding dynamics,
-introduced in @sec:intro_dynamics,
-are limited to describing the aggregated motions of all the particles.
-Even the measures of dynamic heterogeneities in $\alpha$
-describe how the motions of the entire liquid
-deviate from that of a Gaussian distribution.
-While the tools we have for describing dynamics describe system wide motions,
-the current problems in the field
-being the understanding of liquid fragility
-and the decoupling of rotational and translational motions
-are attributed to dynamic heterogeneities,
-which is inherently a local description.
-
 ## Breakdown in Stokes--Einstein--Debye
 
-The Stokes--Einstein--Debye (SED) relations described in @sec:intro_sed
-are used to describe the overall dynamics of a liquid.
-These relations are derived assuming that
-the motion of particles within the liquid state
-can be described using Brownian motion. [@Einstein1956]
-When modelling fragile liquids there are
-two ways in which the SED relations break down.
-The first, shown in @fig:trans_rot_otp,
-is the decoupling of the rotational and translational motion [@Chang1994;@Griffin2012;@Fujara1992]
-and the second is the non-linear relationship of diffusion and viscosity. [@cite]
+The Stokes--Einstein--Debye (SED) theory of dynamics
+describes a series of relations (@eq:sed) between dynamics quantities.
+These relations describe the dynamics of a wide range of liquids,
+however, they start to break down in fragile liquids
+close to the glass transition temperature.
+The canonical example of this is the decoupling
+of rotational and translational diffusion [@Chang1994;@Griffin2012;@Fujara1992]
+shown in @fig:trans_rot_otp.
+This decoupling results from a change in the viscosity dependence
+of the translational diffusion having the relationship $D_t \propto \eta^{-0.75}$
+which has deviated from the expected $D_t \propto \eta-1$. [@Chang1994]
 
-These breakdowns in the SED relations
-has been observed in experiments, however,
-there has been difficulty replicating these results in simulations.
-...stuff people have found...
-Part of the issue with simulations
-is that in measuring the diffusion constant
-and the rotational relaxation times
-weight the contribution of slow and fast particles differently.
-...demonstration of this idea...
+There is a general consensus on the presence of both these
+decoupling within experimental studies, [@Chang1994;@Griffin2012;@Fujara1992]
+however, there has been difficulty replicating these results in simulations
+demonstrated within this thesis in @sec:trans_rot_decoupling.
+@Shi2013 find a similar relationship to those of experiments
+for the decoupling of translational diffusion and viscosity,
+a result mirrored by @Sengupta2013.
+Neither of these studies looked at the rotational motions of particles.
+Recent simulations by @Kawasaki2019 on supercooled water
+find both a decoupling between translational diffusion and viscosity,
+and a decoupling of translational and rotational diffusion,
+however, there is also a decoupling of the rotational diffusion and viscosity
+which is not observed in experiment
+and the rotational diffusion is slow compared to translational diffusion,
+the opposite of the experimental results.
+This same flipping of the rotational and translational diffusion
+is also observed by @Lombardo2006.
+
+The typical simulation quantities used for establishing
+the breakdown in the SED relations
+are the translational diffusion constant $D_t$
+and the rotational relaxation time $\tau_r$.
+When there are dynamic heterogeneities present,
+these two quantities capture different elements
+of the distribution,
+with the translational diffusion capturing the fastest particles,
+while the rotational relaxation is dominated by the slowest particles.
+Consider two regions of dynamics,
+one containing fast particles with $\tau_\text{fast}$ and $D_\text{fast}$
+and the other containing slow particles with $\tau_\text{slow}$ and $D_\text{slow}$,
+where $\tau$ is a relaxation time and $D$ is a diffusion constant.
+These values are such that $\tau_{fast} << \tau_{slow}$ and
+$D_\text{fast} >> D_\text{slow}$.
+When finding the average relaxation time
+
+$$ \frac{\tau_\text{fast} + \tau_\text{slow}}{2} \approx \frac{\tau_\text{slow}}{2} $$
+
+and the average diffusion constant
+
+$$ \frac{D_\text{fast} + D_\text{slow}}{2} \approx \frac{D_\text{fast}}{2} $$
+
+we can how there are different relationships. [@cite]
+Here the presence of dynamic heterogeneities results in
+a decoupling of translational and rotational motion
+by the choice of parameters.
 
 ### Breakdown in rotational coupling
 
@@ -122,11 +146,6 @@ $$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
 for rotations in 2D.
 
 ### Breakdown in structural relaxation and Diffusion
-
-Currently unexplained
-
-@Shi2013
-@Bian2016
 
 Part of this story which is still being actively studied
 is the coupling of the rotational and translational motions
@@ -350,6 +369,20 @@ This idea of geometric frustration is notable for the Trimer molecule,
 as there are a range of crystal structures it can take on. [@sec:stability-of-crystal-phases]
 
 ## Spatially Resolved Dynamics
+
+The current set of tools we have for understanding dynamics,
+introduced in @sec:intro_dynamics,
+are limited to describing the aggregated motions of all the particles.
+Even the measures of dynamic heterogeneities,
+being the non-Gaussian parameter $\alpha$,
+describe the deviation of the entire liquid.
+A long studied area of research
+is developing and understanding of
+the breakdown of the Stokes
+While the current tools describe global properties,
+the problem of understanding dynamic heterogeneities
+is one which requires a local description.
+There are
 
 Existing quantities measuring dynamics
 are formulated based on experimentally available methods.

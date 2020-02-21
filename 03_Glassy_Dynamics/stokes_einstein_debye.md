@@ -20,12 +20,6 @@ only a small number of jumps are observed.
 The single particle relaxation times
 provide a method to investigate this idea.
 
-The typical picture of jump dynamics
-is that of the rotational motion,
-where the quantity $\tau_1/\tau_2$ has a value of 4
-when the motion is comprised of small angular jumps,
-and reduces in value to 1 when
-the motion is comprised of large angular jumps. [@Kivelson1970]
 This is depicted in @fig:rotational_jumps
 which has both the traditional $\tau_1/\tau_2$ quantity
 in addition to the ratio of the molecular relaxation quantities $\tau_{T2}/\tau_{T4}$.
@@ -123,6 +117,12 @@ of long times between rearrangement events.
 
 ### Do Jump Dynamics solve Stokes--Einstein--Debye
 
+A limitation of the Stokes--Einstein model
+which was acknowledged by Einstein [@Einstein1907;@Bian2016]
+that the inertia of a particle is neglected.
+This means that the time resolution of observations becomes important
+for the motions of particles. [@Pusey2011;@Li2013]
+
 The result that the changing length scale of a measurement
 has an effect on the resulting Stokes--Einstein--Debye relation
 has also been observed in models of water.
@@ -172,8 +172,6 @@ rotational and translational diffusion.
 The range of rotational metrics describe
 different measures of rotational diffusion.
 ](../Projects/Dynamics/figures/trans_rot_diff_trimer.svg){width=80% #fig:trans_rot_diff_trimer}
-
-### Conclusion
 
 A degree of the dynamic heterogeneities
 can be explained by the dynamics
