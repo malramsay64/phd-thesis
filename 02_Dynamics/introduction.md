@@ -298,8 +298,11 @@ This decoupling has been observed in further studies
 of supercooled liquids
 and remains an unexplained phenomenon. [@Debenedetti2001;@Fujara1992;@Cicerone1996;@Ediger2000]
 
-![Translational an rotational coupling within ortho-terphenyl
-breaks down below 290K \
+![Translational ($\Square, \CIRCLE, \triangle$)
+and Rotational (◇,◆)diffusion coefficients
+of ortho-terphenyl.
+The coupling of these quantities breaks down below 290K,
+where translational diffusion is faster relative to the structural relaxation. \
 *Figure from @Chang1994 used with permission © Elsevier*
 ](../00_Introduction/figures/trans_rot_coupling.png){#fig:trans_rot_otp width=80%}
 
