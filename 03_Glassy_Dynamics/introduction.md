@@ -1,49 +1,156 @@
 # Introduction
 
+The current set of tools we have for understanding dynamics,
+introduced in @sec:intro_dynamics,
+are limited to describing the aggregated motions of all the particles.
+Even the measures of dynamic heterogeneities in $\alpha$
+describe how the motions of the entire liquid
+deviate from that of a Gaussian distribution.
+While the tools we have for describing dynamics describe system wide motions,
+the current problems in the field
+being the understanding of liquid fragility
+and the decoupling of rotational and translational motions
+are attributed to dynamic heterogeneities,
+which is inherently a local description.
+
+## Breakdown in Stokes--Einstein--Debye
+
+The Stokes--Einstein--Debye (SED) relations described in @sec:intro_sed
+are used to describe the overall dynamics of a liquid.
+These relations are derived assuming that
+the motion of particles within the liquid state
+can be described using Brownian motion. [@Einstein1956]
+When modelling fragile liquids there are
+two ways in which the SED relations break down.
+The first, shown in @fig:trans_rot_otp,
+is the decoupling of the rotational and translational motion [@Chang1994;@Griffin2012;@Fujara1992]
+and the second is the non-linear relationship of diffusion and viscosity. [@cite]
+
+These breakdowns in the SED relations
+has been observed in experiments, however,
+there has been difficulty replicating these results in simulations.
+...stuff people have found...
+Part of the issue with simulations
+is that in measuring the diffusion constant
+and the rotational relaxation times
+weight the contribution of slow and fast particles differently.
+...demonstration of this idea...
+
+### Breakdown in rotational coupling
+
+The SED relations are based on Brownian dynamics
+however there is evidence of rotations not described by Brownian motion.
+This comes in the form of jump dynamics.
+Describing dynamics using spherical harmonics
+and there are multiple choices of $l$.
+...rotational dynamics...
+The relationship between the first and second Legendre polynomials $\tau_1/\tau_2$
+describes the degree to which large jumps play a role in the dynamics.
+
+The idea that the rotational and translational diffusion constants
+were proportional to each other
+there is the assumption that there is a single "force"
+governing the motion of particles.
+
+Our current understanding of the liquid state
+breaks down for supercooled liquids.
+The assumptions we have made developing
+a theoretical understanding of the liquid,
+do not take into account the unusual behaviour
+observed in supercooled liquids.
+
+The Debye model predicts an exponential decay of the $l$th rank
+single-particle orientation time correlation function $C_l^s$,
+
+$$ C_l^s = \exp\left(\frac{-t}{\tau_l}\right) $$
+
+which gives the corresponding relaxation time
+
+$$ \tau_l = \frac{1}{l(l+1)D_r}, $$
+
+where $D_r$ is the rotational diffusion coefficient.
+Comparing this relationship for
+the first and second-order relaxation functions
+
+$$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
+
+When molecules rotate inertially, that is,
+there are large angular displacements between collisions.
+The type of relaxation is no longer exponential,
+and can be identified by the ratio $\tau_1/\tau_2$
+falling in the range
+
+$$ 1 < \tau_1/\tau_2 < 3 $$
+
+The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
+that is, assuming rotations take place through a process of small random steps.
+Where there are large changes in orientation,
+the two relaxation times become correlated,
+since there are much fewer steps required for rotational relaxation to occur,
+with the limit of this being
+single jumps account for both relaxations simultaneously.
+
+In experimental and simulation studies
+at high temperatures [@Laage2006]
+the relationship $\tau_1/\tau_2 = 3$ has held true.
+In supercooled liquids however,
+there have been many studies
+which have found $\tau_1/\tau_2 < 3$,
+which has given credence to the
+idea of rotational relaxations
+taking place through the process of large angular jumps.
+
+The typical picture of jump dynamics
+is that of the rotational motion,
+where the quantity $\tau_1/\tau_2$ has a value of 4
+when the motion is comprised of small angular jumps,
+and reduces in value to 1 when
+the motion is comprised of large angular jumps. [@Kivelson1970]
+
+An alternative method of describing rotations
+which has been used in describing the breakdown of rotations
+and translations is to measure the rotational diffusion constant.
+There are two different formalisms of estimating rotational diffusion $D_r$,
+referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
+The Einstein formulation treats the rotational motion
+in the same way as translational diffusion,
+by measuring the small rotational changes over time,
+giving
+
+$$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
+
+for rotations in 2D.
+
+### Breakdown in structural relaxation and Diffusion
+
+Currently unexplained
+
+@Shi2013
+@Bian2016
+
+Part of this story which is still being actively studied
+is the coupling of the rotational and translational motions
+on short timescales.
+indicating a breakdown in the Stokes-Einstein-Debye
+theory of dynamics.
+This result however is an observation of the overall properties
+and doesn't consider the microscopic coupling that takes place.
+In the potential energy landscape model
+as the temperature is lowered,
+it is predicted that more degrees of freedom
+will be used for motion to occur
+and some of these are in
+the rotational motion of molecules.
+This coupling between rotational and translational motion
+on the microscopic scale
+has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
+and liquid crystals [@Jose2006].
+
+## Dynamic Heterogeneities and structure
+
+- Does structure play a role in the presence of dynamic heterogeneities
+- Configuration space
 - Increasing length scale
-
-## Dynamic Heterogeneities
-
-The typical approach to modelling liquid behaviour
-describes the liquid as a homogeneous continuum.
-This homogeneous model is completely appropriate
-for describing "ordinary" liquids.
-In supercooled liquids,
-the dynamics slow down by many orders of magnitude
-before the glass transition,
-where dynamics in one region of the liquid
-can be orders of magnitude faster
-than dynamics in another region of the liquid.
-The idea that a liquid is not homogeneous
-requires a significant change in how we think about supercooled liquids.
-
-The presence of fast and slow regions within supercooled liquids,
-referred to as dynamic heterogeneities
-is a phenomenon which has garnered significant interest;
-it is considered to be a physical indicator of the glass transition,
-a demonstration that it is more than a kinetic phenomenon.
-
-Relaxations $F(t)$ within systems undergoing Brownian motion,
-whether structural or rotational will have the form
-
-$$ F(t) = c \e^{-t/\tau} $$
-
-where $\tau$ is the characteristic timescale of the relaxation.
-These produce the curves at higher temperatures shown in @fig:relaxation
-which also has curves which don't fit this description,
-an indicator of heterogeneous dynamics.
-The other relaxations display a stretched exponential behaviour
-and are fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Kohlrausch1854]
-
-$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
-
-The stretched exponential function provides terms to describe
-the two-step relaxation process in @fig:relaxation.
-The short timescale relaxation is known as the $\beta$ relaxation,
-in relation to the $\beta$ term of the stretched exponential,
-and is an indicator of dynamic heterogeneities.
-The longer timescale relaxation, denoted the $\alpha$ relaxation
-is related to the value of $\tau_\alpha$.
 
 There are many theoretical foundations
 for understanding dynamic heterogeneities.
@@ -80,25 +187,9 @@ Despite many experiments [@cite] searching for
 a growing length scale as the temperature drops,
 there has been no data to suggest this is the case.
 
-:::{class=subfigures id=fig:potential_energy}
-
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![](../placeholder_figure.png){#fig:potential_energy_2d width=49%}
-![](../placeholder_figure.png){#fig:potential_energy_3d width=49%}
-<!-- markdownlint-enable MD045 -->
-
-When we look at two dimensions (a),
-there is no possible path for getting from A to B
-without going over the large energy barrier.
-However, by adding an extra dimension (b),
-it becomes possible to go around.
-
-:::
-
 ![A representation of the potential energy landscape for a
 liquid.\
-*Used with permission from @Stillinger1995 © 1995 AAAS*
+*Figure from @Stillinger1995 used with permission © 1995 AAAS*
 ](../00_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
 Further evidence for the idea that the structure
@@ -160,149 +251,7 @@ while four gears allow motion to propagate.
 
 :::
 
-More recently, there has been an effort
-to link structure with dynamics on a local level,
-which has required a measure of structural relaxation
-that makes the contribution of each particle explicit
-rather than aggregated over the entire system.
-Widmer-Cooper and Harrowell [@Widmer-Cooper2009] defined
-a structural relaxation $F_d(t)$ where
-
-$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
-
-where $w_i(d, t) = 1$ if the particle is within distance $d$
-of it's initial position at time $t$,
-and zero otherwise.
-The angle brackets signify an average over initial times.
-The value of $d$ was chosen to be
-
-$$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
-
-where $k_{\text{bragg}}$ is the wave-vector of
-the maximum peak of the static structure factor $S(k)$.
-This matches with the calculation of the intermediate scattering function
-which will follow the same wave-vector $k_{\text{bragg}}$
-as it will display the largest change over time.
-
-## Stokes--Einstein--Debye Models
-
-@Shi2013
-
-Current models of motion in the liquid state
-are based on the Stokes-Einstein-Debye relationships[@Debye1929],
-which are theoretical models of collective motion
-derived from particles undergoing Brownian motion[@Einstein1956].
-These models define characteristic rates of motion
-known as diffusion constants,
-with $D_t$ being the diffusion constant of translational motion
-while $D_r$ is the diffusion constant of rotational motion.
-The Stokes--Einstein equation for translational motion
-
-$$ D_t = \frac{k_\text{B} T}{6 \pi \eta R} $$
-
-and the Stokes--Einstein--Debye relation for rotational motion
-
-$$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
-
-where
-
-- $\eta$ is the shear viscosity, and
-- $T$ is the temperature.
-
-These equations can be simplified as follows
-
-$$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
-
-and
-
-$$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
-
-which allows us to express a relationship
-between the rotational and translational diffusion
-
-$$ D_t \propto D_r $$ {#eq:sed_proportionality}
-
-when both are at the same temperature and viscosity.
-
-@Bian2016
-
-One of the detractors of Brownian dynamics
-is that it describes the dynamics of independent events,
-making no account for momentum.
-An alternative method of describing the dynamics of particles
-is through Langevin Dynamics,
-which does include the momentum of particles.
-This ends up giving the same result
-for the Stokes-Einstein-Debye relations.
-This is because it is possible to consider
-Brownian Dynamics as a more granular form
-of Langevin Dynamics.
-
-The Stokes-Einstein-Debye models are suitable for describing
-the dynamic properties of most liquids, however,
-there are instances in supercooled liquids,
-where the Stokes-Einstein-Debye relations
-are insufficient for describing the dynamics which are observed.
-The breakdown in dynamics is primarily
-a case of the underlying particle motions
-no longer adhering to Brownian motion.
-
-### Breakdown in rotational coupling
-
-The idea that the rotational and translational diffusion constants
-were proportional to each other
-there is the assumption that there is a single "force"
-governing the motion of particles.
-
-Our current understanding of the liquid state
-breaks down for supercooled liquids.
-The assumptions we have made developing
-a theoretical understanding of the liquid,
-do not take into account the unusual behaviour
-observed in supercooled liquids.
-
-The Debye model predicts an exponential decay of the $l$th rank
-single-particle orientation time correlation function $C_l^s$,
-
-$$ C_l^s = \exp\left(\frac{-t}{\tau_l}\right) $$
-
-which gives the corresponding relaxation time
-
-$$ \tau_l = \frac{1}{l(l+1)D_r}, $$
-
-where $D_r$ is the rotational diffusion coefficient.
-Comparing this relationship for
-the first and second-order relaxation functions
-
-$$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
-
-When molecules rotate inertially, that is,
-there are large angular displacements between collisions.
-The type of relaxation is no longer exponential,
-and can be identified by the ratio $\tau_1/\tau_2$
-falling in the range
-
-$$ 1 < \tau_1/\tau_2 < 3 $$
-
-The value of 3 (or 4 for 2D systems) is given by Brownian dynamics,
-that is, assuming rotations take place through a process of small random steps.
-Where there are large changes in orientation,
-the two relaxation times become correlated,
-since there are much fewer steps required for rotational relaxation to occur,
-with the limit of this being
-single jumps account for both relaxations simultaneously.
-
-In experimental and simulation studies
-at high temperatures [@Laage2006]
-the relationship $\tau_1/\tau_2 = 3$ has held true.
-In supercooled liquids however,
-there have been many studies
-which have found $\tau_1/\tau_2 < 3$,
-which has given credence to the
-idea of rotational relaxations
-taking place through the process of large angular jumps.
-
-## Theoretical Treatment of Dynamics
+- Increasing length scale
 
 @Cummins1997 is a great review
 @Royall2018 also reviews the topic
@@ -400,83 +349,43 @@ which are highly favourable and unlikely to diffuse.
 This idea of geometric frustration is notable for the Trimer molecule,
 as there are a range of crystal structures it can take on. [@sec:stability-of-crystal-phases]
 
-### Conclusion
+## Spatially Resolved Dynamics
 
-The jamming model looks at dynamic heterogeneities
-in a different way to Goldstein's energy landscape model.
-The jamming describes the slow parts of the heterogeneities,
-molecules do not have the degrees of freedom to rearrange.
-Conversely, the energy landscape explains the regions of motion,
-co-operatively rearranging to move between local minima.
+Existing quantities measuring dynamics
+are formulated based on experimentally available methods.
+This allows for direct comparison with
+results from experimental systems.
+However the power of simulations
+is that there is so much more data available to us.
 
-Despite these models being useful in understanding
-the processes of motion within a liquid,
-there is still the decoupling of the rotational and translational motion.
-Why is one type of motion
-more affected by supercooling than another?
-A consequence of dynamic heterogeneities,
-which is measured by the non-Gaussian parameter $\alpha$
-is the deviation of the distribution of motions
-from that of a Gaussian distribution,
-with the dynamic heterogeneities having
-many orders of magnitude difference
-between the fastest and the slowest particles.
-It is entirely possible
-that the differences between
-the translational and rotational dynamics
-is a result of the averaging we are using.
-For the diffusion constant measured from the mean-squared-displacement,
-particles with fast motions contribute disproportionately
-to increasing this value,
-while for the rotational relaxation it is
-the slow particles which increase this value.
+More recently, there has been an effort
+to link structure with dynamics on a local level,
+which has required a measure of structural relaxation
+that makes the contribution of each particle explicit
+rather than aggregated over the entire system.
+Widmer-Cooper and Harrowell [@Widmer-Cooper2009] defined
+a structural relaxation $F_d(t)$ where
 
-### Coupling of Translational and Rotational Motion
+$$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
 
-Part of this story which is still being actively studied
-is the coupling of the rotational and translational motions
-on short timescales.
-A famous result is the decoupling of rotational and translational
-motion in a supercooled liquid, [@Chang1994;@Griffin2012;@Fujara1992]
-indicating a breakdown in the Stokes-Einstein-Debye
-theory of dynamics.
-This result however is an observation of the overall properties
-and doesn't consider the microscopic coupling that takes place.
-In the potential energy landscape model
-as the temperature is lowered,
-it is predicted that more degrees of freedom
-will be used for motion to occur
-and some of these are in
-the rotational motion of molecules.
-This coupling between rotational and translational motion
-on the microscopic scale
-has been observed in simulations of water [@Meyer2019;@Nair2019;@Faraone2003]
-and liquid crystals [@Jose2006].
+where $w_i(d, t) = 1$ if the particle is within distance $d$
+of it's initial position at time $t$,
+and zero otherwise.
+The angle brackets signify an average over initial times.
+The value of $d$ was chosen to be
 
-There are two different formalisms of estimating rotational diffusion $D_r$,
-referred to as the Einstein and Debye formalisms. [@Kim2015;@Lombardo2006]
-The Einstein formulation treats the rotational motion
-in the same way as translational diffusion,
-by measuring the small rotational changes over time,
-giving
+$$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
 
-$$ \frac{\d}{\d{t}} \langle \Delta \theta^2(t) \rangle = 2D_r $$
+where $k_{\text{bragg}}$ is the wave-vector of
+the maximum peak of the static structure factor $S(k)$.
+This matches with the calculation of the intermediate scattering function
+which will follow the same wave-vector $k_{\text{bragg}}$
+as it will display the largest change over time.
 
-for rotations in 2D.
-
-However, while the translational diffusion
-is directly comparable to experimental results,
-there not a comparable experimental observation.
-Instead the Debye model of rotational diffusion is described
-using a dipole relaxation formulation developed by @Kivelson1970.
-This describes rotational motion as a sequence of
-small infinitesimal jumps around the unit sphere
-described using spherical harmonics $Y_l^m$.
-
-## Goals for Dynamics
+## Goals for understanding dynamics
 
 In @sec:molecular_relaxation we introduce new relaxation quantities
-which describe the relaxations of individual molecules.
+to describe the relaxations of individual molecules.
 These molecular relaxation quantities allow more insight
 into the dynamic heterogeneities present in supercooled liquids.
 As part of introducing these quantities
