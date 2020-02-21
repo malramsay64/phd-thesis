@@ -268,8 +268,8 @@ $$ D_r = \frac{k_\text{B} T}{8 \pi \eta R^3} $$
 
 where $\eta$ is the shear viscosity,
 $T$ is the temperature, and
-$R$ is .....
-These equations can be simplified by grouping all the constant terms
+$R$ is the radius of the particles within the liquid.
+These equations can be simplified by grouping all the constant terms [@Shi2013]
 
 $$ \frac{D_t \eta}{T} = \text{constant} $$ {#eq:stokes_einstein}
 
@@ -277,11 +277,13 @@ and
 
 $$ \frac{D_r \eta}{T} = \text{constant} $$ {#eq:einstein_debye}
 
-Using the structural relaxation time $\tau_S$ instead of the viscosity $\eta$
-we can describe a proportionality between all
-the dynamic quantities we have described above
+The shear viscosity $\eta$ is difficult to calculate within simulations [@Barrat1990]
+and the structural relaxation time $\tau_s$
+is commonly used as a substitute. [@Shi2013;@Ikeda2011;@Jeong2010;@Tarjus1995]
+This substitution allows us to describe a proportionality between all
+the dynamic quantities described above
 
-$$ D_t \propto D_r \propto \frac{1}{\tau_r} \propto \frac{1}{\tau_s} $$ {#eq:sed_proportionality}
+$$ \frac{D_t}{T} \propto \frac{D_r}{T} \propto \frac{1}{\tau_rT} \propto \frac{1}{\tau_s} $$ {#eq:sed_proportionality}
 
 the translational diffusion constant $D_t$ ,
 the rotational diffusion constant $D_r$,
