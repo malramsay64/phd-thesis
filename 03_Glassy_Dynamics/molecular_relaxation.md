@@ -161,56 +161,50 @@ giving the relaxation quantity $\tau_{T2}$.
 A summary of the comparisons between each of the
 traditional dynamics and the new molecular relaxation quantities
 is shown in @fig:ratio_comparison.
-of summarising the relationships between
-the traditional quantities and the newer molecular relaxation quantities
-@fig:ratio_comparison shows the temperature dependence of
-the ratios of the old and new quantity.
-At $T_m/T < 0.5$ the temperature dependence deviates,
-however at lower temperatures,
-there is a nearly constant relation
-between the two types of relaxation.
-This demonstrates these quantities
-are appropriate for developing our
-understanding of dynamics.
+This figure compares the ratio of the traditional and molecular relaxations
+as a function of temperature,
+with an excellent fit being the same temperature dependence,
+that is a horizontal line.
+The temperature dependence of the diffusion constant
+has a different shape to that of the $\tau_D$,
+displayed in the variable temperature dependence,
+which is discussed in detail @sec:jump_dynamics.
+The remaining quantities show very similar
+values independent of the method used to measure them,
+demonstrating these describe the types of relaxations
+we are investigating.
 
 ![Summary of comparisons
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
 ## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}
 
-One of the benefits of describing relaxation times
-for each individual molecule
-is it provides methods of probing
-the distribution of timescales
-over which these processes occur.
-This provides methods of understanding
-the effect of unusually slow events
-on the overall dynamics.
-
+One of the benefits of describing relaxation times for each particle
+is being able to probe the distribution of timescales
+over which processes occur.
 The distribution of the last passage time $\tau_L$
 is given in @fig:relaxation_distribution.
+The very large relaxation times shown dominate the mean,
+despite most of the relaxation times being short.
 As the temperature drops,
-the proportion of relaxations
-which are far longer than the mean increases,
-which results in raising the mean.
-
-![Histogram displaying the distribution of the relaxation times
-for the last passage time.](../placeholder_figure.png){width=80% #fig:relaxation_distribution}
-
+the exceptionally slow dynamics on the tail of the relaxation time distribution
+dominate the mean.
+The presence of dynamic heterogeneities
+is a measure of how much the tails of these distributions
+impact the calculation of the mean.
 It is possible to measure
-the deviation of these relaxations from Gaussian
+the deviation of these relaxations from Gaussian,
+and hence the degree of dynamic heterogeneities,
 by finding the ratio between
-the arithmetic mean and
-the harmonic mean
-of each molecules relaxation.
-Giving a metric for the dynamic heterogeneities $\alpha_M$
+the arithmetic mean and the harmonic mean of a relaxation quantity.
+We introduce a quantity $\alpha_M$,
 
 $$ \alpha_M = \frac{\langle \tau \rangle}{\left\langle \tau^{-1} \right\rangle^{-1}} $$
 
-In effect this weights larger and smaller values differently,
+which calculates the dynamic heterogeneities of a molecular relaxation quantity
+The means weight larger and smaller values differently,
 the arithmetic mean is dominated by the longest relaxation times,
-while the harmonic mean is the inverse,
-dominated by the small relaxation times.
+while the harmonic mean is the inverse, dominated by the small relaxation times.
 The heterogeneity of each of the molecular relaxation quantities
 is displayed in @fig:molecular_heterogeneities.
 As the temperature drops,
@@ -221,6 +215,9 @@ demonstrate significantly less heterogeneity,
 with $\tau_F$ having the most while $\tau_D$ has the least.
 The longer the distance travelled
 the more Gaussian the relaxation.
+
+![Histogram displaying the distribution of the relaxation times
+for the last passage time.](../placeholder_figure.png){width=80% #fig:relaxation_distribution}
 
 ![Heterogeneous dynamics of the molecular relaxations
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}

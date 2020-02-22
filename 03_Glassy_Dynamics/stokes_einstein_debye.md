@@ -2,7 +2,7 @@
 
 @Sengupta2013
 
-## Jump Dynamics
+## Jump Dynamics {#sec:jump_dynamics}
 
 @Nair2019
 @Karmakar2014 growing length scales
