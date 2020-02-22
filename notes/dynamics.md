@@ -255,6 +255,19 @@ This is studied for translations in lewis Wahnström by @Shi2013
 
 @Kawasaki2019 rotational relaxation is entirely inconsistent with rotational diffusion
 
+@Karmakar2014
+
+- Defining non-Gaussian parameter
+- The growth of the relaxation time is not related to the length scale of dynamic
+  heterogeneities
+
+@Zasetsky2010
+
+- Jump diffusion of rotational motion
+- coupling between rotations and translation on short timescales
+
+@Laage2006 -> jump dynamics in water
+
 ## Heterogeneities
 
 @Lacevic2003
@@ -268,7 +281,8 @@ This is studied for translations in lewis Wahnström by @Shi2013
 
 ## Translational Rotational Coupling
 
-@Nair2019
+@Nair2019 -> the translational motions are strongly coupled to the rotational dynamics
+at the molecular level.
 
 ## Diffusion
 

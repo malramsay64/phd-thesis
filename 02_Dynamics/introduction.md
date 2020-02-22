@@ -247,7 +247,18 @@ with the form;
 
 $$ R_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$ {#eg:rot_relax}
 
+### Rotational Motion through Jump Dynamics {#sec:intro_jump_dynamics}
+
 There is the presence of jump dynamics
+
+@Zasetsky2010
+
+- Jump diffusion of rotational motion
+- coupling between rotations and translation on short timescales
+
+@Laage2006
+
+- jump dynamics in water
 
 $R_1/R_2$ = 1
 
