@@ -217,7 +217,7 @@ The longer the distance travelled
 the more Gaussian the relaxation.
 
 ![Histogram displaying the distribution of the relaxation times
-for the last passage time.](../placeholder_figure.png){width=80% #fig:relaxation_distribution}
+for the last passage time.](../Projects/Dynamics/figures/histogram_last_passage.svg){width=80% #fig:relaxation_distribution}
 
 ![Heterogeneous dynamics of the molecular relaxations
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
