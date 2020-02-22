@@ -1,0 +1,8 @@
+digraph G {
+    rankdir="LR";
+    "Local" -> "Relaxed" [label="Δx > d"]
+    /* Invisible edge allowing symmetry */
+    "Local" -> "Relaxed" [style=invis];
+    "Relaxed" -> "Diffusive" [label="Δx > 3d"]
+    "Relaxed" -> "Local" [label="Δx <= d"]
+}
