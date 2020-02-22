@@ -32,6 +32,8 @@ rules:
       - [hoomd, HOOMD-blue]
       - Vogel--Tammann--Fulcher
       - [two step, two-step]
+      - [ortho terphenyl, ortho-terphenyl]
+      - [o-terphenyl, ortho-terphenyl]
 
   alex: false
   "write-good": true,
