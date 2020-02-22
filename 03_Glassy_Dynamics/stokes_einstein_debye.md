@@ -1,94 +1,98 @@
 # Understanding the breakdown of Stokes--Einstein--Debye {#sec:sed}
 
-@Sengupta2013
-
-## Jump Dynamics {#sec:jump_dynamics}
-
-@Nair2019
-@Karmakar2014 growing length scales
-@Zasetsky2010
-@Laage2006
-
+Our current understanding of the breakdown of the Stokes--Einstein--Debye relations,
+Current work in describing the Stokes--Einstein--Debye relations
+centers around finding quantities which satisfy
+some proportionality criteria. [@Sengupta2013;@Kawasaki2019]
+These studies are looking to find the quantity which adheres
+to the Stokes--Einstein--Debye relations,
+rather than the tangential question of why does it break down?
 A foundational assumption of the Stokes--Einstein--Debye relations
 is that the particles undergo Brownian motion,
-that is, movement occurs as a sequence of small independent jumps.
-What if the issue with dynamic heterogeneities
-and non-Gaussian behaviour,
-is rather than observing many jumps,
-over the timescale of the relaxation
-only a small number of jumps are observed.
-The single particle relaxation times
-provide a method to investigate this idea.
+that is, movement occurs as a random sequence of small independent jumps.
+It is possible that dynamic heterogeneities result
+from only observing a small number of jumps
+resulting in far more correlated motion.
+The single particle relaxation provides
+tools which we can use to investigate this hypothesis.
 
-This is depicted in @fig:rotational_jumps
-which has both the traditional $\tau_1/\tau_2$ quantity
-in addition to the ratio of the molecular relaxation quantities $\tau_{T2}/\tau_{T4}$.
-These both display motion of small jumps,
-which becomes large jumps as the temperature drops.
+## Jump Dynamics and Dynamic Heterogeneities {#sec:jump_dynamics}
+
+The presence of jump dynamics in rotational relaxations (see @sec:intro_jump_dynamics)
+has been observed in many experiments, [@Zasetsky2010;@Laage2006]
+with the quantity $\tau_1/\tau_2$ being a measure of
+how much large angular jumps contribute to relaxation,
+from $4$ being no contribution, to $1$ being all jump dynamics.
+This same quantity can be calculated for the molecular relaxations,
+giving $\tau_{T2}/\tau_{T4}$.
+These measures of rotational jump dynamics are depicted in @fig:rotational_jumps,
+where both quantities describe the rotational relaxation by large angular jumps
+at low temperatures.
+Plotting the change in displacement and orientation over time,
+@fig:molecule_trajectory_fast shows a fast molecule
+which exhibits jump dynamics in both rotational motion as described above,
+and also translational motion.
+This motion can be described by
+an occasional large jump to a new local environment
+resulting in a change in orientation and position,
+which is followed by a long period in that new environment.
+The displacements between each configuration
+is the type of irreversible relaxation we are measuring
+in the last passage time $\tau_L$.
+A notable observation about the positions in @fig:molecule_trajectory_fast
+is that each jump appears to be governed by
+a relaxation measured by the last passage time.
 
 ![jump dynamics](../Projects/Dynamics/figures/rotational_jumps.svg){width=80% #fig:rotational_jumps}
 
-This describes angular jumps of the rotations,
-however what does this actually look like
-and does it also occur with translations?
-@Fig:molecule_trajectory shows the translational and rotational displacement
-of two molecules at each time point.
-For a fast molecule (@fig:molecule_trajectory_fast)
-there is some time spent in the initial cage,
-before a large jump including both angular and translational displacement
-puts it within a new cage.
-This is in contrast to the slow molecule (@fig:molecule_trajectory_slow)
-which spends all the time within the initial cage,
-however the size of that cage is significantly larger.
+![A trajectory of a fast particle with each point marking
+the translational and orientational displacement
+at a point in time.
+The progression of time is described by the colour of the point.
+The particle spends long periods of time in one configuration
+before quickly moving to the next,
+which typically requires both a translational and rotational motion.
+](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=48% #fig:molecule_trajectory_fast}
 
-:::{class=subfigures id=fig:molecule_trajectory}
-
-![Fast Particle](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=48% #fig:molecule_trajectory_fast}
-![Slow Particle](../Projects/Dynamics/figures/molecule_trajectory_slow.svg){width=48% #fig:molecule_trajectory_slow}
-
-The distinct positions of the fast particle are visible as clustered regions,
-with time spent in each one before a large rearrangement
-which is comprised of both a large translational and rotational motion.
-The slow particle has not moved from it's initial state.
-
-:::
-
+With the motion of particles so heavily influenced by Jump dynamics
+we can investigate the role they play in dynamic heterogeneities.
+In @sec:dynamic_heterogeneities we found that
+the presence of dynamic heterogeneities
+is a short time phenomenon,
+decaying to the expected Gaussian distribution over longer times.
+Are the dynamic heterogeneities present
+because we are only observing a single jump
+rather than the walk of Brownian motion.
+To test this hypothesis we can use the distribution of last passage times $\tau_L$.
 In taking the relaxation time of each particle within a simulation,
-we have the distribution of relaxation times that take place.
-So making the assumption that once relaxation has taken place,
-the particle is completely independent of it's initial configuration
-it will then need to undergo another relaxation event to move further.
-This can be modelled by drawing consecutive relaxation times for a particle
+we have sampled the distribution of relaxation times that can take place.
+This allows us to model the motion like we have observed in @fig:molecule_trajectory_fast.
+We can make the assumption
+that all relaxations are drawn from the same distribution,
+that is, each jump between local environments is equivalent.
+This also makes the assumption that once the particle
+has undergone relaxation it is completely independent
+of it's previous configuration.
+This sequence of jumps can be modelled
+by drawing consecutive relaxation times
 from our experimentally determined distribution of relaxation times.
 This modelling of consecutive relaxations is shown in @fig:jump_heterogeneities
-for the last passage time $\tau_L$,
-which was chosen as a timescale for which
-the relaxation is considered irreversible.
-When we consider long enough length scales (or timescales),
-the heterogeneities within the dynamics disappear.
-Where the long relaxation times
-dominate the averaging over a single time period,
-they are rare occurrences,
-so over multiple relaxation times
-their effect averages out.
+When we consider motion over enough jumps,
+the heterogeneities within the dynamics disappear,
+the long relaxation times dominate the averaging
+over a single time period,
+however they are rare occurrences
+so their effect is lower over multiple relaxation times.
+The reduction in the dynamic heterogeneities
+was also present when plotting the molecular heterogeneities
+in @fig:molecular_heterogeneities.
+As the length scale increases from $\tau_F$ to $\tau_L$ to $\tau_D$,
+the dynamic heterogeneities decrease,
+and the same is true of the rotational heterogeneities,
+from $\tau_{T4}$ to $\tau_{T3}$ and to $\tau_{T2}$.
 
 ![Heterogeneous dynamics taking progressively more relaxation
 times](../placeholder_figure.png){width=80% #fig:jump_heterogeneities}
-
-So here we do observe an increasing length scale
-as the liquid is supercooled;
-the length over which the observed dynamics
-can be considered Brownian.
-This can be an important consideration,
-when comparing the different relaxations.
-The ratio $\tau_1/\tau_2$ shows that
-the rotational relaxation is dominated
-by jump dynamics in the supercooled liquid,
-while the diffusion constant
-is a much longer timescale phenomenon.
-Is the different regions of dynamics
-responsible for the observed decoupling
-of rotational and translational motion?
 
 In the picture of the decoupling of diffusion and rotation @fig:trans_rot_otp
 there are quantities on two different length scales,
@@ -101,6 +105,20 @@ with fast particles dominating the diffusion
 while slow particles dominate the structural relaxation
 and rotational relaxation.
 
+### Increasing Length Scale
+
+There are a range of studies which predict
+an increasing length scale of the dynamic heterogeneities. [@Ediger2000]
+There are experimental results which both observe this length scale,
+while others reject it.
+Here we postulate that the length scale is that of
+the size of the jumps the particles take
+which is alternatively the length over which
+the dynamics can be described as Brownian.
+There are already observations of this length scale increasing
+upon cooling,
+in the form of the ratio $\tau_1/\tau_2$ increasing
+as the temperature decreases.
 This also answers a question posed by @Ahn2013,
 "Are rare, long waiting times between rearrangement events
 responsible for the slowdown of dynamics at the glass transition?"
@@ -122,7 +140,6 @@ which was acknowledged by Einstein [@Einstein1907;@Bian2016]
 that the inertia of a particle is neglected.
 This means that the time resolution of observations becomes important
 for the motions of particles. [@Pusey2011;@Li2013]
-
 The result that the changing length scale of a measurement
 has an effect on the resulting Stokes--Einstein--Debye relation
 has also been observed in models of water.
@@ -246,7 +263,7 @@ in the coupling of rotational and translational motion.
   happen to have similar timescales with no connection between them,
 3. correlation, where the regions of large rotational motions
   are also the regions of large translational motions, and
-4. coupling, where rotations are required for translations to occur.
+4. Coupling, where rotations are required for translations to occur.
 
 As we go from 1 to 4,
 the requirements for establishing these become more stringent.
