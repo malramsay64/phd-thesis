@@ -247,15 +247,29 @@ Depolarised light scattering for structural relaxation @Singh1998
 
 ## Stokes--Einstein--Debye Breakdown
 
-@Shi2013
+This is studied in multiple dimensions by @Sengupta2013
+
+This is studied for translations in lewis Wahnström by @Shi2013
+
 @Ediger2012
+
+@Kawasaki2019 rotational relaxation is entirely inconsistent with rotational diffusion
 
 ## Heterogeneities
 
 @Lacevic2003
 @Glotzer2000
-@Ediger2000
+@Ediger2000 -> increasing length scale
 @Angell2000
 @Sillescu1999
 @Perera1999
 @Donati1999
+@Ediger2012 -> Growing length scale of dynamic heterogeneities 69-71
+
+## Translational Rotational Coupling
+
+@Nair2019
+
+## Diffusion
+
+ Calculate diffusion constant from structural breaks
