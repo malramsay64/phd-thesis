@@ -35,7 +35,7 @@ and also translational motion.
 This motion can be described by
 an occasional large jump to a new local environment
 resulting in a change in orientation and position,
-which is followed by a long period in that new environment.
+followed by a long period in that new environment.
 The displacements between each configuration
 is the type of irreversible relaxation we are measuring
 in the last passage time $\tau_L$.
@@ -111,14 +111,10 @@ There are a range of studies which predict
 an increasing length scale of the dynamic heterogeneities. [@Ediger2000]
 There are experimental results which both observe this length scale,
 while others reject it.
-Here we postulate the length scale is that of
-the size of the jumps the particles take
-which is alternatively the length over which
-the dynamics can be described as Brownian.
-There are already observations of this length scale increasing
-upon cooling,
-in the form of the ratio $\tau_1/\tau_2$ increasing
-as the temperature decreases.
+Here we postulate the length scale is
+the size of the jumps a particle takes.
+There are already observations of this length scale increasing upon cooling
+in the form of the ratio $\tau_1/\tau_2$ increasing as the temperature decreases.
 This also answers a question posed by @Ahn2013,
 "Are rare, long waiting times between rearrangement events
 responsible for the slowdown of dynamics at the glass transition?"
