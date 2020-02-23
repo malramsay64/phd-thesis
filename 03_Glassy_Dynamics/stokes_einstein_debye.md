@@ -111,7 +111,7 @@ There are a range of studies which predict
 an increasing length scale of the dynamic heterogeneities. [@Ediger2000]
 There are experimental results which both observe this length scale,
 while others reject it.
-Here we postulate that the length scale is that of
+Here we postulate the length scale is that of
 the size of the jumps the particles take
 which is alternatively the length over which
 the dynamics can be described as Brownian.
@@ -135,102 +135,70 @@ of long times between rearrangement events.
 
 ### Do Jump Dynamics solve Stokes--Einstein--Debye
 
-A limitation of the Stokes--Einstein model
-which was acknowledged by Einstein [@Einstein1907;@Bian2016]
-that the inertia of a particle is neglected.
-This means that the time resolution of observations becomes important
-for the motions of particles. [@Pusey2011;@Li2013]
-The result that the changing length scale of a measurement
-has an effect on the resulting Stokes--Einstein--Debye relation
-has also been observed in models of water.
-@Kawasaki2019 find that changing degree of the Legendre polynomial
-used for the rotational relaxation,
-changes the relationship with the viscosity.
-The first order polynomial corresponding to the largest motion
+When liquids undergo relaxation by Jump dynamics,
+the underlying assumptions of the Stokes--Einstein--Debye (SED) model break down.
+@Kawasaki2019 found that changing degree of the Legendre polynomial
+used for the rotational relaxation
+changes the relationship with the viscosity in models of water.
+The first order polynomial, which corresponds to the largest motion
 is similar to the diffusion constant,
-while the sixth order polynomial, corresponding to the smallest motion
+while the sixth order polynomial, which corresponds to the smallest motion
 has a temperature dependence similar to the viscosity.
-This provides additional support to the hypothesis
-that the jump dynamics are an important part
-of understanding the breakdown in SED.
+This dependence on rotational distance
+supports the idea that jump dynamics
+play an important role in the breakdown of the SED dynamics.
+The presence of a length scale dependence
+of the rotational and translational motion
+would clear up some of the confusion in the literature
+of the decoupling of rotations and translations. [@cite]
 
-When dealing with translation motion
-we use the mean squared displacement
-to describe long timescale motion,
-taking the limit as the time goes to infinity.
-This allows the sampling of motion
-allowing many relaxations to take place,
-so the jump dynamics are no longer a concern.
-It is possible to also describe
-the rotational diffusion using the Einstein formalism
+When calculating the translational diffusion constant
+we describe the long timescale behaviour of the mean-squared-displacement
+by finding the slope as time goes towards infinity.
+The long timescales associated with this calculation
+allows many relaxations to take place
+limiting the impact of jump dynamics.
+The same approach to describing the long timescale behaviour
+can also be achieved for rotational motion
+using the Einstein formalism for the rotational diffusion constant; [@Kim2015;@Lombardo2006]
 
 $$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$
 
-@Kim2015 compares the Einstein and the Debye formulations
-of rotational dynamics in colloidal systems,
-finding no difference between the formalisms.
-However they make no mention of jump dynamics,
-so it is possible these didn't play much of a role.
-
-Comparing the rotational diffusion constant
-to the rotational diffusion constant
-and reproducing @fig:trans_rot_otp,
-we get @fig:trans_rot_trimer.
-This shows that jump dynamics
-are not the only cause for the breakdown of SED.
-The result in @fig:trans_rot_trimer
-is also produced by @Kawasaki2019
-simulating water in 3D,
-which makes this result even more interesting
-and worth investigating further.
+@Kim2015 compared the Debye formalism, described in @sec:intro_sed
+to the Einstein formalism described above
+finding they calculated the same results for a colloidal system,
+where jump dynamics are unlikely to play a role in rotational relaxation.
+However, in a simulation study of the Lewis--Wahnström model
+for which rotational jump dynamics observed,
+@Lombardo2006 find that experiments and simulations
+which measure rotational using the Debye model
+display an increase in translational diffusion relative to rotational diffusion,
+while when using the Einstein formalism, simulation
+display a decrease in translational diffusion relative to rotational diffusion.
+We make the same comparison in @fig:trans_rot_diff_trimer,
+where both rotational formalisms give similar results.
+Rather than failing to describe the decoupling
+of the translational and rotational diffusion through jump dynamics,
+this tells us that jump dynamics
+are not the only contributor to the breakdown of SED.
 
 ![Comparison of the structural relaxation vs the
-rotational and translational diffusion.
+rotational and translational diffusion constants.
 The range of rotational metrics describe
 different measures of rotational diffusion.
 ](../Projects/Dynamics/figures/trans_rot_diff_trimer.svg){width=80% #fig:trans_rot_diff_trimer}
-
-A degree of the dynamic heterogeneities
-can be explained by the dynamics
-no longer adhering to Brownian motion,
-with the dynamics at short time scales
-dominated by the motion of large jumps.
-This breaks many of the assumptions
-which rely on the dynamics being Brownian in nature.
-The jumps are present in both
-the rotational and translational motion
-and can be attributed to
-motion associated with breaking out of
-a local potential energy minimum
-and moving to another.
-
-Increasing the length scale
-of the motion measured
-reduces the effect of the jump dynamics.
-With lower temperatures requiring longer length scales.
-It is possible that the length scale
-of the dynamic heterogeneities
-is more related to the size of the jumps
-rather than the size of the heterogeneous regions
-as has been hypothesised.
-As we go down in temperature
-the length scale required
-to return to Brownian motion increases.
-
-While the transition to jump dynamics
-can explain some of the unusual observations in supercooled liquids
-it doesn't explain everything.
-When we remove the effect of jump dynamics
-using the long time diffusion constants
-for both rotational and translational motion,
-we still observe decoupling of these motions.
-This indicates there is still more to understand.
 
 ## Coupling of translational and rotational motion {#sec:trans_rot_coupling}
 
 @Meyer2019
 @Griffin2012
 @Faraone2003
+
+The result in @fig:trans_rot_trimer
+is also produced by @Kawasaki2019
+simulating water in 3D,
+which makes this result even more interesting
+and worth investigating further.
 
 Two of the main assumptions made in the formulation of
 the Stokes--Einstein--Debye relations are;
