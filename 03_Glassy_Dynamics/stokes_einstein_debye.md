@@ -240,7 +240,7 @@ we define the coupling parameter $\gamma$
 $$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
     {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
 
-which is similar to the non-Gaussian parameter $\alapha$.
+which is similar to the non-Gaussian parameter $\alpha$.
 It provides a method of describing
 coupled rotational and translational motion
 which is more pronounced than the expected random distribution.
