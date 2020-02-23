@@ -160,7 +160,8 @@ allows many relaxations to take place
 limiting the impact of jump dynamics.
 The same approach to describing the long timescale behaviour
 can also be achieved for rotational motion
-using the Einstein formalism for the rotational diffusion constant; [@Kim2015;@Lombardo2006]
+using the Einstein formalism for the rotational diffusion constant;
+[@Kim2015;@Lombardo2006;@Meyer2019]
 
 $$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$
 
@@ -190,94 +191,110 @@ different measures of rotational diffusion.
 
 ## Coupling of translational and rotational motion {#sec:trans_rot_coupling}
 
-@Meyer2019
-@Griffin2012
-@Faraone2003
-
-The result in @fig:trans_rot_trimer
-is also produced by @Kawasaki2019
-simulating water in 3D,
-which makes this result even more interesting
-and worth investigating further.
-
-Two of the main assumptions made in the formulation of
-the Stokes--Einstein--Debye relations are;
+In describing dynamics through the Stokes--Einstein--Debye (SED) relations
+there are two main assumptions made about the dynamics;
 
 1. the motion is comprised of many small independent steps, and
 2. translational and rotational motions are independent.
 
-These assumptions stem from the formulation
-from Brownian motion.
 @Sec:jump-dynamics investigates the first of these assumptions,
+finding it not to hold for fragile liquids,
 so here we look towards the second.
-@Fig:trans_rot_trimer depicts a decoupling
-of the translational and rotational diffusion constants.
-This is a macro-scale effect,
-observing the different temperature dependence
-in overall dynamics of the liquid.
-When looking at the micro-scale, that is,
-the motions of individual particles within a simulation.
-There appears to be a distinct relationship
-between the rotational and translational motions
-which is represented in @fig:spatial_heterogeneities as
-the co-location of rotationally and translationally mobile regions.
-
+The observations of decoupling of translational and rotational motion
+shown in @fig:trans_rot_otp or @fig:trans_rot_diff_trimer,
+describe a macro-scale effect,
+the overall temperature dependence of the liquid.
+However, on the micro-scale, observing the motions of individual particles
+like in @fig:spatial_heterogeneities,
+there appears to be a relationship between rotational and translational motion
+that is closer to a coupling than the decoupling on the macro-scale.
 In investigating the coupling of translational and rotational motion
 there are four different levels of confidence
-in the coupling of rotational and translational motion.
+in the coupling of rotational and translational motion;
 
-1. No relation between translational and rotational motion,
+1. no relation between translational and rotational motion,
 2. coincidence, where the rotational and translational motion
   happen to have similar timescales with no connection between them,
 3. correlation, where the regions of large rotational motions
   are also the regions of large translational motions, and
-4. Coupling, where rotations are required for translations to occur.
+4. coupling, where rotations are required for translations to occur.
 
 As we go from 1 to 4,
-the requirements for establishing these become more stringent.
+the requirements for establishing these relationships become more stringent.
 The analysis of the translational [@fig:non-gaussian] and
 rotational [@fig:rotational_non-gaussian] heterogeneities
 provide enough data for the coincidence.
-Each of the heterogeneities
-have similar shape and timescales.
-Adding @fig:spatial_heterogeneities
-it is possible to consider correlation.
-However, coupling,
-where one motion allows the other to occur
-requires additional analysis.
+The rotational heterogeneities have a similar shape and timescale
+to those of the translational heterogeneities.
+In @fig:spatial_heterogeneities we observe that the regions
+with a high translational mobility,
+also have a high rotational mobility.
+The presence within the same regions is sufficient
+to describe a correlation between rotations and translations,
+though is insufficient to describe coupling,
+we are yet to find a direct link between the two types of motion.
 
-Based on work by @Faraone2003 on water,
-the coupling parameter $\gamma$
+Based on work by @Faraone2003 measuring the coupling of water,
+we define the coupling parameter $\gamma$
 
 $$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
     {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
 
-provides a method of demonstrating correlation
-between the translational and rotational motion.
-The values of $\gamma$ are large
-for molecules with large values of $\Delta r \Delta \theta$,
-with both components of the motion contributing.
-In @fig:gamma the coupling parameter is very
-similar to the non-Gaussian parameters,
-indicating that highly mobile molecules
-have both degrees of freedom available to them.
-This provides the evidence to establish
-there is correlation between
-rotational and translational motion.
+which is similar to the non-Gaussian parameter $\alapha$.
+It provides a method of describing
+coupled rotational and translational motion
+which is more pronounced than the expected random distribution.
+Large values of $\gamma$ required large values for both
+the translational component $\Delta r$
+and the rotational component $\Delta \theta$.
+The coupling parameter of the Trimer molecule is shown in @fig:gamma,
+having a very similar shape to that of the non-Gaussian parameter (@fig:non_gaussian).
+As the temperature drops,
+the coupling between the rotational and translational motions grow
+and the timescale of coupling increases.
+The coupling of rotational and translational motions
+match those found in simulations of water [@Meyer2019;@Faraone2003]
+and ionic liquids. [@Griffin2012]
 
 ![A plot of the coupling parameter $\gamma$
 ](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
 
-### Coupling of molecular relaxation times
+The coupling of rotational and translational motion
+is the idea that both rotational and translational motions
+are required for mobility within the liquid.
+When studying the trajectory of a particle in @fig:molecule_trajectory_fast,
+the motions between stable configurations require
+both a translational and rotational displacement.
+These irreversible motions are likely giving rise
+to the large value of the coupling parameter.
+The molecular relaxations described in @sec:molecular_relaxation
+provide some tools for investigating
+how both translations and rotations contribute to
+the irreversible relaxations.
+In evaluating the structural relaxation,
+we found the first passage time $\tau_F$ represented motions
+which were highly reversible and not contributing to the structural relaxation,
+while the last passage time $\tau_L$ represents
+the motion which did result in an irreversible structural relaxation.
+Both of these describe the translations on the same length scale,
+the difference being the reversibility of that motion.
+The fraction of particles which have undergone
+rotational relaxation at their first and last passage time
+are displayed in @fig:rotational_displacement.
+This is a comparison of the relaxation timescales of each individual particle,
+so the presence of dynamic heterogeneities doesn't impact the timescales.
+At the first passage time of a particle
+only 10\% have undergone the shortest rotational relaxation of $\pi/4$
+compared to nearly 80% at the last passage time.
+The first and last passage times
+describe motion of the same length scale
+with the difference being the reversibility of that motion.
+@Fig:rotational_displacement shows that the rotations
+are a vital part of the translational relaxation,
+providing the irreversible part of the relaxation process.
 
-Another reasoning about the coupling
-is looking at the effect of rotation
-at the first and the last passage time.
-For the first passage time,
-the motion in reversible,
-while at the last passage time,
-the particle has moved to a new position.
-
-![plotting the distribution of rotational motion
-at the first and last passage times.
-](../Projects/Dynamics/figures/angular_displacement.svg){width=80% #fig:rotation_last_passage}
+![The fraction of particles which have undergone a rotational relaxation
+at the time of their first (left) and last (right) passage time.
+These compare the motions of an individual particle
+in the liquid at a temperature $T=.40$ and pressure $P=13.50$.
+](../Projects/Dynamics/figures/rotational_displacement.svg){#fig:rotational_displacement width=80%}
