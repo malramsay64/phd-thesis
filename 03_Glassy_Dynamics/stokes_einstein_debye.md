@@ -105,30 +105,6 @@ with fast particles dominating the diffusion
 while slow particles dominate the structural relaxation
 and rotational relaxation.
 
-### Increasing Length Scale
-
-There are a range of studies which predict
-an increasing length scale of the dynamic heterogeneities. [@Ediger2000]
-There are experimental results which both observe this length scale,
-while others reject it.
-Here we postulate the length scale is
-the size of the jumps a particle takes.
-There are already observations of this length scale increasing upon cooling
-in the form of the ratio $\tau_1/\tau_2$ increasing as the temperature decreases.
-This also answers a question posed by @Ahn2013,
-"Are rare, long waiting times between rearrangement events
-responsible for the slowdown of dynamics at the glass transition?"
-Although Betteridge's law of Headlines @Betteridge2009
-would imply this is definitively not the case,
-it seems that it depends.
-For long timescale quantities like the diffusion constant,
-this is likely not the case,
-since it is mostly the fastest particles
-which contribute to this quantity,
-however the structural and dipole relaxations
-are likely to be affected by the prevalence
-of long times between rearrangement events.
-
 ### Do Jump Dynamics solve Stokes--Einstein--Debye
 
 When liquids undergo relaxation by Jump dynamics,
