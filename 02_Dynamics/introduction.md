@@ -7,42 +7,6 @@ In particular we want it to display dynamics similar to that of ortho-terphenyl.
 Here we introduce some dynamics quantities which are measured in
 both experiments and simulations.
 
-## Non-exponential Temperature Dependence {#sec:intro_vtf}
-
-One of the motivating examples for studying ortho-terphenyl
-was the fragility of the liquid (@fig:angell).
-The highly non-Arrhenius temperature dependence of the viscosity
-is an characteristic of molecular liquids.
-The non-Arrhenius behaviour can be described by
-the Vogel--Tammann--Fulcher[^vtf] (VTF) relation [@Debenedetti2001]
-
-$$ \eta = A \exp(\frac{B}{T-T_0}) $$ {#eq:vtf}
-
-[^vtf]: I have chosen to use Vogel--Tammann--Fulcher to describe this equation,
-however, there seems to be significant disagreement within the literature
-over the appropriate term to use.
-@Debenedetti2001 use Vogel--Tammann--Fulcher to describe this relation, while
-@Lubchenko2007 use Vogel--Fulcher to
-and @Royall2018 uses Vogel--Fulcher--Tammann.
-Furthermore, @Cummins1997 uses both Vogel--Fulcher and Vogel--Fulcher--Tammann within the same paper.
-
-where $\eta$ is the viscosity (or any other dynamic behaviour),
-$T_0$ is an extrapolated temperature found from fitting, and
-$B$ is a parameter extrapolated from fitting.
-The VTF relation allows for defining a quantity $m$, known as the *fragility*,
-which describes how much the temperature dependence
-deviates from an Arrhenius relation.
-The fragility $m$ is given by;
-
-$$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$
-
-which is the slope at the glass transition temperature and
-has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@Bohmer1993;@Meenakshisundaram2019]
-Ortho-terphenyl has a fragility $m=80$. [@Bohmer1993;@Schug1998]
-When describing the temperature dependence of the VTF relation using simulations,
-the structural relaxation time $\tau_S$ is commonly used in place of viscosity
-since it has a similar temperature dependence. [@Lubchenko2007]
-
 ## Structural Relaxation {#sec:intro_structural}
 
 The structural relaxation is the most fundamental relaxation process [@Angell2000]
