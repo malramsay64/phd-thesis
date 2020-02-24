@@ -1,5 +1,51 @@
 # Dynamics notes
 
+@Cummins1997 is a great review
+@Royall2018 also reviews the topic
+@Niblett2016
+@Wales2018
+@deSouza2017
+@Ballard2017
+@Niblett2017
+
+When describing the temperature dependence of the VTF relation using simulations,
+the structural relaxation time $\tau_S$ is commonly used in place of viscosity
+since it has a similar temperature dependence. [@Lubchenko2007]
+
+A further contributing factor of the structure and dynamics,
+is the coupling of multiple degrees of freedom.
+A molecular structure could be considered as a network of gears, [@Zwanzig1987]
+where each molecule transfers rotational energy their neighbours,
+with the requirement that they rotate in opposite directions.
+When there are many gears in a plane,
+the requirement for rotation in opposite directions
+can lead to the jamming of rotational motion.
+Take for example @fig:gears_triple,
+adding the third gear in a triangular lattice
+now means that none of the gears can turn,
+completely preventing rotational motion.
+This demonstrates the importance of structure
+on a gear network,
+with square lattice sites allowing rotations
+while triangular sites inhibit them.
+@Zwanzig1987 models the effect of
+jamming and rotational clustering of gear networks,
+noting that clusters of the gears in square lattice
+will all rotate together acting as a single body.
+
+:::{class=subfigures id=fig:gears}
+
+![Three gears](../00_Introduction/figures/cogs_3.svg){#fig:gears_triple width=40%}
+![Four gears](../00_Introduction/figures/cogs_4.svg){#fig:gears_quad width=40%}
+
+If we model the rotational motion of a gear network
+Where there are three gears,
+like in a triangular lattice
+the rotational motion is jammed,
+while four gears allow motion to propagate.
+
+:::
+
 ## Structural Relaxation
 
 - [@Ediger1996]

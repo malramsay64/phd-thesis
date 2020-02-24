@@ -56,14 +56,11 @@ Heterogeneous Nucleation
 
 Nucleation Time
 
-
-
 ## Important Equations
 
 The Maxwell model provides the following model of relaxation of stress,
 $$ G(t) = G_\inf \exp(-t/\tau_R) $$
 where $G_\inf$ is the infinite frequency (zero time) shear modulus.
-
 
 For Maxwell Liquids it is possible to get relationship between
 viscosity, relaxation time and shear modulus,
@@ -75,3 +72,48 @@ When going off equilibrium, as in the case of the glass,
 we sharply cut the number of degrees of freedom accessible to the system.
 This causes a chart drop (up to a factor of 2)
 of the constant pressure specific heat $c_p$ at $T_g$.
+
+### Jamming Transition
+
+@vanHecke2010
+@Torquato2010
+
+An alternative structural model of the supercooled liquid
+is the idea of the jamming transition
+which is adapted from an understanding of granular materials.
+[@Silbert2002;@Cates1998;@Cates2005;@Liu2010;@Torquato2010;@vanHecke2010]
+A particle is considered jammed
+when the number of contacts
+is enough to restrict all the degrees of freedom,
+this is known as *isostatic* jamming
+with the requisite contact count $z_\text{iso}$ being
+
+$$ z_\text{iso} = 2d_f $$
+
+where $d_f$ is the number of degrees of freedom
+available to a molecule ($d_f=3$ for our trimer).
+When a molecule is jammed,
+there are no degrees of freedom available
+meaning it is unable to move.
+Using contact numbers is notable
+for concave shapes like the Trimer molecule
+as the concavities allow for contact numbers
+well above $z_\text{iso}$. [@Jennings2015]
+
+The concept of jamming also applies to rotational motion
+where @Zwanzig1987 considers a liquid of 2D gears.
+Once three gears come in contact with each other,
+they are no longer able to rotate.
+
+### Geometric Frustration
+
+Building upon some of the ideas of the jamming transition
+is a model of geometric [@Frank1952] or packing [@Tarjus2005;@Kivelson1995] frustration.
+This considers small regions of the liquid,
+which form structures that minimise the local free energy,
+however these structures are then unable to tile space.
+This gives small regions of favourable local structure
+which are highly favourable and unlikely to diffuse.
+
+This idea of geometric frustration is notable for the Trimer molecule,
+as there are a range of crystal structures it can take on. [@sec:stability-of-crystal-phases]
