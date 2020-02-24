@@ -1,16 +1,14 @@
 # Computational Methods
 
-The nature of using simulations to model a chemical system,
-requires using computers for both running the simulations,
-and for the follow-up analysis of large volumes of data.
-This requires the development of software to perform
-the custom simulation and analysis
-required for new research.
-The use of computing for research has existed for as long as the computer itself.
+Using computer simulations to model a chemical system,
+requires computers for both running the simulations,
+and the follow-up analysis of the large volumes of data generated.
+This custom simulations and analysis required for new research
+requires the development of software to perform the calculations.
+The use of computing for research has existed as long as the computer itself.
 The development of Monte Carlo methods in 1946,
 attributed to Stanislaw Ulam, [@Mazhdrakov2018]
-from a neat idea into something useful
-was a conversations with Jon Von Neumann
+came about from conversations with Jon Von Neumann
 who realised the usefulness of the newly constructed ENIAC computer
 for solving these problems.
 This research was made possible by the programming efforts of
