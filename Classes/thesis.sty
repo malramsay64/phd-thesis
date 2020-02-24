@@ -170,7 +170,7 @@
 }
 
 \newlength{\signaturespace}
-\setlength{\signaturespace}{3ex}
+\setlength{\signaturespace}{6ex}
 
 \newlength{\dayspace}
 \setlength{\dayspace}{2em}
@@ -225,6 +225,19 @@
   \end{flushright}
 }
 
+\long\def\contributionsignature{%
+  \begin{minipage}{5in}
+    \parindent=0pt
+    \vspace{2ex}
+    This is to certify that to the best of my knowledge, the content of this thesis is my own work. This thesis has not been submitted for any degree or other purposes.
+
+    I certify that the intellectual content of this thesis is the product of my own work and that all the assistance received in preparing this thesis and sources have been acknowledged.
+    \vfill
+    \vspace{\signaturespace}
+    \@author\\
+    \hspace*{\dayspace}\@submitdate
+  \end{minipage}
+}
 
 \def\beforepreface{
   \pagenumbering{roman}
@@ -236,19 +249,6 @@
   \cleardoublepage
 }
 
-\long\def\contributionsignature{%
-  \begin{minipage}{5in}
-    \parindent=0pt
-    \vspace{2ex}
-    I certify that this report contains work carried out by myself
-    except where otherwise acknowledged\\\\
-    Signed:\\
-    \vfill
-    \vspace{\signaturespace}
-    \@author\\
-    \hspace*{\dayspace}\@submitdate
-  \end{minipage}
-}
 
 \def\prefacesection#1{%
   \chapter*{#1}
