@@ -2,8 +2,7 @@
 
 The crystallisation of a solid from its liquid melt
 is a process underpinning the production of a wide range of materials. [@Shimura2012;@Shimura2017;@Harkonen2005]
-As discussed in @sec:intro_crystal_growth,
-crystallisation can be broken into two processes;
+The process of forming a crystal can be broken into two steps;
 nucleation, and crystal growth.
 In this chapter we study
 the crystal growth and melting of the Trimer molecule
