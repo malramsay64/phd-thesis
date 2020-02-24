@@ -1,5 +1,12 @@
 # Conclusion
 
+The introduction of new molecular relaxations in @sec:molecular_relaxation
+provides a method of describing the relaxation
+of each individual particle.
+We use the Trimer model to show these quantities
+are comparable to the traditional dynamics quantities,
+having similar timescales and temperature dependences.
+
 In @sec:jump_dynamics we find the onset of jump dynamics
 to explain the presence of dynamic heterogeneities.
 As the temperature drops,

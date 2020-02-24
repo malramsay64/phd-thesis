@@ -68,11 +68,11 @@ is that the inertia of a particle is neglected.
 This means that the time resolution of observations becomes important
 for the motions of particles. [@Pusey2011;@Li2013]
 The SED relations are based on Brownian dynamics
-however there is evidence of rotations motions
+however there is evidence of rotational motions
 not described by Brownian motion,
 coming in the form of jump dynamics. [@Das2015;@Nair2019;@Laage2006;@Andreozzi1996;@Jose2006]
 When describing rotation dynamics using spherical harmonics
-which is known as the Debye formalism, [@Lombardo2006]
+known as the Debye formalism, [@Lombardo2006]
 there are multiple choices for the order of the Legendre polynomial $l$.
 @Eq:debye_rotational_diffusion describes the relationship
 between the relaxation times for difference choices of $l$.

@@ -17,8 +17,8 @@ The structural relaxation (@eq:intermediate_scattering_function) is calculated
 for a single value of the wave-number $k$.
 The value of this wave-number $k$
 that is going to give the best measurement [@Widmer-Cooper2008]
-is the first maximum in the structure factor $S(k)$
-which is the single time value of the intermediate scattering function.
+is the first maximum in the structure factor $S(k)$,
+the single time value of the intermediate scattering function.
 The different pressures of the simulations
 have different values for the wave number $k$.
 The low pressure $P=1.0$ has a wave-number $k=2.80$ and
@@ -26,7 +26,7 @@ the high pressure $P=13.50$ has a wave-number $k=2.90$.
 The wave-number is in reciprocal space,
 meaning the larger wave number at a higher pressure
 describes particles which are closer together,
-which is inline with expectations.
+inline with expectations.
 
 ![The intermediate scattering function of the trimer molecule
 over a range of temperatures at a pressure $P=13.50$.
@@ -81,12 +81,21 @@ the Trimer sits amongst the best simulated glass formers.
 An interesting observation about the Trimer dynamics
 is that the non-Arrhenius dynamics and two-step relaxation
 occur above the melting point.
-These are behaviours which have been attributed to the supercooled liquid, [@cite]
+These are behaviours which have been attributed to the supercooled liquid,
+[@Ediger2012;@Lubchenko2007;@Debenedetti2001]
 yet here are the first known observations of these quantities above the melting point.
 Rather than describing the onset of these quantities
 as properties of supercooled liquids,
 they should instead be described as occurring at the onset
 of the glass transition temperature.
+This is not entirely surprising when considering the types of relaxations taking place.
+The onset of dynamic heterogeneities,
+like the glass transition is a kinetic phenomena, [@Debenedetti2001]
+describing the motion that takes place.
+While the melting point, and supercooled liquids
+are a thermodynamic description,
+not at all related to the types or frequency
+of motions that take place.
 We can describe these quantities relative to the glass transition temperature
 using the analytical description of the Vogel--Tammann--Fulcher (VTF) relation
 to extrapolate to the relaxation time associated with the glass transition, \num{1e14}. [@Meenakshisundaram2019]
@@ -111,7 +120,7 @@ the maximum value of non-Gaussian parameter increases,
 demonstrating an increase in the dynamic heterogeneities,
 that is, there is a big difference between
 the fastest and the slowest particles.
-In addition to the increase in
+Along with the increase in
 the value of the maximum,
 the time at which the maximum occurs
 becomes later moving from high temperature to low.
