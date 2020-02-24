@@ -6,6 +6,10 @@ of each individual particle.
 We use the Trimer model to show these quantities
 are comparable to the traditional dynamics quantities,
 having similar timescales and temperature dependences.
+We calculate a measure of dynamic heterogeneity
+for each of these molecular relaxation quantities,
+finding that the dynamic heterogeneities have a
+length scale dependence.
 
 In @sec:jump_dynamics we find the onset of jump dynamics
 to explain the presence of dynamic heterogeneities.
@@ -41,3 +45,11 @@ where rather than the different temperature dependences
 describing a decoupling of translations and rotations,
 when looking at the motions of individual molecules
 there is actually a coupling of motions.
+
+The onset of jump dynamics and the coupling of rotational and translational motion
+break two fundamental assumptions of the Stokes--Einstein--Debye (SED) relations.
+The observed breakdown is a result of the model
+not accounting for the types of motion which are present.
+While SED describes the dynamics at high temperatures,
+alternative models which incorporate the motions present in
+liquids close to the glass transition should be used instead.

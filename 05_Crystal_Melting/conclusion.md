@@ -7,7 +7,7 @@ crystal growth is so slow as to be inaccessible to simulation,
 turning our focus instead to understanding melting.
 In @sec:melting_point we estimate an upper bound
 for the melting point,
-which is an important value in discussing the melting rates.
+an important value in discussing the melting rates.
 While the melting point is an estimate,
 as an upper bound the value is only going to decrease,
 which strengthens all the arguments
@@ -17,7 +17,7 @@ dynamics in @sec:Dynamics,
 used as a method of comparing the dynamics at each pressure.
 
 The measurement of the melting rates in @sec:melting_rates
-demonstrate the effectiveness of the machine learning model
+shows the effectiveness of the machine learning model
 developed in @sec:supervised_learning.
 This approach to identifying crystal structures
 allowed for the measurement of the smallest melting rates
