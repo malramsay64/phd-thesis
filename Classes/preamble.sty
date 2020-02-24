@@ -7,6 +7,9 @@
 % This defines all the packages needed for pandoc
 \RequirePackage{pandoc}
 
+% Improved text formatting
+\RequirePackage{microtype}
+
 % This is the package with defines syntax highlighting
 \RequirePackage{mysyntax}
 
@@ -33,6 +36,9 @@
 %% Bibliography
 %%
 
+\def\UrlBreaks{\do\/\do-}
+\Urlmuskip=0mu plus 3mu
+
 % This uses biblatex with the biber backend for the
 % bibliography. The options are trying to keep the
 % bibliography fairly compact, removing unnecessary
@@ -42,19 +48,17 @@
     backref=true,
     style=nature,
     autocite=superscript,
-    url=false,
+    url=true,
     doi=true,
     isbn=false,
-    eprint=false]{biblatex}
+    eprint=false,
+    block=space,
+    ]{biblatex}
 
 % Bibliography Settings
 \DeclareFieldFormat{url}{\url{#1}}
 \AtEveryBibitem{
   \clearlist{language} % clears language
-  \clearlist{series}
-  \clearfield{month}
-  \clearfield{note}
-  \clearfield{issue}
 }
 
 % Use the autocite with the textcite command
@@ -64,9 +68,10 @@
 }
 
 \DefineBibliographyStrings{english}{%
+  backrefpage = {cited on page},
+  backrefpages = {cited on pages},
   andothers = {{\normalfont and colleagues}}
 }
-
 
 %%
 %% Hyperref configuration
@@ -80,6 +85,7 @@
   citecolor=blue,
   filecolor=black,
   urlcolor=blue,
+  breaklinks=true,
 }
 
 %%
