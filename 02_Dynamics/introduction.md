@@ -191,7 +191,7 @@ function like the intermediate scattering function,
 allowing the relationship between the rotational relaxation time
 and the rotational diffusion constant to be expressed as
 
-$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$
+$$ \tau_l = \frac{1}{D_r\,l(l+1)} $$ {#eq:debye_rotational_diffusion}
 
 the inverse of the diffusion constant.
 The rotational relaxation time is found using techniques including;
@@ -213,18 +213,29 @@ $$ R_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -
 
 ### Rotational Motion through Jump Dynamics {#sec:intro_jump_dynamics}
 
-There is the presence of jump dynamics
+When describing rotation dynamics using spherical harmonics
+there are multiple choices for the order of the Legendre polynomial $l$,
+where @eq:debye_rotational_diffusion describes the relationship
+between the relaxation times and rotational diffusion constant
+for difference choices of $l$.
+The ratio $\tau_1/\tau_2$ is used to measure the contribution
+of large angular jumps towards rotational relaxation. [@Jose2006;@Kivelson1970]
+When the dynamics is Brownian the ratio of $\tau_1/\tau_2$
 
-@Zasetsky2010
+$$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
 
-- Jump diffusion of rotational motion
-- coupling between rotations and translation on short timescales
+or a value of 4 for a 2D system.
+When molecules rotate through jump dynamics,
+that is, through large angular displacements
+the ratio $\tau_1/\tau_2$ falls within the range
 
-@Laage2006
+$$ 1 < \tau_1/\tau_2 < 3 $$
 
-- jump dynamics in water
-
-$R_1/R_2$ = 1
+At the limit, a single large motion can describe
+both relaxation quantities simultaneously
+which is described the $\tau_1/\tau_2 = 1$
+The presence of jump dynamics has been observed within ortho-terphenyl [@Andreozzi1996]
+using electron spin resonance to capture both rotational relaxation quantities.
 
 ### Decoupling of Translational and Rotational motion
 
