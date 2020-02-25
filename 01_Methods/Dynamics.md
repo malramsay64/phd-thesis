@@ -2,13 +2,13 @@
 
 ## Data Collection
 
-The collection of the data is an important part
-of calculating the resulting dynamics quantities.
+The collection of the data is an important part of calculating dynamics quantities.
 Because of the large timescale of the simulations
-and I am looking at phenomena on a range of timescales
+and the range of timescales of dynamics quantities,
+we capture data at a sequence of timesteps where
 the time between configurations increases
 as the total time increases.
-The sequence of the steps is visually displayed in @tbl:step_sequence
+The sequence of the steps is displayed in @tbl:step_sequence
 with each row having 100 steps,
 and the size of the steps increasing by a power of 10
 as we move down the rows.
@@ -25,32 +25,29 @@ Across each row are the linear steps,
 while dropping down to the next row
 increases the size of the linear step by a power of 10. {#tbl:step_sequence}
 
-This sequence of steps allows for a singe data point for each simulation,
+This sequence of steps allows for a singe value
+of the dynamics quantities for,
 however the stochastic nature of simulations means this trajectory
 is only representative of a single possible outcome.
 A typical method of creating many trajectories from a single one
 is the comparison of every measurement with every other [@Buyl2018],
 an approach which only works when there is equal spacing between configurations.
-
-As an alternative,
-I have created what are called key-frames,
-points spaces evenly from which this exponential sequence starts.
-This allows for comparison back to the initial key-frame.
-By using key-frames spaced
-such that they are independent configurations
-I am able to use standard statistical methods to estimate errors.
-
-Independent configurations in molecular dynamics
-are typically considered configurations separated
-by more than the structural relaxation time
-and with enough key-frames
-I can sample the equilibrium configuration.
+As an alternative method of evaluating statistics from a single simulation trajectory,
+we use *key-frames*,
+configurations spaced evenly throughout the simulation
+indicating start points of this exponential sequence.
+The positions and orientations of particles are then
+compared back to their reference key-frame.
+The key-frames are spaced so they are independent configurations,
+at a timescale of the structural relaxation time.
+This independence means allows us to use
+standard statistical methods to estimate errors.
 
 ## Dynamics Quantities
 
-### Calculation of Wavenumbers
+### Calculation of Wave numbers
 
-The first step in the calculation of wavenumbers
+The first step in the calculation of wave numbers
 is finding the radial distribution function.
 This shows the distribution of particles at each radius
 and can be related to the experimentally measurable scattering function
@@ -89,9 +86,11 @@ the integration is discretised as
 
 $$ S(k) = 1 + 4 \pi \rho \frac{1}{k} \Delta r \sum_r r \sin(qr) [G(r) - 1] $$
 
-The discrete function is calculated with the following function
+The structure factor is calculated using
+the function in @lst:structure_factor.
 
-```python
+```{.python caption="The function used to calculate the static structure factor"
+#lst:structure_factor}
 import numpy
 
 def static_structure_factor(
@@ -127,9 +126,10 @@ k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \ri
 [\Delta x_{j}(t), \Delta y_{j}(t)]
 \right\} \right \rangle $$
 
-This can then be converted to a python function:
+This is converted to a python function
+which shown in @lst:intermediate_scattering_function.
 
-```python
+```{.python #lst:intermediate_scattering_function caption="The calculation of the intermediate scattering function."}
 def create_wave_vector(wave_number: float, angular_resolution: int):
     """Convert a wave number into a radially symmetric wave vector."""
     angles = numpy.linspace(
@@ -157,36 +157,15 @@ def intermediate_scattering_function(
     return numpy.mean(numpy.cos(numpy.dot(wave_vector, displacement.T)))
 ```
 
-As an alternative and simpler method of
-monitoring structural relaxation $F_d(t)$
-using the quantity suggested by @Widmer-Cooper2008
-
-$$ F_d(t) = \begin{cases}
-    1 &\text{if} \quad \Delta x < d, \\
-    0 & \text{otherwise}
-    \end{cases} $$
-
-Both the intermediate scattering function $F(k, t)$
-and the structural relaxation $F_d(t)$
-have the shape of a stretched exponential.
-For both these values,
-the characteristic relaxation time $\tau_s$ was found by
-finding the first time which the relaxation function
-dropped below the value $1/\text{e}$.
-The expected value and confidence interval
-was estimated by using the bootstrap procedure
-over all the key frames.
-
 ### Diffusion
 
 To calculate the translational diffusion constant
-we first need to calculate the mean squared displacement $MSD$
+we first need to calculate the mean squared displacement $MSD$.
+The mean squared displacement is calculated as in @lst:msd
+where `freud` [@Harper2016] is used for the calculation of
+the periodic boundary conditions.
 
-$$ MSD = \langle ||\vect{r}(t) - \vect{r}(0)||_2^2 \rangle $$
-
-which is calculated for all par
-
-```python
+```{.python #lst:msd}
 import numpy
 import freud
 
@@ -292,15 +271,16 @@ the intended distance.
 The last passage time uses a state machine
 which can have one of three values
 
-The state can have one of three values,
-
 - 0 => No relaxation has taken place, or particle has moved back within
         the threshold distance
 - 1 => The distance has passed the threshold, however not the
           irreversibility distance
 - 2 => The molecule has passed the irreversibility distance
 
-```python
+The code which describes the change between states
+is shown in @lst:state_machine.
+
+```{.python #lst:state_machine}
 for state, dist, status in zip(self._state, distance, self._status):
     if state == 2:
         # The threshold has been reached so there is now nothing to do
