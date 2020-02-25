@@ -33,7 +33,7 @@ and is given by
 
 $$ F(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
 i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
-) \right\rangle $$ {#eg:intermediate_scattering_function}
+) \right\rangle $$ {#eq:intermediate_scattering_function}
 
 where the angle brackets signify averaging over multiple initial configurations
 $N$ is the total number of particles,
