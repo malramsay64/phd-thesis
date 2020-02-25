@@ -92,14 +92,13 @@ means these are reserved for the most specialised applications.
 
 ### Implementations
 
-There are many different implementations of Molecular Dynamics on GPUs
-
-- LAMMPS [@Plimpton1995]
-- GROMACS [@Lindahl2001;@Hess2008;@Pronk2013;@Berendsen1995;@Abraham2015]
-- AMBER [@Case2006;@Case2008]
-- HOOMD-blue [@Anderson2008;@Nguyen2011]
-- NAMD [@Phillips2005]
-- OpenMM [@Eastman2010]
+There are many different implementations of Molecular Dynamics on GPUs including;
+LAMMPS, [@Plimpton1995]
+GROMACS, [@Lindahl2001;@Hess2008;@Pronk2013;@Berendsen1995;@Abraham2015]
+AMBER, [@Case2006;@Case2008]
+HOOMD-blue, [@Anderson2008;@Nguyen2011]
+NAMD, [@Phillips2005]
+OpenMM, [@Eastman2010]
 
 and evaluating each different software package's approach
 to simulating the same system can be difficult for a team of experts. [@Rizzi2019]
@@ -118,9 +117,8 @@ particularly when there are many
 optional parts of LAMMPS to install.
 
 Two of these optionally installed components are
-
-- the GPU module, for using the GPU for accelerating some calculations, and
-- the Rigid module, providing the ability to simulate rigid molecules.
+the GPU module, for using the GPU for accelerating some calculations, and
+the Rigid module, providing the ability to simulate rigid molecules.
 While the modularity of LAMMMPS allows for
 the inclusion of these additional modules,
 they are not part of the core functionality.
@@ -389,188 +387,31 @@ $$ C(C^{-1} \vect{x} - \lfloor{C^{-1} \vect{x}}\rfloor) $$
 
 ### Nearest Neighbours {#sec:nearest_neighbours}
 
-- Calculating the nearest neighbours of a particle
+The calculation of the nearest neighbours
+within a simulation is performed using the `freud` package
+which uses the algorithm described in @lst:nn_algorithm.
+For optimal performance freud divides the simulation
+into cells, only searching neighbouring cells for
+particles drastically reducing computational time.
+The `neighbor_cells` function finds particles in the neighbouring cells.
+The `freud.locality.NearestNeighbours` object defines defines
+the parameters for finding neighbours
+
+```{.python #lst:nn_algorithm caption="The algorithm for the calculation of the nearest neighbours. This explicitly sorts the distances of the particles before resuting the result."}
+for each particle i:
+    for each particle j in neighbor_cells(i):
+        r_ij = position[j] - position[i]
+        r = sqrt(dot(r_ij, r_ij))
+        l_r_array.append(r)
+        l_n_array.append(j)
+        # sort by distance
+        sort(n_array, r_array)
+        neighbor_array[i] = n_array[:k]
+```
 
 ### Rotational Distance using Quaternions {#sec:quaternion_rotations}
 
-Measuring rotational motion in three dimensional space
-is something performed in many applications including
-
-- robotics,
-- computer graphics,
-- aviation, and
-- molecular dynamics.
-However in all cases,
-there is a need to represent an orientation in 3D space.
-There are many different methods which achieve this,
-each with different strengths and weaknesses.
-
-#### Rotational Representations
-
-Mathematically, rotations in 3D belong to the special orthogonal group
-A rotation is a mapping from a position in real space $\mathbf{R}^n$
-to another position in real space,
-presenting the angles between and distances of transformed vectors.
-This space of transformations is known as the Special Orthogonal group $SO(3)$.
-
-##### Euler Angles
-
-Euler Angles use three different rotations
-to describe the orientation of a body in 3D space,
-relative to a fixed coordinate system.
-A common terminology for these angles is roll, pitch, and yaw,
-however, there are twelve different sequences
-in which the Euler Angles can be defined,
-so their use requires clarification
-of the ordering.
-
-While Euler Angles are the simplest rotational coordinate system,
-they also suffer from a significant issue in Gimbal Lock,
-where two of the rotational axes align,
-restricting motion of the gimbal to two dimensions;
-the angles are no longer independent degrees of freedom. [@Evans1977]
-While this restriction is only present for a single value,
-it presents problems with precision close to the gimbal lock,
-where large changes in the Euler Angle are required
-to describe small absolute changes.
-
-In certain applications,
-the "problem" of gimbal lock
-turns out to be a benefit.
-In robotics applications,
-where the movement of a robotic joint is restricted,
-the Gimbal lock can be avoided by
-aligning the reference frame appropriately.
-For most other fields however,
-the Euler Angles are not an appropriate
-representation of orientation.
-
-##### Rotation Matrix
-
-This is an alternative to Euler Angles,
-which uses a $3 \times 3$ matrix $R$ to represent rotation.
-For a matrix to properly represent a rotation
-it has to preserve both
-the length
-and the orientation of a transformed vector.
-For a matrix to preserve length,
-the columns of the matrix have to form an orthonormal basis,
-which can be expressed as satisfying the condition
-
-$$ R\,R^T = R^TR = I $$
-
-where $R^T$ is the transpose of $R$ and $I$ is the identity matrix.
-For an orthonormal matrix to preserver orientation
-it is required to have a determinant $\text{det}\,R = 1$.
-
-While the rotation matrix doesn't suffer
-the Gimbal Lock issue of the Euler Angles,
-it has complications of it's own in practical applications.
-Euler angles require 3 floating point numbers,
-while a rotation matrix requires 9,
-which can become an issue in storage
-capacity and bandwidth when using many values.
-Another problem is that errors with the finite precision
-of floating point values can add up,
-moving the rotation matrix away from orthonormal,
-which requires a computationally costly
-re-orthonormalisation step to correct.
-
-##### Quaternions
-
-In the same way rotations in 2D can be represented
-using complex numbers,
-rotations in 3D can be represented using quaternions $q$,
-which have the representation
-
-$$ q = a + bi + cj + dk $$
-
-where $i$, $j$, and $k$ are complex numbers about
-the $x$, $y$, and $z$ axes respectively.
-The dimensionality of quaternions is
-larger than the space of rotations,
-however like with complex numbers,
-by restricting rotations to the unit circle,
-in this case the unit sphere,
-a normalised quaternion can represent all rotations.
-
-Because quaternions have no issues with gimbal lock,
-and there are no issues with matrix normalisation,
-they are a natural choice for describing orientations
-in molecular dynamics simulations. [@Evans1977;@Evans1977a]
-
-#### Mathematical Operations of Quaternions
-
-As part of dealing with quaternions
-understanding their mathematical operations is important.
-Firstly the multiplication of the quaternions has the following rule
-
-$$ i^2 = j^2 = k^2 = ijk = -1 $$
-
-Which corresponds to the following table of multiplications
-
-$\times$ | **$i$** | **$j$** | **$k$**
-:-------:|:-------:|:-------:|:--:
- **$i$** | $-1$    | $k$     | $j$
- **$j$** | $-k$    | $-1$    | $i$
- **$k$** |$j$      |$-i$     | $-1$
-
-Table: The results of multiplying the value in the left hand column,
-with the label at the top of each row.
-
-When working with quaternions,
-the imaginary components are often referenced by a vector $\vect{v}$
-such that
-
-\begin{align}
-q &= r + bi + cj + dk \\
-  &= r + \vect{v}
-\end{align}
-
-With this representation,
-the addition of quaternions
-$q_1 = (r_1, \vect{v_1})$ and
-$q_2 = (r_2, \vect{v_2})$
-is expressed as
-
-$$ (r_1, \vect{v_1}) + (r_2, \vect{v_2})  = (r_1 + r_2, \vect{v_1} + \vect{v_2}) $$
-
-while the multiplication can be expressed as
-
-$$ (r_1, \vect{v_1})(r_2, \vect{v_2}) =
-(r_1r_2 - \vect{v_1}\cdot\vect{v_2}, r_1\vect{v_2}+r_2\vect{v_1} + \vect{v_1} \times \vect{v_2}) $$
-
-where $\cdot$ is the dot product and the $\times$ is the cross product.
-Quaternion multiplication is non-commutative,
-which comes from the non-commutativity of the cross product.
-
-The multiplication of one quaternion by another $q_1 \times q_2$
-gives a resulting quaternion equivalent to
-the rotation $q_2$ followed by $q_1$.
-
-Like complex numbers,
-quaternions also have a complex conjugate $q^*$
-which can be expressed as
-
-$$q^* = (r - \vect{v}) $$
-
-The conjugate allows us to define the norm of a quaternion
-
-$$ ||q|| = \sqrt{qq^*} $$
-
-which is $1$ for quaternions used to define rotations.
-
-The quaternion logarithm is defined as
-
-$$ \ln(q) = \ln \|q\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \arccos \frac{a}{\|q\|} $$
-
-while the exponent is defined as
-
-$$ \exp(q) = \sum_{n=0}^\infty \frac{q^n}{n!}=e^{a}
-    \left(\cos \|\mathbf{v}\| + \frac{\mathbf{v}}{\|\mathbf{v}\|} \sin \|\mathbf{v}\|\right) $$
-
-#### Angular Distance From Quaternions
-
+HOOMD-blue uses quaternions to represent the orientation of particles.
 When using quaternions for representing rotations
 there are a range of different methods for finding
 the distance between them. [@Huynh2009]
@@ -600,14 +441,14 @@ namely pyquaternion [@Wynn2019] and quaternion [@Boyle2019],
 however these are not optimised for calculating rotations
 on arrays of quaternions.
 More recently the rowan [@Ramasubramani2018] software package was published,
-which is designed for analysing molecular dynamics simulations
+designed for analysing molecular dynamics simulations
 and the array type operations required.
 The function `rowan.geometry.intrisic_distance` implements the calculation of $\phi_3$
 with the angular rotation being calculated as twice this value.
 
 ## Random Numbers
 
-Random numbers are used in a number of places in this thesis.
+Random numbers are used many places throughout this thesis.
 However, for the purposes of reproducibility
 and computational performance,
 rather than generating truly random numbers[@Haahr1998;@Noll1998],
@@ -625,7 +466,7 @@ HOOMD-blue uses the Saru PRNG [@Afshar2013],
 which was chosen for it's performance on GPUs,
 in particular the algorithm for generating random values
 takes a seed comprising three numbers,
-one of which is the identity of the body
+one that is the identity of the body
 for which the number is being generated.
 This allows for the PRNG to generate
 random numbers without communication
