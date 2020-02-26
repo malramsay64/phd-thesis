@@ -178,4 +178,4 @@ the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_diffusion]
 has been chosen as the transport coefficient.
 The rotational relaxation time $\tau_r$ is the time
 for half of the molecules to have reoriented by \SI{90}{\degree}
-a rotation which is important for the crystal growth.
+a rotation important for orientational alignment with the crystal.

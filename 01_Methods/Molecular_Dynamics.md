@@ -325,10 +325,6 @@ the particle could have moved in each direction. [@fig:periodic_distance]
 The same is also true for rotational motion.
 The standard method of handling this is the minimum image convention,
 where the distance is calculated for the shortest of the two paths.
-
-![Demonstrating periodic boundary conditions
-](../placeholder_figure.png){width=80% #fig:periodic_distance}
-
 The problem with the minimum image convention
 is it breaks down for large motions,
 especially for rotations.

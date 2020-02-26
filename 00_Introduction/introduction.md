@@ -44,7 +44,12 @@ which is the slope at the glass transition temperature and
 has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@Bohmer1993;@Meenakshisundaram2019]
 Ortho-terphenyl has a fragility $m=80$. [@Bohmer1993;@Schug1998]
 
-![Angell plot](../00_Introduction/figures/angell.png){#fig:angell}
+![The viscosities of a range of liquids plotted against inverse temperature.
+Substances with Arrhenius-like temperature dependence,
+shown by the blue line from the bottom left to top right of the figure,
+are considered strong liquids.
+The visibly convex curves are describes as fragile liquids. \
+*Figure from @Lubchenko2007 used with permission © Annual Reviews*](../00_Introduction/figures/angell.png){#fig:angell}
 
 The crystal growth rates of molecular crystals
 are two orders of magnitude slower than those of alloys
@@ -57,7 +62,13 @@ Many materials including
 organic molecules,[@Alba-Simionesco1999] metals, [@Wang2004] and phase-change materials [@Wuttig2007]
 have applications in both the crystal and amorphous glassy state.
 
-![Growth of different crystals \
+![Growth rates of a range of crystal structures
+plotted as a function of temperature.
+The upward arrows show the temperature at which
+the crystal growth rate is maximum,
+while the downward arrows indicate the glass transition temperature.
+The data for silver is from molecular dynamics calculations
+while all other results are from physical measurements. \
 *Figure from @Orava2014 used with permission AIP Publishing*
 ](../00_Introduction/figures/molecular_growth_rates.png){#fig:growth_rates}
 

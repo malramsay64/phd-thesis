@@ -184,15 +184,15 @@ where the motions change from many small random motions at high temperatures
 to a large motions from one site to another at low temperatures,
 often involved correlated motions of particles.
 
-![A representation of the potential energy landscape for a
-liquid.\
+![A representation of the potential energy landscape for a liquid.
+The entire configuration moves between the low energy states
+through the transition structures. \
 *Figure from @Stillinger1995 used with permission © 1995 AAAS*
 ](../00_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
 An important part of the potential energy landscape model
 is that the structure plays a role in the dynamics,
-defining the types of transitions which can easily take place.
-plays a role in the resulting dynamics
+defining the types of transitions which take place.
 In a simulation study initialising the same structural configuration
 with a range of randomised momenta,
 @Widmer-Cooper2004 found the dynamic heterogeneities

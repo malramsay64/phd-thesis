@@ -268,13 +268,10 @@ locking of molecules into the crystal structure.
 
 ::: {#fig:pg_crystal class=subfigures}
 
-<!-- These captions are intentionally left blank -->
-<!-- markdownlint-disable MD045 -->
-![Bottom beginning
+![Bottom
 ](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=40%}
-![Top Beginning
+![Top
 ](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=40%}
-<!-- markdownlint-enable MD045 -->
 
 Zooming in on the pg crystal structure
 at the beginning of the melting run

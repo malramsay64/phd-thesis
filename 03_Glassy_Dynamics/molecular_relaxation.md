@@ -151,7 +151,7 @@ The rotational relaxation function $R_2$ (@eq:rot_relax)
 has it's first zero at an angular displacement of $\pi/4$,
 being the angular displacement required for
 the relaxation quantity $\tau_{T4}$.
-Similarly the rotational relaxation function $R_1$
+Likewise, the rotational relaxation function $R_1$
 has it's first zero at an angular displacement of $\pi/2$,
 giving the relaxation quantity $\tau_{T2}$.
 
@@ -167,14 +167,16 @@ with an excellent fit being the same temperature dependence,
 that is a horizontal line.
 The temperature dependence of the diffusion constant
 has a different shape to that of the $\tau_D$,
-displayed in the variable temperature dependence,
-which is discussed in detail @sec:jump_dynamics.
+displayed in the variable temperature dependence
+which results from the presence of jump dynamics,
+explored in @sec:jump_dynamics.
 The remaining quantities show very similar
 values independent of the method used to measure them,
 demonstrating these describe the types of relaxations
 we are investigating.
 
-![Summary of comparisons
+![Summary taking the ratio of each molecular relaxation quantity
+with it's traditional counterpart.
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
 ## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}
@@ -219,5 +221,6 @@ the more Gaussian the relaxation.
 ![Histogram displaying the distribution of the relaxation times
 for the last passage time.](../Projects/Dynamics/figures/histogram_last_passage.svg){width=80% #fig:relaxation_distribution}
 
-![Heterogeneous dynamics of the molecular relaxations
+![Degree of heterogeneity for each of the molecular relaxations
+as a function of temperature.
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}

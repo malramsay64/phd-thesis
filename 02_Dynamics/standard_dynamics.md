@@ -179,18 +179,18 @@ of a simulation at D=1.35 and Pp=13.50
 at the time of the maximum of the translational non-Gaussian.
 The translational motion is denoted by an arrow depicting
 the size and the direction of the motion,
-while the rotational motion is depicted by ...TODO...
+while the rotational motion is depicted by the circle
+at the start of the motion.
 Areas which are white are indicative of no motion,
 while coloured areas have lots of motion.
-](../placeholder_figure.png){width=80% #fig:spatial_heterogeneities}
+](../Projects/Dynamics/figures/heterogeneities.svg){width=80% #fig:spatial_heterogeneities}
 
 ## Decoupling of Translations and Rotations {#sec:trans_rot_decoupling}
 
 ### Translational Diffusion
 
 The translational diffusion is characterised by the
-Mean Squared Displacement (MSD) of particles
-which is shown in @fig:msd.
+Mean Squared Displacement (MSD) of particles shown in @fig:msd.
 The two-step relaxation process seen in the structural relaxation (@fig:structural_relaxation)
 is also seen in the MSD.
 At lower temperatures,
@@ -267,5 +267,9 @@ because of the discrepancies in other models. [@Lombardo2006;@Kawasaki2019]
 The calculation of the breakdown of rotational and translational motion
 is explored further in @sec:sed.
 
-![Breakdown of the Stokes--Einstein--Debye
-relations](../Projects/Dynamics/figures/trans_rot_trimer.svg){#fig:trans_rot_trimer width=80%}
+![The divergence in the rotational and translational diffusions
+when plotted against the structural relaxation
+indicates a breakdown of the Stokes--Einstein--Debye relations.
+The rotational diffusion speeds up relative to the translational diffusion
+at a given temperature.
+](../Projects/Dynamics/figures/trans_rot_trimer.svg){#fig:trans_rot_trimer width=80%}

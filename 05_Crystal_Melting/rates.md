@@ -62,9 +62,8 @@ what is also interesting is that the Turnbull model
 has a very different temperature dependence for each pressure,
 primarily resulting from the thermodynamic term.
 The constants of the Turnbull model (@eq:constants_turnbull)
-do describe the distance to the crystal position
-which is pressure dependent,
-there is still a large difference to explain.
+can describe the pressure dependent distance to the crystal position,
+though it requires a large change to explain.
 The Turnbull model is not suitable
 for describing the melting of the Trimer molecule.
 

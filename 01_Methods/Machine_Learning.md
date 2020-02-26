@@ -147,8 +147,9 @@ the information on the local structure and
 the assigned label.
 
 ![Image describing the different labelled regions of a configuration.
-The center region is labelled as the crystal it was created as,
-while the outside is classified as liquid](../placeholder_figure.png){width=80% #fig:labelling_structures}
+The center region is labelled as the crystal used to create the configuration,
+while the outside is classified as liquid.
+](../Projects/MLCrystals/figures/labelled_config.svg){width=80% #fig:labelling_structures}
 
 ## Algorithms and Parameters
 

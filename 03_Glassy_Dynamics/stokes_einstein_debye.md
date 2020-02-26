@@ -43,7 +43,17 @@ A notable observation about the positions in @fig:molecule_trajectory_fast
 is that each jump appears to be governed by
 a relaxation measured by the last passage time.
 
-![jump dynamics](../Projects/Dynamics/figures/rotational_jumps.svg){width=80% #fig:rotational_jumps}
+![The presence of jump dynamics in rotational motion,
+found by comparing the relaxation times
+$\tau_1/\tau_2$ in the case of Traditional dynamics
+and $\tau_T2/\tau_T4$ for Molecular relaxations.
+At low temperatures,
+both quantities have values close to 4,
+indicative of Brownian motion.
+This drops close to 1 at low temperatures
+describing rotational motions which take place
+through large angular jumps.
+](../Projects/Dynamics/figures/rotational_jumps.svg){width=80% #fig:rotational_jumps}
 
 ![A trajectory of a fast particle with each point marking
 the translational and orientational displacement
@@ -91,8 +101,13 @@ the dynamic heterogeneities decrease,
 and the same is true of the rotational heterogeneities,
 from $\tau_{T4}$ to $\tau_{T3}$ and to $\tau_{T2}$.
 
-![Heterogeneous dynamics taking progressively more relaxation
-times](../placeholder_figure.png){width=80% #fig:jump_heterogeneities}
+![The dynamic heterogeneities present when sampling with replacement
+from the distribution of last passage times.
+The number of times sampled from the distribution is indicated by the Jumps
+where 0 jumps is the mean of the entire distribution.
+With only 2 jumps the dynamic heterogeneities
+are nearly completely gone.
+](../Projects/Dynamics/figures/jump_dynamics.svg){width=80% #fig:jump_heterogeneities}
 
 In the picture of the decoupling of diffusion and rotation @fig:trans_rot_otp
 there are quantities on two different length scales,
@@ -268,5 +283,5 @@ providing the irreversible part of the relaxation process.
 ![The fraction of particles which have undergone a rotational relaxation
 at the time of their first (left) and last (right) passage time.
 These compare the motions of an individual particle
-in the liquid at a temperature $T=.40$ and pressure $P=13.50$.
+in the liquid at a temperature $T=0.40$ and pressure $P=13.50$.
 ](../Projects/Dynamics/figures/rotational_displacement.svg){#fig:rotational_displacement width=80%}
