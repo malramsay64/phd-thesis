@@ -25,28 +25,31 @@ The algorithm used for the supervised learning is
 the K-Nearest Neighbours (KNN),
 which uses labels of the configurations closest in feature space
 to label an unknown configuration.
-This algorithms gives a balanced accuracy of 97.0%,
-where the balanced accuracy accounts for the slight imbalance in the dataset.
 The configurations used for training contain
 the same number of liquid and crystal configurations,
 however there are three different crystals and only a single liquid.
 This means that there are three times as many liquid configurations as any crystal
 and guessing every configuration is liquid would have an accuracy of 50%
 rather than 25% for a balanced dataset.
-The balanced accuracy score finds the accuracy for each class
-and combines those percentages.
-Handling imbalanced data is a large problem within machine learning
-[@He2009;@Brabec2020;@Vandewiele2020]
-however a balanced accuracy score is an appropriate mitigation tool
-for this small imbalance.
-The balanced accuracy is scored for data previously unseen
-during the training and optimisation of the model,
-known as a holdout dataset [@Kohavi1995]
+Handling imbalanced data is a large problem within the field of machine learning [@He2009]
+with a range of tools for removing the effect of the imbalance.
+The medical field is notably sensitive to data imbalance,
+where datasets contain hundreds or thousands more healthy samples than diseased.
+Incorrectly handling this data imbalance
+can make a machine learning algorithm appear far better than
+it performs in practice. [@Brabec2020;@Vandewiele2020]
+For the problem of classification within this thesis,
+the data imbalance is small,
+and so the balanced accuracy (@sec:measuring_success)
+is an appropriate tool to mitigate the imbalance.
+The KNN algorithm gives a balanced accuracy of 97.0%,
+scored based on a holdout dataset [@Kohavi1995],
+which is data not seen during the training and optimisation of the model.
 The use of a holdout dataset
 is the standard method of publishing results from machine learning algorithms.
 Scoring an algorithm using previously unseen data
-is important as algorithms are able to memorise the data given to them
-resulting in fantastic performance on the presented dataset
+is important since algorithms can memorise data given to them
+resulting in unbelievable performance on the presented dataset
 and much poorer performance on unseen data.
 
 With an accuracy of 97% for the KNN algorithm,
@@ -67,8 +70,9 @@ While there will inherently be some errors in classification,
 that doesn't mean the KNN algorithm is best suited for the task.
 Similar problems for the identification of crystal structures,[@Fulford2019;@Boattini2018;@Geiger2013]
 use Neural-Network based algorithms.
-While Neural-Network algorithms are more complex and complicated,
-that doesn't mean they perform better.
+While Neural-Network algorithms are used for complex problems
+like image [@Krizhevsky2017] and speech recognition, [@Hinton2012]
+that doesn't mean they perform better for well defined tasks.
 In a study of neural network algorithms presented at top conferences,
 @Dacrema2019 find that six of the seven neural-network models they could reproduce
 were outperformed by a simpler nearest-neighbour or graph-based algorithm.
@@ -77,11 +81,6 @@ These findings match my own investigation of a neural-network,
 which performed within the margin of error of the KNN model,
 while both being slower to train the model on the input data
 and slower for the classification of new data.
-
-Here we have presented a method
-for taking a small manually labelled dataset
-and training an algorithm to apply those labels to new data
-with fantastic accuracy.
 
 ## Machine Learning in Practice
 
@@ -119,22 +118,27 @@ In this example there is no label indicating
 what the local structures should be,
 so rather than a numerical indication of performance
 it is instead visual.
-For the identification of the crystal in the center,
-the KNN algorithm is fantastic,
-there is potentially some inconsistency
-in the interface between the liquid and the crystal
-however this boundary is not well defined and
-any issues are only a single layer.
+The KNN algorithm is able to follow the melting of all three crystals,
+showing a clear delineation between
+the liquid and crystal phases with few visible errors.
+There is some inconsistency at the single interface layer of each crystal,
+although this single layer of boundary region is not well defined.
 The identification of a defect within the p2 crystal (@fig:melting_p2_middle)
 demonstrates the utility of a measure of local structure.
-The "misclassification" within the liquid phase,
-that is the single particles classified as crystals in the liquid,
-primarily have local configurations which are crystal-like in nature,
-with some exceptions.
-However most notable,
+Along with the presence of presence of defects in the crystal structure,
+there are also many local structures in the liquid phase
+which are classified as crystalline.
+From a visual survey of these misclassified configurations,
+the majority form local structures close to those present in the crystals,
+having at most a single misaligned neighbour.
+Most notable
 is handling the solid state phase transition within the p2gg crystal,
 from @fig:melting_p2gg_start to @fig:melting_p2gg_middle.
 This phase transition is discussed in more detail in @sec:polymorphic_stability.
+The KNN algorithm developed in @sec:supervised_learning not only performs well
+on the dataset used for the development of the model,
+it can be applied to studying a range of problems
+in understanding these crystal structures.
 
 :::{class=subfigures id=fig:melting}
 
@@ -156,8 +160,3 @@ The lighter molecules are classified as liquid while
 the darker molecules are classified as crystalline.
 
 :::
-
-The KNN algorithm developed in @sec:supervised_learning not only performs well
-on the dataset used for the development of the model,
-it can be applied to studying a range of problems
-in understanding these crystal structures.

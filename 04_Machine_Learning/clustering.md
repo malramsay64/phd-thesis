@@ -24,10 +24,14 @@ the problem becomes one of reducing the number of dimensions to two,
 while retaining properties of the six dimensional dataset.
 The simplest method for dimensionality reduction
 is Principal Component Analysis (PCA).
-A linear PCA is matrix factorisation using Singular Value Decomposition.
 PCA transforms the data to a new coordinate system
 such that the greatest variance lies on the first coordinate
 and the second greatest variance on the second coordinate.
+A linear PCA is matrix factorisation using Singular Value Decomposition,
+which gives a transformation that is a linear combination
+of the original coordinates,
+allowing the introspection of the contribution of
+each original dimension to the transformed coordinates.
 @Fig:dim_reduction_PCA shows the first two dimensions of the PCA
 with each local structure plotted as a point.
 The PCA analysis shows the liquid occupying the full range of values,
@@ -44,22 +48,24 @@ of high density for each crystal structure, though there is little separation of
 crystal structures.
 ](../Projects/MLCrystals/figures/dim_reduction_PCA.svg){#fig:dim_reduction_PCA width=85%}
 
-With the linear dimensionality reduction
+With the linear dimensionality reduction of PCA
 not providing adequate separation of the crystal structures
 there are a suite of non-linear methods
 which could be more suitable for this problem.
 The Uniform Manifold Approximation and Projection (UMAP)
 is a technique for dimension reduction
 with a theoretical foundation in Riemann Geometry and algebraic topology. [@McInnes2018]
-The UMAP algorithm finds the nearest neighbours of every point in space,
-using it to find a low dimensional representation
-where points share the same neighbours.
-The low dimensional representation has the same local structures
-as the original high dimensional data,
+The UMAP algorithm finds the nearest neighbours of every point in the untransformed space,
+using the nearest neighbours to build a topological representation of the dataset.
+This topological structure can then be projected onto a lower dimensional plane,
+where the chosen representation minimises the difference between
+the topology of the high and low dimensional representations.
+This algorithm results in a low dimensional representation
+that has the same local structures as the original high dimensional data,
 The UMAP dimensionality reduction of @Fig:dim_reduction_UMAP of the relative angles
 shows a distinct separation between the liquid state and all the crystal states.
 This firstly indicates that UMAP is
-a fantastic tool for the visualisation of these datasets,
+a useful tool for the visualisation of these datasets,
 and additionally that separation of each of the crystals
 is possible using an clustering algorithm.
 
@@ -71,7 +77,7 @@ The UMAP algorithm shows excellent promise for
 visualising the clustering within this dataset,
 with the drawback that each crystal is separated
 into too many smaller clusters.
-One of the ways of increasing the complexity of a machine learning algorithm [@sec:supervised_learning]
+One of the ways of increasing the complexity of a machine learning algorithm (@sec:supervised_learning)
 is to introduce more classes to distinguish between.
 Before having to increase the complexity
 of a machine learning algorithm to handle many classes,
@@ -80,10 +86,9 @@ of the underlying data?
 For any six values of the relative orientation
 there are $6!$ points in space which represent those values
 reflecting the different ways of ordering the values.
-As an implementation detail of the nearest-neighbours algorithm [@sec:nearest_neighbours]
-the relative orientations are ordered by
-the distance to the neighbour.
-As molecules vibrate these distances are going to change re-order,
+As an implementation detail of the nearest-neighbours algorithm (@sec:nearest_neighbours)
+the relative orientations are ordered by their distance to the neighbour.
+As molecules vibrate these distances are going to change and re-order,
 a possible explanation for each crystal having many distinct clusters.
 We need a method of reducing the degeneracy of states.
 By sorting the values of relative orientation from smallest to largest,
@@ -98,26 +103,34 @@ with the liquid, the p2 and the pg crystals all in a single cluster,
 while the p2gg crystal is split across two clusters.
 ](../Projects/MLCrystals/figures/dim_reduction_sorted_UMAP.svg){#fig:dim_reduction_sorted_UMAP width=85%}
 
-Using the UMAP algorithm is excellent for visualisation
+Using the UMAP algorithm is useful for visualisation
 showing an excellent correlation between the labelled clusters
 and the visualisations.
 In this case where we have the opportunity
 to confirm the clustering with a labelled dataset,
 we can be confident the clusters from the UMAP dimensionality reduction
 match the labelled clustering.
-However, when performing the dimensionality reduction
+However, when performing dimensionality reduction
 the UMAP algorithm can artificially create tears in clusters
-and additionally increase the density of points for each cluster.
-The increased density of points is present for the liquid,
-with @fig:dim_reduction_sorted_UMAP having a nice clustering
-of all the liquid configurations,
-while the Principal Component Analysis (@fig:dim_reduction_PCA)
-visualises the liquid as covering all the phase space.
+and increase the density of points for each cluster.
+These unusual behaviours of the UMAP algorithm are shown in @fig:umap_demo,
+where the two Gaussian functions in @fig:classification_demo
+have been transformed into an abstract shape,
+with large distances between points which were close together
+and increasing the density of some points so they overlap.
+The increased density of points is also present in @fig:dim_reduction_sorted_UMAP,
+where all the liquid configurations are grouped together,
+contrasted with the PCA dimensionality reduction (@fig:dim_reduction_PCA)
+where the liquid configurations cover the entire configuration space.
 These issues which make UMAP unsuitable for clustering
 have been documented for the similar t-SNE algorithm
 [@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
-with a consensus that these dimensionality reduction techniques
-should be used for visualisation and other algorithms used for clustering.
+with a consensus that these dimensionality reduction techniques of t-SNE and UMAP,
+should be used for visualisation and alternative algorithms used for clustering.
+
+![Using the UMAP algorithm on two Gaussian clusters
+results in a highly distorted shape.
+](../Projects/MLCrystals/figures/umap_demo.svg){width=80% #fig:umap_demo}
 
 The visualisation of the dataset is important for three reasons.
 Firstly, the failure of the Principal Components Analysis
@@ -127,7 +140,7 @@ Secondly, separating the structures with the UMAP algorithm for visualisation,
 indicates it is possible to separate the crystal structures using clustering.
 Finally, we have found that reducing the degeneracy of the features
 is an important simplification
-which reduces the complexity of subsequent steps.
+which reduces the complexity of the following steps.
 
 ## Clustering Performance {#sec:clustering_performance}
 
@@ -135,27 +148,47 @@ With UMAP not being a suitable algorithm for clustering,
 an alternate choice is required.
 The non-linear separation allowed by UMAP
 does provide a hint as to the algorithms which will be suitable.
-The algorithm chosen for clustering is HDBSCAN [@Campello2013;@McInnes2017]
-which finds areas of high density assigning them to clusters.
-The HDBSCAN algorithm doesn't require all points to belong to a cluster,
-with those too far from an area of high density
-being considered noise and left unclustered.
-Leaving points unclustered is a better fit for clustering configurations
-since only configurations which have a high density of points,
-that is locally favoured configurations
-will be assigned to a cluster.
-The result of clustering using the HDBSCAN algorithm
-is displayed in @fig:cluster_sorted_hdbscan_vis
-using the UMAP algorithm for visualisation (see @sec:visualisation).
-This shows the assignment of clusters
-matches the groups formed from the visualisation.
-The assignment of structures to the clusters
-has to be performed manually,
-with @fig:cluster_sorted_hdbscan displaying the entire configurations
-from which the assignment can be made.
-Most interesting is that the structure of the p2gg crystal
-has two distinct alternating layers
-which explains why there are more clusters than distinct crystals.
+The Hierarchical Density-Based Clustering of Applications with Noise (HDBSCAN) algorithm [@Campello2013;@McInnes2017]
+was chosen for being similar to UMAP in creating a
+topological representation of the data.
+Clusters within the HDBSCAN algorithm are assigned to regions
+of the input space containing a high density of points,
+meaning the number of clusters is algorithmically determined.
+The HDBSCAN algorithm doesn't require all points belong to a cluster,
+where points are too far from a cluster they considered noise and left unclustered.
+Since configurations of an equilibrium liquid
+should be exploring all the available phase space,
+considering the liquid configurations as noise is appropriate.
+We are only concerned with configurations
+with a higher density than the liquid.
+
+To evaluate the results of the clustering algorithm
+we will use the UMAP dimensionality reduction
+shown in @fig:dim_reduction_sorted_UMAP.
+Instead of the colouring being provided by
+the labels we have assigned to the dataset,
+they will be applied by the clustering algorithm.
+These results of using the HDBSCAN algorithm for clustering
+are shown in @fig:cluster_sorted_hdbscan_vis,
+showing the assignment of clusters from HDBSCAN
+closely matches the assignment of clusters from 1 to 4.
+The cluster labelled -1 are the points that
+the HDBSCAN algorithm considered noise,
+which corresponds to the points we labelled as liquid
+in @fig:dim_reduction_UMAP.
+The classification of the liquid as noise
+showcases the suitability of the HDBSCAN algorithm
+for identifying recurring local structures within a liquid configuration.
+The remaining clusters are assigned to the values 1 through 4,
+these numbers have no meaning other than grouping like items together,
+however, they can be assigned to each crystal structure manually
+by comparing with the simulation configurations.
+@fig:cluster_sorted_hdbscan uses the same colours as @fig:cluster_sorted_hdbscan_vis
+so we can assign the clusters to each polymorph.
+The cluster labelled 0 corresponds to the pg polymorph,
+the cluster labelled 2 corresponds to the p2 polymorph,
+while the clusters labelled 1 and 3
+are alternating layers of the p2gg crystal.
 This additional knowledge demonstrates that
 while the dataset used in the clustering
 was known and understood,
@@ -170,7 +203,7 @@ The label -1 indicates points in no cluster,
 while all other labels have no meaning.
 ](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_vis.svg){#fig:cluster_sorted_hdbscan_vis width=80%}
 
-<div id="fig:cluster_sorted_hdbscan" class="subfigures">
+::: {#fig:cluster_sorted_hdbscan class="subfigures"}
 
 ![p2](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_p2.svg){#fig:cluster_reduced_sorted_hdbscan_p2 width=33%}
 ![p2gg](../Projects/MLCrystals/figures/cluster_sorted_hdbscan_p2gg.svg){#fig:cluster_reduced_sorted_hdbscan_p2gg width=33%}
@@ -180,7 +213,7 @@ Applying the cluster labels from @fig:cluster_sorted_hdbscan_vis
 to the p2 (a), p2gg (b) and pg (c) crystals using the same colourscheme.
 These are the configurations used to form the local environments.
 
-</div>
+:::
 
 Clustering is a tool allowing for the identification of
 distinct local structures within a simulation

@@ -32,11 +32,12 @@ needs a higher dimensional space.
 The formula for the order parameter [@eq:orientational_order_parameter]
 takes the orientation for each neighbour,
 collapsing them into a single value
-represented as a point on a number line.
+represented as a point along the number line.
 The original data,
 being the relative orientation of each neighbour
-can be represented as a point in 6 dimensional space
-which better allows for separation of values.
+can be represented as a point in 6 dimensional space.
+Having the entire six dimensional space to work with
+provides more opportunities to distinguish each structure.
 Machine Learning is a tool which can assist in finding surfaces
 to separate values in higher dimensional space.
 
@@ -48,13 +49,13 @@ overlap for each of the crystals and the liquid.
 
 Machine learning is becoming widely used within materials science [@Mueller2016;@Vasudevan2019]
 for applications including;
-detecting of crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
+detecting crystal structures, [@Spellings2018;@Carrasquilla2017;@Boattini2018]
 characterising amorphous materials, [@Ballard2016;@Ballard2017]
-predicting of material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
-developing of interatomic potentials. [@Snyder2012]
-
-Machine learning is most useful where there are many hand tuned fitting parameters,
-and for the analysis of large datasets we don't yet fully understand.
+predicting material properties, [@Hansen2013;@Hansen2015;@Pilania2013;@McDonagh2019] and
+developing interatomic potentials. [@Snyder2012]
+Machine learning is most useful for problems
+where there are many hand tuned fitting parameters,
+and the analysis of large datasets we don't yet fully understand.
 The application of machine learning to these problems
 can be broken into two main groups;
 Supervised Learning,
@@ -68,11 +69,10 @@ Supervised learning is a tool for developing a predictive model
 based on previous data with a known outcome.
 The supervised part of the learning
 is the process of drawing a line to predict future outcomes.
-This can either be finding the line of best fit [@fig:regression_demo],
-or a decision surface which separates one class from another [@fig:classification_demo].
+This can either be finding the line of best fit (@fig:regression_demo),
+or a decision surface which separates one class from another (@fig:classification_demo).
 Increasing the complexity of the machine learning algorithm comes from;
-increasing the number of inputs, creating a line or surface in higher dimensional
-  space,
+increasing the number of inputs, creating a line or surface in higher dimensional space,
 increasing the complexity of the line or surface, or
 increasing the number of lines to distinguish a larger number of classes.
 
@@ -104,7 +104,7 @@ The optimisations allowed by machine learning
 speed up discovery by 1000 times over previous methods.
 
 Optimisation using machine learning can also be applied to smaller problems.
-In the motivating example @fig:order_parameter_overlap]
+In the motivating example (@fig:order_parameter_overlap)
 to sepearate the liquid and p2 structures
 we need to choose a value below which a structure is considered liquid-like
 and above is considered crystal like.
@@ -120,22 +120,18 @@ based on the available data.
 
 Unsupervised algorithms in machine learning,
 also known as clustering algorithms,
-take a dataset and are divide it into clusters,
+take a dataset and divide it into clusters,
 where values within each cluster are more closely related to each other
 that values in different clusters. [@Russell2016]
-Rather than being able to identify liquid or crystal structure like supervised learning,
-unsupervised learning can identify there are two distinct types of structure present
-and the structures which belong to each.
-The term clustering will be used over unsupervised learning
-throughout the rest of this thesis.
+Unsupervised learning is a tool for identifying pieces of data which should be grouped together,
+and how many groups are present in a dataset,
+the labelling of each group requires human expertise.
+Unsupervised learning is also known as clustering,
+with the term clustering used throughout the rest of this thesis.
 
 Within the field of Chemistry,
-clustering has been used to help understand energy landscapes [@Wales2018;@Ballard2016;@Ballard2017]
-grouping together similar configurations within a molecular dynamics simulation,
-providing a method of understanding how the simulation state
-moves between the available configurations.
-Other uses within Molecular Dynamics
-is finding the different local structures present within a simulation.
+clustering has been used within Molecular Dynamics
+to find the different local structures present within a simulation.
 @Spellings2018 use clustering to identify
 a range of complex crystal structures.
 The results from the machine learning matched those from
@@ -158,22 +154,23 @@ It is not a black box which magically solves problems. [@Lehman2019]
 
 There are a range of parameters which can be used
 to identify local structure within a simulation.
-In the field of self assembly @Keys2011 describe six;
+In the field of self assembly @Keys2011 describe six main descriptors;
 Point matching,
 shape histogram,
 shape distributions,
 harmonic descriptors,
 shape context, and
-lightfield descriptor.
-
+lightfield descriptor
+noting there are a range of other possible descriptors.
 Describing the similarity of one structure to another
 can require one, or many of these parameters.
 For simulations of atomic particles
 there are a range of order parameters
-making use of the above descriptions,
-the Steinhardt bond order parameters, [@Steinhardt1983]
-Bond Angle Analysis, and [@Ackland2006]
-Common Neighbour Analysis. [@Faken1994;@Honeycutt1987]
+making use of the above descriptions;
+the radial distribution function is a shape distribution,
+the Steinhardt bond order parameters, [@Steinhardt1983] and Bond Angle Analysis [@Ackland2006]
+are harmonic descriptors,
+while Common Neighbour Analysis [@Faken1994;@Honeycutt1987] is a graph based descriptor.
 Each of these different order parameters
 focus on the identification of a small range of structures,
 typically; Face Centered Cubic, Body Centered Cubic, and Hexagonal Close Packed.
@@ -184,7 +181,7 @@ While the hand tuned parameters limits the re-usability of these methods,
 they reflect the relationships important in crystal structures
 and have been developed and tested over many years.
 There are a range of studies [@Reinhart2017;@Dietz2017;@Boattini2018;@Spellings2018]
-which build upon these traditional methods,
+which build upon these order parameters,
 using machine learning to combine many values
 and make decisions for new datasets.
 Each of these machine learning approaches have slightly different approaches,
@@ -193,11 +190,11 @@ as one of the dimensions describing local structure.
 
 Current applications of machine learning for crystal detection
 only deal with spherically symmetric particles.
-Many molecular crystals are far more complicated, [@Beran2016] for example
-water Ice has 18 different polymorphs we have found so far, @Algara-Siller2015
+Many molecular crystals have a range of polymorphs. [@Beran2016]
+We have *found* 18 different polymorphs for Ice, @Algara-Siller2015
 with the most recent found in 2015.
 Other examples of this diversity are
-to flufenamic acid [@Lopez-Mejias2012] with at least 9 polymorphs, and
+flufenamic acid [@Lopez-Mejias2012] with at least 9 polymorphs, and
 triacetone-triperoxide [@Reany2009] with at least 6 polymorphs.
 The prevalence of molecular polymorphs is such that @McCrone1965 noted that
 "the number of forms known for each compound is proportional to
@@ -205,7 +202,7 @@ the time and money spent researching that compound."
 This diversity of structure raises additional complications
 in the identification of these structures.
 The CHILL [@Moore2010] and CHILL+ [@Nguyen2015] algorithms
-are traditional approaches for detecting ice within liquid water
+are order parameter based approaches for detecting ice within liquid water
 however, they are limited to the detection of ice Ih, and Ic.
 Machine learning models for the identification of ice crystal structures [@Geiger2013;@Fulford2019]
 provide analysis that is both more accurate
@@ -213,15 +210,17 @@ and covers a wider range of crystal structures.
 
 A further problem with molecules having so many polymorphs
 is finding the different structures present within a simulation.
-Not only for the discovery of novel polymorphs
-but also ensuring a complete understanding of a configuration.
+Finding structures is important for the discovery of novel polymorphs,
+and also ensuring a complete understanding of a configuration.
 One of the limitations of existing detection methods
 is that you only see the range of structures you are looking for
 rather than the range of structures which exist.
-Using a clustering approach [@Spellings2018]
-provides a complete overview of the structures present
-with minimal additional effort.
-
+With a clustering approach,
+the work lies in finding the appropriate descriptors
+to use for a problem.
+However unlike order parameters,
+the descriptors are transferable
+across a wide range of problem descriptions.
 Machine learning is a tool ideally suited
 for the identification and classification
 of molecular crystal structures.
@@ -235,8 +234,9 @@ allowing the researcher to focus on the science.
 
 This chapter demonstrates the applicability of machine learning
 to understanding crystal structures within molecular crystals.
-Firstly to demonstrate clustering as a tool for
+Firstly, in @sec:clustering we show the applicability of clustering as a tool for
 the identification of regions of local structure within a simulation
-requiring no previous knowledge.
-Secondly demonstrating Supervised learning for the accurate detection and monitoring
-of many molecular crystal structures within a simulation.
+requiring minimal knowledge of the configuration.
+Then in @sec:supervised_learning we use supervised learning
+for the accurate detection and monitoring
+of many polymorphs within a simulation.

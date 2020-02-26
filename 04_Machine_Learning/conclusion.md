@@ -1,21 +1,31 @@
 # Conclusion
 
-Machine learning is a valuable tool
+Machine learning is a valuable tool that can be used
 for the understanding of crystal structures in molecular dynamics simulations.
-This is shown using clustering in @sec:clustering
-to find local structures which are highly stable,
-that is highly occupied.
-The identification of these structures within additional configurations
-can then be done using supervised learning,
-shown in @sec:supervised_learning.
+In this chapter we have demonstrated two of the ways
+in which it can be used.
+The first being clustering,
+where in @sec:clustering we showed a method for identifying
+the range of structures present in a series of configurations.
+The only prior knowledge used
+was an appropriate method of describing the local configuration
+which we developed using visualisation tools in @sec:visualisation.
+Clustering was able to identify the range of structures
+we generated to test the algorithm which we manually labelled.
+The manually labelling of the structures allows these structures to be used
+to train a supervised learning algorithm.
+Supervised learning is the second use of machine learning in this chapter,
+in @sec:supervised_learning for tracking the presence of these structures within a simulation,
+used for understanding the transition between each state.
 However most important to machine learning
-is the understanding of the data being used,
+is the understanding of the data,
 whether that is finding a description of the local structure
-which best describes the differences
-between the states of interest.
-This allows for simpler models
-which are both faster to compute
-but also more understandable and describable.
+which best describes the differences between the states of interest
+or how find ways to simplify the high dimensional data.
+Understanding the data allows for simpler models
+that are both faster to compute,
+a very important factor when considering millions of local configurations,
+and also more understandable and describable.
 
 An extension of this work is the validation of this method
 on a wide variety of molecular shapes.
