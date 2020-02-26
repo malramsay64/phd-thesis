@@ -244,9 +244,9 @@ were packed together
 
 :::{class=subfigures id=fig:crystal_unit_cell}
 
-![p2](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2}
-![pg](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_pg}
-![p2gg](../placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2gg}
+![p2](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2}
+![pg](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_pg}
+![p2gg](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2gg}
 
 The unit cells of the p2 (a) the pg (b) and the p2gg (c) crystals
 documenting the unit cell parameters
@@ -308,7 +308,7 @@ of the number of overall layers
 so the orthorhombic configuration is favourable.
 
 ![Depicting conversion of tilted cell to orthorhombic
-](../placeholder_figure.png){width=80% #fig:orthorhombisation}
+](../01_Methods/figures/placeholder_figure.png){width=80% #fig:orthorhombisation}
 
 The outer 1/3 of the orthorhombic configuration is then melted
 at 2.2 times the melting point,

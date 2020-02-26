@@ -137,7 +137,9 @@ replicating experimental results.
 The Lewis--Wahnström model displays the same two-step relaxation process [@Wahnstrom1993,@Wahnstrom1997,@Lombardo2006]
 that is characteristic of fragile liquids in experiments.
 
-![The geometry of the Lewis--Wahnström model](../placeholder_figure.png){width=80% #fig:lewis_wahnstrom_mol}
+![The geometry of the Lewis--Wahnström model.
+There is an angle of \SI{75}{\degree} subtending the centers of the thee particles.
+](../00_Introduction/figures/lewis_wahnstrom.svg){width=80% #fig:lewis_wahnstrom_mol}
 
 The Lewis--Wahnström model of ortho-terphenyl is the most widely studied
 computational model of ortho-terphenyl,
