@@ -170,8 +170,8 @@ the labels we have assigned to the dataset,
 they will be applied by the clustering algorithm.
 These results of using the HDBSCAN algorithm for clustering
 are shown in @fig:cluster_sorted_hdbscan_vis,
-showing the assignment of clusters from HDBSCAN
-closely matches the assignment of clusters from 1 to 4.
+where the assignment of clusters from HDBSCAN
+closely matches the grouping of the UMAP algorithm.
 The cluster labelled -1 are the points that
 the HDBSCAN algorithm considered noise,
 which corresponds to the points we labelled as liquid

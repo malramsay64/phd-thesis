@@ -127,7 +127,7 @@ with a good set of features requiring domain expertise.
 The features are a set of values which best describe
 the underlying behaviour.
 
-## Labelling Local structures
+## Labelling Local structures {#sec:methods_ml_dataset}
 
 The creation of the simulation provides configurations
 which can then be used for the task of classification.
@@ -156,7 +156,7 @@ The algorithms used for the machine learning
 leverage the scikit-learn package [@Pedregosa2012]
 utilising the well designed interface. [@Buitinck2013]
 
-### Measuring Success
+### Measuring Success {#sec:measuring_success}
 
 Another important part of machine learning
 is the method used to measure success.
