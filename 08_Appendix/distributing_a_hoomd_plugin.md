@@ -1,6 +1,4 @@
-# Distributing a Hoomd Plugin
-
-2018-06-03
+# Distributing a Hoomd Plugin (2018-06-03)
 
 A piece of software I have been using in my reasearch is [Hoomd][],
 a 'relatively' new package for running Molecular Dynamics (MD) simulations.
@@ -372,3 +370,5 @@ test:
 [yaml]: http://yaml.org/
 [meta.yaml]: /static/code/hoomd-plugin/meta.yaml
 [conda-build-pinning-issue]: https://github.com/conda/conda-build/issues/2571
+
+<!-- markdownlint-disable-file -->

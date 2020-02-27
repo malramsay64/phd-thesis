@@ -1,6 +1,4 @@
-# Adventures in the Python Visualisation Landscape
-
-2018-03-17
+# Adventures in the Python Visualisation Landscape (2018-03-17)
 
 Calling the current python visualisation landscape fragmented would probably be an understatement,
 since itself requires a [visualisation][jakevdp pycon vis] to even begin to comprehend.
@@ -192,3 +190,5 @@ to understand a dataset.
 [altair case study]: https://altair-viz.github.io/case_studies/exploring-weather.html
 [altair notebook size]: https://github.com/altair-viz/altair/issues/249
 [altair setting titles]: https://github.com/altair-viz/altair/issues/585
+
+<!-- markdownlint-disable-file -->

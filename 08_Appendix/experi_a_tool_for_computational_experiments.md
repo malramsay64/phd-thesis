@@ -1,6 +1,4 @@
-# Experi: A tool for computational experiments
-
-2018-06-25
+# Experi: A tool for computational experiments (2018-06-25)
 
 ## Abstract
 
@@ -21,7 +19,7 @@ a complete record of every simulation that I run which is version controllable.
 Experi is installable using both `pip` and `conda`,
 
 ```shell
-$ pip install experi
+pip install experi
 ```
 
 Currently, Experi only runs on python 3.6, because that is what I use and "premature optimisation is
@@ -81,7 +79,7 @@ experiments. It is also the level of abstraction for the command line interface,
 written to help run my experiments. A command I would run for the create step would be
 
 ```bash
-$ sdrun --temperature 0.1 --num-steps 100 --space-group p2 create configuration.out
+sdrun --temperature 0.1 --num-steps 100 --space-group p2 create configuration.out
 ```
 
 I specify the variables for the simulation, the type of simulation being `create`, and then the
@@ -241,7 +239,7 @@ With the input file specified, assuming it is named `experiment.yml`, the simula
 submitted to the scheduler using the command
 
 ```bash
-$ experi
+experi
 ```
 
 which will submit the job to the scheduler if it is available. Regardless of the presence of the
@@ -262,3 +260,5 @@ variables I require.
 [yaml not so great]: https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html
 [sdrun]: https://github.com/malramsay64/statdyn-simulation
 [python string formatting]: https://pyformat.info/
+
+<!-- markdownlint-disable-file -->

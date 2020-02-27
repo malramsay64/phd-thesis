@@ -1,6 +1,4 @@
-# Quaternions for Orientation in MD
-
-2017-09-13
+# Quaternions for Orientation in MD (2017-09-13)
 
 In the understanding of the dynamics of a molecule in a Molecular Dynamics (MD) Simulation
 the two main properties we use to understand liquid behaviour are
@@ -16,12 +14,10 @@ This representation allows for quick and simple calculation of
 the motion between two separate times.
 In the simplest case, conceptually this is just computing
 
-<p>
 \begin{align}
 \text{displacement} &= \text{norm}(\text{position}_2 - \text{position}_1) \\
 \text{rotation} &= \text{norm}(\text{orientation}_2 - \text{orientation}_1).
 \end{align}
-</p>
 
 For the displacement,
 we can just use a standard Euclidean distance norm.
@@ -47,48 +43,50 @@ In two dimensions it is possible to describe the orientation of a molecules
 using a single angle, $\theta$.
 This is a perfectly reasonable representation.
 We can find the rotational distance $\Delta\theta$ between two orientations as
-\\[
-\Delta\theta = \theta_2 - \theta_1
-\\]
+
+$$ \Delta\theta = \theta_2 - \theta_1 $$
+
 This can become a bit of an issue if we want to keep our angle bounded.
 A reasonable range for an angle of rotation is $(-\pi,pi]$,
 as we can assume a rotation larger occurred in the opposite direction.
 The code to implement this in python would look something like the function below;
 
-    import math
+```python
+import math
 
-    def rotationalDistance(theta1, theta2):
-        delta_theta = theta2 - theta1
-        if delta_theta > math.pi:
-            delta_theta -= 2*math.pi
-        elif delta_theta <= -math.pi:
-            delta_theta += 2*math.pi
-        return delta_theta
+def rotationalDistance(theta1, theta2):
+    delta_theta = theta2 - theta1
+    if delta_theta > math.pi:
+        delta_theta -= 2*math.pi
+    elif delta_theta <= -math.pi:
+        delta_theta += 2*math.pi
+    return delta_theta
+```
 
 ### Complex Numbers
 
 An equally valid method for the representation of angle in 2D is to use complex numbers.
 Any complex number $z = a+ib$ can be represented in exponential form
-\\[
-z = r\text{e}^{i\theta}
-\\]
+
+$$ z = r\text{e}^{i\theta} $$
+
 where $r$ is the length, or modulo, of $z$
-\\[
-r = \sqrt{a^2 + b^2}
-\\]
+
+$$ r = \sqrt{a^2 + b^2} $$
+
 and $\theta$ is the argument of $z$,
 which for the first quadrant is
-\\[
-\theta = \tan^{-1}\frac{b}{a}
-\\]
+
+$$ \theta = \tan^{-1}\frac{b}{a} $$
+
 Due to the range of the $\tan^{-1}$ function only being $[-\pi/2, \pi/2]$,
 the quadrant of the complex number is important to having values in the range $(-\pi,pi]$.
 There is a nice computational solution to this problem implemented in almost all languages,
 the `atan2` function which works out the quadrant for us,
 giving an angle in our desired range.
-\\[
-\theta = \text{atan2}(b, a)
-\\]
+
+$$ \theta = \text{atan2}(b, a) $$
+
 Make special note of the order of arguments to the `atan2` function.
 
 Now that we understand how to convert our final complex number to a rotation,
@@ -97,23 +95,19 @@ When we multiply two complex numbers together it can be thought of as rotating b
 This can be demonstrated by performing a multiplication with
 the polar form of a complex number.
 
-<p>
 \begin{align}
 z &= r_1e^{i\theta_1} \times r_2e^{i\theta_2}\\
 &  = r_1r_2e^{i\theta_1 + i\theta_2}\\
 &  = r_1r_2e^{i(\theta_1 + \theta_2)}
 \end{align}
-</p>
 
 Conversely division of a complex number by another is the distance between the two angles
 
-<p>
 \begin{align}
 z &= r_1e^{i\theta_1} / r_2e^{i\theta_2} \\
   &= \frac{r_1}{r_2}e^{i\theta_1 - i\theta_2} \\
   &= \frac{r_1}{r_2}e^{i(\theta_1 - \theta_2)}
 \end{align}
-</p>
 
 It is possible to do all our intermediate calculations using
 the mathematics of complex numbers.
@@ -122,11 +116,13 @@ the complex number representing that can be converted to a angle.
 
 Implementing this is produces a function that looks like the one below,
 
-    import math
+```python
+import math
 
-    def complexRotation(initial, final):
-        delta = final/initial
-        return math.atan2(delta.imag, delta.real)
+def complexRotation(initial, final):
+    delta = final/initial
+    return math.atan2(delta.imag, delta.real)
+```
 
 While the code is written in python,
 most programming languages will handle complex numbers in a similar fashion.
@@ -155,31 +151,28 @@ quaternions are a mathematical construct that allow us to represent rotations,
 only in three dimensions instead of two.
 As the name suggests quaternions consist of four values of the form
 
-\\[
-a + b\mathbf{i} + c\mathbf{j} + d\mathbf{k}
-\\]
+$$ a + b\mathbf{i} + c\mathbf{j} + d\mathbf{k} $$
 
 where the relationships
-\\[
-\mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = \mathbf{ijk} = -1
-\\]
+
+$$ \mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = \mathbf{ijk} = -1 $$
+
 hold true.
 These relationships are essentially giving us the rules for
 the operations on the quaternions.
 
 These operations on quaternions are very similar to those on complex numbers.
 The conjugate of a quaternion $q$ is;
-\\[
-q^\* = a - b\mathbf{i} - c\mathbf{j} - d\mathbf{k}
-\\]
+
+$$ q^\* = a - b\mathbf{i} - c\mathbf{j} - d\mathbf{k} $$
+
 The norm of $q$ is
-\\[
-||q|| = \sqrt{q^\*q} = \sqrt{qq^\*} = \sqrt{a^2 + b^2 + c^2 + d^2}
-\\]
+
+$$ ||q|| = \sqrt{q^\*q} = \sqrt{qq^\*} = \sqrt{a^2 + b^2 + c^2 + d^2} $$
+
 The reciprocal of $q$ is given as
-\\[
-q^{-1} = \frac{q^\*}{||a||^2}
-\\]
+
+$$ q^{-1} = \frac{q^\*}{||a||^2} $$
 
 Quaternions have the same properties of multiplication and division as complex numbers.
 Multiplying a quaternion by another is applying a rotation,
@@ -194,33 +187,38 @@ does an excellent comparison of six different methods.
 
 Of the methods used to compute rotational magnitude $\Phi$,
 the one I think is most suitable for use in Molecular Dynamics is
-\\[
-\Phi = 2\ \text{arccos}(|\mathbf{q}_1 · \mathbf{q}_2|)
-\\]
+
+$$ \Phi = 2\ \text{arccos}(|\mathbf{q}_1 · \mathbf{q}_2|) $$
+
 This gives a value on the range $[0, 2\pi]$ in units of radians.
 I think this is most suitable as it gives results in units of radians,
 rather than some approximate distance,
 while remaining simple and fast to compute.
 Implemented in python this function is;
 
-    import numpy
+```python
+import numpy
 
-    def quaternion_distance(initial, final):
-        return 2*numpy.arccos(numpy.abs(numpy.dot(initial, final)))
+def quaternion_distance(initial, final):
+    return 2*numpy.arccos(numpy.abs(numpy.dot(initial, final)))
+```
 
 For an optimised computation in python over an array of values,
 the below is the fastest implementation I could find.
 
-    import numpy
-    def quaternion_distance_array(initial, final):
-        return 2*numpy.arccos(numpy.abs(numpy.einsum('ij,ij->i', initial, final)))
+```python
+import numpy
+def quaternion_distance_array(initial, final):
+    return 2*numpy.arccos(numpy.abs(numpy.einsum('ij,ij->i', initial, final)))
+```
 
 For more complicated operations using quaternions I would suggest having a look at [quaternion][pyquaternion],
 an open source python module by Mike Boyle which adds support for quaternions to numpy.
 Mike also has a [C++][cquaternion] version of the library available.
 
-
 [^1]: Huynh, D. Q. (2009). Metrics for 3D rotations: Comparison and analysis. Journal of Mathematical Imaging and Vision, 35(2), 155–164. [doi: 0.1007/s10851-009-0161-2](https://doi.org/10.1007/s10851-009-0161-2) ([#icanhazpdf](http://ai2-s2-pdfs.s3.amazonaws.com/5617/8de1001efe54792ad93f6980de5d5e91906b.pdf))
 [hoomd]: http://glotzerlab.engin.umich.edu/hoomd-blue/
 [pyquaternion]: https://github.com/moble/quaternion
 [cquaternion]: https://github.com/moble/Quaternions
+
+<!-- markdownlint-disable-file -->

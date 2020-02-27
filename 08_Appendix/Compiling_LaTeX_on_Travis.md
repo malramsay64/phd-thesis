@@ -350,3 +350,5 @@ install biber are below.
 [usyd-beamer-theme]: https://github.com/malramsay64/usyd-beamer-theme
 [.travis.yml]: /static/code/travis_latex/.travis.yml
 [Makefile]: /static/code/travis_latex/Makefile
+
+<!-- markdownlint-disable-file -->

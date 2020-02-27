@@ -1,6 +1,4 @@
-# Speed Through Specificity
-
-2018-08-07
+# Speed Through Specificity (2018-08-07)
 
 A common criticism about the Python programming language is that it is slow, often with reference to
 a benchmark comparing a range of tasks. This criticism is widely addressed with articles by
@@ -103,3 +101,5 @@ standard library, instead it is usually just a `pip install` away.[^3]
 [scikit-cuda]: https://scikit-cuda.readthedocs.io/en/latest/
 [MyHDL]: http://www.myhdl.org/
 [nifpga-python]: http://nifpga-python.readthedocs.io/en/latest/
+
+<!-- markdownlint-disable-file -->

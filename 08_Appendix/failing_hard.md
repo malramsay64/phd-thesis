@@ -1,6 +1,4 @@
-# Failing Hard: How I 'lost' two years of data.
-
-2018-11-22
+# Failing Hard: How I 'lost' two years of data. (2018-11-22)
 
 Failure is one of those topics
 that is discussed far less than it should be
@@ -229,3 +227,5 @@ although that doesn't mean there isn't another hiding away for me to find.
 [Hoomd]: https://hoomd-blue.readthedocs.io/en/stable/index.html
 [cookiecutter-cms]: https://github.com/MolSSI/cookiecutter-cms
 [cookiecutter-data-science]: https://drivendata.github.io/cookiecutter-data-science/
+
+<!-- markdownlint-disable-file -->

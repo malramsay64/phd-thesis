@@ -1,6 +1,4 @@
-# A guide to setting up remote SSH
-
-2018-04-09
+# A guide to setting up remote SSH (2018-04-09)
 
 In the right (or wrong) hands ssh is a powerful tool
 for the remote management of a Unix system.
@@ -10,13 +8,13 @@ The simplest method to check if you have ssh server running on your machine
 is to run
 
 ```shell
-$ ssh localhost
+ssh localhost
 ```
 
 If ssh is not installed or running
 this will print out a message
 
-```
+```error
 ssh: connect to host localhost port 22: Connection refused
 ```
 
@@ -35,7 +33,7 @@ The package required for installation is in most distributions named `openssh-se
 So for Ubuntu running the command;
 
 ```shell
-$ sudo apt install openssh-server
+sudo apt install openssh-server
 ```
 
 will install the package as appropriate.
@@ -52,14 +50,14 @@ and started now to test.
 To start the openssh server, run the below command
 
 ```shell
-$ sudo systemctl start ssh
+sudo systemctl start ssh
 ```
 
 which is using the `systemd` init system to start the openssh server instance.
 For fedora and CentOS, the ssh service instead has the name sshd so run
 
 ```shell
-$ sudo systemctl start sshd
+sudo systemctl start sshd
 ```
 
 to start the server instance.
@@ -67,7 +65,7 @@ Since this is probably a service you want running automatically on boot,
 running the command
 
 ```shell
-$ sudo systemctl enable ssh
+sudo systemctl enable ssh
 ```
 
 will put files in the appropriate places to enable the service on boot.
@@ -77,7 +75,7 @@ Once the ssh server is running
 our command to connect at localhost
 
 ```shell
-$ ssh localhost
+ssh localhost
 ```
 
 should present a new message like the one below.
@@ -316,5 +314,6 @@ To access the service over the internet,
 where possible use the institutional VPN,
 or set up your own.
 
-
 [fqdn wiki]: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
+
+<!-- markdownlint-disable-file -->

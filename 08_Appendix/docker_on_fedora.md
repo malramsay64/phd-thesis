@@ -1,6 +1,4 @@
-# A Complete Guide to Docker on Fedora
-
-2018-09-02
+# A Complete Guide to Docker on Fedora (2018-09-02)
 
 While there are numerous guides to installing Docker on Fedora,
 none of the guides leave the installation
@@ -200,3 +198,5 @@ Hopefully this
 
 [docker post-install]: https://docs.docker.com/install/linux/linux-postinstall/
 [docker fedora developer]: https://developer.fedoraproject.org/tools/docker/docker-installation.html
+
+<!-- markdownlint-disable-file -->

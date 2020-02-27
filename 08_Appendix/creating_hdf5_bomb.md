@@ -1,6 +1,4 @@
-# Creating an HDF5 Bomb
-
-2018-03-15
+# Creating an HDF5 Bomb (2018-03-15)
 
 You may have heard of a [zip bomb][zip bomb] or other decompression 'bombs',
 which have the basic premise of containing a large volume of highly redundant data
@@ -86,3 +84,5 @@ sometimes the simplest approach is to make the big data small.
 [zip bomb]: https://en.wikipedia.org/wiki/Zip_bomb
 [hdf5 compression]: https://support.hdfgroup.org/HDF5/faq/compression.html
 [hdf5 bomb]: https://drive.google.com/open?id=1tlr00OFEuKMkSz0slczInh3211-ZRBIz
+
+<!-- markdownlint-disable-file -->
