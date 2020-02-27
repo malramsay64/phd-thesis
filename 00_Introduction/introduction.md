@@ -5,7 +5,7 @@ title: Introduction
 
 Molecular materials are important ...
 Despite extensive study,
-there are many aspects of molecular liquids which are poorly understood,
+there are aspects of molecular liquids which are poorly understood,
 of which two stand out;
 the non-Arrhenius temperature dependence of the dynamics, and
 the phenomenally slow growth rates of molecular liquids.
@@ -40,7 +40,7 @@ The fragility $m$ is given by;
 
 $$ m = \frac{\d \log(\eta)}{\d T_g/T} \vert_{T=T_g} $$
 
-which is the slope at the glass transition temperature and
+being the slope at the glass transition temperature and
 has values ranging from $\approx 16$ for strong liquids to 200 for fragile liquids. [@Bohmer1993;@Meenakshisundaram2019]
 Ortho-terphenyl has a fragility $m=80$. [@Bohmer1993;@Schug1998]
 
@@ -192,7 +192,7 @@ The current state of the art in molecular dynamics simulations
 is millisecond timescales @Chen2019a,
 while glass formation takes place over thousands of seconds.
 
-# Improving Computational Tractability
+# Improving Computational Tractability {#sec:computational_tractability}
 
 Part of the issue of modelling glass formation
 is the long timescales required for the simulations.

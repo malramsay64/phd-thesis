@@ -247,7 +247,7 @@ Smaller changes are also a lot easier
 for someone else to review. [@sec:peer-review]
 
 The minimum documentation for a project should be a README file,
-which is a first port of call for anyone coming across the project.
+a first port of call for anyone coming across the project.
 Much like an abstract of a journal article,
 a README file should;
 explain what the software does,
@@ -306,7 +306,7 @@ The Journal of Open Source Software (JOSS)
 provides peer-review guidelines for scientific software. [@joss-reveiw-criteria]
 As projects change and develop
 the original review of the work becomes outdated,
-particularly for projects which are widely used and trusted,
+for widely used and trusted projects
 the peer-review takes place on *every* change made.
 For example the Gromacs project requires approval from multiple
 authors before any change is incorporated into the main codebase. [@Pall2015]
