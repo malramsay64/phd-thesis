@@ -131,7 +131,7 @@ The guidelines for code at Google [@Henderson2017] includes the requirements;
 - All code used in production is expected to have unit tests
 - Style guides for each language to ensure consistency
 
-## Reproducibility
+## Reproducibility {#sec:reproducibility}
 
 The progression of science is the processes of building upon
 the work laid down by those before us.
@@ -369,3 +369,14 @@ is the review of the code by another engineer.
 I have made the review possible by open-sourcing
 all the code used for this thesis
 with the details documented in @sec:software_projects.
+The openness also extends to this thesis,
+which is available on GitHub at [github.com/malramsay64/phd-thesis](https://github.com/malramsay64/phd-thesis)
+and a near final version ended up in the arctic code vault. [@code_vault]
+All the figures within the thesis
+are drawn from the projects from which they were created,
+which contain the code to recreate them.
+These projects are [Dynamics](https://github.com/malramsay64/Dynamics),
+used for the results in @sec:Dynamics and @sec:Dynamics_Analysis,
+[Machine_Learning](https://github.com/malramsay64/Machine_Learning) used to generate the results in @sec:Machine_Learning,
+and [Crystal_Melting](https://github.com/malramsay64/Crystal_Melting)
+used for the results in @sec:Crystal_Melting and @sec:Melting_Behaviour.

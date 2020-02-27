@@ -11,15 +11,12 @@ This software is all open source and freely available on GitHub.
 
 The management of simulations is highly complex,
 particularly where multiple steps are involved.
-For molecular dynamics simulations
-there are four main steps [@Braun2018]
-
-1. Initialisation of positions
-2. Minimisation
-3. Equilibration
-4. Production
-
-The Initialisation of positions only needs to occur once
+Molecular dynamics simulations typically require four main steps; [@Braun2018]
+the initialisation of positions,
+the minimisation,
+the equilibration,
+and the production simulation which collects data.
+The initialisation of positions only needs to occur once
 regardless of the additional simulation parameters,
 the minimisation needs to occur for every pressure,
 while the equilibration and production
@@ -30,10 +27,6 @@ This is known as a directed acyclic graph (DAG),
 directed for the ordering required from top to bottom,
 while acyclic indicates that all paths through the graph are finite,
 put another way, everything can be calculated.
-
-![Drawing the dependencies of each simulation, starting at initialisation we get a tree
-of nodes.](08_Appendix/figures/simulation.pdf){#fig:simulation_dag}
-
 There is a lot of research into decomposing computations
 into directed acyclic graphs
 and performing the resulting calculations [@apache/spark;@apache/airflow;@spotify/luigi;@DaskDevelopmentTeam2016]
@@ -43,6 +36,9 @@ There are many similar projects
 for dealing with HPC Schedulers, [@Dakka2018;@Bosak2012;@Yon2019;@Lang2017;@Koster2012;@sumatra]
 however they are either incompatible with software on the available systems,
 or require unusual permissions prohibiting installation.
+
+![Drawing the dependencies of each simulation, starting at initialisation we get a tree
+of nodes.](08_Appendix/figures/simulation.pdf){#fig:simulation_dag}
 
 The PBS scripts which are the typically method of
 interacting with the scheduler are highly verbose,
@@ -69,8 +65,10 @@ The `experi` software combines these two parts into a PBS script,
 utilising the power of the scheduler for the evaluation of the DAG.
 The idea here is that a single file is
 both the machine and human readable specification of an experiment.
-
-The use of `experi` also has a further advantage,
+The storage of this format within the repository provides
+an additional level of reproducibility (@sec:reproducibility),
+storing the exact set of commands used.
+Using `experi` has a further advantage,
 since it is a program to generate files for a scheduler
 different schedulers can be added with minimal changes.
 So there is support for generating files for the SLURM scheduler.
@@ -80,44 +78,12 @@ so to make this easier experi also supports running the commands
 on a local computer without any scheduler,
 providing a method of testing simulations while only making minimal changes.
 
-- Biomedical Modelling [@Wright2018]
-- Organisation of project [@Wilson2014]
+The source code for experi is available at [github.com/malramsay64/experi](https://github.com/malramsay64/experi)
+and available for installation on both the python package index
+([`pypi.org`](https://pypi.org/project/experi)) and [anaconda cloud](https://anaconda.org/malramsay/experi)
+with the documentation available on [read the docs](https://experi.readthedocs.io/en/latest/).
 
-Part of the process of running many simulations on HPC resources,
-
-- many simulations
-- manage submission to a job script
-- simulations are dynamic
-    - find results
-    - improve experiment based on results
-        - more temperatures
-        - longer simulations
-        - issues with simulations / bugs
-- Batch systems are difficult to deal with
-    - minimal interface
-    - lots of required parts
-    - wait in a queue for a long period of time, want to be correct when it runs
-    - test smaller simulations, run on HPC
-
-# Simulation Initialisation
-
-packing
-
-- Based on code from Toby Hudson
-- Rewritten to be easier to read and understand
-- added the ability to model potentials like the lennard jones
-
-- Setup of configurations
-- plenty of software packages to do this for a variety of molecules and
-  simulations
-    - moltemplate
-    - packmol
-    - atomsk
-- important the created configuration is appropriate
-
-Create initial configurations describing our best guess at the crystal structures
-
-Convert these cells to a simulation
+# Running Simulations
 
 There are many parameters which need to be specified
 in a molecular dynamics simulation,
@@ -132,7 +98,6 @@ when this is set incorrectly it can quickly lead to
 exponential time divergence [@Allen1991],
 that is the discreet nature of the simulations becomes a problem
 causing highly unphysical behaviour.
-
 To simplify the process
 of running the types of simulations within this project
 I have developed the `sdrun` software.
@@ -151,17 +116,22 @@ The structure is very similar to the qtools software [@Purg2017]
 which provides a similar capability for the Q molecular dynamics package,
 while `sdrun` provides the capability for HOOMD-blue.
 
+The `sdrun` software package is available at
+[github.com/malramsay64/statdyn-simulation](https://github.com/malramsay64/statdyn-simulation)
+with a battery of tests running every time the code changes
+on [travis-ci](https://travis-ci.org/malramsay64/statdyn-simulation)
+while the documentation is available on
+[read-the-docs](https://statdyn-simulation.readthedocs.io/en/latest/?badge=latest).
+
 # Analysis of simulation trajectories
 
 The analysis of molecular dynamics simulation trajectories
 is an area containing many different software packages, [@Giorgino2019a]
 each having their own benefits.
-The main tools available are
-
-- MDTraj, [@McGibbon2015]
-- MDAnalysis, [@Gowers2016] and
-- freud [@Harper2016]
-
+The main tools available for the analysis simulation trajectories are;
+MDTraj, [@McGibbon2015]
+MDAnalysis, [@Gowers2016] and
+freud. [@Harper2016]
 Each of these tools provides a python interface
 to a collection of common analyses.
 While these collectively provides tools
@@ -173,12 +143,10 @@ I needed to develop my own analyses for this project,
 which I have done with the sdanalysis and `traj3dy` projects.
 The sdanalysis project calculates quantities
 and builds upon two projects from the Glotzer group,
-
-- freud [@Harper2016] which provides the calculations of periodic distances,
+freud [@Harper2016] which provides the calculations of periodic distances,
   the efficient calculation of the nearest neighbours, and
   voronoi diagrams, and
-- Rowan [@Ramasubramani2018] which provides utilities for working with Quaternions.
-
+Rowan [@Ramasubramani2018] which provides utilities for working with Quaternions.
 These projects were both developing throughout the course of my PhD
 and at various points I was implementing components of these tools,
 however ensuring my code was correct, fast and installable
@@ -195,5 +163,12 @@ of a small set of analyses in the Rust programming language.
 In the calculation of fluctuations
 it is over 100x faster than the `sdanalysis` implementation
 which takes the analysis from hours to minutes.
+
+The `sdanalysis` software package is available at
+[github.com/malramsay64/statdyn-analysis](https://github.com/malramsay64/statdyn-analysis)
+with a battery of tests running every time the code changes
+on [travis-ci](https://travis-ci.org/malramsay64/statdyn-analysis)
+while the documentation is available on
+[read-the-docs](https://statdyn-analysis.readthedocs.io/en/latest/?badge=latest).
 
 <!-- markdownlint-disable-file MD025 -->
