@@ -12,7 +12,6 @@ in particular the multiplication of matrices.
 The multiplication of matrices is important because of Graphics Processing Units (GPUs)
 which can be over 400 times faster at matrix multiplication than CPUs,
 which has made these types of algorithms commercially viable.
-
 One of the large downsides of using a complicated neural network
 is that there is little clarity over how a decision is made.
 In particular, bias in data the algorithm learns from
@@ -51,7 +50,6 @@ the performance is evaluated on data note previously seen by the algorithm. [@Ha
 This is additional to the cross validation used above.
 The set of data used for the final evaluation of performance
 is known as the *test set*. [@Hastie2009;@Russell2016]
-
 It is this approach to developing a model
 which is a defining characteristic of machine learning
 more so than any particular model used.
@@ -70,62 +68,9 @@ being the value of $K$,
 the number of neighbours from which a consensus is formed.
 Testing a range of values with cross validation found that a value of 5
 produced the best performing algorithm.
-
 To get the best performance from the algorithm
 kd-trees [@Bentley1975] are used for the neighbour search
 an algorithm which finds use in molecular dynamics simulations [@Howard2016]
-
-## Machine Learning Algorithms
-
-When developing a machine learning algorithm for a problem
-there are typically two separate steps,
-
-1. development of optimal models, and
-2. Evaluating the performance of these models.
-
-The development of optimal models is finding
-which methodology works best for the data,
-much like looking at a curve
-and evaluating whether to apply
-linear fit or a power law.
-Neither model may fit the data perfectly,
-however a cubic may capture
-the features of interest
-better than a linear fit
-margin that the model of choice.
-
-## Introduction to Machine Learning
-
-Machine learning is a technique by which a machine learns
-when it changes it's structure, program, or data based on external information
-such that it's expected future performance improves. [@Nilsson1998]
-This definition includes the field of statistics,
-namely that the more data fed to a statistical distribution,
-the better the performance and understanding of the data.
-There is a strong link between
-the field of statistics and that of machine learning,
-which can be examined at a fundamental level.
-
-One of the simplest applications of machine learning is Linear Regression,
-solving a problem of the form
-
-$$ \min_w || Xw -y||^2_2 $$
-
-exactly the same formulation as using statistics.
-For this linear case, the difference between
-a statistical approach and a machine learning approach
-is the methodology.
-
-### Feature Development
-
-The features of a machine learning model
-are the set of quantities passed to the model.
-For example when we perform a linear regression there is a single feature,
-one input value which can be used to predict an output value.
-Feature selection is the most important part of machine learning
-with a good set of features requiring domain expertise.
-The features are a set of values which best describe
-the underlying behaviour.
 
 ## Labelling Local structures {#sec:methods_ml_dataset}
 
@@ -134,8 +79,7 @@ which can then be used for the task of classification.
 The dataset contains a collection of configurations
 like the one depicted in @fig:labelling_structures.
 Each of these contains a crystalline region
-in which every local configuration is labelled
-as being crystal in nature.
+in which every local configuration is labelled as crystal in nature.
 Surrounding this is the interface between the liquid and crystal,
 a region which was excluded from the training dataset
 as the liquid or crystal nature is not well defined
@@ -151,22 +95,41 @@ The center region is labelled as the crystal used to create the configuration,
 while the outside is classified as liquid.
 ](../Projects/MLCrystals/figures/labelled_config.svg){width=80% #fig:labelling_structures}
 
-## Algorithms and Parameters
+## Measuring Success {#sec:measuring_success}
 
-The algorithms used for the machine learning
-leverage the scikit-learn package [@Pedregosa2012]
-utilising the well designed interface. [@Buitinck2013]
-
-### Measuring Success {#sec:measuring_success}
-
-Another important part of machine learning
-is the method used to measure success.
+An important aspect of machine learning models
+is the measure of success.
 The type of measurement can depend on the dataset
-and the goals of the algorithm.
-It should be noted that the machine learning algorithm
-will be optimised to score highly in whichever metric is chosen.
-The metric used for these simulations is the balanced accuracy.
-[@Brodersen2010;@Kelleher2015]
-This score calculates the accuracy for each of the individual classes,
-in this case for the p2, p2gg, and pg crystals along with the liquid
-and combines the fraction of each to give the final score.
+and the goals of the algorithm,
+with the algorithm optimised to score highly in the chosen metric.
+When measuring success for a classification task,
+the confusion matrix in @tbl:methods_confusion describes
+all possible outcomes of the classification. [@Fawcett2006]
+The values within the confusion matrix
+can be combined with the number of positive samples $P$
+and the number of negative samples $N$
+to condense the confusion matrix into a single value.
+The *accuracy* $ACC$ is the fraction of samples
+which have been correctly classified
+
+$$ ACC = \frac{TP + TN}{P + N} $$
+
+The metric used in this thesis is the *balanced accuracy* $BACC$
+which takes into account the size of each group
+
+$$ BACC = \frac{1}{2} \left[ \frac{TP}{P} + \frac{TN}{N} \right] $$
+
+and is a common metric when dealing with small imbalances
+in the size of the datasets. [@Brodersen2010;@Kelleher2015]
+
+**               | Positive | Negative |
+------           |--        |--        |
+Predict Positive | TP       | FP       |
+Predict Negative | FN       | TN       |
+
+Table: The confusion matrix of a classification into two classes, positive and negative.
+There are four possible outcomes,
+true positive (TP) where the predicted result is correct and positive,
+true negative (TN) where the predicted result is correct and negative,
+false positive (FP) where the predicted result is incorrect and positive,
+false negative (FN) where the predicted result is incorrect and negative. {#tbl:methods_confusion}

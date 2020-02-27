@@ -12,19 +12,6 @@ The sequence of the steps is displayed in @tbl:step_sequence
 with each row having 100 steps,
 and the size of the steps increasing by a power of 10
 as we move down the rows.
-
-Step Size |      |       |       |       |       |       |        |
----------:|:---- |:----- |:----- |:----- |:----- |:----- |:----   | :------
-1         |   1  |  2    | 3     | ...   | 97    | 98    | 99     | 100
-10        | 110  | 120   | 130   | ...   | 970   | 980   | 990    | 1000
-100       |1100  | 1200  | 1300  | ...   | 9700  | 9800  | 9900   | 10000
-1000      |11000 | 12000 | 13000 | ...   | 97000 | 98000 | 99000  | 100000
-
-Table: The step sequence broken into it's two components.
-Across each row are the linear steps,
-while dropping down to the next row
-increases the size of the linear step by a power of 10. {#tbl:step_sequence}
-
 This sequence of steps allows for a singe value
 of the dynamics quantities for,
 however the stochastic nature of simulations means this trajectory
@@ -43,7 +30,24 @@ at a timescale of the structural relaxation time.
 This independence means allows us to use
 standard statistical methods to estimate errors.
 
+Step Size |      |       |       |       |       |       |        |
+---------:|:---- |:----- |:----- |:----- |:----- |:----- |:----   | :------
+1         |   1  |  2    | 3     | ...   | 97    | 98    | 99     | 100
+10        | 110  | 120   | 130   | ...   | 970   | 980   | 990    | 1000
+100       |1100  | 1200  | 1300  | ...   | 9700  | 9800  | 9900   | 10000
+1000      |11000 | 12000 | 13000 | ...   | 97000 | 98000 | 99000  | 100000
+
+Table: The step sequence broken into it's two components.
+Across each row are the linear steps,
+while dropping down to the next row
+increases the size of the linear step by a power of 10. {#tbl:step_sequence}
+
 ## Dynamics Quantities
+
+This section describes the calculation of the dynamics quantities
+used in @sec:Dynamics.
+Each of these quantities has the code snippet
+used for the calculation in @sec:code_snippets.
 
 ### Calculation of Wave numbers
 
@@ -205,24 +209,3 @@ has a characteristic timescale;
 the time at which the dynamics is maximally heterogeneous.
 This allows for the comparison of these quantities
 as a function of temperature.
-
-## Molecular Quantities
-
-The calculation of the molecular relaxation times
-is done by keeping track of the state of each molecule over time.
-The typically relaxation times,
-diffusion, structural relaxation, and rotational relaxation
-find the first time the particle moves beyond
-the intended distance.
-
-The last passage time uses a state machine
-which can have one of three values
-
-- 0 => No relaxation has taken place, or particle has moved back within
-        the threshold distance
-- 1 => The distance has passed the threshold, however not the
-          irreversibility distance
-- 2 => The molecule has passed the irreversibility distance
-
-The code which describes the change between states
-is shown in @lst:state_machine.
