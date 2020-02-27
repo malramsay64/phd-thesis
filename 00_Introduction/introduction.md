@@ -3,12 +3,27 @@ top-level-division: chapter
 title: Introduction
 ---
 
-Molecular materials are important ...
-Despite extensive study,
-there are aspects of molecular liquids which are poorly understood,
-of which two stand out;
+Molecular solids have been an important part of our society for hundreds of years,
+used for a diverse range of applications including
+pharmaceuticals, [@Datta2004]
+fertilisers, [@Honer2017]
+pesticides, [@Yang2017]
+pigments, [@Hao1997]
+semiconductors, [@Mei2013]
+and optoelectronics. [@Ostroverkhova2016]
+The wide range of uses and the specialised applications
+has led to fields dedicated to the design of
+molecular materials [@Corpinot2019;@Schmidt1971]
+using computational models [@Sliwoski2014]
+to predict the crystal structure and mechanical properties. [@Reddy2010]
+One of the key processes for the formation of the
+solid phase is from the melt. [@Shimura2012;@Shimura2017;@Harkonen2005]
+Despite extensive study to understand molecular liquids,
+there are two main aspects which are poorly understood,
 the non-Arrhenius temperature dependence of the dynamics, and
-the phenomenally slow growth rates of molecular liquids.
+the phenomenally slow crystal growth rates.
+Understanding these properties will greatly aid
+in the design and production of this wide range of molecular materials.
 
 # Non-Arrhenius Temperature Dependence {#sec:intro_vtf}
 
