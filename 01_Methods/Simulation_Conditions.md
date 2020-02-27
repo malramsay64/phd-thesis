@@ -1,16 +1,31 @@
 # Simulation Conditions
 
-## Dynamics Simulations
+This section describes the conditions used for each of the simulations.
+These follow the sequence of steps for a molecular dynamics simulation
+described by @Braun2018; initialisation, minimisation, equilibration, and production.
+All simulations are run using the NPT ensemble unless otherwise specified
+and use the Martyna-Tobias-Klein (MTK) thermostat and barostat [@Martyna1994]
+to hold the pressure and temperature constant.
+The simulations use the parameters $\tau = 1.0$ and $\tau_P = 1.0$
+for the MTK thermostat and barostat respectively
+which correspond to the rate the temperature and pressure
+are restored to their desired values.
+A step size of \si{0.005} is used for all simulations.
+In @sec:methods_dynamics we describe the simulations
+used for the analysis of Dynamics in @sec:Dynamics and @sec:Glassy_dynamics,
+and in @sec:methods_melting we describe
+the simulations for
+machine learning in @sec:Machine_Learning
+and for the analysis of the melting in @sec:Crystal_Melting and
+@sec:Melting_Behaviour.
 
-The breakdown of the different simulation steps follows that defined by @Braun2018
-having four distinct steps,
+## Dynamics Simulations {#sec:methods_dynamics}
 
-1. Initialisation
-2. Minimisation
-3. Equilibration
-4. Production
-
-with each step described below.
+These are a series of simulations for studying the liquid phase.
+The initialisation, minimisation and equilibration steps
+describe the steps for generating an equilibrium liquid
+at each of the temperatures studied in the production simulations
+where the data collection occurs.
 
 ### Initialisation
 
@@ -20,8 +35,7 @@ constructed from a square lattice with a single lattice parameter $a$ where
 $$a = 2 r_\text{enclosing}$$
 
 with $r_\text{enclosing}$ being the radius of a circle centered
-on the center of mass of the molecule
-which completely encloses the molecule.
+on the center-of-mass that completely encloses the molecule.
 For the Lennard Jones potential,
 enclosing radius is considered as the value of $\sigma / 2$
 This configuration is chosen for being the simplest configuration
@@ -35,50 +49,44 @@ This results in a configuration containing 1024 molecules.
 
 ### Minimisation
 
-The square lattice configuration is a long way
+The initial square lattice configuration is a long way
 from an equilibrium liquid configuration,
-so the minimisation steps are extensive,
-comprising of two steps.
-
-The first step of the minimisation
-is using the FIRE energy minimisation technique [@Bitzek2006],
-which is significantly faster
-and more suited to molecular dynamics simulations
-than the steepest-descent or conjugate-gradient approaches.
-The minimisation was run using the NPH ensemble,
+so the minimisation has two steps.
+The first step of the minimisation uses
+the Fast Inertial Relaxation Engine (FIRE) energy minimisation technique. [@Bitzek2006]
+The FIRE algorithm is significantly faster
+than the steepest-descent or conjugate-gradient approaches
+and is more suited to molecular dynamics simulations.
+The FIRE minimisation is run using the NPH ensemble,
 minimising both the energy of the particles and the box,
 with the pressure set to the desired value,
-being one of 13.50 or 1.00.
-While the box was allowed to relax,
-it retained the initial square shape
-throughout the minimisation.
-The minimisation was run until convergence of all parameters was reached
-with the requirements for convergence being
-
-- energy tolerance: \num{1e-5},
-- force tolerance: 0.1, and
-The step size of the minimisation was 0.001.
-
-With the configuration minimised,
-it is still unlikely to be representative
-of an equilibrated liquid configuration.
-So a simulation run of 1 million timesteps
-was performed for each pressure at a high temperature
-so that the liquid is thoroughly equilibrated.
-These simulation had the conditions
-
-Pressure   Temperature
---------  ------------
-   13.50          3.00
-    1.00          2.00
-
-with a step size of 0.005.
-To prevent issues with all particles in the
-simulation producing a collective flow,
-the net momentum of the simulation was zeroed every 33533 timesteps,
+being either 13.50 or 1.00.
+While the size of the box is allowed to shrink and relax,
+it remains constrained to the initial square shape.
+The FIRE minimisation is run with a step size of \num{1e-3} until both
+the energy converges, with a tolerance of \num{1e-5} and
+the force converges, with a tolerance of \num{0.1}.
+The goal of the energy minimisation
+is to prevent further steps from causing the simulation to blow up, [@Braun2018]
+that is when the forces are so large that molecules
+move unreasonable distances.
+With the configuration having undergone the FIRE minimisation,
+it is still going to be representative of
+the square lattice from which it was minimised
+rather than the equilibrium liquid.
+To account for this,
+a second step of the minimisation runs a simulation
+for 1 million timesteps at a high temperature
+to thoroughly equilibrate the high temperature liquid.
+The high temperature simulations are conducted
+at a temperature $T=3.00$ for a pressure $P=13.50$ and
+at a temperature $T=2.00$ for a pressure $P=1.00$.
+To prevent particles having a collective flow
+through the periodic boundary conditions,
+the net momentum of the simulation is zeroed every 33533 timesteps,
 chosen for being a large prime number.
-These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
-using the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
+These simulations use the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+with the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
 
 ### Equilibration
 
@@ -88,27 +96,34 @@ representative of the equilibrated conditions
 for which data collection is intended.
 One of the challenges with equilibrating configurations
 is capturing states which are representative
-of the equilibrium configuration rather than those of a local minima,
-particularly troublesome for the low temperatures
-at which these simulations take place.
-To assist with this the equilibration simulations take place in two parts,
-the first is gradually lowering the temperature
-from that of the minimisation step,
-to the desired simulation temperature.
-This process took place over \num{1e7} timesteps.
-The second part of the equilibration
-was running at the production temperature,
-until the step count reached the timesteps specified in @tbl:dynamics_steps.
-These simulations used the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
-using the parameters $\tau = 1.0$ and $\tau_P = 1.0$
-and a step size of 0.005.
+of the equilibrium configuration rather than those of a local minima.
+The timescale normally associated with equilibration
+is 10 structural relaxation times, [@Meenakshisundaram2019]
+with the additional requirement that computed properties remain constant. [@Braun2018]
+This second requirement can be troublesome for the low temperatures
+at which many of these simulations take place.
+To assist with this the equilibration takes place in two parts,
+the first gradually lowers the temperature from that of the minimisation step,
+reducing it to that of the simulation over \num{1e7} timesteps.
+Following the lowering of the temperature,
+the equilibration for many structural relaxation times takes place
+using the same number of timesteps as the production simulations
+specified in @tbl:dynamics_steps_1 and @tbl:dynamics_steps_13.
 
 ### Production
 
-The timesteps used for each of the production simulations
-are documented in @tbl:dynamics_steps.
-These steps are chosen to ensure relaxation of the simulation
+The conditions for production simulations are documented
+in @tbl:dynamics_steps_1 for a pressure $P=1.00$
+and in in @tbl:dynamics_steps_13 for a pressure $P=13.50$.
+The net momentum in each of these simulations is zeroed every 33533 steps
+preventing the flow of particles influencing the dynamics quantities.
+The steps are chosen to ensure relaxation of the simulation
 and to have enough key-frames for averaging over many initial conditions.
+Lower temperatures are not considered as HOOMD-blue is unable to
+count higher that \num{4e9} (detailed in @sec:melting_point).
+Internally HOOMD-blue uses an unsigned 32 bit integer
+to keep track of the step, [@hoomd_counter]
+which means the largest supported step size is $2^{32-1}$ or \num{~4.2e9}.
 
 Temperature |Pressure| Steps
 -----------:|-------:|-----------:
@@ -122,6 +137,11 @@ Temperature |Pressure| Steps
 1.80        |  13.50 |   \num{2e7}
 2.00        |  13.50 |   \num{2e7}
 2.50        |  13.50 |   \num{2e7}
+
+Table: The conditions for the production simulations at a pressure $P=13.50$. {#tbl:dynamics_steps_13}
+
+Temperature |Pressure| Steps
+-----------:|-------:|-----------:
 0.30        |   1.00 |   \num{4e9}
 0.35        |   1.00 |   \num{2e9}
 0.40        |   1.00 |   \num{2e9}
@@ -133,83 +153,31 @@ Temperature |Pressure| Steps
 1.40        |   1.00 |   \num{2e7}
 1.80        |   1.00 |   \num{2e7}
 
-Table: The simulation conditions for each of the production simulations. {#tbl:dynamics_steps}
+Table: The conditions for the production simulations at a pressure $P=1.00$. {#tbl:dynamics_steps_1}
 
-Lower temperatures were not considered
-as HOOMD-blue is unable to count higher.
-Internally HOOMD-blue uses an unsigned 32 bit integer
-to keep track of the step, [@hoomd_counter]
-which means the largest supported step size is $2^{32-1}$ or \num{~4.2e9}.
+## Melting Simulations {#sec:methods_melting}
 
-The momentum of the simulations was zeroed every 33533 steps
-to prevent flow through the periodic boundaries
-from influencing calculations of the change of displacement.
-The simulations were undertaking in the NPT ensemble,
-with the temperature and pressure held constant
-using the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
-having the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
+These are a series of simulations for studying the melting
+of each polymorph of the Trimer molecule.
+These simulations are comprised of five steps,
+consisting of initialisation, minimisation, melting and equilibration steps
+and finally the production simulations used to collect the data.
+The additional step of melting creates the interface
+between the liquid and the crystal.
 
-## Machine Learning Simulations
-
-The simulations for the machine learning dataset
-are created using the same method as the Crystal Melting
-simulations (see @sec:crystal-melting-simulations).
-This so the models developed for the machine learning
-are as close to the dataset they will be used with as possible.
-The simulations for the crystal melting do take a long time to run
-and since for the machine learning we concerned with
-finding a range of representative structures rather than thermodynamic equilibrium
-I can take some shortcuts to save time.
-Rather than the equilibration at each temperature running up to 4 billion timesteps,
-all the equilibration is done in 10 thousand steps.
-
-The configurations used for the machine learning tasks
-was from a timestep of 100,
-chosen for having a range of thermal motions within the crystal,
-without the melting at higher temperatures interfering with the structure.
-
-## Melting Simulations
-
-All the simulations for the crystal melting
-were conducted using the HOOMD-blue package.
-The simulations were conducted using the NPT ensemble,
-having the number of particles, the pressure, and the temperature
-constant throughout the simulations.
-The pressure and temperature are kept constant
-using the Martyna--Tobias--Klein thermostat and barostat [@Martyna1994]
-with a coupling constants $\tau = 1$ for the temperature
-and $\tau_P = 1$ for the pressure.
-The timestep was set to 0.005.
-
-The creation of the liquid--crystal interface
-requires an additional step compared to
-the dynamics calculations,
-being the melting of the liquid crystal interface.
-These steps are all documented below.
-
-1. Initial Configuration
-2. Minimisation
-3. Melting
-4. Equilibration
-5. Production
-
-## Initial Configuration
+### Initial Configuration
 
 Since we are unable to determine
 the equilibrium crystal structure
-through molecular dynamics simulations,
+through molecular dynamics simulations (see @sec:melting_point),
 we have to look to alternative techniques
 for finding the initial crystal structures.
-Instead we look to a Monte Carlo type algorithm
-searching for the most stable structure.
-
-The search technique I used was developed by @Hudson2011
-for finding the optimal packing of shapes.
-The optimal packing approach approximates
-the Lennard-Jones potential as a hard disc,
-however the approach has shown to be appropriate
-for predicting crystal structures for a range of materials.
-
+For these structures we use an
+isopointal search algorithm developed by @Hudson2011
+for finding the optimal hard packing of shapes.
+The results from the hard packing
+have been found to give our best estimate
+at the equilibrium structures (see @sec:static_analysis).
 The packing algorithm is comprised of two key ideas,
 an isopointal search algorithm
 which uses symmetry to reduce the search space
@@ -217,121 +185,118 @@ making it more likely to find the true maximum packing,
 with the other being a simulated annealing algorithm
 to efficiently sample the space of packings
 while moving to optimise the best ones.
-The isopointal search provides results for different constraints
-so there are configurations for each of the p2, p2gg and pg crystals
-which were the most likely candidates for the true crystal structure.
+The isopointal search provides results for each space group,
+with the structures from the p2, p2gg, and pg space groups
+being the lowest energy polymorphs.
+The parameters for the construction of
+each polymorph are displayed in @tbl:polymorph_construction.
+
+Polymorph | $a$  | $b$  | $\theta$ | $x$  | $y$  | $\phi$ |
+---       | --   | --   | --       | --   | --   | --     |
+p2        | 3.82 | 2.63 | 1.83     | 0.70 | 0.32 | 5.59   |
+p2gg      | 2.63 | 7.38 | 1.57     | 0.94 | 0.14 | 1.14   |
+pg        | 2.72 | 3.63 | 1.57     | 0.65 | 0.45 | 1.94   |
+
+Table: The structure of the unit cells of each crystal polymorph.
+The values $a$, $b$, and $\theta$ describe the unit cell
+being the length of each side and the angle between them.
+The values $x$, $y$, and $\phi$ describe the position of
+the molecule in fractional co-ordinates.
+The additional molecules are constructed
+from the symmetry of the space groups.
+The angles are given in radians. {#tbl:polymorph_construction}
+
+The initial configurations are built using the
+crystal cell parameters in @tbl:polymorph_construction,
+with the unit cell replicated 48 times the $a$ axis
+and 42 times along the $b$ axis for the p2 and pg crystals.
+The p2gg crystal with 4 molecules in the unit cell
+is only replicated 21 times along the $b$ axis.
+The number of replications in the $b$ axis
+was chosen so the p2 polymorph can be coerced into a rectangular cell (see @sec:methods_interface).
+The alignment of the layers is close enough to prevent overlap of particles.
+The choice of the replications in the $b$ axis
+informed the choice of $a$ which made the ratio of side lengths close to 1:1.
 
 ### Minimisation of local structure
 
-With an initial configuration determined using hard discs
-this needs to be adjusted to account for the Lennard-Jones
+With the initial configurations determined using hard discs
+they need to be tweaked for the Lennard-Jones
 potential used in the simulations.
-The initial minimisation is performed using
-the FIRE energy minimisation technique [@Bitzek2006]
-which ensures the crystal structure is in
-a local minima with the Lennard-Jones potential.
-Because this is optimising the highly rigid crystal structure,
-the box has been allowed to adjust its tilt,
-and each of the axes can move independently of the others.
-The FIRE energy minimisation is performed using
-the NPH ensemble with a pressures of $P=13.50$ and $P=1.00$
-and the kinetic energy of the temperature $T=0.4$.
+This initial minimisation to find the closes Lennard--Jones structure
+is performed using the FIRE energy minimisation technique. [@Bitzek2006]
+To best optimise the crystal structure,
+the box has been allowed to adjust its tilt ($\theta$),
+and each of the axes ($a$ and $b$) can grow or shrink independently of the other.
+An NPH ensemble is used for the minimisation
+with pressures of $P=13.50$ and $P=1.00$
+and the molecules having the kinetic energy of the temperature $T=0.4$.
+The FIRE minimisation is run with a step size of \num{1e-3} until both
+the energy converges, with a tolerance of \num{1e-5} and
+the force converges, with a tolerance of \num{0.1}.
+Once the minimisation is complete,
+the configuration is then allowed to relax at a temperature $T=0.1$,
+giving the particles the opportunity to find their local energy minima.
 
-The parameters for the creation of the crystal unit cells
-are documented in @fig:crystal_unit_cell.
-For the initial configuration these unit cells
-were packed together
-
-:::{class=subfigures id=fig:crystal_unit_cell}
-
-![p2](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2}
-![pg](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_pg}
-![p2gg](../01_Methods/figures/placeholder_figure.png){width=33% #fig:crystal_unit_cell_p2gg}
-
-The unit cells of the p2 (a) the pg (b) and the p2gg (c) crystals
-documenting the unit cell parameters
-and the positions of each particle within the cell.
-
-:::
-
-The initial configurations used many replications
-of these unit cells along the $a$ and $b$ crystal axes.
-The number of replications for each crystal is in @tbl:unit_cell_dimensions.
-These numbers were based on the p2 crystal,
-which doesn't have an orthorhombic unit cell,
-required for the melting step.
-The choice of 42 is such that
-the periodicity of the simulation cell in the $y$ direction
-is nearly the same as the $b$ crystal direction
-allowing for adjusting the shape.
-The remaining parameters were chosen
-to keep the simulation cells close to square in shape.
-Note that the p2gg unit cell has twice as many molecules
-as the other unit cells.
-
-Crystal | Replications $a$ | Replications $b$
-------- |----              |----
-p2      | 48               | 42
-pg      | 48               | 42
-p2gg    | 48               | 21
-
-Table: The unit cell dimensions for each of the crystal
-structures. {#tbl:unit_cell_dimensions}
-
-The once the initial configuration is created,
-an NPT simulation at a temperature $T=0.1$
-is run to allow the molecules to relax.
-The positions are based off the packing of hard spheres
-so this allows the particles to relax to their minimum.
-During this relaxation process all degrees of freedom
-of the simulation cell are decoupled
-and the box is allowed to tilt,
-giving the crystal the most freedom to find
-the minimum energy configuration.
-
-### Creation of Liquid--Crystal Interface
+### Creation of Liquid--Crystal Interface {#sec:methods_interface}
 
 The first step of creating the interface
 is converting the tilted simulation configuration
 to an orthorhombic configuration.
-This is done to make the resulting analysis
-simpler and more consistent
-across the different crystal structures.
-
+This is to make the creation of the crystal region easier
+since the p2 crystal has a tilted unit cell.
 The conversion to the orthorhombic shape
-is done by moving the shifted regions
-as shown in @fig:orthorhombisation.
+is done by drawing a rectangular box
+of the same area in the periodic space
+and using that as the new simulation cell,
+a process is shown in @fig:orthorhombisation.
 This does result in the neighbours
 of the top and bottom layers changing
 which requires a careful choice
 of the number of overall layers
 so the orthorhombic configuration is favourable.
+This conversion to the orthorhombic cell
+does introduce strain into the crystal structure
+where it doesn't align quite perfectly.
+This is handled by melting the outer 1/3
+of the orthorhombic configuration at 2.2 times the melting point.
+During this melting only the outer region is integrated,
+with the distance between particles in the center region
+increasing as the box increases.
 
-![Depicting conversion of tilted cell to orthorhombic
-](../01_Methods/figures/placeholder_figure.png){width=80% #fig:orthorhombisation}
-
-The outer 1/3 of the orthorhombic configuration is then melted
-at 2.2 times the melting point,
-removing any minor mismatch in the alignment of the periodic faces.
-The central crystal region is not integrated during the melting,
-however the distance between particles increases as the box size increases.
+![Depicting conversion of tilted cell (red) to orthorhombic (black).
+The magenta region on the left of the tilted region
+fills in the right corner of the rectangle
+while the cyan region on the bottom right of the tilted region
+fills in the bottom left corner of the rectangle.
+](../01_Methods/figures/orthorhombisation.svg){width=80% #fig:orthorhombisation}
 
 ### Equilibration of Liquid--Crystal Interface
 
 The equilibration component involves
 reducing the temperature of the liquid region
 to represent the equilibrium liquid at each temperature.
-This is done by equilibrating only the liquid regions
-for the number of steps in @tbl:melting_conditions.
-These simulations are replicated five times
-for each set of conditions,
-each with a different initial momentum.
+This is done by equilibrating only the liquid regions in two parts like for the dynamics.
+The first gradually lowers the temperature from that of the minimisation step,
+reducing it to that of the simulation over \num{1e7} timesteps.
+Following the lowering of the temperature,
+the equilibration takes place
+for the number of steps of the production simulations in @tbl:melting_conditions_1 and @tbl:melting_conditions_13.
+For the calculation of the melting rates,
+there are five replications of each set of conditions.
+To generate independent structures,
+each liquid is initialised with a randomised momenta
+before the equilibration takes place,
+giving completely independent configurations
+by the end of the melting process.
 
 ### Production Simulations
 
-The steps for the production simulations are shown in @tbl:melting_conditions,
+The number of timesteps used for the production simulations are shown in
+@tbl:melting_conditions_1 and @tbl:melting_conditions_13,
 with each simulation replicated five times for the calculation of errors.
-Each simulation has 100 output configurations to measure the rate of melting.
+The output from each configuration is in 100 evenly spaced configurations
+which are used to measure the melting rates.
 
 Pressure | Temperature | Steps
 ----     |--           |--
@@ -347,6 +312,12 @@ Pressure | Temperature | Steps
 1.00     | 0.37        | \num{1e9}
 1.00     | 0.36        | \num{1e9}
 1.00     | 0.35        | \num{1e9}
+
+Table: The simulation conditions for the calculation of
+the melting rates at a pressure $P=1.00$. {#tbl:melting_conditions_1}
+
+Pressure | Temperature | Steps
+----     |--           |--
 13.50    | 3.00        | \num{4e4}
 13.50    | 2.50        | \num{1e5}
 13.50    | 2.20        | \num{5e5}
@@ -360,5 +331,5 @@ Pressure | Temperature | Steps
 13.50    | 1.35        | \num{1e9}
 13.50    | 1.33        | \num{1e9}
 
-Table: The conditions for the simulations for the crystal
-melting rates. {#tbl:melting_conditions}
+Table: The simulation conditions for the calculation of
+the melting rates at a pressure $P=13.50$. {#tbl:melting_conditions_13}
