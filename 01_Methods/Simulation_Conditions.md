@@ -10,9 +10,9 @@ The simulations use the parameters $\tau = 1.0$ and $\tau_P = 1.0$
 for the MTK thermostat and barostat respectively
 which correspond to the rate the temperature and pressure
 are restored to their desired values.
-A step size of \si{0.005} is used for all simulations.
+A step size of \num{0.005} is used for all simulations.
 In @sec:methods_dynamics we describe the simulations
-used for the analysis of Dynamics in @sec:Dynamics and @sec:Glassy_dynamics,
+used for the analysis of Dynamics in @sec:Dynamics and @sec:Melting_Behaviour,
 and in @sec:methods_melting we describe
 the simulations for
 machine learning in @sec:Machine_Learning

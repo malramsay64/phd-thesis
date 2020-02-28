@@ -78,7 +78,8 @@ The Wilson--Frenkel model is the classical model
 which would be expected to model the growth of the trimer,
 being a fragile liquid.
 The Wilson--Frenkel model defines the temperature dependent function $p(T) = D(T)$,
-where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$. [@sec:transport_coefficient]
+where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$
+(@sec:crystal_transport).
 The ratio (@eq:classical_growth_refactor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
 which describes an improved relationship over the Turnbull mode.
 Close to the melting point,
@@ -200,7 +201,8 @@ in the same way we have for the classical models.
 @Fig:melting_dft shows the proportionality of @eq:proportionality_dft,
 with a straight line indicating perfect proportionality.
 Using the fluctuations shows a much improved
-fit to the model than either of the classical models. [@fig:melting_turnbull;@fig:melting_wilson]
+fit to the model than either of the classical models (@fig:melting_turnbull and
+@fig:melting_wilson).
 There is a change in the melting behaviour
 near the middle of the temperature range
 so this is not a perfect model,

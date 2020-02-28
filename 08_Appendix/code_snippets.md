@@ -78,7 +78,7 @@ for state, dist, status in zip(self._state, distance, self._status):
          RuntimeError("Invalid State")
 ```
 
-```{.c++ #lst:gaussian_rng caption="Converting uniformly distributed random numbers on a gaussian distribution using a Box-Muller transformation."}
+```{.cpp #lst:gaussian_rng caption="Converting uniformly distributed random numbers on a gaussian distribution using a Box-Muller transformation."}
 inline float gaussian_rng(RNG &rng, const float sigma) {
     // use Box-Muller transformation to get a gaussian random number
     float u, v, s, z0;

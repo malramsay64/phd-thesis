@@ -13,7 +13,7 @@ used within this thesis.
 The investigation of liquids resistant to crystallisation
 necessitates simulations over long time scales
 to fully characterise this behaviour.
-Additionally, as described in @sec:computational_tractibility
+Additionally, as described in @sec:computational_tractability
 the size of the simulation needs to be large enough
 to avoid the impact of finite size effects,
 with 500 particles recommended as the lower limit. [@Kikugawa2015;@Moultos2016;@Maginn2018]
@@ -145,7 +145,7 @@ HOOMD-blue [@Anderson2008;@Nguyen2011] is a more recent software package
 designed for GPU computation.
 It makes full use of the GPU by avoiding communication overheads
 and using data structures and algorithms designed for this hardware,
-an example being the SARU pseudo-random number generator. [@sec:random-numbers-in-hoomd]
+an example being the SARU pseudo-random number generator (@sec:random_hoomd).
 While HOOMD-blue is on the cutting edge of technology,
 there is not the same diversity of literature to draw upon that LAMMPS has.
 This also means that there are not the library of extensions,
@@ -311,7 +311,7 @@ The periodic boundary conditions of molecular dynamics simulations
 make the calculation of distances somewhat more challenging.
 When given an initial position $\vect{r_0}$ and a final position $\vect{r_t}$
 with the periodic boundary conditions there are two possible directions
-the particle could have moved in each direction. [@fig:periodic_distance]
+the particle could have moved in each direction.
 The same is also true for rotational motion.
 The standard method of handling this is the minimum image convention,
 where the distance is calculated for the shortest of the two paths.
@@ -443,7 +443,7 @@ is an algorithm for generating statistically random values
 that is, their distribution matches that of true randomness,
 while being possible to exactly replicate a sequence.
 
-### Random Numbers in HOOMD-blue
+### Random Numbers in HOOMD-blue {#sec:random_hoomd}
 
 Random numbers are used in Hoomd
 for the initialisation of translational and rotational velocities.

@@ -122,7 +122,7 @@ $$ BACC = \frac{1}{2} \left[ \frac{TP}{P} + \frac{TN}{N} \right] $$
 and is a common metric when dealing with small imbalances
 in the size of the datasets. [@Brodersen2010;@Kelleher2015]
 
-**               | Positive | Negative |
+| Positive | Negative |
 ------           |--        |--        |
 Predict Positive | TP       | FP       |
 Predict Negative | FN       | TN       |

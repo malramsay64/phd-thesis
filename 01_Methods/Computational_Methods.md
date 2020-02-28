@@ -69,7 +69,7 @@ should be treated with caution. [@Press1988]
 
 ![When RANDU generates 'pseudo-random' the coordinates of points in 3D, all the points
 lie on one of 15 planes shown.
-](../Projects/random_number_generators/presentation/figures/randu.png){#fig:rand width=80%}
+](../Projects/random_number_generators/presentation/figures/randu.png){#fig:randu width=80%}
 
 There are also classes of bugs which are more subtle,
 results which are different yet neither is definitively right.
@@ -244,7 +244,7 @@ Importantly when using version control
 is to keep the size of each change fairly small
 as it makes this retrospective analysis much easier.
 Smaller changes are also a lot easier
-for someone else to review. [@sec:peer-review]
+for someone else to review.
 
 The minimum documentation for a project should be a README file,
 a first port of call for anyone coming across the project.
@@ -376,7 +376,7 @@ All the figures within the thesis
 are drawn from the projects from which they were created,
 which contain the code to recreate them.
 These projects are [Dynamics](https://github.com/malramsay64/Dynamics),
-used for the results in @sec:Dynamics and @sec:Dynamics_Analysis,
+used for the results in @sec:Dynamics and @sec:Glassy_Dynamics,
 [Machine_Learning](https://github.com/malramsay64/Machine_Learning) used to generate the results in @sec:Machine_Learning,
 and [Crystal_Melting](https://github.com/malramsay64/Crystal_Melting)
 used for the results in @sec:Crystal_Melting and @sec:Melting_Behaviour.

@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec:dynamics_conclusion}
 
 In this chapter we have established that the Trimer model
 is an appropriate model for the dynamics of ortho-terphenyl.
@@ -11,7 +11,7 @@ by the presence of dynamic heterogeneities
 which are spatially correlated,
 finding regions of fast and slow relaxations.
 These are both behaviours observed in ortho-terphenyl.
-Finally in @sec:sed_breakdown we do not observe
+Finally in @sec:trans_rot_decoupling we do not observe
 the same decoupling of translational and rotational motion
 observed by @Chang1994.
 However, there are simulation studies where the calculation

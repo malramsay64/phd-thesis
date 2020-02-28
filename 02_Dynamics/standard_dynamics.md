@@ -31,10 +31,10 @@ inline with expectations.
 ![The intermediate scattering function of the trimer molecule
 over a range of temperatures at a pressure $P=13.50$.
 Note the logarithmic scale on the time axis.
-](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:intermediate_scattering_function}
+](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:isf}
 
 The structural relaxation of the Trimer molecule
-is shown in @fig:intermediate_scattering_function.
+is shown in @fig:isf.
 At low temperatures ($T=1.25$ to $T=1.4$)
 the relaxation of the intermediate scattering function
 takes place through a two-step process,
@@ -55,12 +55,12 @@ where the fragility $m$ has been found to be 220.
 ](../Projects/Dynamics/figures/scattering_function_summary.svg){width=80% #fig:isf_relaxation}
 
 The timescales of the structural relaxation $\tau_S$
-are shown in @fig:isf_relaxtion,
+are shown in @fig:isf_relaxation,
 which include the relaxation from both
 high ($P=13.5$) and low ($P=1.0$) pressure simulations.
 These structural relaxation times
 are excellent examples of the non-Arrhenius
-temperature dependence of the dynamics in ortho-terphenyl (@sec:vtf).
+temperature dependence of the dynamics in ortho-terphenyl (@sec:intro_vtf).
 The fragility $m=220$ of the Trimer liquid
 is much higher than that of ortho-terphenyl,
 which makes it an even more interesting candidate.
@@ -113,7 +113,7 @@ Vogel--Tammann--Fulcher relation. {#tbl:glass_transition_temp}
 
 ## Dynamic heterogeneities {#sec:dynamic_heterogeneities}
 
-The non-exponential structural relaxation in @fig:intermediate_scattering_function
+The non-exponential structural relaxation in @fig:isf
 also hints at the presence of dynamic heterogeneities.
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-Gaussian parameter increases,
@@ -191,7 +191,7 @@ while coloured areas have lots of motion.
 
 The translational diffusion is characterised by the
 Mean Squared Displacement (MSD) of particles shown in @fig:msd.
-The two-step relaxation process seen in the structural relaxation (@fig:structural_relaxation)
+The two-step relaxation process seen in the structural relaxation (@fig:isf_relaxation)
 is also seen in the MSD.
 At lower temperatures,
 the transition from the initial ballistic region
@@ -241,7 +241,8 @@ and the diffusion constant
 are a component of confirming that
 the observed dynamical behaviour is as expected.
 The figures showing the rotational relaxation times
-and the diffusion constant are shown in @sec:extra_dynamics.
+and the diffusion constant are shown in @fig:rotational_relaxation and
+@fig:diffusion_constant.
 While the ratios between the quantities
 are displayed in @fig:trans_rot_trimer.
 This is interesting

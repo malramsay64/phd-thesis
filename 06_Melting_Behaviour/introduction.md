@@ -97,6 +97,6 @@ In @sec:static_analysis, we start with
 a revisit of some of our assumptions about our crystal structures,
 followed by an analysis of the configurations,
 looking for additional structures we haven't considered.
-This is followed in @sec:dynamic_analysis by
+This is followed in @sec:polymorphic_stability by
 an analysis of the melting dynamics of each crystal structure,
 looking at their stability and identifying competition between structures.

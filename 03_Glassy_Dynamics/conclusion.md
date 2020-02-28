@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec:conclusion_dynamics_understanding}
 
 The introduction of new molecular relaxations in @sec:molecular_relaxation
 provides a method of describing the relaxation
@@ -21,7 +21,7 @@ many of them need to be observed.
 The distribution of these jumps is much wider than for Brownian dynamics,
 with particle motion dominated by
 relaxations which have a long timescale but low probability.
-When averaging over many relaxation times as in @fig:jump_heterogeneties,
+When averaging over many relaxation times as in @fig:jump_heterogeneities,
 the distribution returns to a Gaussian.
 The increasing length scale of the jumps
 is likely related to the increasing length scale

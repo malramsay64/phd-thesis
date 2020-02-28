@@ -1,4 +1,4 @@
-# Thermodynamic quantities for Melting and Growth
+# Thermodynamic quantities for Melting and Growth {#sec:melting_thermodynamics}
 
 In this section we find the quantities
 needed to model crystal growth
@@ -75,10 +75,6 @@ over the course of the simulation.
 
 ## Spinodal temperature {#sec:spinodal}
 
-In @sec:supercooled_liquids it was discussed that
-a liquid can exist as a metastable state below the melting point
-giving a supercooled liquid.
-The same phenomenon is also true of the crystal above the melting point.
 At some temperature above the melting point,
 the crystal is no longer metastable,
 spontaneously melting to form the liquid.
@@ -171,10 +167,10 @@ where @Tang2013 use the slowest diffusion rate
 to model with Wilson--Frenkel growth,
 noting that the choice of transport coefficient
 didn't make much difference to the fit.
-Because of the breakdown in the Stokes--Einstein--Debye relations [@sec:trans_rot_coupling]
+Because of the breakdown in the Stokes--Einstein--Debye relations (@sec:trans_rot_coupling)
 and noting that the transition between the liquid and crystal
 mostly takes place through orientational motions,
-the inverse rotational relaxation time $1/\tau_r$ [@sec:rotational_diffusion]
+the inverse rotational relaxation time $1/\tau_r$ (@sec:rotational_diffusion)
 has been chosen as the transport coefficient.
 The rotational relaxation time $\tau_r$ is the time
 for half of the molecules to have reoriented by \SI{90}{\degree}

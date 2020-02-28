@@ -445,6 +445,6 @@ rather than any changes to the code that I made.
 [PEP 513]: https://www.python.org/dev/peps/pep-0513/#the-manylinux1-policy
 [manylinux demo]: https://github.com/pypa/python-manylinux-demo
 [PEP 518]: https://www.python.org/dev/peps/pep-0518/
-[ptp 518 progress]: https://github.com/pypa/pip/issues/4802
+[pep 518 progress]: https://github.com/pypa/pip/issues/4802
 
 <!-- markdownlint-disable-file -->

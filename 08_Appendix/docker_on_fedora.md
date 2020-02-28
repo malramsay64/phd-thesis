@@ -68,10 +68,10 @@ sudo systemctl start docker
 
 ## Setting Permissions
 
-{{% alert note %}}
+::: Warning
 This section has the potential to break things which are difficult to fix.
 Please be really careful, unlike me.
-{{% /alert %}}
+:::
 
 This follows the optional [post installation][docker post-install] steps in the Docker documentation.
 

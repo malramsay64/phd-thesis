@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec:conclusion_melting}
 
 In this chapter we have studied
 the crystal melting behaviour of the Trimer molecule.

@@ -15,7 +15,7 @@ comprising lots of strings which are all the same.
 ```python
 import pandas as pd
 large_number = 1_000_000
-df = pd.DataFrame({'evil': ['😈']*large_number})
+df = pd.DataFrame({'evil': ['x']*large_number})
 ```
 Using the `sys.getsizeof` function we can find
 the size in memory of this DataFrame
@@ -77,7 +77,7 @@ sometimes the simplest approach is to make the big data small.
 
 
 [^1]: The compression is working exactly as intended, it just hides the true size of the underlying data.
-[^2]: From interrogating the size of the DataFrame using either `sys.getsizeof(df)` or `df.memeory_useage(deep=True)` it appears that the memory is allocated for each object. When querying the individual objects using `id`, they all return the same value, which is the same as just the string. I don't know what is going on and would be happy for someone to point me to a good resource.
+[^2]: From interrogating the size of the DataFrame using either `sys.getsizeof(df)` or `df.memory_useage(deep=True)` it appears that the memory is allocated for each object. When querying the individual objects using `id`, they all return the same value, which is the same as just the string. I don't know what is going on and would be happy for someone to point me to a good resource.
 [^3]: Of course you are going to download a file some random stranger on the internet tells you is going to crash your python interpreter.
 
 

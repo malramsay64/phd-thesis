@@ -103,7 +103,7 @@ their liquid position to their crystal position
 requires interacting with other particles in the liquid,
 which gives the diffusional timescale to motion.
 With the diffusion constant of the trimer molecule
-begin described by the Vogel--Tammann--Fulcher relation, (@eq:vtf)
+begin described by the Vogel--Tammann--Fulcher relation, (@eq:VTF)
 the exponential dependence on temperature
 drastically reduces the possible rate of crystal growth as the temperature drops.
 The Wilson--Frenkel theory describes growth

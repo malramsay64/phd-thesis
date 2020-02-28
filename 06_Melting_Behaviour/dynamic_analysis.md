@@ -200,7 +200,7 @@ are grain boundaries between the layers of p2 crystals.
 :::
 
 Overall the dynamics of the Trimer molecule
-are phenomenally slow @sec:Dyanmics,
+are phenomenally slow (@sec:Dynamics),
 however the speed of the solid state transition is fast,
 indicating a low energy pathway between different configurations.
 The flipping of a dimer doesn't
@@ -217,9 +217,9 @@ In this section we investigate the melting of this polymorph
 to understand why is is so much faster.
 Configurations from the melting of the pg polymorph (@fig:pg_melting)
 show an asymmetric melting of the crystal structure.
-In the same time 30 layers of crystal from the ${0 \bar{1}}$ face have
+In the same time 30 layers of crystal from the $\{0 \bar{1}\}$ face have
 melted (from @fig:pg_melting_0 to @fig:pg_melting_2),
-the surface layer of the crystal in the ${0 1}$ face remains completely intact,
+the surface layer of the crystal in the $\{0 1\}$ face remains completely intact,
 containing the same molecules as the initial configuration.
 While there are many instances of crystals having a melting or growth rate
 dependent on the face of the crystal used for the measurement, [@Burke1988;@Tymczak1990;@Reinhart2017]
@@ -247,21 +247,21 @@ This shows (a) the melting from the initial crystal,
 :::
 
 The primary difference between
-the ${0 1}$ and the ${0 \bar{1}}$ faces of the pg crystal
+the $\{0 1\}$ and the $\{0 \bar{1}\}$ faces of the pg crystal
 is the part of the molecule exposed to the liquid.
-The ${0 1}$ face of the crystal exposes the larger particle,
-while the ${0\bar{1}}$ face exposes all three component particles.
-Interactions at the ${0\bar{1}}$ face of the crystal
+The $\{0 1\}$ face of the crystal exposes the larger particle,
+while the $\{0\bar{1}\}$ face exposes all three component particles.
+Interactions at the $\{0\bar{1}\}$ face of the crystal
 can have much stronger interactions with the liquid
-than at the ${0 1}$ face of the crystal,
+than at the $\{0 1\}$ face of the crystal,
 interactions which can help remove particles from the crystal.
 This isn't the entire story,
 since molecules at both faces of the crystal
 have the same interactions within the crystal
 with each molecule locked into the concavities
 of the neighbouring molecules.
-The melting of the crystal [@fig:pg_melting_1]
-takes place along the ${1 \bar{1}}$ and ${\bar{1} \bar{1}}$ planes
+The melting of the crystal (@fig:pg_melting_1)
+takes place along the $\{1 \bar{1}\}$ and $\{\bar{1} \bar{1}\}$ planes
 giving the triangular shape.
 Along these two faces there isn't the same
 locking of molecules into the crystal structure.
@@ -280,11 +280,11 @@ showing the configurations of the particles.
 
 :::
 
-Examining the dynamics at the interface ([@fig:spatial_relaxation_pg]),
+Examining the dynamics at the interface (@fig:spatial_relaxation_pg),
 there appears to be a large region extending from
-the ${0 1}$ face of the crystal
+the $\{0 1\}$ face of the crystal
 where the rotational relaxations are significantly longer than the mean.
-This indicates that the ${0 1}$ face suppresses the dynamics of the liquid
+This indicates that the $\{0 1\}$ face suppresses the dynamics of the liquid
 resulting in an asymmetric melting rate.
 The mechanism for this suppression could be explained
 by considering the molecular system as a network of gears, [@Zwanzig1987]
@@ -298,8 +298,8 @@ with the neighbourhood of the liquid changing regularly,
 however, it describes a mechanism by which
 the crystal can inhibit the rotational dynamics.
 The same suppression of rotational motion at the interface
-can be considered for the p2 polymorph. [@fig:spatial_relaxation_p2]
-The p2 polymorph displays a similar suppression along the ${1 0}$ and ${\bar{1} 0}$ faces,
+can be considered for the p2 polymorph (@fig:spatial_relaxation_p2).
+The p2 polymorph displays a similar suppression along the $\{1 0\}$ and $\{\bar{1} 0\}$ faces,
 although it is less pronounced.
 This is possibly a result of the crystal faces
 not aligning with the edges of the crystal,

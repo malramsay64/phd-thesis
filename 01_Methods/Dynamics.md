@@ -60,7 +60,7 @@ I used the function `freud.density.RDF` from
 the freud python package [@Harper2016]
 for the analysis of the radial distribution function.
 The radial distribution is averaged over 1000 frames
-at the melting point shown in @fig:radial_distribution_function.
+at the melting point shown in @fig:radial_distribution.
 
 ![The radial distribution function of the Trimer liquid at a pressure $P=13.50$ and a
 temperature $T=1.50$. The radial distribution is taken as an average over 100 configurations of

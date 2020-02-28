@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec:conclusion_ml}
 
 Machine learning is a valuable tool that can be used
 for the understanding of crystal structures in molecular dynamics simulations.

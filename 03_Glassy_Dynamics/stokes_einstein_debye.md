@@ -62,7 +62,7 @@ The progression of time is described by the colour of the point.
 The particle spends long periods of time in one configuration
 before quickly moving to the next,
 which typically requires both a translational and rotational motion.
-](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=48% #fig:molecule_trajectory_fast}
+](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=80% #fig:molecule_trajectory_fast}
 
 With the motion of particles so heavily influenced by Jump dynamics
 we can investigate the role they play in dynamic heterogeneities.
@@ -137,7 +137,8 @@ play an important role in the breakdown of the SED dynamics.
 The presence of a length scale dependence
 of the rotational and translational motion
 would clear up some of the confusion in the literature
-of the decoupling of rotations and translations. [@cite]
+of the decoupling of rotations and translations.
+[@Chong2009;@Tarjus1995;@Lombardo2006;@Sengupta2013;@Kawasaki2019;@Jose2006]
 
 When calculating the translational diffusion constant
 we describe the long timescale behaviour of the mean-squared-displacement
@@ -184,7 +185,7 @@ there are two main assumptions made about the dynamics;
 1. the motion is comprised of many small independent steps, and
 2. translational and rotational motions are independent.
 
-@Sec:jump-dynamics investigates the first of these assumptions,
+@Sec:jump_dynamics investigates the first of these assumptions,
 finding it not to hold for fragile liquids,
 so here we look towards the second.
 The observations of decoupling of translational and rotational motion
@@ -235,7 +236,7 @@ Large values of $\gamma$ required large values for both
 the translational component $\Delta r$
 and the rotational component $\Delta \theta$.
 The coupling parameter of the Trimer molecule is shown in @fig:gamma,
-having a very similar shape to that of the non-Gaussian parameter (@fig:non_gaussian).
+having a very similar shape to that of the non-Gaussian parameter (@fig:non-gaussian).
 As the temperature drops,
 the coupling between the rotational and translational motions grow
 and the timescale of coupling increases.

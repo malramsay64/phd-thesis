@@ -64,7 +64,8 @@ Substances with Arrhenius-like temperature dependence,
 shown by the blue line from the bottom left to top right of the figure,
 are considered strong liquids.
 The visibly convex curves are describes as fragile liquids. \
-*Figure from @Lubchenko2007 used with permission © Annual Reviews*](../00_Introduction/figures/angell.png){#fig:angell}
+*Figure from @Lubchenko2007 used with permission © Annual Reviews*
+](../00_Introduction/figures/angell.png){#fig:angell width=80%}
 
 The crystal growth rates of molecular crystals
 are two orders of magnitude slower than those of alloys
@@ -72,7 +73,7 @@ and six orders of magnitude slower than pure metals (@fig:growth_rates),
 yet there is no understanding of why this is the case.
 Understanding the crystal growth of these materials
 is inherently tied to understanding the lack of crystal growth,
-also known as glass formation. [@cite]
+also known as glass formation. [@Berthier2011;@Cavagna2009]
 Many materials including
 organic molecules,[@Alba-Simionesco1999] metals, [@Wang2004] and phase-change materials [@Wuttig2007]
 have applications in both the crystal and amorphous glassy state.
@@ -84,12 +85,12 @@ the crystal growth rate is maximum,
 while the downward arrows indicate the glass transition temperature.
 The data for silver is from molecular dynamics calculations
 while all other results are from physical measurements. \
-*Figure from @Orava2014 used with permission AIP Publishing*
-](../00_Introduction/figures/molecular_growth_rates.png){#fig:growth_rates}
+*Figure from @Orava2014 used with permission © AIP Publishing*
+](../00_Introduction/figures/molecular_growth_rates.png){#fig:growth_rates width=80%}
 
 The most notable and well studied molecular liquid is ortho-terphenyl,
-chosen for having both an incredibly slow growth rate [@cite]
-and being a highly fragile liquid. [@cite]
+chosen for having both an incredibly slow growth rate [@Orava2014]
+and being a highly fragile liquid. [@Angell2000;@Chong2004]
 There are many experiments on ortho-terphenyl,
 [@Cicerone1996;@Andreozzi1997;@Chang1994;@Fujara1992;@Mapes2006]
 using a range of techniques to better understand
@@ -240,7 +241,7 @@ like fewer neighbour interactions to consider.
 Additionally fewer particles are needed to remove finite size effects
 since particles only extend in two dimensions.
 Finally, the analysis of data in 2D is much easier to visualise.
-One of the reasons @fig:dynamic_heterogenaeties is used so widely
+One of the reasons @fig:dynamic_heterogeneities is used so widely
 to describe dynamic heterogeneities
 is that it so succinctly captures the idea,
 something made possible by the 2D nature of the simulation.
@@ -265,7 +266,9 @@ while the positions are defined by
 the distance $d$ from the center of the central particle,
 and the angle $\theta$ between the centers of the two radial particles.
 
-![This shows the construction of the trimer molecule.](../01_Methods/figures/trimer.pdf)
+![This shows the construction of the trimer molecule.
+The variant used within this thesis has $d=1, r=0.637556,$ and $\theta=180^\circ$
+](../01_Methods/figures/trimer.pdf)
 
 # Project Outline
 

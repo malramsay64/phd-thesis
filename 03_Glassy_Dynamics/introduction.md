@@ -3,7 +3,7 @@
 ## Breakdown in Stokes--Einstein--Debye
 
 The Stokes--Einstein--Debye (SED) theory of dynamics
-describes a series of relations (@eq:sed) between dynamics quantities.
+describes a series of relations (@eq:sed_proportionality) between dynamics quantities.
 These relations describe the dynamics of a wide range of liquids,
 however, they start to break down in fragile liquids
 close to the glass transition temperature.
@@ -55,7 +55,7 @@ and the average diffusion constant
 
 $$ \frac{D_\text{fast} + D_\text{slow}}{2} \approx \frac{D_\text{fast}}{2} $$
 
-we can how there are different relationships. [@cite]
+we can see how these relaxations behave differently.
 Here the presence of dynamic heterogeneities results in
 a decoupling of translational and rotational motion
 by the choice of parameters.

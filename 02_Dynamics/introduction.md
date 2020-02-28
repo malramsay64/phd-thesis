@@ -95,12 +95,9 @@ The expected shape of structural relaxation is an exponential decay,
 meaning the observed non-exponential shape needs to be explained.
 The non-exponential shape is the average over a range of particles
 which gives rise to two possible explanations for non-exponentially; [@Richert1994]
-
-1. each particle is undergoing the same non-exponential relaxation process, or
-2. the relaxation of each particle remains exponential,
-however non-exponential is a distribution of
-   relaxation timescales.
-
+each particle is undergoing the same non-exponential relaxation process, or
+the relaxation of each particle remains exponential,
+however non-exponential is a distribution of relaxation timescales.
 This was initially investigated by simulation studies,
 which found the presence of spatially heterogeneous dynamics within the liquid. [@Hurley1995]
 This idea is encapsulated in @fig:dynamic_heterogeneities
@@ -169,7 +166,7 @@ Within experiments, the diffusion constant is often measured using
 \ce{1H}-NMR [@Chang1994;@Chang1994a;@Fujara1992;@Mapes2006;@Andreozzi1997]
 which allows for the comparison with simulations.
 
-### Rotational Diffusion Constant
+### Rotational Diffusion Constant {#sec:rotational_diffusion}
 
 While the values calculated for the translational diffusion constant
 in simulations and experiments are relatively comparable,
@@ -209,7 +206,7 @@ the 2nd degree Legendre polynomial
 chosen for matching the spectroscopic rotation [@Brodka1992]
 with the form;
 
-$$ R_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$ {#eg:rot_relax}
+$$ R_2(t) = \frac{1}{2} \langle 3(\hat{\vect{n}}(t) \cdot \hat{\vect{n}}(0))^2 -1 \rangle. $$ {#eq:rot_relax}
 
 ### Rotational Motion through Jump Dynamics {#sec:intro_jump_dynamics}
 
@@ -286,8 +283,8 @@ This decoupling has been observed in further studies
 of supercooled liquids
 and remains an unexplained phenomenon. [@Debenedetti2001;@Fujara1992;@Cicerone1996;@Ediger2000]
 
-![Translational (□, ●, △)
-and Rotational (◇,◆) diffusion coefficients
+![Translational ($\square$, $\CIRCLE$, $\vartriangle$)
+and Rotational ($\lozenge$,$\blacklozenge$) diffusion coefficients
 of ortho-terphenyl.
 The coupling of these quantities breaks down below 290K,
 where translational diffusion is faster relative to the structural relaxation. \
@@ -304,12 +301,12 @@ we expect the Trimer model to display.
 These are;
 
 1. the non-Arrhenius temperature dependence characteristic of a fragile liquid
-2. the two-step structural relaxation described in @sec:structural_realaxation
+2. the two-step structural relaxation described in @sec:structural_relaxation
 3. The presence of dynamic heterogeneities
 4. Jump dynamics in the rotational relaxation
 5. Decoupling of translational and rotational motion
 
 The rest of this chapter is about characterising these dynamic quantities
 for the Trimer and comparing them to the expected results for ortho-terphenyl.
-@Sec:structural_realaxation describes 1, and 2, @sec:dynamic_heterogeneities describes
-3, while 4 and 5 are described in @sec:stokes_einstein_debye.
+@Sec:structural_relaxation describes 1, and 2, @sec:dynamic_heterogeneities describes
+3, while 4 and 5 are described in @sec:sed.
