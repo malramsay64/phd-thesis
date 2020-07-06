@@ -28,6 +28,7 @@ Note that to update the dependencies the command
 ```shell
 conda env update
 ```
+
 is required.
 
 The build itself is completed with
@@ -55,6 +56,7 @@ running the command
 ```shell
 npm install
 ```
+
 will install all the packages required for these checks.
 
 The command
@@ -62,6 +64,7 @@ The command
 ```shell
 make lint
 ```
+
 will then run all the checks for the files.
 
 These checks can also be configured to show up in your text editor,
@@ -85,6 +88,20 @@ dnf install libxcrypt-compat
 ```
 
 is required for biber 2.5 to run.
+
+Another error is
+
+```error
+biber: error while loading shared libraries: libnsl.so.1:
+cannot open shared object file: No such file or directory
+```
+
+which can be resolved by installing libnsl,
+a library that was previously part of glibc.
+
+```sh
+dnf install libnsl
+```
 
 [travis-ci]: https://travis-ci.org
 [github releases]: https://github.com/malramsay64/phd-thesis/releases
