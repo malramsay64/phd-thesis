@@ -295,6 +295,8 @@ In @sec:Dynamics we compare the dynamic behaviour of the Trimer molecule
 to that of the Lewis--Wahnström model and ortho-terphenyl,
 demonstrating the model exhibits the characteristic behaviours of
 these liquids it models.
+This chapter establishes the reference timescales
+used in @sec:Crystal_Melting and @sec:Melting_Behaviour.
 Having established the Trimer molecule displays
 the dynamic behaviours of our model liquids,
 in @sec:Glassy_Dynamics we use the Trimer molecule
@@ -319,6 +321,8 @@ This machine learning methodology is then used in @sec:Crystal_Melting
 to characterise the melting rate of the Trimer crystal,
 finding which aspects of theoretical models
 are required to properly describe the melting rate.
+This chapter also establishes the melting point of the Trimer,
+used in @sec:Crystal_Melting and @sec:Glassy_Dynamics as a reference temperature.
 Finally in @sec:Melting_Behaviour
 we analyse the melting of different polymorphs of the Trimer
 to understand what makes the melting so incredibly slow.
