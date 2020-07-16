@@ -14,9 +14,10 @@ Using newly developed methods for describing
 the dynamic behaviour of individual molecules,
 we explain the onset of dynamic heterogeneities resulting from jump dynamics,
 where motions occur through large reorganisations.
-We also the properties of fragile liquids
-are related to the glass transition
-rather than the melting point as they are normally described.
+We also observe a slowdown of dynamics within fragile liquids
+at temperatures above the melting point,
+providing evidence these are properties of the glass transition
+rather than the supercooled liquid as they are normally described.
 With an understanding of the impact of length scales for describing dynamics,
 we can attribute the observed decoupling of rotational and translational diffusion
 to the coupling of rotations and translations within each molecule.
@@ -27,7 +28,7 @@ drastically slowing the melting of the crystal phase.
 These transitions are made even slower by the suppression
 of rotational motion at the interface of the crystal.
 The results found in this thesis using a 2D molecule
-provide the basis for investigations in 3D simulations
-and experimental systems.
+provide a framework for investigating these effects
+in 3D simulations and experimental systems.
 
 <!-- markdownlint-disable-file MD025 -->
