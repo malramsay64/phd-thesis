@@ -2,23 +2,25 @@
 
 ## Characterisation of Dynamics {#sec:intro_dynamics}
 
-The Trimer models is designed to model the dynamics of a fragile liquid.
-In particular we want it to display dynamics similar to that of ortho-terphenyl.
-Here we introduce some dynamics quantities which are measured in
-both experiments and simulations.
+The Trimer model is designed to model the dynamics of a fragile liquid.
+In particular, we want it to display dynamics similar to ortho-terphenyl.
+Here we introduce some dynamics quantities measured in
+both experiments and simulations that allow for a comparison
+between these simulation results and
+those measured experimentally for ortho-terphenyl.
 
 ## Structural Relaxation {#sec:intro_structural}
 
 The structural relaxation is the most fundamental relaxation process [@Angell2000]
-describing the time required for a liquid to
+describing the time required for the structure of a liquid to
 return to equilibrium after a small perturbation. [@Ediger2012]
 The process of structural relaxation takes place over distances
 comparable to the size of the particles within the liquid. [@Angell1985]
-It "describes the process by which a liquid forgets it's structure
+It "describes the process by which a liquid forgets its structure
 from some earlier time",[@Ediger1996]
 which can be measured through density fluctuations. [@Angell2000]
-The structural relaxation is measured through a range of
-different experimental techniques, including;
+There are a range of experimental techniques used to
+measure structural relaxation including;
 neutron scattering, [@Mezei1987;@Bartsch1995;@Tolle2001]
 probe molecules, [@Wendt1998;@Cicerone1995]
 light scattering, [@Sidebottom1993;@Li1992;@Singh1998;@Griffin2012]
@@ -46,7 +48,7 @@ $$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M \left[
     \cos\left(a\frac{2\pi}{M}\right), \sin\left(a\frac{2\pi}{M}\right)
 \right] $$
 
-Where the sum is over $N$ values of
+Where the sum is over $M$ values of
 the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
 
 $$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
@@ -70,7 +72,7 @@ fast $\beta$-relaxations which are the relaxations before the plateau
 and slow $\alpha$-relaxations being the long timescale relaxations. [@Cavagna2009]
 The $\beta$-relaxations are only present at the low temperatures
 and are associated with supercooled liquids and the onset of the glass transition.
-While the $\alpha$-relaxation is present for all temperatures
+The $\alpha$-relaxation is present for all temperatures
 and is the relaxation measured by the structural relaxation time $\tau_S$
 being the longest timescale relaxation.
 As the structural relaxation behaviour becomes increasingly non-exponential, [@Ediger1996]
@@ -120,6 +122,8 @@ hole burning experiments, [@Schmidt-Rohr1991;@Cicerone1995;@Schiener1997]
 photobleaching, [@Cicerone1993]
 and optical microscopy. [@Bartko1999]
 
+<!-- TODO => Define non-gaussian parameter -->
+
 The quantity used to measure this is the non-Gaussian parameter $\alpha$,
 which is a measure of how far the distribution of motions
 deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
@@ -142,7 +146,7 @@ the rotational diffusion constant.
 The translational diffusion constant $D_t$
 is a measure of how fast particles within the liquid
 move over a long time period.
-It's formulation is based upon Brownian dynamics,
+Its formulation is based upon Brownian dynamics,
 where, over long time periods,
 the displacement from the origin $\Delta \vect{r}(t)$ at time $t$
 averaged over many initial configurations
@@ -159,7 +163,7 @@ The Mean-Squared-Displacement has a timescale dependence
 so the calculation of the diffusion constant
 is normally written as;
 
-$$ D = \frac{1}{2tN} \lim_{t\to\infty} \langle \Delta \vect{r}(t)^2 \rangle $$
+$$ D = \frac{1}{2N} \lim_{t\to\infty} \frac{1}{t} \langle \Delta \vect{r}(t)^2 \rangle $$
 
 reflecting the intended long timescale behaviour.
 Within experiments, the diffusion constant is often measured using
@@ -169,13 +173,13 @@ which allows for the comparison with simulations.
 ### Rotational Diffusion Constant {#sec:rotational_diffusion}
 
 While the values calculated for the translational diffusion constant
-in simulations and experiments are relatively comparable,
+in simulations and experiments are comparable,
 the rotational diffusion is a little different.
-In experimental systems rather than measuring rotational diffusion $D_r$,
-the rotational relaxation time $\tau_r$.
+Experimental systems measure the rotational relaxation time $\tau_r$
+rather than measuring rotational diffusion $D_r$.
 The equivalence of the rotational relaxation time to the diffusion constant
-can be made using spherical harmonics,
-describing the rotational relaxation function $R_l(t)$ as
+can be described using spherical harmonics,
+representing the rotational relaxation function $R_l(t)$ as
 
 \begin{align}
 R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
@@ -287,7 +291,7 @@ and remains an unexplained phenomenon. [@Debenedetti2001;@Fujara1992;@Cicerone19
 and Rotational ($\lozenge$,$\blacklozenge$) diffusion coefficients
 of ortho-terphenyl.
 The coupling of these quantities breaks down below 290K,
-where translational diffusion is faster relative to the structural relaxation. \
+where the translational diffusion is faster than the rotational diffusion. \
 *Figure from @Chang1994 used with permission © Elsevier*
 ](../00_Introduction/figures/trans_rot_coupling.png){#fig:trans_rot_otp width=80%}
 

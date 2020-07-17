@@ -66,7 +66,7 @@ is much higher than that of ortho-terphenyl,
 which makes it an even more interesting candidate.
 Ortho-terphenyl has been studied because it
 is one of the most fragile glass formers (@fig:angell)
-and the slowest crystal growth (@fig:growth_rates),
+and slowest crystal growth (@fig:growth_rates),
 so is going to best express the features of those phenomena.
 Having an even more fragile liquid
 is a better way of understanding what makes a liquid fragile.
@@ -90,7 +90,7 @@ they should instead be described as occurring at the onset
 of the glass transition temperature.
 This is not entirely surprising when considering the types of relaxations taking place.
 The onset of dynamic heterogeneities,
-like the glass transition is a kinetic phenomena, [@Debenedetti2001]
+like the glass transition is a kinetic process, [@Debenedetti2001]
 describing the motion that takes place.
 While the melting point, and supercooled liquids
 are a thermodynamic description,
@@ -176,7 +176,7 @@ giving rise to the results we observe.
 ![Map of the spatial distribution
 of translational and rotational heterogeneities
 of a simulation at D=1.35 and Pp=13.50
-at the time of the maximum of the translational non-Gaussian.
+at the time of the maximum of the translational non-Gaussian parameter.
 The translational motion is denoted by an arrow depicting
 the size and the direction of the motion,
 while the rotational motion is depicted by the circle
@@ -205,7 +205,9 @@ The diffusion constants,
 found by fitting the long timescale regions
 of the mean squared displacement are shown in @fig:diffusion_constant.
 The diffusion constant displays the same
-non-Arrhenius behaviour as the structural relaxation.
+non-Arrhenius behaviour as the structural relaxation,
+with both pressures described by the same VTF relation
+when normalised by the melting point.
 
 ![The Mean Squared Displacement of the trimer molecule
 over a range of temperatures for a pressure $P=13.50$.
