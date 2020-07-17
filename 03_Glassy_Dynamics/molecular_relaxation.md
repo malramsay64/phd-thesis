@@ -24,17 +24,19 @@ $$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
 where $k_{\text{bragg}}$ is the wave-vector of
 the maximum peak of the static structure factor $S(k)$.
 This function describes the structural relaxation
-in a very similar way to the intermediate scattering function
+in a similar manner to the intermediate scattering function
 with the added benefit of being able describe each particle
-as either not-relaxed, the particle is within a distance $d$ of it's initial position,
-or relaxed, the particle is greater than a distance $d$ of it's initial position.
+as either not-relaxed, the particle is within a distance $d$ of its initial position,
+or relaxed, the particle is greater than a distance $d$ of its initial position.
 This idea of defining individual particles being in one of these two states,
 provides an alternative method of defining a relaxation time.
 We can define the relaxation time of each particle
 as the time required to move a desired length scale.
-This length scale can either be
-translational motion, describing structural relaxation and diffusion,
-or rotational motion, describing the rotational relaxation time and rotational diffusion.
+This length scale can either be a translational motion, or a rotational motion.
+Where the translational motion describes
+structural relaxation and translational diffusion
+while the rotational motion describes
+the rotational relaxation time and rotational diffusion.
 Rather than defining a single relaxation time for the entire simulation,
 having timescales for each particle provides
 additional insight into how each particle
@@ -87,9 +89,10 @@ can move up to 4 times that distance
 while still remaining in the same local environment,
 returning to the previous position.
 We are interested in the distance at which a particle
-leaves the local environment it was initially in,
-once it has moved it will have no memory of where it was.
-A particle will take many attempts at escaping the local environment,
+leaves the local environment it initially started in.
+A distance once a particle has moved
+it retains no memory of the previous environment.
+A particle will take numerous attempts at escaping the local environment,
 with many of them failing, giving rise to the results in @fig:first_passage_time.
 A measure of successful relaxation
 is one which results in the molecule moving further away,

@@ -1,8 +1,7 @@
 # Understanding the breakdown of Stokes--Einstein--Debye {#sec:sed}
 
-Our current understanding of the breakdown of the Stokes--Einstein--Debye relations,
 Current work in describing the Stokes--Einstein--Debye relations
-centers around finding quantities which satisfy
+centers around finding quantities that satisfy
 some proportionality criteria. [@Sengupta2013;@Kawasaki2019]
 These studies are looking to find the quantity which adheres
 to the Stokes--Einstein--Debye relations,
@@ -160,9 +159,9 @@ where jump dynamics are unlikely to play a role in rotational relaxation.
 However, in a simulation study of the Lewis--Wahnström model
 for which rotational jump dynamics observed,
 @Lombardo2006 find that experiments and simulations
-which measure rotational using the Debye model
+which measure rotational relaxation using the Debye model
 display an increase in translational diffusion relative to rotational diffusion,
-while when using the Einstein formalism, simulation
+while when using the Einstein formalism, simulations
 display a decrease in translational diffusion relative to rotational diffusion.
 We make the same comparison in @fig:trans_rot_diff_trimer,
 where both rotational formalisms give similar results.
@@ -222,7 +221,8 @@ to describe a correlation between rotations and translations,
 though is insufficient to describe coupling,
 we are yet to find a direct link between the two types of motion.
 
-Based on work by @Faraone2003 measuring the coupling of water,
+Based on work by @Faraone2003 measuring the coupling of
+rotational and translational motion in water,
 we define the coupling parameter $\gamma$
 
 $$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}

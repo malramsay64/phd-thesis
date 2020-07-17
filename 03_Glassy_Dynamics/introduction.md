@@ -12,7 +12,7 @@ of rotational and translational diffusion [@Chang1994;@Griffin2012;@Fujara1992]
 shown in @fig:trans_rot_otp.
 This decoupling results from a change in the viscosity dependence
 of the translational diffusion having the relationship $D_t \propto \eta^{-0.75}$
-which has deviated from the expected $D_t \propto \eta-1$. [@Chang1994]
+which has deviated from the expected $D_t \propto \eta^{-1}$. [@Chang1994]
 
 There is a general consensus on the presence of both these
 decoupling within experimental studies, [@Chang1994;@Griffin2012;@Fujara1992]
@@ -140,7 +140,7 @@ dominated by large clusters relaxing slowly.
 ![Four gears](../00_Introduction/figures/cogs_4.svg){#fig:gears_quad width=40%}
 
 If we model the rotational motion of a gear network
-Where there are three gears,
+where there are three gears,
 like in a triangular lattice
 the rotational motion is jammed,
 while four gears allow motion to propagate.
@@ -182,7 +182,7 @@ There has been evidence of the transition from
 free to activated diffusion in simulations of atomic systems [@Barrat1991;@Wahnstrom1991]
 where the motions change from many small random motions at high temperatures
 to a large motions from one site to another at low temperatures,
-often involved correlated motions of particles.
+often involve correlated motions of particles.
 
 ![A representation of the potential energy landscape for a liquid.
 The entire configuration moves between the low energy states
@@ -207,8 +207,10 @@ These molecular relaxation quantities allow more insight
 into the dynamic heterogeneities present in supercooled liquids.
 In @sec:sed we use these new molecular relaxations
 to describe the relationship between
-jump dynamics and dynamic heterogeneities,
-and exampling the coupling between
-rotational and translational motions
-and the impact these have on
+jump dynamics and dynamic heterogeneities.
+These relationships are then also used to
+describe the coupling between rotational and translational motions
+on the molecular level.
+The insights from this understanding
+is then used to gain insight into
 the Stokes--Einstein--Debye model of dynamics.

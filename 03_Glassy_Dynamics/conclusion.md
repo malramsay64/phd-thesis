@@ -1,7 +1,7 @@
 # Conclusion {#sec:conclusion_dynamics_understanding}
 
-The introduction of new molecular relaxations in @sec:molecular_relaxation
-provides a method of describing the relaxation
+The new molecular relaxations presented in @sec:molecular_relaxation
+provide a method of describing the relaxation
 of each individual particle.
 We use the Trimer model to show these quantities
 are comparable to the traditional dynamics quantities,
@@ -28,7 +28,7 @@ is likely related to the increasing length scale
 of dynamic heterogeneities described by
 the free energy model of dynamics.
 
-@sec:sed explains the breakdown of the Stokes--Einstein--Debye relations.
+@Sec:sed explains the breakdown of the Stokes--Einstein--Debye relations.
 This describes two types of dynamics,
 the short timescale jump dynamics
 where the assumption of Brownian dynamics no longer holds.
@@ -51,5 +51,6 @@ break two fundamental assumptions of the Stokes--Einstein--Debye (SED) relations
 The observed breakdown is a result of the model
 not accounting for the types of motion which are present.
 While SED describes the dynamics at high temperatures,
-alternative models which incorporate the motions present in
-liquids close to the glass transition should be used instead.
+the assumptions break down in liquids close to
+the glass transition temperature
+making it an unsuitable model for these liquids.
