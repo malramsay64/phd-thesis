@@ -323,8 +323,15 @@ finding which aspects of theoretical models
 are required to properly describe the melting rate.
 This chapter also establishes the melting point of the Trimer,
 used in @sec:Crystal_Melting and @sec:Glassy_Dynamics as a reference temperature.
-Finally in @sec:Melting_Behaviour
+Finally, in @sec:Melting_Behaviour
 we analyse the melting of different polymorphs of the Trimer
 to understand what makes the melting so incredibly slow.
+This chapter combines the analysis of timescales from @sec:Dynamics,
+the melting rates from @sec:Crystal_Melting and
+the classification and analysis from @sec:Machine_Learning
+to provide a qualitative understanding of the slow crystal growth.
+Additionally this chapter uses these analyses built up
+in previous chapters to confirm that we are investigating
+the appropriate crystal structures.
 
 <!-- markdownlint-disable-file MD025 -->
