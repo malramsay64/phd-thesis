@@ -377,6 +377,6 @@ are drawn from the projects from which they were created,
 which contain the code to recreate them.
 These projects are [Dynamics](https://github.com/malramsay64/Dynamics),
 used for the results in @sec:Dynamics and @sec:Glassy_Dynamics,
-[Machine_Learning](https://github.com/malramsay64/Machine_Learning) used to generate the results in @sec:Machine_Learning,
+[MLCrystals](https://github.com/malramsay64/MLCrystals) used to generate the results in @sec:Machine_Learning,
 and [Crystal_Melting](https://github.com/malramsay64/Crystal_Melting)
 used for the results in @sec:Crystal_Melting and @sec:Melting_Behaviour.
