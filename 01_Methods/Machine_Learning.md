@@ -1,7 +1,6 @@
 # Machine Learning Methodology
 
 The field of machine learning has been actively researched for over 40 years.
-Developing the ideas of helping computers make better decisions for us.
 The relatively recent surge of both research and commercial interest
 is the result of widely available computing power.
 This has seen the rise of more complex algorithms like deep neural networks.
@@ -15,7 +14,7 @@ which has made these types of algorithms commercially viable.
 One of the large downsides of using a complicated neural network
 is that there is little clarity over how a decision is made.
 In particular, bias in data the algorithm learns from
-is amplified within the algorithm in unexpected ways.
+is amplified within the algorithm in unexpected ways. [@Zou2018]
 
 Machine Learning models normally have many fitting parameters,
 making the over-fitting of the model to the input data

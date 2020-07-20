@@ -7,8 +7,8 @@ through the growth in size of the simulation cell. [@Tang2013]
 Other methods are to compute a local property as a measure of order
 like a hexatic order parameter for 2D simulations,
 or a Steinhardt bond order parameter [@Reinhart2018].
-See @sec:Machine_Learning for details about identifying
-crystal structure within a liquid.
+@Sec:Machine_Learning develops the methodology for
+identifying crystal structure within a liquid.
 These approaches use a slab geometry [@Kerrache2008]
 to measure the growth or melting rates
 of a single face of the crystal.
@@ -35,7 +35,7 @@ The first step in determining the melting rate
 is determining which particles
 are in a local crystalline configuration.
 This approach used the K-Nearest Neighbours
-machine learning algorithm. [@sec:Machine_Learning]
+machine learning algorithm (@sec:supervised_learning)
 For the melting rate,
 we are not so much interested in the types of crystals
 which exist within the structure,

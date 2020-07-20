@@ -191,7 +191,7 @@ as the translational non-Gaussian parameter.
 $$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
 
 It is additionally possible to investigate
-the coupling of the rotational and translational heterogeneities
+the coupling of the rotational and translational displacements
 which is measured using the parameter $\gamma$.
 
 $$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
@@ -202,9 +202,9 @@ using the same approach as the rotational and translational
 non-Gaussian parameters.
 
 Each of these quantities,
-the translational heterogeneities $\alpha$,
-the rotational heterogeneities $\alpha_\text{rotation}$, and
-the coupling of heterogeneities $\gamma$,
+the translational non-Gaussian parameter $\alpha$,
+the rotational non-Gaussian parameter $\alpha_\text{rotation}$, and
+the coupling of rotational and translational displacements $\gamma$,
 has a characteristic timescale;
 the time at which the dynamics is maximally heterogeneous.
 This allows for the comparison of these quantities

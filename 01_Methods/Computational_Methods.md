@@ -3,7 +3,7 @@
 Using computer simulations to model a chemical system,
 requires computers for both running the simulations,
 and the follow-up analysis of the large volumes of data generated.
-This custom simulations and analysis required for new research
+The custom simulations and analysis required for new research
 requires the development of software to perform the calculations.
 Using computing for research has existed as long as the computer itself.
 The development of Monte Carlo methods in 1946,

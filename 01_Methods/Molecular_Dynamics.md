@@ -227,9 +227,8 @@ The integration of rigid bodies in HOOMD-blue is performed by
 calculating the force on all the particles and then
 using the calculated forces to integrate a central particle of a molecule
 which undergoes both the translations and rotations.
-For the rotations to take place properly
+For the rotations to be described properly in HOOMD-blue,
 the central particle needs to be located at the center of mass of the molecule.
-The positions of each particle in the Trimer molecule are given by;
 
 $$ \mathbf{P}` = \left [
 \begin{matrix}
@@ -295,7 +294,7 @@ the fundamental units of
 with all other units derived from these.
 For the Lennard Jones system these values are all dimensionless.
 
-The units of temperature are $kT$,
+The units of temperature are $\frac{kT}{\mathcal{E}}$,
 where $k$ is the Boltzmann constant,
 having a value of 1 in LJ units.
 
