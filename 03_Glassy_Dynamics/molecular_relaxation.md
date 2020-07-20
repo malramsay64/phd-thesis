@@ -14,7 +14,7 @@ This approach describes the structural relaxation function $F_d(t)$ as
 $$ F_d(t) = \frac{1}{N} \left \langle \sum_i w_i(d, t) \right \rangle $$ {#eq:structural_relaxation}
 
 where $w_i(d, t) = 1$ if the particle is within distance $d$
-of it's initial position at time $t$,
+of its initial position at time $t$,
 and zero otherwise.
 The angle brackets signify an average over initial times.
 The value of $d$ was chosen to be
@@ -151,11 +151,11 @@ This is because the length scale of the dipole relaxation
 is more well defined than for either
 the structural relaxation or the diffusion.
 The rotational relaxation function $R_2$ (@eq:rot_relax)
-has it's first zero at an angular displacement of $\pi/4$,
+has its first zero at an angular displacement of $\pi/4$,
 being the angular displacement required for
 the relaxation quantity $\tau_{T4}$.
 Likewise, the rotational relaxation function $R_1$
-has it's first zero at an angular displacement of $\pi/2$,
+has its first zero at an angular displacement of $\pi/2$,
 giving the relaxation quantity $\tau_{T2}$.
 
 ![Rotational relaxation times compared with the rotational relaxations
@@ -179,7 +179,7 @@ demonstrating these describe the types of relaxations
 we are investigating.
 
 ![Summary taking the ratio of each molecular relaxation quantity
-with it's traditional counterpart.
+with its traditional counterpart.
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
 ## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}

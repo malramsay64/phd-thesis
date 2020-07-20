@@ -140,7 +140,7 @@ a condition not present in higher dimensional space.
 Thirdly, the defects only facilitate
 relaxation from the p2gg crystal to the p2.
 The motion of the defect does occasionally
-reverse along it's path of motion,
+reverse along its path of motion,
 however there are no defects created in the p2 crystal.
 This means there must be a significant driving force
 for the conversion between the local structures.

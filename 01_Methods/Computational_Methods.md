@@ -52,7 +52,7 @@ The function used, `glob.glob`,
 is a well known feature of the Python programming language,
 appearing in Software Carpentry's [@Wilson2016] "Programming with Python" lesson, [@programming_python]
 a one day course for introducing researchers to Python.
-Despite the ubiquity of this function and it's behaviour,
+Despite the ubiquity of this function and its behaviour,
 it took 5 years and hundreds of people
 to notice that the behaviour of the script was incorrect.
 Another instance where software has hung a cloud of uncertainty over results,

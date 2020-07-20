@@ -81,7 +81,7 @@ that all relaxations are drawn from the same distribution,
 that is, each jump between local environments is equivalent.
 This also makes the assumption that once the particle
 has undergone relaxation it is completely independent
-of it's previous configuration.
+of its previous configuration.
 This sequence of jumps can be modelled
 by drawing consecutive relaxation times
 from our experimentally determined distribution of relaxation times.

@@ -10,7 +10,7 @@ embedded devices with [uPython] to distributed processing of [petabytes of data]
 Speed comes through specificity for a task. Even when working with C or C++, which are generally
 regarded as the reference standard for performance, there is still an argument to be made for
 increased performance through hand optimised assembly. Writing assembly, which is the stream of
-instructions the CPU interprets to do it's work, *can* result in faster code than a compiler if you
+instructions the CPU interprets to do its work, *can* result in faster code than a compiler if you
 know what you doing. Only nearly no-one actually writes assembly because we want our applications to
 work on different processor architectures and to take advantage of the features of newer CPUs like
 out-of-order execution.[^1] Instead of writing the fastest possible code for a particular processor

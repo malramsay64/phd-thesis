@@ -98,7 +98,7 @@ $(build_dir):
 
 This build process runs `tectonic` once with the `--keep-intermediates` option to generate the
 intermediate files. I then check for the presence of a `.bcf` file, which is the file `biber` uses
-to to it's thing. Tectonic is then run afterwards, which runs the compilation step as many times as
+to to its thing. Tectonic is then run afterwards, which runs the compilation step as many times as
 it needs to finalise the output. The final step is copying the output PDF from the build directory
 to the local working directory.
 

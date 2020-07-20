@@ -37,7 +37,7 @@ Step Size |      |       |       |       |       |       |        |
 100       |1100  | 1200  | 1300  | ...   | 9700  | 9800  | 9900   | 10000
 1000      |11000 | 12000 | 13000 | ...   | 97000 | 98000 | 99000  | 100000
 
-Table: The step sequence broken into it's two components.
+Table: The step sequence broken into its two components.
 Across each row are the linear steps,
 while dropping down to the next row
 increases the size of the linear step by a power of 10. {#tbl:step_sequence}

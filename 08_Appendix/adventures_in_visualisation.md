@@ -86,7 +86,7 @@ this time version 2.0.
 
 Why Altair again?
 When I first tried Altair I was approaching it from Matplotlib,
-with it's extensive documentation
+with its extensive documentation
 in the form of the technical reference and the numerous how to guides.
 This time I was approaching it from Bokeh and Holoviews,
 both of which are relatively new libraries with some teething problems.

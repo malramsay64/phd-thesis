@@ -122,7 +122,7 @@ however we need to full hostname.
 
 With the full hostname,
 we know the name of our device,
-and we know that our device is aware of it's hostname.
+and we know that our device is aware of its hostname.
 This doesn't necessarily mean that any other devices know what ours is called.
 The process of taking a hostname and turning it into an address
 the computer can use is known as DNS,

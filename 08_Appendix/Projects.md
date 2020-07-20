@@ -150,7 +150,7 @@ Rowan [@Ramasubramani2018] which provides utilities for working with Quaternions
 These projects were both developing throughout the course of my PhD
 and at various points I was implementing components of these tools,
 however ensuring my code was correct, fast and installable
-was too much of an effort to justify it's continued development
+was too much of an effort to justify its continued development
 when there were these high quality alternatives.
 
 While these projects provided fast implementations of various calculations,

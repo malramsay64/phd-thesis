@@ -448,7 +448,7 @@ while being possible to exactly replicate a sequence.
 Random numbers are used in Hoomd
 for the initialisation of translational and rotational velocities.
 HOOMD-blue uses the Saru PRNG [@Afshar2013],
-which was chosen for it's performance on GPUs,
+which was chosen for its performance on GPUs,
 in particular the algorithm for generating random values
 takes a seed comprising three numbers,
 one that is the identity of the body

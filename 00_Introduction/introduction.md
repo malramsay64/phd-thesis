@@ -165,7 +165,7 @@ There is an angle of \SI{75}{\degree} subtending the centers of the thee particl
 
 The Lewis--Wahnström model of ortho-terphenyl is the most widely studied
 computational model of ortho-terphenyl,
-chosen for it's relative simplicity.
+chosen for its relative simplicity.
 In removing much of the complexity of the molecular system including;
 the bond vibrations,
 most of the molecular interactions, and

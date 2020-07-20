@@ -27,7 +27,7 @@ More complex models of a dataset,
 like those used in machine learning
 lack this mathematical description of uncertainty.
 @Larson1931 noted in 1931 that
-using the same dataset for training an algorithm and evaluating it's statistical performance
+using the same dataset for training an algorithm and evaluating its statistical performance
 gives a result more optimistic than can be replicated with additional datasets.
 Cross-validation is a technique which
 has been demonstrated to reduce over-fitting when used appropriately [@Arlot2010;@Zhang1993]
