@@ -92,7 +92,7 @@ when understanding the transition between the liquid and solid phase.
 
 The primary goal of this chapter is to establish
 the most stable polymorph of the Trimer molecule
-which can be used to study growth.
+which can be used to study growth and melting.
 In @sec:static_analysis, we start with
 a revisit of some of our assumptions about our crystal structures,
 followed by an analysis of the configurations,

@@ -120,10 +120,10 @@ pressures. {#tbl:crystal_spinodal}
 
 ## Chemical Potential Energy {#sec:chemical_potential}
 
-The change in the chemical potential energy $\Delta \mu$
+The change in the chemical potential $\Delta \mu$
 between the liquid and crystal states
 is an important part of describing crystal melting dynamics.
-Finding the chemical potential energy at each temperature is a complex process,
+Finding the chemical potential at each temperature is a complex process,
 so a standard approach [@Tang2013] is
 to estimate the change in chemical potential $\Delta \mu$ as
 

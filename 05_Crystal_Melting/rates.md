@@ -3,8 +3,8 @@
 The simulations in @sec:polymorphic_stability find
 the p2 polymorph to be the most stable crystal structure,
 so it is used for this analysis of the melting rate.
-We measure the isotropic melting of the p2 crystal,
-which is measured by estimating the radius of the crystal
+We measure the isotropic melting of the p2 crystal
+by estimating the radius of the crystal
 found from the volume and assuming a circular crystal.
 This assumption of a circular crystal is validated by @fig:melting_radius
 showing the expected linear melting over all temperatures.
@@ -19,8 +19,9 @@ the same result as seen for the dynamic quantities.
 ![This figure shows the change in the estimated radius of the crystal as a
 function of time. The radius is estimated from the volume assuming a circular crystal.
 Each set of conditions is repeated five times starting from independent
-configurations, which are used to estimate the confidence intervals. The change in
-the radius is expected to change linearly, which is reflected in all the data.
+configurations, which are used to estimate the confidence intervals.
+The radius is expected to change linearly,
+which is reflected in all the data at all temperatures.
 ](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
 
 The normalisation by the temperature allows
@@ -30,9 +31,9 @@ The same collapse of both pressures onto a single curve
 when normalised by the melting point
 is also seen in the dynamics (@sec:dynamics_results).
 
-![The crystal growth rates normalised by the melting point. For clarity a light grey.
-These results are for both high and low
-pressure melting, which collapse onto the same curve when normalising the temperature by
+![The crystal growth rates normalised by the melting point.
+These results are for both high and low pressure melting,
+which collapse onto the same curve when normalising the temperature by
 the melting point.
 ](../Projects/Crystal_Melting/figures/melting_rates_err.svg){#fig:melting_rates}
 
@@ -61,9 +62,6 @@ While there is a clear non-linearity,
 what is also interesting is that the Turnbull model
 has a very different temperature dependence for each pressure,
 primarily resulting from the thermodynamic term.
-The constants of the Turnbull model (@eq:constants_turnbull)
-can describe the pressure dependent distance to the crystal position,
-though it requires a large change to explain.
 The Turnbull model is not suitable
 for describing the melting of the Trimer molecule.
 
@@ -71,7 +69,7 @@ for describing the melting of the Trimer molecule.
 of melting. The contribution from the chemical potential is on the x axis
 while the thermal contribution is on the y axis.
 The lack of a linear relationship indicates
-they Turnbull model is not suitable for describing the melting.
+the Turnbull model is not suitable for describing the melting.
 ](../Projects/Crystal_Melting/figures/melting_turnbull.svg){#fig:melting_turnbull width=80%}
 
 The Wilson--Frenkel model is the classical model
@@ -80,7 +78,7 @@ being a fragile liquid.
 The Wilson--Frenkel model defines the temperature dependent function $p(T) = D(T)$,
 where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$
 (@sec:crystal_transport).
-The ratio (@eq:classical_growth_refactor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
+The ratio (@eq:classical_growth_factor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
 which describes an improved relationship over the Turnbull mode.
 Close to the melting point,
 which is the value of 0 on the x axis of @fig:melting_wilson,
@@ -94,10 +92,9 @@ It is hypothesised that the strict geometric requirements
 for the Janus particles to join the crystal
 create an activation barrier large enough to dominate the growth rate.
 This idea of an activation barrier preventing growth
-is supported by our data,
+is supported by our data, where,
 at low temperatures,
-where the activation barrier will be noticed
-there is a significantly slower melting.
+there is significantly slower melting.
 
 ![Determining the relationship between components of
 the Wilson--Frenkel model of melting.
@@ -144,7 +141,7 @@ the melting behaviour.
 
 ## Semi-empirical Density Functional
 
-The choice of order parameter for to describe the crystal growth
+The choice of order parameter to describe the crystal growth
 is the orientational order parameter $O_\theta$
 
 $$ O_\theta = \frac{1}{N} \left\langle \sum_{i=1}^N \cos^2(\theta_i - \theta_0) \right\rangle $$

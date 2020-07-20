@@ -20,11 +20,13 @@ than the other polymorphs (@tbl:potential_energy).
 The other polymorphs, being p2 and p2gg follow this trend,
 the p2 polymorph with the lowest potential energy melts the slowest.
 The melting of the entire crystalline region
-is only one aspect of melting.
+shows a high level view macroscopic view of the melting process.
+To understand more we can investigate how individual particles
+are involved in the melting process.
 
 ![Comparison of the melting of each of the different crystal types.
 These values are compared at a pressure of 13.50 and a temperature of 1.40.
-The pg crystals melts faster than either the p2 or p2gg crystals.
+The pg crystal melts faster than either the p2 or p2gg crystals.
 ](../Projects/Crystal_Melting/figures/melting_crystal_comparison.svg){#fig:melting_comparison width=80%}
 
 ## Investigating the Solid State phase transition of the p2gg polymorph
@@ -94,13 +96,15 @@ This process of reorientation continues along the crystal lattice.
 <!-- markdownlint-enable MD045 -->
 
 Steps showing the propagation of a defect within the p2gg crystal.
-The p2gg crystal is coloured green, the p2 crystal is coloured yellow
-and the liquid is coloured blue.
+The colouring of particles is according to the orientation.
 As the simulation progresses from (a) to (d),
-the defect propagates from right to left
-along a layer of the crystal.
+the defect in the middle layers of the crystal
+propagates from right to left.
+At each step, more of the particles have
+flipped from the four layers of the p2gg crystal
+to the two layers of the pg crystal.
 The time between the first and last frame is \num{5e2},
-or 0.05 of the rotational relaxation time.
+or 1/20th of the rotational relaxation time.
 
 :::
 
@@ -133,9 +137,9 @@ resulting in motion along it.
 The restriction of this motion to a single dimension
 plays an important role in the speed of this transition,
 once a defect has been created,
-it along down the crystal lattice with some thermodynamic driving force
-converting all local configurations along the way;
-it has to visit every site along that lattice,
+it propagates along the crystal lattice with some thermodynamic driving force
+converting all local configurations along the way.
+The defect has to visit every site along that lattice,
 a condition not present in higher dimensional space.
 Thirdly, the defects only facilitate
 relaxation from the p2gg crystal to the p2.

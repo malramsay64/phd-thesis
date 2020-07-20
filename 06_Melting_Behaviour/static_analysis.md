@@ -144,14 +144,14 @@ found regions with a high density of points.
 from a simulation of the trimer liquid
 at a temperature $T=0.35$ and pressure $P=1.00$,
 below the melting point of the crystal.
-The colouring indicates the assignment to clusters
-using the HDBSCAN algorithm [@McInnes2017]
-while the x, and y coordinates are found through
+Each local configuration is represented by an open circle,
+with the x, and y coordinates described by
 a UMAP projection of the six dimensional input space
 onto a 2D plane [@McInnes2018].
-The HDBSCAN algorithm assigns local configurations
-to -1 where there is insufficient local density
-to form a cluster.
+The colouring indicates an assignment to clusters
+using the HDBSCAN algorithm, [@McInnes2017]
+in this case all particles are assigned to the cluster -1
+meaning all are considered noise.
 ](../Projects/Crystal_Melting/figures/clustering_liquid.svg){width=80% #fig:cluster_analysis_liquid}
 
 From our analysis of local configurations

@@ -69,7 +69,8 @@ using the equation;
 $$ v(T) = k(T) \left[1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}\right] $$ {#eq:crystal_growth_general}
 
 with $k_{\text{B}}$ being the Boltzmann Constant,
-and $\Delta u$ being the change in chemical potential.
+and $\Delta G_\text{crystal}(T)$ being the free energy
+difference between the liquid and the crystal at the temperature $T$.
 The quantity $k(T)$ is a temperature dependent rate constant
 and is different for each of the classical models.
 The term within the square brackets,
@@ -103,7 +104,7 @@ their liquid position to their crystal position
 requires interacting with other particles in the liquid,
 which gives the diffusional timescale to motion.
 With the diffusion constant of the trimer molecule
-begin described by the Vogel--Tammann--Fulcher relation, (@eq:VTF)
+being described by the Vogel--Tammann--Fulcher relation, (@eq:VTF)
 the exponential dependence on temperature
 drastically reduces the possible rate of crystal growth as the temperature drops.
 The Wilson--Frenkel theory describes growth
@@ -133,7 +134,7 @@ Through not having a dependence on a process with an activation energy
 the Turnbull theory describes growth below the melting point
 which is much faster than that of the Wilson--Frenkel theory,
 
-![Plot of the Wilson--Frekel model of crystal growth (solid line)
+![Plot of the Wilson--Frenkel model of crystal growth (solid line)
 and the Turnbull theory (dashed line).
 The circles are the melting rate of a Lennard--Jones potential,
 and both axes use dimensionless units.\

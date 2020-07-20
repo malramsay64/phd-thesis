@@ -31,5 +31,8 @@ of the Semi-Empirical Density Functional model.
 This non-classical model
 describes the limitation of the melting transition
 through the fluctuation in the liquid and the solid.
-The slow melting rates can be explained
-by the rigidity of the liquid and crystal structure.
+The slow melting rates of the Trimer can be explained
+by the rigidity of the liquid and crystal structure,
+shown by the small fluctuations of
+the orientational order parameter (@fig:trimer_fluctuation).
+This rigidity is expressed in the Semi-Empirical Density Functional model.
