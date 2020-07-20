@@ -11,7 +11,7 @@ showing the expected linear melting over all temperatures.
 With the time dependence of the estimated radius
 matching the expected linear dependence,
 the crystal growth rate is the slope of a linear fit.
-@fig:melting_rates shows the growth rates and their respective errors.
+@Fig:melting_rates shows the growth rates and their respective errors.
 The normalisation of the melting point
 brings both pressures onto a single curve,
 the same result as seen for the dynamic quantities.
