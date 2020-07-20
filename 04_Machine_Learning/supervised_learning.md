@@ -43,7 +43,7 @@ the data imbalance is small,
 and so the balanced accuracy (@sec:measuring_success)
 is an appropriate tool to mitigate the imbalance.
 The KNN algorithm gives a balanced accuracy of 97.0%,
-scored based on a holdout dataset [@Kohavi1995],
+scored based on a holdout dataset, [@Kohavi1995]
 which is data not seen during the training and optimisation of the model.
 The use of a holdout dataset
 is the standard method of publishing results from machine learning algorithms.
@@ -73,7 +73,7 @@ use Neural-Network based algorithms.
 While Neural-Network algorithms are used for complex problems
 like image [@Krizhevsky2017] and speech recognition, [@Hinton2012]
 that doesn't mean they perform better for well defined tasks.
-In a study of neural network algorithms presented at top conferences,
+In a study of neural network algorithms,
 @Dacrema2019 find that six of the seven neural-network models they could reproduce
 were outperformed by a simpler nearest-neighbour or graph-based algorithm.
 While the remaining neural-network algorithm performed on par with the simpler algorithms.
@@ -116,8 +116,8 @@ a way of visually confirming the KNN algorithm
 adequately classifies the structures.
 In this example there is no label indicating
 what the local structures should be,
-so rather than a numerical indication of performance
-it is instead visual.
+using a visual indicator of performance
+rather than a numerical one.
 The KNN algorithm is able to follow the melting of all three crystals,
 showing a clear delineation between
 the liquid and crystal phases with few visible errors.

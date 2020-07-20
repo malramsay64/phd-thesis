@@ -20,8 +20,8 @@ used for understanding the transition between each state.
 However most important to machine learning
 is the understanding of the data,
 whether that is finding a description of the local structure
-which best describes the differences between the states of interest
-or how find ways to simplify the high dimensional data.
+that best describes the differences between the states of interest
+or ways to simplify the high dimensional data.
 Understanding the data allows for simpler models
 that are both faster to compute,
 a very important factor when considering millions of local configurations,

@@ -23,7 +23,7 @@ So in visualising a six dimensional dataset,
 the problem becomes one of reducing the number of dimensions to two,
 while retaining properties of the six dimensional dataset.
 The simplest method for dimensionality reduction
-is Principal Component Analysis (PCA).
+is Principal Component Analysis (PCA). [@Jolliffe2013]
 PCA transforms the data to a new coordinate system
 such that the greatest variance lies on the first coordinate
 and the second greatest variance on the second coordinate.
@@ -43,7 +43,7 @@ The main result of the PCA analysis,
 is that the crystal structures are not linearly separable in 2D.
 
 ![Dimensionality reduction of the trimer dataset using a linear Principal Components
-Analysis. Each point is coloured according to it's labelled structure. There are regions
+Analysis. Each point is coloured according to its labelled structure. There are regions
 of high density for each crystal structure, though there is little separation of the
 crystal structures.
 ](../Projects/MLCrystals/figures/dim_reduction_PCA.svg){#fig:dim_reduction_PCA width=85%}
@@ -55,8 +55,8 @@ which could be more suitable for this problem.
 The Uniform Manifold Approximation and Projection (UMAP)
 is a technique for dimension reduction
 with a theoretical foundation in Riemann Geometry and algebraic topology. [@McInnes2018]
-The UMAP algorithm finds the nearest neighbours of every point in the untransformed space,
-using the nearest neighbours to build a topological representation of the dataset.
+The UMAP algorithm finds the nearest neighbours of every point in the input space,
+using these neighbours to build a topological representation of the dataset.
 This topological structure can then be projected onto a lower dimensional plane,
 where the chosen representation minimises the difference between
 the topology of the high and low dimensional representations.
@@ -154,10 +154,11 @@ topological representation of the data.
 Clusters within the HDBSCAN algorithm are assigned to regions
 of the input space containing a high density of points,
 meaning the number of clusters is algorithmically determined.
-The HDBSCAN algorithm doesn't require all points belong to a cluster,
-where points are too far from a cluster they considered noise and left unclustered.
+The HDBSCAN algorithm doesn't require all points belong to a cluster;
+points too far from a cluster are considered noise and left unclustered.
 Since configurations of an equilibrium liquid
 should be exploring all the available phase space,
+that is, all possible relative orientations of the six neighbouring molecules,
 considering the liquid configurations as noise is appropriate.
 We are only concerned with configurations
 with a higher density than the liquid.
@@ -183,7 +184,7 @@ The remaining clusters are assigned to the values 1 through 4,
 these numbers have no meaning other than grouping like items together,
 however, they can be assigned to each crystal structure manually
 by comparing with the simulation configurations.
-@fig:cluster_sorted_hdbscan uses the same colours as @fig:cluster_sorted_hdbscan_vis
+@Fig:cluster_sorted_hdbscan uses the same colours as @fig:cluster_sorted_hdbscan_vis
 so we can assign the clusters to each polymorph.
 The cluster labelled 0 corresponds to the pg polymorph,
 the cluster labelled 2 corresponds to the p2 polymorph,

@@ -105,13 +105,14 @@ speed up discovery by 1000 times over previous methods.
 
 Optimisation using machine learning can also be applied to smaller problems.
 In the motivating example (@fig:order_parameter_overlap)
-to sepearate the liquid and p2 structures
-we need to choose a value below which a structure is considered liquid-like
-and above is considered crystal like.
-The choice of this value can change how well this classification performs,
-however in a survey of publications using similar techniques
+to separate the liquid and p2 structures
+we need to choose a value that separates local configurations
+considered crystal-like from those considered liquid-like.
+The choice of this value can determine how well this classification performs.
+However, in a survey of publications classifying local structures
+using a one dimensional order parameter,
 [@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
-there is no mention of the value or the method used to determine it.
+none mention the value chosen or the method used to determine the optimal choice.
 Supervised Learning provides a formal method
 for the determination of the best value
 based on the available data.
@@ -172,7 +173,7 @@ the Steinhardt bond order parameters, [@Steinhardt1983] and Bond Angle Analysis 
 are harmonic descriptors,
 while Common Neighbour Analysis [@Faken1994;@Honeycutt1987] is a graph based descriptor.
 Each of these different order parameters
-focus on the identification of a small range of structures,
+focuses on the identification of a small range of structures,
 typically; Face Centered Cubic, Body Centered Cubic, and Hexagonal Close Packed.
 The identification of each structure
 uses hand picked parameters
@@ -190,12 +191,12 @@ as one of the dimensions describing local structure.
 
 Current applications of machine learning for crystal detection
 only deal with spherically symmetric particles.
-Many molecular crystals have a range of polymorphs. [@Beran2016]
-We have *found* 18 different polymorphs for Ice, @Algara-Siller2015
-with the most recent found in 2015.
-Other examples of this diversity are
-flufenamic acid [@Lopez-Mejias2012] with at least 9 polymorphs, and
-triacetone-triperoxide [@Reany2009] with at least 6 polymorphs.
+There are many examples of molecular crystals exhibiting
+a range of polymorphs; [@Beran2016]
+Ice has 18 known polymorphs,
+with the most recent found in 2015, [@Algara-Siller2015]
+flufenamic acid has 9 known polymorphs, [@Lopez-Mejias2012 ] and
+triacetone-triperoxide has 6 known polymorphs. [@Reany2009]
 The prevalence of molecular polymorphs is such that @McCrone1965 noted that
 "the number of forms known for each compound is proportional to
 the time and money spent researching that compound."
@@ -218,13 +219,13 @@ rather than the range of structures which exist.
 With a clustering approach,
 the work lies in finding the appropriate descriptors
 to use for a problem.
-However unlike order parameters,
+However, unlike order parameters,
 the descriptors are transferable
 across a wide range of problem descriptions.
 Machine learning is a tool ideally suited
 for the identification and classification
-of molecular crystal structures.
-Able to account for the diversity and complexity
+of molecular crystal structures,
+being able to account for the diversity and complexity
 of these structures.
 Machine Learning accelerates research
 by taking care of the tedious time consuming elements
@@ -232,11 +233,18 @@ allowing the researcher to focus on the science.
 
 ## Machine Learning Goals
 
-This chapter demonstrates the applicability of machine learning
-to understanding crystal structures within molecular crystals.
+This chapter develops a machine learning method
+for the identification of molecular crystal structures
+within a molecular dynamics simulation.
 Firstly, in @sec:clustering we show the applicability of clustering as a tool for
 the identification of regions of local structure within a simulation
 requiring minimal knowledge of the configuration.
 Then in @sec:supervised_learning we use supervised learning
 for the accurate detection and monitoring
-of many polymorphs within a simulation.
+of crystal polymorphs within a simulation.
+The result of this chapter is a robust method
+for the detection of the Trimer crystal structures
+that will be used in @sec:Crystal_Melting
+for monitoring the melting of the crystals
+and in @sec:Melting_Behaviour for understanding
+the transition between polymorphs.
