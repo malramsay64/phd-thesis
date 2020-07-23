@@ -122,9 +122,7 @@ hole burning experiments, [@Schmidt-Rohr1991;@Cicerone1995;@Schiener1997]
 photobleaching, [@Cicerone1993]
 and optical microscopy. [@Bartko1999]
 
-<!-- TODO => Define non-gaussian parameter -->
-
-The quantity used to measure this is the non-Gaussian parameter $\alpha$,
+The quantity used to measure this is the non-Gaussian parameter $\alpha$ (@sec:heterogeneous_dynamics),
 which is a measure of how far the distribution of motions
 deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
 

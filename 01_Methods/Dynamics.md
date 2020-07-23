@@ -169,7 +169,7 @@ The expected value and confidence interval
 was estimated by using the bootstrap procedure
 over all the key frames.
 
-### Heterogeneous dynamics
+### Heterogeneous dynamics {#sec:hetergeneous_dynamics}
 
 Particles undergoing Brownian motion
 will have a distribution of distances $\Delta r$
