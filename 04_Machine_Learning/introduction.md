@@ -236,12 +236,18 @@ allowing the researcher to focus on the science.
 This chapter develops a machine learning method
 for the identification of molecular crystal structures
 within a molecular dynamics simulation.
-To do this we use a dataset describing three crystal structures
-of the trimer molecule and the liquid
-with details described in @sec:methods_ml_dataset.
-Firstly, in @sec:clustering we show the applicability of clustering as a tool for
-the identification of regions of local structure within a simulation
-requiring minimal knowledge of the configuration.
+To do this we use a dataset [@MalcolmRamasy2018] describing three crystal structures
+of the trimer molecule and the liquid.
+The creation of the dataset is described in @sec:methods_ml_dataset.
+
+The structure of this chapter comprises two sections.
+Firstly, in @sec:clustering we show the applicability of clustering
+as a tool for the identification of regions of local structure
+within a simulation.
+The importance of clustering is that it requires minimal
+prior knowledge of the arrangement of the local structures.
+This section also develops an understanding of
+tools to use for visualising data in high dimensional space.
 Then in @sec:supervised_learning we use supervised learning
 for the accurate detection and monitoring
 of crystal polymorphs within a simulation.
