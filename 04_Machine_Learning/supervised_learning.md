@@ -64,8 +64,8 @@ It is entirely possible for local configurations
 to be incorrectly labelled within the training dataset,
 meaning increasing the accuracy for this dataset is a result of overfitting.
 Another complication has to do with the properties of an equilibrium liquid,
-which will explore the space of all possible local configurations
-some of which will be locally crystalline in nature.
+which will explore all the feature space,
+some of which represents crystalline configurations.
 While there will inherently be some errors in classification,
 that doesn't mean the KNN algorithm is best suited for the task.
 Similar problems for the identification of crystal structures,[@Fulford2019;@Boattini2018;@Geiger2013]

@@ -9,19 +9,20 @@ Visualisation of the dataset like in @fig:order_parameter_overlap
 is a fantastic method of understanding the data
 and evaluating how well the clustering has performed.
 For clustering, each local environment is described by six features,
-that is, represented as a point in 6D space,
+that is, represented as a point in 6D feature space,
 making the visualisation on a 2D page somewhat more difficult.
-Before evaluating the performance of the clustering
-we need to find appropriate tools for visualising
-the high dimensional data.
+To evaluate the performance of a clustering algorithm
+we first need to find an appropriate method for
+visualising the high dimensional data.
 
 ## Visualisation of High Dimensional Data {#sec:visualisation}
 
 When visualising data on a page, like in this thesis,
 we are limited to the display of two spatial dimensions at a time.
-So in visualising a six dimensional dataset,
+So in visualising a six dimensional feature space,
 the problem becomes one of reducing the number of dimensions to two,
-while retaining properties of the six dimensional dataset.
+while retaining properties of the six dimensional feature space.
+
 The simplest method for dimensionality reduction
 is Principal Component Analysis (PCA). [@Jolliffe2013]
 PCA transforms the data to a new coordinate system
@@ -55,19 +56,20 @@ which could be more suitable for this problem.
 The Uniform Manifold Approximation and Projection (UMAP)
 is a technique for dimension reduction
 with a theoretical foundation in Riemann Geometry and algebraic topology. [@McInnes2018]
-The UMAP algorithm finds the nearest neighbours of every point in the input space,
+The UMAP algorithm finds the nearest neighbours of every point in the input feature space,
 using these neighbours to build a topological representation of the dataset.
-This topological structure can then be projected onto a lower dimensional plane,
-where the chosen representation minimises the difference between
+This topological structure can be projected onto a lower dimensional plane.
+The UMAP algorithm performs an optimisation such that
+the chosen representation minimises the difference between
 the topology of the high and low dimensional representations.
-This algorithm results in a low dimensional representation
-that has the same local structures as the original high dimensional data,
-The UMAP dimensionality reduction of @Fig:dim_reduction_UMAP of the relative angles
+The UMAP algorithm gives a low dimensional representation
+that contains the same local structural elements as the original high dimensional data.
+The UMAP dimensionality reduction of the 6D feature space (@fig:dim_reduction_UMAP)
 shows a distinct separation between the liquid state and all the crystal states.
 This firstly indicates that UMAP is
 a useful tool for the visualisation of these datasets,
 and additionally that separation of each of the crystals
-is possible using an clustering algorithm.
+is possible using a clustering algorithm.
 
 ![Dimensionality reduction of the trimer dataset using Uniform Manifold Approximation
 and Projection. Classes are assigned using the known state of each local environment.
@@ -125,8 +127,9 @@ where the liquid configurations cover the entire configuration space.
 These issues which make UMAP unsuitable for clustering
 have been documented for the similar t-SNE algorithm
 [@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
-with a consensus that these dimensionality reduction techniques of t-SNE and UMAP,
-should be used for visualisation and alternative algorithms used for clustering.
+with a consensus that dimensionality reduction techniques like t-SNE and UMAP
+should be used for visualisation,
+with alternative algorithms used for clustering.
 
 ![Using the UMAP algorithm on two Gaussian clusters
 results in a highly distorted shape.

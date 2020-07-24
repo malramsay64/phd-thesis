@@ -14,9 +14,9 @@ The value of $O_6$ is the orientation of the closest shell of 6 neighbours
 relative to the orientation of the central molecule.
 The orientational ordering $O_6$ of reference particle is given by the equation;
 
-$$ O_6 = \frac{1}{6}\sum_{i=1}^6 \cos^2(\theta_{ref} - \theta_i) \rangle_i $$ {#eq:orientational_order_parameter}
+$$ O_6 = \frac{1}{6}\sum_{i=1}^6 \cos^2(\theta_\text{ref} - \theta_i) \rangle_i $$ {#eq:orientational_order_parameter}
 
-where $\theta_{ref}$ is the orientation of the reference particle and
+where $\theta_\text{ref}$ is the orientation of the reference particle and
 $\theta_i$ is the orientation of the neighbouring particle.
 The orientational order parameter
 can reasonably distinguish the liquid from the p2 structure
@@ -34,9 +34,11 @@ takes the orientation for each neighbour,
 collapsing them into a single value
 represented as a point along the number line.
 The original data,
-being the relative orientation of each neighbour
-can be represented as a point in 6 dimensional space.
-Having the entire six dimensional space to work with
+being the relative orientation $\theta_i - \theta_\text{ref}$ of the six nearest neighbours
+can be represented as a point in six dimensional feature space.
+The terminology *feature space* is used throughout the rest of this thesis
+to describe the relative orientation of the six nearest neighbours.
+Having the entire 6D feature space to work with
 provides more opportunities to distinguish each structure.
 Machine Learning is a tool which can assist in finding surfaces
 to separate values in higher dimensional space.
@@ -236,9 +238,13 @@ allowing the researcher to focus on the science.
 This chapter develops a machine learning method
 for the identification of molecular crystal structures
 within a molecular dynamics simulation.
-To do this we use a dataset [@MalcolmRamasy2018] describing three crystal structures
-of the trimer molecule and the liquid.
-The creation of the dataset is described in @sec:methods_ml_dataset.
+To do this we use a set of simulation trajectories [@MalcolmRamasy2018]
+which describes the melting of three crystal structures
+of the trimer molecule within the liquid.
+The dataset used for the machine learning
+takes the relative orientation of the six nearest neighbours
+as described in @sec:ml_introduction,
+using these as the 6D feature space used to train the models.
 
 The structure of this chapter comprises two sections.
 Firstly, in @sec:clustering we show the applicability of clustering
