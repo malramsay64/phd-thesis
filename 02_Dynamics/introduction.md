@@ -308,7 +308,14 @@ These are;
 4. Jump dynamics in the rotational relaxation
 5. Decoupling of translational and rotational motion
 
-The rest of this chapter is about characterising these dynamic quantities
-for the Trimer and comparing them to the expected results for ortho-terphenyl.
-@Sec:structural_relaxation describes 1, and 2, @sec:dynamic_heterogeneities describes
-3, while 4 and 5 are described in @sec:sed.
+The simulation methods described in @sec:methods_dynamics
+are used to generate the trajectories
+for analysis of the above behaviour.
+The calculation of the analysis quantities
+is described in @sec:dynamics_calculations.
+
+The dynamic quantities calculated for the simulated trimer molecules
+are compared to the results observed in experiments for ortho-terphenyl.
+@Sec:structural_relaxation describes points 1 and 2,
+@sec:dynamic_heterogeneities describes point 3,
+while points 4 and 5 are covered in @sec:sed.
