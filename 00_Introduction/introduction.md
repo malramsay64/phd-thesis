@@ -33,7 +33,8 @@ a non-Arrhenius temperature dependence,
 where the motion of particles is not governed by
 a single activated process.
 This non-Arrhenius behaviour is shown in @fig:angell,
-where values along the diagonal from bottom left to top right
+where the viscosities of molecular liquids are plotted.
+Values along the diagonal from bottom left to top right
 describe an Arrhenius temperature dependence of the viscosity.
 The highly non-Arrhenius temperature dependence of the viscosity
 is characteristic of molecular liquids.
