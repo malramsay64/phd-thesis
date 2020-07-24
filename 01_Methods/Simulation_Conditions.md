@@ -26,6 +26,8 @@ The initialisation, minimisation and equilibration steps
 describe the steps for generating an equilibrium liquid
 at each of the temperatures studied in the production simulations
 where the data collection occurs.
+All simulations calculating the dynamics quantities
+comprise of 1024 trimer molecules.
 
 ### Initialisation
 
@@ -164,6 +166,8 @@ consisting of initialisation, minimisation, melting and equilibration steps
 and finally the production simulations used to collect the data.
 The additional step of melting creates the interface
 between the liquid and the crystal.
+All simulations studying the melting behaviour of the Trimer
+contain 4032 Trimer molecules.
 
 ### Initial Configuration
 
