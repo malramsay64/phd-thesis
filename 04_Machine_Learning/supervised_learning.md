@@ -25,7 +25,21 @@ The algorithm used for the supervised learning is
 the K-Nearest Neighbours (KNN),
 which uses labels of the configurations closest in feature space
 to label an unknown configuration.
-The configurations used for training contain
+Similar problems for the identification of crystal structures,[@Fulford2019;@Boattini2018;@Geiger2013]
+use Neural-Network based algorithms,
+matching the approach used for complex problems
+like image [@Krizhevsky2017] and speech recognition. [@Hinton2012]
+For the well defined problem posed here
+a more complex neural network approach may not be better.
+In a study of neural network algorithms,
+@Dacrema2019 find that six of the seven neural-network models they could reproduce
+were outperformed by a simpler nearest-neighbour or graph-based algorithm.
+Here the KNN algorithm was chosen for the significant performance
+improvements over a neural network approach
+in both the training of the algorithm
+and the subsequent classification.
+
+The configurations used within the training dataset contain
 the same number of liquid and crystal configurations,
 however there are three different crystals and only a single liquid.
 This means that there are three times as many liquid configurations as any crystal
@@ -60,27 +74,21 @@ In the visualisation of the dataset in @fig:dim_reduction_sorted_UMAP,
 there are some points labelled as crystalline
 which are located with those of the liquid,
 and conversely some labelled as liquid and located near the crystal.
-It is entirely possible for local configurations
+It is possible for local configurations
 to be incorrectly labelled within the training dataset,
 meaning increasing the accuracy for this dataset is a result of overfitting.
 Another complication has to do with the properties of an equilibrium liquid,
 which will explore all the feature space,
-some of which represents crystalline configurations.
-While there will inherently be some errors in classification,
-that doesn't mean the KNN algorithm is best suited for the task.
-Similar problems for the identification of crystal structures,[@Fulford2019;@Boattini2018;@Geiger2013]
-use Neural-Network based algorithms.
-While Neural-Network algorithms are used for complex problems
-like image [@Krizhevsky2017] and speech recognition, [@Hinton2012]
-that doesn't mean they perform better for well defined tasks.
-In a study of neural network algorithms,
-@Dacrema2019 find that six of the seven neural-network models they could reproduce
-were outperformed by a simpler nearest-neighbour or graph-based algorithm.
-While the remaining neural-network algorithm performed on par with the simpler algorithms.
-These findings match my own investigation of a neural-network,
-which performed within the margin of error of the KNN model,
-while both being slower to train the model on the input data
-and slower for the classification of new data.
+some of which represent crystalline configurations.
+With these locally crystalline configurations being responsible for
+many of the classification errors,
+it is hypothesised that extending the feature space
+to include features of the second neighbour shell
+would reduce the rate of errors.
+While the accuracy of the classification algorithm could be improved,
+for this thesis we consider the 97% accuracy to be suitable,
+with further improvements likely resulting in overfitting
+to the training dataset.
 
 ## Machine Learning in Practice
 
