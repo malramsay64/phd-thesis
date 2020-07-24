@@ -115,11 +115,12 @@ match the labelled clustering.
 However, when performing dimensionality reduction
 the UMAP algorithm can artificially create tears in clusters
 and increase the density of points for each cluster.
-These unusual behaviours of the UMAP algorithm are shown in @fig:umap_demo,
-where the two Gaussian functions in @fig:classification_demo
-have been transformed into an abstract shape,
-with large distances between points which were close together
-and increasing the density of some points so they overlap.
+These unusual behaviours of the UMAP algorithm are demonstrated in @fig:umap_demo,
+transforming the two Gaussian functions from @fig:classification_demo.
+The UMAP transformation creates a large void around the point (0, 0),
+increasing the distance between points on opposite sides of this void.
+Additionally, there is an increased density of points,
+with clumps appearing.
 The increased density of points is also present in @fig:dim_reduction_sorted_UMAP,
 where all the liquid configurations are grouped together,
 contrasted with the PCA dimensionality reduction (@fig:dim_reduction_PCA)
@@ -128,8 +129,8 @@ These issues which make UMAP unsuitable for clustering
 have been documented for the similar t-SNE algorithm
 [@Maaten2008;@Schubert2017;@Wattenberg2016;@Shekhar2016]
 with a consensus that dimensionality reduction techniques like t-SNE and UMAP
-should be used for visualisation,
-with alternative algorithms used for clustering.
+should only be used for visualisation
+and alternative algorithms used for clustering.
 
 ![Using the UMAP algorithm on two Gaussian clusters
 results in a highly distorted shape.
@@ -139,8 +140,15 @@ The visualisation of the dataset is important for three reasons.
 Firstly, the failure of the Principal Components Analysis
 to separate the structures indicates a non-linear method
 is required for separating the different structures.
-Secondly, separating the structures with the UMAP algorithm for visualisation,
-indicates it is possible to separate the crystal structures using clustering.
+Secondly, we have established that the UMAP dimensionality reduction
+is suitable for performing a dimensionality reduction on the 6D feature space
+reducing it to 2D space for visualisation.
+This makes it a suitable tool for a visual analysis of the performance
+of a clustering algorithm.
+Thirdly, separating the structures with the UMAP algorithm for visualisation,
+indicates it is possible to separate each crystal structure using clustering.
+However, due to the problems with the UMAP algorithm distorting the phase space,
+an alternative clustering algorithm has to be used.
 Finally, we have found that reducing the degeneracy of the features
 is an important simplification
 which reduces the complexity of the following steps.
