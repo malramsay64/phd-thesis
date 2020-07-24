@@ -268,7 +268,7 @@ $$ v(T) = -\left[\frac{2KD(T)(\sqrt{\lambda_\text{liquid}}(T) +
 \lambda_\text{liquid}(T)\sqrt{\lambda_\text{crystal}}(T)} \right ] \Delta\mu(T)
 $$ {#eq:dft_growth_rate}
 
-where $K$ being the correlation length of the order parameter.
+where $K$ is the correlation length of the order parameter.
 
 The semi-empirical density functional theory describes the rate of melting
 through the size of the fluctuations in the liquid and the crystal
