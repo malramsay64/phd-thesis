@@ -48,6 +48,10 @@ This section describes the calculation of the dynamics quantities
 used in @sec:Dynamics.
 Each of these quantities has the code snippet
 used for the calculation in @sec:code_snippets.
+The implementation of all calculations is in
+`statdyn-analysis` (@sec:simulation_analysis)
+with all implementations using the best practices
+described in @sec:best_practices.
 
 ### Calculation of Wave numbers
 
