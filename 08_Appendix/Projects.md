@@ -7,7 +7,7 @@ As part of my PhD I have developed a range of software
 which each solve specific problems I have run into.
 This software is all open source and freely available on GitHub.
 
-# Simulation Management
+# Simulation Management {#sec:simulation_management}
 
 The management of simulations is highly complex,
 particularly where multiple steps are involved.
@@ -83,7 +83,7 @@ and available for installation on both the python package index
 ([`pypi.org`](https://pypi.org/project/experi)) and [anaconda cloud](https://anaconda.org/malramsay/experi)
 with the documentation available on [read the docs](https://experi.readthedocs.io/en/latest/).
 
-# Running Simulations
+# Running Simulations {#sec:running_simulations}
 
 There are many parameters which need to be specified
 in a molecular dynamics simulation,
@@ -123,7 +123,7 @@ on [travis-ci](https://travis-ci.org/malramsay64/statdyn-simulation)
 while the documentation is available on
 [read-the-docs](https://statdyn-simulation.readthedocs.io/en/latest/?badge=latest).
 
-# Analysis of simulation trajectories
+# Analysis of simulation trajectories {#sec:simulation_analysis}
 
 The analysis of molecular dynamics simulation trajectories
 is an area containing many different software packages, [@Giorgino2019a]
