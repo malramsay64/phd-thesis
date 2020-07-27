@@ -243,12 +243,13 @@ The parameters in @eq:phase_field are
 $\lambda_\text{liquid} = \lambda_\text{crystal} = 1$ and $\Delta = 0$
 ](../Projects/Crystal_Melting/figures/fluctuation_parabola_example.svg){width=80% #fig:fluctuation_parabola_example}
 
-The time evolution of the order parameter $M$
+The time evolution of the order parameter $M$ [@Bagdassarian1994]
 
 $$ \frac{\partial M}{\partial t} =
 -D \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
 
-found by taking the time derivative of @eq:square_gradient,
+found by taking the time derivative of the functional @eq:square_gradient,
+with respect to the order parameter $M$. [@Bagdassarian1994]
 can be used to study melting and crystallisation.
 The term $D$ is a diffusion constant.
 Along with this differential equation describing growth
