@@ -253,7 +253,7 @@ can be used to study melting and crystallisation.
 The term $D$ is a diffusion constant.
 Along with this differential equation describing growth
 we need to set up appropriate boundary conditions
-to get reasonable solutions.
+to get physically reasonable results.
 Assuming spherical symmetry with a crystal centered at the origin,
 the radial cross section can be described using $M(r, t)$,
 where $M(0, t) = 1$ indicating a perfect crystal,
