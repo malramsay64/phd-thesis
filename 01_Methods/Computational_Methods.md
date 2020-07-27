@@ -164,7 +164,7 @@ the molecular dynamics simulations were being seeded
 with velocities that deviated from the expected Maxwell-Boltzmann distribution
 and the equipartition theorem,
 being that the energy is equally distributed among degrees of freedom,
-was being violated.[@Palmer2018]
+was being violated. [@Palmer2018]
 While this could be considered a bug in the software,
 it seems the behaviour was intended
 and instead this is an issue in the communication of the simulation results.
