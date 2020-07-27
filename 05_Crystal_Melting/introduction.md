@@ -184,7 +184,7 @@ This allows the free energy of the system $\Omega$ to be expressed
 in the Cahn and Hilliard square gradient form [@Cahn1958]
 
 $$ \frac{\Omega}{\rho_s k_\text{B} T_m} =
-\int \d{\vect{r}} \left[ \omega(M) + |\frac{K^2}{2}|\nabla M|^2 \right] $$ {#eq:square_gradient}
+\int \d{\vect{r}} \left[ \omega(M) + \frac{K^2}{2}|\nabla M|^2 \right] $$ {#eq:square_gradient}
 
 where
 $\rho_s$ is the density of the solid,
