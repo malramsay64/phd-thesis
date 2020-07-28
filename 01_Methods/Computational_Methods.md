@@ -20,8 +20,7 @@ with the details documented in @sec:software_projects.
 The openness also extends to this thesis,
 which is available on GitHub at [github.com/malramsay64/phd-thesis](https://github.com/malramsay64/phd-thesis)
 and a near final version archived for 1000 years in the Arctic code vault. [@code_vault]
-All figures within the thesis
-are drawn from the projects from which they were created,
+All figures within the thesis are drawn from the projects from which they were created,
 which contain the code and dependencies required to recreate them.
 These projects are [Dynamics](https://github.com/malramsay64/Dynamics),
 used for the results in @sec:Dynamics and @sec:Glassy_Dynamics,
