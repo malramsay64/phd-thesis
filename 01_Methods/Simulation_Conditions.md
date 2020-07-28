@@ -192,8 +192,21 @@ while moving to optimise the best ones.
 The isopointal search provides results for each space group,
 with the structures from the p2, p2gg, and pg space groups
 being the lowest energy polymorphs.
-The parameters for the construction of
-each polymorph are displayed in @tbl:polymorph_construction.
+These structures are displayed in @fig:trimer_crystals
+with the parameters for construction in @tbl:polymorph_construction.
+
+:::{class=subfigures id=fig:trimer_crystals}
+
+![p2](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:trimer_p2 width=49%}
+
+![pg](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:trimer_pg height=4cm}
+
+![p2gg](../Projects/Crystal_Melting/figures/Trimer-p2gg-Hard.svg){#fig:trimer_p2gg width=49%}
+
+The molecules coloured in blue are the real copies of the unit cell,
+while the molecules in green are the periodic copies.
+
+:::
 
 Polymorph | $a$  | $b$  | $\theta$ | $x$  | $y$  | $\phi$ |
 ---       | --   | --   | --       | --   | --   | --     |
