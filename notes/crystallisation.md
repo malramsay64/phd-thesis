@@ -115,7 +115,7 @@
 
 ### Modelling
 
-**@Bagdassarian1994**
+@Bagdassarian1994
 
 - Ignore all the complexities of crystal growth
 - Have a quantity $M(\vec{r}, t)$ where;
@@ -133,7 +133,6 @@
 - This does not allow for a distribution
     - there is perfect liquid and perfect crystal and everything in the middle is
       somewhere between the two?
-
 
 - $\omega$ is a local dimensionless free energy which will characterise a uniform system
   with a degree of order $M$
@@ -170,7 +169,7 @@
 - hydrodynamic interactions
 - most descriptions of nucleation describe the liquid as structureless
     - supercooled liquid often does contain structural order
-    - competition between different order plays a role in crystallisation or it's
+    - competition between different order plays a role in crystallisation or its
       avoidance
     - spatial heterogeneities
 - molecular liquids, discovered that the crystal growth rate can display an unusual
@@ -180,8 +179,8 @@
 
 @Emmerich2009
 
-- Any density of an extensive quantity varies smoothly from it's value in one phase to
-  it's value in the other
+- Any density of an extensive quantity varies smoothly from its value in one phase to
+  its value in the other
 - Phase-field modelling -> "numerical technique which helps to overcome the necessity of
   solving for the precise location of the interfacial surface at each timestep.
 - phase-field models...are rigorously derived based on variational principles of
@@ -213,7 +212,6 @@
     - The crystal forms with a higher concentration of one component, which means that
       there is a depleted layer at the interface. The rate of crystallisation is then
       limited by the diffusion of the lower concentration through the gradient.
-
 
 @Jackson2002
 

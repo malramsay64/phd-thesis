@@ -198,7 +198,7 @@ the transition from the initial ballistic region
 to the long timescale diffusive region
 includes a plateau where the MSD barely increases.
 A physical description of this plateau region
-describes particles trapped in a cage comprising of it's nearest neighbours. [@Cavagna2009]
+describes particles trapped in a cage comprising of its nearest neighbours. [@Cavagna2009]
 As the temperature drops the local cage becomes stiffer,
 and particles take longer to escape.
 The diffusion constants,
