@@ -34,12 +34,12 @@ where the motion of particles is not governed by
 a single activated process.
 This non-Arrhenius behaviour is shown in @fig:angell,
 where the viscosities of molecular liquids are plotted.
-Values along the diagonal from bottom left to top right
+values along the diagonal from bottom left to top right
 describe an Arrhenius temperature dependence of the viscosity.
 The highly non-Arrhenius temperature dependence of the viscosity
 is characteristic of molecular liquids.
 The Vogel--Tammann--Fulcher[^vtf] (VTF) relation [@Debenedetti2001]
-describes the non-Arrhenius behaviour of the viscosity $\eta$
+is a widely used relation describing non-Arrhenius behaviour of the viscosity $\eta$
 
 $$ \eta = A \exp(\frac{B}{T-T_0}) $$ {#eq:VTF}
 
@@ -129,8 +129,8 @@ designing simulations to understand them,
 developing theories to describe them, and
 designing experiments to test the theories,
 for understanding natural phenomena.
-There are a range models of ortho-terphenyl used in simulations,
-depending on the goals of the research.
+There are a range of computational models of ortho-terphenyl
+chosen depending on the goals of the research.
 
 ## Lewis-Wahnström model
 
@@ -185,8 +185,13 @@ to the properties of ortho-terphenyl at a temperature of 400K. [@Lewis1994]
 ## Alternative Models
 
 Alternative models of ortho-terphenyl
-trade the long timescales available to the Lewis--Wahnström model
+trade the computational simplicity of the Lewis--Wahnström model
 with a more accurate description of the molecule.
+While a more complex molecule limits the number of molecules
+and the timescale of the simulation,
+they can model interesting behaviours
+like the flexing of the phenyl rings
+that aren't present in the Lewis--Wahnström model.
 
 Rather than describing each phenyl ring as a single particle,
 @Mossa2001 simulate each carbon atom,
@@ -292,47 +297,63 @@ This thesis uses the Trimer molecule to investigate two problems
 in the understanding of molecular liquids,
 the dynamics of a fragile liquid close to the glass transition, and
 the slow growth rates of molecular crystals.
-In @sec:Dynamics we compare the dynamic behaviour of the Trimer molecule
+This starts in @sec:Dynamics where we compare
+the dynamics of the Trimer molecule
 to that of the Lewis--Wahnström model and ortho-terphenyl,
-demonstrating the model exhibits the characteristic behaviours of
-these liquids it models.
-This chapter establishes the reference timescales
+finding our new model exhibits characteristic behaviours of molecular liquids.
+This verifies the Trimer is a suitable model
+for developing an understanding of molecular liquids.
+As part of calculating the dynamic quantities for comparing with existing models
+we establish reference timescales for molecular motion
 used in @sec:Crystal_Melting and @sec:Melting_Behaviour.
-Having established the Trimer molecule displays
-the dynamic behaviours of our model liquids,
-in @sec:Glassy_Dynamics we use the Trimer molecule
-to introduce a collection of new dynamic quantities
-allowing for a molecular description of dynamics.
+Knowing the Trimer molecule exhibits
+the dynamic behaviours of characteristic molecular liquids,
+we use it in @sec:Glassy_Dynamics
+to introduce a set of new dynamic quantities
+allowing a molecular description of dynamics.
 These tools describe the motions of individual molecules
 providing a link between local environments and dynamics.
 These new tools are then used to provide an insight
-into what makes these liquids so fragile
-and the observed breakdown in the Stokes--Einstein--Debye dynamics.
+into what makes these liquids so fragile.
 Having developed descriptions of the dynamics of the Trimer molecule,
 we look to the problem of slow crystal growth.
 The measurement of this growth and melting
 first requires the development of new tools to measure this growth.
-In @sec:Machine_Learning we introduce a new machine learning methodology
+In @sec:Machine_Learning we introduce a new machine learning method
 for the identification of the diverse range of crystal polymorphs
 present in molecular liquids.
-This method allows for monitoring the state of local configurations
-throughout a simulation to identify the transition
-between the crystal polymorphs and the liquid with a high accuracy.
-This machine learning methodology is then used in @sec:Crystal_Melting
-to characterise the melting rate of the Trimer crystal,
-finding which aspects of theoretical models
-are required to properly describe the melting rate.
-This chapter also establishes the melting point of the Trimer,
-used in @sec:Crystal_Melting and @sec:Glassy_Dynamics as a reference temperature.
+This chapter develops tools for the visualisation
+of high dimensional data,
+a clustering approach for identifying crystal structures present,
+and a classification algorithm for the identification of crystals.
+This new method allows for monitoring
+local configurations throughout a simulation trajectory
+identifying the presence of
+crystalline structure within the liquid with a high accuracy.
+The classification of crystal structures is developed for @sec:Crystal_Melting
+and used to measure the melting rate of the Trimer crystal.
+And the clustering is used in @sec:Melting_Behaviour
+to check for the presence of crystal structures.
+In @sec:Crystal_Melting we measure the melting rates of the trimer,
+making a comparison to a range of theories of melting
+to identify which aspects of these theories describe the observed results.
+Modelling the different theories of crystal growth
+requires the transport properties calculated in @sec:Glassy_Dynamics
+and the thermodynamic properties calculated in @sec:Melting_Behaviour.
+This chapter on crystal melting also introduces
+our estimate for the melting point of the Trimer that is
+used a reference temperature in this chapter,
+and in @sec:Melting_Behaviour and @sec:Glassy_Dynamics.
 Finally, in @sec:Melting_Behaviour
 we analyse the melting of different polymorphs of the Trimer
 to understand what makes the melting so incredibly slow.
+In this chapter we compare polymorphs of the Trimer
+to identify the most stable structure,
+which is used in @sec:Crystal_Melting to calculate melting rates.
 This chapter combines the analysis of timescales from @sec:Dynamics,
+the newly introduced dynamics quantities in @sec:Glassy_Dynamics,
 the melting rates from @sec:Crystal_Melting and
 the classification and analysis from @sec:Machine_Learning
 to provide a qualitative understanding of the slow crystal growth.
-Additionally this chapter uses these analyses built up
-in previous chapters to confirm that we are investigating
-the appropriate crystal structures.
 
 <!-- markdownlint-disable-file MD025 -->
