@@ -94,7 +94,7 @@ being the longest timescale relaxation.
 As the structural relaxation behaviour becomes increasingly non-exponential, [@Ediger1996]
 it is often fit to the Kohlrausch--Williams--Watts (KWW) equation [@Williams1970;@Kohlrausch1854]
 
-$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$
+$$ F(t) = c \e^{-(t/\tau_\alpha)^\beta} $$ {#eq:kww}
 
 Where the values for $\beta$ and $\alpha$ represent
 the fast and slow relaxations respectively.
@@ -142,6 +142,9 @@ and optical microscopy. [@Bartko1999]
 The quantity used to measure this is the non-Gaussian parameter $\alpha$ (@sec:heterogeneous_dynamics),
 which is a measure of how far the distribution of motions
 deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
+Other than using the same greek letter $\alpha$,
+there is no link between the non-Gaussian parameter
+and the $\alpha$-relaxations described in @eq:kww.
 
 ![The trajectories in a simulation of over 20 structural relaxation times.
 The lines represent the trajectories each particle took within the simulation. \
