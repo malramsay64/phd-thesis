@@ -30,7 +30,14 @@ inline with expectations.
 
 ![The intermediate scattering function of the trimer molecule
 over a range of temperatures at a pressure $P=13.50$.
-Note the logarithmic scale on the time axis.
+The solid line is the mean of all initial configurations,
+with the opaque surrounding bars describing an estimate of the error.
+For most values the error is not visible in the figure.
+This shows the transition from being identical to the initial state, with a value of 1,
+to a decorrelation from the initial state, with a value of 0.
+As the temperature drops, the process moves from
+single step (T=2.5) to two step (T=1.25).
+Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:isf}
 
 The structural relaxation of the Trimer molecule
@@ -47,11 +54,15 @@ This indicates that the structural relaxation
 is taking place through similar processes as ortho-terphenyl.
 
 ![The structural relaxation time $\tau_S$
-for a range of temperatures pressures.
+for a range of temperatures and pressures.
 The temperature has been normalised by the melting point
 reducing both pressures to a single curve.
-The black line is a fit of the Vogel--Tammann--Fulcher relation
-where the fragility $m$ has been found to be 220.
+The markers represent the mean of all initial configurations,
+with the vertical line at the center of each marker
+indicating an estimate of the error.
+All errors are smaller than the marker size.
+A best fit of the Vogel--Tamman--Fulcher relation is
+shown as a black line with a fragility $m = 220$.
 ](../Projects/Dynamics/figures/scattering_function_summary.svg){width=80% #fig:isf_relaxation}
 
 The timescales of the structural relaxation $\tau_S$
@@ -125,24 +136,27 @@ the value of the maximum,
 the time at which the maximum occurs
 becomes later moving from high temperature to low.
 
-![The non-Gaussian of the trimer molecule
+![The non-Gaussian parameter $\alpha$ of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
-Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
+The mean value at each time is displayed through the solid line
+while the estimate of the error is shown with an opaque band.
+Note the logarithmic scale of the time axis.
+](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
 
 The rotational heterogeneities can be calculated
 in the same way as the translational heterogeneities,
 describing the deviation of the dynamics
 from those expected by a Gaussian distribution.
 
-![The rotational non-Gaussian of the trimer molecule
+![The rotational non-Gaussian parameter of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
-Note that time axis is plotted using a logarithmic
-scale.](../Projects/Dynamics/figures/rotational_alpha.svg){width=80% #fig:rotational_non-gaussian}
+The solid line shows the mean value at each time
+with the estimate of the error shown through an opaque band.
+Note the logarithmic scale of the time axis.
+](../Projects/Dynamics/figures/rotational_alpha.svg){width=80% #fig:rotational_non-gaussian}
 
 The rotational heterogeneities (@fig:rotational_non-gaussian)
-have a very similar shape to that of
-the translational heterogeneities (@fig:non-gaussian).
+have a similar shape to the translational heterogeneities (@fig:non-gaussian).
 One of the main differences,
 is that the curves for the rotational motion
 all follow a single curve before branching out
