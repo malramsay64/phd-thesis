@@ -4,10 +4,10 @@
 
 The Trimer model is designed to model the dynamics of a fragile liquid.
 In particular, we want it to display dynamics similar to ortho-terphenyl.
-Here we introduce some dynamics quantities measured in
+Here we introduce dynamics quantities measured in
 both experiments and simulations that allow for a comparison
-between these simulation results and
-those measured experimentally for ortho-terphenyl.
+between results measured experimentally for ortho-terphenyl
+and those obtained in simulations of the Trimer molecule.
 
 ## Structural Relaxation {#sec:intro_structural}
 
@@ -310,7 +310,11 @@ These are;
 
 The simulation methods described in @sec:methods_dynamics
 are used to generate the trajectories
-for analysis of the above behaviour.
+for analysis of the above behaviour,
+using simulations of 1024 molecules
+and using 500 distinct starting configurations
+to give results reflective of the equilibrium liquid
+rather than a single configuration.
 The calculation of the analysis quantities
 is described in @sec:dynamics_calculations.
 
