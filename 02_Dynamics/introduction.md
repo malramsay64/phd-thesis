@@ -17,31 +17,47 @@ return to equilibrium after a small perturbation. [@Ediger2012]
 The process of structural relaxation takes place over distances
 comparable to the size of the particles within the liquid. [@Angell1985]
 It "describes the process by which a liquid forgets its structure
-from some earlier time",[@Ediger1996]
-which can be measured through density fluctuations. [@Angell2000]
-There are a range of experimental techniques used to
+from some earlier time" [@Ediger1996]
+and can be measured using density fluctuations. [@Angell2000]
+There are a range of experimental techniques to
 measure structural relaxation including;
 neutron scattering, [@Mezei1987;@Bartsch1995;@Tolle2001]
 probe molecules, [@Wendt1998;@Cicerone1995]
 light scattering, [@Sidebottom1993;@Li1992;@Singh1998;@Griffin2012]
 NMR, [@McCall1969;@Dries1988;@Bohmer1996;@Hinze1996;@Fujara1992]
 and dielectric relaxation. [@Hansen1997;@Naoki1987;@Richert1994;@Richert2005]
-These neutron and light studies measure the intermediate scattering function $F(\vect{k}, t)$
-which is a Fourier transform of the density-density autocorrelation,
+These experiments measure two distinct types of relaxations,
+the probe molecules, NMR, and dielectric relaxations measure
+the full-intermediate scattering function $F_D(\vect{k}, t)$,
+while the neutron scattering and light studies measure
+the self-intermediate scattering function $F_s(\vect{k}, t)$.
+The self-intermediate scattering function
+is a Fourier transform of the density-density autocorrelation,
 measuring the quantity in wave-vector space rather than real space. [@Angell2000]
-The intermediate scattering function is also calculated in simulations
+The self-intermediate scattering function is also calculated in simulations
 [@Shi2013;@Chong2004;@Kawasaki2019;@Widmer-Cooper2004]
 and is given by
 
-$$ F(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
-i\mathbf{k} \cdot [\mathbf{r}_j(0) - \mathbf{r}_j(t)]
-) \right\rangle $$ {#eq:intermediate_scattering_function}
+$$ F_s(\mathbf{k}, t) = \frac{1}{N}\left\langle \sum_j^N \exp(
+i\mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]
+) \right\rangle $$ {#eq:self_intermediate_scattering_function}
 
 where the angle brackets signify averaging over multiple initial configurations
 $N$ is the total number of particles,
 $i = \sqrt{-1}$, and $\mathbf{k}$ is the wave vector.
-In an isotropic liquid, where all directions are equivalent,
-we can take a spherical average over all wave-vectors,
+While the self-intermediate scattering function considers the motion
+of each particle over time,
+the full-intermediate scattering function considers
+the cross interaction of all molecules with the initial configuration.
+
+$$ F_D(\mathbf{k}, t) = \frac{1}{N} \sum_{j=1}^N \sum_{k=1}^N \exp(
+i\mathbf{k} \cdot [\mathbf{r}_j(t) - \mathbf{r}_k(0)]
+) $$ {#eq:full_intermediate_scattering_function}
+
+Within this thesis we calculate the self-intermediate scattering function.
+This calculation makes use of properties of an isotropic liquid,
+where all directions are equivalent,
+allowing us to take a spherical average over all wave-vectors,
 giving $\mathbf{k}$ the form;
 
 $$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M \left[
@@ -51,10 +67,10 @@ $$ \mathbf{k} = k \frac{1}{M}\sum_{a=1}^M \left[
 Where the sum is over $M$ values of
 the angle $\theta_i$ which ranges in value from $0$ to $2\pi$
 
-$$ F(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
+$$ F_s(k, t) = \frac{1}{NM} \left \langle \sum_j^N\sum_{a=1}^M \cos \left (
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot [\Delta x_{j}(t), \Delta y_{j}(t)]
-\right ) \right \rangle $$ {#eq:intermediate_scattering_function}
+\right ) \right \rangle $$ {#eq:calc_self_intermediate_scattering_function}
 
 The structural relaxation of ortho-terphenyl
 becomes a two-step process close to the glass transition.
@@ -84,10 +100,11 @@ Where the values for $\beta$ and $\alpha$ represent
 the fast and slow relaxations respectively.
 
 ![Experimentally determined structural relaxation of ortho-terphenyl
-using photon correlation spectroscopy.
+using photon correlation spectroscopy,
+a technique that measures the full-intermediate scattering function
+(@eq:full_intermediate_scattering_function).
 This displays the transition to a two-step relaxation process
-which is characteristic of ortho-terphenyl
-and other supercooled liquids. \
+characteristic of ortho-terphenyl and other supercooled liquids. \
 *Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
 ](../00_Introduction/figures/ortho-terphenyl_structural.png){#fig:otp_structural_relaxation width=80%}
 
@@ -186,7 +203,7 @@ R_l(t) &= \langle Y_l^m(0) Y_l^{-m}(t) \rangle \\
 
 where $l$ describes the degree of the spherical harmonic.
 This formulation represents the rotational relaxation as an exponentially decaying
-function like the intermediate scattering function,
+function like the self-intermediate scattering function,
 allowing the relationship between the rotational relaxation time
 and the rotational diffusion constant to be expressed as
 

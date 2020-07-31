@@ -46,7 +46,7 @@ def intermediate_scattering_function(
     wave_number: int,
     angular_resolution: int = 60,
 ) -> float:
-    """Calculate the intermediate scattering function for a specific wave-vector."""
+    """Calculate the self-intermediate scattering function for a specific wave-vector."""
     wave_vector = create_wave_vector(wave_number, angular_resolution)
 
     # We only want the x and the y values from the displacements

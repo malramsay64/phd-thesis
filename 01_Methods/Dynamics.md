@@ -58,7 +58,8 @@ described in @sec:best_practices.
 The first step in the calculation of wave numbers
 is finding the radial distribution function.
 This shows the distribution of particles at each radius
-and can be related to the experimentally measurable scattering function
+and can be related to the experimentally measurable self-intermediate scattering
+function (@eq:self_intermediate_scattering_function)
 through a Fourier transformation.
 I used the function `freud.density.RDF` from
 the freud python package [@Harper2016]
@@ -113,9 +114,9 @@ within the trajectory. The first peak corresponds to a value of 2.90.
 Knowing the value of the wave vector $k_\text{bragg}$
 it is possible to monitor how particles
 move relative to that characteristic distance
-using the intermediate scattering function
+using the self-intermediate scattering function
 
-$$ F(k, t) = \left \langle \cos \left\{
+$$ F_s(k, t) = \left \langle \cos \left\{
 k \left[\cos\left(a\frac{2\pi}{M}\right), \sin \left(a\frac{2\pi}{M} \right) \right]
 \cdot
 [\Delta x_{j}(t), \Delta y_{j}(t)]

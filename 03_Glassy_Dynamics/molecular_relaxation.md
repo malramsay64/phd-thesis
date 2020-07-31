@@ -24,7 +24,7 @@ $$ d = \frac{\pi}{2 k_{\text{bragg}}} $$
 where $k_{\text{bragg}}$ is the wave-vector of
 the maximum peak of the static structure factor $S(k)$.
 This function describes the structural relaxation
-in a similar manner to the intermediate scattering function
+in a similar manner to the self-intermediate scattering function
 with the added benefit of being able describe each particle
 as either not-relaxed, the particle is within a distance $d$ of its initial position,
 or relaxed, the particle is greater than a distance $d$ of its initial position.

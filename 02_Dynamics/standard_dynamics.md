@@ -13,12 +13,12 @@ $T=1.35$ for a pressure $P=13.50$.
 
 ## Structural Relaxation and Non-Arrhenius Dynamics {#sec:structural_relaxation}
 
-The structural relaxation (@eq:intermediate_scattering_function) is calculated
+The structural relaxation (@eq:calc_self_intermediate_scattering_function) is calculated
 for a single value of the wave-number $k$.
 The value of this wave-number $k$
 that is going to give the best measurement [@Widmer-Cooper2008]
 is the first maximum in the structure factor $S(k)$,
-the single time value of the intermediate scattering function.
+the single time value of the self-intermediate scattering function.
 The different pressures of the simulations
 have different values for the wave number $k$.
 The low pressure $P=1.0$ has a wave-number $k=2.80$ and
@@ -28,7 +28,7 @@ meaning the larger wave number at a higher pressure
 describes particles which are closer together,
 inline with expectations.
 
-![The intermediate scattering function of the trimer molecule
+![The self-intermediate scattering function of the trimer molecule
 over a range of temperatures at a pressure $P=13.50$.
 The solid line is the mean of all initial configurations,
 with the opaque surrounding bars describing an estimate of the error.
@@ -43,7 +43,7 @@ Note the logarithmic scale of the time axis.
 The structural relaxation of the Trimer molecule
 is shown in @fig:isf.
 At low temperatures ($T=1.25$ to $T=1.4$)
-the relaxation of the intermediate scattering function
+the relaxation of the self-intermediate scattering function
 takes place through a two-step process,
 comprised of an initial relaxation to a plateau that starts around \num{1e4} timesteps,
 followed by a secondary relaxation.
