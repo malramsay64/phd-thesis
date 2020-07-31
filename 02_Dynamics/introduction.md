@@ -102,7 +102,8 @@ the fast and slow relaxations respectively.
 ![Experimentally determined structural relaxation of ortho-terphenyl
 using photon correlation spectroscopy,
 a technique that measures the full-intermediate scattering function
-(@eq:full_intermediate_scattering_function).
+(@eq:full_intermediate_scattering_function)
+here denoted $g_1(q, t)$.
 This displays the transition to a two-step relaxation process
 characteristic of ortho-terphenyl and other supercooled liquids. \
 *Image from @Mallamace2014 Licensed under CC-BY-NC-SA 3.0*
