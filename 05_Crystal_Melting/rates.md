@@ -16,13 +16,20 @@ The normalisation of the melting point
 brings both pressures onto a single curve,
 the same result as seen for the dynamic quantities.
 
-![This figure shows the change in the estimated radius of the crystal as a
+:::{#fig:melting_radius class=subfigures}
+
+![P=1.00](../Projects/Crystal_Melting/figures/melting_radius_P1.svg)
+
+![P=13.50](../Projects/Crystal_Melting/figures/melting_radius_P13.svg)
+
+This figure shows the change in the estimated radius of the crystal as a
 function of time. The radius is estimated from the volume assuming a circular crystal.
 Each set of conditions is repeated five times starting from independent
 configurations, which are used to estimate the confidence intervals.
 The radius is expected to change linearly,
-which is reflected in all the data at all temperatures.
-](../Projects/Crystal_Melting/figures/melting_radius.svg){#fig:melting_radius}
+which is reflected at all temperatures and pressures.
+
+:::
 
 The normalisation by the temperature allows
 for the comparison of the rates between different pressures,
