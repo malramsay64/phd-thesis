@@ -195,7 +195,7 @@ being the lowest energy polymorphs.
 These structures are displayed in @fig:trimer_crystals
 with the parameters for construction in @tbl:polymorph_construction.
 
-:::{class=subfigures id=fig:trimer_crystals}
+:::{class=subfigures #fig:trimer_crystals}
 
 ![p2](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:trimer_p2 width=49%}
 
