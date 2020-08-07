@@ -125,7 +125,9 @@ Vogel--Tammann--Fulcher relation. {#tbl:glass_transition_temp}
 ## Dynamic heterogeneities {#sec:dynamic_heterogeneities}
 
 The non-exponential structural relaxation in @fig:isf
-also hints at the presence of dynamic heterogeneities.
+also hints at the presence of dynamic heterogeneities (@sec:heterogeneous_dynamics).
+The deviation from a Gaussian distribution of motions is
+measured using the non-Gaussian parameter $\alpha$ (@eq:non-gaussian).
 As the temperature decreases from 2.5 to 1.30,
 the maximum value of non-Gaussian parameter increases,
 demonstrating an increase in the dynamic heterogeneities,
@@ -143,10 +145,13 @@ while the estimate of the error is shown with an opaque band.
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/non_gaussian.svg){width=80% #fig:non-gaussian}
 
-The rotational heterogeneities can be calculated
-in the same way as the translational heterogeneities,
+The presence of rotational heterogeneities can be calculated
+in a similar way to that of the translational heterogeneities,
 describing the deviation of the dynamics
 from those expected by a Gaussian distribution.
+Rotational motions in 2D are constrained to
+a single dimension of movement,
+measured using $\alpha_\text{rotation}$ (@eq:non-gaussian_rotation).
 
 ![The rotational non-Gaussian parameter of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
