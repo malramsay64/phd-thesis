@@ -182,22 +182,42 @@ which has a Gaussian distribution.
 The non-Gaussian parameter $\alpha$
 is a measure of how far the actual distribution
 of distances deviates from a Gaussian distribution [@Rahman1964]
+The equation typically reported [@Kob1997] for the non-Gaussian is
 
-$$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2  \rangle^2} - 1 $$
+$$ \alpha = \frac{3\langle \Delta r^4\rangle} {5\langle \Delta r^2 \rangle^2} - 1 $$
 
-This is the result for relaxation in two dimensions.
+which measures the deviation from Gaussian motion in a system
+with 3 degrees of freedom,
+like rotational or translational motion in 3D space.
+For motions in 2D,
+like the translations in this thesis,
+the following equation is used;
+
+$$ \alpha = \frac{\langle \Delta r^4\rangle} {2\langle \Delta r^2 \rangle^2} - 1 $$ {#eq:non-gaussian}
+
+The general case of the non-Gaussian is
+
+$$ \alpha_D = \frac{D\langle \Delta r^4\rangle} {(D + 2)\langle \Delta r^2 \rangle^2} - 1 $$ {#eq:non-gaussian_general}
+
+where D is the number of dimensions accessible to the motion.
 
 Like translational motion,
 the rotational motion is also expected to have
 a Gaussian distribution,
-which means it can be expressed in the same way
-as the translational non-Gaussian parameter.
+which means it can be expressed in a similar way
+to the translational non-Gaussian parameter.
+In a 2D system,
+the rotational motion is constrained to a single dimension
+meaning we need to use the 1D form of @eq:non-gaussian_general;
 
-$$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {3\langle \Delta \theta^2  \rangle^2} - 1 $$
+$$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {3\langle \Delta
+\theta^2  \rangle^2} - 1 $$ {#eq:non-gaussian_rotation}
+
+measuring the deviation of rotational motions $\Delta \theta$.
 
 It is additionally possible to investigate
-the coupling of the rotational and translational displacements
-which is measured using the parameter $\gamma$.
+the coupling of the rotational and translational displacements,
+measured using the parameter $\gamma$.
 
 $$ \gamma = \frac{\langle(\Delta r \Delta\theta)^2 \rangle}
     {\langle\Delta r^2\rangle\langle\Delta\theta^2\rangle} - 1 $$
