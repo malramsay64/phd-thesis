@@ -193,7 +193,7 @@ a Gaussian distribution,
 which means it can be expressed in the same way
 as the translational non-Gaussian parameter.
 
-$$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {2\langle \Delta \theta^2  \rangle^2} - 1 $$
+$$ \alpha_\text{rotation} = \frac{\langle \Delta \theta^4\rangle} {3\langle \Delta \theta^2  \rangle^2} - 1 $$
 
 It is additionally possible to investigate
 the coupling of the rotational and translational displacements
