@@ -189,7 +189,7 @@ The equation for the growth rate of
 the semi-empirical density functional model [@eq:dft_growth_rate]
 can be written as
 
-$$ v(T) D(T) \propto f(T) \Delta \mu(T) $$ {#eq:proportionality_dft}
+$$ \frac{v(T)}{D(T)} \propto f(T) \Delta \mu(T) $$ {#eq:proportionality_dft}
 
 where
 
