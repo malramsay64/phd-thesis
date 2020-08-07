@@ -240,20 +240,31 @@ between the relaxation times and rotational diffusion constant
 for difference choices of $l$.
 The ratio $\tau_1/\tau_2$ is used to measure the contribution
 of large angular jumps towards rotational relaxation. [@Jose2006;@Kivelson1970]
-When the dynamics is Brownian the ratio of $\tau_1/\tau_2$
+When the rotations undergo Brownian dynamics,
+that is a process of small angular motions,
+a 3D system has the ratio $\tau_1/\tau_2$
 
 $$ \tau_1/\tau_2 = \frac{2(2 + 1) D_r}{1(1+1) D_r} = 3$$
 
-or a value of 4 for a 2D system.
-When molecules rotate through jump dynamics,
-that is, through large angular displacements
-the ratio $\tau_1/\tau_2$ falls within the range
+and a value of 4 for rotations in 2D.
+When the ratio $\tau_1/\tau_2$ falls within the range
 
 $$ 1 < \tau_1/\tau_2 < 3 $$
 
-At the limit, a single large motion can describe
-both relaxation quantities simultaneously
-which is described the $\tau_1/\tau_2 = 1$
+for 3D systems, or
+
+$$ 1 < \tau_1/\tau_2 < 4 $$
+
+for 2D systems,
+the rotational relaxation takes place
+through a small number of large angular displacements
+rather than the many small angular displacements
+described by Brownian dynamics.
+The presence of large angular displacements
+described as the onset of jump dynamics.
+At the limit, a single large angular displacement describes
+both relaxation quantities simultaneously,
+where $\tau_1/\tau_2 = 1$.
 The presence of jump dynamics has been observed within ortho-terphenyl [@Andreozzi1996]
 using electron spin resonance to capture both rotational relaxation quantities.
 

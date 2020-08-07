@@ -225,6 +225,8 @@ when normalised by the melting point.
 
 ![The Mean Squared Displacement of the trimer molecule
 over a range of temperatures for a pressure $P=13.50$.
+The solid line shows the mean value at each time
+with the estimate of the error shown through an opaque band.
 Note the logarithmic scale of both axes.
 ](../Projects/Dynamics/figures/mean_squared_displacement.svg){width=80% #fig:msd}
 
