@@ -61,14 +61,18 @@ The Turnbull model of melting gives $p(T) = \sqrt{T}$,
 plotted in @fig:melting_turnbull.
 The ratio between the two axes is highly non-linear
 indicating it is a poor fit to this data.
-This is not a surprising result,
-as the Turnbull model normally describes materials
-with a fast crystallisation rate,
-which doesn't describe fragile liquids or the Trimer molecule.
 While there is a clear non-linearity,
 what is also interesting is that the Turnbull model
-has a very different temperature dependence for each pressure,
+has a different temperature dependence for each pressure,
 primarily resulting from the thermodynamic term.
+The large deviation between the two pressures studied
+predicted by the Turnbull model,
+and not observed in simulation,
+describe a melting process
+that is not limited by Thermodynamics.
+While thermodynamics could play part a small role
+in the slow melting rates,
+another factor is more significant.
 The Turnbull model is not suitable
 for describing the melting of the Trimer molecule.
 
@@ -79,9 +83,6 @@ The lack of a linear relationship indicates
 the Turnbull model is not suitable for describing the melting.
 ](../Projects/Crystal_Melting/figures/melting_turnbull.svg){#fig:melting_turnbull width=80%}
 
-The Wilson--Frenkel model is the classical model
-which would be expected to model the growth of the trimer,
-being a fragile liquid.
 The Wilson--Frenkel model defines the temperature dependent function $p(T) = D(T)$,
 where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$
 (@sec:crystal_transport).
