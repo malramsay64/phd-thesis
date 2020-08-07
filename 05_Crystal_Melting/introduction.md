@@ -305,3 +305,13 @@ followed by fitting each of the models to these observations.
 This allows us to understand which aspects of the models
 are important for describing melting in the Trimer
 which can be applied to understanding other materials.
+
+The simulations used to calculate these values
+are documented in @sec:methods_melting,
+with each simulation containing 4032 molecules,
+half of which are in the p2 crystalline configuration
+which is completely surrounded by the liquid.
+The methods used to measure the melting of the initial crystalline region
+are documented in @sec:measuring_melting,
+which uses the supervised learning algorithm developed in @sec:supervised_learning
+for identifying molecules that are locally crystalline.

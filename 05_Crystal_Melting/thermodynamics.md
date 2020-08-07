@@ -9,6 +9,16 @@ the spinodal temperature (@sec:spinodal),
 the chemical potential $\Delta \mu$ (@sec:chemical_potential), and
 the transport coefficient (@sec:crystal_transport).
 
+The simulations used to calculate these values
+are documented in @sec:methods_melting,
+with each simulation containing 4032 molecules,
+half of which are in the p2 crystalline configuration
+which is completely surrounded by the liquid.
+The methods used to measure the melting of the initial crystalline region
+are documented in @sec:measuring_melting,
+which uses the supervised learning algorithm developed in @sec:supervised_learning
+for identifying molecules that are locally crystalline.
+
 ## Melting Point {#sec:melting_point}
 
 The melting point $T_m$ is the temperature
@@ -130,7 +140,7 @@ to estimate the change in chemical potential $\Delta \mu$ as
 $$ \Delta \mu = \frac{\Delta h_m(T_m - T)}{T_m} $$
 
 where $\Delta h_m$ is the enthalpy of fusion per particle at the melting point,
-a quantity which can be calculated once.
+a quantity that can be calculated once and applied to all temperatures.
 The values for the enthalpy of melting $\Delta h_m$
 are shown in @tbl:potential_energy_difference.
 The higher pressure $P=13.50$ creates a slightly larger
