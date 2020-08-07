@@ -42,6 +42,20 @@ Across each row are the linear steps,
 while dropping down to the next row
 increases the size of the linear step by a power of 10. {#tbl:step_sequence}
 
+The main source of error within the dynamics simulations
+is sampling the equilibrium liquid.
+While the size of the simulation is large enough to
+minimise system size dependent effects, [@Yeh2004]
+it is not large enough to capture the full distribution of
+equilibrium liquid states.
+For this we use the *key-frames* defined above,
+using the Standard Error of the Mean (SEM) [@Gurland1971]
+to estimate the errors present in the calculated quantities at each timestep.
+To calculate the errors,
+each of the below quantities is calculated for every key-frame and time interval,
+with the mean and SEM calculated over the key-frames
+giving a value for each time interval.
+
 ## Dynamics Quantities
 
 This section describes the calculation of the dynamics quantities
