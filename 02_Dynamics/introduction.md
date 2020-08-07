@@ -8,6 +8,8 @@ Here we introduce dynamics quantities measured in
 both experiments and simulations that allow for a comparison
 between results measured experimentally for ortho-terphenyl
 and those obtained in simulations of the Trimer molecule.
+In this chapter we establish that the Trimer
+is an appropriate dynamical model for ortho-terphenyl.
 
 ## Structural Relaxation {#sec:intro_structural}
 
