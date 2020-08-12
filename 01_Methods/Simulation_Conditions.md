@@ -169,7 +169,7 @@ between the liquid and the crystal.
 All simulations studying the melting behaviour of the Trimer
 contain 4032 Trimer molecules.
 
-### Initial Configuration
+### Initial Configuration {#sec:initial_configuration}
 
 Since we are unable to determine
 the equilibrium crystal structure

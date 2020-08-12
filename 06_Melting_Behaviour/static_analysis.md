@@ -116,29 +116,38 @@ found no new polymorphs.
 When we use the supervised learning algorithm
 developed in @sec:supervised_learning
 to search for crystal growth,
-we only consider the structures we have found using the isopointal search.
-It is possible there are additional local structures forming in the liquid
-we are not considering
-since they don't appear in our isopointal search.
+we only consider the structures we have found using isopointal search.
+In performing an isopointal search,
+we are reducing the degrees of freedom to search
+by using the symmetry of the space groups.
+A limitation of this approach is possible to overly reduce the degrees of freedom
+to omit favourable configurations.
+An alternate approach to identify locally favourable structures
+is using the clustering algorithms developed in @sec:clustering.
 In @sec:clustering, we use clustering algorithms to identify
-the structures we constructed from the isopointal search.
-We can use this same clustering technique
-to search for previously unknown structures
-which could be forming within the liquid.
+structures constructed from the isopointal search.
+Here we use the clustering technique
+to search for new local structures
+that could be forming within the liquid.
 The liquid from a dynamics simulation
 has been chosen for a cluster search
 as it will allow any local structure to form
 without preference for those we have already created.
-Additionally the configurations from the dynamics simulations
-represent the longest timescale which can be studied.
-The results of the clustering are visualised in @fig:cluster_analysis_liquid
+Additionally, the configurations from the dynamics simulations
+represent the longest timescale that can be studied.
+The results of the clustering are visualised in @fig:cluster_analysis_liquid,
 which shows no collections of local configurations.
-Regions of the configuration space with a high density of points
-suggest locally favourable configurations,
-likely those associated with a crystal structure.
-Neither the HDBSCAN clustering algorithm [@McInnes2017]
-nor the UMAP dimensionality reduction [@McInnes2018]
-found regions with a high density of points.
+The HDBSCAN clustering algorithm [@McInnes2017]
+classifies all local configurations as noise
+by assigning all to the cluster labelled -1.
+This informs us that there are no regions of the 6D feature space
+that have a high enough density to form a cluster.
+An additional confirmation of this comes from the visualisation,
+where the 6D feature space has been projected into the two dimensions shown
+using the UMAP dimensionality reduction [@McInnes2018].
+In this visualisation (@fig:cluster_analysis_liquid),
+there are no regions with a high density of points
+indicating we haven't missed structures in our isopointal search.
 
 ![Clustering analysis of local configurations
 from a simulation of the trimer liquid
@@ -155,9 +164,12 @@ meaning all are considered noise.
 ](../Projects/Crystal_Melting/figures/clustering_liquid.svg){width=80% #fig:cluster_analysis_liquid}
 
 From our analysis of local configurations
-we can be confident the structures generated
-from an isopointal search using a hard potential
-provide the lowest energy structures for the trimer molecule.
+using an isopointal search with a Lennard Jones potential
+and the clustering algorithm,
+we can be confident we haven't missed any low energy structures.
+This means the crystal structures described in @sec:initial_configuration
+created from an isopointal search using a hard potential
+are the best guess at the lowest energy structures for the trimer molecule.
 To understand the slow crystal growth
 we have to look to the dynamic behaviour
 and how the crystal polymorphs interact with each other
