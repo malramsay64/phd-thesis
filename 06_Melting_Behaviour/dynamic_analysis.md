@@ -275,15 +275,24 @@ allowing for free rotation and consequently melting.
 
 ::: {#fig:pg_crystal class=subfigures}
 
-![Bottom
-](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=40%}
-![Top
+![$\{0  1\}$ Interface
 ](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_top_0.svg){#fig:pg_crystal_top width=40%}
+![$\{0 \bar{1}\}$ Interface
+](../Projects/Crystal_Melting/figures/configuration-P13.50-T1.40-pg_bottom_0.svg){#fig:pg_crystal_bottom width=40%}
 
-Zooming in on the pg crystal structure
-at the beginning of the melting run
-showing the configurations of the particles.
-(a) at the bottom and (b) at the top.
+A look at the molecular arrangement of the pg crystal structure
+at the beginning of a simulation trajectory
+showing the configurations of the molecules
+(a) along the $\{0 1\}$ interface and (b) along the $\{0 \bar{1}\}$ interface.
+The colouring of molecules is the classifications assigned by
+the Machine Learning algorithm developed in @sec:supervised_learning.
+Molecules coloured red are the pg crystal,
+those coloured blue are liquid,
+and the single green molecule is locally p2gg.
+This shows the different sides of the molecule
+facing the liquid between the top and the bottom faces
+and the interlocking of molecules
+along the $\{0 1\}$ and $\{0 \bar{1}\}$ faces of the crystal.
 
 :::
 
