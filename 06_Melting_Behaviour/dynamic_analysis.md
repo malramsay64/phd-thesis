@@ -258,17 +258,20 @@ while the $\{0\bar{1}\}$ face exposes all three component particles.
 Interactions at the $\{0\bar{1}\}$ face of the crystal
 can have much stronger interactions with the liquid
 than at the $\{0 1\}$ face of the crystal,
-interactions which can help remove particles from the crystal.
-This isn't the entire story,
-since molecules at both faces of the crystal
-have the same interactions within the crystal
-with each molecule locked into the concavities
-of the neighbouring molecules.
-The melting of the crystal (@fig:pg_melting_1)
-takes place along the $\{1 \bar{1}\}$ and $\{\bar{1} \bar{1}\}$ planes
-giving the triangular shape.
-Along these two faces there isn't the same
-locking of molecules into the crystal structure.
+interactions that can help remove particles from the crystal.
+Looking at the melting process, (@fig:pg_melting_1)
+the melting takes place along the $\{1 \bar{1}\}$ and $\{\bar{1} \bar{1}\}$ planes
+resulting in the observed triangular shape.
+The melting along these diagonal faces indicates
+a weakness in the crystal structure at the corners.
+Along the $\{0 1\}$ and $\{0 \bar{1}\}$ faces of the crystal,
+the molecules are interlocked,
+with the small particles in the concavity of the neighbouring particle
+creating a gear like connection that hinders rotational motion. [@Zwanzig1987]
+At the ends of each layer,
+the $\{1 \bar{1}\}$ and $\{\bar{1} \bar{1}\}$ planes,
+there is no interlocking molecule
+allowing for free rotation and consequently melting.
 
 ::: {#fig:pg_crystal class=subfigures}
 
