@@ -21,8 +21,8 @@ The other polymorphs, being p2 and p2gg follow this trend,
 the p2 polymorph with the lowest potential energy melts the slowest.
 The melting of the entire crystalline region
 shows a high level view macroscopic view of the melting process.
-To understand more we can investigate how individual particles
-are involved in the melting process.
+To understand more, we investigate the contribution
+of individual particles to the melting process.
 
 ![Comparison of the melting of each of the different crystal types.
 These values are compared at a pressure of 13.50 and a temperature of 1.40.
