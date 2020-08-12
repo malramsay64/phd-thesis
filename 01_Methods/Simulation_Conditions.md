@@ -179,6 +179,13 @@ for finding the initial crystal structures.
 For these structures we use an
 isopointal search algorithm developed by @Hudson2011
 for finding the optimal hard packing of shapes.
+The isopointal search algorithm is an approach to
+reduce the degrees of freedom when searching for possible crystal structures
+using the symmetry of the space groups comprising a structure.
+Reducing the degrees of freedom to optimise
+reduces the time to find a locally optimal solution
+and increases the probability of that locally optimal solution
+being the true global optimum.
 The results from the hard packing
 have been found to give our best estimate
 at the equilibrium structures (see @sec:static_analysis).
