@@ -221,13 +221,22 @@ As the temperature drops,
 the heterogeneities dramatically increase,
 however the quantities don't do so equally.
 Quantities which have a longer length-scale
-demonstrate significantly less heterogeneity,
+demonstrate less heterogeneity,
 with $\tau_F$ having the most while $\tau_D$ has the least.
-The longer the distance travelled
+For the rotational relaxations,
+$\tau_{T4}$ has the largest heterogeneity and smallest distance, while
+$\tau_{T2}$ has the smallest heterogeneity and largest distance,
+and $\tau_{T3}$ sits between.
+This follows the trend of the translations,
+with quantities describing larger distances
+having smaller heterogeneities,
+suggesting that we have a general result being,
+the longer the distance travelled
 the more Gaussian the relaxation.
 
 ![Histogram displaying the distribution of the relaxation times
-for the last passage time.](../Projects/Dynamics/figures/histogram_last_passage.svg){width=80% #fig:relaxation_distribution}
+for the last passage time.
+](../Projects/Dynamics/figures/histogram_last_passage.svg){width=80% #fig:relaxation_distribution}
 
 ![Degree of heterogeneity for each of the molecular relaxations
 as a function of temperature.
