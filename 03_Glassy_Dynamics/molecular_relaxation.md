@@ -116,9 +116,9 @@ accurately describes the timescale of the irreversible relaxation.
 
 ![State diagram describing the transition between the three possible states
 for the last passage time.
-The arrows describe which changes in state are possible,
-with the conditions describing when that move can take
-place.](../03_Glassy_Dynamics/figures/last_passage.pdf){#fig:last_passage_state width=80%}
+The arrows describe the possible changes in state,
+and conditions describing when the state change occurs.
+](../03_Glassy_Dynamics/figures/last_passage.pdf){#fig:last_passage_state width=80%}
 
 ![Structural relaxation compared with the last passage time
 ](../Projects/Dynamics/figures/last_passage_time.svg){width=80% #fig:last_passage_time}
