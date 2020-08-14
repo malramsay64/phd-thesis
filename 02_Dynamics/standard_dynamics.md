@@ -129,7 +129,7 @@ also hints at the presence of dynamic heterogeneities (@sec:heterogeneous_dynami
 The deviation from a Gaussian distribution of motions is
 measured using the non-Gaussian parameter $\alpha$ (@eq:non-gaussian).
 As the temperature decreases from 2.5 to 1.30,
-the maximum value of non-Gaussian parameter increases,
+the maximum value of non-Gaussian parameter increases, (@fig:non-gaussian)
 demonstrating an increase in the dynamic heterogeneities,
 that is, there is a big difference between
 the fastest and the slowest particles.
