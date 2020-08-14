@@ -76,7 +76,12 @@ This was an issue also faced by @Widmer-Cooper2009,
 finding that particles were able to move beyond the distance $d$
 without structural rearrangements even within the crystal.
 
-![Structural relaxation compared with the first passage time
+![Comparison of the structural relaxation $\tau_S$ compared with
+the first passage time $\tau_F$ showing the first passage time
+having a much faster relaxation than the structural at
+$T_m/T = 0.80$.
+Error estimates are shown through error bars
+which are all smaller than the marker size.
 ](../Projects/Dynamics/figures/first_passage_time.svg){width=80% #fig:first_passage_time}
 
 The relaxations captured by the structural relaxation function
@@ -120,7 +125,10 @@ The arrows describe the possible changes in state,
 and conditions describing when the state change occurs.
 ](../03_Glassy_Dynamics/figures/last_passage.pdf){#fig:last_passage_state width=80%}
 
-![Structural relaxation compared with the last passage time
+![Comparing the structural relaxation $\tau_S$ with the last passage time
+shows a similar temperature dependence for both quantities.
+The estimate of the errors are shown with a error bar
+that is smaller than the marker for all values.
 ](../Projects/Dynamics/figures/last_passage_time.svg){width=80% #fig:last_passage_time}
 
 ## Single particle diffusion
@@ -131,7 +139,7 @@ for each particle.
 This diffusive relaxation time can be compared to
 the translational diffusion constant using the relation
 
-$$ D_t = \frac{9d^2}{4\tau_D} $$
+$$ D_t = \frac{9d^2}{4\tau_D} $$ {#eq:diffusive_timescale}
 
 This is derived from @eq:jump_diffusion, [@Doliwa2003]
 where we are measuring the average time for
@@ -142,7 +150,12 @@ to the diffusion constant is shown in @fig:diffusive_time,
 where the diffusion constant calculated using the standard dynamics
 is close to the values using the molecular relaxation method.
 
-![Diffusion constant compared with the diffusive timescale
+![The inverse Diffusion constant $1/D$ compared with
+the diffusive timescale $\tau_D$
+through the relationship in @eq:diffusive_timescale.
+Estimates of the error in all quantities are described by error bars
+which are smaller than the markers.
+Both quantities show the same relationship over the timescale.
 ](../Projects/Dynamics/figures/diffusive_time.svg){width=80% #fig:diffusive_time}
 
 ## Single particle rotational relaxations
@@ -163,7 +176,11 @@ Likewise, the rotational relaxation function $R_1$
 has its first zero at an angular displacement of $\pi/2$,
 giving the relaxation quantity $\tau_{T2}$.
 
-![Rotational relaxation times compared with the rotational relaxations
+![Rotational relaxation times calculated from averaging single molecule relaxations
+$\tau_{T4}$ compared to the rotational relaxations $\tau_2$.
+An estimate of the error for each quantity is displayed for each value,
+in all cases being smaller than the marker size.
+Both relaxations give similar results across the temperature range.
 ](../Projects/Dynamics/figures/rotational_time.svg){width=80% #fig:rotational_time}
 
 A summary of the comparisons between each of the
