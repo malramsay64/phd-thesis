@@ -151,7 +151,8 @@ Of all the molecular quantities,
 the rotational relaxations are
 the most comparable to the traditional
 dipole relaxation times (@fig:rotational_time).
-This is because the length scale of the dipole relaxation
+This is because the length scale of the dipole relaxation,
+measured in this thesis using the rotational relaxation function $R_2$,
 is more well defined than for either
 the structural relaxation or the diffusion.
 The rotational relaxation function $R_2$ (@eq:rot_relax)
