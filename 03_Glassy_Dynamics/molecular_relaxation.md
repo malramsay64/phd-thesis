@@ -131,12 +131,16 @@ for each particle.
 This diffusive relaxation time can be compared to
 the translational diffusion constant using the relation
 
-$$ D_t = \frac{3d}{\tau_D} $$
+$$ D_t = \frac{9d^2}{6\tau_D} $$
 
+This is derived from @eq:jump_diffusion, [@Doliwa2003]
+where we are measuring the average time for
+each individual molecule to make a jump
+rather than any molecule.
 The suitability of comparing the diffusive relaxation time
 to the diffusion constant is shown in @fig:diffusive_time,
 where the diffusion constant calculated using the standard dynamics
-is very close to the values using the molecular relaxation method.
+is close to the values using the molecular relaxation method.
 
 ![Diffusion constant compared with the diffusive timescale
 ](../Projects/Dynamics/figures/diffusive_time.svg){width=80% #fig:diffusive_time}

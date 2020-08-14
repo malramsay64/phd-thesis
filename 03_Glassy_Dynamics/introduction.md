@@ -203,6 +203,8 @@ and the mean waiting time $\langle \tau(T) \rangle$
 
 $$ D_\text{jump}(T) = \frac{a(T)^2}{6N\langle \tau(T) \rangle} $$ {#eq:jump_diffusion}
 
+where $N$ is the number of particles in the simulation.
+The mean waiting time is the time for any particle to make a jump.
 In defining diffusion in this way we are assuming
 all particles undergo motions through jump dynamics.
 However, the dynamic heterogeneities synonymous with a potential energy landscape
