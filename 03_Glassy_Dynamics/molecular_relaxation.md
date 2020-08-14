@@ -235,9 +235,14 @@ the longer the distance travelled
 the more Gaussian the relaxation.
 
 ![Histogram displaying the distribution of the relaxation times
-for the last passage time.
+for the last passage time. This displays an exponential distribution of relaxation
+times. The deviation from the distribution around a time of 60,000
+is a result of choice of timestep sequence.
 ](../Projects/Dynamics/figures/histogram_last_passage.svg){width=80% #fig:relaxation_distribution}
 
-![Degree of heterogeneity for each of the molecular relaxations
+![Degree of heterogeneity $\alpha_M$ for each of the molecular relaxations
 as a function of temperature.
+As the temperature decreases, the heterogeneities increase.
+Additionally quantities describing larger distances have smaller heterogeneities.
+A Gaussian distribution will have a value of 1.
 ](../Projects/Dynamics/figures/molecular_heterogeneities.svg){width=80% #fig:molecular_heterogeneities}
