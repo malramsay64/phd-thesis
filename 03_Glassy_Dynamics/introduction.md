@@ -147,7 +147,7 @@ while four gears allow motion to propagate.
 
 :::
 
-## Dynamic Heterogeneities and structure
+## Dynamics in Potential Energy Landscapes
 
 The presence of dynamic heterogeneities
 is a significant feature as a liquid approaches
@@ -183,21 +183,46 @@ free to activated diffusion in simulations of atomic systems [@Barrat1991;@Wahns
 where the motions change from many small random motions at high temperatures
 to a large motions from one site to another at low temperatures,
 often involve correlated motions of particles.
+This structural description provides another method to describe jump dynamics
+as the motions between local potential energy minima. [@Doliwa2003a;@Doliwa2003]
+The structural description of jump dynamics
+makes no distinction between
+the rotational jumps described in @sec:intro_jump_dynamics
+and translational jumps.
 
 ![A representation of the potential energy landscape for a liquid.
 The entire configuration moves between the low energy states
 through the transition structures. \
-*Figure from @Stillinger1995 used with permission © 1995 AAAS*
+*Figure from @Stillinger1995 used with permission © 1995 BAAS*
 ](../00_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
-An important part of the potential energy landscape model
+When considering the transport properties of particles undergoing jump dynamics
+we can consider an alternate formulation of the diffusion constant $D$ [@Doliwa2003]
+constructed from the effective jump length $a(T)$
+and the mean waiting time $\langle \tau(T) \rangle$
+
+$$ D_\text{jump}(T) = \frac{a(T)^2}{6N\langle \tau(T) \rangle} $$ {#eq:jump_diffusion}
+
+In defining diffusion in this way we are assuming
+all particles undergo motions through jump dynamics.
+However, the dynamic heterogeneities synonymous with a potential energy landscape
+describe a wide range of behaviours.
+@Dueby2019 defines a diffusion constant that combines
+the both aspects of diffusion,
+the Brownian component and the Jump component,
+arguing both are required to fully describe diffusion.
+
+A key component part of the potential energy landscape model
 is that the structure plays a role in the dynamics,
-defining the types of transitions which take place.
-In a simulation study initialising the same structural configuration
-with a range of randomised momenta,
-@Widmer-Cooper2004 found the dynamic heterogeneities
-present in all regions of the structure,
-regardless of initial momenta.
+defining the types of transitions taking place.
+Whether the high energy allows for moving smoothly through the configuration space,
+or a low energy requires large rearrangements to jump between
+minima in the configuration space.
+This importance of the potential energy landscape
+in the dynamics is highlighted in work by @Widmer-Cooper2004,
+where a simulation study initialising
+the same structural configuration with a randomised momenta,
+found the same dynamic heterogeneities regardless of initial momenta.
 
 ## Goals for understanding dynamics
 
