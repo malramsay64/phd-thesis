@@ -72,7 +72,8 @@ decaying to the expected Gaussian distribution over longer times.
 Are the dynamic heterogeneities present
 because we are only observing a single jump
 rather than the walk of Brownian motion.
-To test this hypothesis we can use the distribution of last passage times $\tau_L$.
+To test this hypothesis we can use the distribution of last passage times $\tau_L$
+(@fig:relaxation_distribution).
 In taking the relaxation time of each particle within a simulation,
 we have sampled the distribution of relaxation times that can take place.
 This allows us to model the motion like we have observed in @fig:molecule_trajectory_fast.
@@ -101,11 +102,12 @@ and the same is true of the rotational heterogeneities,
 from $\tau_{T4}$ to $\tau_{T3}$ and to $\tau_{T2}$.
 
 ![The dynamic heterogeneities present when sampling with replacement
-from the distribution of last passage times.
-The number of times sampled from the distribution is indicated by the Jumps
-where 0 jumps is the mean of the entire distribution.
+from the distribution of last passage times in @fig:relaxation_distribution.
+The number of times sampled from the distribution is indicated by Jumps
+where 0 jumps is the mean of the distribution.
 With only 2 jumps the dynamic heterogeneities
-are nearly completely gone.
+are nearly reduced to the Gaussian value of 1,
+and further jumps get closer to this value.
 ](../Projects/Dynamics/figures/jump_dynamics.svg){width=80% #fig:jump_heterogeneities}
 
 In the picture of the decoupling of diffusion and rotation @fig:trans_rot_otp
@@ -244,7 +246,12 @@ The coupling of rotational and translational motions
 match those found in simulations of water [@Meyer2019;@Faraone2003]
 and ionic liquids. [@Griffin2012]
 
-![A plot of the coupling parameter $\gamma$
+![The coupling parameter $\gamma$ as a function of time.
+A molecule undergoing uncoupled relaxation has a value of 0 for all times.
+As the temperature decreases the maximum of $\gamma$ increases
+and the time at which that maximum occurs also increases.
+The solid line describes the mean value,
+with the lighter bands indicating an estimate of the error.
 ](../Projects/Dynamics/figures/gamma.svg){width=80% #fig:gamma}
 
 The coupling of rotational and translational motion
