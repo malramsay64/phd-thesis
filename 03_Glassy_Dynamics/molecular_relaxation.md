@@ -200,8 +200,12 @@ values independent of the method used to measure them,
 demonstrating these describe the types of relaxations
 we are investigating.
 
-![Summary taking the ratio of each molecular relaxation quantity
-with its traditional counterpart.
+![Taking the ratio of each of existing relaxation quantities to
+the newly defined molecular relaxation quantities
+describes how well these quantities match.
+A perfect match is a ratio of 1.0 across the temperature range
+although the main aim is to have the same temperature dependence
+which is a horizontal line on this figure.
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
 ## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}
