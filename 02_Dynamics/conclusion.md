@@ -19,11 +19,14 @@ observed by @Chang1994.
 However, there are simulation studies where the calculation
 of the decoupling is highly dependent
 on the calculation of the rotational relaxations.
-Here the problem seems to be
-with the calculation of the decoupling rather than the Trimer model.
-These results describe the Trimer model
-as a fantastic tool to model the
-dynamics of ortho-terphenyl.
+Here the problem is hypothesised to be in
+the calculation of the decoupling,
+rather than a deficiency of the Trimer model.
+These results show the Trimer model
+exhibits the key dynamical behaviours of ortho-terphenyl,
+making it a fantastic tool
+to investigate the dynamical behaviours
+attributed to supercooled liquids.
 
 The dynamics of the trimer molecule additionally
 provide some interesting insights into understanding
