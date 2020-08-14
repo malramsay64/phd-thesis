@@ -131,7 +131,7 @@ for each particle.
 This diffusive relaxation time can be compared to
 the translational diffusion constant using the relation
 
-$$ D_t = \frac{9d^2}{6\tau_D} $$
+$$ D_t = \frac{9d^2}{4\tau_D} $$
 
 This is derived from @eq:jump_diffusion, [@Doliwa2003]
 where we are measuring the average time for
