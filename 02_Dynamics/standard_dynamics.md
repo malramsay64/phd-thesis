@@ -36,7 +36,7 @@ For most values the error is not visible in the figure.
 This shows the transition from being identical to the initial state, with a value of 1,
 to a decorrelation from the initial state, with a value of 0.
 As the temperature drops, the process moves from
-single step (T=2.5) to two step (T=1.25).
+single step (T=2.5) to two-step (T=1.25).
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/scattering_function.svg){width=81% #fig:isf}
 
