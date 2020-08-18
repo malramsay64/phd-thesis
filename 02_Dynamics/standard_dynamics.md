@@ -81,18 +81,11 @@ and slowest crystal growth (@fig:growth_rates),
 so is going to best express the features of those phenomena.
 Having an even more fragile liquid
 is a better way of understanding what makes a liquid fragile.
-The fragility of the Trimer molecule is so high
-that a machine learning algorithm developed to design
-the most fragile 3D molecule possible
-found a fragility $m=188$ for trimer molecules. [@Meenakshisundaram2019]
-While the results are not directly comparable
-on account of being 3D compared to our 2D simulations
-the Trimer sits amongst the best simulated glass formers.
 
 An interesting observation about the Trimer dynamics
 is that the non-Arrhenius dynamics and two-step relaxation
 occur above the melting point.
-These are behaviours which have been attributed to the supercooled liquid,
+These are behaviours that have been attributed to the supercooled liquid,
 [@Ediger2012;@Lubchenko2007;@Debenedetti2001]
 yet here are the first known observations of these quantities above the melting point.
 Rather than describing the onset of these quantities
