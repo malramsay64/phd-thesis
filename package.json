@@ -1,10 +1,10 @@
 {
     "dependencies": {
-        "alex": "^8.1.1",
+        "alex": "^8.2.0",
         "diff": "^4.0.2",
         "markdownlint-cli": "^0.23.0",
         "prettier": "^2.0.5",
-        "textlint": "^11.6.3",
+        "textlint": "^11.7.6",
         "textlint-filter-rule-comments": "^1.2.2",
         "textlint-rule-abbr-within-parentheses": "^1.0.2",
         "textlint-rule-apostrophe": "^2.0.0",
@@ -13,7 +13,7 @@
         "textlint-rule-max-comma": "^1.0.4",
         "textlint-rule-no-dead-link": "^4.7.0",
         "textlint-rule-no-start-duplicated-conjunction": "^2.0.2",
-        "textlint-rule-stop-words": "^2.0.5",
+        "textlint-rule-stop-words": "^2.0.6",
         "textlint-rule-terminology": "^2.1.4",
         "textlint-rule-unexpanded-acronym": "^1.2.4",
         "textlint-rule-write-good": "^1.6.2"
