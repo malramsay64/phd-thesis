@@ -53,7 +53,7 @@ and making a comparison to confirm that
 they capture the same characteristics
 as the existing properties.
 
-## Reversible behaviour in structural relaxation
+## Reversible behaviour in structural relaxation {#sec:structural_reversal}
 
 When using the intermediate scattering function for structural relaxation
 we monitor the decay at the wave number $k$

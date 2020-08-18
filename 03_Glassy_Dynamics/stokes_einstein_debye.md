@@ -25,8 +25,15 @@ from $4$ being no contribution, to $1$ being all jump dynamics.
 This same quantity can be calculated for the molecular relaxations,
 giving $\tau_{T2}/\tau_{T4}$.
 These measures of rotational jump dynamics are depicted in @fig:rotational_jumps,
-where both quantities describe the rotational relaxation by large angular jumps
+where Traditional and Molecular ratios describe the rotational relaxation by large angular jumps
 at low temperatures.
+The Molecular relaxations have a value larger than $4$ for high temperatures,
+represents rotations from $\pi / 4$ and $\pi / 2$
+being slower than expected by Brownian motion.
+This slower relaxation could potentially be reversible rotations,
+like translations in @sec:structural_reversal,
+or an effect of the molecular shape,
+with rotations getting slowed by the concavities.
 Plotting the change in displacement and orientation over time,
 @fig:molecule_trajectory_fast shows a fast molecule
 which exhibits jump dynamics in both rotational motion as described above,
@@ -45,9 +52,9 @@ a relaxation measured by the last passage time.
 ![The presence of jump dynamics in rotational motion,
 found by comparing the relaxation times
 $\tau_1/\tau_2$ in the case of Traditional dynamics
-and $\tau_T2/\tau_T4$ for Molecular relaxations.
+and $\tau_{T2}/\tau_{T4}$ for Molecular relaxations.
 At low temperatures,
-both quantities have values close to 4,
+the ratios of both Traditional and Molecular relaxations have values close to 4,
 indicative of Brownian motion.
 This drops close to 1 at low temperatures
 describing rotational motions which take place
