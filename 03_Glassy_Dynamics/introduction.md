@@ -241,3 +241,7 @@ on the molecular level.
 The insights from this understanding
 is then used to gain insight into
 the Stokes--Einstein--Debye model of dynamics.
+All the dynamics quantities calculated in this section
+use the same simulation trajectories as @sec:Dynamics
+containing 1023 molecules,
+with all simulation conditions documented in @sec:methods_dynamics.
