@@ -2,13 +2,14 @@
 
 The three densest packed crystal structures for the Trimer molecule
 determined by iso-configurational search [@Hudson2011]
-belong to the space groups p2, pg, and p2gg.
+belong to the space groups p2, pg, and p2gg
+shown in @fig:trimer_cyrstals.
 Any of these three structures could potentially form within a simulation
 requiring an algorithm able to monitor the presence of all structures.
 A standard tool for crystal detection is to use an order parameter; [@Russo2016;@Sultan2014;@Tanaka2012;@Tanaka2014;@Kuczynski2002]
-a single value which describes a local configuration on a scale
+a single value that describes local configurations on a scale
 from a perfect liquid $0$, to a perfect crystal $1$.
-A measure of this type previously used for molecular crystals [@Sims2019;@Kuczynski2002]
+A measure of this type used for molecular crystals [@Sims2019;@Kuczynski2002]
 is the orientational order parameter $O_6$.
 The value of $O_6$ is the orientation of the closest shell of 6 neighbours
 relative to the orientation of the central molecule.
@@ -45,6 +46,8 @@ to separate values in higher dimensional space.
 
 ![The range of values of the orientational order parameter $O_6$
 overlap for each of the crystals and the liquid.
+The dataset used to generate this figure [@Ramsay2018]
+is used for analysis within this chapter.
 ](../Projects/MLCrystals/figures/order_parameter_overlap.svg){width=80% #fig:order_parameter_overlap}
 
 ## Machine Learning in Chemistry
@@ -112,11 +115,12 @@ we need to choose a value that separates local configurations
 considered crystal-like from those considered liquid-like.
 The choice of this value can determine how well this classification performs.
 However, in a survey of publications classifying local structures
-using a one dimensional order parameter,
+using a one dimensional order parameter to identify crystal structures,
 [@Mitus2002;@Qi2010;@Petrov2015;@Hamanaka2006;@Wierschem2011;@Tobochnik1982;@Engel2013;@Bernard2011;@Strandburg1984]
 none mention the value chosen or the method used to determine the optimal choice.
 Supervised Learning provides a formal method
 for the determination of the best value
+to separate liquid structures from crystalline
 based on the available data.
 
 ### Unsupervised Learning {#sec:clustering_intro}
@@ -150,8 +154,8 @@ Machine learning provides a range of tools
 for understanding, analysing, and predicting data.
 However, like a statistical analysis
 machine learning needs to be applied carefully
-using the appropriate analysis for the task at hand.
-It is not a black box which magically solves problems. [@Lehman2019]
+using the appropriate analysis for the task at hand;
+it is not a black box that magically solves problems. [@Lehman2019]
 
 ## Machine learning for crystal detection
 
@@ -187,9 +191,14 @@ There are a range of studies [@Reinhart2017;@Dietz2017;@Boattini2018;@Spellings2
 which build upon these order parameters,
 using machine learning to combine many values
 and make decisions for new datasets.
-Each of these machine learning approaches have slightly different approaches,
-however they use existing tools for crystal detection
-as one of the dimensions describing local structure.
+These existing tools [@Reinhart2017;@Dietz2017;@Boattini2018] are
+focussing on the identification of structures of atomic particles,
+identifying BCC, FCC, and HCP type structures.
+The orientational ordering is an important part
+of molecular crystals that is not considered by these existing tools.
+Each of the machine learning methods mentioned have slightly different approaches,
+however they all use elements of existing crystal detection methods
+to describe local structure.
 
 Current applications of machine learning for crystal detection
 only deal with spherically symmetric particles.
