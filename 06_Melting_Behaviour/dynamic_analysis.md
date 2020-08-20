@@ -79,12 +79,12 @@ resulting in a structure with four layers.
 The rearrangements that take place within the solid state phase transition
 are the rotations of dimers to match the orientation of the rows above and below.
 That is, pairs of molecules reorient by \SI{90}{\degree}.
-These reorientations are shown in @fig:solid_state_transition_structure,
+These reorientations are shown in @fig:solid_state_transition_configurations,
 where the middle row of blue/orange dimer pair
 reorients to face the same direction as the layers above and below.
 This process of reorientation continues along the crystal lattice.
 
-::: {#fig:solid_state_transition class=subfigures}
+::: {#fig:solid_state_transition_configurations class=subfigures}
 
 <!-- These captions are intentionally left blank -->
 <!-- markdownlint-disable MD045 -->
