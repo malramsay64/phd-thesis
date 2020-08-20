@@ -145,8 +145,8 @@ play an important role in the breakdown of the SED dynamics.
 The presence of a length scale dependence
 of the rotational and translational motion
 would clear up some of the confusion in the literature
-of the decoupling of rotations and translations.
-[@Chong2009;@Tarjus1995;@Lombardo2006;@Sengupta2013;@Kawasaki2019;@Jose2006]
+where the decoupling to translations and rotations
+changes depending on how this decoupling is measured. [@Chong2009;@Tarjus1995;@Lombardo2006;@Sengupta2013;@Kawasaki2019;@Jose2006]
 
 When calculating the translational diffusion constant
 we describe the long timescale behaviour of the mean-squared-displacement
