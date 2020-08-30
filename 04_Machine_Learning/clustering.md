@@ -132,8 +132,10 @@ with a consensus that dimensionality reduction techniques like t-SNE and UMAP
 should only be used for visualisation
 and alternative algorithms used for clustering.
 
-![Using the UMAP algorithm on two Gaussian clusters
+![Using the UMAP algorithm on the two Gaussian clusters
+displayed in @fig:classification_demo
 results in a highly distorted shape.
+This demonstrates the issues with using UMAP for a classification task.
 ](../Projects/MLCrystals/figures/umap_demo.svg){width=80% #fig:umap_demo}
 
 The visualisation of the dataset is important for three reasons.

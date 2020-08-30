@@ -162,9 +162,13 @@ in understanding these crystal structures.
 ![p2gg End](../Projects/Crystal_Melting/figures/ml_demo_trimer_p2gg_2999.svg){width=33%}
 ![pg End](../Projects/Crystal_Melting/figures/ml_demo_trimer_pg_2999.svg){width=33%}
 
-Figures showing the progression of melting of a p2 crystal.
+Figures showing the progression of melting of each crystal.
 The colour of the molecules describes their orientation.
 The lighter molecules are classified as liquid while
 the darker molecules are classified as crystalline.
+The matching of the Machine Learning generated classification
+to a visual one as the crystal melts
+demonstrates the utility of this method for crystal detection.
+A single algorithm performed the assignment for each crystal structure.
 
 :::
