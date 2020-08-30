@@ -173,8 +173,10 @@ however, later use of phase-field describes an unrelated rigorously derived mode
 The constant rise of new theories, and renaming of existing ones
 means there is little consensus in the field over the naming of any model,
 with some models having all three names at various points over the past 30 years. [@Bagdassarian1994;@Oxtoby2002;@Granasy2019]
-To avoid confusion the term used to describe the model developed in this thesis
-is a semi-empirical density functional model.
+The model we are using is based on a Phase-Field model by @Bagdassarian1994,
+which to avoid confusion with unrelated models we will use
+the term semi-empirical density functional model
+to describe the model in this thesis
 
 The semi-empirical density functional model
 uses a measure of structure $M(\vect{r}, t)$ [@Bagdassarian1994]
@@ -305,7 +307,6 @@ followed by fitting each of the models to these observations.
 This allows us to understand which aspects of the models
 are important for describing melting in the Trimer
 which can be applied to understanding other materials.
-
 The simulations used to calculate these values
 are documented in @sec:methods_melting,
 with each simulation containing 4032 molecules,
