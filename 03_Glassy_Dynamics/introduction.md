@@ -223,7 +223,7 @@ and translational jumps.
 ![A representation of the potential energy landscape for a liquid.
 The entire configuration moves between the low energy states
 through the transition structures. \
-*Figure from @Stillinger1995 used with permission © 1995 BAAS*
+*Figure from @Stillinger1995 used with permission © 1995 AAAS*
 ](../00_Introduction/figures/potential_energy_surface.png){#fig:potential_energy_landscape width=80%}
 
 When considering the transport properties of particles undergoing jump dynamics
