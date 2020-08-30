@@ -182,7 +182,7 @@ is far narrower than that of the liquid phase,
 with very little overlap.
 
 ![Distribution of the orientational order parameter $O_\theta$
-for the liquid and the crystal phases at the melting point $T=1.35$.
+for the liquid and the p2 crystal phases at the melting point $T=1.35$.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
 The equation for the growth rate of
@@ -226,5 +226,8 @@ A straight line means a perfect description of the melting behaviour.
 
 ![Fitting the semi-empirical density functional model
 to the melting rate.
+The experimentally determined values are marked with circles,
+and the semi-empirical density functional model
+is marked with a cubic spline fit of values calculated at each marked point.
 Both pressures are fit with the same constant $K=3.7$.
 ](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){#fig:fluctuation_rate width=80%}
