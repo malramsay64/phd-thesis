@@ -16,13 +16,6 @@ The melting point is also crucial to our discussion of
 dynamics in @sec:Dynamics,
 used as a method of comparing the dynamics at each pressure.
 
-The measurement of the melting rates in @sec:melting_rates
-shows the effectiveness of the machine learning model
-developed in @sec:supervised_learning.
-This approach to identifying crystal structures
-allowed for the measurement of the smallest melting rates
-of any molecular dynamics simulation.
-
 In @sec:melting_rates we measured the melting rates
 finding that the thermodynamic term from the classical models
 doesn't adequately describe melting across both pressures,
@@ -35,4 +28,3 @@ The slow melting rates of the Trimer can be explained
 by the rigidity of the liquid and crystal structure,
 shown by the small fluctuations of
 the orientational order parameter (@fig:trimer_fluctuation).
-This rigidity is expressed in the Semi-Empirical Density Functional model.
