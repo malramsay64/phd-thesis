@@ -226,10 +226,15 @@ over a range of temperatures for a pressure $P=13.50$.
 The solid line shows the mean value at each time
 with the estimate of the error shown through an opaque band.
 Note the logarithmic scale of both axes.
+The black line between $1e-2$ and $1e0$ shows a $x^2$ power law
+and the black line from $1e5$ to $1e7$ shows a $x^1$ power law.
 ](../Projects/Dynamics/figures/mean_squared_displacement.svg){width=80% #fig:msd}
 
-![The translational diffusion constant as a function of
+![The inverse translational diffusion constant $1/D_t$ as a function of
 normalised temperature for high and low pressures.
+Each point includes an estimate of the error as a vertical bar
+that in all cases is smaller than the marker.
+The black line is a fit of the Vogel--Tamman--Fulcher relation (@eq:VTF).
 ](../Projects/Dynamics/figures/diffusion_constant_summary.svg){width=80% #fig:diffusion_constant}
 
 ### Rotational Relaxations
@@ -246,6 +251,9 @@ the relaxation time is the rate of the decay.
 
 ![The rotational relaxation of the trimer molecule
 over a range of temperatures at a pressure of 13.50.
+The solid line describes the mean value at each time interval
+with an estimate of the error denoted by transparent region
+which is thinner than the thickness of the line for most values.
 Note the logarithmic scale of the time axis.
 ](../Projects/Dynamics/figures/rotational_relaxation.svg){width=80% #fig:rotational_relaxation}
 
