@@ -160,7 +160,8 @@ replicating experimental results.
 The Lewis--Wahnström model displays the same two-step relaxation process [@Wahnstrom1993,@Wahnstrom1997,@Lombardo2006]
 that is characteristic of fragile liquids in experiments.
 
-![The geometry of the Lewis--Wahnström model.
+![The geometry of the Lewis--Wahnström model,
+with each circle representing a 3D Lennard--Jones potential.
 There is an angle of \SI{75}{\degree} subtending the centers of the thee particles.
 ](../00_Introduction/figures/lewis_wahnstrom.svg){width=80% #fig:lewis_wahnstrom_mol}
 
@@ -289,7 +290,7 @@ compared to the Trimer using $r=0.637556$, $d=1$ and $\theta=120^\circ$.
 
 ![This shows the construction of the trimer molecule.
 The variant used within this thesis has $d=1, r=0.637556,$ and $\theta=120^\circ$
-](../01_Methods/figures/trimer.pdf)
+](../01_Methods/figures/trimer.pdf){#fig:trimer}
 
 # Project Outline
 
