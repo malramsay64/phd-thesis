@@ -11,11 +11,11 @@ The canonical example of this is the decoupling
 of rotational and translational diffusion [@Chang1994;@Griffin2012;@Fujara1992]
 shown in @fig:trans_rot_otp.
 This decoupling results from a change in the viscosity dependence
-of the translational diffusion having the relationship $D_t \propto \eta^{-0.75}$
-which has deviated from the expected $D_t \propto \eta^{-1}$. [@Chang1994]
+of the translational diffusion having the relationship $D_t \propto \eta^{-0.75}$,
+slower than the expected $D_t \propto \eta^{-1}$. [@Chang1994]
 
-There is a general consensus on the presence of both these
-decoupling within experimental studies, [@Chang1994;@Griffin2012;@Fujara1992]
+There is a general consensus on the presence of
+decoupling within experimental studies, [@Chang1994;@Griffin2012;@Fujara1992;@Jose2006;@Chong2009]
 however, there has been difficulty replicating these results in simulations
 demonstrated within this thesis in @sec:trans_rot_decoupling.
 @Shi2013 find a similar relationship to those of experiments
@@ -24,22 +24,53 @@ a result mirrored by @Sengupta2013.
 Neither of these studies looked at the rotational motions of particles.
 Recent simulations by @Kawasaki2019 on supercooled water
 find both a decoupling between translational diffusion and viscosity,
-and a decoupling of translational and rotational diffusion,
-however, there is also a decoupling of
-the rotational diffusion and viscosity that is not observed in experiment
-and the rotational diffusion is slow compared to translational diffusion,
-the opposite of the experimental results.
-This same flipping of the rotational and translational diffusion
-is also observed by @Lombardo2006.
+and a decoupling of translational and rotational diffusion.
+However, the simulations describe a slowdown of rotational motion
+relative to the translational motion,
+opposite of the observations in experimental systems. [@Chang1994]
+This slowdown of rotations relative to translations
+is observed more widely in simulation studies. [@Jose2006;@Chong2009]
+A possible explanation for the different behaviour in simulations
+is the method used to measure the rotational relaxation,
+with @Kawasaki2019 finding the degree of decoupling
+to be dependent on the Legendre polynomial used to measure
+the rotational relaxation.
+The first order polynomial describing largest motion, is closest to the Diffusion constant,
+while the sixth order polynomial describing being the smallest motion
+has a temperature dependence similar to the viscosity.
 
-The typical simulation quantities used for establishing
-the breakdown in the SED relations
-are the translational diffusion constant $D_t$
-and the rotational relaxation time $\tau_r$.
-When there are dynamic heterogeneities present,
-these two quantities capture different elements
-of the distribution,
-with the translational diffusion capturing the fastest particles,
+When calculating the translational diffusion constant
+we describe the long timescale behaviour of the mean-squared-displacement
+by finding the slope as time goes towards infinity.
+The long timescales associated with this calculation
+allows many relaxations to take place
+limiting the impact of jump dynamics.
+The same approach to describing the long timescale behaviour
+can also be achieved for rotational motion
+using the Einstein formalism for the rotational diffusion constant;
+[@Kim2015;@Lombardo2006;@Meyer2019]
+
+$$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$ {#eq:rot_diffusion}
+
+@Kim2015 compared the Debye formalism, described in @sec:intro_sed
+to the Einstein formalism described above
+finding the same results for a colloidal system
+in which jump dynamics are unlikely to play a role in rotational relaxation.
+Using the two methods of describing rotational motion
+on the Lewis--Wahnström model, @Lombardo2006 find that
+the Debye formalism matches the results from simulations
+while the Einstein formalism matches results from experiments.
+This study observes the different behaviours of the rotational formalisms,
+yet it doesn't delve into why the different behaviours are observed.
+
+One explanation of the decoupling of
+rotational diffusion and translational diffusion in simulations
+is the choice of quantities used.
+In the presence of dynamic heterogeneities
+the translational diffusion constant $D_t$
+and the rotational relaxation time $\tau_r$
+represent different ends of the distribution of timescales.
+The translational diffusion describes the motion of fastest particles,
 while the rotational relaxation is dominated by the slowest particles.
 Consider two regions of dynamics,
 one containing fast particles with $\tau_\text{fast}$ and $D_\text{fast}$
@@ -68,9 +99,8 @@ is that the inertia of a particle is neglected.
 This means that the time resolution of observations becomes important
 for the motions of particles. [@Pusey2011;@Li2013]
 The SED relations are based on Brownian dynamics
-however there is evidence of rotational motions
-not described by Brownian motion,
-coming in the form of jump dynamics. [@Das2015;@Nair2019;@Laage2006;@Andreozzi1996;@Jose2006]
+however, there is evidence of rotational motions not described by Brownian motion,
+in the form of jump dynamics. [@Das2015;@Nair2019;@Laage2006;@Andreozzi1996;@Jose2006]
 When describing rotation dynamics using spherical harmonics
 known as the Debye formalism, [@Lombardo2006]
 there are multiple choices for the order of the Legendre polynomial $l$.
@@ -115,7 +145,7 @@ The presence of jump dynamics describes a process
 by which the rotational motion deviates
 from that of the SED relations,
 however it doesn't explain why the rotational motion is slower.
-One possible explanation for this is to
+One possible explanation is to
 consider the molecular structure as a network of gears, [@Zwanzig1987]
 where contacting molecules transfer angular momentum.
 As a network of gears,

@@ -10,7 +10,7 @@ A foundational assumption of the Stokes--Einstein--Debye relations
 is that the particles undergo Brownian motion,
 that is, movement occurs as a random sequence of small independent jumps.
 It is possible that dynamic heterogeneities result
-from only observing a small number of jumps
+from observing a small number of jumps
 resulting in far more correlated motion.
 The single particle relaxation provides
 tools which we can use to investigate this hypothesis.
@@ -70,114 +70,89 @@ before quickly moving to the next,
 which typically requires both a translational and rotational motion.
 ](../Projects/Dynamics/figures/molecule_trajectory_fast.svg){width=80% #fig:molecule_trajectory_fast}
 
-With the motion of particles so heavily influenced by Jump dynamics
+With the motion of particles so heavily influenced by jump dynamics
 we can investigate the role they play in dynamic heterogeneities.
 In @sec:dynamic_heterogeneities we found that
 the presence of dynamic heterogeneities
 is a short time phenomenon,
 decaying to the expected Gaussian distribution over longer times.
-Are the dynamic heterogeneities present
-because we are only observing a single jump
-rather than the walk of Brownian motion.
-To test this hypothesis we can use the distribution of last passage times $\tau_L$
-(@fig:relaxation_distribution).
-In taking the relaxation time of each particle within a simulation,
-we have sampled the distribution of relaxation times that can take place.
-This allows us to model the motion like we have observed in @fig:molecule_trajectory_fast.
-We can make the assumption
-that all relaxations are drawn from the same distribution,
-that is, each jump between local environments is equivalent.
-This also makes the assumption that once the particle
-has undergone relaxation it is completely independent
-of its previous configuration.
-This sequence of jumps can be modelled
-by drawing consecutive relaxation times
-from our experimentally determined distribution of relaxation times.
-This modelling of consecutive relaxations is shown in @fig:jump_heterogeneities
+This raises the question,
+are dynamic heterogeneities present
+because we observe a single jump
+rather than many jumps for Brownian motion?
+The large jumps between long lasting configurations in @fig:molecule_trajectory_fast
+motivates the idea that we need more jumps to describe particle motions.
+To test the hypothesis that dynamic heterogeneities
+are the observation of a single jump,
+we sample timescales of jumps
+from the distribution of last passage times $\tau_L$
+(@fig:relaxation_distribution),
+making the assumptions that
+the last passage time describes movement between independent configurations, and
+that we have sampled the true distribution of relaxation timescales.
+In drawing consecutive jumps from this distribution of relaxation times
+we can model the effect of dynamic heterogeneities over longer length scales.
+The last passage time is the most appropriate here
+for describing an irreversible motion,
+matching with the idea of jump dynamics
+describing irreversible motions between points on an energy landscape.
+@Fig:jump_heterogeneities shows the effect of
+drawing from the distribution of last passage times,
+with two consecutive jumps nearly eliminating
+the dynamic heterogeneities across all temperatures.
+Further consecutive jumps move the calculation
+of the heterogeneities closer to the Gaussian value of 1.
 When we consider motion over enough jumps,
-the heterogeneities within the dynamics disappear,
+the heterogeneities within the dynamics disappear.
+Over a single jump,
 the long relaxation times dominate the averaging
-over a single time period,
-however they are rare occurrences
-so their effect is lower over multiple relaxation times.
+though they are rare so their effect diminishes over multiple relaxations.
 The reduction in the dynamic heterogeneities
-was also present when plotting the molecular heterogeneities
-in @fig:molecular_heterogeneities.
+is also present plotting the molecular heterogeneities in @fig:molecular_heterogeneities.
 As the length scale increases from $\tau_F$ to $\tau_L$ to $\tau_D$,
-the dynamic heterogeneities decrease,
-and the same is true of the rotational heterogeneities,
+the presence of dynamic heterogeneities decrease,
+with the same being true of the rotational heterogeneities,
 from $\tau_{T4}$ to $\tau_{T3}$ and to $\tau_{T2}$.
 
 ![The dynamic heterogeneities present when sampling with replacement
 from the distribution of last passage times in @fig:relaxation_distribution.
-The number of times sampled from the distribution is indicated by Jumps
-where 0 jumps is the mean of the distribution.
-With only 2 jumps the dynamic heterogeneities
+The number of times sampled from the distribution indicated by Jumps,
+where 0 Jumps describes the mean of the distribution.
+After 2 Jumps the dynamic heterogeneities
 are nearly reduced to the Gaussian value of 1,
 and further jumps get closer to this value.
 ](../Projects/Dynamics/figures/jump_dynamics.svg){width=80% #fig:jump_heterogeneities}
 
-In the picture of the decoupling of diffusion and rotation @fig:trans_rot_otp
-there are quantities on two different length scales,
-the diffusion measured over a long distance,
-while the rotation is a quantity over a short distance.
-Additionally, as we have seen in @fig:molecular_heterogeneities,
-the way a quantity is averaged, can play a role
-in the resulting value,
-with fast particles dominating the diffusion
-while slow particles dominate the structural relaxation
-and rotational relaxation.
+### Jump Dynamics and Stokes--Einstein--Debye
 
-### Do Jump Dynamics solve Stokes--Einstein--Debye
-
-When liquids undergo relaxation by Jump dynamics,
-the underlying assumptions of the Stokes--Einstein--Debye (SED) model break down.
-@Kawasaki2019 found that changing degree of the Legendre polynomial
-used for the rotational relaxation
-changes the relationship with the viscosity in models of water.
-The first order polynomial, which corresponds to the largest motion
-is similar to the diffusion constant,
-while the sixth order polynomial, which corresponds to the smallest motion
-has a temperature dependence similar to the viscosity.
-This dependence on rotational distance
-supports the idea that jump dynamics
-play an important role in the breakdown of the SED dynamics.
-The presence of a length scale dependence
-of the rotational and translational motion
-would clear up some of the confusion in the literature
-where the decoupling to translations and rotations
-changes depending on how this decoupling is measured. [@Chong2009;@Tarjus1995;@Lombardo2006;@Sengupta2013;@Kawasaki2019;@Jose2006]
-
-When calculating the translational diffusion constant
-we describe the long timescale behaviour of the mean-squared-displacement
-by finding the slope as time goes towards infinity.
-The long timescales associated with this calculation
-allows many relaxations to take place
-limiting the impact of jump dynamics.
-The same approach to describing the long timescale behaviour
-can also be achieved for rotational motion
-using the Einstein formalism for the rotational diffusion constant;
-[@Kim2015;@Lombardo2006;@Meyer2019]
-
-$$ D_r = \lim_{t\to\infty} \frac{1}{2tN}\sum^N_{i=1}\langle \Delta \theta^2 \rangle $$
-
-@Kim2015 compared the Debye formalism, described in @sec:intro_sed
-to the Einstein formalism described above
-finding they calculated the same results for a colloidal system,
-where jump dynamics are unlikely to play a role in rotational relaxation.
-However, in a simulation study of the Lewis--Wahnström model
-for which rotational jump dynamics observed,
-@Lombardo2006 find that experiments and simulations
-which measure rotational relaxation using the Debye model
-display an increase in translational diffusion relative to rotational diffusion,
-while when using the Einstein formalism, simulations
-display a decrease in translational diffusion relative to rotational diffusion.
-We make the same comparison in @fig:trans_rot_diff_trimer,
-where both rotational formalisms give similar results.
-Rather than failing to describe the decoupling
-of the translational and rotational diffusion through jump dynamics,
-this tells us that jump dynamics
-are not the only contributor to the breakdown of SED.
+In the decoupling of diffusion and rotation described in @sec:trans_rot_coupling,
+we measure quantities over two different length scales (@fig:trans_rot_otp)
+the translational diffusion $D_t$ measured over a long distance,
+and the rotational relaxation $\tau_1$ measured over a short distance.
+As we saw in @sec:jump_dynamics,
+these two length scales describe two different regimes of dynamic behaviour.
+The transition from jump dynamics to Brownian dynamics
+describes the length scale dependence of
+the translational rotational decoupling observed by @Kawasaki2019.
+In @fig:jump_heterogeneities, we find averaging over multiple jumps,
+produces a more Brownian description of dynamics.
+The diffusion constant describes motion as the long timescale limit (@eq:diffusion_constant)
+and the Einstein formalism (@eq:rot_diffusion) describes a method
+for calculating the rotational diffusion constant.
+In using the diffusion constant to describe both
+the translational and rotational motion,
+we would expect to reproduce the decoupling of experiments.
+@Fig:trans_rot_diff_trimer plots the rotational and translational
+diffusion constant against the structural relaxation time
+giving the opposite effect to what we would expect
+with rotations much faster than translations.
+By removing the effect of jump dynamics and dynamic heterogeneities
+we have demonstrated that the decoupling of
+the rotational and translational diffusion constants
+is not related to either of these phenomena.
+Instead, the decoupling must represent
+some other breakdown in the assumptions
+of the Stokes--Einstein--Debye model of dynamics.
 
 ![Comparison of the structural relaxation vs the
 rotational and translational diffusion constants.
@@ -194,16 +169,20 @@ there are two main assumptions made about the dynamics;
 2. translational and rotational motions are independent.
 
 @Sec:jump_dynamics investigates the first of these assumptions,
-finding it not to hold for fragile liquids,
-so here we look towards the second.
+finding that it doesn't hold for fragile liquids over short length scales,
+though this assumption still holds when considering large length scales.
+With large length scales still displaying a decoupling
+of the translational diffusion and the rotational diffusion.
+In this section we look towards the second assumption,
+that the translational and rotational motions are independent.
 The observations of decoupling of translational and rotational motion
 shown in @fig:trans_rot_otp or @fig:trans_rot_diff_trimer,
 describe a macro-scale effect,
-the overall temperature dependence of the liquid.
-However, on the micro-scale, observing the motions of individual particles
-like in @fig:spatial_heterogeneities,
-there appears to be a relationship between rotational and translational motion
-that is closer to a coupling than the decoupling on the macro-scale.
+the temperature dependence of the liquid.
+On the micro-scale,
+observing the motions of individual particles like in @fig:spatial_heterogeneities,
+there appears to be a relationship between rotational and translational motion,
+closer to a coupling than the decoupling on the macro-scale.
 In investigating the coupling of translational and rotational motion
 there are four different levels of confidence
 in the coupling of rotational and translational motion;

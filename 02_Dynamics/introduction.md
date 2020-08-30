@@ -184,7 +184,8 @@ The Mean-Squared-Displacement has a timescale dependence
 so the calculation of the diffusion constant
 is normally written as;
 
-$$ D = \frac{1}{2N} \lim_{t\to\infty} \frac{1}{t} \langle \Delta \vect{r}(t)^2 \rangle $$
+$$ D = \frac{1}{2N} \lim_{t\to\infty} \frac{1}{t} \langle \Delta \vect{r}(t)^2 \rangle
+$$ {#eq:diffusion_constant}
 
 reflecting the intended long timescale behaviour.
 Within experiments, the diffusion constant is often measured using
