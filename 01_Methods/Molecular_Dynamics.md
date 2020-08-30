@@ -218,9 +218,6 @@ The variables $r$, $d$, and $\theta$ were chosen
 for being the simplest basis set for defining this class of molecules,
 allowing the study of a range of shapes.
 
-![The construction of the trimer molecule showing each of the
-variables.](../01_Methods/figures/trimer.pdf){#fig:trimer width=80%}
-
 ### Representation in HOOMD-blue
 
 The integration of rigid bodies in HOOMD-blue is performed by
