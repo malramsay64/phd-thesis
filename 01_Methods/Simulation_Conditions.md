@@ -205,13 +205,15 @@ with the parameters for construction in @tbl:polymorph_construction.
 :::{class=subfigures #fig:trimer_crystals}
 
 ![p2](../Projects/Crystal_Melting/figures/Trimer-p2-Hard.svg){#fig:trimer_p2 width=49%}
-
-![pg](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:trimer_pg height=4cm}
+![pg](../Projects/Crystal_Melting/figures/Trimer-p1g1-Hard.svg){#fig:trimer_pg height=3cm}
 
 ![p2gg](../Projects/Crystal_Melting/figures/Trimer-p2gg-Hard.svg){#fig:trimer_p2gg width=49%}
 
-The molecules coloured in blue are the real copies of the unit cell,
-while the molecules in green are the periodic copies.
+The three crystal structures of the Trimer molecule used throughout this thesis. The
+labels for each structure describe the space group symmetry of the crystal structure.
+Molecules coloured in blue are the real copies of the unit cell,
+while the molecules in green are periodic copies
+showing the packing structure of each crystal.
 
 :::
 
