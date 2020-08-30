@@ -56,7 +56,7 @@ The melting rate which corresponds to the melting
 of a single layer of crystal over
 the course of the entire simulation is \num{3e-7}.
 This estimate is a upper bound of the melting point
-and are tabulated in @Tbl:crystal_melting_point
+and are tabulated in @tbl:crystal_melting_point
 with the values extracted from @fig:melting_point_rates.
 While the melting point is only an estimate,
 as an upper bound, any lowering of the melting point
@@ -68,7 +68,9 @@ Pressure  Melting Point $T_m$
 13.50           1.35
 
 Table: The melting points of the crystals
-for both pressures studied in this thesis. {#tbl:crystal_melting_point}
+for both pressures studied in this thesis.
+The values are obtained from @fig:melting_point_rates
+where the melting rate is less than \num{3e-7}.{#tbl:crystal_melting_point}
 
 ::: {#fig:melting_point_rates class=subfigures}
 
@@ -80,6 +82,8 @@ The melting rates of the p2 crystal close to the melting point
 for pressures of 1.00 (a) and 13.50 (b).
 A melting rate of \num{3e-7} is less than a single layer of crystal
 over the course of the simulation.
+The estimate of the error taken from the standard deviation
+of 5 simulation repetitions is used to draw the error bars.
 
 :::
 
@@ -126,7 +130,7 @@ Pressure  Spinodal Temperature
 13.50           2.00
 
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
-pressures. {#tbl:crystal_spinodal}
+pressures. These are obtained from visual inspections of the melting simulations.{#tbl:crystal_spinodal}
 
 ## Chemical Potential Energy {#sec:chemical_potential}
 
