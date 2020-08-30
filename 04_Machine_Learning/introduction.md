@@ -3,7 +3,7 @@
 The three densest packed crystal structures for the Trimer molecule
 determined by iso-configurational search [@Hudson2011]
 belong to the space groups p2, pg, and p2gg
-shown in @fig:trimer_cyrstals.
+shown in @fig:trimer_crystals.
 Any of these three structures could potentially form within a simulation
 requiring an algorithm able to monitor the presence of all structures.
 A standard tool for crystal detection is to use an order parameter; [@Russo2016;@Sultan2014;@Tanaka2012;@Tanaka2014;@Kuczynski2002]
