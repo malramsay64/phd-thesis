@@ -50,8 +50,10 @@ followed by a secondary relaxation.
 This is the same two-step process
 observed in the structural relaxation of ortho-terphenyl [@Mapes2006]
 and described in @sec:intro_structural.
-This indicates that the structural relaxation
-is taking place through similar processes as ortho-terphenyl.
+The presence of the two-step process in
+the structural relaxation of the Trimer model
+allows develop ideas using the Trimer
+an apply them to the similar behaviour of ortho-terphenyl.
 
 ![The structural relaxation time $\tau_S$
 for a range of temperatures and pressures.
