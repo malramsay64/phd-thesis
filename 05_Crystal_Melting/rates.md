@@ -181,8 +181,10 @@ where the distribution of the crystal phase
 is far narrower than that of the liquid phase,
 with very little overlap.
 
-![Distribution of the orientational order parameter $O_\theta$
+![Distribution of the normalised orientational order parameter $M$
 for the liquid and the p2 crystal phases at the melting point $T=1.35$.
+The distribution of the liquid has a mean of 0,
+and the distribution of the crystal has a mean of 1.
 ](../Projects/Crystal_Melting/figures/fluctuation_normalised.svg){#fig:trimer_fluctuation width=80%}
 
 The equation for the growth rate of
@@ -231,3 +233,15 @@ and the semi-empirical density functional model
 is marked with a cubic spline fit of values calculated at each marked point.
 Both pressures are fit with the same constant $K=3.7$.
 ](../Projects/Crystal_Melting/figures/fluctuation_rate_fit.svg){#fig:fluctuation_rate width=80%}
+
+The fluctuation model describes the crystal melting
+through small rotational motions of molecules.
+In @fig:gears we introduce the idea of neighbouring particles
+jamming rotational motion.
+Within the crystal structure jamming is probably responsible
+for the lack of rotational motion
+resulting in the narrow distribution of fluctuations
+observed within the crystal (@fig:trimer_fluctuation).
+The jamming here is an effect of the constraint of 2D rotations,
+and doesn't transfer to 3D having two additional rotational degrees of freedom,
+supported by faster growth rate of the Lewis--Wahnström model. [@Pedersen2011]
