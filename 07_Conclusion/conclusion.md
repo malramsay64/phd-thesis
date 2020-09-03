@@ -93,11 +93,13 @@ with a potential method being modifications to the shape
 reducing the effective size of the outer particles.
 This reduced size would allow for more freedom of rotation
 and hence the fluctuations which the Semi-Empirical model is based on.
-An increased speed of growth could also be achieved
-by studying the Lewis--Wahnström model
-that has an observable crystallisation rate,
-with the additional benefit of verifying
-the rates in 3D systems.
+Moving to studying a 3D system,
+like the Lewis--Wahnström model,
+would also increase the speed of growth,
+by providing more rotational degrees of freedom
+the liquid and crystal structures will be less constrained
+giving larger fluctuations of the order parameter
+used in the Semi-Empirical Density Fluctuation model.
 
 While we are able to measure the melting rates of the Trimer,
 we are unable to observe crystal growth
