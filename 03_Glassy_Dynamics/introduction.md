@@ -163,6 +163,12 @@ similar to that which would be found in a liquid,
 @Zwanzig1987 found that the networks resulted in
 a very slow decay or rotational relaxation
 dominated by large clusters relaxing slowly.
+The rotational jamming in this way,
+is only a property of 2D systems,
+the single rotational dimension available
+results in the significant restriction.
+Moving to 3D space adds two more rotational degrees of freedom
+through which the jammed state can move.
 
 :::{class=subfigures id=fig:gears}
 
@@ -273,5 +279,5 @@ is then used to gain insight into
 the Stokes--Einstein--Debye model of dynamics.
 All the dynamics quantities calculated in this section
 use the same simulation trajectories as @sec:Dynamics
-containing 1023 molecules,
+containing 1024 molecules,
 with all simulation conditions documented in @sec:methods_dynamics.
