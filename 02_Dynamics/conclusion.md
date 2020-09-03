@@ -22,19 +22,20 @@ on the calculation of the rotational relaxations.
 Here the problem is hypothesised to be in
 the calculation of the decoupling,
 rather than a deficiency of the Trimer model.
-These results show the Trimer model
+
+The dynamics of the trimer molecule additionally
+provide two interesting insights into understanding
+supercooled liquids as a whole.
+Firstly, the fragility of a liquid
+appears to not be related to the supercooled liquid, rather the glass
+since The onset of dynamic heterogeneities and fragile behaviour
+occurs above the melting point.
+Secondly, rotational and translational heterogeneities
+have overlapping spatial distributions.
+The expectation is that these results hold in 3D systems,
+though further work is required to verify this assertion.
+The results in this chapter demonstrate the Trimer model
 exhibits the key dynamical behaviours of ortho-terphenyl,
 making it a fantastic tool
 to investigate the dynamical behaviours
 attributed to supercooled liquids.
-
-The dynamics of the trimer molecule additionally
-provide some interesting insights into understanding
-supercooled liquids as a whole.
-The first major result is that the fragility of a liquid
-appears to not be related to the liquid, and rather the glass.
-In the Trimer model,
-the onset of dynamic heterogeneities and fragile behaviour
-take place above the melting point,
-
-.

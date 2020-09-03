@@ -92,6 +92,7 @@ These are behaviours that have been attributed to the supercooled liquid,
 yet here are the first known observations of these quantities above the melting point.
 Rather than describing the onset of these quantities
 as properties of supercooled liquids,
+their presence above the melting point means
 they should instead be described as occurring at the onset
 of the glass transition temperature.
 This is not entirely surprising when considering the types of relaxations taking place.
@@ -189,14 +190,14 @@ giving rise to the results we observe.
 
 ![Map of the spatial distribution
 of translational and rotational heterogeneities
-of a simulation at D=1.35 and Pp=13.50
+of a simulation at D=1.35 and P=13.50
 at the time of the maximum of the translational non-Gaussian parameter.
 The translational motion is denoted by an arrow depicting
 the size and the direction of the motion,
 while the rotational motion is depicted by the circle
 at the start of the motion.
 Areas which are white are indicative of no motion,
-while coloured areas have lots of motion.
+while areas coloured blue describe lots of motion.
 ](../Projects/Dynamics/figures/heterogeneities.svg){width=80% #fig:spatial_heterogeneities}
 
 ## Decoupling of Translations and Rotations {#sec:trans_rot_decoupling}
@@ -276,9 +277,8 @@ in that the choice of rotational diffusion constant
 changes the presence of the breakdown,
 with both the rotational and translational diffusion
 having the same dependence on the structural relaxation time.
-The observed behaviour deviates from the results obtained by @Chang1994.
-The breakdown of the Stokes--Einstein--Debye relations
-turns out to be a more complex topic.
+The observed behaviour deviates from the results obtained by @Chang1994,
+in that there is a slowdown of both the rotational and translational motions.
 In a study of the Lewis--Wahnström model,
 @Lombardo2006 find that the decoupling of translational and rotational motions
 gives different results depending on
@@ -292,7 +292,7 @@ doesn't match the behaviour of ortho-terphenyl,
 it is likely an issue with the methods used to calculate the breakdown
 because of the discrepancies in other models. [@Lombardo2006;@Kawasaki2019]
 The calculation of the breakdown of rotational and translational motion
-is explored further in @sec:sed.
+is explored further in @sec:sed using newly developed methods.
 
 ![The divergence in the rotational and translational diffusions
 when plotted against the structural relaxation
