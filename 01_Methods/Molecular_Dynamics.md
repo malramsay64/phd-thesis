@@ -416,7 +416,7 @@ subtended by two quaternions is
 $$ \theta = 2\arccos(|q_1 q_2|) $$
 
 Quaternion operations are not a standard component
-of either python or numpy. [@Walt2011]
+of either python or numpy. [@Walt2011;@Harris2020]
 There are some established python implementations of quaternion operations,
 namely pyquaternion [@Wynn2019] and quaternion [@Boyle2019],
 however these are not optimised for calculating rotations
