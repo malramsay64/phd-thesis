@@ -70,7 +70,7 @@ Pressure  Melting Point $T_m$
 Table: The melting points of the crystals
 for both pressures studied in this thesis.
 The values are obtained from @fig:melting_point_rates
-where the melting rate is less than \num{3e-7}.{#tbl:crystal_melting_point}
+where the melting rate is less than \num{3e-7}. {#tbl:crystal_melting_point}
 
 ::: {#fig:melting_point_rates class=subfigures}
 

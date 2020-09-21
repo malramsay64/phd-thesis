@@ -72,7 +72,7 @@ which typically requires both a translational and rotational motion.
 
 With the motion of particles so heavily influenced by jump dynamics
 we can investigate the role they play in dynamic heterogeneities.
-In @sec:dynamic_heterogeneities we found that
+In @sec:dynamic_heterogeneities_mol we found that
 the presence of dynamic heterogeneities
 is a short time phenomenon,
 decaying to the expected Gaussian distribution over longer times.

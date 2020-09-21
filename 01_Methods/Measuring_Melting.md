@@ -1,4 +1,4 @@
-# Measuring Melting Rates
+# Measuring Melting Rates {#sec:measuring_melting}
 
 For simulations where there is a large difference in density
 between the liquid and the crystal phases,

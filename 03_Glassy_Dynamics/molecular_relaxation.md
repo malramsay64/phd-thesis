@@ -208,7 +208,7 @@ although the main aim is to have the same temperature dependence
 which is a horizontal line on this figure.
 ](../Projects/Dynamics/figures/ratio_comparison.svg){width=80% #fig:ratio_comparison}
 
-## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities}
+## Heterogeneities in Molecular Relaxations {#sec:dynamic_heterogeneities_mol}
 
 One of the benefits of describing relaxation times for each particle
 is being able to probe the distribution of timescales

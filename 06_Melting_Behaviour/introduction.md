@@ -104,6 +104,6 @@ looking at their stability and identifying competition between structures.
 The simulation conditions used to generate the results
 in this chapter are described in @sec:methods_melting.
 The crystal structures that make up the initial states
-are given in @fig:trimer_cyrstals,
+are given in @fig:trimer_crystals,
 and simulations of melting contain 4032 molecules
 half of which are initially in a crystalline configuration.

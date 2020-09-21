@@ -49,7 +49,7 @@ the melting point.
 The expression for classical theories of crystal growth (@eq:crystal_growth_general)
 can be rewritten as a proportionality, removing all the constant terms
 
-$$ \frac{v(T)}{p(T)} \propto \left[1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}\right] $$ {#eq:crystal_growth_refactor}
+$$ \frac{v(T)}{p(T)} \propto \left[1-\exp{\left(\frac{-\Delta G_\text{crystal}(T)}{k_\text{B} T}\right)}\right] $$ {#eq:classical_growth_refactor}
 
 where $p(T) \propto k(T)$ having removed the constants
 and only describing the temperature dependence of the transport property.
@@ -86,7 +86,7 @@ the Turnbull model is not suitable for describing the melting.
 The Wilson--Frenkel model defines the temperature dependent function $p(T) = D(T)$,
 where we have chosen $1/\tau_r$ for the transport coefficient $D(T)$
 (@sec:crystal_transport).
-The ratio (@eq:classical_growth_factor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
+The ratio (@eq:classical_growth_refactor) for the Wilson--Frenkel model is shown in @fig:melting_wilson,
 which describes an improved relationship over the Turnbull mode.
 Close to the melting point,
 which is the value of 0 on the x axis of @fig:melting_wilson,
