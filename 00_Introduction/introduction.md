@@ -77,15 +77,31 @@ The visibly convex curves are describes as fragile liquids. \
 
 # Molecular Growth Rates
 
-The crystal growth rates of molecular crystals
-are two orders of magnitude slower than those of alloys
-and six orders of magnitude slower than pure metals (@fig:growth_rates),
-yet there is no understanding of why this is the case.
-Understanding the crystal growth of these materials
-is inherently tied to understanding the lack of crystal growth,
-also known as glass formation. [@Berthier2011;@Cavagna2009]
-Both the crystal, and amorphous glass have material applications in
-organic molecules,[@Alba-Simionesco1999] metals, [@Wang2004] and phase-change materials [@Wuttig2007]
+Many materials including
+organic molecules,[@Alba-Simionesco1999]
+metals,[@Wang2004] and
+phase-change materials [@Wuttig2007]
+have applications in both the crystal and amorphous glassy state.
+The kinetics of crystal growth represents a number of fundamental outstanding problems.
+Perhaps the most dramatic is the magnitude of the growth rate.
+As can be seen in Figure 1.2,
+molecular crystals typically grow at rates 2 orders of magnitude slower those of alloys and
+roughly six orders of magnitude slower that crystal growth in pure metals.
+Even after using the difference in diffusion constants to rescale the liquid dynamics,
+a huge gap in growth rates remains unexplained.
+Some progress has been made recently in demonstrating that
+pure metals grow at an anomalously fast rate [@Gang2018] due to
+efficient pre-organisation of the liquid adjacent to the interface.
+It is possible that molecular crystal growth suffers
+an analogous slow growth anomaly resulting from
+the problem of concerted molecular reorientation.
+A clue is provided by 'plastic' crystals,
+that is, crystals formed from randomly orientated molecules,
+which can grow roughly 100 times faster
+than their orientationally ordered polymorph. [@Glicksman1994].
+A central motive behind this project is to understand
+the coupling of translational and rotational dynamics
+and to apply these insights to the crystal growth problem.
 
 ![Growth rates of a range of crystal structures
 plotted as a function of temperature.
