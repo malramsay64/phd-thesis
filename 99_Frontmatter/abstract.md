@@ -8,7 +8,7 @@ their dynamic behaviour as fragile liquids
 and their phenomenally slow crystal growth rates,
 are both observations we don't yet fully understand.
 This thesis introduces a 2D molecular liquid based on ortho-terphenyl,
-that is used to investigate the behaviour of the liquid state
+used to investigate the behaviour of the liquid state
 through molecular dynamics simulations.
 Using newly developed methods for describing
 the dynamic behaviour of individual molecules,
