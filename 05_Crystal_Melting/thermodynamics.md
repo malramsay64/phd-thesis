@@ -110,8 +110,10 @@ and so is not studied here.
 
 ::: {#fig:spinodal class=subfigures}
 
-![T=0.50](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=45%}
-![T=0.55 ($T_s$)](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=45%}
+![T=0.50](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.50.svg){#fig:melting_disorderB width=70%}
+
+![T=0.55
+($T_s$)](../Projects/Crystal_Melting/figures/melting_disorder_P1.00-T0.55.svg){#fig:melting_disorderA width=70%}
 
 Melting behaviour below (a) and at (b) the spinodal.
 These are configurations from a melting simulation
