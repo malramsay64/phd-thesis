@@ -323,14 +323,16 @@ instead being angled.
 
 ![Time for each molecule in a simulation melting
 a crystal of the pg polymorph to rotationally relax.
-The mean relaxation time in the liquid is white.
+The mean relaxation time for the liquid
+calculated in @sec:molecular_relaxation is white.
 Relaxation times longer than the mean are coloured orange
 and those shorter than the mean are coloured blue.
 ](../Projects/Crystal_Melting/figures/spatial_relaxation_pg.svg){#fig:spatial_relaxation_pg width=80%}
 
 ![Time for each molecule in a simulation melting
 a crystal of the p2 polymorph to rotationally relax.
-The mean relaxation time in the liquid is white.
+The mean relaxation time for the liquid
+calculated in @sec:molecular_relaxation is white.
 Relaxation times longer than the mean are coloured orange
 and those shorter than the mean are coloured blue.
 ](../Projects/Crystal_Melting/figures/spatial_relaxation_p2.svg){#fig:spatial_relaxation_p2 width=80%}

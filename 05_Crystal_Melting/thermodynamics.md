@@ -132,7 +132,7 @@ Pressure  Spinodal Temperature
 13.50           2.00
 
 Table: The temperatures at which the spinodal occurs for the crystal structure at both
-pressures. These are obtained from visual inspections of the melting simulations.{#tbl:crystal_spinodal}
+pressures. These are obtained from visual inspections of the melting simulations. {#tbl:crystal_spinodal}
 
 ## Chemical Potential Energy {#sec:chemical_potential}
 
@@ -189,5 +189,5 @@ mostly takes place through orientational motions,
 the inverse rotational relaxation time $1/\tau_r$ (@sec:rotational_diffusion)
 has been chosen as the transport coefficient.
 The rotational relaxation time $\tau_r$ is the time
-for half of the molecules to have reoriented by \SI{90}{\degree}
+for half of the molecules to have reoriented by \SI{90}{\degree},
 a rotation important for orientational alignment with the crystal.
