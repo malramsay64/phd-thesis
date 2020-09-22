@@ -165,10 +165,10 @@ is they only refer to the homogeneous crystal and liquid phases.
 The interfacial region is represented as
 a step-like switch from one phase to the other
 with a surface free energy assigned to it.
-The short comings of this description--–namely
+The short comings of this description---namely
 the neglect of the continuous inhomegeneity of the interface
 and the absence of an explicit method of consistently
-calculating the interfacial free energy--can
+calculating the interfacial free energy---can
 be addressed using density functional theory.
 This theory starts with a free energy written explicitly as
 a functional of the density which can, itself,
