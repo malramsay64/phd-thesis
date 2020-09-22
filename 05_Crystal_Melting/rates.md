@@ -33,7 +33,7 @@ which is reflected at all temperatures and pressures.
 
 The normalisation by the temperature allows
 for the comparison of the rates between different pressures,
-with both pressures collapsing on to the same curve. [@fig:melting_rates]
+with both pressures collapsing on to the same curve ([@fig:melting_rates]).
 The same collapse of both pressures onto a single curve
 when normalised by the melting point
 is also seen in the dynamics (@sec:dynamics_results).

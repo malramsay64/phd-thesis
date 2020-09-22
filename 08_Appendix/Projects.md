@@ -95,7 +95,7 @@ The closet I have seen this value specified in a paper
 was a reference to a theoretical paper describing how to find the best value.
 While the literature mostly ignores this parameter,
 when this is set incorrectly it can quickly lead to
-exponential time divergence [@Allen1991],
+exponential time divergence, [@Allen1991]
 that is the discrete nature of the simulations becomes a problem
 causing highly unphysical behaviour.
 To simplify the process

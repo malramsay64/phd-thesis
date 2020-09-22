@@ -6,7 +6,7 @@ it is possible to monitor the rate of crystallisation
 through the growth in size of the simulation cell. [@Tang2013]
 Other methods are to compute a local property as a measure of order
 like a hexatic order parameter for 2D simulations,
-or a Steinhardt bond order parameter [@Reinhart2018].
+or a Steinhardt bond order parameter. [@Reinhart2018]
 @Sec:Machine_Learning develops the methodology for
 identifying crystal structure within a liquid.
 These approaches use a slab geometry [@Kerrache2008]

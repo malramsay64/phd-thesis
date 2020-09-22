@@ -90,7 +90,7 @@ roughly six orders of magnitude slower that crystal growth in pure metals.
 Even after using the difference in diffusion constants to rescale the liquid dynamics,
 a huge gap in growth rates remains unexplained.
 Some progress has been made recently in demonstrating that
-pure metals grow at an anomalously fast rate [@Gang2018] due to
+pure metals grow at an anomalously fast rate [@Sun2018] due to
 efficient pre-organisation of the liquid adjacent to the interface.
 It is possible that molecular crystal growth suffers
 an analogous slow growth anomaly resulting from

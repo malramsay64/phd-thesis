@@ -17,7 +17,7 @@ of the dynamics quantities for,
 however the stochastic nature of simulations means this trajectory
 is only representative of a single possible outcome.
 A typical method of creating many trajectories from a single one
-is the comparison of every measurement with every other [@Buyl2018],
+is the comparison of every measurement with every other, [@Buyl2018]
 an approach which only works when there is equal spacing between configurations.
 As an alternative method of evaluating statistics from a single simulation trajectory,
 we use *key-frames*,

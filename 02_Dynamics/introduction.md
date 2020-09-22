@@ -144,7 +144,7 @@ and optical microscopy. [@Bartko1999]
 
 The quantity used to measure this is the non-Gaussian parameter $\alpha$ (@sec:heterogeneous_dynamics),
 which is a measure of how far the distribution of motions
-deviates from the expected Gaussian distribution [@Donati1999;@Rahman1964].
+deviates from the expected Gaussian distribution. [@Donati1999;@Rahman1964]
 Other than using the same greek letter $\alpha$,
 there is no link between the non-Gaussian parameter
 and the $\alpha$-relaxations described in @eq:kww.

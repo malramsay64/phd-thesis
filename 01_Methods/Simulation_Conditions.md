@@ -87,7 +87,7 @@ To prevent particles having a collective flow
 through the periodic boundary conditions,
 the net momentum of the simulation is zeroed every 33533 timesteps,
 chosen for being a large prime number.
-These simulations use the Martyna-Tobias-Klein thermostat and barostat [@Martyna1994],
+These simulations use the Martyna-Tobias-Klein thermostat and barostat, [@Martyna1994]
 with the parameters $\tau = 1.0$ and $\tau_P = 1.0$ and a step size of 0.005.
 
 ### Equilibration

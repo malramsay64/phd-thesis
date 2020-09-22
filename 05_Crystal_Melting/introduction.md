@@ -114,7 +114,7 @@ where the increasing magnitude of $\Delta \mu$
 is no longer able to counteract the slowing dynamics. [@fig:classical_growth]
 Since diffusion is the limiting factor for the crystal growth rate,
 the Wilson--Frenkel model is often considered a thermally activated process,
-reflecting the behaviour of diffusion within the liquid. [@sec:diffusion]
+reflecting the behaviour of diffusion within the liquid (see @sec:diffusion).
 
 The Turnbull theory describes a process of crystal growth
 where the growth is dependent on the thermal velocity of molecules,
@@ -147,7 +147,7 @@ Both the Turnbull and Wilson--Frenkel model exist
 because they each describe the growth rates of different materials.
 It has been observed empirically that the Wilson--Frenkel model describes
 semiconductors and solids with directional bonding [@Jackson2002]
-like silicon [@Jackson2002], Water Ice [@Yagasaki2016;@Xu2016], and
+like silicon, [@Jackson2002] Water Ice, [@Yagasaki2016;@Xu2016] and
 metal alloys of \ce{NiAl} and \ce{CuZr}. [@Tang2013]
 These are materials which require structural rearrangement
 for crystal growth to occur,
@@ -174,7 +174,7 @@ This theory starts with a free energy written explicitly as
 a functional of the density which can, itself,
 be a varying function of position (hence the name 'functional').
 The free energy functional are typically constructed either via intuitive
-modelling or by formal expansions about some reference state [@Oxtoby2002;@Shen1998].
+modelling or by formal expansions about some reference state. [@Oxtoby2002;@Shen1996]
 A common approach to incorporating free energy contributions
 due to the spatial variation of the density is
 to carry out a second order expansion in terms of the gradients.
