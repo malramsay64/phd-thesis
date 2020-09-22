@@ -160,23 +160,26 @@ which have low entropies of fusion, behaving like spheres.
 
 ### Semi-Empirical Density Functional Model of Growth {#sec:dft_model}
 
-The field of modelling crystal growth using free energy functionals
-has a wide range of theories using nomenclature that has changed over time. [@Granasy2019]
-These theories describe the liquid and crystal using a structural order parameter $M(\vect{r}, t)$. [@Collins1985]
-Models using this approach have been called
-phase-field [@Pusztai2005;@Pusztai2008;@Granasy2002;@Warren2009;@Bagdassarian1994]
-density functional theories [@Oxtoby2002;@Shen1996], and
-square gradient methods. [@Cahn1958;@Bagdassarian1994]
-Phase-field models initially described the structural order parameter
-as a field defining the phase, [@Bagdassarian1994]
-however, later use of phase-field describes an unrelated rigorously derived model. [@Pusztai2005;@Pusztai2008;@Granasy2002;@Warren2009]
-The constant rise of new theories, and renaming of existing ones
-means there is little consensus in the field over the naming of any model,
-with some models having all three names at various points over the past 30 years. [@Bagdassarian1994;@Oxtoby2002;@Granasy2019]
-The model we are using is based on a Phase-Field model by @Bagdassarian1994,
-which to avoid confusion with unrelated models we will use
-the term semi-empirical density functional model
-to describe the model in this thesis
+A feature of the 'classical' theories of crystal growth
+is they only refer to the homogeneous crystal and liquid phases.
+The interfacial region is represented as
+a step-like switch from one phase to the other
+with a surface free energy assigned to it.
+The short comings of this description--–namely
+the neglect of the continuous inhomegeneity of the interface
+and the absence of an explicit method of consistently
+calculating the interfacial free energy--can
+be addressed using density functional theory.
+This theory starts with a free energy written explicitly as
+a functional of the density which can, itself,
+be a varying function of position (hence the name 'functional').
+The free energy functional are typically constructed either via intuitive
+modelling or by formal expansions about some reference state [@Oxtoby2002;@Shen1998].
+A common approach to incorporating free energy contributions
+due to the spatial variation of the density is
+to carry out a second order expansion in terms of the gradients.
+The resulting square gradient theory
+has been widely applied in the study on liquid interfaces. [@Cahn1958]
 
 The semi-empirical density functional model
 uses a measure of structure $M(\vect{r}, t)$ [@Bagdassarian1994]
