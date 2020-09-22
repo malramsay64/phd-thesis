@@ -78,7 +78,7 @@ so to make this easier experi also supports running the commands
 on a local computer without any scheduler,
 providing a method of testing simulations while only making minimal changes.
 
-The source code for experi is available at [github.com/malramsay64/experi](https://github.com/malramsay64/experi)
+The source code for experi [@Ramsay2020b] is available at [github.com/malramsay64/experi](https://github.com/malramsay64/experi)
 and available for installation on both the python package index
 ([`pypi.org`](https://pypi.org/project/experi)) and [anaconda cloud](https://anaconda.org/malramsay/experi)
 with the documentation available on [read the docs](https://experi.readthedocs.io/en/latest/).
@@ -100,7 +100,7 @@ that is the discrete nature of the simulations becomes a problem
 causing highly unphysical behaviour.
 To simplify the process
 of running the types of simulations within this project
-I have developed the `sdrun` software.
+I have developed the `sdrun` software. [@Ramsay2020a]
 Since the `packing` code handles the four steps
 in a molecular dynamics project,
 this handles the other three.
@@ -140,7 +140,7 @@ they don't provide the breadth of analyses I required,
 notably lacking in understanding rotational motion.
 
 I needed to develop my own analyses for this project,
-which I have done with the sdanalysis and `traj3dy` projects.
+which I have done with the sdanalysis [@Ramsay2020] and `traj3dy` projects.
 The sdanalysis project calculates quantities
 and builds upon two projects from the Glotzer group,
 freud [@Harper2016] which provides the calculations of periodic distances,
