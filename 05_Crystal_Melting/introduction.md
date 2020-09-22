@@ -248,7 +248,7 @@ $\lambda_\text{liquid} = \lambda_\text{crystal} = 1$ and $\Delta = 0$
 The time evolution of the order parameter $M$ [@Bagdassarian1994]
 
 $$ \frac{\partial M}{\partial t} =
--D \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$
+-D \left[ \frac{\d \omega(M)}{\d M} - K^2 \nabla^2 M \right] $$ {#eq:dft_time_evolution}
 
 found by taking the time derivative of the functional @eq:square_gradient,
 with respect to the order parameter $M$. [@Bagdassarian1994]
@@ -272,6 +272,10 @@ $$ v(T) = -\left[\frac{2KD(T)(\sqrt{\lambda_\text{liquid}}(T) +
 $$ {#eq:dft_growth_rate}
 
 where $K$ is the correlation length of the order parameter.
+@Eq:dft_growth_rate is the analytic solution for the steady state growth described by @eq:dft_time_evolution.
+The key assumption is that the free energy of the uniform system can be described
+by the minimum of the two parabolas centred on $M=0$ (the liquid) and $M = 1$ (the crystal)
+with the curvature $\dd\omega/\d{M^2}$ given by $\lambda_\text{liquid}$ and $\lambda_\text{crystal}$, respectively.
 
 The semi-empirical density functional theory describes the rate of melting
 through the size of the fluctuations in the liquid and the crystal
