@@ -3,7 +3,7 @@ dependencies:
   - python=3.7
   - conda-forge::pandoc==2.10
   - conda-forge::tectonic==0.3.3
-  - malramsay::biber==2.15
+  - malramsay::biber==2.14
   - conda-forge::pre-commit==2.6.0
   - nodejs==10.13.0
   - conda-forge::graphviz==2.42.3
